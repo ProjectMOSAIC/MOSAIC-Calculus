@@ -1,0 +1,50 @@
+---
+date: "10/13/2024"
+title: "MOSAIC Calculus"
+---
+
+This is the home page for *MOSAIC Calculus* and serves only to steer the reader to items that will be of direct interest.
+
+*MOSAIC Calculus* involves three main components:
+
+1. The most up-to-date version of the [*MOSAIC Calculus* textbook](Textbook/). 
+2. The *MOSAIC Calculus [Workbook](Workbook/)*.
+3. An R package, `{mosaicCalc}`, available via CRAN, the official distribution network for R.
+
+Almost certainly anyone using this site will want to bookmark directly the [textbook](Textbook/) and the [Workbook](Workbook). 
+
+## Workbook
+
+The *MOSAIC Calculus Workbook* contains all the exercises, reading questions, projects, and review materials for the textbook. These are arranged chapter-by-chapter.
+
+*Some sections are currently in draft form.* These will be updated over 2024-2025 on this same site. 
+
+The *Workbook* is equipped with a light-weight system to support students getting immediate feedback for selected multiple-choice questions. At the instructor's discretion, system can also be used to collect student answers via, say, a Google Form that is private to the instructor. From there, R and the `{devoirs}` package can be used to tabulate and score student work, chapter by chapter. 
+
+The `{devoirs}` package also makes it straightforward for instructors to write their own materials that can work with the student-collection system.
+
+*Note again* ... the textbook does not contain exercises. All exercises are in the *Workbook*. The impetus for this arrangement is two fold: 
+
+1. Exercises are added or revised much more frequently than the textbook itself. Putting them in a separately managed project makes it easier to arrange for individual instructors to create their own documents that provide compatible answer-collection facilities. (Contact `dtkaplan@gmail.com` for more information on setting this up.)
+
+2. The `{devoirs}` package, which provides the automated answer-collection system, isn't used directly in the textbook, just in the *Workbook*.
+
+## Computing
+
+The R language is integrated into *MOSAIC Calculus* textbook and the *Workbook*. There are two main ways to access the R engine for interacting with the textbook and workbook.
+
+1. The textbook and workbook both integrate the R computational engine into the HTML files accessed by the browser. This means there is no need to setup software or manage R packages. I think this will be the preferred mode for almost all students.
+
+2. Any R system such as the desktop RStudio or the posit.cloud service, can be used. This mode requires installing the R packages that the books make use of. The following command will do the job (which also includes installing many other widely used packages):
+
+```r
+install.packages("mosaicCalc")
+```
+Mode (2) will be preferred by those creating documents for their own courses and those who include Quarto/RMarkdown editing in their courses. 
+
+------------
+
+
+
+
+The 2022 version, now obsolete, is available [here](pre-release/). This is relevant only to US Air Force Academy faculty (not students!) who need to translate web links from teaching materials used in 2022.
