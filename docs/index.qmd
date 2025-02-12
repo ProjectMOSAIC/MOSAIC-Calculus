@@ -1,7 +1,11 @@
 ---
-date: "10/13/2024"
+date: "02/11/2025"
 title: "MOSAIC Calculus"
 ---
+
+::: {align=center width="50%"}
+![](cover-image.png)
+:::
 
 This is the home page for *MOSAIC Calculus* and serves only to steer the reader to items that will be of direct interest.
 
@@ -33,7 +37,7 @@ The `{devoirs}` package also makes it straightforward for instructors to write t
 
 The R language is integrated into *MOSAIC Calculus* textbook and the *Workbook*. There are two main ways to access the R engine for interacting with the textbook and workbook.
 
-1. The textbook and workbook both integrate the R computational engine into the HTML files accessed by the browser. This means there is no need to setup software or manage R packages. I think this will be the preferred mode for almost all students.
+1. The textbook and workbook both integrate the R computational engine into the HTML files accessed by the browser, using the WebR system. This means there is no need to setup software or manage R packages. I think this will be the preferred mode for almost all students.
 
 2. Any R system such as the desktop RStudio or the posit.cloud service, can be used. This mode requires installing the R packages that the books make use of. The following command will do the job (which also includes installing many other widely used packages):
 
