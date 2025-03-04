@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,17 +30,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Block-3-models.html" rel="next">
+<link href="./Block-2-models.html" rel="next">
 <link href="./27-review.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"out-height":"","comment":"","classes":"","context":"interactive","output":"true","editor-font-scale":"1","label":"dolphin-mean-linen-rcd","dpi":72,"fig-height":5,"read-only":"false","autorun":"false","warning":"true","fig-width":7,"fig-cap":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true"},"id":1,"code":"slice_plot(x * log(x) ~ x, domain(x = 0:0.5))"},{"options":{"out-height":"","comment":"","classes":"","context":"interactive","output":"true","editor-font-scale":"1","label":"unnamed-chunk-2","dpi":72,"fig-height":5,"read-only":"false","autorun":"false","warning":"true","fig-width":7,"fig-cap":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true"},"id":2,"code":"# The \"polynomial computer\"\n# Inputs: \n#    A fiducial point x0\n#    Coefficients on 1, x, x^2, x^3, ... and so on\n# You are not expected to understand this definition of make_poly(), \n#   just to use it!\nmake_poly <- function(x0, ...) {\n  coefs <- unlist(list(...))\n  function(x) {\n    result = 0\n    for (k in length(coefs):2) {\n      result <- (x-x0)*(coefs[k] + result)\n    }\n    return(coefs[1] + result)\n  }\n}\n\n# Build a function p() using make_poly().\np <- make_poly(x0 = 0, 1, 1, 1/2, 1/6, 1/24, 1/120)\n# Plot the error over the domain x=-10:10 \nerror_fun <- makeFun(abs(exp(x) - p(x)) ~ x)\nslice_plot(error_fun(x) ~ x, domain(x = 0.01:10)) %>%\n  slice_plot(abs(exp(-x) - p(-x)) ~ x, color=\"orange3\") %>%\n       gf_refine(scale_y_log10(), scale_x_log10()) %>%\n  gf_labs(y = \"Absolute error\")"},{"options":{"out-height":"","comment":"","classes":"","context":"interactive","output":"true","editor-font-scale":"1","label":"unnamed-chunk-3","dpi":72,"fig-height":5,"read-only":"false","autorun":"false","warning":"true","fig-width":7,"fig-cap":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true"},"id":3,"code":"f <- makeFun(sin(x - pi / 6) ~ x)\nT <- makeFun(-0.5 + x*sqrt(3) / 2 + 0.25*x^2 - x^3 / (4*sqrt(3)) ~ x)"},{"options":{"out-height":"","comment":"","classes":"","context":"interactive","output":"true","editor-font-scale":"1","label":"unnamed-chunk-4","dpi":72,"fig-height":5,"read-only":"false","autorun":"false","warning":"true","fig-width":7,"fig-cap":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true"},"id":4,"code":"slice_plot(f(x) +.05 ~ x, domain(x = -1:1)) |>\n  slice_plot(f(x) - .05 ~ x) |>\n  slice_plot(T(x) ~ x, color=\"red\")"},{"options":{"out-height":"","comment":"","classes":"","context":"interactive","output":"true","editor-font-scale":"1","label":"unnamed-chunk-5","dpi":72,"fig-height":5,"read-only":"false","autorun":"false","warning":"true","fig-width":7,"fig-cap":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true"},"id":5,"code":"T_at_0 = makeFun(0.3989 + \n                   0*(x-x0) +\n                   - 0.3989*(x-x0)^2/factorial(2) + \n                   0*(x-x0)^3/factorial(3) +\n                   1.1968*(x-x0)^4/factorial(4) ~ x, \n                 x0=0)"},{"options":{"out-height":"","comment":"","classes":"","context":"interactive","output":"true","editor-font-scale":"1","label":"unnamed-chunk-6","dpi":72,"fig-height":5,"read-only":"false","autorun":"false","warning":"true","fig-width":7,"fig-cap":"","results":"markup","out-width":"700px","editor-quick-suggestions":"false","editor-max-height":"","editor-word-wrap":"true","message":"true"},"id":6,"code":"T <- makeFun(ifelse(abs(x) < 0.5, \n                    T_at_0(abs(x)), \n                    T_at_1(abs(x))) ~ x)"}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"slice_plot(x * log(x) ~ x, domain(x = 0:0.5))","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"dolphin-mean-linen-rcd","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# The \"polynomial computer\"\n# Inputs: \n#    A fiducial point x0\n#    Coefficients on 1, x, x^2, x^3, ... and so on\n# You are not expected to understand this definition of make_poly(), \n#   just to use it!\nmake_poly <- function(x0, ...) {\n  coefs <- unlist(list(...))\n  function(x) {\n    result = 0\n    for (k in length(coefs):2) {\n      result <- (x-x0)*(coefs[k] + result)\n    }\n    return(coefs[1] + result)\n  }\n}\n\n# Build a function p() using make_poly().\np <- make_poly(x0 = 0, 1, 1, 1/2, 1/6, 1/24, 1/120)\n# Plot the error over the domain x=-10:10 \nerror_fun <- makeFun(abs(exp(x) - p(x)) ~ x)\nslice_plot(error_fun(x) ~ x, domain(x = 0.01:10)) |>\n  slice_plot(abs(exp(-x) - p(-x)) ~ x, color=\"orange3\") |>\n       gf_refine(scale_y_log10(), scale_x_log10()) |>\n  gf_labs(y = \"Absolute error\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"f <- makeFun(sin(x - pi / 6) ~ x)\nT <- makeFun(-0.5 + x*sqrt(3) / 2 + 0.25*x^2 - x^3 / (4*sqrt(3)) ~ x)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"slice_plot(f(x) +.05 ~ x, domain(x = -1:1)) |>\n  slice_plot(f(x) - .05 ~ x) |>\n  slice_plot(T(x) ~ x, color=\"red\")","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"g <- makeFun(x*log*x ~ x)\nslice_plot(g(x) ~ x, domain(x = 0:5))","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"T_at_0 = makeFun(0.3989 + \n                   0*(x-x0) +\n                   - 0.3989*(x-x0)^2/factorial(2) + \n                   0*(x-x0)^3/factorial(3) +\n                   1.1968*(x-x0)^4/factorial(4) ~ x, \n                 x0=0)","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"T <- makeFun(ifelse(abs(x) < 0.5, \n                    T_at_0(abs(x)), \n                    T_at_1(abs(x))) ~ x)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1634,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2982,6 +2601,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-camel-sing-futon" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> The Taylor polynomial <span class="math display">\[T(x)\equiv-9-6(x-5)-9(x-5)^2\]</span> is used to approximate the function <span class="math inline">\(f(x)\)</span>.</p>
 <ol type="1">
@@ -2989,19 +2610,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_0=9$ " id="csfj-1-1" w="32" name="csfj-1" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(x_0=9\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_0=9$ " id="csfj-1-1" w="23" name="csfj-1" hint="Oops!" show_hints="TRUE"> <span class="math inline">\(x_0=9\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_0=6$ " id="csfj-1-2" w="19" name="csfj-1" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(x_0=6\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_0=6$ " id="csfj-1-2" w="3" name="csfj-1" hint="No." show_hints="TRUE"> <span class="math inline">\(x_0=6\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_0=5$" id="csfj-1-3" w="20" name="csfj-1" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(x_0=5\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_0=5$" id="csfj-1-3" w="20" name="csfj-1" hint="Yeah!" show_hints="TRUE"> <span class="math inline">\(x_0=5\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_0=0$ " id="csfj-1-4" w="3" name="csfj-1" hint="wrong" show_hints="TRUE"> <span class="math inline">\(x_0=0\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_0=0$ " id="csfj-1-4" w="87" name="csfj-1" hint="Incorrect." show_hints="TRUE"> <span class="math inline">\(x_0=0\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="csfj-1" id="csfj-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="csfj-1-hintarea">question id: csfj-1</small></p>
 </div>
 </div>
@@ -3010,19 +2631,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... s negative" id="csfj-2-1" w="18" name="csfj-2" hint="right-o" show_hints="TRUE"> <span class="math inline">\(\partial_{x} (x_0)\)</span> is negative</p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... s negative" id="csfj-2-1" w="16" name="csfj-2" hint="Exactly." show_hints="TRUE"> <span class="math inline">\(\partial_{x} (x_0)\)</span> is negative</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... $ is zero " id="csfj-2-2" w="87" name="csfj-2" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\partial_{x} (x_0)\)</span> is zero</p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... $ is zero " id="csfj-2-2" w="19" name="csfj-2" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(\partial_{x} (x_0)\)</span> is zero</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ...  positive " id="csfj-2-3" w="87" name="csfj-2" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\partial_{x} (x_0)\)</span> is positive</p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ...  positive " id="csfj-2-3" w="19" name="csfj-2" hint="Not so!" show_hints="TRUE"> <span class="math inline">\(\partial_{x} (x_0)\)</span> is positive</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It cannot  ... olynomial " id="csfj-2-4" w="87" name="csfj-2" hint="Better luck next time." show_hints="TRUE"> It cannot be determined from the polynomial</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It cannot  ... olynomial " id="csfj-2-4" w="7" name="csfj-2" hint="No." show_hints="TRUE"> It cannot be determined from the polynomial</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="csfj-2" id="csfj-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="csfj-2-hintarea">question id: csfj-2</small></p>
 </div>
 </div>
@@ -3031,28 +2652,28 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... magnitude " id="csfj-3-1" w="32" name="csfj-3" hint="incorrect choice" show_hints="TRUE"> <span class="math inline">\(\partial_{xx} (x_0)\)</span> is negative, but we cannot determine its magnitude</p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... magnitude " id="csfj-3-1" w="23" name="csfj-3" hint="Wrong." show_hints="TRUE"> <span class="math inline">\(\partial_{xx} (x_0)\)</span> is negative, but we cannot determine its magnitude</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... (x_0)=-9$ " id="csfj-3-2" w="23" name="csfj-3" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\partial_{xx} (x_0)=-9\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... (x_0)=-9$ " id="csfj-3-2" w="7" name="csfj-3" hint="Not so!" show_hints="TRUE"> <span class="math inline">\(\partial_{xx} (x_0)=-9\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... _0)=-4.5$ " id="csfj-3-3" w="7" name="csfj-3" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(\partial_{xx} (x_0)=-4.5\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... _0)=-4.5$ " id="csfj-3-3" w="3" name="csfj-3" hint="Untrue!" show_hints="TRUE"> <span class="math inline">\(\partial_{xx} (x_0)=-4.5\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... (x_0)=-18$" id="csfj-3-4" w="5" name="csfj-3" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(\partial_{xx} (x_0)=-18\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... (x_0)=-18$" id="csfj-3-4" w="18" name="csfj-3" hint="That's right." show_hints="TRUE"> <span class="math inline">\(\partial_{xx} (x_0)=-18\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="csfj-3" id="csfj-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="csfj-3-hintarea">question id: csfj-3</small></p>
 </div>
 </div>
 </div>
 <div id="exr-calf-tear-fridge" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> Here’s the Taylor polynomial expansion of <span class="math inline">\(\sin(x)\)</span> about a center <span class="math inline">\(x_0\)</span>: <span class="math display">\[p(x) = 1/2 - \frac{\sqrt{3}/{2}}{2!} (x - x_0)^2 + \frac{1/2}{4!} (x - x_0)^4 + \cdots\]</span> Which of the following is the numerical value of <span class="math inline">\(x_0\)</span>? (Hint: Remember that the coefficients involve the function and its derivatives evaluated at <span class="math inline">\(x_0\)</span> as described in <strong>XREF not implemented yet</strong>.</p>
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Here’s the Taylor polynomial expansion of <span class="math inline">\(\sin(x)\)</span> about a center <span class="math inline">\(x_0\)</span>: <span class="math display">\[p(x) = 1/2 - \frac{\sqrt{3}/{2}}{2!} (x - x_0)^2 + \frac{1/2}{4!} (x - x_0)^4 + \cdots\]</span> Which of the following is the numerical value of <span class="math inline">\(x_0\)</span>? (Hint: Remember that the coefficients involve the function and its derivatives evaluated at <span class="math inline">\(x_0\)</span> as described in [Faulty cross reference: high-order-approx].</p>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$\pi/6$" id="calf-tear-fridge-1-1" w="14" name="calf-tear-fridge-1" hint="Right" show_hints="FALSE"> <span class="math inline">\(\pi/6\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi/3$ " id="calf-tear-fridge-1-2" w="19" name="calf-tear-fridge-1" hint="Sorry!" show_hints="FALSE"> <span class="math inline">\(\pi/3\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi/2$ " id="calf-tear-fridge-1-3" w="32" name="calf-tear-fridge-1" hint="wrong" show_hints="FALSE"> <span class="math inline">\(\pi/2\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi$ " id="calf-tear-fridge-1-4" w="7" name="calf-tear-fridge-1" hint="wrong" show_hints="FALSE"> <span class="math inline">\(\pi\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="calf-tear-fridge-1" id="calf-tear-fridge-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$\pi/6$" id="calf-tear-fridge-1-1" w="5" name="calf-tear-fridge-1" hint="You're right." show_hints="FALSE"> <span class="math inline">\(\pi/6\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi/3$ " id="calf-tear-fridge-1-2" w="7" name="calf-tear-fridge-1" hint="You're mistaken" show_hints="FALSE"> <span class="math inline">\(\pi/3\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi/2$ " id="calf-tear-fridge-1-3" w="87" name="calf-tear-fridge-1" hint="Not quite right." show_hints="FALSE"> <span class="math inline">\(\pi/2\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi$ " id="calf-tear-fridge-1-4" w="23" name="calf-tear-fridge-1" hint="Nope." show_hints="FALSE"> <span class="math inline">\(\pi\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="calf-tear-fridge-1" id="calf-tear-fridge-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="calf-tear-fridge-1-hintarea">question id: calf-tear-fridge-1</small></p>
 </div>
 </div>
@@ -3062,16 +2683,16 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Using ordinary algebra, <span class="math inline">\(f(x)\)</span> can be expanded as <span class="math inline">\((x^2 - 6 x -9)\)</span>. Consider <span class="math display">\[p(x) = -9 - 6 x + x^2 .\]</span> Is <span class="math inline">\(p()\)</span> a Taylor polynomial expansion of <span class="math inline">\(f(x)\)</span>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Yes, with  ...  $x_0 = 0$" id="QGSi6C-1" w="18" name="QGSi6C" hint="Right" show_hints="TRUE"> Yes, with a center at <span class="math inline">\(x_0 = 0\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="Yes, with  ...  $x_0 = 0$" id="QGSi6C-1" w="35" name="QGSi6C" hint="Exactly." show_hints="TRUE"> Yes, with a center at <span class="math inline">\(x_0 = 0\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Yes, with  ... $x_0 = 3$ " id="QGSi6C-2" w="87" name="QGSi6C" hint="Sorry!" show_hints="TRUE"> Yes, with a center at <span class="math inline">\(x_0 = 3\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="Yes, with  ... $x_0 = 3$ " id="QGSi6C-2" w="19" name="QGSi6C" hint="Incorrect choice." show_hints="TRUE"> Yes, with a center at <span class="math inline">\(x_0 = 3\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="No, becaus ... s involved" id="QGSi6C-3" w="32" name="QGSi6C" hint="The factorials are already built-in to the coefficients." show_hints="TRUE"> No, because there are no factorials involved</p>
+</p><p><input type="radio" class="devoirs-mcq" value="No, becaus ... s involved" id="QGSi6C-3" w="19" name="QGSi6C" hint="The factorials are already built-in to the coefficients." show_hints="TRUE"> No, because there are no factorials involved</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="QGSi6C" id="QGSi6C.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="QGSi6C-hintarea">question id: QGSi6C</small></p>
 </div>
 </div>
@@ -3085,7 +2706,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-dolphin-mean-linen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3094,8 +2715,8 @@ Active R chunk&nbsp;1
 <li>From the graph, determine <span class="math inline">\(\lim_{x\rightarrow 0} x \ln(x()\)</span>. Choose the closest answer.</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="-0.2 " id="dolphin-mean-linen-1-1" w="23" name="dolphin-mean-linen-1" hint="Try again!" show_hints="TRUE"> -0.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0" id="dolphin-mean-linen-1-2" w="18" name="dolphin-mean-linen-1" hint="Right" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.1 " id="dolphin-mean-linen-1-3" w="19" name="dolphin-mean-linen-1" hint="incorrect choice" show_hints="TRUE"> 0.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5 " id="dolphin-mean-linen-1-4" w="19" name="dolphin-mean-linen-1" hint="no" show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="not well behaved " id="dolphin-mean-linen-1-5" w="87" name="dolphin-mean-linen-1" hint="Sorry!" show_hints="TRUE"> not well behaved &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="dolphin-mean-linen-1" id="dolphin-mean-linen-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-0.2 " id="dolphin-mean-linen-1-1" w="23" name="dolphin-mean-linen-1" hint="Wrong." show_hints="TRUE"> -0.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0" id="dolphin-mean-linen-1-2" w="29" name="dolphin-mean-linen-1" hint="Excellent!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.1 " id="dolphin-mean-linen-1-3" w="7" name="dolphin-mean-linen-1" hint="Incorrect choice." show_hints="TRUE"> 0.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5 " id="dolphin-mean-linen-1-4" w="19" name="dolphin-mean-linen-1" hint="Not on target." show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="not well behaved " id="dolphin-mean-linen-1-5" w="19" name="dolphin-mean-linen-1" hint="Better luck next time." show_hints="TRUE"> not well behaved &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="dolphin-mean-linen-1" id="dolphin-mean-linen-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="dolphin-mean-linen-1-hintarea">question id: dolphin-mean-linen-1</small></p>
 </div>
 </div>
@@ -3108,8 +2729,8 @@ Active R chunk&nbsp;1
 <li>What does <span class="math display">\[\left[\frac{\partial_x \ln(x)}{\partial_x 1/x}\right]\]</span> simplify to?</li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$x$" id="dolphin-mean-linen-2-1" w="23" name="dolphin-mean-linen-2" hint="wrong" show_hints="false"> <span class="math inline">\(x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$-x$" id="dolphin-mean-linen-2-2" w="20" name="dolphin-mean-linen-2" hint="Right" show_hints="false"> <span class="math inline">\(-x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$1/x$" id="dolphin-mean-linen-2-3" w="23" name="dolphin-mean-linen-2" hint="no" show_hints="false"> <span class="math inline">\(1/x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$-1/x$" id="dolphin-mean-linen-2-4" w="32" name="dolphin-mean-linen-2" hint="wrong" show_hints="false"> <span class="math inline">\(-1/x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="dolphin-mean-linen-2" id="dolphin-mean-linen-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$x$" id="dolphin-mean-linen-2-1" w="23" name="dolphin-mean-linen-2" hint="Sorry!" show_hints="false"> <span class="math inline">\(x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$-x$" id="dolphin-mean-linen-2-2" w="8" name="dolphin-mean-linen-2" hint="Right." show_hints="false"> <span class="math inline">\(-x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$1/x$" id="dolphin-mean-linen-2-3" w="23" name="dolphin-mean-linen-2" hint="Incorrect." show_hints="false"> <span class="math inline">\(1/x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$-1/x$" id="dolphin-mean-linen-2-4" w="23" name="dolphin-mean-linen-2" hint="Hmmm ..." show_hints="false"> <span class="math inline">\(-1/x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="dolphin-mean-linen-2" id="dolphin-mean-linen-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="dolphin-mean-linen-2-hintarea">question id: dolphin-mean-linen-2</small></p>
 </div>
 </div>
@@ -3118,14 +2739,14 @@ Active R chunk&nbsp;1
 <li>Does the application of l’Hopital’s rule confirm the result from graphing the function on the computer?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="Yes" id="dolphin-mean-linen-3-1" w="29" name="dolphin-mean-linen-3" hint="Excellent!" show_hints="TRUE"> Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No" id="dolphin-mean-linen-3-2" w="7" name="dolphin-mean-linen-3" hint="Aren't you getting $\frac{1}{1/x} = x$ when you carry out the differentiation involved?" show_hints="TRUE"> No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="dolphin-mean-linen-3" id="dolphin-mean-linen-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Yes" id="dolphin-mean-linen-3-1" w="41" name="dolphin-mean-linen-3" hint="Yup!" show_hints="TRUE"> Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No" id="dolphin-mean-linen-3-2" w="87" name="dolphin-mean-linen-3" hint="Aren't you getting $\frac{1}{1/x} = x$ when you carry out the differentiation involved?" show_hints="TRUE"> No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="dolphin-mean-linen-3" id="dolphin-mean-linen-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="dolphin-mean-linen-3-hintarea">question id: dolphin-mean-linen-3</small></p>
 </div>
 </div>
 </div>
 <div id="exr-fawn-hear-kayak" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 12</strong></span> We are all busy people these days and nobody has the time to compute an infinite number of coefficients define a function using a Taylor series. Instead, we will have to use just a few coefficients. But how many is enough?</p>
+<p><span class="theorem-title"><strong>Exercise 13</strong></span> We are all busy people these days and nobody has the time to compute an infinite number of coefficients define a function using a Taylor series. Instead, we will have to use just a few coefficients. But how many is enough?</p>
 <p>The function <code>make_poly()</code> defined in <a href="#lst-fawn-hear-kayak" class="quarto-xref">Active R chunk&nbsp;<span>2</span></a> can create a function given a fiducial point <span class="math inline">\(x_0\)</span> and a few coefficients at the start of the Taylor polynomial.</p>
 <p>For example, the coefficients for <span class="math inline">\(e^x\)</span> (around <span class="math inline">\(x_0 = 0\)</span>) are <span class="math inline">\(1, 1, 1/2, 1/6, 1/24, 1/120, 1/720, 1/5040, 1/40320, 1/362880, ...\)</span> Factorials get big fast!</p>
 <p>The sandbox shows a simple comparison of the polynomial approximation to the actual exponential function. it plots the magnitude of the error <span class="math inline">\(|e^x - p(x)|\)</span> on a log-log scale.</p>
@@ -3135,7 +2756,7 @@ Active R chunk&nbsp;1
 Active R chunk&nbsp;2
 </figcaption>
 <div aria-describedby="lst-fawn-hear-kayak-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Read the graph carefully to make sure you understand what is being displayed.</p>
 <ul>
@@ -3144,15 +2765,15 @@ Active R chunk&nbsp;2
 </ul>
 <p>For <span class="math inline">\(x \approx 2.0\)</span>, the magnitude of the error is, to judge from the graph, <code>1e-1</code>. When written as a decimal number, how many leading zeros are after the decimal point?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="fawn-hear-kayak-1-1" w="19" name="fawn-hear-kayak-1" hint="Not quite right" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fawn-hear-kayak-1-2" w="23" name="fawn-hear-kayak-1" hint="no" show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0" id="fawn-hear-kayak-1-3" w="41" name="fawn-hear-kayak-1" hint="right-o" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="fawn-hear-kayak-1-4" w="3" name="fawn-hear-kayak-1" hint="incorrect choice" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="fawn-hear-kayak-1-5" w="32" name="fawn-hear-kayak-1" hint="Better luck next time." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fawn-hear-kayak-1" id="fawn-hear-kayak-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="fawn-hear-kayak-1-1" w="7" name="fawn-hear-kayak-1" hint="Wrong." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fawn-hear-kayak-1-2" w="3" name="fawn-hear-kayak-1" hint="Hmmm ..." show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0" id="fawn-hear-kayak-1-3" w="41" name="fawn-hear-kayak-1" hint="A win!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="fawn-hear-kayak-1-4" w="3" name="fawn-hear-kayak-1" hint="Not quite." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="fawn-hear-kayak-1-5" w="7" name="fawn-hear-kayak-1" hint="Untrue!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fawn-hear-kayak-1" id="fawn-hear-kayak-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fawn-hear-kayak-1-hintarea">question id: fawn-hear-kayak-1</small></p>
 </div>
 </div>
 <p>For <span class="math inline">\(x \approx 10.0\)</span>, the magnitude of the error is, to judge from the graph, <code>1e4</code>. What is this when written as a decimal number?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="10 " id="fawn-hear-kayak-2-1" w="23" name="fawn-hear-kayak-2" hint="Better luck next time." show_hints="TRUE"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="100 " id="fawn-hear-kayak-2-2" w="3" name="fawn-hear-kayak-2" hint="Better luck next time." show_hints="TRUE"> 100 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1000 " id="fawn-hear-kayak-2-3" w="87" name="fawn-hear-kayak-2" hint="Sorry!" show_hints="TRUE"> 1000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10000" id="fawn-hear-kayak-2-4" w="18" name="fawn-hear-kayak-2" hint="Correct" show_hints="TRUE"> 10000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fawn-hear-kayak-2" id="fawn-hear-kayak-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="10 " id="fawn-hear-kayak-2-1" w="19" name="fawn-hear-kayak-2" hint="Nope." show_hints="TRUE"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="100 " id="fawn-hear-kayak-2-2" w="19" name="fawn-hear-kayak-2" hint="Hmmm ..." show_hints="TRUE"> 100 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1000 " id="fawn-hear-kayak-2-3" w="32" name="fawn-hear-kayak-2" hint="You're wrong here." show_hints="TRUE"> 1000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10000" id="fawn-hear-kayak-2-4" w="20" name="fawn-hear-kayak-2" hint="A hit!" show_hints="TRUE"> 10000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fawn-hear-kayak-2" id="fawn-hear-kayak-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fawn-hear-kayak-2-hintarea">question id: fawn-hear-kayak-2</small></p>
 </div>
 </div>
@@ -3248,25 +2869,25 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$e^x$ " id="fox-dig-room-1-1" w="23" name="fox-dig-room-1" hint="incorrect choice" show_hints="TRUE"> <span class="math inline">\(e^x\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$e^x$ " id="fox-dig-room-1-1" w="19" name="fox-dig-room-1" hint="This is wide of the mark." show_hints="TRUE"> <span class="math inline">\(e^x\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$" id="fox-dig-room-1-2" w="8" name="fox-dig-room-1" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$" id="fox-dig-room-1-2" w="29" name="fox-dig-room-1" hint="Spot on!" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\cos(x)$ " id="fox-dig-room-1-3" w="3" name="fox-dig-room-1" hint="wrong" show_hints="TRUE"> <span class="math inline">\(\cos(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\cos(x)$ " id="fox-dig-room-1-3" w="23" name="fox-dig-room-1" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(\cos(x)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$  ... $\cos(x)$ " id="fox-dig-room-1-4" w="87" name="fox-dig-room-1" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$  ... $\cos(x)$ " id="fox-dig-room-1-4" w="7" name="fox-dig-room-1" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$  ... and $e^x$ " id="fox-dig-room-1-5" w="3" name="fox-dig-room-1" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(e^x\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$  ... and $e^x$ " id="fox-dig-room-1-5" w="7" name="fox-dig-room-1" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(e^x\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\cos(x)$  ... \ln(x+1)$ " id="fox-dig-room-1-6" w="23" name="fox-dig-room-1" hint="wrong" show_hints="TRUE"> <span class="math inline">\(\cos(x)\)</span> and <span class="math inline">\(\ln(x+1)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\cos(x)$  ... \ln(x+1)$ " id="fox-dig-room-1-6" w="32" name="fox-dig-room-1" hint="Untrue!" show_hints="TRUE"> <span class="math inline">\(\cos(x)\)</span> and <span class="math inline">\(\ln(x+1)\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="fox-dig-room-1" id="fox-dig-room-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="fox-dig-room-1-hintarea">question id: fox-dig-room-1</small></p>
 </div>
 </div>
@@ -3275,25 +2896,25 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$e^x$ " id="fox-dig-room-2-1" w="87" name="fox-dig-room-2" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(e^x\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$e^x$ " id="fox-dig-room-2-1" w="3" name="fox-dig-room-2" hint="Not so!" show_hints="TRUE"> <span class="math inline">\(e^x\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$ " id="fox-dig-room-2-2" w="23" name="fox-dig-room-2" hint="no" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$ " id="fox-dig-room-2-2" w="7" name="fox-dig-room-2" hint="Not on target." show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\cos(x)$ " id="fox-dig-room-2-3" w="19" name="fox-dig-room-2" hint="no" show_hints="TRUE"> <span class="math inline">\(\cos(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\cos(x)$ " id="fox-dig-room-2-3" w="19" name="fox-dig-room-2" hint="Incorrect." show_hints="TRUE"> <span class="math inline">\(\cos(x)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$  ... $\cos(x)$ " id="fox-dig-room-2-4" w="32" name="fox-dig-room-2" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$  ... $\cos(x)$ " id="fox-dig-room-2-4" w="19" name="fox-dig-room-2" hint="Boo!" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(\cos(x)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$  ... and $e^x$ " id="fox-dig-room-2-5" w="23" name="fox-dig-room-2" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(e^x\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\sin(x)$  ... and $e^x$ " id="fox-dig-room-2-5" w="23" name="fox-dig-room-2" hint="Think again." show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(e^x\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\cos(x)$ and $e^x$" id="fox-dig-room-2-6" w="14" name="fox-dig-room-2" hint="Right" show_hints="TRUE"> <span class="math inline">\(\cos(x)\)</span> and <span class="math inline">\(e^x\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\cos(x)$ and $e^x$" id="fox-dig-room-2-6" w="8" name="fox-dig-room-2" hint="Yes." show_hints="TRUE"> <span class="math inline">\(\cos(x)\)</span> and <span class="math inline">\(e^x\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="fox-dig-room-2" id="fox-dig-room-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="fox-dig-room-2-hintarea">question id: fox-dig-room-2</small></p>
 </div>
 </div>
@@ -3301,8 +2922,8 @@ Active R chunk&nbsp;2
 <li>What’s the first zero term in the expansion of <span class="math inline">\(e^x + \cos(x)\)</span>?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="$x^0$ term " id="fox-dig-room-3-1" w="32" name="fox-dig-room-3" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(x^0\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^1$ term " id="fox-dig-room-3-2" w="32" name="fox-dig-room-3" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(x^1\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^2$ term" id="fox-dig-room-3-3" w="41" name="fox-dig-room-3" hint="right-o" show_hints="TRUE"> <span class="math inline">\(x^2\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^3$ term " id="fox-dig-room-3-4" w="23" name="fox-dig-room-3" hint="wrong" show_hints="TRUE"> <span class="math inline">\(x^3\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^4$ term " id="fox-dig-room-3-5" w="19" name="fox-dig-room-3" hint="wrong" show_hints="TRUE"> <span class="math inline">\(x^4\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^5$ term " id="fox-dig-room-3-6" w="3" name="fox-dig-room-3" hint="no" show_hints="TRUE"> <span class="math inline">\(x^5\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fox-dig-room-3" id="fox-dig-room-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$x^0$ term " id="fox-dig-room-3-1" w="19" name="fox-dig-room-3" hint="Nope." show_hints="TRUE"> <span class="math inline">\(x^0\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^1$ term " id="fox-dig-room-3-2" w="3" name="fox-dig-room-3" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(x^1\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^2$ term" id="fox-dig-room-3-3" w="41" name="fox-dig-room-3" hint="Yup!" show_hints="TRUE"> <span class="math inline">\(x^2\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^3$ term " id="fox-dig-room-3-4" w="23" name="fox-dig-room-3" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(x^3\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^4$ term " id="fox-dig-room-3-5" w="23" name="fox-dig-room-3" hint="This is wide of the mark." show_hints="TRUE"> <span class="math inline">\(x^4\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^5$ term " id="fox-dig-room-3-6" w="7" name="fox-dig-room-3" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(x^5\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fox-dig-room-3" id="fox-dig-room-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fox-dig-room-3-hintarea">question id: fox-dig-room-3</small></p>
 </div>
 </div>
@@ -3310,8 +2931,8 @@ Active R chunk&nbsp;2
 <li>What’s the first negative term in the expansion of <span class="math inline">\(\sin(x) + \cos(x)\)</span>?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="$x^0$ term " id="fox-dig-room-4-1" w="87" name="fox-dig-room-4" hint="no" show_hints="TRUE"> <span class="math inline">\(x^0\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^1$ term " id="fox-dig-room-4-2" w="19" name="fox-dig-room-4" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(x^1\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^2$ term" id="fox-dig-room-4-3" w="18" name="fox-dig-room-4" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(x^2\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^3$ term " id="fox-dig-room-4-4" w="23" name="fox-dig-room-4" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(x^3\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^4$ term " id="fox-dig-room-4-5" w="32" name="fox-dig-room-4" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(x^4\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^5$ term " id="fox-dig-room-4-6" w="32" name="fox-dig-room-4" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(x^5\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="there are none " id="fox-dig-room-4-7" w="19" name="fox-dig-room-4" hint="Better luck next time." show_hints="TRUE"> there are none &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fox-dig-room-4" id="fox-dig-room-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$x^0$ term " id="fox-dig-room-4-1" w="23" name="fox-dig-room-4" hint="Incorrect." show_hints="TRUE"> <span class="math inline">\(x^0\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^1$ term " id="fox-dig-room-4-2" w="3" name="fox-dig-room-4" hint="You're wrong here." show_hints="TRUE"> <span class="math inline">\(x^1\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^2$ term" id="fox-dig-room-4-3" w="18" name="fox-dig-room-4" hint="Right on the nose!" show_hints="TRUE"> <span class="math inline">\(x^2\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^3$ term " id="fox-dig-room-4-4" w="23" name="fox-dig-room-4" hint="Not so!" show_hints="TRUE"> <span class="math inline">\(x^3\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^4$ term " id="fox-dig-room-4-5" w="3" name="fox-dig-room-4" hint="Incorrect choice." show_hints="TRUE"> <span class="math inline">\(x^4\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^5$ term " id="fox-dig-room-4-6" w="7" name="fox-dig-room-4" hint="Wrong." show_hints="TRUE"> <span class="math inline">\(x^5\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="there are none " id="fox-dig-room-4-7" w="23" name="fox-dig-room-4" hint="Try again!" show_hints="TRUE"> there are none &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fox-dig-room-4" id="fox-dig-room-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fox-dig-room-4-hintarea">question id: fox-dig-room-4</small></p>
 </div>
 </div>
@@ -3319,8 +2940,8 @@ Active R chunk&nbsp;2
 <li>What’s the <em>second</em> negative term in the expansion of <span class="math inline">\(\sin(x) + \cos(x)\)</span>?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="$x^0$ term " id="fox-dig-room-5-1" w="87" name="fox-dig-room-5" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(x^0\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^1$ term " id="fox-dig-room-5-2" w="19" name="fox-dig-room-5" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(x^1\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^2$ term " id="fox-dig-room-5-3" w="87" name="fox-dig-room-5" hint="no" show_hints="TRUE"> <span class="math inline">\(x^2\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^3$ term" id="fox-dig-room-5-4" w="20" name="fox-dig-room-5" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(x^3\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^4$ term " id="fox-dig-room-5-5" w="32" name="fox-dig-room-5" hint="wrong" show_hints="TRUE"> <span class="math inline">\(x^4\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^5$ term " id="fox-dig-room-5-6" w="7" name="fox-dig-room-5" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(x^5\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="there are none " id="fox-dig-room-5-7" w="87" name="fox-dig-room-5" hint="no" show_hints="TRUE"> there are none &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fox-dig-room-5" id="fox-dig-room-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$x^0$ term " id="fox-dig-room-5-1" w="32" name="fox-dig-room-5" hint="Not so!" show_hints="TRUE"> <span class="math inline">\(x^0\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^1$ term " id="fox-dig-room-5-2" w="19" name="fox-dig-room-5" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(x^1\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^2$ term " id="fox-dig-room-5-3" w="87" name="fox-dig-room-5" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(x^2\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^3$ term" id="fox-dig-room-5-4" w="35" name="fox-dig-room-5" hint="That's right." show_hints="TRUE"> <span class="math inline">\(x^3\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^4$ term " id="fox-dig-room-5-5" w="87" name="fox-dig-room-5" hint="Incorrect." show_hints="TRUE"> <span class="math inline">\(x^4\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^5$ term " id="fox-dig-room-5-6" w="32" name="fox-dig-room-5" hint="Not quite right." show_hints="TRUE"> <span class="math inline">\(x^5\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="there are none " id="fox-dig-room-5-7" w="32" name="fox-dig-room-5" hint="You're wrong here." show_hints="TRUE"> there are none &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fox-dig-room-5" id="fox-dig-room-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fox-dig-room-5-hintarea">question id: fox-dig-room-5</small></p>
 </div>
 </div>
@@ -3328,8 +2949,8 @@ Active R chunk&nbsp;2
 <li>What’s the first zero term in the expansion of <span class="math inline">\(\sin(x) + \cos(x)\)</span>?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="$x^0$ term " id="fox-dig-room-6-1" w="7" name="fox-dig-room-6" hint="incorrect choice" show_hints="TRUE"> <span class="math inline">\(x^0\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^1$ term " id="fox-dig-room-6-2" w="23" name="fox-dig-room-6" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(x^1\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^2$ term " id="fox-dig-room-6-3" w="23" name="fox-dig-room-6" hint="no" show_hints="TRUE"> <span class="math inline">\(x^2\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^3$ term " id="fox-dig-room-6-4" w="23" name="fox-dig-room-6" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(x^3\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^4$ term " id="fox-dig-room-6-5" w="87" name="fox-dig-room-6" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(x^4\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^5$ term " id="fox-dig-room-6-6" w="87" name="fox-dig-room-6" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(x^5\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="there are none" id="fox-dig-room-6-7" w="8" name="fox-dig-room-6" hint="Yes" show_hints="TRUE"> there are none &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fox-dig-room-6" id="fox-dig-room-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$x^0$ term " id="fox-dig-room-6-1" w="7" name="fox-dig-room-6" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(x^0\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^1$ term " id="fox-dig-room-6-2" w="3" name="fox-dig-room-6" hint="Oops!" show_hints="TRUE"> <span class="math inline">\(x^1\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^2$ term " id="fox-dig-room-6-3" w="7" name="fox-dig-room-6" hint="Incorrect." show_hints="TRUE"> <span class="math inline">\(x^2\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^3$ term " id="fox-dig-room-6-4" w="7" name="fox-dig-room-6" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(x^3\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^4$ term " id="fox-dig-room-6-5" w="32" name="fox-dig-room-6" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(x^4\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x^5$ term " id="fox-dig-room-6-6" w="3" name="fox-dig-room-6" hint="Incorrect." show_hints="TRUE"> <span class="math inline">\(x^5\)</span> term &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="there are none" id="fox-dig-room-6-7" w="41" name="fox-dig-room-6" hint="Nice." show_hints="TRUE"> there are none &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fox-dig-room-6" id="fox-dig-room-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fox-dig-room-6-hintarea">question id: fox-dig-room-6</small></p>
 </div>
 </div>
@@ -3340,8 +2961,8 @@ Active R chunk&nbsp;2
 <li>Where is the center <span class="math inline">\(x_0\)</span> of this polynomial?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="$x_0 = -2$ " id="pig-iron-closet-1-1" w="23" name="pig-iron-closet-1" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(x_0 = -2\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x_0 = -1$ " id="pig-iron-closet-1-2" w="32" name="pig-iron-closet-1" hint="no" show_hints="TRUE"> <span class="math inline">\(x_0 = -1\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x_0 = 0$ " id="pig-iron-closet-1-3" w="7" name="pig-iron-closet-1" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(x_0 = 0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x_0=1$" id="pig-iron-closet-1-4" w="14" name="pig-iron-closet-1" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(x_0=1\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x_0 = 2$  ... ron-closet" id="pig-iron-closet-1-5" w="7" name="pig-iron-closet-1" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(x_0 = 2\)</span> pig-iron-closet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pig-iron-closet-1" id="pig-iron-closet-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$x_0 = -2$ " id="pig-iron-closet-1-1" w="23" name="pig-iron-closet-1" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(x_0 = -2\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x_0 = -1$ " id="pig-iron-closet-1-2" w="23" name="pig-iron-closet-1" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(x_0 = -1\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x_0 = 0$ " id="pig-iron-closet-1-3" w="7" name="pig-iron-closet-1" hint="Nope." show_hints="TRUE"> <span class="math inline">\(x_0 = 0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x_0=1$" id="pig-iron-closet-1-4" w="16" name="pig-iron-closet-1" hint="Yup!" show_hints="TRUE"> <span class="math inline">\(x_0=1\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x_0 = 2$  ... ron-closet" id="pig-iron-closet-1-5" w="87" name="pig-iron-closet-1" hint="Not quite right." show_hints="TRUE"> <span class="math inline">\(x_0 = 2\)</span> pig-iron-closet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pig-iron-closet-1" id="pig-iron-closet-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="pig-iron-closet-1-hintarea">question id: pig-iron-closet-1</small></p>
 </div>
 </div>
@@ -3350,16 +2971,16 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="No, a poly ...  like $e$." id="pig-iron-closet-2-1" w="3" name="pig-iron-closet-2" hint="$e$ is not a function, it is just a number, 2.718282...." show_hints="TRUE"> No, a polynomial does not have functions like <span class="math inline">\(e\)</span>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="No, a poly ...  like $e$." id="pig-iron-closet-2-1" w="23" name="pig-iron-closet-2" hint="$e$ is not a function, it is just a number, 2.718282...." show_hints="TRUE"> No, a polynomial does not have functions like <span class="math inline">\(e\)</span>.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Yes. The c ... $x_0 = 1$." id="pig-iron-closet-2-2" w="8" name="pig-iron-closet-2" hint="Correct" show_hints="TRUE"> Yes. The center is <span class="math inline">\(x_0 = 1\)</span>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Yes. The c ... $x_0 = 1$." id="pig-iron-closet-2-2" w="35" name="pig-iron-closet-2" hint="Right!" show_hints="TRUE"> Yes. The center is <span class="math inline">\(x_0 = 1\)</span>.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Not really ... ron-closet" id="pig-iron-closet-2-3" w="7" name="pig-iron-closet-2" hint="The coefficients are right. ]pig-iron-closet" show_hints="TRUE"> Not really. The formula suggests that the center is <span class="math inline">\(x_0=1\)</span> but the coefficients are wrong. [ hint: The coefficients are right. ]pig-iron-closet</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Not really ... ron-closet" id="pig-iron-closet-2-3" w="23" name="pig-iron-closet-2" hint="The coefficients are right. ]pig-iron-closet" show_hints="TRUE"> Not really. The formula suggests that the center is <span class="math inline">\(x_0=1\)</span> but the coefficients are wrong. [ hint: The coefficients are right. ]pig-iron-closet</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="pig-iron-closet-2" id="pig-iron-closet-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="pig-iron-closet-2-hintarea">question id: pig-iron-closet-2</small></p>
 </div>
 </div>
@@ -3376,16 +2997,16 @@ Active R chunk&nbsp;2
 </p><p><input type="radio" class="devoirs-mcq" value="$f(x), f^{ ... ), \ldots$" id="frog-throw-screen-1-1" w="19" name="frog-throw-screen-1" hint="You won't find any of these in the definition of $p(x)$ given above. You're confusing $x$ with $x_0$." show_hints="TRUE"> <span class="math inline">\(f(x), f^{(1)}(x), f^{(2)}(x), \ldots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$f(x_0), f ... ), \ldots$" id="frog-throw-screen-1-2" w="19" name="frog-throw-screen-1" hint="These are not functions of $x$. They are numbers computed by evaluating a function at the center point $x_0$." show_hints="TRUE"> <span class="math inline">\(f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$f(x_0), f ... ), \ldots$" id="frog-throw-screen-1-2" w="87" name="frog-throw-screen-1" hint="These are not functions of $x$. They are numbers computed by evaluating a function at the center point $x_0$." show_hints="TRUE"> <span class="math inline">\(f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$f(x_0), \ ... }, \ldots$" id="frog-throw-screen-1-3" w="19" name="frog-throw-screen-1" hint="These are not functions of $x$. They are numbers computed by evaluating a function at the center point $x_0$." show_hints="TRUE"> <span class="math inline">\(f(x_0), \frac{f^{(1)}(x_0)}{1!},  \frac{f^{(2)}(x_0)}{2!}, \ldots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$f(x_0), \ ... }, \ldots$" id="frog-throw-screen-1-3" w="87" name="frog-throw-screen-1" hint="These are not functions of $x$. They are numbers computed by evaluating a function at the center point $x_0$." show_hints="TRUE"> <span class="math inline">\(f(x_0), \frac{f^{(1)}(x_0)}{1!},  \frac{f^{(2)}(x_0)}{2!}, \ldots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(x-x_0),  ... 2, \ldots$" id="frog-throw-screen-1-4" w="35" name="frog-throw-screen-1" hint="Right These are the only places where the name $x$ appears in the Taylor formula." show_hints="TRUE"> <span class="math inline">\((x-x_0), (x - x_0)^2, \ldots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(x-x_0),  ... 2, \ldots$" id="frog-throw-screen-1-4" w="14" name="frog-throw-screen-1" hint="These are the only places where the name $x$ appears in the Taylor formula." show_hints="TRUE"> <span class="math inline">\((x-x_0), (x - x_0)^2, \ldots\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="frog-throw-screen-1" id="frog-throw-screen-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="frog-throw-screen-1-hintarea">question id: frog-throw-screen-1</small></p>
 </div>
 </div>
@@ -3400,19 +3021,19 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0, 0, 0, 0, 0, ... " id="bc1-1-1" w="87" name="bc1-1" hint="wide of the mark" show_hints="TRUE"> 0, 0, 0, 0, 0, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0, 0, 0, 0, 0, ... " id="bc1-1-1" w="23" name="bc1-1" hint="Not so!" show_hints="TRUE"> 0, 0, 0, 0, 0, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 1, 1, 1, ..." id="bc1-1-2" w="5" name="bc1-1" hint="You're right" show_hints="TRUE"> 1, 1, 1, 1, 1, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 1, 1, 1, ..." id="bc1-1-2" w="41" name="bc1-1" hint="Right!" show_hints="TRUE"> 1, 1, 1, 1, 1, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 2, 3, 4, 5, ... " id="bc1-1-3" w="23" name="bc1-1" hint="Try again!" show_hints="TRUE"> 1, 2, 3, 4, 5, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 2, 3, 4, 5, ... " id="bc1-1-3" w="23" name="bc1-1" hint="Incorrect." show_hints="TRUE"> 1, 2, 3, 4, 5, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0, 1, 2, 3, 4, ... " id="bc1-1-4" w="7" name="bc1-1" hint="Not quite right" show_hints="TRUE"> 0, 1, 2, 3, 4, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0, 1, 2, 3, 4, ... " id="bc1-1-4" w="3" name="bc1-1" hint="Think again." show_hints="TRUE"> 0, 1, 2, 3, 4, …</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="bc1-1" id="bc1-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="bc1-1-hintarea">question id: bc1-1</small></p>
 </div>
 </div>
@@ -3421,19 +3042,19 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0, 0, 0, 0, 0, ... " id="bc1-2-1" w="23" name="bc1-2" hint="You're mistaken" show_hints="TRUE"> 0, 0, 0, 0, 0, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0, 0, 0, 0, 0, ... " id="bc1-2-1" w="87" name="bc1-2" hint="Try again!" show_hints="TRUE"> 0, 0, 0, 0, 0, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 2, 3, 4, 5, ... " id="bc1-2-2" w="87" name="bc1-2" hint="Better luck next time." show_hints="TRUE"> 1, 2, 3, 4, 5, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 2, 3, 4, 5, ... " id="bc1-2-2" w="23" name="bc1-2" hint="Incorrect choice." show_hints="TRUE"> 1, 2, 3, 4, 5, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0, 1, 2, 3, 4, ... " id="bc1-2-3" w="23" name="bc1-2" hint="Sorry!" show_hints="TRUE"> 0, 1, 2, 3, 4, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0, 1, 2, 3, 4, ... " id="bc1-2-3" w="87" name="bc1-2" hint="Sorry!" show_hints="TRUE"> 0, 1, 2, 3, 4, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 2, 6, 24, ..." id="bc1-2-4" w="35" name="bc1-2" hint="right-o" show_hints="TRUE"> 1, 1, 2, 6, 24, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 2, 6, 24, ..." id="bc1-2-4" w="8" name="bc1-2" hint="Nice." show_hints="TRUE"> 1, 1, 2, 6, 24, …</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="bc1-2" id="bc1-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="bc1-2-hintarea">question id: bc1-2</small></p>
 </div>
 </div>
@@ -3442,16 +3063,16 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1 + x + \ ... + \cdots$ " id="bc1-3-1" w="23" name="bc1-3" hint="incorrect choice" show_hints="TRUE"> <span class="math inline">\(1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1 + x + \ ... + \cdots$ " id="bc1-3-1" w="7" name="bc1-3" hint="Wrong." show_hints="TRUE"> <span class="math inline">\(1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \cdots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1 + x + \ ...  + \cdots$" id="bc1-3-2" w="5" name="bc1-3" hint="Correct" show_hints="TRUE"> <span class="math inline">\(1 + x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1 + x + \ ...  + \cdots$" id="bc1-3-2" w="14" name="bc1-3" hint="Exactly." show_hints="TRUE"> <span class="math inline">\(1 + x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \cdots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1 + x + \ ... + \cdots$ " id="bc1-3-3" w="7" name="bc1-3" hint="no" show_hints="TRUE"> <span class="math inline">\(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1 + x + \ ... + \cdots$ " id="bc1-3-3" w="7" name="bc1-3" hint="Incorrect choice." show_hints="TRUE"> <span class="math inline">\(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="bc1-3" id="bc1-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="bc1-3-hintarea">question id: bc1-3</small></p>
 </div>
 </div>
@@ -3461,19 +3082,19 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0, 1, -1,  ... , -1, ... " id="bc1-4-1" w="32" name="bc1-4" hint="incorrect choice" show_hints="FALSE"> 0, 1, -1, 1, -1, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0, 1, -1,  ... , -1, ... " id="bc1-4-1" w="7" name="bc1-4" hint="Sorry!" show_hints="FALSE"> 0, 1, -1, 1, -1, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 0, -1,  ... 0, 1, ... " id="bc1-4-2" w="87" name="bc1-4" hint="no" show_hints="FALSE"> 1, 0, -1, 0, 1, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 0, -1,  ... 0, 1, ... " id="bc1-4-2" w="7" name="bc1-4" hint="Not quite." show_hints="FALSE"> 1, 0, -1, 0, 1, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0, 1, 0, -1, 0, ..." id="bc1-4-3" w="29" name="bc1-4" hint="Yes" show_hints="FALSE"> 0, 1, 0, -1, 0, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0, 1, 0, -1, 0, ..." id="bc1-4-3" w="18" name="bc1-4" hint="You're right!" show_hints="FALSE"> 0, 1, 0, -1, 0, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 0, 0, - ... 1, 1, ... " id="bc1-4-4" w="23" name="bc1-4" hint="wrong" show_hints="FALSE"> 1, 0, 0, -1, 1, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 0, 0, - ... 1, 1, ... " id="bc1-4-4" w="3" name="bc1-4" hint="Wrong." show_hints="FALSE"> 1, 0, 0, -1, 1, …</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="bc1-4" id="bc1-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="bc1-4-hintarea">question id: bc1-4</small></p>
 </div>
 </div>
@@ -3482,19 +3103,19 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1 + x + \ ... + \cdots$ " id="bc1-5-1" w="87" name="bc1-5" hint="Not quite right" show_hints="FALSE"> <span class="math inline">\(1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1 + x + \ ... + \cdots$ " id="bc1-5-1" w="87" name="bc1-5" hint="This is wide of the mark." show_hints="FALSE"> <span class="math inline">\(1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \cdots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x - \frac ... + \cdots$ " id="bc1-5-2" w="3" name="bc1-5" hint="no" show_hints="FALSE"> <span class="math inline">\(x - \frac{x^3}{3} - \frac{x^5}{5} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x - \frac ... + \cdots$ " id="bc1-5-2" w="87" name="bc1-5" hint="Hmmm ..." show_hints="FALSE"> <span class="math inline">\(x - \frac{x^3}{3} - \frac{x^5}{5} + \cdots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x - \frac ...  + \cdots$" id="bc1-5-3" w="5" name="bc1-5" hint="Correct" show_hints="FALSE"> <span class="math inline">\(x - \frac{x^3}{6} - \frac{x^5}{120} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x - \frac ...  + \cdots$" id="bc1-5-3" w="16" name="bc1-5" hint="Bullseye!" show_hints="FALSE"> <span class="math inline">\(x - \frac{x^3}{6} - \frac{x^5}{120} + \cdots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1 + x - \ ... + \cdots$ " id="bc1-5-4" w="19" name="bc1-5" hint="wide of the mark" show_hints="FALSE"> <span class="math inline">\(1 + x - \frac{x^3}{6} - \frac{x^5}{24} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1 + x - \ ... + \cdots$ " id="bc1-5-4" w="3" name="bc1-5" hint="Untrue!" show_hints="FALSE"> <span class="math inline">\(1 + x - \frac{x^3}{6} - \frac{x^5}{24} + \cdots\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="bc1-5" id="bc1-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="bc1-5-hintarea">question id: bc1-5</small></p>
 </div>
 </div>
@@ -3503,19 +3124,19 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1 - \frac ... + \cdots$ " id="bc1-6-1" w="19" name="bc1-6" hint="You're mistaken" show_hints="FALSE"> <span class="math inline">\(1 - \frac{x^2}{2} + \frac{x^3}{6} - \frac{x^4}{24} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1 - \frac ... + \cdots$ " id="bc1-6-1" w="7" name="bc1-6" hint="Hmmm ..." show_hints="FALSE"> <span class="math inline">\(1 - \frac{x^2}{2} + \frac{x^3}{6} - \frac{x^4}{24} + \cdots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1 - \frac ... + \cdots$ " id="bc1-6-2" w="32" name="bc1-6" hint="no" show_hints="FALSE"> <span class="math inline">\(1 - \frac{x^2}{2} - \frac{x^4}{4} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1 - \frac ... + \cdots$ " id="bc1-6-2" w="87" name="bc1-6" hint="You're wrong here." show_hints="FALSE"> <span class="math inline">\(1 - \frac{x^2}{2} - \frac{x^4}{4} + \cdots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1 - \frac ...  - \cdots$" id="bc1-6-3" w="41" name="bc1-6" hint="Good job!" show_hints="FALSE"> <span class="math inline">\(1 - \frac{x^2}{6} + \frac{x^4}{24} - \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1 - \frac ...  - \cdots$" id="bc1-6-3" w="5" name="bc1-6" hint="A hit!" show_hints="FALSE"> <span class="math inline">\(1 - \frac{x^2}{6} + \frac{x^4}{24} - \cdots\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1 - \frac ... + \cdots$ " id="bc1-6-4" w="32" name="bc1-6" hint="You're mistaken" show_hints="FALSE"> <span class="math inline">\(1 - \frac{x^2}{2} + \frac{x^4}{120} + \cdots\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1 - \frac ... + \cdots$ " id="bc1-6-4" w="23" name="bc1-6" hint="No." show_hints="FALSE"> <span class="math inline">\(1 - \frac{x^2}{2} + \frac{x^4}{120} + \cdots\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="bc1-6" id="bc1-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="bc1-6-hintarea">question id: bc1-6</small></p>
 </div>
 </div>
@@ -3525,19 +3146,19 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 1, 1, 1 ..." id="bc1-7-1" w="16" name="bc1-7" hint="right-o" show_hints="FALSE"> 1, 1, 1, 1, 1 …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 1, 1, 1 ..." id="bc1-7-1" w="8" name="bc1-7" hint="You're right." show_hints="FALSE"> 1, 1, 1, 1, 1 …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, -1, 1,  ... 1, 1, ... " id="bc1-7-2" w="3" name="bc1-7" hint="You're mistaken" show_hints="FALSE"> 1, -1, 1, -1, 1, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, -1, 1,  ... 1, 1, ... " id="bc1-7-2" w="32" name="bc1-7" hint="Not so!" show_hints="FALSE"> 1, -1, 1, -1, 1, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0, 1, 0, 1, 0, ... " id="bc1-7-3" w="32" name="bc1-7" hint="wide of the mark" show_hints="FALSE"> 0, 1, 0, 1, 0, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0, 1, 0, 1, 0, ... " id="bc1-7-3" w="87" name="bc1-7" hint="No." show_hints="FALSE"> 0, 1, 0, 1, 0, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 0, 1, 0, 1, ... " id="bc1-7-4" w="23" name="bc1-7" hint="Not quite right" show_hints="FALSE"> 1, 0, 1, 0, 1, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 0, 1, 0, 1, ... " id="bc1-7-4" w="19" name="bc1-7" hint="Boo!" show_hints="FALSE"> 1, 0, 1, 0, 1, …</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="bc1-7" id="bc1-7.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="bc1-7-hintarea">question id: bc1-7</small></p>
 </div>
 </div>
@@ -3546,19 +3167,19 @@ Active R chunk&nbsp;2
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 1, 1, 1, ... " id="bc1-8-1" w="87" name="bc1-8" hint="Not quite right" show_hints="FALSE"> 1, 1, 1, 1, 1, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 1, 1, 1, ... " id="bc1-8-1" w="7" name="bc1-8" hint="You might think so, but ..." show_hints="FALSE"> 1, 1, 1, 1, 1, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 1/2, 1/ ... /120, ... " id="bc1-8-2" w="87" name="bc1-8" hint="incorrect choice" show_hints="FALSE"> 1, 1/2, 1/6, 1/24, 1/120, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 1/2, 1/ ... /120, ... " id="bc1-8-2" w="87" name="bc1-8" hint="Not quite right." show_hints="FALSE"> 1, 1/2, 1/6, 1/24, 1/120, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 1/2, ...  1/24, ..." id="bc1-8-3" w="29" name="bc1-8" hint="Yes" show_hints="FALSE"> 1, 1, 1/2, 1/6, 1/24, …</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 1/2, ...  1/24, ..." id="bc1-8-3" w="8" name="bc1-8" hint="Good job!" show_hints="FALSE"> 1, 1, 1/2, 1/6, 1/24, …</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 2!, 3!, 4! " id="bc1-8-4" w="87" name="bc1-8" hint="You're mistaken" show_hints="FALSE"> 1, 1, 2!, 3!, 4!</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1, 1, 2!, 3!, 4! " id="bc1-8-4" w="23" name="bc1-8" hint="Oops!" show_hints="FALSE"> 1, 1, 2!, 3!, 4!</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="bc1-8" id="bc1-8.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="bc1-8-hintarea">question id: bc1-8</small></p>
 </div>
 </div>
@@ -3571,7 +3192,7 @@ Active R chunk&nbsp;2
 Active R chunk&nbsp;3: Function definitions for this exercise.
 </figcaption>
 <div aria-describedby="lst-seahorse-pay-plant-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3583,7 +3204,7 @@ Active R chunk&nbsp;3: Function definitions for this exercise.
 Active R chunk&nbsp;4
 </figcaption>
 <div aria-describedby="lst-seahorse-pay-plant-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3591,32 +3212,129 @@ Active R chunk&nbsp;4
 <p>Find the full interval of the domain of <span class="math inline">\(x\)</span> for which <span class="math inline">\(f(x) - 0.05 &lt; T(x) &lt; f(x) + 0.05\)</span>. (Hint: you may need to modify the plotting commands in <a href="#lst-seahorse-pay-plant-2" class="quarto-xref">Active R chunk&nbsp;<span>4</span></a>.)</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x\in(-1.1,1,1)$ " id="seahorse-pay-plant-1" w="87" name="seahorse-pay-plant" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(x\in(-1.1,1,1)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x\in(-1.1,1,1)$ " id="seahorse-pay-plant-1" w="87" name="seahorse-pay-plant" hint="You might think so, but ..." show_hints="TRUE"> <span class="math inline">\(x\in(-1.1,1,1)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x\in(-1.1,1.5)$" id="seahorse-pay-plant-2" w="16" name="seahorse-pay-plant" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(x\in(-1.1,1.5)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x\in(-1.1,1.5)$" id="seahorse-pay-plant-2" w="29" name="seahorse-pay-plant" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(x\in(-1.1,1.5)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x\in(-1.5,1.1)$ " id="seahorse-pay-plant-3" w="23" name="seahorse-pay-plant" hint="no" show_hints="TRUE"> <span class="math inline">\(x\in(-1.5,1.1)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x\in(-1.5,1.1)$ " id="seahorse-pay-plant-3" w="87" name="seahorse-pay-plant" hint="Nope." show_hints="TRUE"> <span class="math inline">\(x\in(-1.5,1.1)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x\in(-1.5,1.5)$ " id="seahorse-pay-plant-4" w="23" name="seahorse-pay-plant" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(x\in(-1.5,1.5)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x\in(-1.5,1.5)$ " id="seahorse-pay-plant-4" w="87" name="seahorse-pay-plant" hint="This is wide of the mark." show_hints="TRUE"> <span class="math inline">\(x\in(-1.5,1.5)\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="seahorse-pay-plant" id="seahorse-pay-plant.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="seahorse-pay-plant-hintarea">question id: seahorse-pay-plant</small></p>
 </div>
 </div>
+</div>
+<div id="exr-polynomial-computer" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 12</strong></span> &nbsp;</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In draft
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Need to integrate this with the Chapter 27 text.</p>
+</div>
+</div>
+<p>The polynomial computer does not have any problem with overflow or underflow. The key to success is to write the Taylor polynomial for functions such as <span class="math inline">\(\sin(x)\)</span> or <span class="math inline">\(x\)</span> or <span class="math inline">\(x^2\)</span> near <span class="math inline">\(x_0 = 0\)</span>. Such polynomials will always look like:</p>
+<p><span class="math display">\[f(x) = a_1 x^1 + a_2 x^2 + a_3 x^3 + \cdots\]</span></p>
+<p>What’s special here is that the <code>a_0</code> term does not need to be included in the polynomial, since <span class="math inline">\(f(0) = 0\)</span>.</p>
+<ol start="4" type="1">
+<li>One of these functions has a Taylor polynomial at <span class="math inline">\(x_0 = 0\)</span> the <em>does need</em> a non-zero <span class="math inline">\(a_0\)</span> term. The other’s don’t. Which function needs the non-zero <span class="math inline">\(a_0\)</span> term?</li>
+</ol>
+<div class="cell" data-show_hints="true">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="`sin()` " id="rhinosaurus-toss-gloves-4-1" w="19" name="rhinosaurus-toss-gloves-4" hint="Better luck next time." show_hints="TRUE"> <code>sin()</code></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="`tan()` " id="rhinosaurus-toss-gloves-4-2" w="23" name="rhinosaurus-toss-gloves-4" hint="Not so!" show_hints="TRUE"> <code>tan()</code></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="`atan()` " id="rhinosaurus-toss-gloves-4-3" w="87" name="rhinosaurus-toss-gloves-4" hint="This is wide of the mark." show_hints="TRUE"> <code>atan()</code></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="`acos()`" id="rhinosaurus-toss-gloves-4-4" w="14" name="rhinosaurus-toss-gloves-4" hint="Score!" show_hints="TRUE"> <code>acos()</code></p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="rhinosaurus-toss-gloves-4" id="rhinosaurus-toss-gloves-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="rhinosaurus-toss-gloves-4-hintarea">question id: rhinosaurus-toss-gloves-4</small></p>
+</div>
+</div>
+<p>These zero divided by zero problems (like <span class="math inline">\(\sin(x) / x\)</span>) always involve a ratio of two functions (<span class="math inline">\(\sin(x)\)</span> and <span class="math inline">\(x\)</span> here) that don’t need the <span class="math inline">\(a_0\)</span> term in their Taylor series around <span class="math inline">\(x_0 = 0\)</span>. That makes them just a little bit simpler.</p>
+<p>What’s more important than simpler is that, for the expansion of such functions to study the limit at <span class="math inline">\(x \rightarrow 0\)</span>, we only need the <strong>first term with a non-zero coefficient</strong> <span class="math inline">\(a_k\)</span> to represent the function with complete accuracy.</p>
+<p>Why? Consider the 2nd-order Taylor polynomial <span class="math inline">\(a_1 x + a_2 x^2\)</span>. If we are to be able to safely disregard the <span class="math inline">\(a_2\)</span> term it is because that term, for small <span class="math inline">\(x\)</span> is much, much smaller than the <span class="math inline">\(a_1 x\)</span> term. And we can always choose non-zero <span class="math inline">\(x\)</span> to make this so.</p>
+<p>For instance, suppose our polynomial were <span class="math inline">\(x + 100 x^2\)</span>. For <span class="math inline">\(x=0.1\)</span>, the first and second terms are the same size; we need them both for accuracy. For <span class="math inline">\(x=0.01\)</span>, the second term is 1/100 the size of the first term, maybe we don’t need the second term so much. You can always make <span class="math inline">\(x\)</span> so small that anyone will be satisfied that the second term is utterly negligible compared to the first.</p>
+<p>Here’s the method:</p>
+<p>Suppose you have a function <span class="math inline">\(f(x) \equiv u(x)/v(x)\)</span> where <span class="math display">\[\lim_{x\rightarrow 0} u(x) = 0\ \ \ \text{and}\ \ \ \lim_{x\rightarrow 0} v(x) = 0\]</span> Given this, <span class="math inline">\(f(0)\)</span> is not defined. But we can ask whether there is a sensible value that can be plugged in in place of <span class="math inline">\(f(0)\)</span> that will cause the modified <span class="math inline">\(f()\)</span> to be continuous at <span class="math inline">\(x=0\)</span>.</p>
+<p>Step 1: Write the Taylor polynomial expansion around <span class="math inline">\(x-0 = 0\)</span> for both <span class="math inline">\(u(x)\)</span> and <span class="math inline">\(v(x)\)</span>. If both expansions have a non-zero first coefficient, you can stop there. Now we have:</p>
+<p><span class="math display">\[u(x) \approx a_1 x\]</span> <span class="math display">\[v(x) \approx b_1 x\]</span> where <span class="math inline">\(a_1 = \partial_x u(0)\)</span> and <span class="math inline">\(b_1 = \partial_x v(0)\)</span>.</p>
+<p>Step 2: Divide the polynomial (really just linear!) expansion of <span class="math inline">\(u()\)</span> by the expansion of <span class="math inline">\(v()\)</span> to get</p>
+<p><span class="math display">\[\lim_{x\rightarrow 0}\frac{u(x)}{v(x)} = \lim_{x\rightarrow 0} \frac{a_1 x}{b_1 x} = \frac{a_1}{b_1}\]</span></p>
+<p>that is the answer, <span class="math inline">\(a_1/b_1\)</span>, at least when <span class="math inline">\(b_1 \neq 0\)</span>. We will come back to that case later.</p>
+<ol start="5" type="1">
+<li>For <span class="math inline">\(\lim_{x\rightarrow 0} \sin(x) / x\)</span>, what are <span class="math inline">\(a_1\)</span> and <span class="math inline">\(b_1\)</span>?</li>
+</ol>
+<div class="cell" data-show_hints="true">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="$a_1 = 1$  ...  $b_1 = 1$" id="rhinosaurus-toss-gloves-5-1" w="20" name="rhinosaurus-toss-gloves-5" hint="You're right." show_hints="TRUE"> <span class="math inline">\(a_1 = 1\)</span> and <span class="math inline">\(b_1 = 1\)</span></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="$a_1 = \pi ... _1 = \pi$ " id="rhinosaurus-toss-gloves-5-2" w="3" name="rhinosaurus-toss-gloves-5" hint="Think again." show_hints="TRUE"> <span class="math inline">\(a_1 = \pi\)</span> and <span class="math inline">\(b_1 = \pi\)</span></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="$a_1 = -1$ ... b_1 = -1$ " id="rhinosaurus-toss-gloves-5-3" w="3" name="rhinosaurus-toss-gloves-5" hint="Not quite right." show_hints="TRUE"> <span class="math inline">\(a_1 = -1\)</span> and <span class="math inline">\(b_1 = -1\)</span></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="$a_1 = 0$  ... b_1 = -1$ " id="rhinosaurus-toss-gloves-5-4" w="32" name="rhinosaurus-toss-gloves-5" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(a_1 = 0\)</span> and <span class="math inline">\(b_1 = -1\)</span></p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="rhinosaurus-toss-gloves-5" id="rhinosaurus-toss-gloves-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="rhinosaurus-toss-gloves-5-hintarea">question id: rhinosaurus-toss-gloves-5</small></p>
+</div>
+</div>
+<p>Sometimes the singularity is at some non-zero <span class="math inline">\(x\)</span>. For instance, <span class="math display">\[h(x) \equiv \frac{x^2 - 16}{x - 4}\]</span> The divide-by-zero comes into play when <span class="math inline">\(x=4\)</span>. So is there a sensible value to plug in for <span class="math inline">\(h(4)\)</span> to replace the singularity.</p>
+<p>Here, write your Taylor polynomials around <span class="math inline">\(x_0 = 4\)</span>, the location of the singularity. We will get:</p>
+<p><span class="math display">\[x^2 - 16 = a_1 (x-4) + a_2 (x-4)^2 + \cdots\]</span> <span class="math display">\[x - 4 = b_1 (x-4)\]</span> Using Taylor’s formula for coefficients we will get <span class="math display">\[a_1 = \partial_x (x^2 - 16)\left.\right|_{x=4} = 2x\left.\right|_{x=4} = 8\]</span> <span class="math display">\[b_1 = \partial_x (x - 4) = 1\]</span></p>
+<p>Consequently, <span class="math inline">\(\lim_{x\rightarrow 4} \frac{x^2 - 16}{x - 4} = 8\)</span></p>
+<p>We’ve been discussing ratios of functions where the ratio cannot be calculated at the singularity using simply the limits of the functions approaching that singularity. (For instance <span class="math inline">\(\lim_{x\rightarrow 0} \sin(x) = 0\)</span> and <span class="math inline">\(\lim_{x\rightarrow 0} x = 0\)</span>, but knowing this does not tell us what <span class="math inline">\(\lim_{x\rightarrow 0} \frac{\sin(x)}{x}\)</span> will be. These are called “indeterminate forms.” As you’ve seen, if we know more about the functions than merely their individual limits, we can sometimes resolve the indeterminacy. Here we are doing that by writing each function as a low-order polynomial.</p>
+<p>The indeterminate form <span class="math inline">\(\lim_{x\rightarrow 0} \frac{\sin(x)}{x}\)</span> might be said to have the “shape” 0/0. But 0/0 is just a notation about the limits of the two individual functions. There are indeterminate forms with other shapes: <span class="math display">\[\frac{0}{0}\ \ \ \ \ \ \frac{\infty}{\infty}\ \ \ \ \ \ 0\cdot {\infty\ \ \ \  \ 0^0\ \ \ \ \ \ \infty^0\ \ \ \ \ \ 1^\infty\ \ \ \ \ \ \infty - \infty}\]</span> Keep in mind that something like <span class="math inline">\(0 \infty\)</span> is not a multiplication problem but rather shorthand for <span class="math inline">\(u(x) v(x)\)</span> where <span class="math inline">\(\lim_{x\rightarrow x_0} u(x) = 0\)</span> and <span class="math inline">\(\lim_{x\rightarrow x_0} v(x) \rightarrow \infty\)</span>.</p>
+<p>There is a variety of algebraic tricks to try to transform these different shapes of indeterminate forms into a ratio of functions, each of which goes to zero at the relevant <span class="math inline">\(x_0\)</span>. Once that is done, you can apply the method described above.</p>
+<p>Indeterminate forms have been a bonanza for the author of calculus book exercises, who can write an large number of examples, many of which have never been seen in the wild.</p>
+<p>One shortcut that works in practice is to make a graph of the indeterminate form near the singularity. If the limit as <span class="math inline">\(x\)</span> approaches the singularity is a finite number, you can read off the result from the graph.</p>
+<p>In <a href="#lst-x-logx" class="quarto-xref">Active R chunk&nbsp;<span>5</span></a>, the function <span class="math inline">\(g(x)\equiv x \ln(x)\)</span> is set up. This function has a singularity at <span class="math inline">\(x=0\)</span>. Examine the plot and determine where the function value is going as you walk along the graph to the singularity.</p>
+<div id="lst-x-logx" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-x-logx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Active R chunk&nbsp;5
+</figcaption>
+<div aria-describedby="lst-x-logx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</figure>
 </div>
 <section id="activities" class="level3">
 <h3 class="anchored" data-anchor-id="activities">Activities</h3>
 <div id="exr-bee-throw-mug" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 10</strong></span> In this exercise, you’re going to approximate a sinusoid <span class="math inline">\(sin(x)\)</span> with polynomials of order 3, 5, and 7. The approximation should go exactly through the coordinate pair <span class="math inline">\((x_0=0, y=0)\)</span> shown as a bright dot on the graph. Notice that the approximation is exacty tangent to the sinusoid at <span class="math inline">\(x_0 = 0\)</span>: the approximating line goes straight through the dot and continues pretty much through the center of the thick line marking the sinusoid, until the sinusoid curves away from the straight line.</p>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: All aesthetics have length 1, but the data has 101 rows.
+ℹ Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="27-exercises_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="27-exercises_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3640,16 +3358,16 @@ Active R chunk&nbsp;4
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Because pa ... e numbers." id="birch-dig-radio-1-1" w="32" name="birch-dig-radio-1" hint="No! A partial derivative is a **function**, like all derivatives." show_hints="TRUE"> Because partial derivatives are numbers.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because pa ... e numbers." id="birch-dig-radio-1-1" w="7" name="birch-dig-radio-1" hint="No! A partial derivative is a **function**, like all derivatives." show_hints="TRUE"> Because partial derivatives are numbers.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Because th ...  an input." id="birch-dig-radio-1-2" w="41" name="birch-dig-radio-1" hint="Absolutely. In the forms we are *evaluating* the partial derivative function at the fixed input value $x_0$." show_hints="TRUE"> Because the notation <span class="math inline">\(x_0\)</span> is used to refer to a number, not the name of an input.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Because th ...  an input." id="birch-dig-radio-1-2" w="18" name="birch-dig-radio-1" hint="Absolutely. In the forms we are *evaluating* the partial derivative function at the fixed input value $x_0$." show_hints="TRUE"> Because the notation <span class="math inline">\(x_0\)</span> is used to refer to a number, not the name of an input.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It was a mistake. " id="birch-dig-radio-1-3" w="87" name="birch-dig-radio-1" hint="Not quite right" show_hints="TRUE"> It was a mistake.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It was a mistake. " id="birch-dig-radio-1-3" w="3" name="birch-dig-radio-1" hint="Better luck next time." show_hints="TRUE"> It was a mistake.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="birch-dig-radio-1" id="birch-dig-radio-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="birch-dig-radio-1-hintarea">question id: birch-dig-radio-1</small></p>
 </div>
 </div>
@@ -3705,15 +3423,15 @@ Active R chunk&nbsp;4
 </tbody>
 </table>
 <ol type="1">
-<li>Write a Taylor polynomial function for <span class="math inline">\(\dnorm(x)\)</span> around <span class="math inline">\(x_0=0\)</span>). To do this, you will have to evaluate each of the 9 formulas above at <span class="math inline">\(x=0\)</span>, producing a number. For example, the first five formulas will give 0.3989, 0, -0.3989, 0, 1.1968. This would expand into the Taylor function defined in <a href="#lst-birch-dig-radio-rcd-1" class="quarto-xref">Active R chunk&nbsp;<span>5</span></a>:</li>
+<li>Write a Taylor polynomial function for <span class="math inline">\(\dnorm(x)\)</span> around <span class="math inline">\(x_0=0\)</span>). To do this, you will have to evaluate each of the 9 formulas above at <span class="math inline">\(x=0\)</span>, producing a number. For example, the first five formulas will give 0.3989, 0, -0.3989, 0, 1.1968. This would expand into the Taylor function defined in <a href="#lst-birch-dig-radio-rcd-1" class="quarto-xref">Active R chunk&nbsp;<span>6</span></a>:</li>
 </ol>
 <div id="lst-birch-dig-radio-rcd-1" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-birch-dig-radio-rcd-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;5
+Active R chunk&nbsp;6
 </figcaption>
 <div aria-describedby="lst-birch-dig-radio-rcd-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3726,15 +3444,15 @@ Active R chunk&nbsp;5
 </ol>
 <p>Say over what domain <code>T_at_0()</code> is a good approximation to <code>dnorm()</code> and over what domain <code>T_at_1()</code> is a good approximation to <code>dnorm()</code>. Do the two domains overlap?</p>
 <ol start="5" type="1">
-<li>Write a piecewise function <code>T()</code> as defined in <a href="#lst-birch-dig-radio-rcd-5" class="quarto-xref">Active R chunk&nbsp;<span>6</span></a>:</li>
+<li>Write a piecewise function <code>T()</code> as defined in <a href="#lst-birch-dig-radio-rcd-5" class="quarto-xref">Active R chunk&nbsp;<span>7</span></a>:</li>
 </ol>
 <div id="lst-birch-dig-radio-rcd-5" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-birch-dig-radio-rcd-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;6
+Active R chunk&nbsp;7
 </figcaption>
 <div aria-describedby="lst-birch-dig-radio-rcd-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-6"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3813,15 +3531,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3841,7 +3566,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3854,6 +3582,7 @@ console.log("Added hint summary.")
 
 
 </section>
+</div>
 </div>
 
 </main> <!-- /main -->
@@ -3939,8 +3668,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -4051,7 +3778,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -4284,8 +4010,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Block-3-models.html" class="pagination-link" aria-label="Block 3 Models">
-        <span class="nav-page-text">Block 3 Models</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Block-2-models.html" class="pagination-link" aria-label="Differentiation projects">
+        <span class="nav-page-text">Differentiation projects</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"stroke_model <- mosaic::fitModel(stroke ~ A*bore^b, \n                         data = Engines)\ngf_point(stroke ~ bore, data = Engines) |>\n  slice_plot(stroke_model(bore) ~ bore, color=\"blue\")","id":1,"options":{"fig-cap":"","out-height":"","fig-width":7,"results":"markup","read-only":"false","editor-max-height":"","message":"true","output":"true","editor-quick-suggestions":"false","context":"interactive","comment":"","fig-height":5,"out-width":"700px","classes":"","editor-font-scale":"1","warning":"true","dpi":72,"editor-word-wrap":"true","autorun":"false","label":"unnamed-chunk-1"}}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"stroke_model <- \n  mosaic::fitModel(stroke ~ A*bore^b, \n                   data = Engines)\ngf_point(stroke ~ bore, data = Engines) |>\n  slice_plot(stroke_model(bore) ~ bore, \n             color=\"blue\")","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1613,7 +1613,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Block I Preliminaries</a></li><li class="breadcrumb-item"><a href="./07-reading.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data, functions, graphics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Preliminaries</a></li><li class="breadcrumb-item"><a href="./07-reading.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data, functions, graphics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1634,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2963,7 +2582,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Block I Preliminaries</a></li><li class="breadcrumb-item"><a href="./07-reading.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data, functions, graphics</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Preliminaries</a></li><li class="breadcrumb-item"><a href="./07-reading.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data, functions, graphics</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-chapter-7" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data, functions, graphics</span></span></h1>
 </div>
@@ -2988,49 +2607,24 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="reading-questions" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="reading-questions">Reading questions</h2>
 <div id="prp-7-rows-columns" class="theorem proposition">
 <p><span class="theorem-title"><strong>Reading question 7.1</strong></span> What is the name given in the Reading for an array of rows and columns holding data?</p>
-<div class="cell">
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="data record" id="rows-columns-1" w="87" name="rows-columns" hint="wrong" show_hints="false"> data record</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="data table" id="rows-columns-2" w="3" name="rows-columns" hint="Not quite right" show_hints="false"> data table</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="data frame" id="rows-columns-3" w="5" name="rows-columns" hint="Yes" show_hints="false"> data frame</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="data array" id="rows-columns-4" w="3" name="rows-columns" hint="Better luck next time." show_hints="false"> data array</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="Just plain &quot;data&quot;" id="rows-columns-5" w="7" name="rows-columns" hint="Try again!" show_hints="false"> Just plain “data”</p>
-<p></p>
-<input type="radio" class="devoirs-mcq" name="rows-columns" id="rows-columns.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="cell" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="data record" id="rows-columns-1" w="32" name="rows-columns" hint="Untrue!" show_hints="false"> data record &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="data table" id="rows-columns-2" w="3" name="rows-columns" hint="Hmmm ..." show_hints="false"> data table &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="data frame" id="rows-columns-3" w="16" name="rows-columns" hint="Yup!" show_hints="false"> data frame &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="data array" id="rows-columns-4" w="23" name="rows-columns" hint="Boo!" show_hints="false"> data array &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Just plain &quot;data&quot;" id="rows-columns-5" w="23" name="rows-columns" hint="Try again!" show_hints="false"> Just plain “data” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="rows-columns" id="rows-columns.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="rows-columns-hintarea">question id: rows-columns</small></p>
 </div>
 </div>
 </div>
 <div id="prp-7-variable" class="theorem proposition">
 <p><span class="theorem-title"><strong>Reading question 7.2</strong></span> Which of these is used as the generic name for a column?</p>
-<div class="cell">
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="variable" id="variable-name-1" w="8" name="variable-name" hint="Correct" show_hints="false"> variable</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="unknown" id="variable-name-2" w="87" name="variable-name" hint="Try again!" show_hints="false"> unknown</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="measurement" id="variable-name-3" w="87" name="variable-name" hint="wide of the mark" show_hints="false"> measurement</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="instance" id="variable-name-4" w="32" name="variable-name" hint="Not quite right" show_hints="false"> instance</p>
-<p></p>
-<input type="radio" class="devoirs-mcq" name="variable-name" id="variable-name.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="cell" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="variable" id="variable-name-1" w="20" name="variable-name" hint="You're right." show_hints="false"> variable &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="unknown" id="variable-name-2" w="23" name="variable-name" hint="Incorrect choice." show_hints="false"> unknown &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="measurement" id="variable-name-3" w="19" name="variable-name" hint="Boo!" show_hints="false"> measurement &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="instance" id="variable-name-4" w="32" name="variable-name" hint="Boo!" show_hints="false"> instance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="variable-name" id="variable-name.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="variable-name-hintarea">question id: variable-name</small></p>
 </div>
 </div>
@@ -3038,8 +2632,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="prp-7-plot-data" class="theorem proposition">
 <p><span class="theorem-title"><strong>Reading question 7.3</strong></span> Which R/mosaic function is used to plot data?</p>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="`plot()`" id="plot-data-1" w="23" name="plot-data" hint="You're mistaken" show_hints="TRUE"> <code>plot()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`data_plot()`" id="plot-data-2" w="87" name="plot-data" hint="Not quite right" show_hints="TRUE"> <code>data_plot()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`gf_point()`" id="plot-data-3" w="29" name="plot-data" hint="That's right. Admittedly it is an odd name. But the `gf_` series of data-graphing functions is standard in the mosaic package." show_hints="TRUE"> <code>gf_point()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`scatter()`" id="plot-data-4" w="32" name="plot-data" hint="Try again!" show_hints="TRUE"> <code>scatter()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`scatter_plot()`" id="plot-data-5" w="87" name="plot-data" hint="You're mistaken" show_hints="TRUE"> <code>scatter_plot()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="plot-data" id="plot-data.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="`plot()`" id="plot-data-1" w="23" name="plot-data" hint="Boo!" show_hints="TRUE"> <code>plot()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`data_plot()`" id="plot-data-2" w="7" name="plot-data" hint="Not quite right." show_hints="TRUE"> <code>data_plot()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`gf_point()`" id="plot-data-3" w="14" name="plot-data" hint="That's right. Admittedly it is an odd name. But the `gf_` series of data-graphing functions is standard in the mosaic package." show_hints="TRUE"> <code>gf_point()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`scatter()`" id="plot-data-4" w="3" name="plot-data" hint="Untrue!" show_hints="TRUE"> <code>scatter()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`scatter_plot()`" id="plot-data-5" w="19" name="plot-data" hint="Not on target." show_hints="TRUE"> <code>scatter_plot()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="plot-data" id="plot-data.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="plot-data-hintarea">question id: plot-data</small></p>
 </div>
 </div>
@@ -3050,8 +2644,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <br>
 What is the name of the <code>|&gt;</code> punctuation?</div>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="&quot;connector&quot;" id="punctuation-1" w="23" name="punctuation" hint="Better luck next time." show_hints="false"> “connector” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="&quot;followed by&quot;" id="punctuation-2" w="32" name="punctuation" hint="wide of the mark" show_hints="false"> “followed by” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="&quot;pipe&quot;" id="punctuation-3" w="14" name="punctuation" hint="Nice." show_hints="false"> “pipe” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="&quot;channel&quot;" id="punctuation-4" w="3" name="punctuation" hint="Not quite right" show_hints="false"> “channel” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="&quot;culvert&quot;" id="punctuation-5" w="87" name="punctuation" hint="wrong" show_hints="false"> “culvert” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="punctuation" id="punctuation.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="&quot;connector&quot;" id="punctuation-1" w="23" name="punctuation" hint="Oops!" show_hints="false"> “connector” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="&quot;followed by&quot;" id="punctuation-2" w="87" name="punctuation" hint="You might think so, but ..." show_hints="false"> “followed by” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="&quot;pipe&quot;" id="punctuation-3" w="16" name="punctuation" hint="Yup!" show_hints="false"> “pipe” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="&quot;channel&quot;" id="punctuation-4" w="7" name="punctuation" hint="Untrue!" show_hints="false"> “channel” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="&quot;culvert&quot;" id="punctuation-5" w="32" name="punctuation" hint="No." show_hints="false"> “culvert” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="punctuation" id="punctuation.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="punctuation-hintarea">question id: punctuation</small></p>
 </div>
 </div>
@@ -3059,27 +2653,27 @@ What is the name of the <code>|&gt;</code> punctuation?</div>
 <div id="prp-7-trivia" class="theorem proposition">
 <p><span class="theorem-title"><strong>Reading question 7.5</strong></span> A trivia question that you can look up in the Reading: What is the displacement for the Webra Speedy internal combustion engine?</p>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0.9 cc" id="webra-speedy-1" w="32" name="webra-speedy" hint="Better luck next time." show_hints="false"> 0.9 cc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1.8 cc" id="webra-speedy-2" w="29" name="webra-speedy" hint="right-o" show_hints="false"> 1.8 cc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2.5 cc" id="webra-speedy-3" w="23" name="webra-speedy" hint="Try again!" show_hints="false"> 2.5 cc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3.4 cc" id="webra-speedy-4" w="7" name="webra-speedy" hint="Try again!" show_hints="false"> 3.4 cc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="webra-speedy" id="webra-speedy.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0.9 cc" id="webra-speedy-1" w="7" name="webra-speedy" hint="No." show_hints="false"> 0.9 cc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1.8 cc" id="webra-speedy-2" w="16" name="webra-speedy" hint="A win!" show_hints="false"> 1.8 cc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2.5 cc" id="webra-speedy-3" w="87" name="webra-speedy" hint="No." show_hints="false"> 2.5 cc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3.4 cc" id="webra-speedy-4" w="7" name="webra-speedy" hint="Untrue!" show_hints="false"> 3.4 cc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="webra-speedy" id="webra-speedy.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="webra-speedy-hintarea">question id: webra-speedy</small></p>
 </div>
 </div>
 </div>
 <div id="prp-8-data-function" class="theorem proposition">
-<p><span class="theorem-title"><strong>Reading question 7.6</strong></span> Run the code in in <a href="#lst-engines-power-law" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-engines-power-law</span></a>. It is the same as that used for an example in the chapter.</p>
+<p><span class="theorem-title"><strong>Reading question 7.6</strong></span> Run the code in in <a href="#lst-engines-power-law" class="quarto-xref">Active R chunk&nbsp;<span>7.1</span></a>. It is the same as that used for an example in the chapter.</p>
 <div id="lst-engines-power-law" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-engines-power-law-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;7.1
 </figcaption>
 <div aria-describedby="lst-engines-power-law-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
 <p>What is it about the data points that tells us <code>stroke_model</code> is not an exact representation of the data?</p>
-<p><textarea id="engines-power-law" name="engines-power-law" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID engines-power-law"></textarea> </p><div style="color: grey;"> <small>question id: engines-power-law</small> </div><p></p>
+<p><textarea id="engines-power-law" name="engines-power-law" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID engines-power-law)"></textarea></p>
 </div>
 <span id="devoirs-docID" style="display: none;">07-reading.rmarkdown</span> <button onclick="devoirsSubmit()">Collect your answers</button>
 <div id="devoirs_summary">
@@ -3139,15 +2733,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3167,7 +2768,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3264,8 +2868,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3376,7 +2978,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

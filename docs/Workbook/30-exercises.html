@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"classes":"","out-width":"700px","warning":"true","fig-width":7,"editor-word-wrap":"true","label":"unnamed-chunk-1","editor-quick-suggestions":"false","fig-cap":"","dpi":72,"message":"true","context":"interactive","comment":"","autorun":"false","output":"true","results":"markup","read-only":"false","editor-max-height":"","editor-font-scale":"1","fig-height":5,"out-height":""},"code":"A <- rbind(2.1,  -3.4)\nB <- rbind(0.3, 4.2)\nC <- rbind(-2, 3.8)\nD <- rbind(1.1,  -3,  2.2,  -1)\nE <- rbind(6,  4,  -2,  -1)\nF <- rbind(0,  3,  2,  1)\nG <- rbind(1, -2,  1,  1)\nH <- rbind(-2, 0, 3, 4)"},{"id":2,"options":{"classes":"","out-width":"700px","warning":"true","fig-width":7,"editor-word-wrap":"true","label":"unnamed-chunk-2","editor-quick-suggestions":"false","fig-cap":"","dpi":72,"message":"true","context":"interactive","comment":"","autorun":"false","output":"true","results":"markup","read-only":"false","editor-max-height":"","editor-font-scale":"1","fig-height":5,"out-height":""},"code":"M <- cbind(A, B)    # Problem setup: Matrix packaging up vectors\nb <- C              # Problem setup: Target vector \nx <- qr.solve(M, b) # Solve the target problem M %*% x = b for x\nbhat <- M %*% x     # Result: projected  vector\nresid <- b  - bhat  # Result: residual vector\nt(A)  %*%  A        # square length of a vector"},{"id":3,"options":{"classes":"","out-width":"700px","warning":"true","fig-width":7,"editor-word-wrap":"true","label":"unnamed-chunk-3","editor-quick-suggestions":"false","fig-cap":"","dpi":72,"message":"true","context":"interactive","comment":"","autorun":"false","output":"true","results":"markup","read-only":"false","editor-max-height":"","editor-font-scale":"1","fig-height":5,"out-height":""},"code":"v1 <- cbind(rnorm(4))"},{"id":4,"options":{"classes":"","out-width":"700px","warning":"true","fig-width":7,"editor-word-wrap":"true","label":"unnamed-chunk-4","editor-quick-suggestions":"false","fig-cap":"","dpi":72,"message":"true","context":"interactive","comment":"","autorun":"false","output":"true","results":"markup","read-only":"false","editor-max-height":"","editor-font-scale":"1","fig-height":5,"out-height":""},"code":"w <- cbind(rnorm(4))"},{"id":5,"options":{"classes":"","out-width":"700px","warning":"true","fig-width":7,"editor-word-wrap":"true","label":"unnamed-chunk-5","editor-quick-suggestions":"false","fig-cap":"","dpi":72,"message":"true","context":"interactive","comment":"","autorun":"false","output":"true","results":"markup","read-only":"false","editor-max-height":"","editor-font-scale":"1","fig-height":5,"out-height":""},"code":"v2 <- w - (w %onto% v1)"}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"A <- rbind(2.1,  -3.4)\nB <- rbind(0.3, 4.2)\nC <- rbind(-2, 3.8)\nD <- rbind(1.1,  -3,  2.2,  -1)\nE <- rbind(6,  4,  -2,  -1)\nF <- rbind(0,  3,  2,  1)\nG <- rbind(1, -2,  1,  1)\nH <- rbind(-2, 0, 3, 4)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"M <- cbind(A, B)    # Problem setup: Matrix packaging up vectors\nb <- C              # Problem setup: Target vector \nx <- qr.solve(M, b) # Solve the target problem M %*% x = b for x\nbhat <- M %*% x     # Result: projected  vector\nresid <- b  - bhat  # Result: residual vector\nt(A)  %*%  A        # square length of a vector","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"v1 <- cbind(rnorm(4))","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"w <- cbind(rnorm(4))","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"v2 <- w - (w %onto% v1)","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1634,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2982,75 +2601,77 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-kangaroo-light-bowl" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> Here is a direction, <span class="math inline">\(\vec{\mathbf D}\)</span>:</p>
 <p><span class="math display">\[\vec{\mathbf D} \equiv  \left(\begin{array}{c}2\\5\end{array}\right)\]</span> Find the projection of <span class="math inline">\(\vec{\mathbf V} \equiv (1, 3)^T\)</span> onto <span class="math inline">\(\vec{\mathbf D}\)</span>.</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$0.59 \vec ... mathbf D}$" id="kangaroo-light-bowl-1-1" w="14" name="kangaroo-light-bowl-1" hint="right-o" show_hints="TRUE"> <span class="math inline">\(0.59 \vec{\mathbf D}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$0.59 \vec ... mathbf D}$" id="kangaroo-light-bowl-1-1" w="14" name="kangaroo-light-bowl-1" hint="Yeah!" show_hints="TRUE"> <span class="math inline">\(0.59 \vec{\mathbf D}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left(5,  ... \right)^T$" id="kangaroo-light-bowl-1-2" w="19" name="kangaroo-light-bowl-1" hint="The projection of $\vec{\mathbf V}$ onto the direction of $\vec{\mathbf D}$ will always be a scalar multiple of $\vec{\mathbf D}$." show_hints="TRUE"> <span class="math inline">\(\left(5, 6\right)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left(5,  ... \right)^T$" id="kangaroo-light-bowl-1-2" w="87" name="kangaroo-light-bowl-1" hint="The projection of $\vec{\mathbf V}$ onto the direction of $\vec{\mathbf D}$ will always be a scalar multiple of $\vec{\mathbf D}$." show_hints="TRUE"> <span class="math inline">\(\left(5, 6\right)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... \right)^T$" id="kangaroo-light-bowl-1-3" w="7" name="kangaroo-light-bowl-1" hint="If $\left(5,6\right)^T$ were the residual vector, this would be true." show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf V} - \left(5, 6\right)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... \right)^T$" id="kangaroo-light-bowl-1-3" w="3" name="kangaroo-light-bowl-1" hint="If $\left(5,6\right)^T$ were the residual vector, this would be true." show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf V} - \left(5, 6\right)^T\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="kangaroo-light-bowl-1" id="kangaroo-light-bowl-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="kangaroo-light-bowl-1-hintarea">question id: kangaroo-light-bowl-1</small></p>
 </div>
 </div>
 <p>Find the <strong>residual vector</strong> <span class="math inline">\(\vec{\mathbf R}\)</span> from the projection of <span class="math inline">\(\vec{\mathbf V} \equiv (1, 3)^T\)</span> onto <span class="math inline">\(\vec{\mathbf D}\)</span>.</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... 07\right)$" id="kangaroo-light-bowl-2-1" w="18" name="kangaroo-light-bowl-2" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(0.83, 2.07\right)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... 07\right)$" id="kangaroo-light-bowl-2-1" w="5" name="kangaroo-light-bowl-2" hint="That's right." show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(0.83, 2.07\right)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... 28\right)$" id="kangaroo-light-bowl-2-2" w="23" name="kangaroo-light-bowl-2" hint="The residual  from projecting a column vector onto another column vector will be a column vector" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(0.31, 1.28\right)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... 28\right)$" id="kangaroo-light-bowl-2-2" w="3" name="kangaroo-light-bowl-2" hint="The residual  from projecting a column vector onto another column vector will be a column vector" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(0.31, 1.28\right)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... right)^T$ " id="kangaroo-light-bowl-2-3" w="7" name="kangaroo-light-bowl-2" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(1.28, 0.31\right)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... right)^T$ " id="kangaroo-light-bowl-2-3" w="19" name="kangaroo-light-bowl-2" hint="Not so!" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(1.28, 0.31\right)^T\)</span></p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... 31\right)$" id="kangaroo-light-bowl-2-4" w="32" name="kangaroo-light-bowl-2" hint="Try adding $\vec{\mathbf R} + \vec{\mathbf V}$ and see if you get $\vec{\mathbf D}" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R}  = \left(0.83, 0.31\right)\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="kangaroo-light-bowl-2" id="kangaroo-light-bowl-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="kangaroo-light-bowl-2-hintarea">question id: kangaroo-light-bowl-2</small></p>
 </div>
 </div>
 <p>Find the projection of <span class="math inline">\(\vec{\mathbf V} \equiv (3, 1)^T\)</span> onto <span class="math inline">\(\vec{\mathbf D}\)</span>.</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$0.379 \ve ... mathbf D}$" id="kangaroo-light-bowl-3-1" w="20" name="kangaroo-light-bowl-3" hint="Nice." show_hints="TRUE"> <span class="math inline">\(0.379 \vec{\mathbf D}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$0.379 \ve ... mathbf D}$" id="kangaroo-light-bowl-3-1" w="5" name="kangaroo-light-bowl-3" hint="Bingo!" show_hints="TRUE"> <span class="math inline">\(0.379 \vec{\mathbf D}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left(5,  ... \right)^T$" id="kangaroo-light-bowl-3-2" w="7" name="kangaroo-light-bowl-3" hint="The projection of $\vec{\mathbf V}$ onto the direction of $\vec{\mathbf D}$ will always be a scalar multiple of $\vec{\mathbf D}$." show_hints="TRUE"> <span class="math inline">\(\left(5, 6\right)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left(5,  ... \right)^T$" id="kangaroo-light-bowl-3-2" w="23" name="kangaroo-light-bowl-3" hint="The projection of $\vec{\mathbf V}$ onto the direction of $\vec{\mathbf D}$ will always be a scalar multiple of $\vec{\mathbf D}$." show_hints="TRUE"> <span class="math inline">\(\left(5, 6\right)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... \right)^T$" id="kangaroo-light-bowl-3-3" w="3" name="kangaroo-light-bowl-3" hint="If $\left(5,6\right)^T$ were the residual vector, this would be true." show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf V} - \left(5, 6\right)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... \right)^T$" id="kangaroo-light-bowl-3-3" w="19" name="kangaroo-light-bowl-3" hint="If $\left(5,6\right)^T$ were the residual vector, this would be true." show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf V} - \left(5, 6\right)^T\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="kangaroo-light-bowl-3" id="kangaroo-light-bowl-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="kangaroo-light-bowl-3-hintarea">question id: kangaroo-light-bowl-3</small></p>
 </div>
 </div>
 <p>Find the <strong>residual vector</strong> <span class="math inline">\(\vec{\mathbf R}\)</span> from the projection of <span class="math inline">\(\vec{\mathbf V} \equiv (3, 1)^T\)</span> onto <span class="math inline">\(\vec{\mathbf D}\)</span>.</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... \right)^T$" id="kangaroo-light-bowl-4-1" w="35" name="kangaroo-light-bowl-4" hint="right-o" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(-0.17, 0.07\right)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... \right)^T$" id="kangaroo-light-bowl-4-1" w="14" name="kangaroo-light-bowl-4" hint="Right!" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(-0.17, 0.07\right)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... 07\right)$" id="kangaroo-light-bowl-4-2" w="87" name="kangaroo-light-bowl-4" hint="The residual  from projecting a column vector onto another column vector will be a column vector" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(-0.17, 0.07\right)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... 07\right)$" id="kangaroo-light-bowl-4-2" w="23" name="kangaroo-light-bowl-4" hint="The residual  from projecting a column vector onto another column vector will be a column vector" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(-0.17, 0.07\right)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... right)^T$ " id="kangaroo-light-bowl-4-3" w="7" name="kangaroo-light-bowl-4" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(0.07, -0.17\right)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... right)^T$ " id="kangaroo-light-bowl-4-3" w="87" name="kangaroo-light-bowl-4" hint="Boo!" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R} = \left(0.07, -0.17\right)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... 17\right)$" id="kangaroo-light-bowl-4-4" w="23" name="kangaroo-light-bowl-4" hint="Try adding $\vec{\mathbf R} + \vec{\mathbf V}$ and see if you get $\vec{\mathbf D}" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R}  = \left(0.07, -0.17\right)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{\mat ... 17\right)$" id="kangaroo-light-bowl-4-4" w="19" name="kangaroo-light-bowl-4" hint="Try adding $\vec{\mathbf R} + \vec{\mathbf V}$ and see if you get $\vec{\mathbf D}" show_hints="TRUE"> <span class="math inline">\(\vec{\mathbf R}  = \left(0.07, -0.17\right)\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="kangaroo-light-bowl-4" id="kangaroo-light-bowl-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="kangaroo-light-bowl-4-hintarea">question id: kangaroo-light-bowl-4</small></p>
 </div>
 </div>
@@ -3062,9 +2683,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><code>b1 &lt;- rbind(1, 0, 0, 0)</code></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-0.057" id="child-dig-shoe-1-1" w="19" name="child-dig-shoe-1" hint="You're mistaken" show_hints="false"> -0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.287" id="child-dig-shoe-1-2" w="23" name="child-dig-shoe-1" hint="Better luck next time." show_hints="false"> -0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.023 " id="child-dig-shoe-1-3" w="3" name="child-dig-shoe-1" hint="Better luck next time." show_hints="false"> -0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.023" id="child-dig-shoe-1-4" w="32" name="child-dig-shoe-1" hint="Better luck next time." show_hints="false"> 0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.287  " id="child-dig-shoe-1-5" w="87" name="child-dig-shoe-1" hint="incorrect choice" show_hints="false"> 0.287<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.057 " id="child-dig-shoe-1-6" w="20" name="child-dig-shoe-1" hint="Yes" show_hints="false"> 0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="child-dig-shoe-1" id="child-dig-shoe-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-0.057" id="child-dig-shoe-1-1" w="19" name="child-dig-shoe-1" hint="Wrong." show_hints="false"> -0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.287" id="child-dig-shoe-1-2" w="23" name="child-dig-shoe-1" hint="Hmmm ..." show_hints="false"> -0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.023 " id="child-dig-shoe-1-3" w="87" name="child-dig-shoe-1" hint="Hmmm ..." show_hints="false"> -0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.023" id="child-dig-shoe-1-4" w="3" name="child-dig-shoe-1" hint="Not quite right." show_hints="false"> 0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.287  " id="child-dig-shoe-1-5" w="87" name="child-dig-shoe-1" hint="You're mistaken" show_hints="false"> 0.287<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.057 " id="child-dig-shoe-1-6" w="20" name="child-dig-shoe-1" hint="Bullseye!" show_hints="false"> 0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="child-dig-shoe-1" id="child-dig-shoe-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="child-dig-shoe-1-hintarea">question id: child-dig-shoe-1</small></p>
 </div>
 </div>
@@ -3072,10 +2693,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><code>b2 &lt;- rbind(0, 1, 0, 0)</code></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-0.057" id="child-dig-shoe-2-1" w="87" name="child-dig-shoe-2" hint="You're mistaken" show_hints="false"> -0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.287" id="child-dig-shoe-2-2" w="87" name="child-dig-shoe-2" hint="wide of the mark" show_hints="false"> -0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.023" id="child-dig-shoe-2-3" w="20" name="child-dig-shoe-2" hint="Good job!" show_hints="false"> -0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.023" id="child-dig-shoe-2-4" w="32" name="child-dig-shoe-2" hint="Try again!" show_hints="false"> 0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.287  " id="child-dig-shoe-2-5" w="7" name="child-dig-shoe-2" hint="no" show_hints="false"> 0.287<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.057  " id="child-dig-shoe-2-6" w="87" name="child-dig-shoe-2" hint="Not quite right" show_hints="false"> 0.057<br>
+<input type="radio" class="devoirs-mcq" value="-0.057" id="child-dig-shoe-2-1" w="32" name="child-dig-shoe-2" hint="Not quite right." show_hints="false"> -0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.287" id="child-dig-shoe-2-2" w="32" name="child-dig-shoe-2" hint="You're wrong here." show_hints="false"> -0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.023" id="child-dig-shoe-2-3" w="14" name="child-dig-shoe-2" hint="Good job!" show_hints="false"> -0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.023" id="child-dig-shoe-2-4" w="32" name="child-dig-shoe-2" hint="Nope." show_hints="false"> 0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.287  " id="child-dig-shoe-2-5" w="32" name="child-dig-shoe-2" hint="Nope." show_hints="false"> 0.287<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.057  " id="child-dig-shoe-2-6" w="87" name="child-dig-shoe-2" hint="This is wide of the mark." show_hints="false"> 0.057<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="child-dig-shoe-2" id="child-dig-shoe-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="child-dig-shoe-2-hintarea">question id: child-dig-shoe-2</small></p>
 </div>
 </div>
@@ -3083,9 +2704,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><code>b3 &lt;- rbind(0, 1, 2, 3)</code></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-0.057" id="child-dig-shoe-3-1" w="3" name="child-dig-shoe-3" hint="Sorry!" show_hints="false"> -0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.287" id="child-dig-shoe-3-2" w="7" name="child-dig-shoe-3" hint="Better luck next time." show_hints="false"> -0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.023 " id="child-dig-shoe-3-3" w="7" name="child-dig-shoe-3" hint="Not quite right" show_hints="false"> -0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.023" id="child-dig-shoe-3-4" w="23" name="child-dig-shoe-3" hint="Sorry!" show_hints="false"> 0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.287 " id="child-dig-shoe-3-5" w="41" name="child-dig-shoe-3" hint="Yes" show_hints="false"> 0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.057  " id="child-dig-shoe-3-6" w="19" name="child-dig-shoe-3" hint="Sorry!" show_hints="false"> 0.057<br>
+<input type="radio" class="devoirs-mcq" value="-0.057" id="child-dig-shoe-3-1" w="3" name="child-dig-shoe-3" hint="No." show_hints="false"> -0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.287" id="child-dig-shoe-3-2" w="19" name="child-dig-shoe-3" hint="You might think so, but ..." show_hints="false"> -0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.023 " id="child-dig-shoe-3-3" w="7" name="child-dig-shoe-3" hint="Try again!" show_hints="false"> -0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.023" id="child-dig-shoe-3-4" w="7" name="child-dig-shoe-3" hint="Incorrect choice." show_hints="false"> 0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.287 " id="child-dig-shoe-3-5" w="14" name="child-dig-shoe-3" hint="A win!" show_hints="false"> 0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.057  " id="child-dig-shoe-3-6" w="87" name="child-dig-shoe-3" hint="Boo!" show_hints="false"> 0.057<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="child-dig-shoe-3" id="child-dig-shoe-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="child-dig-shoe-3-hintarea">question id: child-dig-shoe-3</small></p>
 </div>
 </div>
@@ -3093,9 +2714,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><code>b4 &lt;- rbind(-4, 1, 2, 3)</code></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-0.057" id="child-dig-shoe-4-1" w="3" name="child-dig-shoe-4" hint="no" show_hints="false"> -0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.287" id="child-dig-shoe-4-2" w="23" name="child-dig-shoe-4" hint="You're mistaken" show_hints="false"> -0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.023 " id="child-dig-shoe-4-3" w="32" name="child-dig-shoe-4" hint="You're mistaken" show_hints="false"> -0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.023" id="child-dig-shoe-4-4" w="3" name="child-dig-shoe-4" hint="Sorry!" show_hints="false"> 0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.287  " id="child-dig-shoe-4-5" w="3" name="child-dig-shoe-4" hint="Sorry!" show_hints="false"> 0.287<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.057 " id="child-dig-shoe-4-6" w="14" name="child-dig-shoe-4" hint="You're right" show_hints="false"> 0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="child-dig-shoe-4" id="child-dig-shoe-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-0.057" id="child-dig-shoe-4-1" w="19" name="child-dig-shoe-4" hint="Not quite right." show_hints="false"> -0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.287" id="child-dig-shoe-4-2" w="32" name="child-dig-shoe-4" hint="You might think so, but ..." show_hints="false"> -0.287 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.023 " id="child-dig-shoe-4-3" w="3" name="child-dig-shoe-4" hint="You're mistaken" show_hints="false"> -0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.023" id="child-dig-shoe-4-4" w="23" name="child-dig-shoe-4" hint="You're mistaken" show_hints="false"> 0.023 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.287  " id="child-dig-shoe-4-5" w="7" name="child-dig-shoe-4" hint="Not quite." show_hints="false"> 0.287<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.057 " id="child-dig-shoe-4-6" w="8" name="child-dig-shoe-4" hint="Bullseye!" show_hints="false"> 0.057 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="child-dig-shoe-4" id="child-dig-shoe-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="child-dig-shoe-4-hintarea">question id: child-dig-shoe-4</small></p>
 </div>
 </div>
@@ -3110,13 +2731,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-1-1" w="41" name="beech-build-shirt-1" hint="Nice." show_hints="TRUE"> True</p>
+</p><p><input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-1-1" w="16" name="beech-build-shirt-1" hint="Spot on!" show_hints="TRUE"> True</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-1-2" w="3" name="beech-build-shirt-1" hint="A projected onto D will be in the direction of D. K is in the direction of D, points in the right direction (downwards), and equals the vertical component of A." show_hints="TRUE"> False</p>
+</p><p><input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-1-2" w="19" name="beech-build-shirt-1" hint="A projected onto D will be in the direction of D. K is in the direction of D, points in the right direction (downwards), and equals the vertical component of A." show_hints="TRUE"> False</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="beech-build-shirt-1" id="beech-build-shirt-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-1-hintarea">question id: beech-build-shirt-1</small></p>
 </div>
 </div>
@@ -3125,13 +2746,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-2-1" w="23" name="beech-build-shirt-2" hint="D projected onto E will be in the direction of E. L is in the direction of E but L does not have the right length." show_hints="TRUE"> True</p>
+</p><p><input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-2-1" w="32" name="beech-build-shirt-2" hint="D projected onto E will be in the direction of E. L is in the direction of E but L does not have the right length." show_hints="TRUE"> True</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-2-2" w="5" name="beech-build-shirt-2" hint="Right" show_hints="TRUE"> False</p>
+</p><p><input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-2-2" w="16" name="beech-build-shirt-2" hint="Spot on!" show_hints="TRUE"> False</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="beech-build-shirt-2" id="beech-build-shirt-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-2-hintarea">question id: beech-build-shirt-2</small></p>
 </div>
 </div>
@@ -3140,13 +2761,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-3-1" w="7" name="beech-build-shirt-3" hint="J and E are not orthogonal. So the projection of one onto the other cannot be the null vector." show_hints="TRUE"> True</p>
+</p><p><input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-3-1" w="19" name="beech-build-shirt-3" hint="J and E are not orthogonal. So the projection of one onto the other cannot be the null vector." show_hints="TRUE"> True</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-3-2" w="35" name="beech-build-shirt-3" hint="Right" show_hints="TRUE"> False</p>
+</p><p><input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-3-2" w="29" name="beech-build-shirt-3" hint="You're right!" show_hints="TRUE"> False</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="beech-build-shirt-3" id="beech-build-shirt-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-3-hintarea">question id: beech-build-shirt-3</small></p>
 </div>
 </div>
@@ -3154,8 +2775,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{H}\)</span> projected onto <span class="math inline">\(\vec{A}\)</span> gives the null vector</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-4-1" w="29" name="beech-build-shirt-4" hint="Nice." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-4-2" w="19" name="beech-build-shirt-4" hint="incorrect choice" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-4" id="beech-build-shirt-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-4-1" w="41" name="beech-build-shirt-4" hint="You're right!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-4-2" w="87" name="beech-build-shirt-4" hint="Incorrect." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-4" id="beech-build-shirt-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-4-hintarea">question id: beech-build-shirt-4</small></p>
 </div>
 </div>
@@ -3163,8 +2784,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{J}\)</span> projected onto <span class="math inline">\(\vec{K}\)</span> gives <span class="math inline">\(\vec{D}\)</span></li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-5-1" w="19" name="beech-build-shirt-5" hint="J and K are parallel, so projecting J onto K will produce the vector J. But J is much shorter than D." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-5-2" w="16" name="beech-build-shirt-5" hint="Good job!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-5" id="beech-build-shirt-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-5-1" w="23" name="beech-build-shirt-5" hint="J and K are parallel, so projecting J onto K will produce the vector J. But J is much shorter than D." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-5-2" w="20" name="beech-build-shirt-5" hint="Bingo!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-5" id="beech-build-shirt-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-5-hintarea">question id: beech-build-shirt-5</small></p>
 </div>
 </div>
@@ -3172,8 +2793,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{C}\)</span> projected onto <span class="math inline">\(\vec{D}\)</span> gives <span class="math inline">\(\vec{L}\)</span></li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-6-1" w="7" name="beech-build-shirt-6" hint="C projected onto D will be in the direction of D. L is not in the direction of D." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-6-2" w="8" name="beech-build-shirt-6" hint="Excellent!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-6" id="beech-build-shirt-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-6-1" w="7" name="beech-build-shirt-6" hint="C projected onto D will be in the direction of D. L is not in the direction of D." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-6-2" w="18" name="beech-build-shirt-6" hint="Certainly." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-6" id="beech-build-shirt-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-6-hintarea">question id: beech-build-shirt-6</small></p>
 </div>
 </div>
@@ -3181,8 +2802,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{L}\)</span> projected onto <span class="math inline">\(\vec{B}\)</span> gives the null vector</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-7-1" w="19" name="beech-build-shirt-7" hint="It is only when vectors are orthogonal that the projection of one onto the other produces the null vector. L and B are not orthogonal." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-7-2" w="14" name="beech-build-shirt-7" hint="Correct" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-7" id="beech-build-shirt-7.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-7-1" w="23" name="beech-build-shirt-7" hint="It is only when vectors are orthogonal that the projection of one onto the other produces the null vector. L and B are not orthogonal." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-7-2" w="29" name="beech-build-shirt-7" hint="Bingo!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-7" id="beech-build-shirt-7.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-7-hintarea">question id: beech-build-shirt-7</small></p>
 </div>
 </div>
@@ -3190,8 +2811,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{E}\)</span> projected onto <span class="math inline">\(\vec{C}\)</span> gives <span class="math inline">\(\vec{E}\)</span></li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-8-1" w="41" name="beech-build-shirt-8" hint="You're right" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-8-2" w="3" name="beech-build-shirt-8" hint="Try again!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-8" id="beech-build-shirt-8.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-8-1" w="35" name="beech-build-shirt-8" hint="Yeah!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-8-2" w="3" name="beech-build-shirt-8" hint="Nope." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-8" id="beech-build-shirt-8.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-8-hintarea">question id: beech-build-shirt-8</small></p>
 </div>
 </div>
@@ -3199,8 +2820,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{G}\)</span> projected onto <span class="math inline">\(\vec{C}\)</span> gives the null vector.</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-9-1" w="29" name="beech-build-shirt-9" hint="Right" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-9-2" w="87" name="beech-build-shirt-9" hint="You're mistaken" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-9" id="beech-build-shirt-9.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-9-1" w="35" name="beech-build-shirt-9" hint="Certainly." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-9-2" w="23" name="beech-build-shirt-9" hint="You're wrong here." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-9" id="beech-build-shirt-9.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-9-hintarea">question id: beech-build-shirt-9</small></p>
 </div>
 </div>
@@ -3208,8 +2829,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{E}\)</span> projected onto <span class="math inline">\(\vec{D}\)</span> gives <span class="math inline">\(\vec{J}\)</span></li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-10-1" w="29" name="beech-build-shirt-10" hint="Excellent!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-10-2" w="19" name="beech-build-shirt-10" hint="Sorry!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-10" id="beech-build-shirt-10.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-10-1" w="8" name="beech-build-shirt-10" hint="Yup!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-10-2" w="7" name="beech-build-shirt-10" hint="You're wrong here." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-10" id="beech-build-shirt-10.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-10-hintarea">question id: beech-build-shirt-10</small></p>
 </div>
 </div>
@@ -3217,8 +2838,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{A}\)</span> projected onto <span class="math inline">\(\vec{B}\)</span> gives <span class="math inline">\(\vec{K}\)</span></li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-11-1" w="3" name="beech-build-shirt-11" hint="A onto B will be in the direction of B. But K is orthogonal to B." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-11-2" w="16" name="beech-build-shirt-11" hint="You're right" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-11" id="beech-build-shirt-11.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-11-1" w="7" name="beech-build-shirt-11" hint="A onto B will be in the direction of B. But K is orthogonal to B." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-11-2" w="8" name="beech-build-shirt-11" hint="Score!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-11" id="beech-build-shirt-11.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-11-hintarea">question id: beech-build-shirt-11</small></p>
 </div>
 </div>
@@ -3226,8 +2847,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{H}\)</span> projected onto <span class="math inline">\(\vec{A}\)</span> gives the null vector</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-12-1" w="20" name="beech-build-shirt-12" hint="right-o" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-12-2" w="32" name="beech-build-shirt-12" hint="Sorry!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-12" id="beech-build-shirt-12.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-12-1" w="14" name="beech-build-shirt-12" hint="Nice." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-12-2" w="87" name="beech-build-shirt-12" hint="Oops!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-12" id="beech-build-shirt-12.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-12-hintarea">question id: beech-build-shirt-12</small></p>
 </div>
 </div>
@@ -3235,8 +2856,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{F}\)</span> projected onto <span class="math inline">\(\vec{C}\)</span> gives <span class="math inline">\(\vec{H}\)</span></li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True " id="beech-build-shirt-13-1" w="32" name="beech-build-shirt-13" hint="Try again!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-13-2" w="18" name="beech-build-shirt-13" hint="Nice." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-13" id="beech-build-shirt-13.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True " id="beech-build-shirt-13-1" w="23" name="beech-build-shirt-13" hint="You're wrong here." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-13-2" w="20" name="beech-build-shirt-13" hint="You're right." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-13" id="beech-build-shirt-13.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-13-hintarea">question id: beech-build-shirt-13</small></p>
 </div>
 </div>
@@ -3244,8 +2865,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{C}\)</span> projected onto <span class="math inline">\(\vec{E}\)</span> gives <span class="math inline">\(\vec{E}\)</span></li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True " id="beech-build-shirt-14-1" w="7" name="beech-build-shirt-14" hint="Better luck next time." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-14-2" w="41" name="beech-build-shirt-14" hint="right-o" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-14" id="beech-build-shirt-14.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True " id="beech-build-shirt-14-1" w="19" name="beech-build-shirt-14" hint="Better luck next time." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-14-2" w="16" name="beech-build-shirt-14" hint="Spot on!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-14" id="beech-build-shirt-14.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-14-hintarea">question id: beech-build-shirt-14</small></p>
 </div>
 </div>
@@ -3253,8 +2874,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{E}\)</span> projected onto <span class="math inline">\(\vec{G}\)</span> gives the null vector</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-15-1" w="20" name="beech-build-shirt-15" hint="Right" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-15-2" w="7" name="beech-build-shirt-15" hint="Not quite right" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-15" id="beech-build-shirt-15.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="beech-build-shirt-15-1" w="29" name="beech-build-shirt-15" hint="Right." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="beech-build-shirt-15-2" w="32" name="beech-build-shirt-15" hint="Boo!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-15" id="beech-build-shirt-15.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-15-hintarea">question id: beech-build-shirt-15</small></p>
 </div>
 </div>
@@ -3262,8 +2883,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\vec{G}\)</span> projected onto <span class="math inline">\(\vec{B}\)</span> gives <span class="math inline">\(\vec{C}\)</span></li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True " id="beech-build-shirt-16-1" w="32" name="beech-build-shirt-16" hint="Sorry!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-16-2" w="14" name="beech-build-shirt-16" hint="Yes" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-16" id="beech-build-shirt-16.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True " id="beech-build-shirt-16-1" w="7" name="beech-build-shirt-16" hint="No." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="beech-build-shirt-16-2" w="41" name="beech-build-shirt-16" hint="Yup!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="beech-build-shirt-16" id="beech-build-shirt-16.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-build-shirt-16-hintarea">question id: beech-build-shirt-16</small></p>
 </div>
 </div>
@@ -3271,7 +2892,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> Vectors <span class="math inline">\(\vec{A},  \vec{B}, \cdots, \vec{H}\)</span> have are defined as <code>A</code>, <code>B</code>, …, <code>H</code> in <span class="quarto-unresolved-ref">?lst-puppy-dream-spoon</span> you can use them in the sandbox. (To see one of these vectors, give a command in the sandbox consisting of just the vector name.)</p>
 <div class="@lst-puppy-dream-spoon-rcd-1">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 <p><a href="#lst-puppy-dream-rcd-2" class="quarto-xref">Active R chunk&nbsp;<span>1</span></a> has commands of the sort used in solving the target problem.</p>
@@ -3281,7 +2902,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-puppy-dream-rcd-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3292,25 +2913,25 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0 " id="puppy-dream-spoon-1-1" w="87" name="puppy-dream-spoon-1" hint="Not quite right" show_hints="TRUE"> Exactly 0</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0 " id="puppy-dream-spoon-1-1" w="3" name="puppy-dream-spoon-1" hint="Nope." show_hints="TRUE"> Exactly 0</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 1.6 " id="puppy-dream-spoon-1-2" w="7" name="puppy-dream-spoon-1" hint="You're mistaken" show_hints="TRUE"> About 1.6</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 1.6 " id="puppy-dream-spoon-1-2" w="32" name="puppy-dream-spoon-1" hint="Incorrect choice." show_hints="TRUE"> About 1.6</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  2.5 " id="puppy-dream-spoon-1-3" w="32" name="puppy-dream-spoon-1" hint="Sorry!" show_hints="TRUE"> About 2.5</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  2.5 " id="puppy-dream-spoon-1-3" w="3" name="puppy-dream-spoon-1" hint="No." show_hints="TRUE"> About 2.5</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  3.43 " id="puppy-dream-spoon-1-4" w="32" name="puppy-dream-spoon-1" hint="wide of the mark" show_hints="TRUE"> About 3.43</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  3.43 " id="puppy-dream-spoon-1-4" w="7" name="puppy-dream-spoon-1" hint="Hmmm ..." show_hints="TRUE"> About 3.43</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 12" id="puppy-dream-spoon-1-5" w="16" name="puppy-dream-spoon-1" hint="You're right" show_hints="TRUE"> About 12</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 12" id="puppy-dream-spoon-1-5" w="29" name="puppy-dream-spoon-1" hint="Good job!" show_hints="TRUE"> About 12</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-1-6" w="3" name="puppy-dream-spoon-1" hint="incorrect choice" show_hints="TRUE"> Can’t be solved</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-1-6" w="7" name="puppy-dream-spoon-1" hint="You might think so, but ..." show_hints="TRUE"> Can’t be solved</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="puppy-dream-spoon-1" id="puppy-dream-spoon-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="puppy-dream-spoon-1-hintarea">question id: puppy-dream-spoon-1</small></p>
 </div>
 </div>
@@ -3319,28 +2940,28 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0 " id="puppy-dream-spoon-2-1" w="87" name="puppy-dream-spoon-2" hint="wide of the mark" show_hints="TRUE"> Exactly 0</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0 " id="puppy-dream-spoon-2-1" w="87" name="puppy-dream-spoon-2" hint="You might think so, but ..." show_hints="TRUE"> Exactly 0</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  0.3 " id="puppy-dream-spoon-2-2" w="32" name="puppy-dream-spoon-2" hint="Try again!" show_hints="TRUE"> About 0.3</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  0.3 " id="puppy-dream-spoon-2-2" w="7" name="puppy-dream-spoon-2" hint="Wrong." show_hints="TRUE"> About 0.3</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 1.6 " id="puppy-dream-spoon-2-3" w="32" name="puppy-dream-spoon-2" hint="Try again!" show_hints="TRUE"> About 1.6</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 1.6 " id="puppy-dream-spoon-2-3" w="32" name="puppy-dream-spoon-2" hint="Boo!" show_hints="TRUE"> About 1.6</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  2.5" id="puppy-dream-spoon-2-4" w="8" name="puppy-dream-spoon-2" hint="Right" show_hints="TRUE"> About 2.5</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  2.5" id="puppy-dream-spoon-2-4" w="29" name="puppy-dream-spoon-2" hint="Correct." show_hints="TRUE"> About 2.5</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  3.43 " id="puppy-dream-spoon-2-5" w="19" name="puppy-dream-spoon-2" hint="wide of the mark" show_hints="TRUE"> About 3.43</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  3.43 " id="puppy-dream-spoon-2-5" w="3" name="puppy-dream-spoon-2" hint="You might think so, but ..." show_hints="TRUE"> About 3.43</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 12 " id="puppy-dream-spoon-2-6" w="3" name="puppy-dream-spoon-2" hint="Better luck next time." show_hints="TRUE"> About 12</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 12 " id="puppy-dream-spoon-2-6" w="23" name="puppy-dream-spoon-2" hint="Not quite right." show_hints="TRUE"> About 12</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-2-7" w="32" name="puppy-dream-spoon-2" hint="You're mistaken" show_hints="TRUE"> Can’t be solved</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-2-7" w="32" name="puppy-dream-spoon-2" hint="Not so!" show_hints="TRUE"> Can’t be solved</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="puppy-dream-spoon-2" id="puppy-dream-spoon-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="puppy-dream-spoon-2-hintarea">question id: puppy-dream-spoon-2</small></p>
 </div>
 </div>
@@ -3349,28 +2970,28 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0 " id="puppy-dream-spoon-3-1" w="3" name="puppy-dream-spoon-3" hint="Better luck next time." show_hints="TRUE"> Exactly 0</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0 " id="puppy-dream-spoon-3-1" w="19" name="puppy-dream-spoon-3" hint="Untrue!" show_hints="TRUE"> Exactly 0</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  0.3 " id="puppy-dream-spoon-3-2" w="19" name="puppy-dream-spoon-3" hint="You're mistaken" show_hints="TRUE"> About 0.3</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  0.3 " id="puppy-dream-spoon-3-2" w="19" name="puppy-dream-spoon-3" hint="Boo!" show_hints="TRUE"> About 0.3</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 1.6 " id="puppy-dream-spoon-3-3" w="32" name="puppy-dream-spoon-3" hint="wide of the mark" show_hints="TRUE"> About 1.6</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 1.6 " id="puppy-dream-spoon-3-3" w="3" name="puppy-dream-spoon-3" hint="Sorry!" show_hints="TRUE"> About 1.6</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  2.5 " id="puppy-dream-spoon-3-4" w="23" name="puppy-dream-spoon-3" hint="Not quite right" show_hints="TRUE"> About 2.5</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  2.5 " id="puppy-dream-spoon-3-4" w="7" name="puppy-dream-spoon-3" hint="Nope." show_hints="TRUE"> About 2.5</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  3.43" id="puppy-dream-spoon-3-5" w="14" name="puppy-dream-spoon-3" hint="Excellent!" show_hints="TRUE"> About 3.43</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  3.43" id="puppy-dream-spoon-3-5" w="16" name="puppy-dream-spoon-3" hint="Right!" show_hints="TRUE"> About 3.43</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 12 " id="puppy-dream-spoon-3-6" w="3" name="puppy-dream-spoon-3" hint="wrong" show_hints="TRUE"> About 12</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 12 " id="puppy-dream-spoon-3-6" w="19" name="puppy-dream-spoon-3" hint="Incorrect." show_hints="TRUE"> About 12</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-3-7" w="87" name="puppy-dream-spoon-3" hint="Sorry!" show_hints="TRUE"> Can’t be solved</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-3-7" w="19" name="puppy-dream-spoon-3" hint="Oops!" show_hints="TRUE"> Can’t be solved</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="puppy-dream-spoon-3" id="puppy-dream-spoon-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="puppy-dream-spoon-3-hintarea">question id: puppy-dream-spoon-3</small></p>
 </div>
 </div>
@@ -3379,28 +3000,28 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0 " id="puppy-dream-spoon-4-1" w="23" name="puppy-dream-spoon-4" hint="incorrect choice" show_hints="TRUE"> Exactly 0</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0 " id="puppy-dream-spoon-4-1" w="87" name="puppy-dream-spoon-4" hint="Nope." show_hints="TRUE"> Exactly 0</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 0.3 " id="puppy-dream-spoon-4-2" w="23" name="puppy-dream-spoon-4" hint="wide of the mark" show_hints="TRUE"> About 0.3</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 0.3 " id="puppy-dream-spoon-4-2" w="7" name="puppy-dream-spoon-4" hint="Not quite." show_hints="TRUE"> About 0.3</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 1.6" id="puppy-dream-spoon-4-3" w="29" name="puppy-dream-spoon-4" hint="right-o" show_hints="TRUE"> About 1.6</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 1.6" id="puppy-dream-spoon-4-3" w="35" name="puppy-dream-spoon-4" hint="You're right!" show_hints="TRUE"> About 1.6</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  2.5 " id="puppy-dream-spoon-4-4" w="23" name="puppy-dream-spoon-4" hint="Not quite right" show_hints="TRUE"> About 2.5</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  2.5 " id="puppy-dream-spoon-4-4" w="87" name="puppy-dream-spoon-4" hint="Nope." show_hints="TRUE"> About 2.5</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  3.43 " id="puppy-dream-spoon-4-5" w="19" name="puppy-dream-spoon-4" hint="incorrect choice" show_hints="TRUE"> About 3.43</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  3.43 " id="puppy-dream-spoon-4-5" w="3" name="puppy-dream-spoon-4" hint="Oops!" show_hints="TRUE"> About 3.43</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 12 " id="puppy-dream-spoon-4-6" w="19" name="puppy-dream-spoon-4" hint="Not quite right" show_hints="TRUE"> About 12</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 12 " id="puppy-dream-spoon-4-6" w="23" name="puppy-dream-spoon-4" hint="Think again." show_hints="TRUE"> About 12</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-4-7" w="7" name="puppy-dream-spoon-4" hint="Not quite right" show_hints="TRUE"> Can’t be solved</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-4-7" w="32" name="puppy-dream-spoon-4" hint="Not quite." show_hints="TRUE"> Can’t be solved</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="puppy-dream-spoon-4" id="puppy-dream-spoon-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="puppy-dream-spoon-4-hintarea">question id: puppy-dream-spoon-4</small></p>
 </div>
 </div>
@@ -3409,28 +3030,28 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0" id="puppy-dream-spoon-5-1" w="16" name="puppy-dream-spoon-5" hint="Excellent!" show_hints="TRUE"> Exactly 0</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Exactly 0" id="puppy-dream-spoon-5-1" w="41" name="puppy-dream-spoon-5" hint="Nice." show_hints="TRUE"> Exactly 0</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 0.3 " id="puppy-dream-spoon-5-2" w="19" name="puppy-dream-spoon-5" hint="incorrect choice" show_hints="TRUE"> About 0.3</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 0.3 " id="puppy-dream-spoon-5-2" w="32" name="puppy-dream-spoon-5" hint="Hmmm ..." show_hints="TRUE"> About 0.3</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 1.6 " id="puppy-dream-spoon-5-3" w="87" name="puppy-dream-spoon-5" hint="wrong" show_hints="TRUE"> About 1.6</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 1.6 " id="puppy-dream-spoon-5-3" w="19" name="puppy-dream-spoon-5" hint="Not on target." show_hints="TRUE"> About 1.6</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  2.5 " id="puppy-dream-spoon-5-4" w="19" name="puppy-dream-spoon-5" hint="You're mistaken" show_hints="TRUE"> About 2.5</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  2.5 " id="puppy-dream-spoon-5-4" w="19" name="puppy-dream-spoon-5" hint="Hmmm ..." show_hints="TRUE"> About 2.5</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About  3.43 " id="puppy-dream-spoon-5-5" w="19" name="puppy-dream-spoon-5" hint="no" show_hints="TRUE"> About 3.43</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About  3.43 " id="puppy-dream-spoon-5-5" w="23" name="puppy-dream-spoon-5" hint="Not so!" show_hints="TRUE"> About 3.43</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="About 12 " id="puppy-dream-spoon-5-6" w="23" name="puppy-dream-spoon-5" hint="incorrect choice" show_hints="TRUE"> About 12</p>
+</p><p><input type="radio" class="devoirs-mcq" value="About 12 " id="puppy-dream-spoon-5-6" w="19" name="puppy-dream-spoon-5" hint="Not quite." show_hints="TRUE"> About 12</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-5-7" w="19" name="puppy-dream-spoon-5" hint="no" show_hints="TRUE"> Can’t be solved</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Can't be solved " id="puppy-dream-spoon-5-7" w="87" name="puppy-dream-spoon-5" hint="Not on target." show_hints="TRUE"> Can’t be solved</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="puppy-dream-spoon-5" id="puppy-dream-spoon-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="puppy-dream-spoon-5-hintarea">question id: puppy-dream-spoon-5</small></p>
 </div>
 </div>
@@ -3451,14 +3072,14 @@ Active R chunk&nbsp;1
 <p><span class="theorem-title"><strong>Exercise 6</strong></span> Construct a random 4-by-4 matrix named <code>A</code> whose columns are mutually orthogonal. Here’s the process:</p>
 <ol type="i">
 <li><p>Construct a vector with four elements that has random elements. A command to do so is</p>
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>This will be the first column of the matrix.</p></li>
 <li><p>Construct a new vector with random elements.</p>
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p><code>w</code> will not be orthogonal to <code>v1</code> as you can confirm by calculating the dot product between <code>v1</code> and <code>w</code>. However, you can construct from the two vectors a new one that will be perpendicular to <code>v1</code>.</p>
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript></li>
 <li><p>Take the mutually orthogonal vectors you already have and package them into a matrix <code>M</code>. Then construct a new random vector <code>w</code> and project it onto <code>M</code>.</p></li>
 </ol>
@@ -3564,15 +3185,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3592,7 +3220,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3689,8 +3320,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3801,7 +3430,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

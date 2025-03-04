@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,10 +37,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -371,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -393,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"f   <- makeFun(sqrt(exp(x)) - x^2 ~ x)\nd_f <- D(f(x) ~ x)\nslice_plot(f(x) ~ x, domain(x = 0:5))\nslice_plot(d_f(x) ~ x, domain(x = 0:5), color = \"orange3\")","id":1,"options":{"editor-font-scale":"1","label":"unnamed-chunk-1","out-width":"700px","context":"interactive","read-only":"false","warning":"true","results":"markup","editor-quick-suggestions":"false","message":"true","out-height":"","fig-height":5,"editor-word-wrap":"true","classes":"","autorun":"false","editor-max-height":"","comment":"","dpi":72,"fig-cap":"","output":"true","fig-width":7}},{"code":"elimination <- D(regimen8(t) ~ t)\nslice_plot(elimination(t) ~ t, domain(t=-1:30))","id":2,"options":{"editor-font-scale":"1","label":"octopus-teach-sheet-calc","out-width":"700px","context":"interactive","read-only":"false","warning":"true","results":"markup","editor-quick-suggestions":"false","message":"true","out-height":"","fig-height":5,"editor-word-wrap":"true","classes":"","autorun":"false","editor-max-height":"","comment":"","dpi":72,"fig-cap":"","output":"true","fig-width":7}},{"code":"","id":3,"options":{"editor-font-scale":"1","label":"unnamed-chunk-3","out-width":"700px","context":"interactive","read-only":"false","warning":"true","results":"markup","editor-quick-suggestions":"false","message":"true","out-height":"","fig-height":5,"editor-word-wrap":"true","classes":"","autorun":"false","editor-max-height":"","comment":"","dpi":72,"fig-cap":"","output":"true","fig-width":7}}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"f   <- makeFun(sqrt(exp(x)) - x^2 ~ x)\nd_f <- D(f(x) ~ x)\nslice_plot(\n  f(x) ~ x, \n  domain(x = 0:5))\nslice_plot(\n  d_f(x) ~ x, \n  domain(x = 0:5), \n  color = \"orange3\")","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"pill <- makeFun(\n  ifelse(t < 0, \n         0, \n         exp(-k * t)) ~ t, \n  k = log(2)/3)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"regimen8 <- makeFun(\n  A*pill(t) + A*pill(t-8) + \n    A*pill(t-16) + A*pill(t-24) + \n    A*pill(t-32) ~ t, \n  A=1\n  )","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"elimination <- D(regimen8(t) ~ t)\nslice_plot(\n  elimination(t) ~ t, \n  domain(t=-1:30)\n  )","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"octopus-teach-sheet-calc","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1668,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1689,7 +1655,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 1 Exercises</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 1  Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1701,13 +1667,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 2 Review</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 2  Review</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 2 Exercises</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 2  Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1725,7 +1691,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 3 Exercises</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 3  Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1797,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1805,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1880,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1975,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2190,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2280,7 +2246,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./32-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Statistical modeling and R<sup>2</sup></span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Statistical modeling and R^2^</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -2311,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -3016,14 +2601,16 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-lamb-rise-sofa" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> For each of the following, say whether the function is a composition <span class="math inline">\(f(g(x))\)</span> or a product <span class="math inline">\(f(x) g(x)\)</span>, or neither.</p>
 <ol type="1">
 <li>What sort of combination is <span class="math inline">\(h_1(x)\equiv \ln(x) e^x\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="product" id="lamb-rise-sofa-1-1" w="29" name="lamb-rise-sofa-1" hint="Excellent!" show_hints="TRUE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition " id="lamb-rise-sofa-1-2" w="7" name="lamb-rise-sofa-1" hint="incorrect choice" show_hints="TRUE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-1-3" w="3" name="lamb-rise-sofa-1" hint="wrong" show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-1" id="lamb-rise-sofa-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="product" id="lamb-rise-sofa-1-1" w="41" name="lamb-rise-sofa-1" hint="A win!" show_hints="TRUE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition " id="lamb-rise-sofa-1-2" w="32" name="lamb-rise-sofa-1" hint="This is wide of the mark." show_hints="TRUE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-1-3" w="3" name="lamb-rise-sofa-1" hint="Nope." show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-1" id="lamb-rise-sofa-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-rise-sofa-1-hintarea">question id: lamb-rise-sofa-1</small></p>
 </div>
 </div>
@@ -3031,8 +2618,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What sort of combination is <span class="math inline">\(h_2(x)\equiv \sin(x) \cos(x)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="product" id="lamb-rise-sofa-2-1" w="41" name="lamb-rise-sofa-2" hint="Correct" show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition " id="lamb-rise-sofa-2-2" w="87" name="lamb-rise-sofa-2" hint="You're mistaken" show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-2-3" w="19" name="lamb-rise-sofa-2" hint="Better luck next time." show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-2" id="lamb-rise-sofa-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="product" id="lamb-rise-sofa-2-1" w="14" name="lamb-rise-sofa-2" hint="You're right." show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition " id="lamb-rise-sofa-2-2" w="87" name="lamb-rise-sofa-2" hint="Not quite." show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-2-3" w="19" name="lamb-rise-sofa-2" hint="Not quite." show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-2" id="lamb-rise-sofa-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-rise-sofa-2-hintarea">question id: lamb-rise-sofa-2</small></p>
 </div>
 </div>
@@ -3040,8 +2627,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What sort of combination is <span class="math inline">\(h_3(x) \equiv \sin(\ln(x))\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-3-1" w="23" name="lamb-rise-sofa-3" hint="Sorry!" show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-3-2" w="29" name="lamb-rise-sofa-3" hint="Nice." show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-3-3" w="87" name="lamb-rise-sofa-3" hint="wrong" show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-3" id="lamb-rise-sofa-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-3-1" w="32" name="lamb-rise-sofa-3" hint="Hmmm ..." show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-3-2" w="41" name="lamb-rise-sofa-3" hint="A hit!" show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-3-3" w="7" name="lamb-rise-sofa-3" hint="Think again." show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-3" id="lamb-rise-sofa-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-rise-sofa-3-hintarea">question id: lamb-rise-sofa-3</small></p>
 </div>
 </div>
@@ -3049,8 +2636,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What sort of combination is <span class="math inline">\(h_4(x) \equiv e^{\ln(x)}\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-4-1" w="32" name="lamb-rise-sofa-4" hint="incorrect choice" show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-4-2" w="5" name="lamb-rise-sofa-4" hint="Right" show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-4-3" w="32" name="lamb-rise-sofa-4" hint="incorrect choice" show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-4" id="lamb-rise-sofa-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-4-1" w="32" name="lamb-rise-sofa-4" hint="Nope." show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-4-2" w="20" name="lamb-rise-sofa-4" hint="Bingo!" show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-4-3" w="19" name="lamb-rise-sofa-4" hint="Nope." show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-4" id="lamb-rise-sofa-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-rise-sofa-4-hintarea">question id: lamb-rise-sofa-4</small></p>
 </div>
 </div>
@@ -3058,8 +2645,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What sort of combination is <span class="math inline">\(h_5(x) \equiv \sin(x) - \dnorm(x)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-5-1" w="3" name="lamb-rise-sofa-5" hint="Try again!" show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition " id="lamb-rise-sofa-5-2" w="7" name="lamb-rise-sofa-5" hint="Sorry!" show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither" id="lamb-rise-sofa-5-3" w="41" name="lamb-rise-sofa-5" hint="right-o" show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-5" id="lamb-rise-sofa-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-5-1" w="32" name="lamb-rise-sofa-5" hint="Sorry!" show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition " id="lamb-rise-sofa-5-2" w="23" name="lamb-rise-sofa-5" hint="You're wrong here." show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither" id="lamb-rise-sofa-5-3" w="16" name="lamb-rise-sofa-5" hint="Good job!" show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-5" id="lamb-rise-sofa-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-rise-sofa-5-hintarea">question id: lamb-rise-sofa-5</small></p>
 </div>
 </div>
@@ -3067,8 +2654,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What sort of combination is <span class="math inline">\(h_6(x) \equiv e^{x^2}\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-6-1" w="19" name="lamb-rise-sofa-6" hint="wrong" show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-6-2" w="16" name="lamb-rise-sofa-6" hint="Right" show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-6-3" w="23" name="lamb-rise-sofa-6" hint="incorrect choice" show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-6" id="lamb-rise-sofa-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-6-1" w="87" name="lamb-rise-sofa-6" hint="Think again." show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-6-2" w="35" name="lamb-rise-sofa-6" hint="Nice." show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-6-3" w="23" name="lamb-rise-sofa-6" hint="No." show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-6" id="lamb-rise-sofa-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-rise-sofa-6-hintarea">question id: lamb-rise-sofa-6</small></p>
 </div>
 </div>
@@ -3076,8 +2663,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What sort of combination is <span class="math inline">\(h_7(x) \equiv \pnorm(x^2)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-7-1" w="32" name="lamb-rise-sofa-7" hint="Better luck next time." show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-7-2" w="16" name="lamb-rise-sofa-7" hint="You're right" show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-7-3" w="23" name="lamb-rise-sofa-7" hint="incorrect choice" show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-7" id="lamb-rise-sofa-7.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-7-1" w="32" name="lamb-rise-sofa-7" hint="Not quite right." show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-7-2" w="8" name="lamb-rise-sofa-7" hint="Correct." show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-7-3" w="3" name="lamb-rise-sofa-7" hint="You might think so, but ..." show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-7" id="lamb-rise-sofa-7.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-rise-sofa-7-hintarea">question id: lamb-rise-sofa-7</small></p>
 </div>
 </div>
@@ -3085,8 +2672,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What sort of combination is <span class="math inline">\(h_8(x)  \equiv \pnorm(x) \dnorm(x)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="product" id="lamb-rise-sofa-8-1" w="8" name="lamb-rise-sofa-8" hint="Right" show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition " id="lamb-rise-sofa-8-2" w="7" name="lamb-rise-sofa-8" hint="Not quite right" show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-8-3" w="87" name="lamb-rise-sofa-8" hint="You're mistaken" show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-8" id="lamb-rise-sofa-8.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="product" id="lamb-rise-sofa-8-1" w="20" name="lamb-rise-sofa-8" hint="That's right." show_hints="FALSE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition " id="lamb-rise-sofa-8-2" w="87" name="lamb-rise-sofa-8" hint="Incorrect choice." show_hints="FALSE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-8-3" w="19" name="lamb-rise-sofa-8" hint="Nope." show_hints="FALSE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-8" id="lamb-rise-sofa-8.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-rise-sofa-8-hintarea">question id: lamb-rise-sofa-8</small></p>
 </div>
 </div>
@@ -3094,8 +2681,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What sort of combination is <span class="math inline">\(h_9(x)  \equiv 1/\sin(x)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-9-1" w="23" name="lamb-rise-sofa-9" hint="Sorry!" show_hints="TRUE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-9-2" w="8" name="lamb-rise-sofa-9" hint="Right Remember, $1/\sin(x)$ is the same as $\recip(\sin(x))$." show_hints="TRUE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-9-3" w="23" name="lamb-rise-sofa-9" hint="wide of the mark" show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-9" id="lamb-rise-sofa-9.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="product " id="lamb-rise-sofa-9-1" w="3" name="lamb-rise-sofa-9" hint="Incorrect choice." show_hints="TRUE"> product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="composition" id="lamb-rise-sofa-9-2" w="14" name="lamb-rise-sofa-9" hint="Remember, $1/\sin(x)$ is the same as $\recip(\sin(x))$." show_hints="TRUE"> composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="lamb-rise-sofa-9-3" w="23" name="lamb-rise-sofa-9" hint="Untrue!" show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="lamb-rise-sofa-9" id="lamb-rise-sofa-9.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-rise-sofa-9-hintarea">question id: lamb-rise-sofa-9</small></p>
 </div>
 </div>
@@ -3106,8 +2693,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>In <span class="math inline">\(\cos(\ln(x))\)</span> which is the <strong>interior</strong> function?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$\ln()$" id="bdb932-1-1" w="29" name="bdb932-1" hint="You're right" show_hints="TRUE"> <span class="math inline">\(\ln()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\cos()$" id="bdb932-1-2" w="23" name="bdb932-1" hint="This is the exterior function." show_hints="TRUE"> <span class="math inline">\(\cos()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin()$" id="bdb932-1-3" w="87" name="bdb932-1" hint="Sine has nothing to do with it!" show_hints="TRUE"> <span class="math inline">\(\sin()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above " id="bdb932-1-4" w="3" name="bdb932-1" hint="Try again!" show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="It is not  ... mposition " id="bdb932-1-5" w="19" name="bdb932-1" hint="no" show_hints="TRUE"> It is not a function composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bdb932-1" id="bdb932-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$\ln()$" id="bdb932-1-1" w="5" name="bdb932-1" hint="Yeah!" show_hints="TRUE"> <span class="math inline">\(\ln()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\cos()$" id="bdb932-1-2" w="23" name="bdb932-1" hint="This is the exterior function." show_hints="TRUE"> <span class="math inline">\(\cos()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin()$" id="bdb932-1-3" w="23" name="bdb932-1" hint="Sine has nothing to do with it!" show_hints="TRUE"> <span class="math inline">\(\sin()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above " id="bdb932-1-4" w="32" name="bdb932-1" hint="Not on target." show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="It is not  ... mposition " id="bdb932-1-5" w="23" name="bdb932-1" hint="Wrong." show_hints="TRUE"> It is not a function composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bdb932-1" id="bdb932-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="bdb932-1-hintarea">question id: bdb932-1</small></p>
 </div>
 </div>
@@ -3115,8 +2702,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>In <span class="math inline">\(1/\sin(x)\)</span> which is the <strong>exterior</strong> function?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$\recip()$" id="bdb932-2-1" w="20" name="bdb932-2" hint="You're right" show_hints="TRUE"> <span class="math inline">\(\recip()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\cos()$ " id="bdb932-2-2" w="3" name="bdb932-2" hint="no" show_hints="TRUE"> <span class="math inline">\(\cos()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin()$" id="bdb932-2-3" w="7" name="bdb932-2" hint="This is the interior function." show_hints="TRUE"> <span class="math inline">\(\sin()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above " id="bdb932-2-4" w="32" name="bdb932-2" hint="incorrect choice" show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="It is not  ... mposition " id="bdb932-2-5" w="87" name="bdb932-2" hint="wide of the mark" show_hints="TRUE"> It is not a function composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bdb932-2" id="bdb932-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$\recip()$" id="bdb932-2-1" w="29" name="bdb932-2" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(\recip()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\cos()$ " id="bdb932-2-2" w="32" name="bdb932-2" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(\cos()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin()$" id="bdb932-2-3" w="87" name="bdb932-2" hint="This is the interior function." show_hints="TRUE"> <span class="math inline">\(\sin()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above " id="bdb932-2-4" w="32" name="bdb932-2" hint="You might think so, but ..." show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="It is not  ... mposition " id="bdb932-2-5" w="87" name="bdb932-2" hint="Not so!" show_hints="TRUE"> It is not a function composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bdb932-2" id="bdb932-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="bdb932-2-hintarea">question id: bdb932-2</small></p>
 </div>
 </div>
@@ -3124,8 +2711,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>In <span class="math inline">\(\sin\left(\frac{2 \pi}{P} (t-t_0)\right)\)</span> which is the <strong>exterior</strong> function?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$t-t_0$ " id="bdb932-3-1" w="23" name="bdb932-3" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(t-t_0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{2\pi}{P}$ " id="bdb932-3-2" w="7" name="bdb932-3" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(\frac{2\pi}{P}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{2\pi}{P} t$ " id="bdb932-3-3" w="7" name="bdb932-3" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\frac{2\pi}{P} t\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{2\p ...  (t-t_0)$ " id="bdb932-3-4" w="3" name="bdb932-3" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\frac{2\pi}{P} (t-t_0)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin()$" id="bdb932-3-5" w="29" name="bdb932-3" hint="Correct" show_hints="TRUE"> <span class="math inline">\(\sin()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above " id="bdb932-3-6" w="87" name="bdb932-3" hint="Try again!" show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="It is not  ... mposition " id="bdb932-3-7" w="19" name="bdb932-3" hint="Better luck next time." show_hints="TRUE"> It is not a function composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bdb932-3" id="bdb932-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$t-t_0$ " id="bdb932-3-1" w="19" name="bdb932-3" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(t-t_0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{2\pi}{P}$ " id="bdb932-3-2" w="87" name="bdb932-3" hint="You might think so, but ..." show_hints="TRUE"> <span class="math inline">\(\frac{2\pi}{P}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{2\pi}{P} t$ " id="bdb932-3-3" w="32" name="bdb932-3" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(\frac{2\pi}{P} t\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{2\p ...  (t-t_0)$ " id="bdb932-3-4" w="19" name="bdb932-3" hint="Think again." show_hints="TRUE"> <span class="math inline">\(\frac{2\pi}{P} (t-t_0)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin()$" id="bdb932-3-5" w="8" name="bdb932-3" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(\sin()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above " id="bdb932-3-6" w="23" name="bdb932-3" hint="Not quite right." show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="It is not  ... mposition " id="bdb932-3-7" w="23" name="bdb932-3" hint="Incorrect." show_hints="TRUE"> It is not a function composition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bdb932-3" id="bdb932-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="bdb932-3-hintarea">question id: bdb932-3</small></p>
 </div>
 </div>
@@ -3133,14 +2720,14 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>In <span class="math inline">\(\sin\left(2 \pi (t-t_0)/P\right)\)</span> which is the <strong>interior</strong> function?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$t-t_0$" id="bdb932-4-1" w="87" name="bdb932-4" hint="That's  part of it." show_hints="TRUE"> <span class="math inline">\(t-t_0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\pi /P$" id="bdb932-4-2" w="23" name="bdb932-4" hint="That's  part of it." show_hints="TRUE"> <span class="math inline">\(2\pi /P\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\pi t /P t$" id="bdb932-4-3" w="32" name="bdb932-4" hint="That's  part of it." show_hints="TRUE"> <span class="math inline">\(2\pi t /P t\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\pi (t-t_0)/P$" id="bdb932-4-4" w="16" name="bdb932-4" hint="Nice." show_hints="TRUE"> <span class="math inline">\(2\pi (t-t_0)/P\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin()$" id="bdb932-4-5" w="19" name="bdb932-4" hint="This is the interior function." show_hints="TRUE"> <span class="math inline">\(\sin()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above " id="bdb932-4-6" w="3" name="bdb932-4" hint="incorrect choice" show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="It is not  ... position. " id="bdb932-4-7" w="7" name="bdb932-4" hint="Try again!" show_hints="TRUE"> It is not a function composition. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bdb932-4" id="bdb932-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$t-t_0$" id="bdb932-4-1" w="23" name="bdb932-4" hint="That's  part of it." show_hints="TRUE"> <span class="math inline">\(t-t_0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\pi /P$" id="bdb932-4-2" w="3" name="bdb932-4" hint="That's  part of it." show_hints="TRUE"> <span class="math inline">\(2\pi /P\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\pi t /P t$" id="bdb932-4-3" w="32" name="bdb932-4" hint="That's  part of it." show_hints="TRUE"> <span class="math inline">\(2\pi t /P t\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\pi (t-t_0)/P$" id="bdb932-4-4" w="29" name="bdb932-4" hint="You're right!" show_hints="TRUE"> <span class="math inline">\(2\pi (t-t_0)/P\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin()$" id="bdb932-4-5" w="87" name="bdb932-4" hint="This is the interior function." show_hints="TRUE"> <span class="math inline">\(\sin()\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above " id="bdb932-4-6" w="7" name="bdb932-4" hint="Untrue!" show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="It is not  ... position. " id="bdb932-4-7" w="23" name="bdb932-4" hint="You're mistaken" show_hints="TRUE"> It is not a function composition. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bdb932-4" id="bdb932-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="bdb932-4-hintarea">question id: bdb932-4</small></p>
 </div>
 </div>
 </div>
 <div id="exr-doe-pay-kitchen" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> Recall the differentiation rules for three of the pattern-book functions as presented in <strong>XREF not implemented yet</strong>:</p>
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> Recall the differentiation rules for three of the pattern-book functions as presented in [Faulty cross reference: sec-symbolic-differentiation]:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 22%">
@@ -3182,19 +2769,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Which of these formulas gives the correct differentiation rule for the power-law family <span class="math inline">\(x^p\)</span>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$p x^{p-1}$" id="doe-pay-kitchen-1" w="41" name="doe-pay-kitchen" hint="Nice." show_hints="TRUE"> <span class="math inline">\(p x^{p-1}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$p x^{p-1}$" id="doe-pay-kitchen-1" w="18" name="doe-pay-kitchen" hint="Nice." show_hints="TRUE"> <span class="math inline">\(p x^{p-1}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(p-1) x^{p+1}$" id="doe-pay-kitchen-2" w="32" name="doe-pay-kitchen" hint="If this were true, the derivative of $x^2$ would be $x^3$." show_hints="TRUE"> <span class="math inline">\((p-1) x^{p+1}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(p-1) x^{p+1}$" id="doe-pay-kitchen-2" w="7" name="doe-pay-kitchen" hint="If this were true, the derivative of $x^2$ would be $x^3$." show_hints="TRUE"> <span class="math inline">\((p-1) x^{p+1}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x^{p-1}$ " id="doe-pay-kitchen-3" w="19" name="doe-pay-kitchen" hint="wrong" show_hints="TRUE"> <span class="math inline">\(x^{p-1}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x^{p-1}$ " id="doe-pay-kitchen-3" w="7" name="doe-pay-kitchen" hint="Not so!" show_hints="TRUE"> <span class="math inline">\(x^{p-1}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(p-1) x^{p-1}$" id="doe-pay-kitchen-4" w="7" name="doe-pay-kitchen" hint="If this were true, the derivative of the identity function ($p=1$) would be 0." show_hints="TRUE"> <span class="math inline">\((p-1) x^{p-1}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(p-1) x^{p-1}$" id="doe-pay-kitchen-4" w="87" name="doe-pay-kitchen" hint="If this were true, the derivative of the identity function ($p=1$) would be 0." show_hints="TRUE"> <span class="math inline">\((p-1) x^{p-1}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="doe-pay-kitchen" id="doe-pay-kitchen.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="doe-pay-kitchen-hintarea">question id: doe-pay-kitchen</small></p>
 </div>
 </div>
@@ -3208,56 +2795,141 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-finch-trim-kayak-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
 <p>For each of the following functions, write a brief comparison of the function to it is differenced version. You can combine phrases such as “same shape”, “different shape. larger in amplitude”, “smaller in amplitude”, “same period”, “shorter period”, “longer period”, or whatever seems appropriate. For instance, for the original example in the sandbox, a reasonable comparison might be, “f() is concave down but Diff(f) is concave up.”</p>
 <p>A. For the function <span class="math inline">\(f(x) \equiv 3 x\)</span>, compare <span class="math inline">\(f()\)</span> to <span class="math inline">\(\partial_x f\)</span>.</p>
-<p><textarea id="finch-trim-kayak-A" name="finch-trim-kayak-A" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID finch-trim-kayak-A"></textarea> </p><div style="color: grey;"> <small>question id: finch-trim-kayak-A</small> </div><p></p>
+<p><textarea id="finch-trim-kayak-A" name="finch-trim-kayak-A" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID finch-trim-kayak-A)"></textarea></p>
 <p>B. For the function <span class="math inline">\(f(x) \equiv x^2\)</span>, compare <span class="math inline">\(f()\)</span> to <span class="math inline">\(\partial_x f\)</span>.</p>
-<p><textarea id="finch-trim-kayak-B" name="finch-trim-kayak-B" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID finch-trim-kayak-B"></textarea> </p><div style="color: grey;"> <small>question id: finch-trim-kayak-B</small> </div><p></p>
+<p><textarea id="finch-trim-kayak-B" name="finch-trim-kayak-B" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID finch-trim-kayak-B)"></textarea></p>
 <p>C. For the function <span class="math inline">\(f(x) \equiv e^x\)</span>, compare <span class="math inline">\(f()\)</span> to <span class="math inline">\(\partial_x f\)</span>.</p>
-<p><textarea id="finch-trim-kayak-C" name="finch-trim-kayak-C" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID finch-trim-kayak-C"></textarea> </p><div style="color: grey;"> <small>question id: finch-trim-kayak-C</small> </div><p></p>
+<p><textarea id="finch-trim-kayak-C" name="finch-trim-kayak-C" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID finch-trim-kayak-C)"></textarea></p>
 <p>D. For the function <span class="math inline">\(f(x) \equiv e^{-0.3 x}\)</span>, compare <span class="math inline">\(f()\)</span> to <span class="math inline">\(\partial_x f\)</span>.</p>
-<p><textarea id="finch-trim-kayak-D" name="finch-trim-kayak-D" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID finch-trim-kayak-D"></textarea> </p><div style="color: grey;"> <small>question id: finch-trim-kayak-D</small> </div><p></p>
+<p><textarea id="finch-trim-kayak-D" name="finch-trim-kayak-D" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID finch-trim-kayak-D)"></textarea></p>
 <p>E. For the function <span class="math inline">\(f(x) \equiv \sin(x)\)</span>, compare <span class="math inline">\(f()\)</span> to <span class="math inline">\(\partial_x f\)</span>.</p>
-<p><textarea id="finch-trim-kayak-E" name="finch-trim-kayak-E" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID finch-trim-kayak-E"></textarea> </p><div style="color: grey;"> <small>question id: finch-trim-kayak-E</small> </div><p></p>
+<p><textarea id="finch-trim-kayak-E" name="finch-trim-kayak-E" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID finch-trim-kayak-E)"></textarea></p>
 <p>F. For the function <span class="math inline">\(f(x) \equiv \sin(2 \pi x)\)</span>, compare <span class="math inline">\(f()\)</span> to <span class="math inline">\(\partial_x f\)</span>).</p>
-<p><textarea id="finch-trim-kayak-F" name="finch-trim-kayak-F" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID finch-trim-kayak-F"></textarea> </p><div style="color: grey;"> <small>question id: finch-trim-kayak-F</small> </div><p></p>
+<p><textarea id="finch-trim-kayak-F" name="finch-trim-kayak-F" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID finch-trim-kayak-F)"></textarea></p>
 <p>G. For the function <span class="math inline">\(f(x) \equiv \sin(\frac{2 \pi}{20} x)\)</span>, compare <span class="math inline">\(f()\)</span> to <span class="math inline">\(\partial_x f\)</span>).</p>
-<p><textarea id="finch-trim-kayak-G" name="finch-trim-kayak-G" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID finch-trim-kayak-G"></textarea> </p><div style="color: grey;"> <small>question id: finch-trim-kayak-G</small> </div><p></p>
+<p><textarea id="finch-trim-kayak-G" name="finch-trim-kayak-G" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID finch-trim-kayak-G)"></textarea></p>
+<p>H. The graphic produced by <a href="#lst-finch-trim-kayak" class="quarto-xref">Active R chunk&nbsp;<span>1</span></a> uses two separate frames, one for <span class="math inline">\(f(x)\)</span> and the other for <span class="math inline">\(\partial_x f(x)\)</span>. Explain why in general it’s necessary to plot <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(\partial_x f(x)\)</span> with different vertical axes. (Hint: Suppose <span class="math inline">\(x\)</span> is denominated in meters or any other dimensionful quantity.)</p>
+<p><textarea id="finch-trim-kayak-H" name="finch-trim-kayak-H" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID finch-trim-kayak-H)"></textarea></p>
+</div>
+<div id="exr-ant-give-room" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> <a href="https://www.mosaic-web.org/MOSAIC-Calculus/Textbook/Differentiation/23-rules.html#sec-using-the-rules" target="_blank"><em>MOSAIC Calculus</em> Sec 23.1</a> explains that in differentiating a linear combination of two functions, or a product of two functions, or one function composed with another, your first task is to identify the two functions <span class="math inline">\(f()\)</span> and <span class="math inline">\(g()\)</span> involved. Second, compute the derivative of each of those functions on its own: <span class="math inline">\(\partial_x f(x)\)</span> and <span class="math inline">\(\partial_x g(x)\)</span>.</p>
+<p>Carry out these two tasks for each of the combined functions shown in the table. (The first row has been done for you as an example.)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 30%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Combination</th>
+<th><span class="math inline">\(f()\)</span></th>
+<th><span class="math inline">\(g()\)</span></th>
+<th><span class="math inline">\(\partial_x f()\)</span></th>
+<th><span class="math inline">\(\partial_x g()\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(e^x \ln(x)\)</span></td>
+<td><span class="math inline">\(\ln(x)\)</span></td>
+<td><span class="math inline">\(e^x\)</span></td>
+<td><span class="math inline">\(\recip\)</span> (that is <span class="math inline">\(1/x\)</span>)</td>
+<td><span class="math inline">\(e^x\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(sin(e^x)\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x + x^2\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(1/\sin(x)\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\pnorm(x)^2\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sqrt{\pnorm(x)}\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\pnorm(x^2)\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\pnorm(\sin(x))\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="exr-dog-look-bottle" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6</strong></span> Confirm using algebraic manipulation the differentiation rule for a product of three functions:</p>
+<p><span class="math display">\[\left[ u\cdot v\cdot w\right]' = \color{blue}{u'}\cdot v\cdot w\ +\ u\cdot \color{blue}{v'}\cdot w\ +\ u\cdot v\cdot \color{blue}{w}'\]</span> Here, <span class="math inline">\(u\)</span> is shorthand for <span class="math inline">\(u(x)\)</span>, and <span class="math inline">\(u'\)</span> is shorthand for <span class="math inline">\(\partial_x u(x)\)</span>, and similarly for <span class="math inline">\(v\)</span> and <span class="math inline">\(w\)</span>.</p>
+<p>Hint: <span class="math inline">\(\left[ u\cdot v\cdot w\right] = u \cdot \left[ v \cdot w\right]\)</span>. So a product of three functions can be seen as a product <span class="math inline">\(u\cdot h\)</span> where <span class="math inline">\(h \equiv v \cdot w\)</span>.</p>
 </div>
 <div id="exr-octopus-teach-sheet" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> In <a href="#exr-goat-walk-window" class="quarto-xref">Exercise&nbsp;<span class="quarto-unresolved-ref">exr-goat-walk-window</span></a> you constructed models <span class="math inline">\(D(t)\)</span> of the availability of a drug in the bloodstream for three different pill-taking regimens: every six hours, every eight hours, and a double dose to start followed by a single dose every eight hours. The model for from a single, isolated pill is a zero before the pill is taken, then exponential decay from the level of the pill dose after the pill is taken. Like this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pill <span class="ot">&lt;-</span> <span class="fu">makeFun</span>(<span class="fu">ifelse</span>(t <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="dv">0</span>, <span class="fu">exp</span>(<span class="sc">-</span>k <span class="sc">*</span> t)) <span class="sc">~</span> t, <span class="at">k =</span> <span class="fu">log</span>(<span class="dv">2</span>)<span class="sc">/</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p><span class="theorem-title"><strong>Exercise 7</strong></span> In <a href="09-exercises.html#exr-goat-walk-window" class="quarto-xref">Exercise&nbsp;<span>7</span></a> you constructed models <span class="math inline">\(D(t)\)</span> of the availability of a drug in the bloodstream for three different pill-taking regimens: every six hours, every eight hours, and a double dose to start followed by a single dose every eight hours. The model for from a single, isolated pill is a zero before the pill is taken, then exponential decay from the level of the pill dose after the pill is taken. Like this:</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>The parameter <span class="math inline">\(k\)</span> has been set to represent a drug with a half-life of three hours.</p>
 <p>The model for the entire regiment is a linear combination of time-shifted single pills, e.g.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>regimen8 <span class="ot">&lt;-</span> <span class="fu">makeFun</span>(A<span class="sc">*</span><span class="fu">pill</span>(t) <span class="sc">+</span> A<span class="sc">*</span><span class="fu">pill</span>(t<span class="dv">-8</span>) <span class="sc">+</span> A<span class="sc">*</span><span class="fu">pill</span>(t<span class="dv">-16</span>) <span class="sc">+</span> A<span class="sc">*</span><span class="fu">pill</span>(t<span class="dv">-24</span>) <span class="sc">+</span> A<span class="sc">*</span><span class="fu">pill</span>(t<span class="dv">-32</span>) <span class="sc">~</span> t, <span class="at">A=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>From graphs of the functions themselves it is easy to check whether the availability ever falls below the therapeutic threshold (which we stipulated is 0.25). For instance, the eight-hour regiment with a dose of <code>A=1</code> does fall below the threshold during the first day. So a larger dose is needed than <code>A=1</code>.</p>
 <p>A primary objective in choosing a drug regime is to ensure that the availability stays above the therapeutic level. A secondary objective is to keep the elimination rate small so that the drug can be handled by patients with poorly functioning livers.</p>
-<p>The derivative <span class="math inline">\(\partial_t \text{regimen8}(t)\)</span> tells the instantaneous rate at which the drug is being administered to and eliminated from the patient’s body.</p>
+<p>The derivative <span class="math inline">\(\partial_t \text{regimen8}(t)\)</span> tells the instantaneous rate at which the drug is being administered to and eliminated from the patient’s body. This is the reason for using the name <code>elimination()</code> for the function created in <a href="#lst-octopus-teach-sheet-calc" class="quarto-xref">Active R chunk&nbsp;<span>2</span></a>.</p>
 <div id="lst-octopus-teach-sheet-calc" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-octopus-teach-sheet-calc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;2
 </figcaption>
 <div aria-describedby="lst-octopus-teach-sheet-calc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
 <p>For each of the three regimens—6-hour, 8-hour, 8-hour-double-first-dose—construct <span class="math inline">\(\partial_t \text{regimen}(t)\)</span>. Ignoring the glitches due to discontinuity at the times the pills are consumed, which of the three regimens has the lowest average rate of drug elimination?</p>
-<p><textarea id="octopus-teach-sheet-text" name="octopus-teach-sheet-text" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID octopus-teach-sheet-text"></textarea> </p><div style="color: grey;"> <small>question id: octopus-teach-sheet-text</small> </div><p></p>
+<p><textarea id="octopus-teach-sheet-text" name="octopus-teach-sheet-text" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID octopus-teach-sheet-text)"></textarea></p>
 </div>
 <div id="exr-pig-see-pantry" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6</strong></span> The function <span class="math inline">\(F(t)\)</span> shown in <a href="#fig-pig-see-pantry-sigmoids" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-pig-see-pantry-sigmoids</span></a> is a linear combination of three time-shifted sigmoids.</p>
+<p><span class="theorem-title"><strong>Exercise 8</strong></span> The function <span class="math inline">\(F(t)\)</span> shown in <a href="#fig-pig-see-pantry-sigmoids" class="quarto-xref">Figure&nbsp;<span>1</span></a> is a linear combination of three time-shifted sigmoids.</p>
 <div id="fig-pig-see-pantry-sigmoids" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pig-see-pantry-sigmoids-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3265,7 +2937,7 @@ Active R chunk&nbsp;2
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="23-exercises_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3281,12 +2953,12 @@ Figure&nbsp;1
 <li>How many gaussians will be in <span class="math inline">\(\partial_t F(t)\)</span>.</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="2 " id="psp4-1-1" w="23" name="psp4-1" hint="wrong" show_hints="FALSE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="psp4-1-2" w="20" name="psp4-1" hint="Correct" show_hints="FALSE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6 " id="psp4-1-3" w="87" name="psp4-1" hint="You're mistaken" show_hints="FALSE"> 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="none " id="psp4-1-4" w="23" name="psp4-1" hint="Better luck next time." show_hints="FALSE"> none &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="psp4-1" id="psp4-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="2 " id="psp4-1-1" w="19" name="psp4-1" hint="Untrue!" show_hints="FALSE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="psp4-1-2" w="5" name="psp4-1" hint="Right-O!" show_hints="FALSE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6 " id="psp4-1-3" w="32" name="psp4-1" hint="Not on target." show_hints="FALSE"> 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="none " id="psp4-1-4" w="7" name="psp4-1" hint="Incorrect." show_hints="FALSE"> none &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="psp4-1" id="psp4-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="psp4-1-hintarea">question id: psp4-1</small></p>
 </div>
 </div>
-<p><a href="#fig-pig-see-pantry-many" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-pig-see-pantry-many</span></a> shows several functions. One of them is <span class="math inline">\(\partial_t F(t)\)</span>.</p>
+<p><a href="#fig-pig-see-pantry-many" class="quarto-xref">Figure&nbsp;<span>2</span></a> shows several functions. One of them is <span class="math inline">\(\partial_t F(t)\)</span>.</p>
 <div id="fig-pig-see-pantry-many" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pig-see-pantry-many-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3296,10 +2968,10 @@ Figure&nbsp;1
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="23-exercises_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-23-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="23-exercises_files/figure-html/unnamed-chunk-21-2.png" class="img-fluid figure-img" width="672"></p>
 </div>
 </div>
 </div>
@@ -3313,8 +2985,8 @@ Figure&nbsp;2
 <li>Which function is the actual derivative of <span class="math inline">\(F(t)\)</span>? (Hint: The vertical axis is important as is the value of <span class="math inline">\(\text{dnorm}(0)\)</span>.)</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="A " id="psp4-2-1" w="32" name="psp4-2" hint="incorrect choice" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B " id="psp4-2-2" w="19" name="psp4-2" hint="wrong" show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C " id="psp4-2-3" w="7" name="psp4-2" hint="You're mistaken" show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="D" id="psp4-2-4" w="18" name="psp4-2" hint="Excellent!" show_hints="TRUE"> D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="psp4-2" id="psp4-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="A " id="psp4-2-1" w="23" name="psp4-2" hint="Incorrect." show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B " id="psp4-2-2" w="19" name="psp4-2" hint="You're mistaken" show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C " id="psp4-2-3" w="32" name="psp4-2" hint="No." show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="D" id="psp4-2-4" w="20" name="psp4-2" hint="Certainly." show_hints="TRUE"> D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="psp4-2" id="psp4-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="psp4-2-hintarea">question id: psp4-2</small></p>
 </div>
 </div>
@@ -3322,8 +2994,8 @@ Figure&nbsp;2
 <li>Of the functions (1), (2), (3), and (4) below, which function is the <strong>second derivative</strong> of <span class="math inline">\(F(t)\)</span>? (Hints: The vertical axis is important as is the value of <span class="math inline">\(\text{dnorm}(0)\)</span>.)</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="(1)" id="pig-see-pantry-3-1" w="7" name="pig-see-pantry-3" hint="The problem is with the first event." show_hints="TRUE"> (1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="(2)" id="pig-see-pantry-3-2" w="23" name="pig-see-pantry-3" hint="The first and second events go in the same direction. The third event is not as big as the second." show_hints="TRUE"> (2) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="(3)" id="pig-see-pantry-3-3" w="29" name="pig-see-pantry-3" hint="right-o" show_hints="TRUE"> (3) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="(4)" id="pig-see-pantry-3-4" w="23" name="pig-see-pantry-3" hint="The first event isn't the second derivative of a sigmoid." show_hints="TRUE"> (4) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pig-see-pantry-3" id="pig-see-pantry-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="(1)" id="pig-see-pantry-3-1" w="3" name="pig-see-pantry-3" hint="The problem is with the first event." show_hints="TRUE"> (1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="(2)" id="pig-see-pantry-3-2" w="7" name="pig-see-pantry-3" hint="The first and second events go in the same direction. The third event is not as big as the second." show_hints="TRUE"> (2) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="(3)" id="pig-see-pantry-3-3" w="20" name="pig-see-pantry-3" hint="Yup!" show_hints="TRUE"> (3) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="(4)" id="pig-see-pantry-3-4" w="23" name="pig-see-pantry-3" hint="The first event isn't the second derivative of a sigmoid." show_hints="TRUE"> (4) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="pig-see-pantry-3" id="pig-see-pantry-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="pig-see-pantry-3-hintarea">question id: pig-see-pantry-3</small></p>
 </div>
 </div>
@@ -3334,28 +3006,28 @@ Figure&nbsp;2
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="23-exercises_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-26-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="23-exercises_files/figure-html/unnamed-chunk-24-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-26-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="23-exercises_files/figure-html/unnamed-chunk-24-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-26-4.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="23-exercises_files/figure-html/unnamed-chunk-24-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3368,13 +3040,13 @@ Figure&nbsp;3
 </div>
 </div>
 <div id="exr-pine-lead-car" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7</strong></span> Recall from Section@sec-monotonicity that a function is <strong><em>monotonically increasing</em></strong> on a given domain when the function’s slope is positive everywhere in that domain. A <strong><em>monotonically decreasing</em></strong> function, similarly, has a negative slope everywhere in the domain. When the slope is zero, or positive in some places and negative in others, the function is neither monotonically increasing or decreasing.</p>
+<p><span class="theorem-title"><strong>Exercise 9</strong></span> Recall from <a href="https://www.mosaic-web.org/MOSAIC-Calculus/Textbook/Preliminaries/06-describing-functions.html#sec-monotonicity" target="_blank"><em>MOSAIC Calculus</em> Sec 6.4</a> that a function is <strong><em>monotonically increasing</em></strong> on a given domain when the function’s slope is positive everywhere in that domain. A <strong><em>monotonically decreasing</em></strong> function, similarly, has a negative slope everywhere in the domain. When the slope is zero, or positive in some places and negative in others, the function is neither monotonically increasing or decreasing.</p>
 <p>Each of the following graphs shows the derivative of some function <span class="math inline">\(f(x)\)</span>. (Note: the graph does not show <span class="math inline">\(f(x)\)</span> but rather the function <span class="math inline">\(\partial_x f(x)\)</span>) For each graph, say whether the function <span class="math inline">\(f()\)</span> is monotonically increasing, monotonically decreasing, or neither. (Note that the horizontal scale is the same in every graph, but the vertical scale can be different from one scale to another.)</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="23-exercises_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3399,8 +3071,41 @@ Figure&nbsp;3
 </p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-1-5" w="87" name="pine-lead-car-1" hint="This is the case if you cannot tell if the derivative is positive or negative." show_hints="TRUE"> Can’t tell from the info provided</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="pine-lead-car-1" id="pine-lead-car-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="pine-lead-car-1-hintarea">question id: pine-lead-car-1</small></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="23-exercises_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Function B is …</li>
+</ol>
+<div class="cell" data-show_hints="true">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-2-1" w="19" name="pine-lead-car-2" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="TRUE"> monotonically increasing</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-2-2" w="35" name="pine-lead-car-2" hint="right-o A monotonically increasing function has a function that is everywhere $> 0$" show_hints="TRUE"> monotonically decreasing</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-2-3" w="32" name="pine-lead-car-2" hint="A constant function has a derivative that is everywhere 0." show_hints="TRUE"> constant</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="non-monotonic" id="pine-lead-car-2-4" w="87" name="pine-lead-car-2" hint="A non-monotonic function goes up and down, hence the derivative is positive in some places and negative in others." show_hints="TRUE"> non-monotonic</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-2-5" w="19" name="pine-lead-car-2" hint="This is the case if you cannot tell if the derivative is positive or negative." show_hints="TRUE"> Can’t tell from the info provided</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="pine-lead-car-2" id="pine-lead-car-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="pine-lead-car-2-hintarea">question id: pine-lead-car-2</small></p>
 </div>
 </div>
 <div class="cell">
@@ -3412,28 +3117,28 @@ Figure&nbsp;3
 </div>
 </div>
 </div>
-<ol start="2" type="1">
-<li>Function B is …</li>
+<ol start="3" type="1">
+<li>Function C is …</li>
 </ol>
-<div class="cell" data-show_hints="true">
+<div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-2-1" w="32" name="pine-lead-car-2" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="TRUE"> monotonically increasing</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-3-1" w="32" name="pine-lead-car-3" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically increasing</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-2-2" w="35" name="pine-lead-car-2" hint="right-o A monotonically increasing function has a function that is everywhere $> 0$" show_hints="TRUE"> monotonically decreasing</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-3-2" w="23" name="pine-lead-car-3" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically decreasing</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-2-3" w="23" name="pine-lead-car-2" hint="A constant function has a derivative that is everywhere 0." show_hints="TRUE"> constant</p>
+</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-3-3" w="19" name="pine-lead-car-3" hint="A constant function has a derivative that is everywhere 0." show_hints="FALSE"> constant</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="non-monotonic" id="pine-lead-car-2-4" w="3" name="pine-lead-car-2" hint="A non-monotonic function goes up and down, hence the derivative is positive in some places and negative in others." show_hints="TRUE"> non-monotonic</p>
+</p><p><input type="radio" class="devoirs-mcq" value="non-monotonic" id="pine-lead-car-3-4" w="20" name="pine-lead-car-3" hint="right-o A non-monotonic function goes up and down, hence the derivative is positive in some places and negative in others." show_hints="FALSE"> non-monotonic</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-2-5" w="19" name="pine-lead-car-2" hint="This is the case if you cannot tell if the derivative is positive or negative." show_hints="TRUE"> Can’t tell from the info provided</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-3-5" w="32" name="pine-lead-car-3" hint="This is the case if you cannot tell if the derivative is positive or negative." show_hints="FALSE"> Can’t tell from the info provided</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="pine-lead-car-2" id="pine-lead-car-2.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="pine-lead-car-2-hintarea">question id: pine-lead-car-2</small></p>
+<input type="radio" class="devoirs-mcq" name="pine-lead-car-3" id="pine-lead-car-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="pine-lead-car-3-hintarea">question id: pine-lead-car-3</small></p>
 </div>
 </div>
 <div class="cell">
@@ -3445,28 +3150,28 @@ Figure&nbsp;3
 </div>
 </div>
 </div>
-<ol start="3" type="1">
-<li>Function C is …</li>
+<ol start="4" type="1">
+<li>Function D is …</li>
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-3-1" w="23" name="pine-lead-car-3" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically increasing</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-4-1" w="18" name="pine-lead-car-4" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically increasing</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-3-2" w="7" name="pine-lead-car-3" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically decreasing</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-4-2" w="23" name="pine-lead-car-4" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically decreasing</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-3-3" w="87" name="pine-lead-car-3" hint="A constant function has a derivative that is everywhere 0." show_hints="FALSE"> constant</p>
+</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-4-3" w="23" name="pine-lead-car-4" hint="A constant function has a derivative that is everywhere 0." show_hints="FALSE"> constant</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="non-monotonic" id="pine-lead-car-3-4" w="16" name="pine-lead-car-3" hint="right-o A non-monotonic function goes up and down, hence the derivative is positive in some places and negative in others." show_hints="FALSE"> non-monotonic</p>
+</p><p><input type="radio" class="devoirs-mcq" value="non-monotonic" id="pine-lead-car-4-4" w="32" name="pine-lead-car-4" hint="A non-monotonic function goes up and down, hence the derivative is positive in some places and negative in others." show_hints="FALSE"> non-monotonic</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-3-5" w="32" name="pine-lead-car-3" hint="This is the case if you cannot tell if the derivative is positive or negative." show_hints="FALSE"> Can’t tell from the info provided</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-4-5" w="23" name="pine-lead-car-4" hint="This is the case if you cannot tell if the derivative is positive or negative." show_hints="FALSE"> Can’t tell from the info provided</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="pine-lead-car-3" id="pine-lead-car-3.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="pine-lead-car-3-hintarea">question id: pine-lead-car-3</small></p>
+<input type="radio" class="devoirs-mcq" name="pine-lead-car-4" id="pine-lead-car-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="pine-lead-car-4-hintarea">question id: pine-lead-car-4</small></p>
 </div>
 </div>
 <div class="cell">
@@ -3478,28 +3183,26 @@ Figure&nbsp;3
 </div>
 </div>
 </div>
-<ol start="4" type="1">
-<li>Function D is …</li>
-</ol>
+<p>Function E is …</p>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-4-1" w="29" name="pine-lead-car-4" hint="You're right A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically increasing</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-5-1" w="19" name="pine-lead-car-5" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically increasing</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-4-2" w="3" name="pine-lead-car-4" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically decreasing</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-5-2" w="23" name="pine-lead-car-5" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically decreasing</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-4-3" w="32" name="pine-lead-car-4" hint="A constant function has a derivative that is everywhere 0." show_hints="FALSE"> constant</p>
+</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-5-3" w="19" name="pine-lead-car-5" hint="A constant function has a derivative that is everywhere 0." show_hints="FALSE"> constant</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="non-monotonic" id="pine-lead-car-4-4" w="23" name="pine-lead-car-4" hint="A non-monotonic function goes up and down, hence the derivative is positive in some places and negative in others." show_hints="FALSE"> non-monotonic</p>
+</p><p><input type="radio" class="devoirs-mcq" value="non-monotonic" id="pine-lead-car-5-4" w="7" name="pine-lead-car-5" hint="A non-monotonic function goes up and down, hence the derivative is positive in some places and negative in others." show_hints="FALSE"> non-monotonic</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-4-5" w="3" name="pine-lead-car-4" hint="This is the case if you cannot tell if the derivative is positive or negative." show_hints="FALSE"> Can’t tell from the info provided</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-5-5" w="5" name="pine-lead-car-5" hint="Yes This is the case if you cannot tell if the derivative is positive or negative." show_hints="FALSE"> Can’t tell from the info provided</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="pine-lead-car-4" id="pine-lead-car-4.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="pine-lead-car-4-hintarea">question id: pine-lead-car-4</small></p>
+<input type="radio" class="devoirs-mcq" name="pine-lead-car-5" id="pine-lead-car-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="pine-lead-car-5-hintarea">question id: pine-lead-car-5</small></p>
 </div>
 </div>
 <div class="cell">
@@ -3511,49 +3214,18 @@ Figure&nbsp;3
 </div>
 </div>
 </div>
-<p>Function E is …</p>
-<div class="cell" data-show_hints="false">
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-5-1" w="23" name="pine-lead-car-5" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically increasing</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-5-2" w="19" name="pine-lead-car-5" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically decreasing</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-5-3" w="7" name="pine-lead-car-5" hint="A constant function has a derivative that is everywhere 0." show_hints="FALSE"> constant</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="non-monotonic" id="pine-lead-car-5-4" w="3" name="pine-lead-car-5" hint="A non-monotonic function goes up and down, hence the derivative is positive in some places and negative in others." show_hints="FALSE"> non-monotonic</p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-5-5" w="8" name="pine-lead-car-5" hint="Yes This is the case if you cannot tell if the derivative is positive or negative." show_hints="FALSE"> Can’t tell from the info provided</p>
-<p></p>
-<input type="radio" class="devoirs-mcq" name="pine-lead-car-5" id="pine-lead-car-5.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="pine-lead-car-5-hintarea">question id: pine-lead-car-5</small></p>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <ol start="6" type="1">
 <li>Function F is …</li>
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-6-1" w="14" name="pine-lead-car-6" hint="You're right A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically increasing</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... increasing" id="pine-lead-car-6-1" w="29" name="pine-lead-car-6" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically increasing</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-6-2" w="23" name="pine-lead-car-6" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically decreasing</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonica ... decreasing" id="pine-lead-car-6-2" w="87" name="pine-lead-car-6" hint="A monotonically increasing function has a function that is everywhere $> 0$" show_hints="FALSE"> monotonically decreasing</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-6-3" w="87" name="pine-lead-car-6" hint="A constant function has a derivative that is everywhere 0." show_hints="FALSE"> constant</p>
+</p><p><input type="radio" class="devoirs-mcq" value="constant" id="pine-lead-car-6-3" w="3" name="pine-lead-car-6" hint="A constant function has a derivative that is everywhere 0." show_hints="FALSE"> constant</p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="non-monotonic" id="pine-lead-car-6-4" w="3" name="pine-lead-car-6" hint="A non-monotonic function goes up and down, hence the derivative is positive in some places and negative in others." show_hints="FALSE"> non-monotonic</p>
@@ -3562,235 +3234,16 @@ Figure&nbsp;3
 </p><p><input type="radio" class="devoirs-mcq" value="Can't tell ... o provided" id="pine-lead-car-6-5" w="32" name="pine-lead-car-6" hint="This is the case if you cannot tell if the derivative is positive or negative." show_hints="FALSE"> Can’t tell from the info provided</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="pine-lead-car-6" id="pine-lead-car-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="pine-lead-car-6-hintarea">question id: pine-lead-car-6</small></p>
 </div>
 </div>
 </div>
 <section id="activities" class="level3">
 <h3 class="anchored" data-anchor-id="activities">Activities</h3>
-<div id="exr-dog-look-bottle" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8</strong></span> Confirm using algebraic manipulation the differentiation rule for a product of three functions:</p>
-<p><span class="math display">\[\left[ u\cdot v\cdot w\right]' = \color{blue}{u'}\cdot v\cdot w\ +\ u\cdot \color{blue}{v'}\cdot w\ +\ u\cdot v\cdot \color{blue}{w}'\]</span> Here, <span class="math inline">\(u\)</span> is shorthand for <span class="math inline">\(u(x)\)</span>, and <span class="math inline">\(u'\)</span> is shorthand for <span class="math inline">\(\partial_x u(x)\)</span>, and similarly for <span class="math inline">\(v\)</span> and <span class="math inline">\(w\)</span>.</p>
-<p>Hint: <span class="math inline">\(\left[ u\cdot v\cdot w\right] = u \cdot \left[ v \cdot w\right]\)</span>. So a product of three functions can be seen as a product <span class="math inline">\(u\cdot h\)</span> where <span class="math inline">\(h \equiv v \cdot w\)</span>.</p>
+<div id="exr-exp-derive" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 10</strong></span> &nbsp;</p>
 </div>
-<div id="exr-camel-begin-piano" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 9</strong></span> Consider this function, defined piecewise:</p>
-<p><span class="math display">\[h(x) \equiv \left\{
-\begin{array}{ll}0 &amp; \text{for}\ x &lt; 0\\x^2 &amp;  \text{otherwise}\end{array}\right.\ .\]</span></p>
-<!-- ![](www/camel-fun.png) -->
-<ol type="1">
-<li><p>Write the R command to create this function. (Hint: Remember <code>ifelse</code> from <strong>XREF not implemented yet</strong>.)</p></li>
-<li><p>Using <a href="#lst-camel-begin-piano" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-camel-begin-piano</span></a>, plot <span class="math inline">\(h(x)\)</span> over the domain <span class="math inline">\(-1 \leq x \leq 1\)</span>, then sketch a copy of the graph on your paper.</p></li>
-</ol>
-<div id="lst-camel-begin-piano" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-camel-begin-piano-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;3
-</figcaption>
-<div aria-describedby="lst-camel-begin-piano-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-3"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</figure>
-</div>
-<ol start="3" type="1">
-<li><p>Create the function <span class="math inline">\(\partial_x h(x)\)</span> by differentiating separately each piece of the piecewise function <span class="math inline">\(h()\)</span>. Write down <span class="math inline">\(\partial_x h(x)\)</span> using mathematical notation similar to the definition of <span class="math inline">\(h(x)\)</span> given above.</p></li>
-<li><p>Sketch a graph of <span class="math inline">\(\partial_x h(x)\)</span> over the domain <span class="math inline">\(-1 \leq x \leq 1\)</span>. You’re welcome to use a <a href="#lst-camel-begin-piano" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-camel-begin-piano</span></a>, but you may be able to figure out the shape of the graph yourself.</p></li>
-<li><p>The shape of the function you sketched in (4) has a name, given in the text in Section @ref(continuity). What is that name?</p></li>
-</ol>
-<p>Now you will do much the same as in items (3), (4), and (5), but instead of the first derivative <span class="math inline">\(\partial_x h(x)\)</span>, create, sketch, and name the second derivative <span class="math inline">\(\partial_{xx} h(x)\)</span>.</p>
-<ol start="6" type="1">
-<li><p>Create and write down <span class="math inline">\(\partial_{xx} h(x)\)</span> in mathematical notation.</p></li>
-<li><p>Sketch <span class="math inline">\(\partial_{xx} h(x)\)</span></p></li>
-<li><p>Classify the smoothness of <span class="math inline">\(h(x)\)</span> using the following table:</p></li>
-</ol>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Smoothness</th>
-<th>Criterion</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(C^0\)</span></td>
-<td><span class="math inline">\(\partial_x h(x)\)</span> is discontinuous</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(C^1\)</span></td>
-<td><span class="math inline">\(\partial_x h(x)\)</span> is continuous</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(C^2\)</span></td>
-<td><span class="math inline">\(\partial_{xx} h(x)\)</span> is continuous</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(C^3\)</span></td>
-<td><span class="math inline">\(\partial_{xxx} h(x)\)</span> is continuous</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\vdots\)</span></td>
-<td>and so on.</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(C^\infty\)</span></td>
-<td>All orders of derivative of <span class="math inline">\(h(x)\)</span> are continous.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="exr-goldfish-keep-bed" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10</strong></span> Recall from <a href="#exr-duck-see-socks" class="quarto-xref">Exercise&nbsp;<span class="quarto-unresolved-ref">exr-duck-see-socks</span></a> the <strong><em>Lorenz curve</em></strong> used to describe income inequality. The Lorenz curve shows the fraction of total income versus population fraction.</p>
-<div id="fig-lorenz-data-redux" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-lorenz-data-redux-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="23-exercises_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lorenz-data-redux-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: A Lorenz curve (blue) fitted to income data from the US in 2009. (See <a href="#fig-lorenz-data" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-lorenz-data</span></a>.)
-</figcaption>
-</figure>
-</div>
-<p>Since the population is arranged from poorest to richest along the horizontal axis, Lorenz curves must be both monotonically increasing and concave up. That is, any Lorenz function <span class="math inline">\(L(P)\)</span>, where <span class="math inline">\(P\)</span> is the population fraction, must satisfy these criteria:</p>
-<ol type="i">
-<li><span class="math inline">\(L(0) = 0\)</span></li>
-<li><span class="math inline">\(L(1) = 1\)</span> that is, the aggregate fraction of income earned by the entire population is 100%.</li>
-<li><span class="math inline">\(\partial_P L(P) \ &gt; \ 0\)</span> that is, monotonically increasing</li>
-<li><span class="math inline">\(\partial_{PP} L(P) \ &gt; \ 0\)</span> that is, concave up.</li>
-</ol>
-<p>Consider a function <span class="math inline">\(H(P) \equiv L_1(L_2(P))\)</span> which is the composition of two Lorenz curves.</p>
-<ul>
-<li>A. Use the composition rule to show that <span class="math inline">\(H(P)\)</span> is monotonically increasing. (Hint, calculate <span class="math inline">\(\partial_P H(P)\)</span> and show that it must be positive.)</li>
-<li>B. Using both the composition and product rules, calculate <span class="math inline">\(\partial_{PP} H(P)\)</span> and show that <span class="math inline">\(H(P)\)</span> must be concave up.</li>
-</ul>
-</div>
-<div id="exr-monkey-forget-tv" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 11</strong></span> The formula for the function <span class="math inline">\(\dnorm(x)\)</span> is <span class="math display">\[\dnorm(x) \equiv \frac{1}{\sqrt{2 \pi}} \exp\left(\frac{x^2}{2}\right)\ .\]</span></p>
-<p><strong>A.</strong> Use the chain rule to find <span class="math inline">\(\partial_x \dnorm(x)\)</span>.</p>
-<p><strong>B.</strong> Confirm from your answer to (1) that there is another formula for <span class="math inline">\(\partial_x \dnorm(x)\)</span>, namely <span class="math display">\[\partial_x \dnorm(x) = - x \dnorm(x)\ .\]</span></p>
-<p><strong>C.</strong> Use the product rule to find <span class="math inline">\(\partial_{xx} \dnorm(x)\)</span>.</p>
-<!--
-Ans: 
-$$- \dnorm(x) + x^2 \dnorm(x) = \dnorm(x) \left[{\large\strut}x^2 - 1\right]$$
--->
-<p><strong>D.</strong> From your answer to (3), compute the 3rd derivative <span class="math inline">\(\partial_{xxx} \dnorm(x)\)</span>:</p>
-<!--
-Ans: $$2 x \dnorm(x) - x \left[{\large\strut}x^2 - 1\right] \dnorm(x) = \dnorm(x) \left[{\large\strut} (3 x - x^3)\right] \ .$$
--->
-<p><strong>E.</strong> Let’s generalize the pattern. Each of the previous derivatives has been a polynomial—let’s call it <span class="math inline">\(p_n(x)\)</span> for the <span class="math inline">\(n\)</span>th derivative—times <span class="math inline">\(\dnorm(x)\)</span>. Knowing <span class="math inline">\(p_n(x)\)</span>, we can easily find <span class="math inline">\(p_{n+1}(x)\)</span>: <span class="math display">\[p_{n+1}(x) = -x p_n(x) + \partial_x p_n(x)\]</span> We know <span class="math inline">\(p_1(x) = -x\)</span> so <span class="math inline">\(p_2(x) = x^2 - 1\)</span>. In turn, this tells us <span class="math inline">\(p_3(x) = 3x - x^3\)</span>. Find:</p>
-<ol type="1">
-<li><span class="math inline">\(p_4(x)\)</span></li>
-<li><span class="math inline">\(p_5(x)\)</span></li>
-<li><span class="math inline">\(p_6(x)\)</span></li>
-</ol>
-</div>
-<span id="devoirs-docID" style="display: none;">23-exercises.rmarkdown</span> <button onclick="devoirsSubmit()">Collect your answers</button>
-<div id="devoirs_summary">
-No answers yet collected
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<script type="text/javascript">
- console.log("In devoirs.js")
-
-function devoirsCollectEssays() {
-  var essay_answers = [];
-  var items = document.getElementsByClassName("devoirs-text");
-  for (i = 0; i < items.length; i++) {
-    //console.log("text entry" + i + "being handled");
-    essay_answers[i] = {itemid: items[i].id, contents: items[i].value}
-  }
-
-  return essay_answers;
-}
-
-function devoirsGetDocID() {
-  return document.getElementById("devoirs-docID").innerHTML
-}
-
-function devoirsCollectMC() {
-    let mc_answers = [] // Hold the information
-    var ele = document.getElementsByClassName("devoirs-mcq");
-    var count = 0;
-    for (i = 0; i < ele.length; i++) {
-        if (ele[i].checked) {
-          //console.log("Entering conditional.");
-          let checked_one = ele[i];
-          mc_answers[count++] = {itemid: checked_one.id, w: checked_one.getAttribute("w"), contents: checked_one.text};
-        }
-    }
-    return mc_answers;
-}
-
-console.log("About to define WebR")
-
-function devoirsCollectWebR() {
-  var chunk_contents = []; // placeholder for collecting webr items
-  if (typeof qwebrCellDetails == "undefined") {
-    // There aren't any webr chunks
-    return chunk_contents;
-  }
-  var chunks = qwebrCellDetails;
-  for (i = 0; i < chunks.length; i++) {
-    chunk_contents[i] = {itemid: chunks[i].options["label"], contents: chunks[i].code};
-  }
-
-  return chunk_contents;
-}
-
-console.log("About to define devoirsSubmit")
-
-function devoirsSubmit() {
-  console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
-
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
-
-
-  navigator.clipboard.writeText(JSON.stringify(items));
-
-  // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
-
-  document.getElementById("devoirs_summary").innerHTML = my_summary;
-}
-
-console.log("Read devoirsSubmit()")
-
-// Hint handling in Multiple choice
-
-// Still have to add an on/off switch from options
-
-function devoirs_setup_hintarea() {
-  answers = document.getElementsByClassName("devoirs-mcq")
-  for (i=0; i<answers.length; i++) answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
-}
-
- window.addEventListener("load", function() {
-  answers = document.getElementsByClassName("devoirs-mcq")
-  for (i=0; i<answers.length; i++) {
-    if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
-    }
-  }
-})
-
-console.log("Added hint summary.") 
-</script>
-
-</div>
-</div>
-
-
 </section>
 
 </main> <!-- /main -->
@@ -3876,8 +3329,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3988,7 +3439,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"autorun":"false","results":"markup","comment":"","editor-word-wrap":"true","editor-max-height":"","editor-font-scale":"1","fig-height":5,"dpi":72,"out-height":"","output":"true","editor-quick-suggestions":"false","out-width":"700px","message":"true","label":"unnamed-chunk-1","warning":"true","fig-width":7,"classes":"","read-only":"false","fig-cap":"","context":"interactive"},"id":1,"code":"f1 <- doodle_fun(~ x, seed=3233)\nf2 <- doodle_fun(~ x, seed=853)\nh <- makeFun(f1(x) * f2(x) ~ x)\nslice_plot(h(x) ~ x, domain(x=-4:4)) "},{"options":{"autorun":"false","results":"markup","comment":"","editor-word-wrap":"true","editor-max-height":"","editor-font-scale":"1","fig-height":5,"dpi":72,"out-height":"","output":"true","editor-quick-suggestions":"false","out-width":"700px","message":"true","label":"titmouse-throw-sofa-scratch","warning":"true","fig-width":7,"classes":"","read-only":"false","fig-cap":"","context":"interactive"},"id":2,"code":"slice_plot(cos(x) ~ x, domain(x=-1:1), \n           size=3, alpha = 0.25) |>\n  slice_plot(x^2 ~ x, color=\"magenta\")"},{"options":{"autorun":"false","results":"markup","comment":"","editor-word-wrap":"true","editor-max-height":"","editor-font-scale":"1","fig-height":5,"dpi":72,"out-height":"","output":"true","editor-quick-suggestions":"false","out-width":"700px","message":"true","label":"titmouse-throw-sofa","warning":"true","fig-width":7,"classes":"","read-only":"false","fig-cap":"","context":"interactive"},"id":3,"code":"h <- makeFun( __define_your_h_function__ )\nZeros(h(x) ~ x)"},{"options":{"autorun":"false","results":"markup","comment":"","editor-word-wrap":"true","editor-max-height":"","editor-font-scale":"1","fig-height":5,"dpi":72,"out-height":"","output":"true","editor-quick-suggestions":"false","out-width":"700px","message":"true","label":"duck-swims-pond1","warning":"true","fig-width":7,"classes":"","read-only":"false","fig-cap":"","context":"interactive"},"id":4,"code":"argM(4*x - 1 ~ x, domain(x = 1:5))"}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"f1 <- doodle_fun(~ x, seed=3233)\nf2 <- doodle_fun(~ x, seed=853)\nh <- makeFun(f1(x) * f2(x) ~ x)\nslice_plot(h(x) ~ x, domain(x=-4:4)) ","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"slice_plot(cos(x) ~ x, domain(x=-1:1), \n           size=3, alpha = 0.25) |>\n  slice_plot(x^2 ~ x, color=\"magenta\")","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"titmouse-throw-sofa-scratch","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"h <- makeFun( __define_your_h_function__ )\nZeros(h(x) ~ x)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"titmouse-throw-sofa","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"argM(4*x - 1 ~ x, domain(x = 1:5))","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"duck-swims-pond1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1613,7 +1613,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block II Modeling</a></li><li class="breadcrumb-item"><a href="./13-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 13 Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block I Modeling</a></li><li class="breadcrumb-item"><a href="./13-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 13 Exercises</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1634,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2957,7 +2576,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block II Modeling</a></li><li class="breadcrumb-item"><a href="./13-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 13 Exercises</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block I Modeling</a></li><li class="breadcrumb-item"><a href="./13-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 13 Exercises</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 13 Exercises</h1>
 </div>
@@ -2982,14 +2601,16 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-beech-lead-piano" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> &nbsp;</p>
 <ol type="1">
 <li>What is the exact input to the pattern-book <strong>logarithm</strong> function where the output is 0?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0 " id="nac89-1-1" w="7" name="nac89-1" hint="Sorry!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3989423 " id="nac89-1-2" w="19" name="nac89-1" hint="wide of the mark" show_hints="TRUE"> 0.3989423 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/2 " id="nac89-1-3" w="3" name="nac89-1" hint="no" show_hints="TRUE"> 1/2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="nac89-1-4" w="18" name="nac89-1" hint="Correct" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="nac89-1" id="nac89-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0 " id="nac89-1-1" w="87" name="nac89-1" hint="Not on target." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3989423 " id="nac89-1-2" w="87" name="nac89-1" hint="Not on target." show_hints="TRUE"> 0.3989423 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/2 " id="nac89-1-3" w="32" name="nac89-1" hint="Hmmm ..." show_hints="TRUE"> 1/2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="nac89-1-4" w="5" name="nac89-1" hint="Yes." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="nac89-1" id="nac89-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="nac89-1-hintarea">question id: nac89-1</small></p>
 </div>
 </div>
@@ -2997,8 +2618,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What is the exact input to the pattern-book <strong>reciprocal</strong> function where the output is 1?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0 " id="nac89-2-1" w="19" name="nac89-2" hint="incorrect choice" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3989423 " id="nac89-2-2" w="19" name="nac89-2" hint="Better luck next time." show_hints="TRUE"> 0.3989423 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/2 " id="nac89-2-3" w="3" name="nac89-2" hint="Try again!" show_hints="TRUE"> 1/2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="nac89-2-4" w="16" name="nac89-2" hint="Nice." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="nac89-2" id="nac89-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0 " id="nac89-2-1" w="7" name="nac89-2" hint="You might think so, but ..." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3989423 " id="nac89-2-2" w="87" name="nac89-2" hint="Incorrect." show_hints="TRUE"> 0.3989423 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/2 " id="nac89-2-3" w="7" name="nac89-2" hint="Try again!" show_hints="TRUE"> 1/2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="nac89-2-4" w="29" name="nac89-2" hint="You're right." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="nac89-2" id="nac89-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="nac89-2-hintarea">question id: nac89-2</small></p>
 </div>
 </div>
@@ -3006,8 +2627,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>What is the exact input to the pattern-book <strong>identity</strong> function where the output is 1/2?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0 " id="nac89-3-1" w="7" name="nac89-3" hint="incorrect choice" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3989423 " id="nac89-3-2" w="32" name="nac89-3" hint="You're mistaken" show_hints="TRUE"> 0.3989423 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/2" id="nac89-3-3" w="20" name="nac89-3" hint="Yes" show_hints="TRUE"> 1/2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="nac89-3-4" w="7" name="nac89-3" hint="no" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="nac89-3" id="nac89-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0 " id="nac89-3-1" w="87" name="nac89-3" hint="You might think so, but ..." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3989423 " id="nac89-3-2" w="3" name="nac89-3" hint="Not so!" show_hints="TRUE"> 0.3989423 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/2" id="nac89-3-3" w="16" name="nac89-3" hint="Exactly." show_hints="TRUE"> 1/2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="nac89-3-4" w="23" name="nac89-3" hint="Not quite." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="nac89-3" id="nac89-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="nac89-3-hintarea">question id: nac89-3</small></p>
 </div>
 </div>
@@ -3015,14 +2636,14 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>The pattern-book <strong>square</strong> function just touches the horizontal axis. What’s the input where this happens?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0" id="nac89-4-1" w="5" name="nac89-4" hint="Correct" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3989423 " id="nac89-4-2" w="87" name="nac89-4" hint="wrong" show_hints="TRUE"> 0.3989423 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/2 " id="nac89-4-3" w="32" name="nac89-4" hint="wrong" show_hints="TRUE"> 1/2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="nac89-4-4" w="19" name="nac89-4" hint="Not quite right" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="nac89-4" id="nac89-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0" id="nac89-4-1" w="20" name="nac89-4" hint="Yup!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3989423 " id="nac89-4-2" w="19" name="nac89-4" hint="You're mistaken" show_hints="TRUE"> 0.3989423 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/2 " id="nac89-4-3" w="32" name="nac89-4" hint="Nope." show_hints="TRUE"> 1/2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="nac89-4-4" w="3" name="nac89-4" hint="Not so!" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="nac89-4" id="nac89-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="nac89-4-hintarea">question id: nac89-4</small></p>
 </div>
 </div>
 </div>
 <div id="exr-beech-lead-piano" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> The graphs of functions and their inverses are related by a flip around the <strong><em>line of identity</em></strong>, shown in green <a href="#fig-inverse-flip-both" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-inverse-flip-both</span></a>.</p>
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> The graphs of functions and their inverses are related by a flip around the <strong><em>line of identity</em></strong>, shown in green <a href="#fig-inverse-flip-both" class="quarto-xref">Figure&nbsp;<span>1</span></a>.</p>
 <div id="fig-inverse-flip-both" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-inverse-flip-both-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3045,8 +2666,8 @@ Figure&nbsp;1: The black curve is the graph of <span class="math inline">\(e^x\)
 <li>Is the magenta curve the graph of a function? (Hint: Does it pass the vertical line test?)</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Yes" id="inverse-flip-one-1a-1" w="8" name="inverse-flip-one-1a" hint="Nice." show_hints="TRUE"> Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No" id="inverse-flip-one-1a-2" w="7" name="inverse-flip-one-1a" hint="The magenta curve has a vertical asymptote at $x=0$, but since it never reaches that asymptote, it passes the vertical line test." show_hints="TRUE"> No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="inverse-flip-one-1a" id="inverse-flip-one-1a.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Yes" id="inverse-flip-one-1a-1" w="14" name="inverse-flip-one-1a" hint="Yup!" show_hints="TRUE"> Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No" id="inverse-flip-one-1a-2" w="32" name="inverse-flip-one-1a" hint="The magenta curve has a vertical asymptote at $x=0$, but since it never reaches that asymptote, it passes the vertical line test." show_hints="TRUE"> No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="inverse-flip-one-1a" id="inverse-flip-one-1a.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="inverse-flip-one-1a-hintarea">question id: inverse-flip-one-1a</small></p>
 </div>
 </div>
@@ -3054,15 +2675,15 @@ Figure&nbsp;1: The black curve is the graph of <span class="math inline">\(e^x\)
 <li>Which of these functions is graphed in magenta?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$1/x$ " id="inverse-flip-one-1b-1" w="3" name="inverse-flip-one-1b" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(1/x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\ln(x)$" id="inverse-flip-one-1b-2" w="14" name="inverse-flip-one-1b" hint="You're right" show_hints="TRUE"> <span class="math inline">\(\ln(x)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sqrt{x}$ " id="inverse-flip-one-1b-3" w="19" name="inverse-flip-one-1b" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(\sqrt{x}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$e^{-x}$" id="inverse-flip-one-1b-4" w="7" name="inverse-flip-one-1b" hint="Sorry, but this would be the reflection of the black curve around the vertical line at $x=0$" show_hints="TRUE"> <span class="math inline">\(e^{-x}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$-e^{x}$" id="inverse-flip-one-1b-5" w="7" name="inverse-flip-one-1b" hint="No. This would be the reflection of the black curve around the horizontal line at output $f(x)=0$" show_hints="TRUE"> <span class="math inline">\(-e^{x}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="inverse-flip-one-1b" id="inverse-flip-one-1b.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$1/x$ " id="inverse-flip-one-1b-1" w="87" name="inverse-flip-one-1b" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(1/x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\ln(x)$" id="inverse-flip-one-1b-2" w="5" name="inverse-flip-one-1b" hint="Nice." show_hints="TRUE"> <span class="math inline">\(\ln(x)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sqrt{x}$ " id="inverse-flip-one-1b-3" w="7" name="inverse-flip-one-1b" hint="Wrong." show_hints="TRUE"> <span class="math inline">\(\sqrt{x}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$e^{-x}$" id="inverse-flip-one-1b-4" w="32" name="inverse-flip-one-1b" hint="Sorry, but this would be the reflection of the black curve around the vertical line at $x=0$" show_hints="TRUE"> <span class="math inline">\(e^{-x}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$-e^{x}$" id="inverse-flip-one-1b-5" w="19" name="inverse-flip-one-1b" hint="No. This would be the reflection of the black curve around the horizontal line at output $f(x)=0$" show_hints="TRUE"> <span class="math inline">\(-e^{x}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="inverse-flip-one-1b" id="inverse-flip-one-1b.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="inverse-flip-one-1b-hintarea">question id: inverse-flip-one-1b</small></p>
 </div>
 </div>
 </div>
 <div id="exr-snail-pitch-knife" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3</strong></span> Consider the function random function <span class="math inline">\(h(x)\)</span> graphed by the code in this interactive R chunk:</p>
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>You will run the plotting command several times to zoom in on each of the five crossings at level <span class="math inline">\(b\)</span> listed below.</p>
 <p>For each of the values <span class="math inline">\(b\)</span> listed below, use graphical zero finding to identify one or more <span class="math inline">\(x^\star\)</span> that will satisfy <span class="math inline">\(h(x^\star) = b\)</span>. (Your answer should be precise to <span class="math inline">\(\pm 0.1\)</span>.)</p>
@@ -3072,7 +2693,7 @@ Figure&nbsp;1: The black curve is the graph of <span class="math inline">\(e^x\)
 <li><span class="math inline">\(b=500\)</span></li>
 <li><span class="math inline">\(b= -100\)</span></li>
 </ol>
-<p><textarea id="snail-pitch-knife-essay" name="snail-pitch-knife-essay" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID snail-pitch-knife-essay"></textarea> </p><div style="color: grey;"> <small>question id: snail-pitch-knife-essay</small> </div><p></p>
+<p><textarea id="snail-pitch-knife-essay" name="snail-pitch-knife-essay" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID snail-pitch-knife-essay)"></textarea></p>
 </div>
 <div id="exr-snail-stand-plate" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> &nbsp;</p>
@@ -3088,11 +2709,11 @@ Figure&nbsp;2: The path of Hurricane Ivan in 2004 as it moved over Jamaica to Al
 </div>
 <p>Consider only days 2 through 11 in answering the following questions. (Recall that <em>longitude</em> is along the horizontal axis, while <em>latitude</em> is along the vertical.)</p>
 <ol type="i">
-<li>For the path in <a href="#fig-hurricane-ivan" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-hurricane-ivan</span></a>, is the latitude a function of the longitude?</li>
+<li>For the path in <a href="#fig-hurricane-ivan" class="quarto-xref">Figure&nbsp;<span>2</span></a>, is the latitude a function of the longitude?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Yes." id="hurricane-ivan-1-1" w="41" name="hurricane-ivan-1" hint="Good job!" show_hints="TRUE"> Yes. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No." id="hurricane-ivan-1-2" w="23" name="hurricane-ivan-1" hint="wrong" show_hints="TRUE"> No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="hurricane-ivan-1" id="hurricane-ivan-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Yes." id="hurricane-ivan-1-1" w="35" name="hurricane-ivan-1" hint="Exactly." show_hints="TRUE"> Yes. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No." id="hurricane-ivan-1-2" w="32" name="hurricane-ivan-1" hint="Incorrect choice." show_hints="TRUE"> No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="hurricane-ivan-1" id="hurricane-ivan-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="hurricane-ivan-1-hintarea">question id: hurricane-ivan-1</small></p>
 </div>
 </div>
@@ -3100,27 +2721,27 @@ Figure&nbsp;2: The path of Hurricane Ivan in 2004 as it moved over Jamaica to Al
 <li>Is the longitude a function of the latitude?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Yes." id="hurricane-ivan-2-1" w="19" name="hurricane-ivan-2" hint="Turn the figure on its side to see the path needed to answer this question. Then notice the little bumps near days 5 and 11. The graph doesn't pass the vertical line test at these bumps. (In the graph as shown, not turned on its side, the &quot;vertical line&quot; test amounts to a horizontal line test.)" show_hints="TRUE"> Yes. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No." id="hurricane-ivan-2-2" w="14" name="hurricane-ivan-2" hint="Good job!" show_hints="TRUE"> No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="hurricane-ivan-2" id="hurricane-ivan-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Yes." id="hurricane-ivan-2-1" w="3" name="hurricane-ivan-2" hint="Turn the figure on its side to see the path needed to answer this question. Then notice the little bumps near days 5 and 11. The graph doesn't pass the vertical line test at these bumps. (In the graph as shown, not turned on its side, the &quot;vertical line&quot; test amounts to a horizontal line test.)" show_hints="TRUE"> Yes. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No." id="hurricane-ivan-2-2" w="20" name="hurricane-ivan-2" hint="Exactly." show_hints="TRUE"> No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="hurricane-ivan-2" id="hurricane-ivan-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="hurricane-ivan-2-hintarea">question id: hurricane-ivan-2</small></p>
 </div>
 </div>
 </div>
 <div id="exr-titmouse-throw-sofa" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 5</strong></span> Consider the problem of finding a value of <span class="math inline">\(x\)</span> such that <span class="math inline">\(cos(x) = x^2\)</span>. This is easy to do graphically: find the input where the graphs of <span class="math inline">\(cos(x)\)</span> and <span class="math inline">\(x^2\)</span> cross.</p>
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Using the interactive chunk below, create a function <span class="math inline">\(h(x)\)</span> that is zero when the equation is satisfied. Pass the tilde expression <code>h(x) ~ x</code> to the R/mosaic <code>Zeros()</code> operator to find a precise numerical answer to the problem:</p>
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 <div id="exr-duck-swims-pond" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6</strong></span> Consider finding the argmin and argmax of a straight-line function such as <span class="math inline">\(g(x) \equiv 4x - 1\)</span>. We’ll use the <code>argM()</code> <code>function</code>.</p>
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Note that a straight-line function has no local min or maximum. Yet <code>argM()</code> produced a result.</p>
 <p>Experiment by changing the parameters on the linear function and the domain over which the operation is performed. Explain what simple strategy <code>argM()</code> uses to give a result even when the function has no local min nor max.</p>
-<p><textarea id="duck-swims-pond" name="duck-swims-pond" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID duck-swims-pond"></textarea> </p><div style="color: grey;"> <small>question id: duck-swims-pond</small> </div><p></p>
+<p><textarea id="duck-swims-pond" name="duck-swims-pond" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID duck-swims-pond)"></textarea></p>
 </div>
 <span id="devoirs-docID" style="display: none;">13-exercises.rmarkdown</span> <button onclick="devoirsSubmit()">Collect your answers</button>
 <div id="devoirs_summary">
@@ -3180,15 +2801,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3208,7 +2836,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3304,8 +2935,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3416,7 +3045,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

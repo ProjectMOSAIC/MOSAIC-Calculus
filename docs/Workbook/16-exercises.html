@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,17 +30,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Block-2-models.html" rel="next">
+<link href="./Block-1-models.html" rel="next">
 <link href="./16-review.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"editor-max-height":"","dpi":72,"fig-cap":"","message":"true","editor-font-scale":"1","warning":"true","editor-word-wrap":"true","read-only":"false","results":"markup","output":"true","editor-quick-suggestions":"false","out-height":"","label":"sunset-1-rcd","out-width":"700px","comment":"","autorun":"false","fig-width":7,"fig-height":5,"classes":"","context":"interactive"},"id":1,"code":"gf_point(Minutes ~ Month, data = MMAC::SunsetLA) |>\n  gf_line()"},{"options":{"editor-max-height":"","dpi":72,"fig-cap":"","message":"true","editor-font-scale":"1","warning":"true","editor-word-wrap":"true","read-only":"false","results":"markup","output":"true","editor-quick-suggestions":"false","out-height":"","label":"sunset-2-rcd","out-width":"700px","comment":"","autorun":"false","fig-width":7,"fig-height":5,"classes":"","context":"interactive"},"id":2,"code":"sunset <- makeFun(A + C*sin(2*pi*(Month - offset)/12), \n                  A = __your estimate__, \n                  C = __your estimate__,\n                  offset=0)\ngf_point(Minutes ~ Month, data = MMAC::SunsetLA) |>\n  gf_line() |>\n  slice_plot(sunset(Month) ~ Month)"},{"options":{"editor-max-height":"","dpi":72,"fig-cap":"","message":"true","editor-font-scale":"1","warning":"true","editor-word-wrap":"true","read-only":"false","results":"markup","output":"true","editor-quick-suggestions":"false","out-height":"","label":"sunset-3-rcd","out-width":"700px","comment":"","autorun":"false","fig-width":7,"fig-height":5,"classes":"","context":"interactive"},"id":3,"code":"## rough estimates from graph\nrough_A <- __estimated_A__\nrough_C <- __estimated_C__\nrough_offset <- __estimated_offset___\nguessed_fun <-\n  makeFun(A*sin(2*pi*(Month - offset)/12) + C ~ Month,\n          A  = rough_A, C = rough_C,\n          offset = rough_offset)\n\ntuned_fun <-\n  fitModel(Minutes ~ A*sin(2*pi*(Month - offset)/12) + C,\n         data  = MMAC::SunsetLA,\n         start = list(A = rough_A,\n                      C = rough_C,\n                      offset = rough_offset) )\n\ngf_point(Minutes ~ Month, data = MMAC::SunsetLA) |>\n  gf_line(color  = \"dodgerblue\") |>\n  slice_plot(tuned_fun(Month) ~ Month) |>\n  slice_plot(guessed_fun(Month) ~ Month,  color = \"orange3\")"}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_point(Minutes ~ Month, \n         data = MMAC::SunsetLA) |>\n  gf_line()","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"sunset-1-rcd","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"sunset <- makeFun(A + C*sin(2*pi*(Month - offset)/12), \n                  A = __your estimate__, \n                  C = __your estimate__,\n                  offset=0)\ngf_point(Minutes ~ Month, data = MMAC::SunsetLA) |>\n  gf_line() |>\n  slice_plot(sunset(Month) ~ Month)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"sunset-2-rcd","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"## rough estimates from graph\nrough_A <- __estimated_A__\nrough_C <- __estimated_C__\nrough_offset <- __estimated_offset___\nguessed_fun <-\n  makeFun(A*sin(2*pi*(Month - offset)/12) + C ~ Month,\n          A  = rough_A, C = rough_C,\n          offset = rough_offset)\n\ntuned_fun <-\n  fitModel(Minutes ~ A*sin(2*pi*(Month - offset)/12) + C,\n         data  = MMAC::SunsetLA,\n         start = list(A = rough_A,\n                      C = rough_C,\n                      offset = rough_offset) )\n\ngf_point(Minutes ~ Month, data = MMAC::SunsetLA) |>\n  gf_line(color  = \"dodgerblue\") |>\n  slice_plot(tuned_fun(Month) ~ Month) |>\n  slice_plot(guessed_fun(Month) ~ Month,  color = \"orange3\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"sunset-3-rcd","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1613,7 +1613,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block II Modeling</a></li><li class="breadcrumb-item"><a href="./16-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 16 Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block I Modeling</a></li><li class="breadcrumb-item"><a href="./16-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 16 Exercises</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1634,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2957,7 +2576,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block II Modeling</a></li><li class="breadcrumb-item"><a href="./16-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 16 Exercises</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block I Modeling</a></li><li class="breadcrumb-item"><a href="./16-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 16 Exercises</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 16 Exercises</h1>
 </div>
@@ -2982,10 +2601,366 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div id="exr-two-exps-water" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> FIT THE TWO EXPONENTIAL water-cooling process <span class="quarto-unresolved-ref">?fig-water-two-exps</span></p>
+<p>Plot out the two exponential contributions to the water temperature. Each goes to zero, leaving it to <code>C</code> to represent the ambient room temperature.</p>
+</div>
+<!-- Pull out some examples from MC/Modeling/Modeling_cycle-OLD.Rmd -->
+<!-- 
+
+
+
+-------
+
+Cobb-Douglas
+
+Calculus:  Newton and acceleration. Exponential versus sinusoidal.
+
+
+Cubic and bezier splines: different purposes. Splitting the domain (as in #sec-piecewise-intro). How are we to piece things back together. Continuity is intuitive, but how do we avoid the sharp bends. Need to have some way to describe smoothness.
+
+From a text I sent myself: Change modeling cycle chapter to models and the scientific method use the inverse square law for gravitation as an example of the limited applicability doesn’t work as you get into the earths
+
+
+
+
+
+## Moved from graphics chapter
+
+
+For many modeling purposes, it is important to be able to represent a relationship as a function. This would be easy if the data were arranged along a simple curve. But they are not. The engine designers did not face any mandate that they should select `stroke` or `bore` to fall along a simple curve. Consequently, a problem faced when trying to model data with a function is the trade-off between staying close to the actual data and keeping a function smooth and simple.
+
+The proportional function is simple and smooth function. We can construct such a model that goes as near to the data points as possible while remaining linear. Let's look ...
+
+::: {#lst-linear-stroke-bore}
+```pvgrfmvp
+mod <- mosaic::fitModel(stroke ~ a*bore + b, data = Engines)
+gf_point(stroke ~ bore, data=Engines) |> slice_plot(mod(bore) ~ bore)
+```
+
+The straight line displayed in @lst-linear-stroke-bore might be satisfactory as a model: It shows that engine stroke increases with cylinder bore. But if we wanted to use the model with an application involving small engines, there is a problem: the function output in @lst-linear-stroke-bore is *negative* at small bores, even though this is physically impossible.
+
+Faced with such a situation, the modeler might reasonable choose to seek a better function. Noticing the order of magnitude differences between different engines, we might decide to draw on the possibilities in @sec-magnitude and use a power-law function for the model. Such a model is shown in @lst-first-two-layers.
+
+EXERCISE WITH `gf_smooth(span=0.75)` changing the span parameter to get something we like.
+
+The data plotted by the code in @lst-stroke-vs-bore show a relationship between the stroke length of a piston and the diameter of the cylinder in which the piston moves. This relationship, however, is not being presented in the form of a function, that is, a single stroke value for each value of the bore diameter. 
+
+::: {.callout-note icon=false data-latex=""}
+## Math in the world
+
+TRANSLATING DATA TO A FUNCTION. data are generally scattered, while a function has just a single output value for any input. But we often use functions as a simplification to data.
+
+Nerve cells communicate via electrical voltages and currents. For long-distance communications (distances longer than about 1 mm) the signaling takes the form of pulses of voltage occurring repetitively at different rates. The formation of these pulses, called "action potentials," was the subject of an extensive research project in the 1950s involving inserting tiny electrodes into relatively large ("giant") nerve cells that mediate the fleeing reaction of squid. A typical experiment involved regulating artificially the voltage across the cell membrane. Through these experiments, the scientists--- John Eccles, Alan Hodgkin, and Andrew Huxley---were able to describe mathematically the relationship between membrane voltage and the current across the membrane. A calculus model built from the relationships provided a concise description of the biophysics of action potentials. A 1963 Nobel Prize was awarded for this work.
+
+
+
+
+::: {.cell .column-margin}
+::: {.cell-output-display}
+![Data (simulated) from the squid giant axon experiments. A smooth curve is drawn through the data points.](16-exercises_files/figure-html/fig-fhn-model-1.png){#fig-fhn-model width=672}
+:::
+:::
+
+
+
+In each experimental run, the membrane voltage was fixed at a given level (say, -50 mV) and the current measured. @fig-fhn-model shows what the data might have looked like, each point showing the results of one experimental run.
+
+COME BACK TO THIS IN "MODELING CYCLE" CHAPTER: CAN WE GET A FUNCTION THAT GOES BETTER THROUGH THE DATA POINTS?
+
+The data points themselves might be described metaphorically as "clouds" spotting the voltage vs current "sky." Real-world clouds often show patterns such as animal or country shapes. We might say that a given cloud resembles a rabbit. Similarly, the data clouds show a pattern between current and voltage. We might, for instance, describe the current-voltage relationship as S-shaped. Or, rather than using the letter "S" we could draw a curve through the dots to summarize and simplify the relationship.
+:::
+
+The smooth curve in  @fig-fhn-model describes the relationship between current and voltage quantitatively. For example, if you know that the current is 0, you can use the curve to figure out what the voltage will be around -90 mV or  -50 mV or -10 mV. But when the current is 0, the voltage will *not* be, say, -75 or -150.
+
+Graphs such as  @fig-carbon-phases and @fig-fhn-model are good ways of showing relationships. We can even do calculations simply using such graphs. Place your finger on a point of the S-shaped graph and you can read from the axes an allowed pair of voltage and current values. Place your finger on a point on the vertical axis. Moving it to the curve will reveal what current is associated with that voltage.
+
+
+AND REFER TO THE GRAPHIC HERE.
+
+On the other hand, functions cannot represent all types of relationships. For instance, the curve in @fig-fhn-model shows a relationship between current and voltage in nerve cells. But there is no mathematical function voltage(current) that does justice to the relationship. The reason is that mathematical functions can have ***one and only one*** output for any given input. There are three reasonable values for membrane voltage that are experimentally consistent with a zero current, not just one.
+
+
+-----
+
+SHOW A Function of two variables where only one of the inputs has a substantial effect. Point out that the contours are running more or less parallel. This is an instance where a function of just one input might be adequate.
+
+-----
+
+
+A table like REFERENCE TO THE ENGINES TABLE PREVIOUS describes the general relationships between engine attributes. For instance, we might want to understand the relationship (if any) between RPM and engine mass, or relate the diameter (that is, "bore") and depth (that is, "stroke") of the cylinders to the power generated by the engine. Any single entry in the table does not tell us about such general relationships; we need to consider the rows and columns as a whole. 
+
+If you examined the relationship between engine power (`BHP`) and bore, stroke, and RPM, you will find that (as a rule) the larger the bore and stroke, the more powerful the engine. That is a ***qualitative*** description of the relationship. Most educated people are able to understand such a qualitative description. Even if they don't know exactly what "power" means, they have some rough conception of it.
+
+Often, we are interested in having a ***quantitative*** description of a relationship such as the one (bore, stroke) $\rightarrow$ power. Remarkably, many otherwise well-educated people are uncomfortable with the idea of using quantitative descriptions of a relationship: what sort of language the description should be written with; how to perform the calculations to use the description; how to translate between data (such as in the table) and a quantitative description; how to translate the quantitative description to address a particular question or make a decision.
+
+_______
+
+
+## Possible introduction
+
+Seen very abstractly, a mathematical model is a set of ***functions*** that represent the relationships between inputs and outputs.  
+
+At the most simple level, building a model can be a short process:
+
+1. Develop an understanding of the relationship you want to model. Often, part of this "understanding" is the pattern seen in data.
+2. Choose a function type---e.g. exponential, sinusoidal, sigmoid---that you think would be a good match to the relationship.
+3. Find ***parameters*** that scales your function to be able to accept real-world inputs and generate real-world outputs.
+
+It is important to distinguish between two basic types of model:
+
+1. ***Empirical models*** which are rooted in ***observation*** and ***data***.
+2. ***Mechanistic models*** such as those created by applying fundamental laws of physics, chemistry, and such.
+
+We will put off mechanistic models for a while, for two reasons. First, the "fundamental laws of physics, chemistry, and such" are often expressed with the concepts and methods of calculus. We are heading there, but at this point you don't yet know the core concepts and methods of calculus. Second, most students don't make a careful study of the "fundamental laws of physics, chemistry, and such" until *after* they have studied calculus. So examples of mechanistic models will be a bit hollow at this point.
+
+
+
+## AN EXAMPLE FROM THE 01-parameters chapter
+
+::: {.callout-note icon=false data-latex=""} 
+## Math in the World: Exponential COVID
+
+You can see in @fig-covid-exp2 that the exponential function plotted in $\color{blue}{\text{blue}}$ does not align perfectly with the day-by-day data. For instance, during the interval from March 8 to 21, the function output is consistently higher than the data suggest it should be. As part of the ***modeling cycle*** it is important to notice such discrepancies and try to understand them. In this case, it is likely that during the early days of the pandemic the number of reported deaths understated the actual number of COVID-related deaths. This happens because, in the early days of the pandemic, many deaths from COVID were mis-attributed to other causes.
+::: 
+
+---------
+
+
+Effective modelers treat models with skepticism. They look for ways in which models fail to capture salient features of the real world. They have an eye out for deviations between what their models show and what they believe they know about the system being modeled. They consider ways in which the models might not serve the purpose for which they were developed.  
+
+When modelers spot a failure or deviation or lack of proper utility, they might discard the model but more often they make a series of small adjustments, tuning up the model until is successfully serves the purposes for which it is intended.
+
+Thus, modeling is a cyclic process of creating a model, assessing the model, and revising the model. The process comes to a sort of preliminary end when the model serves its purposes. But even then, models are often revised to check whether the results are sensitive to some factor that was not included or to check whether some component that was deemed essential really is so.
+
+
+## Example: Cooling water
+
+Looking back on the exponential fitted to the cooling water data in @sec-fit-exponential, it looks like our original estimate of the half-life is a bit too small; the data does not seem to decay at the rate implied by $k = -0.0277$. Perhaps we should try a somewhat slower decay, say $k = -0.2$ and see if that improves things.
+
+::: {.scaffolding  data-latex=""}
+In the cooling water example, we are using only a subset of the data collected by Prof. Wagon. The next commands re-create that subset so that you can work with it. They also plot the data and an exponential model.  
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# reconstruct the sample
+set.seed(101)
+Stans_data <- CoolingWater |> sample_n(20)
+# Plot the sample and overlay a model
+gf_point(temp ~ time, data=Stans_data) %>%
+  gf_lims(y = c(20, NA)) %>%
+  slice_plot(25 + 83.3*exp(-.0277*time) ~ time, color="dodgerblue")
+```
+
+::: {.cell-output-display}
+![](16-exercises_files/figure-html/unnamed-chunk-6-1.png){width=672}
+:::
+:::
+
+
+
+
+See if $k=-0.02$ provides a better fit to the model. (You can add another `slice_plot()` to be able to compare the original and $k=-0.02$ models.)
+:::
+
+
+Later in this course, we will study ***optimization***. There are optimization techniques for directing the computer to refine the parameters to best match the data. Just to illustrate, here is what we get:
+
+
+
+
+::: {.cell}
+
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+refined_params <-
+  mosaic::fitModel(temp ~ A + B*exp(k*time), data = Stans_data,
+           start = list(A = 25, B = 83.3, k = -0.0277))
+coef(refined_params)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+          A           B           k 
+25.92628463 60.69255269 -0.01892572 
+```
+
+
+:::
+
+```{.r .cell-code}
+new_f <- makeFun(refined_params)
+gf_point(temp ~ time, data = Stans_data) %>%
+  slice_plot(new_f(time) ~ time, color="dodgerblue")
+```
+
+::: {.cell-output-display}
+![Polishing the fit using the rough model as a starting point.](16-exercises_files/figure-html/fig-Fun-4-a-2-3-1.png){#fig-Fun-4-a-2-3 width=672}
+:::
+:::
+
+
+
+
+The refined parameters give a much better fit to the data than our original rough estimates by eye.
+
+We had two rounds of the ***modeling cycle***. First, choice of an exponential model and a rough estimate of the parameters A, B, and $k$. Second, refinement of those parameters using the computer.
+
+Looking at the results of the second round, the experienced modeler can see some disturbing discrepancies. First, the estimated baseline appears to be too high. Related, the initial decay of the model function does not seem to be fast enough and the decay of the model function for large $t$ appears to be too slow. Prof. Stan Wagon noticed this. He used additional data to fill in the gaps for small $t$ and refined his model further by changing the basis functions in the linear combination. He hypothesized that there are at least two different cooling processes. First, the newly poured water raises the temperature of the mug itself. Since the water and mug are in direct contact, this is a fast process. Then, the complete water/mug unit comes slowly into equilibrium with the room temperature. 
+
+
+The newly refined model was a even better match to the data. But nothing's perfect and Prof. Wagon saw an opportunity for additional refinement based on the idea that there is a third physical mechanism of cooling: evaporation from the surface of the hot water. Prof. Wagon's additional circuits of the modeling cycle were appropriate to his purpose, which was to develop a detailed understanding of the process of cooling. For other purposes, such as demonstrating the appropriateness of an exponential process or interpolating between the data points, earlier cycles might have sufficed.
+
+Here's a graph of the model Prof. Wagon constructed to match the data.
+
+
+
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![A model that combines three exponentials provides an excellent fit.](www/Wagon-water-fit.png){#fig-Fun-4-a-2-4 fig-align='center' width=70%}
+:::
+:::
+
+
+
+
+This is an excellent match to the data. But ... matching the data isn't always the only goal of modeling. Prof. Wagon wanted to make sure the model was physically plausible. And looking at the refined parameters, which include two exponential processes with parameters $k_1$ and $k_2$, he saw something wrong:
+
+> *But what can we make of $k_1$, whose [positive value] violates the laws of thermodynamics by suggesting that the water gets hotter by virtue of its presence in the cool air? The most likely problem is that our simple model (the proportionality assumption) is not adequate near the boiling point. There are many complicated factors that affect heat transportation, such as air movement, boundary layer dissipation, and diffusion, and our use of a single linear relationship appears to be inadequate. In the next section [of our paper] we suggest some further experiments, but we also hope that our experiments might inspire readers to come up with a better mathematical model.*
+
+The modeling cycle can go round and round!
+
+## Example: The tides
+
+In @sec-fit-periodic we looked at a sinusoid model of tide levels in Rhode Island. We left unresolved how to refine the estimate of the period $P$ and find the time offset $t_0$ in the sinusoidal model $$\text{tide}(t) \equiv A \sin\left(\frac{2\pi}{P} (t-t_0)\right) + B$$ 
+
+$${\color{blue}{\text{tide}(t)} \equiv 1.05 + 0.55 \sin(2\pi (t - t_0)/11)}$$
+
+The new parameter, $t_0$, should be set to be the time of a positive-going crossing of the baseline. Looking at the tide data (black) plotted in @fig-Fun-4-a-3-4 we can pick out  such a crossing at about time = 17. Happily, changing the phase does not itself necessitate re-estimating the other parameters: baseline, amplitude, period. This model, incorporating the phase, has been graphed in $\color{blue}{\text{blue}}$.
+
+
+
+
+::: {.cell}
+::: {.cell-output-display}
+![Shifting the **phase** of the sinusoid gives the flexibility needed to align the peaks and troughs of the model with the data. Performing this alignment for one peak makes it clear that the period is wrong.](16-exercises_files/figure-html/fig-Fun-4-a-3-4-1.png){#fig-Fun-4-a-3-4-1 width=50%}
+:::
+
+::: {.cell-output-display}
+![Shifting the **phase** of the sinusoid gives the flexibility needed to align the peaks and troughs of the model with the data. Performing this alignment for one peak makes it clear that the period is wrong.](16-exercises_files/figure-html/fig-Fun-4-a-3-4-2.png){#fig-Fun-4-a-3-4-2 width=50%}
+:::
+:::
+
+
+
+
+For some modeling purposes, such as prediction of future tides, the phase information is essential. For others, say, description of the amplitude of the tides, not. But getting the phase roughly right can help point out other problems. For instance, in the left panel of @fig-Fun-4-a-3-4 the blue model is roughly aligned with the data. Not at all so in the right panel. What leads to the discrepancy is a bad estimate for the period. 13 hours is roughly right, but over a five-day period the error accumulates until, in the right panel, the model has a trough where the data peak, and *vice versa*. 
+
+Although the blue sinusoid is not perfect, having it for comparison suggests that the previously estimated period of 13 hours is too long. We can shorten the period gradually in our model until we find something that better matches the data. For example: @fig-Fun-4-a-3-5 shows that a period of 12.3 hours is a good match to the data. 
+
+With this refinement the model is
+$${\color{green}{\text{tide}(t)} \equiv 1.05 + 0.55 \sin(2\pi (t - 17)/12.3)}$$
+
+
+
+
+::: {.cell}
+::: {.cell-output-display}
+![With the phase about right, a better estimate can be made of the period: 12.3 hours.](16-exercises_files/figure-html/fig-Fun-4-a-3-5-1.png){#fig-Fun-4-a-3-5 width=672}
+:::
+:::
+
+
+
+We might call it quits with the model in @fig-Fun-4-a-3-5. But once we have a pretty good model fit, it is easy to polish the parameter estimates, letting the computer do the tedious work of trying little tweaks to see if it can improve the fit.
+
+The R/mosaic `fitModel()` can do this tweaking for us. As the following commands show, `fitModel()` takes a tilde expression as input. To the left  of the tilde goes the name of the function output in the data frame being used. The right side is a formula for the model, with names used for each parameter and using the names of inputs from the data frame. The second argument is the data frame. The third argument is used to convey an estimate for each parameter; that estimate should be pretty good if `fitModel()` is to be able to refine it.
+
+The output from `fitModel()` is a function, which we are naming `tide_mod()`. 
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+tide_mod <-
+  mosaic::fitModel(level ~ A + B*sin(2*pi*(hour-t0)/P),
+  data = RI_tide,
+  start=list(A=1.05, B=0.55, t0=17, P=12.3))
+coef(tide_mod)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+         A          B         t0          P 
+ 1.0220540  0.4998367 15.3899905 12.5593556 
+```
+
+
+:::
+:::
+
+
+
+
+The command `coef(tide_mod)` displays the parameters found by `fitModel()` which will be an improvement---perhaps a big improvement, perhaps not---on our original estimates.
+
+
+These new parameters differ only slightly from the ones shown in @fig-Fun-4-a-3-5, but the match to the data with the new coefficients is discernably better, even by eye.
+
+
+
+
+::: {.cell}
+::: {.cell-output-display}
+![Polishing the parameters of the sinusoid](16-exercises_files/figure-html/fig-Fun-4-a-3-6-1.png){#fig-Fun-4-a-3-6 width=672}
+:::
+:::
+
+
+
+This last model seems capable of making reasonable predictions, so if we collected up-to-date data we might be able to fit a new model to predict the tide level pretty accurately a few days ahead of time. Also, the excellent alignment of the model peaks with the data tell us that the cyclic tide has a period that is constant, at least so far as we can tell.  
+
+With the period estimate $P=12.56$ hours, we can go looking for other phenomena that might account for the tides. The period of the day-night cycle is, of course 24 hours. So the tides in Providence come in and out twice a day. But not exactly. Something else must be going on.
+
+Isaac Newton was the first to propose that the tides were caused by the gravitational attraction of the Moon. A complete cycle of the Moon---moon rise to moon rise---takes about 50 minutes longer than a full day: the Earth revolves once every 24 hours, but in that time the Moon has moved a bit further on in its orbit of the Earth. So the Moon's period, seen from a fixed place on Earth is about 24.8 hours. Half of this, 12.4 hours, is awfully close to our estimate of the tidal period: 12.56 hours. The difference in periods, 8 minutes a day, might be hard to observe over only 4 days. Maybe with more data we'd get a better match between the tides and the moon.
+
+This is the modeling cycle at work: Propose a model form (a sinusoid), adjust parameters to match what we know (the Providence tide record), compare the model to the data, observe discrepancies, propose a refined model. You can stop the model when it is giving you what you need. The period 12.56 hour model seems good enough to make a prediction of the tide level a few days ahead, and is certainly better than the "two tides a day" model. But our model is not yet able to implicate precisely the Moon's orbit in tidal oscillations.
+
+Discrepancies between a model and data play two roles: they help us decide if the model is fit for the purpose we have in mind and they can point the way to improved models. That the tidal data deviates from the steady amplitude of our model can be a clue for where to look next. It is not always obvious where this will lead.
+
+Historically, careful analysis of tides led to a highly detailed, highly accurate model: a linear combination of sinusoids with periods near a half-day 12.42 , 12.00, 12.66, and 11.97 hours as well components with periods that are about a day long 23.93, 25.82, 24.07, 26.87, and 24.00 hours. A tide-prediction model is constructed by finding the coefficients of the linear combination; these differ from locale to locale. There is no global model of tides, but rather a framework of linear combinations of sinusoids of different periods. What customizes the framework to the tides in a particular locale is the coefficients used in the linear combination.  
+
+::: {.example data-latex=""}
+Polishing the phase (optional)
+
+Linear combination to represent phase shift.
+$\sin(x + \phi) = \cos(\phi)\sin(x) + \sin(\phi) \cos(x)$
+
+$C \sin(x +\phi) = A \sin(x) + B \cos(x)$ where $C^2 = A^2 + B^2$ and $\phi=\arctan(A/B)$
+:::
+
+-->
+<div id="exr-peak-oil" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Look at the fit of the sigmoidal function for peak oil. Show how it matches the yearly production data (a gaussian). Show models and residuals on semi-log axes.</p>
+</div>
 <section id="class-activity" class="level3">
 <h3 class="anchored" data-anchor-id="class-activity">Class activity</h3>
 <div id="exr-fox-sit-kayak" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> &nbsp;</p>
 <div id="fig-solar-june-c2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-solar-june-c2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2996,8 +2971,8 @@ Figure&nbsp;1: Power produced by the author’s rooftop photovoltaic array in Ju
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-solar-june-c2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-solar-june-c2</span></a> comes from the monitoring app for a photovoltaic (solar electricity) array on two consecutive days in June 2022. These data were presented first in <a href="#exr-KINWgK" class="quarto-xref">Exercise&nbsp;<span class="quarto-unresolved-ref">exr-KINWgK</span></a>, where you were asked to model the June 3 pattern as a bump function solar(t) multiplied by an irregular function cloudiness(t) with a domain between 0 (full cloudiness) and 1 (no clouds). The June 4 pattern is taken as the bump solar(t).</p>
-<p>With that multiplicative model in mind, take a closer look at <a href="#fig-solar-june-c2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-solar-june-c2</span></a>, particularly for the early part of the day. In the interval from 6 to 9 am, the June 4 power production is below that of June 3.</p>
+<p><a href="#fig-solar-june-c2" class="quarto-xref">Figure&nbsp;<span>1</span></a> comes from the monitoring app for a photovoltaic (solar electricity) array on two consecutive days in June 2022. These data were presented first in <span class="quarto-unresolved-ref">?exr-KINWgK</span>, where you were asked to model the June 3 pattern as a bump function solar(t) multiplied by an irregular function cloudiness(t) with a domain between 0 (full cloudiness) and 1 (no clouds). The June 4 pattern is taken as the bump solar(t).</p>
+<p>With that multiplicative model in mind, take a closer look at <a href="#fig-solar-june-c2" class="quarto-xref">Figure&nbsp;<span>1</span></a>, particularly for the early part of the day. In the interval from 6 to 9 am, the June 4 power production is below that of June 3.</p>
 <ol type="1">
 <li><p>How is this inconsistent with the “power(t) <span class="math inline">\(\equiv\)</span> solar(t) <span class="math inline">\(\times\)</span> cloudiness(t)” model?</p></li>
 <li><p>The June 4 data starts low and then increases steeply around 9am. What evidence is there that the actual solar(t) function has a smoother increase? <!-- The June 3 data follows a bump shape for the early part of the day that matches well with June 4 at about 9am. --></p></li>
@@ -3006,7 +2981,7 @@ Figure&nbsp;1: Power produced by the author’s rooftop photovoltaic array in Ju
 <p>Note: At the end of the day, both the June 3 and June 4 data show an extra bump of a sort not seen in the pattern-book gaussian bump function. Potentially this could be due to cloudiness, but the amount of cloudiness would have to be exactly the same for June 3 and 4, which seem unlikely. More realistically, the bump represents an earlier fall off due to shadows of trees as the evening sun get low in the sky.</p>
 </div>
 <div id="exr-kitten-find-linen" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> Watch the movie in <a href="#fig-kitten-find-linen" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-kitten-find-linen</span></a>.</p>
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> Watch the movie in <a href="#fig-kitten-find-linen" class="quarto-xref">Figure&nbsp;<span>2</span></a>.</p>
 <div id="fig-kitten-find-linen" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-kitten-find-linen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3027,42 +3002,42 @@ Figure&nbsp;2: A movie showing growth of E. coli on a microscopic scale. Each ro
 <ol type="1">
 <li>Is there any obvious sign that the bacteria are reaching the carrying capacity of their environment before the end of the movie?</li>
 </ol>
-<p><textarea id="kitten-find-linen-1" name="kitten-find-linen-1" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID kitten-find-linen-1"></textarea> </p><div style="color: grey;"> <small>question id: kitten-find-linen-1</small> </div><p></p>
+<p><textarea id="kitten-find-linen-1" name="kitten-find-linen-1" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID kitten-find-linen-1)"></textarea></p>
 <ol start="2" type="1">
 <li>Estimate the doubling time of the number of bacteria as they are growing exponentially. Do this by figuring out how long it takes the area of the colony to double (roughly). Hint: You’ll need to use the time marker in the bottom left corner of the movie.</li>
 </ol>
-<p><textarea id="kitten-find-linen-2" name="kitten-find-linen-2" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID kitten-find-linen-2"></textarea> </p><div style="color: grey;"> <small>question id: kitten-find-linen-2</small> </div><p></p>
+<p><textarea id="kitten-find-linen-2" name="kitten-find-linen-2" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID kitten-find-linen-2)"></textarea></p>
 <ol start="3" type="1">
 <li>Estimate the doubling time in another way, by observing an individual bacterium. At any point in the movie, choose a bacterium at random. Watch it until it splits in two then, immediately, note the time. Watch some more until one of the two children split. The time difference between the mother’s split and the child’s split is the doubling time.</li>
 </ol>
-<p><textarea id="kitten-find-linen-3" name="kitten-find-linen-3" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID kitten-find-linen-3"></textarea> </p><div style="color: grey;"> <small>question id: kitten-find-linen-3</small> </div><p></p>
+<p><textarea id="kitten-find-linen-3" name="kitten-find-linen-3" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID kitten-find-linen-3)"></textarea></p>
 <ol start="4" type="1">
 <li>Compare the doubling time for a mother in the center of a large colony to the doubling time of a mother on the edge of the colony. Is there any clear sign that growth in the more crowded part of the colony is slower than in the suburbs?</li>
 </ol>
-<p><textarea id="kitten-find-linen-4" name="kitten-find-linen-4" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID kitten-find-linen-4"></textarea> </p><div style="color: grey;"> <small>question id: kitten-find-linen-4</small> </div><p></p>
+<p><textarea id="kitten-find-linen-4" name="kitten-find-linen-4" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID kitten-find-linen-4)"></textarea></p>
 <p>Credit: Math 141Z/142Z 2021-2022 development team.</p>
 </div>
 <div id="exr-lamb-talk-gloves" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> A person breathes in and out roughly every three seconds. The volume <span class="math inline">\(V\)</span> of air in the person’s lungs varies between a minimum of <span class="math inline">\(2\)</span> liters and a maximum of <span class="math inline">\(4\)</span> liters. Assume time <span class="math inline">\(t\)</span> is measured in seconds.</p>
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> A person breathes in and out roughly every three seconds. The volume <span class="math inline">\(V\)</span> of air in the person’s lungs varies between a minimum of <span class="math inline">\(2\)</span> liters and a maximum of <span class="math inline">\(4\)</span> liters. Assume time <span class="math inline">\(t\)</span> is measured in seconds.</p>
 <p>Remember that a full cycle of the sine wave <span class="math inline">\(\sin(x)\)</span> involves <span class="math inline">\(x\)</span> going from its starting value to that value <strong>plus</strong> <span class="math inline">\(2 \pi\)</span>.</p>
 <ol type="1">
 <li>Which of the following is the most appropriate of these models for <span class="math inline">\(V(t)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$V(t) \equ ... ight) + 2$" id="lamb-talk-gloves-QA1-1" w="87" name="lamb-talk-gloves-QA1" hint="This varies between a minimum of 0 and a maximum of 2." show_hints="TRUE"> <span class="math inline">\(V(t) \equiv 2 \sin \left( \frac{\pi}{3} t \right) + 2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$V(t) \equ ... ight) + 2$" id="lamb-talk-gloves-QA1-1" w="19" name="lamb-talk-gloves-QA1" hint="This varies between a minimum of 0 and a maximum of 2." show_hints="TRUE"> <span class="math inline">\(V(t) \equiv 2 \sin \left( \frac{\pi}{3} t \right) + 2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$V(t) \equ ... ight) + 3$" id="lamb-talk-gloves-QA1-2" w="14" name="lamb-talk-gloves-QA1" hint="Yes Good. In this class, we generally write the sine function like  $\sin(2 \pi t/P)$ which means that the overall argument to  the sine function will go from 0 to $2 \pi$ when $t$ goes from 0 to $P$." show_hints="TRUE"> <span class="math inline">\(V(t) \equiv \sin \left( \frac{2\pi}{3} t \right) + 3\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$V(t) \equ ... ight) + 3$" id="lamb-talk-gloves-QA1-2" w="41" name="lamb-talk-gloves-QA1" hint="Yes Good. In this class, we generally write the sine function like  $\sin(2 \pi t/P)$ which means that the overall argument to  the sine function will go from 0 to $2 \pi$ when $t$ goes from 0 to $P$." show_hints="TRUE"> <span class="math inline">\(V(t) \equiv \sin \left( \frac{2\pi}{3} t \right) + 3\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$V(t) \equ ... right)+ 2$" id="lamb-talk-gloves-QA1-3" w="7" name="lamb-talk-gloves-QA1" hint="This varies between a minimum of 0 and a maximum of 2." show_hints="TRUE"> <span class="math inline">\(V(t) \equiv 2 \sin \left( \frac{2\pi}{3} t \right)+ 2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$V(t) \equ ... right)+ 2$" id="lamb-talk-gloves-QA1-3" w="19" name="lamb-talk-gloves-QA1" hint="This varies between a minimum of 0 and a maximum of 2." show_hints="TRUE"> <span class="math inline">\(V(t) \equiv 2 \sin \left( \frac{2\pi}{3} t \right)+ 2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$V(t) \equ ... ight) + 3$" id="lamb-talk-gloves-QA1-4" w="87" name="lamb-talk-gloves-QA1" hint="Right amplitude and baseline. The minimum will be 2 liters and the maximum 4 liters. But the period is wrong. Going from $t=0$ to  $t=3$ should produce a full cycle of the sine function. But here  the argument would go only from 0 to $\frac{\pi}{3} 3 = $\pi$. After 3 seconds, only half a cycle has been  completed." show_hints="TRUE"> <span class="math inline">\(V(t) \equiv  \sin \left( \frac{\pi}{3} t \right) + 3\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$V(t) \equ ... ight) + 3$" id="lamb-talk-gloves-QA1-4" w="32" name="lamb-talk-gloves-QA1" hint="amplitude and baseline. The minimum will be 2 liters and the maximum 4 liters. But the period is wrong. Going from $t=0$ to  $t=3$ should produce a full cycle of the sine function. But here  the argument would go only from 0 to $\frac{\pi}{3} 3 = $\pi$. After 3 seconds, only half a cycle has been  completed." show_hints="TRUE"> <span class="math inline">\(V(t) \equiv  \sin \left( \frac{\pi}{3} t \right) + 3\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="lamb-talk-gloves-QA1" id="lamb-talk-gloves-QA1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-talk-gloves-QA1-hintarea">question id: lamb-talk-gloves-QA1</small></p>
 </div>
 </div>
@@ -3072,16 +3047,16 @@ Figure&nbsp;2: A movie showing growth of E. coli on a microscopic scale. Each ro
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Inspiratio ... expiration" id="lamb-talk-gloves-QA2-1" w="20" name="lamb-talk-gloves-QA2" hint="Correct" show_hints="TRUE"> Inspiration lasts longer than expiration</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Inspiratio ... expiration" id="lamb-talk-gloves-QA2-1" w="8" name="lamb-talk-gloves-QA2" hint="Bingo!" show_hints="TRUE"> Inspiration lasts longer than expiration</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Expiration ... nspiration" id="lamb-talk-gloves-QA2-2" w="3" name="lamb-talk-gloves-QA2" hint="Maybe it is for you, but not for most people. Try breathing in while counting 1-2-3 then exhaling while counting 1-2-3-4-5-6. Likely,  that is  not a very  natural  pattern for you." show_hints="TRUE"> Expiration lasts longer than inspiration</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Expiration ... nspiration" id="lamb-talk-gloves-QA2-2" w="7" name="lamb-talk-gloves-QA2" hint="Maybe it is for you, but not for most people. Try breathing in while counting 1-2-3 then exhaling while counting 1-2-3-4-5-6. Likely,  that is  not a very  natural  pattern for you." show_hints="TRUE"> Expiration lasts longer than inspiration</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Inspiratio ... te  cycle." id="lamb-talk-gloves-QA2-3" w="23" name="lamb-talk-gloves-QA2" hint="People can do this consciously by counting 1-2-3  for inspiration  and another 1-2-3 for expiration. This usually feels forced and unnatural." show_hints="TRUE"> Inspiration and expiration each consume about the same fraction of the complete cycle.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Inspiratio ... te  cycle." id="lamb-talk-gloves-QA2-3" w="7" name="lamb-talk-gloves-QA2" hint="People can do this consciously by counting 1-2-3  for inspiration  and another 1-2-3 for expiration. This usually feels forced and unnatural." show_hints="TRUE"> Inspiration and expiration each consume about the same fraction of the complete cycle.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="lamb-talk-gloves-QA2" id="lamb-talk-gloves-QA2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="lamb-talk-gloves-QA2-hintarea">question id: lamb-talk-gloves-QA2</small></p>
 </div>
 </div>
@@ -3091,14 +3066,14 @@ Figure&nbsp;2: A movie showing growth of E. coli on a microscopic scale. Each ro
 <h3 class="anchored" data-anchor-id="mini-modeling-project">Mini modeling project</h3>
 <p>The data frame <code>MMAC::SunsetLA</code> records the number of minutes after 4 pm until the sun sets in Los Angeles, CA over a 4-year interval from January 2010 (month 1) through December 2013 (month 48).</p>
 <!-- (All times are already adjusted for daylight savings time. The book does not tell us whether the value for each month is an average over all days or for a particular day of the month.) -->
-<p>Use <a href="#lst-sunset-1" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-sunset-1</span></a> to make a plot of sunset time versus month.</p>
+<p>Use <a href="#lst-sunset-1" class="quarto-xref">Active R chunk&nbsp;<span>1</span></a> to make a plot of sunset time versus month.</p>
 <div id="lst-sunset-1" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-sunset-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-sunset-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3108,8 +3083,8 @@ Active R chunk&nbsp;1
 <li>What is the range of the number of minutes until sunset over the whole 4-year period?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="40 to 190 minutes" id="sunset-in-LA-1-1" w="16" name="sunset-in-LA-1" hint="You're right" show_hints="TRUE"> 40 to 190 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="120 minutes" id="sunset-in-LA-1-2" w="87" name="sunset-in-LA-1" hint="A range is an interval spanned by *two* numbers." show_hints="TRUE"> 120 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="40 to 180 minutes" id="sunset-in-LA-1-3" w="32" name="sunset-in-LA-1" hint="The largest values are half a tick mark up from 180. Tick marks are spaced by 20 minutes." show_hints="TRUE"> 40 to 180 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 to 48  months" id="sunset-in-LA-1-4" w="3" name="sunset-in-LA-1" hint="That's  the *domain*. The *range* is along the vertical axis." show_hints="TRUE"> 0 to 48 months &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sunset-in-LA-1" id="sunset-in-LA-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="40 to 190 minutes" id="sunset-in-LA-1-1" w="20" name="sunset-in-LA-1" hint="You're right." show_hints="TRUE"> 40 to 190 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="120 minutes" id="sunset-in-LA-1-2" w="19" name="sunset-in-LA-1" hint="A range is an interval spanned by *two* numbers." show_hints="TRUE"> 120 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="40 to 180 minutes" id="sunset-in-LA-1-3" w="7" name="sunset-in-LA-1" hint="The largest values are half a tick mark up from 180. Tick marks are spaced by 20 minutes." show_hints="TRUE"> 40 to 180 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 to 48  months" id="sunset-in-LA-1-4" w="32" name="sunset-in-LA-1" hint="That's  the *domain*. The *range* is along the vertical axis." show_hints="TRUE"> 0 to 48 months &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sunset-in-LA-1" id="sunset-in-LA-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="sunset-in-LA-1-hintarea">question id: sunset-in-LA-1</small></p>
 </div>
 </div>
@@ -3118,19 +3093,19 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="6 months" id="sunset-in-LA-2-1" w="3" name="sunset-in-LA-2" hint="Look at the number of months from one peak to another." show_hints="TRUE"> 6 months</p>
+</p><p><input type="radio" class="devoirs-mcq" value="6 months" id="sunset-in-LA-2-1" w="19" name="sunset-in-LA-2" hint="Look at the number of months from one peak to another." show_hints="TRUE"> 6 months</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="11 months" id="sunset-in-LA-2-2" w="87" name="sunset-in-LA-2" hint="Look more carefully. And remember that the change in length of day is an *annual* phenomenon." show_hints="TRUE"> 11 months</p>
+</p><p><input type="radio" class="devoirs-mcq" value="11 months" id="sunset-in-LA-2-2" w="32" name="sunset-in-LA-2" hint="Look more carefully. And remember that the change in length of day is an *annual* phenomenon." show_hints="TRUE"> 11 months</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="12 months" id="sunset-in-LA-2-3" w="41" name="sunset-in-LA-2" hint="You're right" show_hints="TRUE"> 12 months</p>
+</p><p><input type="radio" class="devoirs-mcq" value="12 months" id="sunset-in-LA-2-3" w="5" name="sunset-in-LA-2" hint="Yeah!" show_hints="TRUE"> 12 months</p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="12 minutes" id="sunset-in-LA-2-4" w="19" name="sunset-in-LA-2" hint="Period refers to an interval on  the *domain* of the function, not the range." show_hints="TRUE"> 12 minutes</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="sunset-in-LA-2" id="sunset-in-LA-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="sunset-in-LA-2-hintarea">question id: sunset-in-LA-2</small></p>
 </div>
 </div>
@@ -3140,14 +3115,14 @@ Active R chunk&nbsp;1
 <li>The sine function <code>sin(2*pi*Month/12)</code></li>
 </ol>
 <p>The two functions are scaled by <span class="math inline">\(C\)</span> and <span class="math inline">\(A\)</span>, respectively.</p>
-<p>Make rough but reasonable numeric estimates for <span class="math inline">\(C\)</span> and <span class="math inline">\(A\)</span> from the data. Then, using <a href="#lst-sunset-2" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-sunset-2</span></a>, define the <code>sunset()</code> function using the numerical estimates in the linear combination. Plot your function as a layer on top of the data. (Pipe the <code>gf_point()</code> layer to <code>slice_plot()</code>.)</p>
+<p>Make rough but reasonable numeric estimates for <span class="math inline">\(C\)</span> and <span class="math inline">\(A\)</span> from the data. Then, using <a href="#lst-sunset-2" class="quarto-xref">Active R chunk&nbsp;<span>2</span></a>, define the <code>sunset()</code> function using the numerical estimates in the linear combination. Plot your function as a layer on top of the data. (Pipe the <code>gf_point()</code> layer to <code>slice_plot()</code>.)</p>
 <div id="lst-sunset-2" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-sunset-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;2
 </figcaption>
 <div aria-describedby="lst-sunset-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3156,16 +3131,16 @@ Active R chunk&nbsp;2
 <p>Your <code>sunset()</code> function should be a pretty good match to the data except for one thing. What is that thing?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The `sunse ...  the data." id="sunset-in-LA-3-1" w="32" name="sunset-in-LA-3" hint="This won't be the case if you have estimated $C$ and $A$ correctly." show_hints="TRUE"> The <code>sunset()</code> function has a completely different range than the data.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The `sunse ...  the data." id="sunset-in-LA-3-1" w="7" name="sunset-in-LA-3" hint="This won't be the case if you have estimated $C$ and $A$ correctly." show_hints="TRUE"> The <code>sunset()</code> function has a completely different range than the data.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The period ...  the data." id="sunset-in-LA-3-2" w="3" name="sunset-in-LA-3" hint="Did you use `sin(2*pi*Month/12)`? If so, the period should be right." show_hints="TRUE"> The period of the <code>sunset()</code> function does not match the data.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The period ...  the data." id="sunset-in-LA-3-2" w="32" name="sunset-in-LA-3" hint="Did you use `sin(2*pi*Month/12)`? If so, the period should be right." show_hints="TRUE"> The period of the <code>sunset()</code> function does not match the data.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="There is a ...  the data." id="sunset-in-LA-3-3" w="5" name="sunset-in-LA-3" hint="Correct" show_hints="TRUE"> There is a horizontal time shift between <code>sunset()</code> and the data.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="There is a ...  the data." id="sunset-in-LA-3-3" w="5" name="sunset-in-LA-3" hint="Exactly." show_hints="TRUE"> There is a horizontal time shift between <code>sunset()</code> and the data.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="sunset-in-LA-3" id="sunset-in-LA-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="sunset-in-LA-3-hintarea">question id: sunset-in-LA-3</small></p>
 </div>
 </div>
@@ -3178,16 +3153,16 @@ Active R chunk&nbsp;2
 </p><p><input type="radio" class="devoirs-mcq" value="0 months" id="sunset-in-LA-4-1" w="32" name="sunset-in-LA-4" hint="That's  not a time when the data suggest that $C$ is being crossed." show_hints="TRUE"> 0 months</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="19 months" id="sunset-in-LA-4-2" w="87" name="sunset-in-LA-4" hint="That's  a maximum, not a crossing  of $C$." show_hints="TRUE"> 19 months</p>
+</p><p><input type="radio" class="devoirs-mcq" value="19 months" id="sunset-in-LA-4-2" w="32" name="sunset-in-LA-4" hint="That's  a maximum, not a crossing  of $C$." show_hints="TRUE"> 19 months</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="21.5 months" id="sunset-in-LA-4-3" w="32" name="sunset-in-LA-4" hint="That's  a crossing of $C$, but not one with  a positive slope." show_hints="TRUE"> 21.5 months</p>
+</p><p><input type="radio" class="devoirs-mcq" value="21.5 months" id="sunset-in-LA-4-3" w="3" name="sunset-in-LA-4" hint="That's  a crossing of $C$, but not one with  a positive slope." show_hints="TRUE"> 21.5 months</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="15.5 months" id="sunset-in-LA-4-4" w="35" name="sunset-in-LA-4" hint="Correct This is a good rough value. Since  the  period is 12 months, you  could equally  well  have said the offset  is 3.5 months." show_hints="TRUE"> 15.5 months</p>
+</p><p><input type="radio" class="devoirs-mcq" value="15.5 months" id="sunset-in-LA-4-4" w="8" name="sunset-in-LA-4" hint="Correct This is a good rough value. Since  the  period is 12 months, you  could equally  well  have said the offset  is 3.5 months." show_hints="TRUE"> 15.5 months</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="sunset-in-LA-4" id="sunset-in-LA-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="sunset-in-LA-4-hintarea">question id: sunset-in-LA-4</small></p>
 </div>
 </div>
@@ -3200,7 +3175,7 @@ Active R chunk&nbsp;2
 Active R chunk&nbsp;3
 </figcaption>
 <div aria-describedby="lst-sunset-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3265,15 +3240,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3293,7 +3275,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3390,8 +3375,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3502,7 +3485,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -3735,8 +3717,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Block-2-models.html" class="pagination-link" aria-label="Differentiation projects">
-        <span class="nav-page-text">Differentiation projects</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Block-1-models.html" class="pagination-link" aria-label="Block I Modeling projects">
+        <span class="nav-page-text">Block I Modeling projects</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"u <- rbind(-81382, ..., ...)\nv <- ...\n...","id":1,"options":{"message":"true","results":"markup","read-only":"false","comment":"","output":"true","dpi":72,"autorun":"false","editor-max-height":"","fig-height":5,"warning":"true","fig-cap":"","out-height":"","label":"calf-pitch-chair-rcd}","context":"interactive","fig-width":7,"classes":"","editor-font-scale":"1","out-width":"700px","editor-quick-suggestions":"false","editor-word-wrap":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"u <- rbind(-81382, ..., ...)\nv <- ...\n...","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"calf-pitch-chair-rcd}","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1634,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2982,6 +2601,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-titmouse-stand-pantry" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> Here are 12 vectors, labeled “a” through “m.” (Letter “i” has been left out.) There are several quick questions, each of which makes a claim about whether the sum of two vectors equals a third. Answer <em>true</em> or <em>false</em> to the claim. There are no tricks about exactitude, so if the claim is close to being true, answer true.</p>
 <div id="fig-titmouse-12-vectors" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -2998,8 +2619,8 @@ Figure&nbsp;1
 <li><span class="math inline">\(\vec{a} + \vec{b} = \vec{L}\)</span></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-1-1" w="87" name="titmouse-stand-pantry-1" hint="no" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-1-2" w="18" name="titmouse-stand-pantry-1" hint="Yes" show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-1" id="titmouse-stand-pantry-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-1-1" w="23" name="titmouse-stand-pantry-1" hint="Not so!" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-1-2" w="29" name="titmouse-stand-pantry-1" hint="Certainly." show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-1" id="titmouse-stand-pantry-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="titmouse-stand-pantry-1-hintarea">question id: titmouse-stand-pantry-1</small></p>
 </div>
 </div>
@@ -3007,8 +2628,8 @@ Figure&nbsp;1
 <li><span class="math inline">\(\vec{b} + \vec{J} = \vec{a}\)</span></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-2-1" w="23" name="titmouse-stand-pantry-2" hint="Try again!" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-2-2" w="35" name="titmouse-stand-pantry-2" hint="You're right" show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-2" id="titmouse-stand-pantry-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-2-1" w="23" name="titmouse-stand-pantry-2" hint="Better luck next time." show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-2-2" w="20" name="titmouse-stand-pantry-2" hint="A hit!" show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-2" id="titmouse-stand-pantry-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="titmouse-stand-pantry-2-hintarea">question id: titmouse-stand-pantry-2</small></p>
 </div>
 </div>
@@ -3016,8 +2637,8 @@ Figure&nbsp;1
 <li><span class="math inline">\(\vec{b} + \vec{m} = \vec{J}\)</span></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-3-1" w="23" name="titmouse-stand-pantry-3" hint="no" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-3-2" w="14" name="titmouse-stand-pantry-3" hint="Right" show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-3" id="titmouse-stand-pantry-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-3-1" w="7" name="titmouse-stand-pantry-3" hint="Try again!" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-3-2" w="35" name="titmouse-stand-pantry-3" hint="Right-O!" show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-3" id="titmouse-stand-pantry-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="titmouse-stand-pantry-3-hintarea">question id: titmouse-stand-pantry-3</small></p>
 </div>
 </div>
@@ -3025,8 +2646,8 @@ Figure&nbsp;1
 <li><span class="math inline">\(\vec{c} + \vec{f} = \vec{d}\)</span></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-4-1" w="14" name="titmouse-stand-pantry-4" hint="Nice." show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-4-2" w="19" name="titmouse-stand-pantry-4" hint="no" show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-4" id="titmouse-stand-pantry-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-4-1" w="8" name="titmouse-stand-pantry-4" hint="Right on the nose!" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-4-2" w="23" name="titmouse-stand-pantry-4" hint="Not so!" show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-4" id="titmouse-stand-pantry-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="titmouse-stand-pantry-4-hintarea">question id: titmouse-stand-pantry-4</small></p>
 </div>
 </div>
@@ -3034,8 +2655,8 @@ Figure&nbsp;1
 <li><span class="math inline">\(\vec{k} + \vec{L} = \vec{e}\)</span></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-5-1" w="5" name="titmouse-stand-pantry-5" hint="Nice." show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-5-2" w="19" name="titmouse-stand-pantry-5" hint="Better luck next time." show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-5" id="titmouse-stand-pantry-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-5-1" w="16" name="titmouse-stand-pantry-5" hint="Excellent!" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-5-2" w="87" name="titmouse-stand-pantry-5" hint="Hmmm ..." show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-5" id="titmouse-stand-pantry-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="titmouse-stand-pantry-5-hintarea">question id: titmouse-stand-pantry-5</small></p>
 </div>
 </div>
@@ -3043,8 +2664,8 @@ Figure&nbsp;1
 <li><span class="math inline">\(\vec{e} + \vec{b} = \vec{m}\)</span></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-6-1" w="3" name="titmouse-stand-pantry-6" hint="Sorry!" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-6-2" w="35" name="titmouse-stand-pantry-6" hint="Right" show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-6" id="titmouse-stand-pantry-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-6-1" w="87" name="titmouse-stand-pantry-6" hint="Better luck next time." show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-6-2" w="29" name="titmouse-stand-pantry-6" hint="Correct." show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-6" id="titmouse-stand-pantry-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="titmouse-stand-pantry-6-hintarea">question id: titmouse-stand-pantry-6</small></p>
 </div>
 </div>
@@ -3052,8 +2673,8 @@ Figure&nbsp;1
 <li><span class="math inline">\(\vec{m} + \vec{g} = \vec{b}\)</span></li>
 </ol>
 <div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-7-1" w="41" name="titmouse-stand-pantry-7" hint="Yes" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-7-2" w="32" name="titmouse-stand-pantry-7" hint="no" show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-7" id="titmouse-stand-pantry-7.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="titmouse-stand-pantry-7-1" w="18" name="titmouse-stand-pantry-7" hint="Right!" show_hints="false"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="titmouse-stand-pantry-7-2" w="3" name="titmouse-stand-pantry-7" hint="Incorrect choice." show_hints="false"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="titmouse-stand-pantry-7" id="titmouse-stand-pantry-7.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="titmouse-stand-pantry-7-hintarea">question id: titmouse-stand-pantry-7</small></p>
 </div>
 </div>
@@ -3072,7 +2693,7 @@ Figure&nbsp;1
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-calf-pitch-chair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3083,19 +2704,19 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(42044, - ... 54300)^T$ " id="calf-pitch-chair-1-1" w="3" name="calf-pitch-chair-1" hint="Try again!" show_hints="false"> <span class="math inline">\((42044, -99771, 54300)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(42044, - ... 54300)^T$ " id="calf-pitch-chair-1-1" w="3" name="calf-pitch-chair-1" hint="You might think so, but ..." show_hints="false"> <span class="math inline">\((42044, -99771, 54300)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(42044, - ... 107953)^T$" id="calf-pitch-chair-1-2" w="18" name="calf-pitch-chair-1" hint="right-o" show_hints="false"> <span class="math inline">\((42044, -99771, -107953)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(42044, - ... 107953)^T$" id="calf-pitch-chair-1-2" w="8" name="calf-pitch-chair-1" hint="A win!" show_hints="false"> <span class="math inline">\((42044, -99771, -107953)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(42044, 9 ... 54300)^T$ " id="calf-pitch-chair-1-3" w="23" name="calf-pitch-chair-1" hint="no" show_hints="false"> <span class="math inline">\((42044, 99771, -54300)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(42044, 9 ... 54300)^T$ " id="calf-pitch-chair-1-3" w="23" name="calf-pitch-chair-1" hint="Nope." show_hints="false"> <span class="math inline">\((42044, 99771, -54300)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-1-4" w="3" name="calf-pitch-chair-1" hint="no" show_hints="false"> invalid combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-1-4" w="3" name="calf-pitch-chair-1" hint="Boo!" show_hints="false"> invalid combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="calf-pitch-chair-1" id="calf-pitch-chair-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="calf-pitch-chair-1-hintarea">question id: calf-pitch-chair-1</small></p>
 </div>
 </div>
@@ -3104,19 +2725,19 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ... 40251)^T$ " id="calf-pitch-chair-2-1" w="19" name="calf-pitch-chair-2" hint="Not quite right" show_hints="false"> <span class="math inline">\((111752, 10290, -40251)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ... 40251)^T$ " id="calf-pitch-chair-2-1" w="87" name="calf-pitch-chair-2" hint="Hmmm ..." show_hints="false"> <span class="math inline">\((111752, 10290, -40251)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ... 40251)^T$ " id="calf-pitch-chair-2-2" w="3" name="calf-pitch-chair-2" hint="You're mistaken" show_hints="false"> <span class="math inline">\((111752, 10290, 40251)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ... 40251)^T$ " id="calf-pitch-chair-2-2" w="3" name="calf-pitch-chair-2" hint="Not on target." show_hints="false"> <span class="math inline">\((111752, 10290, 40251)^T\)</span></p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ... 40251)^T$ " id="calf-pitch-chair-2-3" w="7" name="calf-pitch-chair-2" hint="Sorry!" show_hints="false"> <span class="math inline">\((111752, -10290, -40251)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-2-4" w="16" name="calf-pitch-chair-2" hint="right-o" show_hints="false"> invalid combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-2-4" w="16" name="calf-pitch-chair-2" hint="That's right." show_hints="false"> invalid combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="calf-pitch-chair-2" id="calf-pitch-chair-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="calf-pitch-chair-2-hintarea">question id: calf-pitch-chair-2</small></p>
 </div>
 </div>
@@ -3125,19 +2746,19 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-180532, ...  54300)^T$" id="calf-pitch-chair-3-1" w="35" name="calf-pitch-chair-3" hint="right-o" show_hints="false"> <span class="math inline">\((-180532, -99771, 54300)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-180532, ...  54300)^T$" id="calf-pitch-chair-3-1" w="35" name="calf-pitch-chair-3" hint="Spot on!" show_hints="false"> <span class="math inline">\((-180532, -99771, 54300)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-180532, ...  54300)^T$" id="calf-pitch-chair-3-2" w="7" name="calf-pitch-chair-3" hint="Sorry!" show_hints="false"> <span class="math inline">\((-180532, -24446, 54300)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-180532, ...  54300)^T$" id="calf-pitch-chair-3-2" w="7" name="calf-pitch-chair-3" hint="Incorrect." show_hints="false"> <span class="math inline">\((-180532, -24446, 54300)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-180532, ...  54300)^T$" id="calf-pitch-chair-3-3" w="32" name="calf-pitch-chair-3" hint="no" show_hints="false"> <span class="math inline">\((-180532, -24969, 54300)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-180532, ...  54300)^T$" id="calf-pitch-chair-3-3" w="32" name="calf-pitch-chair-3" hint="Nope." show_hints="false"> <span class="math inline">\((-180532, -24969, 54300)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-3-4" w="3" name="calf-pitch-chair-3" hint="incorrect choice" show_hints="false"> invalid combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-3-4" w="3" name="calf-pitch-chair-3" hint="Think again." show_hints="false"> invalid combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="calf-pitch-chair-3" id="calf-pitch-chair-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="calf-pitch-chair-3-hintarea">question id: calf-pitch-chair-3</small></p>
 </div>
 </div>
@@ -3146,19 +2767,19 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ...  54300)^T$" id="calf-pitch-chair-4-1" w="19" name="calf-pitch-chair-4" hint="Better luck next time." show_hints="false"> <span class="math inline">\((111752, -244496, 54300)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ...  54300)^T$" id="calf-pitch-chair-4-1" w="19" name="calf-pitch-chair-4" hint="You might think so, but ..." show_hints="false"> <span class="math inline">\((111752, -244496, 54300)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ... -40251)^T$" id="calf-pitch-chair-4-2" w="18" name="calf-pitch-chair-4" hint="Excellent!" show_hints="false"> <span class="math inline">\((111752, 10290, -40251)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ... -40251)^T$" id="calf-pitch-chair-4-2" w="18" name="calf-pitch-chair-4" hint="Spot on!" show_hints="false"> <span class="math inline">\((111752, 10290, -40251)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ... 173698)^T$" id="calf-pitch-chair-4-3" w="32" name="calf-pitch-chair-4" hint="wrong" show_hints="false"> <span class="math inline">\((111752, -244496, -173698)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(111752,  ... 173698)^T$" id="calf-pitch-chair-4-3" w="19" name="calf-pitch-chair-4" hint="Wrong." show_hints="false"> <span class="math inline">\((111752, -244496, -173698)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="invalid-combination" id="calf-pitch-chair-4-4" w="23" name="calf-pitch-chair-4" hint="Not quite right" show_hints="false"> invalid-combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="invalid-combination" id="calf-pitch-chair-4-4" w="23" name="calf-pitch-chair-4" hint="Not quite right." show_hints="false"> invalid-combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="calf-pitch-chair-4" id="calf-pitch-chair-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="calf-pitch-chair-4-hintarea">question id: calf-pitch-chair-4</small></p>
 </div>
 </div>
@@ -3173,13 +2794,13 @@ Active R chunk&nbsp;1
 </p><p><input type="radio" class="devoirs-mcq" value="$(-180532, ...  54300)^T$" id="calf-pitch-chair-5-2" w="23" name="calf-pitch-chair-5" hint="Sorry!" show_hints="false"> <span class="math inline">\((-180532, -244496, 54300)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-341248, ... 173698)^T$" id="calf-pitch-chair-5-3" w="32" name="calf-pitch-chair-5" hint="wide of the mark" show_hints="false"> <span class="math inline">\((-341248, -244496, -173698)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-341248, ... 173698)^T$" id="calf-pitch-chair-5-3" w="32" name="calf-pitch-chair-5" hint="This is wide of the mark." show_hints="false"> <span class="math inline">\((-341248, -244496, -173698)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-5-4" w="5" name="calf-pitch-chair-5" hint="Correct" show_hints="false"> invalid combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-5-4" w="5" name="calf-pitch-chair-5" hint="Yeah!" show_hints="false"> invalid combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="calf-pitch-chair-5" id="calf-pitch-chair-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="calf-pitch-chair-5-hintarea">question id: calf-pitch-chair-5</small></p>
 </div>
 </div>
@@ -3188,19 +2809,19 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-341248, ... -40251)^T$" id="calf-pitch-chair-6-1" w="3" name="calf-pitch-chair-6" hint="You're mistaken" show_hints="false"> <span class="math inline">\((-341248, 10290, -40251)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-341248, ... -40251)^T$" id="calf-pitch-chair-6-1" w="3" name="calf-pitch-chair-6" hint="You're wrong here." show_hints="false"> <span class="math inline">\((-341248, 10290, -40251)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-180532, ...  54300)^T$" id="calf-pitch-chair-6-2" w="19" name="calf-pitch-chair-6" hint="You're mistaken" show_hints="false"> <span class="math inline">\((-180532, -244496, 54300)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-180532, ...  54300)^T$" id="calf-pitch-chair-6-2" w="3" name="calf-pitch-chair-6" hint="Not quite." show_hints="false"> <span class="math inline">\((-180532, -244496, 54300)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-341248, ... 173698)^T$" id="calf-pitch-chair-6-3" w="20" name="calf-pitch-chair-6" hint="Good job!" show_hints="false"> <span class="math inline">\((-341248, -244496, -173698)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-341248, ... 173698)^T$" id="calf-pitch-chair-6-3" w="18" name="calf-pitch-chair-6" hint="Bingo!" show_hints="false"> <span class="math inline">\((-341248, -244496, -173698)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-6-4" w="87" name="calf-pitch-chair-6" hint="You're mistaken" show_hints="false"> invalid combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="invalid combination" id="calf-pitch-chair-6-4" w="32" name="calf-pitch-chair-6" hint="You're wrong here." show_hints="false"> invalid combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="calf-pitch-chair-6" id="calf-pitch-chair-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="calf-pitch-chair-6-hintarea">question id: calf-pitch-chair-6</small></p>
 </div>
 </div>
@@ -3224,19 +2845,19 @@ Figure&nbsp;2
 <p>Give the position of the aircraft as a multiple of <span class="math inline">\(\vec{a}\)</span> from sound mirror A and as a multiple of <span class="math inline">\(\vec{b}\)</span> from sound mirror B. (Choose the closest answer)</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$3 \vec{a} ... 5 \vec{b}$" id="g4ZZQz-1" w="41" name="g4ZZQz" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(3 \vec{a}\)</span> and <span class="math inline">\(4.5 \vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$3 \vec{a} ... 5 \vec{b}$" id="g4ZZQz-1" w="20" name="g4ZZQz" hint="Right-O!" show_hints="TRUE"> <span class="math inline">\(3 \vec{a}\)</span> and <span class="math inline">\(4.5 \vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$4 \vec{a} ...  \vec{b}$ " id="g4ZZQz-2" w="19" name="g4ZZQz" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(4 \vec{a}\)</span> and <span class="math inline">\(6 \vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$4 \vec{a} ...  \vec{b}$ " id="g4ZZQz-2" w="3" name="g4ZZQz" hint="Not quite right." show_hints="TRUE"> <span class="math inline">\(4 \vec{a}\)</span> and <span class="math inline">\(6 \vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$3\vec{a}$ ...  \vec{b}$ " id="g4ZZQz-3" w="19" name="g4ZZQz" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(3\vec{a}\)</span> and <span class="math inline">\(2  \vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$3\vec{a}$ ...  \vec{b}$ " id="g4ZZQz-3" w="87" name="g4ZZQz" hint="You might think so, but ..." show_hints="TRUE"> <span class="math inline">\(3\vec{a}\)</span> and <span class="math inline">\(2  \vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$4\vec{a}$ ... 5\vec{b}$ " id="g4ZZQz-4" w="32" name="g4ZZQz" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(4\vec{a}\)</span> and <span class="math inline">\(4.5\vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$4\vec{a}$ ... 5\vec{b}$ " id="g4ZZQz-4" w="32" name="g4ZZQz" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(4\vec{a}\)</span> and <span class="math inline">\(4.5\vec{b}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="g4ZZQz" id="g4ZZQz.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="g4ZZQz-hintarea">question id: g4ZZQz</small></p>
 </div>
 </div>
@@ -3248,19 +2869,19 @@ Figure&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... y}\right]$" id="shark-understand-saw-1-1" w="5" name="shark-understand-saw-1" hint="Yes" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-\frac{5}{4}\\2 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... y}\right]$" id="shark-understand-saw-1-1" w="5" name="shark-understand-saw-1" hint="That's right." show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-\frac{5}{4}\\2 \end{array}\right]\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-1-2" w="3" name="shark-understand-saw-1" hint="You're right" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}\frac{5}{4}\\\frac{1}{4} \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-1-2" w="7" name="shark-understand-saw-1" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}\frac{5}{4}\\\frac{1}{4} \end{array}\right]\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-1-3" w="19" name="shark-understand-saw-1" hint="Correct" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-\frac{3}{4}\\2 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-1-3" w="19" name="shark-understand-saw-1" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-\frac{3}{4}\\2 \end{array}\right]\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-1-4" w="32" name="shark-understand-saw-1" hint="Right" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}\frac{3}{4}\\-2 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-1-4" w="7" name="shark-understand-saw-1" hint="Nice." show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}\frac{3}{4}\\-2 \end{array}\right]\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="shark-understand-saw-1" id="shark-understand-saw-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="shark-understand-saw-1-hintarea">question id: shark-understand-saw-1</small></p>
 </div>
 </div>
@@ -3269,19 +2890,19 @@ Figure&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... y}\right]$" id="shark-understand-saw-2-1" w="41" name="shark-understand-saw-2" hint="Nice." show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}9\\-5 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... y}\right]$" id="shark-understand-saw-2-1" w="14" name="shark-understand-saw-2" hint="Yup!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}9\\-5 \end{array}\right]\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-2-2" w="23" name="shark-understand-saw-2" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}9\\5 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-2-2" w="19" name="shark-understand-saw-2" hint="Bingo!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}9\\5 \end{array}\right]\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-2-3" w="19" name="shark-understand-saw-2" hint="Nice." show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-7\\5 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-2-3" w="87" name="shark-understand-saw-2" hint="Yup!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-7\\5 \end{array}\right]\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-2-4" w="3" name="shark-understand-saw-2" hint="Yes" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-7\\-5 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-2-4" w="7" name="shark-understand-saw-2" hint="Right-O!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-7\\-5 \end{array}\right]\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="shark-understand-saw-2" id="shark-understand-saw-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="shark-understand-saw-2-hintarea">question id: shark-understand-saw-2</small></p>
 </div>
 </div>
@@ -3290,19 +2911,19 @@ Figure&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... y}\right]$" id="shark-understand-saw-3-1" w="41" name="shark-understand-saw-3" hint="Nice." show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}14.28\\12.62 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... y}\right]$" id="shark-understand-saw-3-1" w="41" name="shark-understand-saw-3" hint="Score!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}14.28\\12.62 \end{array}\right]\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-3-2" w="3" name="shark-understand-saw-3" hint="Yes" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-14.28\\12.62 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-3-2" w="3" name="shark-understand-saw-3" hint="Bullseye!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}-14.28\\12.62 \end{array}\right]\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-3-3" w="7" name="shark-understand-saw-3" hint="Nice." show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}14.28\\-12.62 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-3-3" w="7" name="shark-understand-saw-3" hint="You've got it!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}14.28\\-12.62 \end{array}\right]\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-3-4" w="7" name="shark-understand-saw-3" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}12.62\\-12.62 \end{array}\right]\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\left[\be ... }\right]$ " id="shark-understand-saw-3-4" w="7" name="shark-understand-saw-3" hint="Correct." show_hints="TRUE"> <span class="math inline">\(\left[\begin{array}{r}12.62\\-12.62 \end{array}\right]\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="shark-understand-saw-3" id="shark-understand-saw-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="shark-understand-saw-3-hintarea">question id: shark-understand-saw-3</small></p>
 </div>
 </div>
@@ -3316,19 +2937,19 @@ Figure&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf v}_1$ " id="shark-understand-saw-4-1" w="32" name="shark-understand-saw-4" hint="Try again!" show_hints="TRUE"> <span class="math inline">\({\mathbf v}_1\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf v}_1$ " id="shark-understand-saw-4-1" w="7" name="shark-understand-saw-4" hint="Oops!" show_hints="TRUE"> <span class="math inline">\({\mathbf v}_1\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf v}_2$" id="shark-understand-saw-4-2" w="41" name="shark-understand-saw-4" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\({\mathbf v}_2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf v}_2$" id="shark-understand-saw-4-2" w="8" name="shark-understand-saw-4" hint="Score!" show_hints="TRUE"> <span class="math inline">\({\mathbf v}_2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf v}_3$ " id="shark-understand-saw-4-3" w="87" name="shark-understand-saw-4" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\({\mathbf v}_3\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf v}_3$ " id="shark-understand-saw-4-3" w="19" name="shark-understand-saw-4" hint="Try again!" show_hints="TRUE"> <span class="math inline">\({\mathbf v}_3\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf v}_4$ " id="shark-understand-saw-4-4" w="7" name="shark-understand-saw-4" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\({\mathbf v}_4\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf v}_4$ " id="shark-understand-saw-4-4" w="32" name="shark-understand-saw-4" hint="Wrong." show_hints="TRUE"> <span class="math inline">\({\mathbf v}_4\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="shark-understand-saw-4" id="shark-understand-saw-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="shark-understand-saw-4-hintarea">question id: shark-understand-saw-4</small></p>
 </div>
 </div>
@@ -3343,22 +2964,22 @@ Figure&nbsp;2
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_1$ " id="shark-understand-saw-5-1" w="3" name="shark-understand-saw-5" hint="incorrect choice" show_hints="TRUE"> <span class="math inline">\({\mathbf u}_1\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_1$ " id="shark-understand-saw-5-1" w="87" name="shark-understand-saw-5" hint="Not quite right." show_hints="TRUE"> <span class="math inline">\({\mathbf u}_1\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_2$ " id="shark-understand-saw-5-2" w="23" name="shark-understand-saw-5" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\({\mathbf u}_2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_2$ " id="shark-understand-saw-5-2" w="7" name="shark-understand-saw-5" hint="This is wide of the mark." show_hints="TRUE"> <span class="math inline">\({\mathbf u}_2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_3$ " id="shark-understand-saw-5-3" w="3" name="shark-understand-saw-5" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\({\mathbf u}_3\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_3$ " id="shark-understand-saw-5-3" w="32" name="shark-understand-saw-5" hint="Nope." show_hints="TRUE"> <span class="math inline">\({\mathbf u}_3\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_4$" id="shark-understand-saw-5-4" w="41" name="shark-understand-saw-5" hint="Right" show_hints="TRUE"> <span class="math inline">\({\mathbf u}_4\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_4$" id="shark-understand-saw-5-4" w="14" name="shark-understand-saw-5" hint="You're right!" show_hints="TRUE"> <span class="math inline">\({\mathbf u}_4\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_5$ " id="shark-understand-saw-5-5" w="32" name="shark-understand-saw-5" hint="Try again!" show_hints="TRUE"> <span class="math inline">\({\mathbf u}_5\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="${\mathbf u}_5$ " id="shark-understand-saw-5-5" w="87" name="shark-understand-saw-5" hint="Incorrect." show_hints="TRUE"> <span class="math inline">\({\mathbf u}_5\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="shark-understand-saw-5" id="shark-understand-saw-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="shark-understand-saw-5-hintarea">question id: shark-understand-saw-5</small></p>
 </div>
 </div>
@@ -3478,15 +3099,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3506,7 +3134,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3603,8 +3234,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3715,7 +3344,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

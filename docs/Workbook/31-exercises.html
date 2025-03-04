@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"fig-width":7,"comment":"","label":"snake-ride-glasses-rcd","editor-word-wrap":"true","message":"true","warning":"true","editor-quick-suggestions":"false","results":"markup","out-height":"","dpi":72,"fig-cap":"","autorun":"false","classes":"","fig-height":5,"out-width":"700px","context":"interactive","editor-max-height":"","output":"true","read-only":"false","editor-font-scale":"1"},"code":""},{"id":2,"options":{"fig-width":7,"comment":"","label":"unnamed-chunk-2","editor-word-wrap":"true","message":"true","warning":"true","editor-quick-suggestions":"false","results":"markup","out-height":"","dpi":72,"fig-cap":"","autorun":"false","classes":"","fig-height":5,"out-width":"700px","context":"interactive","editor-max-height":"","output":"true","read-only":"false","editor-font-scale":"1"},"code":"a <- rbind(1, 2)\nb <- rbind(1, 1)\nc <- rbind(1, -1)\nd <- rbind(-6, 2)\nT <- rbind(3, -1)"}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"snake-ride-glasses-rcd","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"a <- rbind(1, 2)\nb <- rbind(1, 1)\nc <- rbind(1, -1)\nd <- rbind(-6, 2)\nT <- rbind(3, -1)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1634,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2982,6 +2601,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> In this exercise, you will <em>check</em> proposed solutions to the target problem. Each question poses one target problem. One of the answers is correct. Use <a href="#lst-snake-ride-glasses" class="quarto-xref">Active R chunk&nbsp;<span>1</span></a> to select the correct answer.</p>
 <div id="lst-snake-ride-glasses" class="listing quarto-float quarto-figure quarto-figure-left anchored">
@@ -2990,7 +2611,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-snake-ride-glasses-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -2999,100 +2620,100 @@ Active R chunk&nbsp;1
 <p><strong>i.</strong> What linear combination of <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> will reach target <span class="math inline">\(T\)</span>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$3\vec{a}  ... 7\vec{b}$ " id="srgM-9-1" w="32" name="srgM-9" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(3\vec{a} - 7\vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$3\vec{a}  ... 7\vec{b}$ " id="srgM-9-1" w="23" name="srgM-9" hint="You might think so, but ..." show_hints="TRUE"> <span class="math inline">\(3\vec{a} - 7\vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{a} + ... 2\vec{b}$ " id="srgM-9-2" w="3" name="srgM-9" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\vec{a} + 2\vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{a} + ... 2\vec{b}$ " id="srgM-9-2" w="23" name="srgM-9" hint="You're wrong here." show_hints="TRUE"> <span class="math inline">\(\vec{a} + 2\vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$-4 \vec{a ... 7 \vec{b}$" id="srgM-9-3" w="29" name="srgM-9" hint="Yes" show_hints="TRUE"> <span class="math inline">\(-4 \vec{a} + 7 \vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$-4 \vec{a ... 7 \vec{b}$" id="srgM-9-3" w="35" name="srgM-9" hint="Yes" show_hints="TRUE"> <span class="math inline">\(-4 \vec{a} + 7 \vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$- \vec{a} ... 4\vec{b}$ " id="srgM-9-4" w="87" name="srgM-9" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(- \vec{a} + 4\vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$- \vec{a} ... 4\vec{b}$ " id="srgM-9-4" w="19" name="srgM-9" hint="Wrong." show_hints="TRUE"> <span class="math inline">\(- \vec{a} + 4\vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="No combina ... $ exactly." id="srgM-9-5" w="23" name="srgM-9" hint="Two 2-dimensional vectors pointing in different directions can reach any point in the plane." show_hints="TRUE"> No combination will reach <span class="math inline">\(\vec{T}\)</span> exactly.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="No combina ... $ exactly." id="srgM-9-5" w="87" name="srgM-9" hint="Two 2-dimensional vectors pointing in different directions can reach any point in the plane." show_hints="TRUE"> No combination will reach <span class="math inline">\(\vec{T}\)</span> exactly.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="None of the above " id="srgM-9-6" w="7" name="srgM-9" hint="Sorry!" show_hints="TRUE"> None of the above</p>
+</p><p><input type="radio" class="devoirs-mcq" value="None of the above " id="srgM-9-6" w="7" name="srgM-9" hint="This is wide of the mark." show_hints="TRUE"> None of the above</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="srgM-9" id="srgM-9.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="srgM-9-hintarea">question id: srgM-9</small></p>
 </div>
 </div>
 <p><strong>ii.</strong> What linear combination of <span class="math inline">\(\vec{b}\)</span> and <span class="math inline">\(\vec{c}\)</span> will reach target <span class="math inline">\(T\)</span>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{4}{ ... }\vec{c}$ " id="srgM-10-1" w="3" name="srgM-10" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(\frac{4}{3}\vec{b} - \frac{5}{3}\vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{4}{ ... }\vec{c}$ " id="srgM-10-1" w="7" name="srgM-10" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(\frac{4}{3}\vec{b} - \frac{5}{3}\vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{2}{ ... }\vec{c}$ " id="srgM-10-2" w="3" name="srgM-10" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(\frac{2}{3}\vec{b} + \frac{7}{3}\vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{2}{ ... }\vec{c}$ " id="srgM-10-2" w="87" name="srgM-10" hint="You might think so, but ..." show_hints="TRUE"> <span class="math inline">\(\frac{2}{3}\vec{b} + \frac{7}{3}\vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$-\frac{7} ... }\vec{c}$ " id="srgM-10-3" w="3" name="srgM-10" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(-\frac{7}{3}\vec{b} + \frac{5}{3}\vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$-\frac{7} ... }\vec{c}$ " id="srgM-10-3" w="7" name="srgM-10" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(-\frac{7}{3}\vec{b} + \frac{5}{3}\vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ... } \vec{c}$" id="srgM-10-4" w="35" name="srgM-10" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(\frac{5}{3} \vec{b} + \frac{4}{3} \vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ... } \vec{c}$" id="srgM-10-4" w="5" name="srgM-10" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(\frac{5}{3} \vec{b} + \frac{4}{3} \vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="No combina ... $ exactly." id="srgM-10-5" w="23" name="srgM-10" hint="Two 2-dimensional vectors pointing in different directions can reach any point in the plane." show_hints="TRUE"> No combination will reach <span class="math inline">\(\vec{T}\)</span> exactly.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="No combina ... $ exactly." id="srgM-10-5" w="7" name="srgM-10" hint="Two 2-dimensional vectors pointing in different directions can reach any point in the plane." show_hints="TRUE"> No combination will reach <span class="math inline">\(\vec{T}\)</span> exactly.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="None of the above " id="srgM-10-6" w="87" name="srgM-10" hint="Sorry!" show_hints="TRUE"> None of the above</p>
+</p><p><input type="radio" class="devoirs-mcq" value="None of the above " id="srgM-10-6" w="19" name="srgM-10" hint="You might think so, but ..." show_hints="TRUE"> None of the above</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="srgM-10" id="srgM-10.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="srgM-10-hintarea">question id: srgM-10</small></p>
 </div>
 </div>
 <p><strong>iii.</strong> What linear combination of <span class="math inline">\(\vec{b}\)</span> and <span class="math inline">\(\vec{d}\)</span> will reach target <span class="math inline">\(T\)</span>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$0\vec{b}  ... }\vec{d}$ " id="srgM-11-1" w="7" name="srgM-11" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(0\vec{b} - \frac{3}{2}\vec{d}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$0\vec{b}  ... }\vec{d}$ " id="srgM-11-1" w="3" name="srgM-11" hint="Nope." show_hints="TRUE"> <span class="math inline">\(0\vec{b} - \frac{3}{2}\vec{d}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{1}{ ... }\vec{d}$ " id="srgM-11-2" w="32" name="srgM-11" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\frac{1}{2}\vec{b} + \frac{1}{2}\vec{d}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{1}{ ... }\vec{d}$ " id="srgM-11-2" w="3" name="srgM-11" hint="Not on target." show_hints="TRUE"> <span class="math inline">\(\frac{1}{2}\vec{b} + \frac{1}{2}\vec{d}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$0 \vec{b} ... } \vec{d}$" id="srgM-11-3" w="29" name="srgM-11" hint="You're right" show_hints="TRUE"> <span class="math inline">\(0 \vec{b} - \frac{1}{2} \vec{d}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$0 \vec{b} ... } \vec{d}$" id="srgM-11-3" w="19" name="srgM-11" hint="correct" show_hints="TRUE"> <span class="math inline">\(0 \vec{b} - \frac{1}{2} \vec{d}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{3}{ ... }\vec{d}$ " id="srgM-11-4" w="32" name="srgM-11" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\frac{3}{2}\vec{b} + \frac{1}{2}\vec{d}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{3}{ ... }\vec{d}$ " id="srgM-11-4" w="23" name="srgM-11" hint="You're wrong here." show_hints="TRUE"> <span class="math inline">\(\frac{3}{2}\vec{b} + \frac{1}{2}\vec{d}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="No combina ... $ exactly." id="srgM-11-5" w="87" name="srgM-11" hint="Two 2-dimensional vectors pointing in different directions can reach any point in the plane." show_hints="TRUE"> No combination will reach <span class="math inline">\(\vec{T}\)</span> exactly.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="No combina ... $ exactly." id="srgM-11-5" w="32" name="srgM-11" hint="Two 2-dimensional vectors pointing in different directions can reach any point in the plane." show_hints="TRUE"> No combination will reach <span class="math inline">\(\vec{T}\)</span> exactly.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="None of the above " id="srgM-11-6" w="87" name="srgM-11" hint="Sorry!" show_hints="TRUE"> None of the above</p>
+</p><p><input type="radio" class="devoirs-mcq" value="None of the above " id="srgM-11-6" w="23" name="srgM-11" hint="You're wrong here." show_hints="TRUE"> None of the above</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="srgM-11" id="srgM-11.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="srgM-11-hintarea">question id: srgM-11</small></p>
 </div>
 </div>
 <p><strong>iv.</strong> Which of these linear combinations of <span class="math inline">\(\vec{a}\)</span>, <span class="math inline">\(\vec{b}\)</span> and <span class="math inline">\(\vec{c}\)</span> will reach target <span class="math inline">\(T\)</span>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\vec{a} - ... 2\vec{c}$ " id="srgM-12-1" w="19" name="srgM-12" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(\vec{a} -\vec{b} - 2\vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\vec{a} - ... 2\vec{c}$ " id="srgM-12-1" w="87" name="srgM-12" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(\vec{a} -\vec{b} - 2\vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$2\vec{a}  ... 2\vec{c}$ " id="srgM-12-2" w="3" name="srgM-12" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(2\vec{a} +\vec{b} - 2\vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$2\vec{a}  ... 2\vec{c}$ " id="srgM-12-2" w="32" name="srgM-12" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(2\vec{a} +\vec{b} - 2\vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$2\vec{a}  ...  2\vec{c}$" id="srgM-12-3" w="14" name="srgM-12" hint="Nice." show_hints="TRUE"> <span class="math inline">\(2\vec{a} -\vec{b} + 2\vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$2\vec{a}  ...  2\vec{c}$" id="srgM-12-3" w="41" name="srgM-12" hint="Nice." show_hints="TRUE"> <span class="math inline">\(2\vec{a} -\vec{b} + 2\vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$-2\vec{a} ... 2\vec{c}$ " id="srgM-12-4" w="32" name="srgM-12" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(-2\vec{a} +\vec{b} + 2\vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$-2\vec{a} ... 2\vec{c}$ " id="srgM-12-4" w="23" name="srgM-12" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(-2\vec{a} +\vec{b} + 2\vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="No combina ... $ exactly." id="srgM-12-5" w="19" name="srgM-12" hint="Two 2-dimensional vectors pointing in different directions can reach any point in the plane. Adding a third vector just increases the number of possibilities." show_hints="TRUE"> No combination will reach <span class="math inline">\(\vec{T}\)</span> exactly.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="No combina ... $ exactly." id="srgM-12-5" w="23" name="srgM-12" hint="Two 2-dimensional vectors pointing in different directions can reach any point in the plane. Adding a third vector just increases the number of possibilities." show_hints="TRUE"> No combination will reach <span class="math inline">\(\vec{T}\)</span> exactly.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="None of the above " id="srgM-12-6" w="87" name="srgM-12" hint="Try again!" show_hints="TRUE"> None of the above</p>
+</p><p><input type="radio" class="devoirs-mcq" value="None of the above " id="srgM-12-6" w="32" name="srgM-12" hint="Nope." show_hints="TRUE"> None of the above</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="srgM-12" id="srgM-12.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="srgM-12-hintarea">question id: srgM-12</small></p>
 </div>
 </div>
@@ -3101,26 +2722,26 @@ Active R chunk&nbsp;1
 <p><span class="theorem-title"><strong>Exercise 2</strong></span> This exercise uses R to find solutions to the target problem. Each question poses one target problem. You could solve these problems by eye, but we want to get you started on the computer solution so that you will be ready to solve harder problems that must be worked on the computer.</p>
 <p>The vectors you will be working with are: <span class="math display">\[\vec{a} \equiv \left(\begin{array}{c}1\\2\end{array}\right)\ \ \ \ \vec{b}  \equiv \left(\begin{array}{c}1\\1\end{array}\right)\ \ \ \ \vec{c}  \equiv \left(\begin{array}{c}1\\-2\end{array}\right)\ \ \ \ \vec{d}  \equiv \left(\begin{array}{c}-6\\2\end{array}\right)\ \ \ \ \vec{T}  \equiv \left(\begin{array}{c}3\\-1\end{array}\right)\ \ \ \ \]</span></p>
 <p>To make your life easier, here are the commands for defining these vectors. <strong>One of the commands is wrong</strong>. You will have to correct it before moving on the the rest of the problem.</p>
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ol type="1">
 <li>What what is the correct linear combination of <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> to reach the target $?</li>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$-4 \vec{a ... 7 \vec{b}$" id="ccmW-1-1" w="14" name="ccmW-1" hint="Nice." show_hints="TRUE"> <span class="math inline">\(-4 \vec{a} + 7 \vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$-4 \vec{a ... 7 \vec{b}$" id="ccmW-1-1" w="5" name="ccmW-1" hint="Correct." show_hints="TRUE"> <span class="math inline">\(-4 \vec{a} + 7 \vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$-2 \vec{a ...  \vec{b}$ " id="ccmW-1-2" w="3" name="ccmW-1" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(-2 \vec{a} + 5 \vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$-2 \vec{a ...  \vec{b}$ " id="ccmW-1-2" w="7" name="ccmW-1" hint="Oops!" show_hints="TRUE"> <span class="math inline">\(-2 \vec{a} + 5 \vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$2 \vec{a} ...  \vec{b}$ " id="ccmW-1-3" w="87" name="ccmW-1" hint="no" show_hints="TRUE"> <span class="math inline">\(2 \vec{a} -7 \vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$2 \vec{a} ...  \vec{b}$ " id="ccmW-1-3" w="19" name="ccmW-1" hint="Not quite right." show_hints="TRUE"> <span class="math inline">\(2 \vec{a} -7 \vec{b}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$4 \vec{a} ...  \vec{b}$ " id="ccmW-1-4" w="32" name="ccmW-1" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(4 \vec{a} - 5 \vec{b}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$4 \vec{a} ...  \vec{b}$ " id="ccmW-1-4" w="87" name="ccmW-1" hint="Wrong." show_hints="TRUE"> <span class="math inline">\(4 \vec{a} - 5 \vec{b}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="ccmW-1" id="ccmW-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="ccmW-1-hintarea">question id: ccmW-1</small></p>
 </div>
 </div>
@@ -3129,19 +2750,19 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ... } \vec{c}$" id="ccmW-2-1" w="8" name="ccmW-2" hint="Correct" show_hints="TRUE"> <span class="math inline">\(\frac{5}{3}\vec{b} + \frac{4}{3} \vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ... } \vec{c}$" id="ccmW-2-1" w="29" name="ccmW-2" hint="Yup!" show_hints="TRUE"> <span class="math inline">\(\frac{5}{3}\vec{b} + \frac{4}{3} \vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{4}{ ...  \vec{c}$ " id="ccmW-2-2" w="87" name="ccmW-2" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\frac{4}{3}\vec{b} + \frac{7}{2} \vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{4}{ ...  \vec{c}$ " id="ccmW-2-2" w="32" name="ccmW-2" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(\frac{4}{3}\vec{b} + \frac{7}{2} \vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ...  \vec{c}$ " id="ccmW-2-3" w="3" name="ccmW-2" hint="no" show_hints="TRUE"> <span class="math inline">\(\frac{5}{2}\vec{b} + \frac{4}{5} \vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ...  \vec{c}$ " id="ccmW-2-3" w="3" name="ccmW-2" hint="Not so!" show_hints="TRUE"> <span class="math inline">\(\frac{5}{2}\vec{b} + \frac{4}{5} \vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{2}{ ...  \vec{c}$ " id="ccmW-2-4" w="87" name="ccmW-2" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\frac{2}{3}\vec{b} + \frac{9}{4} \vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{2}{ ...  \vec{c}$ " id="ccmW-2-4" w="87" name="ccmW-2" hint="Boo!" show_hints="TRUE"> <span class="math inline">\(\frac{2}{3}\vec{b} + \frac{9}{4} \vec{c}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="ccmW-2" id="ccmW-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="ccmW-2-hintarea">question id: ccmW-2</small></p>
 </div>
 </div>
@@ -3150,19 +2771,19 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{0}{ ... } \vec{d}$" id="ccmW-3-1" w="16" name="ccmW-3" hint="Nice." show_hints="TRUE"> <span class="math inline">\(\frac{0}{3}\vec{c} + \frac{4}{5} \vec{d}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{0}{ ... } \vec{d}$" id="ccmW-3-1" w="16" name="ccmW-3" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(\frac{0}{3}\vec{c} + \frac{4}{5} \vec{d}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{1}{ ...  \vec{d}$ " id="ccmW-3-2" w="3" name="ccmW-3" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(\frac{1}{3}\vec{c} + \frac{1}{3} \vec{d}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{1}{ ...  \vec{d}$ " id="ccmW-3-2" w="19" name="ccmW-3" hint="Nope." show_hints="TRUE"> <span class="math inline">\(\frac{1}{3}\vec{c} + \frac{1}{3} \vec{d}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{1}{ ...  \vec{d}$ " id="ccmW-3-3" w="19" name="ccmW-3" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\frac{1}{2}\vec{c} + \frac{5}{7} \vec{d}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{1}{ ...  \vec{d}$ " id="ccmW-3-3" w="23" name="ccmW-3" hint="Not so!" show_hints="TRUE"> <span class="math inline">\(\frac{1}{2}\vec{c} + \frac{5}{7} \vec{d}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{0}{ ...  \vec{d}$ " id="ccmW-3-4" w="19" name="ccmW-3" hint="no" show_hints="TRUE"> <span class="math inline">\(\frac{0}{3}\vec{c} + \frac{1}{2} \vec{d}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{0}{ ...  \vec{d}$ " id="ccmW-3-4" w="19" name="ccmW-3" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(\frac{0}{3}\vec{c} + \frac{1}{2} \vec{d}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="ccmW-3" id="ccmW-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="ccmW-3-hintarea">question id: ccmW-3</small></p>
 </div>
 </div>
@@ -3171,19 +2792,19 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ... } \vec{c}$" id="ccmW-4-1" w="5" name="ccmW-4" hint="right-o" show_hints="TRUE"> <span class="math inline">\(\frac{5}{4}\vec{a} + \frac{7}{4} \vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ... } \vec{c}$" id="ccmW-4-1" w="14" name="ccmW-4" hint="Certainly." show_hints="TRUE"> <span class="math inline">\(\frac{5}{4}\vec{a} + \frac{7}{4} \vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ...  \vec{c}$ " id="ccmW-4-2" w="3" name="ccmW-4" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\frac{5}{4}\vec{a} + \frac{5}{4} \vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{5}{ ...  \vec{c}$ " id="ccmW-4-2" w="23" name="ccmW-4" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(\frac{5}{4}\vec{a} + \frac{5}{4} \vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{7}{ ...  \vec{c}$ " id="ccmW-4-3" w="7" name="ccmW-4" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\frac{7}{4}\vec{a} + \frac{9}{4} \vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{7}{ ...  \vec{c}$ " id="ccmW-4-3" w="7" name="ccmW-4" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(\frac{7}{4}\vec{a} + \frac{9}{4} \vec{c}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\frac{3}{ ...  \vec{c}$ " id="ccmW-4-4" w="19" name="ccmW-4" hint="no" show_hints="TRUE"> <span class="math inline">\(\frac{3}{4}\vec{a} + \frac{7}{4} \vec{c}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\frac{3}{ ...  \vec{c}$ " id="ccmW-4-4" w="23" name="ccmW-4" hint="Think again." show_hints="TRUE"> <span class="math inline">\(\frac{3}{4}\vec{a} + \frac{7}{4} \vec{c}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="ccmW-4" id="ccmW-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="ccmW-4-hintarea">question id: ccmW-4</small></p>
 </div>
 </div>
@@ -3254,15 +2875,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3282,7 +2910,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3379,8 +3010,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3491,7 +3120,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

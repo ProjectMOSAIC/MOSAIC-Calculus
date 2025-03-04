@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,10 +37,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -371,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -393,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"slice_plot(dnorm(x, mean=0, sd=1) ~ x,\n           domain(x = c(-4, 4)))","options":{"out-height":"","read-only":"false","results":"markup","fig-width":7,"classes":"","dpi":72,"warning":"true","autorun":"false","context":"interactive","out-width":"700px","comment":"","editor-max-height":"","editor-font-scale":"1","fig-height":5,"label":"unnamed-chunk-1","message":"true","output":"true","fig-cap":"","editor-quick-suggestions":"false","editor-word-wrap":"true"},"id":1},{"code":"amount.left <- makeFun((1/2)^n ~ n)\namount.left(0)","options":{"out-height":"","read-only":"false","results":"markup","fig-width":7,"classes":"","dpi":72,"warning":"true","autorun":"false","context":"interactive","out-width":"700px","comment":"","editor-max-height":"","editor-font-scale":"1","fig-height":5,"label":"cow-type-kayak-1","message":"true","output":"true","fig-cap":"","editor-quick-suggestions":"false","editor-word-wrap":"true"},"id":2},{"code":"log_half <- makeFun( - log2(...your stuff here ...) ~ x)","options":{"out-height":"","read-only":"false","results":"markup","fig-width":7,"classes":"","dpi":72,"warning":"true","autorun":"false","context":"interactive","out-width":"700px","comment":"","editor-max-height":"","editor-font-scale":"1","fig-height":5,"label":"cow-type-kayak-2","message":"true","output":"true","fig-cap":"","editor-quick-suggestions":"false","editor-word-wrap":"true"},"id":3},{"code":"fa <- makeFun(exp(k*t)  ~ t, k = 4)\nfc <- makeFun(2^(t/h) ~ t, h = 4)\nfb <- makeFun(10^(t/d) ~ t, d = 4)\n\nslice_plot(fa(t) ~ t, domain(t = c(-4, 12))) |>\n  slice_plot(fb(t) ~ t, color=\"blue\") |>\n  slice_plot(fc(t) ~ t, color  = \"red\") |>\n  gf_lims(y = c(0, 8))","options":{"out-height":"","read-only":"false","results":"markup","fig-width":7,"classes":"","dpi":72,"warning":"true","autorun":"false","context":"interactive","out-width":"700px","comment":"","editor-max-height":"","editor-font-scale":"1","fig-height":5,"label":"unnamed-chunk-4","message":"true","output":"true","fig-cap":"","editor-quick-suggestions":"false","editor-word-wrap":"true"},"id":4},{"code":"f1 <- makeFun(dnorm(x, mn, sd) ~ x, mn=2, sd=3)\nf2 <- makeFun(dnorm( (x-mn) / sd) ~ x, mn=2, sd=3)\n# Your plot statements go here","options":{"out-height":"","read-only":"false","results":"markup","fig-width":7,"classes":"","dpi":72,"warning":"true","autorun":"false","context":"interactive","out-width":"700px","comment":"","editor-max-height":"","editor-font-scale":"1","fig-height":5,"label":"dnorm-webr","message":"true","output":"true","fig-cap":"","editor-quick-suggestions":"false","editor-word-wrap":"true"},"id":5}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"slice_plot(dnorm(x, mean=0, sd=1) ~ x,\n           domain(x = c(-4, 4)))","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"amount.left <- makeFun((1/2)^n ~ n)\namount.left(10)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"cow-type-kayak-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"f1 <- makeFun(sin((2*pi/P)*t) ~ t)\nf2 <- makeFun(sin((2*pi/6)*t) ~ t)\nf3 <- makeFun(sin((2*pi/P)*t) ~ t, P = 6)","id":4,"options":{"autorun":"true","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"snake-teach-screen","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"fa <- makeFun(exp(k*t)  ~ t, k = 4)\nfb <- makeFun(10^(t/d) ~ t, d = 4)\nfc <- makeFun(2^(t/h) ~ t, h = 4)\n\n\nslice_plot(fa(t, k = 4) ~ t, domain(t = c(-4, 12))) |>\n  slice_plot(fb(t, d = 4) ~ t, color=\"blue\") |>\n  slice_plot(fc(t) ~ t, color  = \"red\") |>\n  gf_lims(y = c(0, 8))","id":5,"options":{"autorun":"true","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"kid-type-boat-lst","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"false"}},{"code":"f1 <- makeFun(dnorm(x, mn, sd) ~ x, mn=2, sd=3)\nf2 <- makeFun(dnorm( (x-mn) / sd) ~ x, mn=2, sd=3)\n# Your plot statements go here","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"dnorm-webr","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1647,7 +1613,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block II Modeling</a></li><li class="breadcrumb-item"><a href="./08-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 8 Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block I Modeling</a></li><li class="breadcrumb-item"><a href="./08-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 8 Exercises</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1668,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1797,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1805,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1880,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1975,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2190,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2311,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2991,7 +2576,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block II Modeling</a></li><li class="breadcrumb-item"><a href="./08-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 8 Exercises</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-reading.html">Block I Modeling</a></li><li class="breadcrumb-item"><a href="./08-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 8 Exercises</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 8 Exercises</h1>
 </div>
@@ -3016,8 +2601,10 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-buck-shut-stove" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> <a href="#fig-smartphone-penetration" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-smartphone-penetration</span></a> shows the proportion <span class="math inline">\(P\)</span> of the US cell-phone users who own a smart phone as a function of the year <span class="math inline">\(y\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> <a href="#fig-smartphone-penetration" class="quarto-xref">Figure&nbsp;<span>1</span></a> shows the proportion <span class="math inline">\(P\)</span> of the US cell-phone users who own a smart phone as a function of the year <span class="math inline">\(y\)</span>.</p>
 <div id="fig-smartphone-penetration" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-smartphone-penetration-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3028,22 +2615,22 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 </figcaption>
 </figure>
 </div>
-<p>As a rule, when a quantity grows exponentially but is ultimately limited to some maximum level, the sigmoid is the choice for modeling. The proportion of smartphone owners grew exponentially during the early 2000’s. As the number of smartphones increased, the broader familiarity with and advertisement of smartphones also increased, which help sustain this exponential growth. However, adoption has slowed as smartphone penetration reaches the maximum carrying capacity. In other words, once everyone has a smartphone, the proportion of smartphone owners cannot increase—everyone already owns a smartphone. So, eventually the exponential growth must taper-off. According to several datasets, this inflection point occurred sometime between 2013 and 2014. This behavior is visible in the graphic below showing US smartphone penetration between Jan 2005 and Oct 2020 with raw data shown from 2010 to 2015.</p>
+<p>As a rule, when a quantity grows exponentially but is ultimately limited to some maximum level, the sigmoid is the choice for modeling. The proportion of smartphone owners grew exponentially during the early 2000’s. As the number of smartphones increased, the broader familiarity with smartphone advertisements also increased, which helped sustain this exponential growth. However, adoption has slowed as smartphone penetration reaches the maximum carrying capacity. In other words, once everyone has a smartphone, the proportion of smartphone owners cannot increase—everyone already owns a smartphone. So, eventually the exponential growth must taper-off. According to several datasets, this inflection point occurred sometime between 2013 and 2014. This behavior is visible in the graphic below showing US smartphone penetration between Jan 2005 and Oct 2020 with raw data shown from 2010 to 2015.</p>
 <ol type="1">
-<li>During the initial, exponential phase of smartphone penetration, what was the doubling time for penetration? (Note that the horizontal axis labels have 1/4 year inbetween them.)</li>
+<li>During the initial, exponential phase of smartphone penetration, what was the doubling time for penetration? Use 5% penetration as the reference level. (Note that the horizontal axis labels have 1/4 year inbetween them.) Pick the closest answer.</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="About 2%" id="buck-shut-stove-1-1" w="7" name="buck-shut-stove-1" hint="That's not a doubling time!" show_hints="TRUE"> About 2% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 6 months " id="buck-shut-stove-1-2" w="87" name="buck-shut-stove-1" hint="wrong" show_hints="TRUE"> About 6 months &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 18 months" id="buck-shut-stove-1-3" w="5" name="buck-shut-stove-1" hint="Excellent! The penetration was 5% just after April 2007 and doubled to 10% by October 2008." show_hints="TRUE"> About 18 months &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 24 months. " id="buck-shut-stove-1-4" w="3" name="buck-shut-stove-1" hint="no" show_hints="TRUE"> About 24 months. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="buck-shut-stove-1" id="buck-shut-stove-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="About 2%" id="buck-shut-stove-1-1" w="3" name="buck-shut-stove-1" hint="That's not a doubling time!" show_hints="TRUE"> About 2% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 6 months " id="buck-shut-stove-1-2" w="23" name="buck-shut-stove-1" hint="No." show_hints="TRUE"> About 6 months &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 18 months" id="buck-shut-stove-1-3" w="35" name="buck-shut-stove-1" hint="Excellent! The penetration was 5% just after April 2007 and doubled to 10% by October 2008." show_hints="TRUE"> About 18 months &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 36 months. " id="buck-shut-stove-1-4" w="23" name="buck-shut-stove-1" hint="No." show_hints="TRUE"> About 36 months. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="buck-shut-stove-1" id="buck-shut-stove-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="buck-shut-stove-1-hintarea">question id: buck-shut-stove-1</small></p>
 </div>
 </div>
 <ol start="2" type="1">
-<li>Referring to the black sigmoid curve, what is the <strong>mean</strong> parameter?</li>
+<li>Referring to the black sigmoid curve, what is the <strong>mean</strong> parameter? Pick the closest answer.</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Jan. 2010 " id="buck-shut-stove-2-1" w="23" name="buck-shut-stove-2" hint="Not quite right" show_hints="TRUE"> Jan.&nbsp;2010 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Oct. 2010 " id="buck-shut-stove-2-2" w="3" name="buck-shut-stove-2" hint="Better luck next time." show_hints="TRUE"> Oct.&nbsp;2010 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="July 2012" id="buck-shut-stove-2-3" w="18" name="buck-shut-stove-2" hint="right-o" show_hints="TRUE"> July 2012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="50%" id="buck-shut-stove-2-4" w="32" name="buck-shut-stove-2" hint="50% is the value of the sigmoid curve when the input equals the mean parameter." show_hints="TRUE"> 50% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="buck-shut-stove-2" id="buck-shut-stove-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Jan. 2010 " id="buck-shut-stove-2-1" w="87" name="buck-shut-stove-2" hint="Sorry!" show_hints="TRUE"> Jan.&nbsp;2010 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Oct. 2010 " id="buck-shut-stove-2-2" w="87" name="buck-shut-stove-2" hint="Incorrect." show_hints="TRUE"> Oct.&nbsp;2010 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="July 2012" id="buck-shut-stove-2-3" w="35" name="buck-shut-stove-2" hint="Bullseye!" show_hints="TRUE"> July 2012 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="50%" id="buck-shut-stove-2-4" w="87" name="buck-shut-stove-2" hint="50% is the value of the sigmoid curve when the input equals the mean parameter." show_hints="TRUE"> 50% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="buck-shut-stove-2" id="buck-shut-stove-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="buck-shut-stove-2-hintarea">question id: buck-shut-stove-2</small></p>
 </div>
 </div>
@@ -3051,8 +2638,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>Referring to the black sigmoid curve, what is the <strong>standard deviation</strong> parameter?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Jan. 2010 " id="buck-shut-stove-3-1" w="87" name="buck-shut-stove-3" hint="incorrect choice" show_hints="TRUE"> Jan.&nbsp;2010 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Jan. 2011 " id="buck-shut-stove-3-2" w="7" name="buck-shut-stove-3" hint="Better luck next time." show_hints="TRUE"> Jan.&nbsp;2011 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Jan. 2014 " id="buck-shut-stove-3-3" w="32" name="buck-shut-stove-3" hint="Try again!" show_hints="TRUE"> Jan.&nbsp;2014 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="19 months" id="buck-shut-stove-3-4" w="14" name="buck-shut-stove-3" hint="right-o The standard deviation is a distance along the horizontal axis. Such a distance is measured in months." show_hints="TRUE"> 19 months &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="buck-shut-stove-3" id="buck-shut-stove-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Jan. 2010" id="buck-shut-stove-3-1" w="19" name="buck-shut-stove-3" hint="A standard deviation is a distance. A date is not a distance." show_hints="TRUE"> Jan.&nbsp;2010 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Jan. 2011" id="buck-shut-stove-3-2" w="3" name="buck-shut-stove-3" hint="A standard deviation is a distance. A date is not a distance." show_hints="TRUE"> Jan.&nbsp;2011 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Jan. 2014" id="buck-shut-stove-3-3" w="3" name="buck-shut-stove-3" hint="A standard deviation is a distance. A date is not a distance." show_hints="TRUE"> Jan.&nbsp;2014 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="19 months" id="buck-shut-stove-3-4" w="5" name="buck-shut-stove-3" hint="right-o The standard deviation is a distance along the horizontal axis. Such a distance can be measured in units of months." show_hints="TRUE"> 19 months &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="buck-shut-stove-3" id="buck-shut-stove-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="buck-shut-stove-3-hintarea">question id: buck-shut-stove-3</small></p>
 </div>
 </div>
@@ -3073,8 +2660,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>In plot (A), what is <span class="math inline">\(x_0\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="fp-dnorm-1" w="23" name="fp-dnorm" hint="Sorry!" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fp-dnorm-2" w="87" name="fp-dnorm" hint="incorrect choice" show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-dnorm-3" w="3" name="fp-dnorm" hint="incorrect choice" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="fp-dnorm-4" w="7" name="fp-dnorm" hint="Sorry!" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="fp-dnorm-5" w="16" name="fp-dnorm" hint="Correct Right. Look for the input that generates the peak output value." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-dnorm" id="fp-dnorm.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="fp-dnorm-1" w="7" name="fp-dnorm" hint="Incorrect." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fp-dnorm-2" w="19" name="fp-dnorm" hint="Not quite." show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-dnorm-3" w="87" name="fp-dnorm" hint="Not on target." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="fp-dnorm-4" w="32" name="fp-dnorm" hint="Not on target." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="fp-dnorm-5" w="14" name="fp-dnorm" hint="Correct Right. Look for the input that generates the peak output value." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-dnorm" id="fp-dnorm.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fp-dnorm-hintarea">question id: fp-dnorm</small></p>
 </div>
 </div>
@@ -3091,8 +2678,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>In plot (B), what is <span class="math inline">\(x_0\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="fp-sin-1" w="7" name="fp-sin" hint="Not quite right" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1" id="fp-sin-2" w="35" name="fp-sin" hint="Nice. The fiducial point is a positive-going zero crossing." show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-sin-3" w="7" name="fp-sin" hint="no" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="fp-sin-4" w="23" name="fp-sin" hint="Better luck next time." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="fp-sin-5" w="19" name="fp-sin" hint="Sorry!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-sin" id="fp-sin.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="fp-sin-1" w="19" name="fp-sin" hint="No." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1" id="fp-sin-2" w="14" name="fp-sin" hint="Nice. The fiducial point is a positive-going zero crossing." show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-sin-3" w="19" name="fp-sin" hint="Not quite right." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="fp-sin-4" w="3" name="fp-sin" hint="Untrue!" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="fp-sin-5" w="7" name="fp-sin" hint="Oops!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-sin" id="fp-sin.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fp-sin-hintarea">question id: fp-sin</small></p>
 </div>
 </div>
@@ -3109,8 +2696,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>In plot (C), what is <span class="math inline">\(x_0\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="fp-log-1" w="19" name="fp-log" hint="You're mistaken" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fp-log-2" w="23" name="fp-log" hint="You're mistaken" show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-log-3" w="7" name="fp-log" hint="You're mistaken" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="fp-log-4" w="41" name="fp-log" hint="Yes The vertical asymptote is the clue." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="fp-log-5" w="87" name="fp-log" hint="no" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-log" id="fp-log.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="fp-log-1" w="87" name="fp-log" hint="Think again." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fp-log-2" w="3" name="fp-log" hint="Not on target." show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-log-3" w="23" name="fp-log" hint="Oops!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="fp-log-4" w="5" name="fp-log" hint="Yes The vertical asymptote is the clue." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="fp-log-5" w="87" name="fp-log" hint="This is wide of the mark." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-log" id="fp-log.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fp-log-hintarea">question id: fp-log</small></p>
 </div>
 </div>
@@ -3127,8 +2714,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>In plot (D), what is <span class="math inline">\(x_0\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="fp-pnorm-1" w="7" name="fp-pnorm" hint="no" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fp-pnorm-2" w="32" name="fp-pnorm" hint="no" show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-pnorm-3" w="19" name="fp-pnorm" hint="Not quite right" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="fp-pnorm-4" w="41" name="fp-pnorm" hint="Yes The input where the output is half way between the two horizontal asymptotes" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="fp-pnorm-5" w="19" name="fp-pnorm" hint="wide of the mark" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-pnorm" id="fp-pnorm.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="fp-pnorm-1" w="23" name="fp-pnorm" hint="Hmmm ..." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fp-pnorm-2" w="87" name="fp-pnorm" hint="No." show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-pnorm-3" w="3" name="fp-pnorm" hint="Try again!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="fp-pnorm-4" w="29" name="fp-pnorm" hint="Yes The input where the output is half way between the two horizontal asymptotes" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="fp-pnorm-5" w="87" name="fp-pnorm" hint="Not so!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-pnorm" id="fp-pnorm.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fp-pnorm-hintarea">question id: fp-pnorm</small></p>
 </div>
 </div>
@@ -3145,8 +2732,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>In plot (E), what is <span class="math inline">\(x_0\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2" id="fp-recip-1" w="18" name="fp-recip" hint="Correct Right. The location of the vertical asymtote is the clue." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fp-recip-2" w="7" name="fp-recip" hint="wide of the mark" show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-recip-3" w="32" name="fp-recip" hint="Not quite right" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="fp-recip-4" w="87" name="fp-recip" hint="Try again!" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="fp-recip-5" w="7" name="fp-recip" hint="You're mistaken" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-recip" id="fp-recip.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2" id="fp-recip-1" w="29" name="fp-recip" hint="Correct Right. The location of the vertical asymtote is the clue." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1 " id="fp-recip-2" w="19" name="fp-recip" hint="Incorrect." show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="fp-recip-3" w="3" name="fp-recip" hint="Incorrect." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="fp-recip-4" w="7" name="fp-recip" hint="Wrong." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="fp-recip-5" w="87" name="fp-recip" hint="Oops!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fp-recip" id="fp-recip.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fp-recip-hintarea">question id: fp-recip</small></p>
 </div>
 </div>
@@ -3164,8 +2751,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 </div>
 <p>For graph (A), which scale corresponds to the pattern-book function?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="black" id="siD-A-1" w="41" name="siD-A" hint="Good job!" show_hints="TRUE"> black &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="blue " id="siD-A-2" w="32" name="siD-A" hint="wide of the mark" show_hints="TRUE"> blue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="siD-A-3" w="32" name="siD-A" hint="Better luck next time." show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="both" id="siD-A-4" w="87" name="siD-A" hint="It cannot be both. There is only one pattern-book function. When you scale the input, it becomes a &quot;basic modeling function&quot;." show_hints="TRUE"> both &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="siD-A" id="siD-A.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="black" id="siD-A-1" w="35" name="siD-A" hint="Exactly." show_hints="TRUE"> black &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="blue " id="siD-A-2" w="32" name="siD-A" hint="Better luck next time." show_hints="TRUE"> blue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="siD-A-3" w="7" name="siD-A" hint="Better luck next time." show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="both" id="siD-A-4" w="87" name="siD-A" hint="It cannot be both. There is only one pattern-book function. When you scale the input, it becomes a &quot;basic modeling function&quot;." show_hints="TRUE"> both &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="siD-A" id="siD-A.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="siD-A-hintarea">question id: siD-A</small></p>
 </div>
 </div>
@@ -3180,8 +2767,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 </div>
 <p>For graph (B), which scale corresponds to the pattern-book function?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="black " id="siD-B-1" w="19" name="siD-B" hint="no" show_hints="TRUE"> black &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="blue" id="siD-B-2" w="18" name="siD-B" hint="Good job! Right. The pattern-book function has an output of 1/2 when the output is zero. That is what the blue scale shows." show_hints="TRUE"> blue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="siD-B-3" w="7" name="siD-B" hint="You're mistaken" show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="both" id="siD-B-4" w="7" name="siD-B" hint="It cannot be both. There is only one pattern-book function. When you scale the input, it becomes a &quot;basic modeling function&quot;." show_hints="TRUE"> both &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="siD-B" id="siD-B.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="black " id="siD-B-1" w="7" name="siD-B" hint="Better luck next time." show_hints="TRUE"> black &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="blue" id="siD-B-2" w="20" name="siD-B" hint="Good job! Right. The pattern-book function has an output of 1/2 when the output is zero. That is what the blue scale shows." show_hints="TRUE"> blue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="siD-B-3" w="19" name="siD-B" hint="Sorry!" show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="both" id="siD-B-4" w="32" name="siD-B" hint="It cannot be both. There is only one pattern-book function. When you scale the input, it becomes a &quot;basic modeling function&quot;." show_hints="TRUE"> both &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="siD-B" id="siD-B.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="siD-B-hintarea">question id: siD-B</small></p>
 </div>
 </div>
@@ -3196,8 +2783,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 </div>
 <p>For graph (C), which scale corresponds to the pattern-book function?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="black " id="siD-C-1" w="32" name="siD-C" hint="Try again!" show_hints="TRUE"> black &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="blue" id="siD-C-2" w="20" name="siD-C" hint="You're right The pattern-book sinusoid has a positive-going zero crossing at $x=0$. That is the blue scale." show_hints="TRUE"> blue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="siD-C-3" w="19" name="siD-C" hint="wrong" show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="both" id="siD-C-4" w="7" name="siD-C" hint="It cannot be both. There is only one pattern-book function. When you scale the input, it becomes a &quot;basic modeling function&quot;." show_hints="TRUE"> both &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="siD-C" id="siD-C.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="black " id="siD-C-1" w="32" name="siD-C" hint="Not quite right." show_hints="TRUE"> black &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="blue" id="siD-C-2" w="8" name="siD-C" hint="The pattern-book sinusoid has a positive-going zero crossing at $x=0$. That is the blue scale." show_hints="TRUE"> blue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="neither " id="siD-C-3" w="19" name="siD-C" hint="Think again." show_hints="TRUE"> neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="both" id="siD-C-4" w="87" name="siD-C" hint="It cannot be both. There is only one pattern-book function. When you scale the input, it becomes a &quot;basic modeling function&quot;." show_hints="TRUE"> both &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="siD-C" id="siD-C.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="siD-C-hintarea">question id: siD-C</small></p>
 </div>
 </div>
@@ -3217,8 +2804,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>For Graph A, which function maps blue <span class="math inline">\(x\)</span> to the value on the black scale?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$\frac{1}{3} x$" id="scale-input-2-A-1" w="8" name="scale-input-2-A" hint="right-o" show_hints="TRUE"> <span class="math inline">\(\frac{1}{3} x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$3\, x$" id="scale-input-2-A-2" w="3" name="scale-input-2-A" hint="You're going the wrong way, from black to blue." show_hints="TRUE"> <span class="math inline">\(3\, x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x + 3$" id="scale-input-2-A-3" w="32" name="scale-input-2-A" hint="Is there a horiztontal shift?" show_hints="TRUE"> <span class="math inline">\(x + 3\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x - 3$" id="scale-input-2-A-4" w="23" name="scale-input-2-A" hint="Is there a horizontal shift?" show_hints="TRUE"> <span class="math inline">\(x - 3\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="scale-input-2-A" id="scale-input-2-A.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$\frac{1}{3} x$" id="scale-input-2-A-1" w="5" name="scale-input-2-A" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(\frac{1}{3} x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$3\, x$" id="scale-input-2-A-2" w="87" name="scale-input-2-A" hint="You're going the wrong way, from black to blue." show_hints="TRUE"> <span class="math inline">\(3\, x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x + 3$" id="scale-input-2-A-3" w="87" name="scale-input-2-A" hint="Is there a horiztontal shift?" show_hints="TRUE"> <span class="math inline">\(x + 3\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x - 3$" id="scale-input-2-A-4" w="32" name="scale-input-2-A" hint="Is there a horizontal shift?" show_hints="TRUE"> <span class="math inline">\(x - 3\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="scale-input-2-A" id="scale-input-2-A.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="scale-input-2-A-hintarea">question id: scale-input-2-A</small></p>
 </div>
 </div>
@@ -3235,8 +2822,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>For Graph B, which function maps blue <span class="math inline">\(x\)</span> to the value on the black scale?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$-\frac{2}{3}\,x$" id="scale-input-2-B-1" w="16" name="scale-input-2-B" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(-\frac{2}{3}\,x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{3}{2} x$" id="scale-input-2-B-2" w="19" name="scale-input-2-B" hint="Look carefully at the $\pm$ signs on the scales." show_hints="TRUE"> <span class="math inline">\(\frac{3}{2} x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{2}{3} x$" id="scale-input-2-B-3" w="7" name="scale-input-2-B" hint="Look carefully at the $\pm$ signs on the scales." show_hints="TRUE"> <span class="math inline">\(\frac{2}{3} x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$-\frac{3}{2}x$" id="scale-input-2-B-4" w="7" name="scale-input-2-B" hint="You're going the wrong way, from black to blue." show_hints="TRUE"> <span class="math inline">\(-\frac{3}{2}x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="scale-input-2-B" id="scale-input-2-B.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$-\frac{2}{3}\,x$" id="scale-input-2-B-1" w="14" name="scale-input-2-B" hint="That's right." show_hints="TRUE"> <span class="math inline">\(-\frac{2}{3}\,x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{3}{2} x$" id="scale-input-2-B-2" w="19" name="scale-input-2-B" hint="Look carefully at the $\pm$ signs on the scales." show_hints="TRUE"> <span class="math inline">\(\frac{3}{2} x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{2}{3} x$" id="scale-input-2-B-3" w="23" name="scale-input-2-B" hint="Look carefully at the $\pm$ signs on the scales." show_hints="TRUE"> <span class="math inline">\(\frac{2}{3} x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$-\frac{3}{2}x$" id="scale-input-2-B-4" w="7" name="scale-input-2-B" hint="You're going the wrong way, from black to blue." show_hints="TRUE"> <span class="math inline">\(-\frac{3}{2}x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="scale-input-2-B" id="scale-input-2-B.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="scale-input-2-B-hintarea">question id: scale-input-2-B</small></p>
 </div>
 </div>
@@ -3253,8 +2840,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>For Graph C, which function maps blue <span class="math inline">\(x\)</span> to the value on the black scale?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$\frac{1}{ ... 2}(x - 2)$" id="scale-input-2-C-1" w="18" name="scale-input-2-C" hint="Right Good. An interval of length 4 on the blue scale (say, from 2 to 6) becomes an interval of length 2 on the black scale. So you know that blue to black involves dividing by 2." show_hints="TRUE"> <span class="math inline">\(\frac{1}{2}(x - 2)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$3\, x$" id="scale-input-2-C-2" w="19" name="scale-input-2-C" hint="Is there a shift" show_hints="TRUE"> <span class="math inline">\(3\, x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\,x$" id="scale-input-2-C-3" w="3" name="scale-input-2-C" hint="Is there a shift?" show_hints="TRUE"> <span class="math inline">\(2\,x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\,(x + 2)$" id="scale-input-2-C-4" w="23" name="scale-input-2-C" hint="You're going the wrong way, from black to blue." show_hints="TRUE"> <span class="math inline">\(2\,(x + 2)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="scale-input-2-C" id="scale-input-2-C.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$\frac{1}{ ... 2}(x - 2)$" id="scale-input-2-C-1" w="29" name="scale-input-2-C" hint="Good. An interval of length 4 on the blue scale (say, from 2 to 6) becomes an interval of length 2 on the black scale. So you know that blue to black involves dividing by 2." show_hints="TRUE"> <span class="math inline">\(\frac{1}{2}(x - 2)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$3\, x$" id="scale-input-2-C-2" w="3" name="scale-input-2-C" hint="Is there a shift" show_hints="TRUE"> <span class="math inline">\(3\, x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\,x$" id="scale-input-2-C-3" w="7" name="scale-input-2-C" hint="Is there a shift?" show_hints="TRUE"> <span class="math inline">\(2\,x\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2\,(x + 2)$" id="scale-input-2-C-4" w="7" name="scale-input-2-C" hint="You're going the wrong way, from black to blue." show_hints="TRUE"> <span class="math inline">\(2\,(x + 2)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="scale-input-2-C" id="scale-input-2-C.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="scale-input-2-C-hintarea">question id: scale-input-2-C</small></p>
 </div>
 </div>
@@ -3271,8 +2858,8 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 <li>For Graph D, which function maps blue <span class="math inline">\(x\)</span> to the value on the black scale?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$\frac{2}{ ... } (x + 3)$" id="scale-input-2-D-1" w="35" name="scale-input-2-D" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(\frac{2}{3} (x + 3)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{3}{ ...  (x - 3)$ " id="scale-input-2-D-2" w="32" name="scale-input-2-D" hint="no" show_hints="TRUE"> <span class="math inline">\(\frac{3}{2} (x - 3)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{3}{ ... 2} (x+1)$ " id="scale-input-2-D-3" w="3" name="scale-input-2-D" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\frac{3}{2} (x+1)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{3}{ ... 2}(x - 2)$" id="scale-input-2-D-4" w="87" name="scale-input-2-D" hint="You're going the wrong way, from black to blue." show_hints="TRUE"> <span class="math inline">\(\frac{3}{2}(x - 2)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="scale-input-2-D" id="scale-input-2-D.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$\frac{2}{ ... } (x + 3)$" id="scale-input-2-D-1" w="29" name="scale-input-2-D" hint="Nice." show_hints="TRUE"> <span class="math inline">\(\frac{2}{3} (x + 3)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{3}{ ...  (x - 3)$ " id="scale-input-2-D-2" w="19" name="scale-input-2-D" hint="This is wide of the mark." show_hints="TRUE"> <span class="math inline">\(\frac{3}{2} (x - 3)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{3}{ ... 2} (x+1)$ " id="scale-input-2-D-3" w="3" name="scale-input-2-D" hint="Not on target." show_hints="TRUE"> <span class="math inline">\(\frac{3}{2} (x+1)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\frac{3}{ ... 2}(x - 2)$" id="scale-input-2-D-4" w="87" name="scale-input-2-D" hint="You're going the wrong way, from black to blue." show_hints="TRUE"> <span class="math inline">\(\frac{3}{2}(x - 2)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="scale-input-2-D" id="scale-input-2-D.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="scale-input-2-D-hintarea">question id: scale-input-2-D</small></p>
 </div>
 </div>
@@ -3285,16 +2872,16 @@ Figure&nbsp;1: Smartphone market penetration versus year.
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-plot-dnorm-sd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
 <ol type="1">
-<li><a href="#lst-plot-dnorm-sd" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-plot-dnorm-sd</span></a> makes a slice plot of <code>dnorm(x, mean=0, sd=1)</code>. By experimentally varying the value of <code>sd</code>, figure out how you could estimate that value directly from the graph.</li>
+<li><a href="#lst-plot-dnorm-sd" class="quarto-xref">Active R chunk&nbsp;<span>1</span></a> makes a slice plot of <code>dnorm(x, mean=0, sd=1)</code>. By running the chunk several times while experimentally varying the value of <code>sd</code>, figure out how you could estimate that value directly from the graph.</li>
 </ol>
-<p><textarea id="hump-intro-sd" name="hump-intro-sd" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID hump-intro-sd"></textarea> </p><div style="color: grey;"> <small>question id: hump-intro-sd</small> </div><p></p>
-<p>In <span class="citation" data-cites="hump-graph-with-arrows">@hump-graph-with-arrows</span>, one of the double-headed arrows represents the <code>sd</code> parameter. The other arrows are misleading.</p>
+<p><textarea id="hump-intro-sd" name="hump-intro-sd" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID hump-intro-sd)"></textarea></p>
+<p>In <a href="#fig-hump-graph-with-arrows" class="quarto-xref">Figure&nbsp;<span>2</span></a>, one of the double-headed arrows represents the <code>sd</code> parameter. The other arrows are misleading.</p>
 <div id="fig-hump-graph-with-arrows" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-hump-graph-with-arrows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3314,20 +2901,20 @@ Figure&nbsp;2
 </figure>
 </div>
 <ol start="2" type="1">
-<li>Which arrow shows correctly the <code>width</code> parameter of the gaussian function in <a href="#fig-hump-graph-with-arrows" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-hump-graph-with-arrows</span></a>?</li>
+<li>Which arrow shows correctly the <code>width</code> parameter of the gaussian function in <a href="#fig-hump-graph-with-arrows" class="quarto-xref">Figure&nbsp;<span>2</span></a>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="top" id="hump-intro-2-1" w="35" name="hump-intro-2" hint="Correct" show_hints="FALSE"> top &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="middle " id="hump-intro-2-2" w="7" name="hump-intro-2" hint="incorrect choice" show_hints="FALSE"> middle &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="bottom " id="hump-intro-2-3" w="87" name="hump-intro-2" hint="Better luck next time." show_hints="FALSE"> bottom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="none of them " id="hump-intro-2-4" w="87" name="hump-intro-2" hint="Sorry!" show_hints="FALSE"> none of them &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="hump-intro-2" id="hump-intro-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="top" id="hump-intro-2-1" w="20" name="hump-intro-2" hint="Bullseye!" show_hints="FALSE"> top &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="middle " id="hump-intro-2-2" w="23" name="hump-intro-2" hint="Oops!" show_hints="FALSE"> middle &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="bottom " id="hump-intro-2-3" w="3" name="hump-intro-2" hint="You might think so, but ..." show_hints="FALSE"> bottom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="none of them " id="hump-intro-2-4" w="19" name="hump-intro-2" hint="Untrue!" show_hints="FALSE"> none of them &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="hump-intro-2" id="hump-intro-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="hump-intro-2-hintarea">question id: hump-intro-2</small></p>
 </div>
 </div>
 <ol start="3" type="1">
-<li>What is the value of <code>center</code> in <a href="#fig-hump-graph-with-arrows" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-hump-graph-with-arrows</span></a>?</li>
+<li>What is the value of <code>center</code> in <a href="#fig-hump-graph-with-arrows" class="quarto-xref">Figure&nbsp;<span>2</span></a>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2" id="hump-intro-3-1" w="23" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1" id="hump-intro-3-2" w="7" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.5" id="hump-intro-3-3" w="87" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> -0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0" id="hump-intro-3-4" w="87" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5" id="hump-intro-3-5" w="8" name="hump-intro-3" hint="Right" show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="hump-intro-3-6" w="23" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="hump-intro-3-7" w="23" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="hump-intro-3" id="hump-intro-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2" id="hump-intro-3-1" w="87" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-1" id="hump-intro-3-2" w="3" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-0.5" id="hump-intro-3-3" w="87" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> -0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0" id="hump-intro-3-4" w="3" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5" id="hump-intro-3-5" w="16" name="hump-intro-3" hint="Yes!" show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="hump-intro-3-6" w="3" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="hump-intro-3-7" w="32" name="hump-intro-3" hint="The `center` parameter is the argmax of the function." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="hump-intro-3" id="hump-intro-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="hump-intro-3-hintarea">question id: hump-intro-3</small></p>
 </div>
 </div>
@@ -3348,9 +2935,9 @@ Figure&nbsp;3: Distribution of adult heights in the US, broken down by sex.
 <li>Which sex has a larger mean height?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Males" id="stg23-1-1" w="5" name="stg23-1" hint="Correct The mean parameter is the argmax of the function. For the blue curve, this is at 70 inches. For the red curve, at 65.5 inches." show_hints="TRUE"> Males &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Females " id="stg23-1-2" w="87" name="stg23-1" hint="Not quite right" show_hints="TRUE"> Females &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="stg23-1" id="stg23-1.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="stg23-1-hintarea">question id: stg23-1</small></p>
+<input type="radio" class="devoirs-mcq" value="Males" id="squirrel-toss-glasses-1-1" w="41" name="squirrel-toss-glasses-1" hint="Correct The mean parameter is the argmax of the function. For the blue curve, this is at 70 inches. For the red curve, at 65.5 inches." show_hints="TRUE"> Males &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Females " id="squirrel-toss-glasses-1-2" w="23" name="squirrel-toss-glasses-1" hint="You're wrong here." show_hints="TRUE"> Females &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="squirrel-toss-glasses-1" id="squirrel-toss-glasses-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="squirrel-toss-glasses-1-hintarea">question id: squirrel-toss-glasses-1</small></p>
 </div>
 </div>
 <p>An important fact about the gaussian function is that the area under the graph is always 1. This means that, when comparing two gaussians, the taller one will be the narrower one.</p>
@@ -3358,10 +2945,9 @@ Figure&nbsp;3: Distribution of adult heights in the US, broken down by sex.
 <li>Which sex has a larger standard deviation of height?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Males" id="stg23-2-1" w="8" name="stg23-2" hint="right-o" show_hints="TRUE"> Males &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Females " id="stg23-2-2" w="7" name="stg23-2" hint="Not quite right" show_hints="TRUE"> Females  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="stg23-2" id="stg23-2.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="stg23-2-hintarea">question id: stg23-2</small></p>
-</div>
+<input type="radio" class="devoirs-mcq" value="Males" id="squirrel-toss-glasses-2-1" w="8" name="squirrel-toss-glasses-2" hint="Spot on!" show_hints="TRUE"> Males &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Females" id="squirrel-toss-glasses-2-2" w="23" name="squirrel-toss-glasses-2" hint="Oops!" show_hints="TRUE"> Females &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="squirrel-toss-glasses-2" id="squirrel-toss-glasses-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="squirrel-toss-glasses-2-hintarea">question id: squirrel-toss-glasses-2</small></p>
 </div>
 </div>
 <p>The standard deviation of a gaussian can be estimated visually based on its graph. Let’s estimate the standard deviation for males. To do this, start at the peak of the male distribution. The output value at the peak is <span class="math inline">\(0.1329\)</span>. Find the output value that is 60% of this peak value. We’re looking for the value <span class="math display">\[0.1329(0.6)=0.0797\approx0.08\]</span> on the output (vertical) axis. Now, measure the <strong>half</strong> the width (i.e.&nbsp;along the horizontal axis) of the Gaussian along the line <span class="math display">\[y=0.08\]</span>. This is the standard deviation.</p>
@@ -3369,9 +2955,9 @@ Figure&nbsp;3: Distribution of adult heights in the US, broken down by sex.
 <li>Which of these is the best estimate of the standard deviation of the distribution of heights for males?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="3 inches" id="stg23-3-1" w="41" name="stg23-3" hint="You're right The width of the Gaussian along the line $y=0.08$ is approximately $6$. The total width is the distance along the line $y=0.08$ (because that's 60% of 0.1329) from 67 inches to 73 inches (that's 6 inches). So the half-width is $3$." show_hints="TRUE"> 3 inches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6 inches " id="stg23-3-2" w="7" name="stg23-3" hint="wide of the mark" show_hints="TRUE"> 6 inches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="7 inches " id="stg23-3-3" w="32" name="stg23-3" hint="no" show_hints="TRUE"> 7 inches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="8 inches " id="stg23-3-4" w="3" name="stg23-3" hint="Sorry!" show_hints="TRUE"> 8 inches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="stg23-3" id="stg23-3.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="stg23-3-hintarea">question id: stg23-3</small></p>
+<input type="radio" class="devoirs-mcq" value="3 inches" id="squirrel-toss-glasses-3-1" w="29" name="squirrel-toss-glasses-3" hint="The width of the Gaussian along the line $y=0.08$ is approximately $6$. The total width is the distance along the line $y=0.08$ (because that's 60% of 0.1329) from 67 inches to 73 inches (that's 6 inches). So the half-width is $3$." show_hints="TRUE"> 3 inches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6 inches " id="squirrel-toss-glasses-3-2" w="23" name="squirrel-toss-glasses-3" hint="Oops!" show_hints="TRUE"> 6 inches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="7 inches " id="squirrel-toss-glasses-3-3" w="87" name="squirrel-toss-glasses-3" hint="You're wrong here." show_hints="TRUE"> 7 inches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="8 inches " id="squirrel-toss-glasses-3-4" w="19" name="squirrel-toss-glasses-3" hint="You're mistaken" show_hints="TRUE"> 8 inches &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="squirrel-toss-glasses-3" id="squirrel-toss-glasses-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="squirrel-toss-glasses-3-hintarea">question id: squirrel-toss-glasses-3</small></p>
 </div>
 </div>
 <ol start="4" type="1">
@@ -3379,173 +2965,159 @@ Figure&nbsp;3: Distribution of adult heights in the US, broken down by sex.
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`slice_plo ... x=0:64.5)`" id="stg23-4-1" w="87" name="stg23-4" hint="The graphics domain has been set too narrowly to display the whole gaussian." show_hints="TRUE"> <code>slice_plot(dnorm(x,64.5,2.5)~x, domain(x=0:64.5)</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="`slice_plo ... x=0:64.5)`" id="squirrel-toss-glasses-4-1" w="87" name="squirrel-toss-glasses-4" hint="The graphics domain has been set too narrowly to display the whole gaussian." show_hints="TRUE"> <code>slice_plot(dnorm(x,64.5,2.5)~x, domain(x=0:64.5)</code></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`slice_plo ... (x=50:80)`" id="stg23-4-2" w="5" name="stg23-4" hint="Good job!" show_hints="TRUE"> <code>slice_plot(dnorm(x,64.5,2.5)~x, domain(x=50:80)</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="`slice_plo ... (x=50:80)`" id="squirrel-toss-glasses-4-2" w="14" name="squirrel-toss-glasses-4" hint="Correct." show_hints="TRUE"> <code>slice_plot(dnorm(x,64.5,2.5)~x, domain(x=50:80)</code></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`slice_plo ... =0:64.5))`" id="stg23-4-3" w="19" name="stg23-4" hint="This plots a sigmoid, not a gaussian." show_hints="TRUE"> <code>slice_plot(pnorm(x,64.5, 2.5)~x, domain(x=0:64.5))</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="`slice_plo ... =0:64.5))`" id="squirrel-toss-glasses-4-3" w="87" name="squirrel-toss-glasses-4" hint="This plots a sigmoid, not a gaussian." show_hints="TRUE"> <code>slice_plot(pnorm(x,64.5, 2.5)~x, domain(x=0:64.5))</code></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`pnorm(x,6 ... .5,2.5)~x`" id="stg23-4-4" w="19" name="stg23-4" hint="This doesn't plot anything. It's just a tilde expression." show_hints="TRUE"> <code>pnorm(x,64.5,2.5)~x</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="`pnorm(x,6 ... .5,2.5)~x`" id="squirrel-toss-glasses-4-4" w="32" name="squirrel-toss-glasses-4" hint="This doesn't plot anything. It's just a tilde expression." show_hints="TRUE"> <code>pnorm(x,64.5,2.5)~x</code></p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="stg23-4" id="stg23-4.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="stg23-4-hintarea">question id: stg23-4</small></p>
+<input type="radio" class="devoirs-mcq" name="squirrel-toss-glasses-4" id="squirrel-toss-glasses-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="squirrel-toss-glasses-4-hintarea">question id: squirrel-toss-glasses-4</small></p>
 </div>
 </div>
 <p>Credit: 2021-2022 Math 141Z development team</p>
-<p>:::</p>
+</div>
 <div id="exr-cow-type-kayak" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7</strong></span> The Wikipedia entry on “Common Misconceptions” used to contain this item:</p>
 <blockquote class="blockquote">
 <p><em>Some cooks believe that food items cooked with wine or liquor will be non-alcoholic, because alcohol’s low boiling point causes it to evaporate quickly when heated. However, a study found that some of the alcohol remains: 25% after 1 hour of baking or simmering, and 10% after 2 hours.</em></p>
 </blockquote>
-<p>The modeler’s go-to function type for events like the evaporation of alcohol is exponential: The amount of alcohol that evaporates would, under constant conditions (e.g.&nbsp;an oven’s heat), be proportional to the amount of alcohol that hasn’t yet evaporated.</p>
+<p>The modeler’s go-to function type for events like the evaporation of alcohol is exponential: The amount of alcohol that evaporates in one hour would, under constant conditions (e.g.&nbsp;an oven’s heat), be proportional to the amount of alcohol present at the beginning of the hour.</p>
 <ol type="1">
 <li>Assume that 25% of the alcohol remains after 1 hour? If the process were exponential, how much would remain after 2 hours?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="10%" id="CTK1-1-1" w="7" name="CTK1-1" hint="That's  what the study is reported to have found, but that is  not consistent with an exponential process that decays to 25% after one hour" show_hints="TRUE"> 10% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25%" id="CTK1-1-2" w="7" name="CTK1-1" hint="Exponentials decay to zero eventually, so don't expect things to stay still after one hour." show_hints="TRUE"> 25% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25% of 25%" id="CTK1-1-3" w="8" name="CTK1-1" hint="right-o We know that 75% is eliminated over 1 hour, leaving 25%. The continuing exponential process will, over the next hour eliminate 75% of the amount at the start of that hour. So after hour 2 we will have 25% of the amount we had at hour 1, which was 25% of the original amount." show_hints="TRUE"> 25% of 25% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="75%" id="CTK1-1-4" w="3" name="CTK1-1" hint="That's  how much was eliminated in the first hour, not how much remains after 2 hours." show_hints="TRUE"> 75% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="75% of 75%" id="CTK1-1-5" w="3" name="CTK1-1" hint="In an exponential process, at any moment the rate of decay (e.g. 75% per hour) is a constant proportion of the amount that is still there. After one hour, there is 25% of the alcohol remaining. That will decay at a rate of 75% per hour. Over the next hour, we will lose 75% of the original 25%, giving us 25% of the original amount." show_hints="TRUE"> 75% of 75% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="CTK1-1" id="CTK1-1.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="CTK1-1-hintarea">question id: CTK1-1</small></p>
+<input type="radio" class="devoirs-mcq" value="10%" id="cow-type-kayak-1-1" w="32" name="cow-type-kayak-1" hint="That's  what the study is reported to have found, but that is  not consistent with an exponential process that decays to 25% after one hour" show_hints="TRUE"> 10% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25%" id="cow-type-kayak-1-2" w="3" name="cow-type-kayak-1" hint="Exponentials decay to zero eventually, so don't expect things to stay still after one hour." show_hints="TRUE"> 25% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25% of 25%" id="cow-type-kayak-1-3" w="16" name="cow-type-kayak-1" hint="right-o We know that 75% is eliminated over 1 hour, leaving 25%. The continuing exponential process will, over the next hour eliminate 75% of the amount at the start of that hour. So after hour 2 we will have 25% of the amount we had at hour 1, which was 25% of the original amount." show_hints="TRUE"> 25% of 25% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="75%" id="cow-type-kayak-1-4" w="23" name="cow-type-kayak-1" hint="That's  how much was eliminated in the first hour, not how much remains after 2 hours." show_hints="TRUE"> 75% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="75% of 75%" id="cow-type-kayak-1-5" w="7" name="cow-type-kayak-1" hint="In an exponential process, at any moment the rate of decay (e.g. 75% per hour) is a constant proportion of the amount that is still there. After one hour, there is 25% of the alcohol remaining. That will decay at a rate of 75% per hour. Over the next hour, we will lose 75% of the original 25%, giving us 25% of the original amount." show_hints="TRUE"> 75% of 75% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="cow-type-kayak-1" id="cow-type-kayak-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="cow-type-kayak-1-hintarea">question id: cow-type-kayak-1</small></p>
 </div>
 </div>
 <ol start="2" type="1">
 <li>What is the half-life of an exponential process that decays to 25% after one hour?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="15 minutes" id="CTK1-2-1" w="19" name="CTK1-2" hint="This provides time for four halvings in one hour, which would leave $\frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = 1/16$ of the original not 1/4." show_hints="TRUE"> 15 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="30 minutes" id="CTK1-2-2" w="20" name="CTK1-2" hint="right-o This gives time for two halvings in one hour, bringing us to 25% as observed." show_hints="TRUE"> 30 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="45 minutes" id="CTK1-2-3" w="3" name="CTK1-2" hint="Two halvings bring us down to 25%. At this rate, it would take 90 minutes to get down to 25%, not 60 minutes as observed." show_hints="TRUE"> 45 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="none of the above " id="CTK1-2-4" w="3" name="CTK1-2" hint="Try again!" show_hints="TRUE"> none of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="CTK1-2" id="CTK1-2.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="CTK1-2-hintarea">question id: CTK1-2</small></p>
-</div>
-</div>
-<ol start="3" type="1">
-<li>Assume that 25% of the alcohol remains after 1 hour? If the process were exponential, how much would remain after 2 hours?</li>
-</ol>
-<div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="10%" id="CTK1-3-1" w="19" name="CTK1-3" hint="That's  what the study is reported to have found, but that is  not consistent with an exponential process that decays to 25% after one hour" show_hints="TRUE"> 10% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25%" id="CTK1-3-2" w="7" name="CTK1-3" hint="Exponentials decay to zero eventually, so don't expect things to stay still after one hour." show_hints="TRUE"> 25% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25% of 25%" id="CTK1-3-3" w="5" name="CTK1-3" hint="You're right We know that 75% is eliminated over 1 hour, leaving 25%. The continuing exponential process will, over the next hour eliminate 75% of the amount at the start of that hour. So after hour 2 we will have 25% of the amount we had at hour 1, which was 25% of the original amount." show_hints="TRUE"> 25% of 25% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="75%" id="CTK1-3-4" w="87" name="CTK1-3" hint="That's  how much was eliminated in the first hour, not how much remains after 2 hours." show_hints="TRUE"> 75% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="75% of 75%" id="CTK1-3-5" w="7" name="CTK1-3" hint="In an exponential process, at any moment the rate of decay (e.g. 75% per hour) is a constant proportion of the amount that is still there. After one hour, there is 25% of the alcohol remaining. That will decay at a rate of 75% per hour. Over the next hour, we will lose 75% of the original 25%, giving us 25% of the original amount." show_hints="TRUE"> 75% of 75% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="CTK1-3" id="CTK1-3.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="CTK1-3-hintarea">question id: CTK1-3</small></p>
-</div>
-</div>
-<ol start="4" type="1">
-<li>What is the half-life of an exponential process that decays to 25% after one hour?</li>
-</ol>
-<div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="15 minutes" id="CTK1-4-1" w="87" name="CTK1-4" hint="This provides time for four halvings in one hour, which would leave $\frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = 1/16$ of the original not 1/4." show_hints="TRUE"> 15 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="30 minutes" id="CTK1-4-2" w="20" name="CTK1-4" hint="right-o This gives time for two halvings in one hour, bringing us to 25% as observed." show_hints="TRUE"> 30 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="45 minutes" id="CTK1-4-3" w="19" name="CTK1-4" hint="Two halvings bring us down to 25%. At this rate, it would take 90 minutes to get down to 25%, not 60 minutes as observed." show_hints="TRUE"> 45 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="none of the above " id="CTK1-4-4" w="32" name="CTK1-4" hint="wide of the mark" show_hints="TRUE"> none of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="CTK1-4" id="CTK1-4.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="CTK1-4-hintarea">question id: CTK1-4</small></p>
+<input type="radio" class="devoirs-mcq" value="15 minutes" id="cow-type-kayak-2-1" w="32" name="cow-type-kayak-2" hint="This provides time for four halvings in one hour, which would leave $\frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = 1/16$ of the original not 1/4." show_hints="TRUE"> 15 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="30 minutes" id="cow-type-kayak-2-2" w="5" name="cow-type-kayak-2" hint="right-o This gives time for two halvings in one hour, bringing us to 25% as observed." show_hints="TRUE"> 30 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="45 minutes" id="cow-type-kayak-2-3" w="23" name="cow-type-kayak-2" hint="Two halvings bring us down to 25%. At this rate, it would take 90 minutes to get down to 25%, not 60 minutes as observed." show_hints="TRUE"> 45 minutes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="none of the above " id="cow-type-kayak-2-4" w="87" name="cow-type-kayak-2" hint="Try again!" show_hints="TRUE"> none of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="cow-type-kayak-2" id="cow-type-kayak-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="cow-type-kayak-2-hintarea">question id: cow-type-kayak-2</small></p>
 </div>
 </div>
 <p>Let’s change pace and think about the “10% after 2 hours” observation. First, recall that the amount left after <span class="math inline">\(n\)</span> halvings is <span class="math inline">\(\text{amount.left}(n) \equiv \left(\frac{1}{2}\right)^{\Large n}\)</span> This is an exponential function with base 1/2.</p>
 <p>You’re going to carry out a <strong><em>guess-and-check</em></strong> procedure to find <span class="math inline">\(n\)</span> that gives <span class="math inline">\(\text{amount.left}(n) = 0.10\)</span>.</p>
-<p><a href="#lst-cow-type-kayak-1" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-cow-type-kayak-1</span></a> includes the definition of the <code>amount.left()</code> function. We start with a guess of <span class="math inline">\(n=0\)</span>, which is wrong. Change the guess until you get the output 10%.</p>
+<p><a href="#lst-cow-type-kayak-1" class="quarto-xref">Active R chunk&nbsp;<span>2</span></a> includes the definition of the <code>amount.left()</code> function. We start with a guess of <span class="math inline">\(n=10\)</span>, which is wrong. Change the guess until you get the output 10%.</p>
 <div id="lst-cow-type-kayak-1" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-cow-type-kayak-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;2
 </figcaption>
 <div aria-describedby="lst-cow-type-kayak-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</figure>
-</div>
-<ol start="5" type="1">
-<li>Use <code>amount.left()</code> as defined in the scaffolding to guess-and-check how many halvings it takes to bring something down to 10% of the original amount.</li>
-</ol>
-<div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="2.58 " id="CTK1-5-1" w="87" name="CTK1-5" hint="wide of the mark" show_hints="FALSE"> 2.58 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3.32" id="CTK1-5-2" w="18" name="CTK1-5" hint="Nice." show_hints="FALSE"> 3.32 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3.62 " id="CTK1-5-3" w="32" name="CTK1-5" hint="Not quite right" show_hints="FALSE"> 3.62 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3.94 " id="CTK1-5-4" w="87" name="CTK1-5" hint="wrong" show_hints="FALSE"> 3.94 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4.12 " id="CTK1-5-5" w="7" name="CTK1-5" hint="Try again!" show_hints="FALSE"> 4.12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="CTK1-5" id="CTK1-5.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="CTK1-5-hintarea">question id: CTK1-5</small></p>
-</div>
-</div>
-<ol start="6" type="1">
-<li>The answer you got in part C) is the <strong>number</strong> of halvings needed to reach 10%. If this number occurs in 2 hours (that is, 120 minutes), what is the half life stated in minutes.</li>
-</ol>
-<div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="30 " id="CTK1-6-1" w="7" name="CTK1-6" hint="Better luck next time." show_hints="TRUE"> 30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="35 " id="CTK1-6-2" w="19" name="CTK1-6" hint="You're mistaken" show_hints="TRUE"> 35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="36" id="CTK1-6-3" w="20" name="CTK1-6" hint="Nice." show_hints="TRUE"> 36 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="38 " id="CTK1-6-4" w="87" name="CTK1-6" hint="Sorry!" show_hints="TRUE"> 38 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="42 " id="CTK1-6-5" w="7" name="CTK1-6" hint="You're mistaken" show_hints="TRUE"> 42 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="47 " id="CTK1-6-6" w="3" name="CTK1-6" hint="You're mistaken" show_hints="TRUE"> 47 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="CTK1-6" id="CTK1-6.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="CTK1-6-hintarea">question id: CTK1-6</small></p>
-</div>
-</div>
-<p>Another way to find the input <span class="math inline">\(n\)</span> that generates an output of 10% is to construct the <strong><em>inverse function</em></strong> to <span class="math inline">\(\text{amount.left}()\)</span>.</p>
-<p>The computer already provides you with inverse functions for <span class="math inline">\(2^n\)</span> and <span class="math inline">\(e^n\)</span> and <span class="math inline">\(10^n\)</span>. Their names are <code>log2()</code>, <code>log()</code>, and <code>log10()</code> repectively. Using <code>log2()</code>, write a function named <code>log_half()</code> that gives the inverse function to <span class="math inline">\((1/2)^n\)</span>. Remember, the input to the inverse function corresponds to 10%; the output to the <span class="math inline">\(n\)</span>.</p>
-<div id="lst-cow-type-kayak-2" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-cow-type-kayak-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;3
-</figcaption>
-<div aria-describedby="lst-cow-type-kayak-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
-<ol start="7" type="1">
+<ol start="3" type="1">
+<li>Use <code>amount.left()</code> as defined in the scaffolding to guess-and-check how many halvings it takes to bring something down to 10% of the original amount.</li>
+</ol>
+<div class="cell" data-show_hints="false" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="2.58 " id="cow-type-kayak-3-1" w="32" name="cow-type-kayak-3" hint="Boo!" show_hints="FALSE"> 2.58 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3.32" id="cow-type-kayak-3-2" w="14" name="cow-type-kayak-3" hint="Correct." show_hints="FALSE"> 3.32 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3.62 " id="cow-type-kayak-3-3" w="87" name="cow-type-kayak-3" hint="Boo!" show_hints="FALSE"> 3.62 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3.94 " id="cow-type-kayak-3-4" w="19" name="cow-type-kayak-3" hint="Not on target." show_hints="FALSE"> 3.94 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4.12 " id="cow-type-kayak-3-5" w="7" name="cow-type-kayak-3" hint="Not quite right." show_hints="FALSE"> 4.12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="cow-type-kayak-3" id="cow-type-kayak-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="cow-type-kayak-3-hintarea">question id: cow-type-kayak-3</small></p>
+</div>
+</div>
+<ol start="4" type="1">
 <li>The answer you got in part C) is the <strong>number</strong> of halvings needed to reach 10%. If this number occurs in 2 hours (that is, 120 minutes), what is the half life stated in minutes.</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="30 " id="CTK1-7-1" w="32" name="CTK1-7" hint="wide of the mark" show_hints="TRUE"> 30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="35 " id="CTK1-7-2" w="23" name="CTK1-7" hint="no" show_hints="TRUE"> 35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="36" id="CTK1-7-3" w="14" name="CTK1-7" hint="Yes" show_hints="TRUE"> 36 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="38 " id="CTK1-7-4" w="32" name="CTK1-7" hint="Sorry!" show_hints="TRUE"> 38 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="42 " id="CTK1-7-5" w="7" name="CTK1-7" hint="no" show_hints="TRUE"> 42 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="47 " id="CTK1-7-6" w="7" name="CTK1-7" hint="incorrect choice" show_hints="TRUE"> 47 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="CTK1-7" id="CTK1-7.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="CTK1-7-hintarea">question id: CTK1-7</small></p>
-</div>
-</div>
-<p>Suppose you compromise between the half-life needed to reach 25% after one hour and the half-life needed to reach 10% after two hours. Use, say, 33 minutes as the compromise half life. Using the sandbox, calculate how much would be left after 1 hour for this compromise half life, and how much left after 2 hours.</p>
-<ol start="8" type="1">
-<li>How much is left after 1 hour and after 2 hours for a half life of 33 minutes?</li>
-</ol>
-<div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="28% and  8%" id="CTK1-8-1" w="8" name="CTK1-8" hint="Good job!" show_hints="FALSE"> 28% and 8% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="31% and 4% " id="CTK1-8-2" w="87" name="CTK1-8" hint="Better luck next time." show_hints="FALSE"> 31% and 4% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="30% and 9% " id="CTK1-8-3" w="19" name="CTK1-8" hint="incorrect choice" show_hints="FALSE"> 30% and 9% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="27% and 9% " id="CTK1-8-4" w="87" name="CTK1-8" hint="Better luck next time." show_hints="FALSE"> 27% and 9% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="CTK1-8" id="CTK1-8.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="CTK1-8-hintarea">question id: CTK1-8</small></p>
+<input type="radio" class="devoirs-mcq" value="30 " id="cow-type-kayak-4-1" w="87" name="cow-type-kayak-4" hint="Wrong." show_hints="TRUE"> 30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="35 " id="cow-type-kayak-4-2" w="19" name="cow-type-kayak-4" hint="Hmmm ..." show_hints="TRUE"> 35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="36" id="cow-type-kayak-4-3" w="18" name="cow-type-kayak-4" hint="Exactly." show_hints="TRUE"> 36 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="38 " id="cow-type-kayak-4-4" w="32" name="cow-type-kayak-4" hint="You might think so, but ..." show_hints="TRUE"> 38 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="42 " id="cow-type-kayak-4-5" w="19" name="cow-type-kayak-4" hint="Better luck next time." show_hints="TRUE"> 42 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="47 " id="cow-type-kayak-4-6" w="87" name="cow-type-kayak-4" hint="You're wrong here." show_hints="TRUE"> 47 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="cow-type-kayak-4" id="cow-type-kayak-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="cow-type-kayak-4-hintarea">question id: cow-type-kayak-4</small></p>
 </div>
 </div>
 </div>
 <div id="exr-ebola-sigmoid" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 8</strong></span> The graph shows the cumulative number of Ebola cases in Sierra Leone during an outbreak from May 1, 2014 (Day 0) to December 16, 2015. (Source: <code>{MMAC}</code> R package, Joel Kilty and Alex McAllister, <em>Mathematical Modeling and Applied Calculus</em>.) Put aside for the moment that the Ebola data don’t have the exact shape of a sigmoid function, and follow the fitting procedure as best you can.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_point</span>(Cases <span class="sc">~</span> Day, <span class="at">data =</span> MMAC<span class="sc">::</span>EbolaSierraLeone)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="08-exercises_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="08-exercises_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <ol type="1">
-<li>Where is the top plateau?</li>
+<li>What is the the value of the function at the top plateau?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="About Day 600." id="ebola-sigmoid-1-1" w="32" name="ebola-sigmoid-1" hint="Measure the height of the plateau, not where it starts horizontally." show_hints="TRUE"> About Day 600. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 14,000 cases" id="ebola-sigmoid-1-2" w="20" name="ebola-sigmoid-1" hint="Right" show_hints="TRUE"> About 14,000 cases &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 20,000 cases" id="ebola-sigmoid-1-3" w="7" name="ebola-sigmoid-1" hint="Read the vertical axis markings more carefully." show_hints="TRUE"> About 20,000 cases &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above" id="ebola-sigmoid-1-4" w="7" name="ebola-sigmoid-1" hint="One of the above answers is pretty good." show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="ebola-sigmoid-1" id="ebola-sigmoid-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="About Day 600." id="ebola-sigmoid-1-1" w="3" name="ebola-sigmoid-1" hint="Measure the height of the plateau, not where it starts horizontally." show_hints="TRUE"> About Day 600. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 14,000 cases" id="ebola-sigmoid-1-2" w="5" name="ebola-sigmoid-1" hint="Right." show_hints="TRUE"> About 14,000 cases &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 20,000 cases" id="ebola-sigmoid-1-3" w="7" name="ebola-sigmoid-1" hint="Read the vertical axis markings more carefully." show_hints="TRUE"> About 20,000 cases &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="None of the above" id="ebola-sigmoid-1-4" w="87" name="ebola-sigmoid-1" hint="One of the above answers is pretty good." show_hints="TRUE"> None of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="ebola-sigmoid-1" id="ebola-sigmoid-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="ebola-sigmoid-1-hintarea">question id: ebola-sigmoid-1</small></p>
 </div>
 </div>
 <ol start="2" type="1">
-<li>Where is the centerline?</li>
+<li>On what day did the number of cases reach half-way to its eventual plateau?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Near Day 200" id="ebola-sigmoid-2-1" w="5" name="ebola-sigmoid-2" hint="Yes" show_hints="TRUE"> Near Day 200 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Near Day 300" id="ebola-sigmoid-2-2" w="3" name="ebola-sigmoid-2" hint="That's  the center of the vertical scale, not the day at which the curve reaches half-way to the eventual plateau." show_hints="TRUE"> Near Day 300 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="At about 7000 cases" id="ebola-sigmoid-2-3" w="32" name="ebola-sigmoid-2" hint="That's  half-way up to the plateau, but the answer you  want is the day at which the curve reaches that point." show_hints="TRUE"> At about 7000 cases &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="ebola-sigmoid-2" id="ebola-sigmoid-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Near Day 200" id="ebola-sigmoid-2-1" w="8" name="ebola-sigmoid-2" hint="Right on the nose!" show_hints="TRUE"> Near Day 200 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Near Day 300" id="ebola-sigmoid-2-2" w="7" name="ebola-sigmoid-2" hint="That's  the center of the vertical scale, not the day at which the curve reaches half-way to the eventual plateau." show_hints="TRUE"> Near Day 300 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="At about 7000 cases" id="ebola-sigmoid-2-3" w="7" name="ebola-sigmoid-2" hint="That's  half-way up to the plateau, but the answer you  want is the day at which the curve reaches that point." show_hints="TRUE"> At about 7000 cases &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="ebola-sigmoid-2" id="ebola-sigmoid-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="ebola-sigmoid-2-hintarea">question id: ebola-sigmoid-2</small></p>
 </div>
 </div>
 <ol start="3" type="1">
-<li>Now to find the <code>width</code> parameter. The curve looks more classically sigmoid to the left of the centerline than to the right, so follow the curve <em>downward</em> as in Step 4 of the algorithm to find the parameters. What’s a good estimate for <code>width</code>?</li>
+<li>Now to find the “standard deviation” parameter, that is, the standard way for describing the width of the sigmoid. The curve looks more classically sigmoid to the left of the centerline than to the right, so follow the curve <em>downward</em> to find the parameters. What’s a good estimate for <code>width</code>?</li>
 </ol>
+<p>For a gaussian function, you know how to find the standard deviation. But we are dealing with a sigmoid here. Lets put the algorithms for finding the standard deviation side by side to guide you.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 16%">
+<col style="width: 40%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step #</th>
+<th>parameter</th>
+<th>Gaussian</th>
+<th>Sigmoid</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>center (or “mean”)</td>
+<td>Find the input corresponding to the peak of the curve</td>
+<td>Find the input where the value of the curve is 1/2 the value of the plateau.</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td></td>
+<td>Find the level of the output that is 60% of the height of the peak.</td>
+<td>Find the level of the output that is 60% of the way to the value at the center.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>standard deviation</td>
+<td>The difference in input between (1) and (2).</td>
+<td>The difference in input between (1) and (2).</td>
+</tr>
+</tbody>
+</table>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="About 50 days" id="ebola-sigmoid-3-1" w="5" name="ebola-sigmoid-3" hint="Excellent!" show_hints="TRUE"> About 50 days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 100 days" id="ebola-sigmoid-3-2" w="32" name="ebola-sigmoid-3" hint="Too wide!" show_hints="TRUE"> About 100 days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 10 days" id="ebola-sigmoid-3-3" w="87" name="ebola-sigmoid-3" hint="Too small" show_hints="TRUE"> About 10 days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 2500 cases" id="ebola-sigmoid-3-4" w="32" name="ebola-sigmoid-3" hint="The width is measured along the horizontal axis, not the vertical" show_hints="TRUE"> About 2500 cases &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="ebola-sigmoid-3" id="ebola-sigmoid-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="About 50 days" id="ebola-sigmoid-3-1" w="20" name="ebola-sigmoid-3" hint="Yeah!" show_hints="TRUE"> About 50 days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 100 days" id="ebola-sigmoid-3-2" w="32" name="ebola-sigmoid-3" hint="Too wide!" show_hints="TRUE"> About 100 days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 10 days" id="ebola-sigmoid-3-3" w="23" name="ebola-sigmoid-3" hint="Too small" show_hints="TRUE"> About 10 days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="About 2500 cases" id="ebola-sigmoid-3-4" w="32" name="ebola-sigmoid-3" hint="The width is measured along the horizontal axis, not the vertical" show_hints="TRUE"> About 2500 cases &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="ebola-sigmoid-3" id="ebola-sigmoid-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="ebola-sigmoid-3-hintarea">question id: ebola-sigmoid-3</small></p>
 </div>
 </div>
 </div>
 <div id="exr-flipping-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 9</strong></span> Each of the curves in the graph is an exponential function <span class="math inline">\(e^{kt}\)</span>, for various values of <span class="math inline">\(k\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 9</strong></span> Each of the curves in the graph is an exponential function <span class="math inline">\(e^{kt}\)</span>, for various values of the parameter <span class="math inline">\(k\)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -3558,29 +3130,78 @@ Active R chunk&nbsp;3
 <p>What is the order from <span class="math inline">\(k\)</span> smallest (most negative) to k largest?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A, D, B, C, E" id="WkG3cD-1" w="16" name="WkG3cD" hint="right-o Exponential functions that grow slowly have $k$ with a small absolute value" show_hints="TRUE"> A, D, B, C, E</p>
+</p><p><input type="radio" class="devoirs-mcq" value="A, D, B, C, E" id="WkG3cD-1" w="29" name="WkG3cD" hint="right-o Exponential functions that grow slowly have $k$ with a small absolute value" show_hints="TRUE"> A, D, B, C, E</p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="A, B, E, C, D" id="WkG3cD-2" w="3" name="WkG3cD" hint="Sorry. Notice curve B grows the most slowly. This means it has the smallest $|k|$." show_hints="TRUE"> A, B, E, C, D</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="E, C, D, B, A" id="WkG3cD-3" w="3" name="WkG3cD" hint="The B and A curves have negative $k$, so they will be smaller than the other curves with positive sign." show_hints="TRUE"> E, C, D, B, A</p>
+</p><p><input type="radio" class="devoirs-mcq" value="E, C, D, B, A" id="WkG3cD-3" w="19" name="WkG3cD" hint="The B and A curves have negative $k$, so they will be smaller than the other curves with positive sign." show_hints="TRUE"> E, C, D, B, A</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="WkG3cD" id="WkG3cD.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="WkG3cD-hintarea">question id: WkG3cD</small></p>
 </div>
 </div>
 </div>
 <div id="exr-snake-teach-screen" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10</strong></span> The three functions created by the statements below are different in important ways. Explain what those differences are.</p>
-<p>(Hint: Think about the parameter and weather statements like <code>f(t)</code> and <code>f(t, P=17)</code> both make sense.)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="fu">makeFun</span>(<span class="fu">sin</span>((<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">/</span>P)<span class="sc">*</span>t) <span class="sc">~</span> t)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="fu">makeFun</span>(<span class="fu">sin</span>((<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">/</span><span class="dv">6</span>)<span class="sc">*</span>t) <span class="sc">~</span> t)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="fu">makeFun</span>(<span class="fu">sin</span>((<span class="dv">2</span><span class="sc">*</span>pi<span class="sc">/</span>P)<span class="sc">*</span>t) <span class="sc">~</span> t, <span class="at">P=</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="theorem-title"><strong>Exercise 10</strong></span> The three functions defined in <a href="#lst-snake-teach-screen" class="quarto-xref">Active R chunk&nbsp;<span>3</span></a> are different in how they handle the period of the sinusoid.</p>
+<div id="lst-snake-teach-screen" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-snake-teach-screen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Active R chunk&nbsp;3
+</figcaption>
+<div aria-describedby="lst-snake-teach-screen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
-<p><textarea id="snake-teach-screen" name="snake-teach-screen" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID snake-teach-screen"></textarea> </p><div style="color: grey;"> <small>question id: snake-teach-screen</small> </div><p></p>
+</figure>
+</div>
+<ol type="1">
+<li>Which two functions will produce output when only a single input, such as <code>(3)</code> is used?</li>
+</ol>
+<div class="cell" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="`f1()` and `f2()`" id="snake-teach-screen-1-1" w="19" name="snake-teach-screen-1" hint="You're mistaken" show_hints="false"> <code>f1()</code> and <code>f2()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`f1()` and `f3()`" id="snake-teach-screen-1-2" w="23" name="snake-teach-screen-1" hint="Wrong." show_hints="false"> <code>f1()</code> and <code>f3()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`f2()` and `f3()`" id="snake-teach-screen-1-3" w="35" name="snake-teach-screen-1" hint="Nice." show_hints="false"> <code>f2()</code> and <code>f3()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="snake-teach-screen-1" id="snake-teach-screen-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="snake-teach-screen-1-hintarea">question id: snake-teach-screen-1</small></p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Which two functions will accept a second argument such as <code>P=10</code>?</li>
+</ol>
+<div class="cell" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="`f1()` and `f2()`" id="snake-teach-screen-2-1" w="23" name="snake-teach-screen-2" hint="Not quite right." show_hints="false"> <code>f1()</code> and <code>f2()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`f1()` and `f3()`" id="snake-teach-screen-2-2" w="16" name="snake-teach-screen-2" hint="You've got it!" show_hints="false"> <code>f1()</code> and <code>f3()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`f2()` and `f3()`" id="snake-teach-screen-2-3" w="3" name="snake-teach-screen-2" hint="Incorrect choice." show_hints="false"> <code>f2()</code> and <code>f3()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="snake-teach-screen-2" id="snake-teach-screen-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="snake-teach-screen-2-hintarea">question id: snake-teach-screen-2</small></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Which function will work in both (1) and (2)?</li>
+</ol>
+<div class="cell" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="`f1()`" id="snake-teach-screen-3-1" w="19" name="snake-teach-screen-3" hint="Nope." show_hints="false"> <code>f1()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`f1()`" id="snake-teach-screen-3-2" w="23" name="snake-teach-screen-3" hint="Wrong." show_hints="false"> <code>f1()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`f3()`" id="snake-teach-screen-3-3" w="35" name="snake-teach-screen-3" hint="Yes." show_hints="false"> <code>f3()</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="snake-teach-screen-3" id="snake-teach-screen-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="snake-teach-screen-3-hintarea">question id: snake-teach-screen-3</small></p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Which of these best describes the meaning of <code>P = 6</code> in the second argument to <code>makeFun()</code>?</li>
+</ol>
+<div class="cell" data-inline="false">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="It establi ...  function." id="snake-teach-screen-4-1" w="32" name="snake-teach-screen-4" hint="Oops!" show_hints="false"> It establishes the name of the parameter to the function.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="It sets a  ... meter `P`." id="snake-teach-screen-4-2" w="20" name="snake-teach-screen-4" hint="Yes!" show_hints="false"> It sets a default value for the parameter <code>P</code>.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="It sets th ... n `t = 0`." id="snake-teach-screen-4-3" w="3" name="snake-teach-screen-4" hint="No." show_hints="false"> It sets the default output when <code>t = 0</code>.</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="snake-teach-screen-4" id="snake-teach-screen-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="snake-teach-screen-4-hintarea">question id: snake-teach-screen-4</small></p>
+</div>
+</div>
 </div>
 <div id="exr-horse-hold-mattress" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 11</strong></span> The performance <span class="math inline">\(p\)</span> of a worker depends on the level of stimulation/stress <span class="math inline">\(s\)</span> imposed by the task. This phenomenon has come to be known as the <em>Yerkes-Dodson Stress Performance Curve</em>, and <strong>you’ve probably experienced this yourself.</strong> If a task is not stimulating enough people become inactive/bored and performance is negatively impacted. If tasks are over stimulating (stressful), people become anxious and fatigued; they burn-out. The overall Yerkes-Dodson pattern is shown by the diagram.</p>
@@ -3599,67 +3220,78 @@ Figure&nbsp;4
 </ol>
 <div class="cell" data-inline="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Proportion ... uiv as+b$ " id="hhmz-1-1" w="87" name="hhmz-1" hint="Better luck next time." show_hints="false"> Proportional: <span class="math inline">\(p(s) \equiv as+b\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="Proportion ... uiv as+b$ " id="horse-hold-mattress-1-1" w="32" name="horse-hold-mattress-1" hint="No." show_hints="false"> Proportional: <span class="math inline">\(p(s) \equiv as+b\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Power-law: ... uiv As^p$ " id="hhmz-1-2" w="87" name="hhmz-1" hint="wrong" show_hints="false"> Power-law: <span class="math inline">\(p(s) \equiv As^p\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="Power-law: ... uiv As^p$ " id="horse-hold-mattress-1-2" w="19" name="horse-hold-mattress-1" hint="Not so!" show_hints="false"> Power-law: <span class="math inline">\(p(s) \equiv As^p\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Exponentia ... e^{kt}+C$ " id="hhmz-1-3" w="32" name="hhmz-1" hint="no" show_hints="false"> Exponential <span class="math inline">\(p(s) \equiv Ae^{kt}+C\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="Exponentia ... e^{kt}+C$ " id="horse-hold-mattress-1-3" w="23" name="horse-hold-mattress-1" hint="Nope." show_hints="false"> Exponential <span class="math inline">\(p(s) \equiv Ae^{kt}+C\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Sine: $p(s ... right)+B$ " id="hhmz-1-4" w="23" name="hhmz-1" hint="You're mistaken" show_hints="false"> Sine: <span class="math inline">\(p(s) \equiv A\sin\left(\frac{2\pi}{p}(t-t_0)\right)+B\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="Sine: $p(s ... right)+B$ " id="horse-hold-mattress-1-4" w="87" name="horse-hold-mattress-1" hint="Nope." show_hints="false"> Sine: <span class="math inline">\(p(s) \equiv A\sin\left(\frac{2\pi}{p}(t-t_0)\right)+B\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Sigmoid $p ... an,sd)+B$ " id="hhmz-1-5" w="3" name="hhmz-1" hint="wide of the mark" show_hints="false"> Sigmoid <span class="math inline">\(p(s) \equiv A\cdot \pnorm(s,mean,sd)+B\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="Sigmoid $p ... an,sd)+B$ " id="horse-hold-mattress-1-5" w="7" name="horse-hold-mattress-1" hint="Oops!" show_hints="false"> Sigmoid <span class="math inline">\(p(s) \equiv A\cdot \pnorm(s,mean,sd)+B\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Gaussian $ ... ean,sd)+B$" id="hhmz-1-6" w="8" name="hhmz-1" hint="right-o" show_hints="false"> Gaussian <span class="math inline">\(p(s) \equiv A\cdot \dnorm(s,mean,sd)+B\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="Gaussian $ ... ean,sd)+B$" id="horse-hold-mattress-1-6" w="29" name="horse-hold-mattress-1" hint="Yup!" show_hints="false"> Gaussian <span class="math inline">\(p(s) \equiv A\cdot \dnorm(s,mean,sd)+B\)</span></p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="hhmz-1" id="hhmz-1.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="hhmz-1-hintarea">question id: hhmz-1</small></p>
+<input type="radio" class="devoirs-mcq" name="horse-hold-mattress-1" id="horse-hold-mattress-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="horse-hold-mattress-1-hintarea">question id: horse-hold-mattress-1</small></p>
 </div>
 </div>
 <p>A manager must balance workloads between too much and too little stimulation to get peak performance out of each team member.</p>
 <ol start="2" type="1">
-<li>Does <a href="#fig-yerkes-dodson" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-yerkes-dodson</span></a> suggest that people inevitably burn out as time elapses?</li>
+<li>Does <a href="#fig-yerkes-dodson" class="quarto-xref">Figure&nbsp;<span>4</span></a> suggest that people inevitably burn out as time elapses?</li>
 </ol>
-<div class="cell" data-show-hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Yes." id="hhmz-2-1" w="7" name="hhmz-2" hint="Do you see &quot;time&quot; anywhere in the graph? The horizontal axis is &quot;stress level&quot; not time." show_hints="false"> Yes. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No." id="hhmz-2-2" w="5" name="hhmz-2" hint="Excellent!" show_hints="false"> No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="hhmz-2" id="hhmz-2.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="hhmz-2-hintarea">question id: hhmz-2</small></p>
+<div class="cell" data-show_hints="true" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="Yes." id="horse-hold-mattress-2-1" w="87" name="horse-hold-mattress-2" hint="Do you see &quot;time&quot; anywhere in the graph? The horizontal axis is &quot;stress level&quot; not time." show_hints="TRUE"> Yes. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No." id="horse-hold-mattress-2-2" w="16" name="horse-hold-mattress-2" hint="Right on the nose!" show_hints="TRUE"> No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="horse-hold-mattress-2" id="horse-hold-mattress-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="horse-hold-mattress-2-hintarea">question id: horse-hold-mattress-2</small></p>
 </div>
 </div>
 </div>
 <div id="exr-kid-type-boat" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 13</strong></span> These three expressions</p>
-<p><span class="math display">\[e^{kt}\ \ \ \ \ 10^{t/d} \  \ \ \ \  2^{t/h}\]</span></p>
-<p>produce the same value if <span class="math inline">\(k\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(h\)</span> have corresponding numerical values.</p>
-<p>The code block contains an expression for plotting out <span class="math inline">\(2^{t/h}\)</span> for <span class="math inline">\(-4 \leq t \leq 12\)</span> where <span class="math inline">\(h = 4\)</span>. It also plots out <span class="math inline">\(e^{kt}\)</span> and <span class="math inline">\(10^{t/d}\)</span></p>
-<div id="qwebr-insertion-location-4"></div>
+<p><span class="theorem-title"><strong>Exercise 12</strong></span> These three expressions</p>
+<p><span class="math display">\[e^{kt}\ \ \ \ \ 10^{t/d} \  \ \ \ \  2^{t/4}\]</span></p>
+<p>produce the same value if <span class="math inline">\(k\)</span> and <span class="math inline">\(d\)</span> have corresponding numerical values.</p>
+<p><a href="#lst-kid-type-boat" class="quarto-xref">Active R chunk&nbsp;<span>4</span></a> contains an expression for plotting out <span class="math inline">\(2^{t/h}\)</span> for <span class="math inline">\(-4 \leq t \leq 12\)</span> where <span class="math inline">\(h = 4\)</span>. It also plots out <span class="math inline">\(e^{kt}\)</span> and <span class="math inline">\(10^{t/d}\)</span></p>
+<div id="lst-kid-type-boat" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-kid-type-boat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Active R chunk&nbsp;4
+</figcaption>
+<div aria-describedby="lst-kid-type-boat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</figure>
+</div>
 <p>Your task is to modify the values of <code>d</code> and <code>k</code> such that all three curves lie on top of one another. (Leave <code>h</code> at the value 4.) You can find the appropriate values of <code>d</code> and <code>k</code> to accomplish this by any means you like, say, by using the algebra of exponents or by using trial and error. (Trial and error is a perfectly valid strategy regardless of what your high-school math teachers might have said about “guess and check.” The trick is to make each new guess systematically based on your previous ones and observation of how those previous ones performed.)</p>
 <p>After you have found values of <code>k</code> and <code>d</code> that are suited to the task …</p>
-<p>What is the numerical value of your best estimate of <code>k</code>?</p>
+<ol type="1">
+<li>What is the numerical value of your best estimate of <code>k</code>?</li>
+</ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0.143 " id="EB1-1-1" w="87" name="EB1-1" hint="Try again!" show_hints="TRUE"> 0.143 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.173" id="EB1-1-2" w="8" name="EB1-1" hint="Nice." show_hints="TRUE"> 0.173 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.283 " id="EB1-1-3" w="19" name="EB1-1" hint="Not quite right" show_hints="TRUE"> 0.283 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.320 " id="EB1-1-4" w="32" name="EB1-1" hint="You're mistaken" show_hints="TRUE"> 0.320  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="EB1-1" id="EB1-1.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="EB1-1-hintarea">question id: EB1-1</small></p>
+<input type="radio" class="devoirs-mcq" value="0.143 " id="kid-type-boat-1-1" w="23" name="kid-type-boat-1" hint="Sorry!" show_hints="TRUE"> 0.143 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.173" id="kid-type-boat-1-2" w="8" name="kid-type-boat-1" hint="Score!" show_hints="TRUE"> 0.173 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.283 " id="kid-type-boat-1-3" w="7" name="kid-type-boat-1" hint="Untrue!" show_hints="TRUE"> 0.283 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.320" id="kid-type-boat-1-4" w="3" name="kid-type-boat-1" hint="You're wrong here." show_hints="TRUE"> 0.320 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="kid-type-boat-1" id="kid-type-boat-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="kid-type-boat-1-hintarea">question id: kid-type-boat-1</small></p>
 </div>
 </div>
-<div id="exr-IvQCNI" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 12</strong></span> What is the numerical value of your best estimate of <code>d</code>?</p>
+<ol start="2" type="1">
+<li>What is the numerical value of your best estimate of <code>d</code>?</li>
+</ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="11.2 " id="EB1-2-1" w="3" name="EB1-2" hint="wrong" show_hints="TRUE"> 11.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="11.9 " id="EB1-2-2" w="3" name="EB1-2" hint="incorrect choice" show_hints="TRUE"> 11.9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="13.3" id="EB1-2-3" w="14" name="EB1-2" hint="Right" show_hints="TRUE"> 13.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="15.8 " id="EB1-2-4" w="19" name="EB1-2" hint="wide of the mark" show_hints="TRUE"> 15.8  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="EB1-2" id="EB1-2.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="EB1-2-hintarea">question id: EB1-2</small></p>
-</div>
+<input type="radio" class="devoirs-mcq" value="11.2 " id="kid-type-boat-2-1" w="7" name="kid-type-boat-2" hint="Boo!" show_hints="TRUE"> 11.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="11.9 " id="kid-type-boat-2-2" w="7" name="kid-type-boat-2" hint="Nope." show_hints="TRUE"> 11.9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="13.3" id="kid-type-boat-2-3" w="8" name="kid-type-boat-2" hint="You're right!" show_hints="TRUE"> 13.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="15.8" id="kid-type-boat-2-4" w="87" name="kid-type-boat-2" hint="Boo!" show_hints="TRUE"> 15.8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="kid-type-boat-2" id="kid-type-boat-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="kid-type-boat-2-hintarea">question id: kid-type-boat-2</small></p>
 </div>
 </div>
 </div>
 <div id="exr-lion-chew-bowl" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 14</strong></span> The table shows eight of the pattern-book function shapes.</p>
+<p><span class="theorem-title"><strong>Exercise 13</strong></span> The table shows eight of the pattern-book function shapes.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -3699,31 +3331,112 @@ Figure&nbsp;4
 <ol type="1">
 <li>Identify which of the eight shapes will remain unaltered even when flipped left-to-right. <!-- square, gaussian, sinusoid --></li>
 </ol>
-<p><textarea id="lion-chew-bowl-1" name="lion-chew-bowl-1" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID lion-chew-bowl-1"></textarea> </p><div style="color: grey;"> <small>question id: lion-chew-bowl-1</small> </div><p></p>
+<div class="cell">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="gaussian,  ... hm, square" id="lion-chew-bowl-1-1" w="87" name="lion-chew-bowl-1" hint="Incorrect." show_hints="false"> gaussian, logarithm, square</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="square, re ... , sinusoid" id="lion-chew-bowl-1-2" w="23" name="lion-chew-bowl-1" hint="Boo!" show_hints="false"> square, recip, sinusoid</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="sinusoid,  ... an, square" id="lion-chew-bowl-1-3" w="8" name="lion-chew-bowl-1" hint="Score!" show_hints="false"> sinusoid, gaussian, square</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="recip, sin ... usoid, exp" id="lion-chew-bowl-1-4" w="87" name="lion-chew-bowl-1" hint="Wrong." show_hints="false"> recip, sinusoid, exp</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="gaussian,  ... nal, recip" id="lion-chew-bowl-1-5" w="32" name="lion-chew-bowl-1" hint="Try again!" show_hints="false"> gaussian, proportional, recip</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="lion-chew-bowl-1" id="lion-chew-bowl-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="lion-chew-bowl-1-hintarea">question id: lion-chew-bowl-1</small></p>
+</div>
+</div>
 <ol start="2" type="1">
-<li>Identify which of the eight shapes will remain unaltered if flipped left-to-right followed by a top-to-bottom flip. <!-- identity, recip, sinusoid, sigmoid --></li>
+<li>Identify which of the eight shapes will remain unaltered if flipped left-to-right followed by a top-to-bottom flip. <!--  recip, sinusoid, sigmoid, identity --></li>
 </ol>
-<p><textarea id="lion-chew-bowl-2" name="lion-chew-bowl-2" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID lion-chew-bowl-2"></textarea> </p><div style="color: grey;"> <small>question id: lion-chew-bowl-2</small> </div><p></p>
+<div class="cell">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="gaussian,  ... , identity" id="lion-chew-bowl-2-1" w="23" name="lion-chew-bowl-2" hint="Incorrect choice." show_hints="false"> gaussian, logarithm, square, identity</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="square, re ... , identity" id="lion-chew-bowl-2-2" w="19" name="lion-chew-bowl-2" hint="Not quite right." show_hints="false"> square, reciprocal, sinusoid, identity</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="sinusoid,  ... , identity" id="lion-chew-bowl-2-3" w="19" name="lion-chew-bowl-2" hint="You're wrong here." show_hints="false"> sinusoid, gaussian, square, identity</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="reciprocal ... , identity" id="lion-chew-bowl-2-4" w="18" name="lion-chew-bowl-2" hint="That's right." show_hints="false"> reciprocal, sinusoid, sigmoid, identity</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="gaussian,  ... reciprocal" id="lion-chew-bowl-2-5" w="23" name="lion-chew-bowl-2" hint="No." show_hints="false"> gaussian, proportional, reciprocal</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="lion-chew-bowl-2" id="lion-chew-bowl-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="lion-chew-bowl-2-hintarea">question id: lion-chew-bowl-2</small></p>
+</div>
+</div>
 <ol start="3" type="1">
-<li>Identify which of the eight shapes will give the same result when flipped left-to-right or top-to-bottom (but not both!). <!-- identity, resid, sigmoid, sinusoid --></li>
+<li>Identify which of the eight shapes will give the same result when flipped left-to-right or top-to-bottom (but not both!). <!-- identity, recip, sigmoid --></li>
 </ol>
-<p><textarea id="lion-chew-bowl-3" name="lion-chew-bowl-3" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID lion-chew-bowl-3"></textarea> </p><div style="color: grey;"> <small>question id: lion-chew-bowl-3</small> </div><p></p>
+<div class="cell">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="identity,  ... reciprocal" id="lion-chew-bowl-3-1" w="19" name="lion-chew-bowl-3" hint="Oops!" show_hints="false"> identity, logarithm, square, reciprocal</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="sigmoid, r ... , identity" id="lion-chew-bowl-3-2" w="20" name="lion-chew-bowl-3" hint="Yup!" show_hints="false"> sigmoid, reciprocal, identity</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="sinusoid,  ... an, square" id="lion-chew-bowl-3-3" w="87" name="lion-chew-bowl-3" hint="Sorry!" show_hints="false"> sinusoid, gaussian, square</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="recip, sin ...  logarithm" id="lion-chew-bowl-3-4" w="23" name="lion-chew-bowl-3" hint="Untrue!" show_hints="false"> recip, sinusoid, logarithm</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="gaussian,  ... , sinusoid" id="lion-chew-bowl-3-5" w="87" name="lion-chew-bowl-3" hint="You're wrong here." show_hints="false"> gaussian, proportional, sinusoid</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="lion-chew-bowl-3" id="lion-chew-bowl-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="lion-chew-bowl-3-hintarea">question id: lion-chew-bowl-3</small></p>
+</div>
+</div>
 <ol start="4" type="1">
 <li>Compare the doubly-flipped (first left-to-right then top-to-bottom) flipped exponential to the logarithm function. Is the doubly-flipped exponential equivalent to the logarithm? Explain your reasoning. <!--No, they are different shapes. The logarithm has a vertical asymptote at input 0, whereas the exponential has no vertical asymptote.--></li>
 </ol>
-<p><textarea id="lion-chew-bowl-4" name="lion-chew-bowl-4" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID lion-chew-bowl-4"></textarea> </p><div style="color: grey;"> <small>question id: lion-chew-bowl-4</small> </div><p></p>
+<p><textarea id="lion-chew-bowl-4" name="lion-chew-bowl-4" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID lion-chew-bowl-4)"></textarea></p>
 </div>
 <div id="exr-dnorm8" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 15</strong></span> Compare the functions <span class="math inline">\(f_1 \equiv \dnorm(x, mn, sd)\)</span> and <span class="math inline">\(f_2 \equiv \dnorm\left(\left[x-mn\right]/sd\right)\)</span> by plotting them out using <a href="#lst-dnorm-webr" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-dnorm-webr</span></a>.</p>
+<p><span class="theorem-title"><strong>Exercise 14</strong></span> Compare the functions <span class="math inline">\(f_1 \equiv \dnorm(x, mn, sd)\)</span> and <span class="math inline">\(f_2 \equiv \dnorm\left(\left(x-mn\right)/sd\right)\)</span> by plotting them out using <a href="#lst-dnorm-webr" class="quarto-xref">Active R chunk&nbsp;<span>5</span></a>.</p>
 <p>To construct the plots, you will have to pick specific values for the parameters <span class="math inline">\(mn\)</span> and <span class="math inline">\(sd\)</span>. Make sure that you use the same <span class="math inline">\(sd\)</span> and <span class="math inline">\(mn\)</span> when constructing <span class="math inline">\(f_1()\)</span> and <span class="math inline">\(f_2()\)</span>. You should be able to select a plotting domain by reference to the To aid comparison, use the same graphics domain for both plots.</p>
-<div id="qwebr-insertion-location-5"></div>
+<div id="lst-dnorm-webr" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-dnorm-webr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Active R chunk&nbsp;5
+</figcaption>
+<div aria-describedby="lst-dnorm-webr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</figure>
+</div>
 <ol type="1">
 <li>When <span class="math inline">\(\text{sd} = 1\)</span>, are the two functions the same?</li>
 </ol>
-<div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="Yes" id="dnorm8-1-1" w="41" name="dnorm8-1" hint="Nice." show_hints="TRUE"> Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Yes, but o ... xt{mn}=1$ " id="dnorm8-1-2" w="87" name="dnorm8-1" hint="You're mistaken" show_hints="TRUE"> Yes, but only if <span class="math inline">\(\text{mn}=1\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Yes, but o ... xt{mn}=0$ " id="dnorm8-1-3" w="7" name="dnorm8-1" hint="Better luck next time." show_hints="TRUE"> Yes, but only if <span class="math inline">\(\text{mn}=0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="No " id="dnorm8-1-4" w="23" name="dnorm8-1" hint="no" show_hints="TRUE"> No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="dnorm8-1" id="dnorm8-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="cell" data-show_hints="true">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Yes" id="dnorm8-1-1" w="29" name="dnorm8-1" hint="You've got it!" show_hints="TRUE"> Yes</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Yes, but o ... xt{mn}=1$ " id="dnorm8-1-2" w="87" name="dnorm8-1" hint="mn doesn't enter into it" show_hints="TRUE"> Yes, but only if <span class="math inline">\(\text{mn}=1\)</span></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Yes, but o ... xt{mn}=0$ " id="dnorm8-1-3" w="23" name="dnorm8-1" hint="mn doesn't enter into it" show_hints="TRUE"> Yes, but only if <span class="math inline">\(\text{mn}=0\)</span></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="No " id="dnorm8-1-4" w="23" name="dnorm8-1" hint="You might think so, but ..." show_hints="TRUE"> No</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="dnorm8-1" id="dnorm8-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="dnorm8-1-hintarea">question id: dnorm8-1</small></p>
 </div>
 </div>
@@ -3732,19 +3445,19 @@ Figure&nbsp;4
 </ol>
 <div class="cell" data-inline="false" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$f_2(x) =  ... \, f_1(x)$" id="dnorm8-2-1" w="8" name="dnorm8-2" hint="right-o" show_hints="FALSE"> <span class="math inline">\(f_2(x) = sd\, f_1(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$f_2(x) =  ... \, f_1(x)$" id="dnorm8-2-1" w="41" name="dnorm8-2" hint="Yes." show_hints="FALSE"> <span class="math inline">\(f_2(x) = sd\, f_1(x)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$f_1(x) =  ... , f_2(x)$ " id="dnorm8-2-2" w="32" name="dnorm8-2" hint="Try again!" show_hints="FALSE"> <span class="math inline">\(f_1(x) = sd\, f_2(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$f_1(x) =  ... , f_2(x)$ " id="dnorm8-2-2" w="32" name="dnorm8-2" hint="Oops!" show_hints="FALSE"> <span class="math inline">\(f_1(x) = sd\, f_2(x)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$f_1(x) =  ... 2 f_2(x)$ " id="dnorm8-2-3" w="19" name="dnorm8-2" hint="Better luck next time." show_hints="FALSE"> <span class="math inline">\(f_1(x) = sd^2 f_2(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$f_1(x) =  ... 2 f_2(x)$ " id="dnorm8-2-3" w="32" name="dnorm8-2" hint="Nope." show_hints="FALSE"> <span class="math inline">\(f_1(x) = sd^2 f_2(x)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$f_2(x) =  ... 2 f_1(x)$ " id="dnorm8-2-4" w="19" name="dnorm8-2" hint="incorrect choice" show_hints="FALSE"> <span class="math inline">\(f_2(x) = sd^2 f_1(x)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$f_2(x) =  ... 2 f_1(x)$ " id="dnorm8-2-4" w="87" name="dnorm8-2" hint="Try again!" show_hints="FALSE"> <span class="math inline">\(f_2(x) = sd^2 f_1(x)\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="dnorm8-2" id="dnorm8-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="dnorm8-2-hintarea">question id: dnorm8-2</small></p>
 </div>
 </div>
@@ -3752,9 +3465,9 @@ Figure&nbsp;4
 <section id="special-topics" class="level3">
 <h3 class="anchored" data-anchor-id="special-topics">Special topics</h3>
 <div id="exr-bear-lay-plant" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 16</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Exercise 15</strong></span> &nbsp;</p>
 <!-- Scale invariance -->
-<p>Some of our pattern-book functions have a distinctive property called <strong>scale invariance</strong>. This means the graph of the function looks the same even when plotted on very different horizontal and vertical axes. The function <span class="math inline">\(\ln(x)\)</span> plotted on two different scales in <a href="#fig-log-scale-invariance" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-log-scale-invariance</span></a> shows that the graph of the function has practically the same shape on either scale.</p>
+<p>Some of our pattern-book functions have a distinctive property called <strong>scale invariance</strong>. This means the graph of the function looks the same even when plotted on very different horizontal and vertical axes. The function <span class="math inline">\(\ln(x)\)</span> plotted on two different scales in <a href="#fig-log-scale-invariance" class="quarto-xref">Figure&nbsp;<span>5</span></a> shows that the graph of the function has practically the same shape on either scale.</p>
 <div id="fig-log-scale-invariance" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-log-scale-invariance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3764,10 +3477,10 @@ Figure&nbsp;4
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="08-exercises_files/figure-html/unnamed-chunk-61-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="08-exercises_files/figure-html/unnamed-chunk-63-1.png" class="img-fluid figure-img" width="672"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="08-exercises_files/figure-html/unnamed-chunk-61-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="08-exercises_files/figure-html/unnamed-chunk-63-2.png" class="img-fluid figure-img" width="672"></p>
 </div>
 </div>
 </div>
@@ -3777,24 +3490,20 @@ Figure&nbsp;5: The logarithm function has the same overall shape even when plott
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-square-invariance" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-square-invariance</span></a> shows a power-law function, <span class="math inline">\(g(x) \equiv x^2\)</span>, which is also scale invariant.</p>
+<p><a href="#fig-square-invariance" class="quarto-xref">Figure&nbsp;<span>6</span></a> shows a power-law function, <span class="math inline">\(g(x) \equiv x^2\)</span>, which is also scale invariant.</p>
 <div id="fig-square-invariance" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-square-invariance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<p>#| layout-ncol: 2</p>
-<div class="cell">
-<div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="08-exercises_files/figure-html/unnamed-chunk-62-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+
 </div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="08-exercises_files/figure-html/unnamed-chunk-64-1.png" class="img-fluid figure-img" width="672"></p>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="08-exercises_files/figure-html/unnamed-chunk-62-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="08-exercises_files/figure-html/unnamed-chunk-64-2.png" class="img-fluid figure-img" width="672"></p>
 </div>
 </div>
 </div>
@@ -3808,19 +3517,16 @@ Figure&nbsp;6: The function <span class="math inline">\(x^2\)</span> shown on tw
 <div id="fig-sin-invariance" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sin-invariance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="08-exercises_files/figure-html/layout-ncol- 2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+
 </div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="08-exercises_files/figure-html/unnamed-chunk-65-1.png" class="img-fluid figure-img" width="672"></p>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="08-exercises_files/figure-html/layout-ncol- 2-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="08-exercises_files/figure-html/unnamed-chunk-65-2.png" class="img-fluid figure-img" width="672"></p>
 </div>
 </div>
 </div>
@@ -3830,14 +3536,14 @@ Figure&nbsp;7: The <span class="math inline">\(\sin( )\)</span> function is not 
 </figcaption>
 </figure>
 </div>
-<p>In contrast to scale-invariant functions, some of our pattern-book functions have a <strong><em>characteristic scale</em></strong>. This is a domain length over which the whole of a characteristic feature of the function is evident. Graphing on larger domains simply squashes down the characteristic feature to a small part of the graphic domain. For instance, in the <span class="math inline">\(\sin()\)</span> function the cycle is a characteristic feature. The cycle in the pattern-book sinusoid has a characteristic length of <span class="math inline">\(2 \pi\)</span>, the length of the cycle. Consequently, the graph looks different depending on the length of the graphics domain in multiples of the characteristic length. You can see from <a href="#fig-sin-invariance" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-sin-invariance</span></a> that the graph on the domain <span class="math inline">\(-10 &lt; x &lt; 10\)</span>, that is, about 3 times the characteristic scale, looks different from the graph on the larger domain that has a length 30 times the characteristic scale.</p>
+<p>In contrast to scale-invariant functions, some of our pattern-book functions have a <strong><em>characteristic scale</em></strong>. This is a domain length over which the whole of a characteristic feature of the function is evident. Graphing on larger domains simply squashes down the characteristic feature to a small part of the graphic domain. For instance, in the <span class="math inline">\(\sin()\)</span> function the cycle is a characteristic feature. The cycle in the pattern-book sinusoid has a characteristic length of <span class="math inline">\(2 \pi\)</span>, the length of the cycle. Consequently, the graph looks different depending on the length of the graphics domain in multiples of the characteristic length. You can see from <a href="#fig-sin-invariance" class="quarto-xref">Figure&nbsp;<span>7</span></a> that the graph on the domain <span class="math inline">\(-10 &lt; x &lt; 10\)</span>, that is, about 3 times the characteristic scale, looks different from the graph on the larger domain that has a length 30 times the characteristic scale.</p>
 <p>The output of the sigmoid function runs from 0 to 1 but reaches these values only asymptotically, as <span class="math inline">\(x \rightarrow \pm \infty\)</span>. In defining a characteristic scale, it would be reasonable to look at the length of the domain that takes the output from, say, 0.01 to 0.99. In other words, we want the characteristic scale to be defined in a way that captures <strong>almost</strong> all the action in the output of the function. For a gaussian, a reasonable definition of a characteristic scale would be the length of domain where the output falls to about, say, 1% of its peak output.</p>
 <ol type="1">
 <li>The gaussian (bump) function <code>dnorm()</code> has a characteristic scale. Which of these is a domain length that can encompass the characteristic shape of the gaussian?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0.1 " id="bear-lay-plant-1-1" w="32" name="bear-lay-plant-1" hint="no" show_hints="TRUE"> 0.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="bear-lay-plant-1-2" w="32" name="bear-lay-plant-1" hint="Sorry!" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6" id="bear-lay-plant-1-3" w="20" name="bear-lay-plant-1" hint="You're right The domain $-3 < x < 3$ supports practically everything." show_hints="TRUE"> 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="16 " id="bear-lay-plant-1-4" w="87" name="bear-lay-plant-1" hint="no" show_hints="TRUE"> 16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="256 " id="bear-lay-plant-1-5" w="3" name="bear-lay-plant-1" hint="Not quite right" show_hints="TRUE"> 256 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bear-lay-plant-1" id="bear-lay-plant-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0.1 " id="bear-lay-plant-1-1" w="87" name="bear-lay-plant-1" hint="Try again!" show_hints="TRUE"> 0.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="bear-lay-plant-1-2" w="19" name="bear-lay-plant-1" hint="Hmmm ..." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6" id="bear-lay-plant-1-3" w="18" name="bear-lay-plant-1" hint="The domain $-3 < x < 3$ supports practically everything." show_hints="TRUE"> 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="16 " id="bear-lay-plant-1-4" w="3" name="bear-lay-plant-1" hint="Not so!" show_hints="TRUE"> 16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="256 " id="bear-lay-plant-1-5" w="32" name="bear-lay-plant-1" hint="Try again!" show_hints="TRUE"> 256 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bear-lay-plant-1" id="bear-lay-plant-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="bear-lay-plant-1-hintarea">question id: bear-lay-plant-1</small></p>
 </div>
 </div>
@@ -3845,8 +3551,8 @@ Figure&nbsp;7: The <span class="math inline">\(\sin( )\)</span> function is not 
 <li>The sigmoid function <code>pnorm()</code> also has a characteristic scale. Which of these is a domain length that can encompass the characteristic shape of the sigmoid?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0.1 " id="bear-lay-plant-2-1" w="7" name="bear-lay-plant-2" hint="incorrect choice" show_hints="TRUE"> 0.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="bear-lay-plant-2-2" w="19" name="bear-lay-plant-2" hint="Not quite right" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6" id="bear-lay-plant-2-3" w="29" name="bear-lay-plant-2" hint="Nice." show_hints="TRUE"> 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="16 " id="bear-lay-plant-2-4" w="7" name="bear-lay-plant-2" hint="Sorry!" show_hints="TRUE"> 16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="256 " id="bear-lay-plant-2-5" w="32" name="bear-lay-plant-2" hint="Not quite right" show_hints="TRUE"> 256 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bear-lay-plant-2" id="bear-lay-plant-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0.1 " id="bear-lay-plant-2-1" w="7" name="bear-lay-plant-2" hint="Incorrect." show_hints="TRUE"> 0.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="bear-lay-plant-2-2" w="7" name="bear-lay-plant-2" hint="Incorrect." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="6" id="bear-lay-plant-2-3" w="18" name="bear-lay-plant-2" hint="A hit!" show_hints="TRUE"> 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="16 " id="bear-lay-plant-2-4" w="23" name="bear-lay-plant-2" hint="Incorrect choice." show_hints="TRUE"> 16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="256 " id="bear-lay-plant-2-5" w="19" name="bear-lay-plant-2" hint="Not so!" show_hints="TRUE"> 256 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="bear-lay-plant-2" id="bear-lay-plant-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="bear-lay-plant-2-hintarea">question id: bear-lay-plant-2</small></p>
 </div>
 </div>
@@ -3910,15 +3616,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3938,7 +3651,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -4035,8 +3751,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -4147,7 +3861,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

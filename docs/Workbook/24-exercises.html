@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -37,10 +71,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +371,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +393,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"comment":"","editor-quick-suggestions":"false","out-height":"","autorun":"false","output":"true","editor-word-wrap":"true","results":"markup","fig-width":7,"message":"true","fig-height":5,"classes":"","label":"unnamed-chunk-1","fig-cap":"","context":"interactive","read-only":"false","editor-font-scale":"1","dpi":72,"out-width":"700px","warning":"true","editor-max-height":""},"code":"A <- makeFun(2*V*(w+d)/(w*d) + 4*w*d ~ w + d, V = 1.3)\ndom <- domain(w = 0.5:1.5, d=0.5:1.5)\ncontour_plot(A(w, d) ~ w + d, dom,\n              contours_at = NULL) |>\n  gf_refine(coord_fixed()) # pipe to\n# gradient_plot( A(w, d) ~ w + d, dom)","id":1},{"options":{"comment":"","editor-quick-suggestions":"false","out-height":"","autorun":"false","output":"true","editor-word-wrap":"true","results":"markup","fig-width":7,"message":"true","fig-height":5,"classes":"","label":"optim-pink-rcd","fig-cap":"","context":"interactive","read-only":"false","editor-font-scale":"1","dpi":72,"out-width":"700px","warning":"true","editor-max-height":""},"code":"total_time <- makeFun( your_formula ~ x)\nslice_plot(total_time(x) ~ x, domain(x=0:20))\n\n# Evaluate these at the argmin of total_time to answer questions 4 and 5. \ndx_time  <- D(total_time(x) ~ x)\ndxx_time <- D(total_time(x) ~ x & x)","id":2},{"options":{"comment":"","editor-quick-suggestions":"false","out-height":"","autorun":"false","output":"true","editor-word-wrap":"true","results":"markup","fig-width":7,"message":"true","fig-height":5,"classes":"","label":"unnamed-chunk-3","fig-cap":"","context":"interactive","read-only":"false","editor-font-scale":"1","dpi":72,"out-width":"700px","warning":"true","editor-max-height":""},"code":"distance_in_water <- makeFun( __your_pythagorean_formula ~ x)\ntime_to_ball <- makeFun(x/400 + distance_in_water(x)/50 ~ x)","id":3},{"options":{"comment":"","editor-quick-suggestions":"false","out-height":"","autorun":"true","output":"true","editor-word-wrap":"true","results":"markup","fig-width":7,"message":"true","fig-height":5,"classes":"","label":"unnamed-chunk-4","fig-cap":"","context":"setup","read-only":"false","editor-font-scale":"1","dpi":72,"out-width":"700px","warning":"true","editor-max-height":""},"code":"plot_lens <- function(x_in, x_out, top, bottom) {\n  Points <- tibble::tribble(\n    ~ x, ~ y, ~ label,\n    -20, -30, \"Source\",\n    x_in, bottom(x_in), \"P_in\",\n    x_out, top(x_out), \"P_out\",\n    -10, 50, \"Target\",\n  )\n  \n  lens_x <- seq(-40, 40, length = 100)\n  lens_y <- bottom(lens_x)\n  lens_y <- c(lens_y, top(rev(lens_x)))\n  lens_x <- c(lens_x, rev(lens_x))\n  Lens_shape <- tibble(lens_x, lens_y)\n  gf_text(y ~ x,  data=Points, label = ~label, \n          hjust=0, vjust=1, nudge_x = 3) |>\n    gf_point() |>\n    gf_path(color = \"orange3\") |>\n    gf_polygon(lens_y ~ lens_x, data = Lens_shape, fill=\"dodgerblue\", alpha = .2,\n               color = NA, inherit=FALSE) |>\n    gf_refine(coord_fixed())\n}","id":4},{"options":{"comment":"","editor-quick-suggestions":"false","out-height":"","autorun":"false","output":"true","editor-word-wrap":"true","results":"markup","fig-width":7,"message":"true","fig-height":5,"classes":"","label":"unnamed-chunk-5","fig-cap":"","context":"interactive","read-only":"false","editor-font-scale":"1","dpi":72,"out-width":"700px","warning":"true","editor-max-height":""},"code":"# Describe the shape of the lens\nLens_top <- makeFun(-90 + sqrt(100^2 - x^2)  ~ x)\nLens_bottom <- makeFun(-Lens_top(x) ~ x)\n\n# Define the objective function\ntransit_time <- makeFun(\n  1.03 * sqrt((x_in - -20)^2 + (Lens_bottom(x_in)- (-30))^2) +\n  1.80 * sqrt((x_out-x_in)^2 + (Lens_top(x_out) - Lens_bottom(x_in))^2) + \n  1.03 * sqrt((x_out - -10)^2 + (Lens_top(x_out)-50)^2) ~\n    x_in + x_out)\n# Graph the objective function\ncontour_plot(transit_time(x_in, x_out) ~ x_in + x_out, \n             domain(x_in = c(-40,40), x_out = c(-40,40)), npts=200)\n\n# Insert argmin from contour plot\nplot_lens(10, 5, Lens_top, Lens_bottom)","id":5},{"options":{"comment":"","editor-quick-suggestions":"false","out-height":"","autorun":"false","output":"true","editor-word-wrap":"true","results":"markup","fig-width":7,"message":"true","fig-height":5,"classes":"","label":"unnamed-chunk-6","fig-cap":"","context":"interactive","read-only":"false","editor-font-scale":"1","dpi":72,"out-width":"700px","warning":"true","editor-max-height":""},"code":"lumber <- makeFun(ifelse(t<10, 0, 100*exp((t-25)/8)/(1 + exp((t-25)/8))) ~ t)\ndt_lumber <- D(lumber(t) ~ t)\nslice_plot(lumber(t) ~ t, domain(t = 0:100))\nslice_plot(dt_lumber(t) ~ t, domain(t = 0:100))","id":6},{"options":{"comment":"","editor-quick-suggestions":"false","out-height":"","autorun":"false","output":"true","editor-word-wrap":"true","results":"markup","fig-width":7,"message":"true","fig-height":5,"classes":"","label":"unnamed-chunk-7","fig-cap":"","context":"interactive","read-only":"false","editor-font-scale":"1","dpi":72,"out-width":"700px","warning":"true","editor-max-height":""},"code":"ave_growth_rate <- makeFun( your_expression_here ~ t)\ndt_ave_growth_rate <- D(ave_growth_rate(t) ~ t)\nslice_plot(ave_growth_rate(t) ~ t, domain(t = 0:100))\nslice_plot(dt_ave_growth_rate(t) ~ t, domain(t = 0:100))","id":7},{"options":{"comment":"","editor-quick-suggestions":"false","out-height":"","autorun":"false","output":"true","editor-word-wrap":"true","results":"markup","fig-width":7,"message":"true","fig-height":5,"classes":"","label":"unnamed-chunk-8","fig-cap":"","context":"interactive","read-only":"false","editor-font-scale":"1","dpi":72,"out-width":"700px","warning":"true","editor-max-height":""},"code":"A <- makeFun(2*(V - 4*pi*r^3/3)/r + 4*pi*r^2 ~ r, V = 1000000)\nslice_plot(A(r) ~ r, domain(r=55:70)) |>\n  gf_labs(y=\"Surface area of tank (square cm)\")","id":8}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"A <- makeFun(\n  2*V*(w+d)/(w*d) + 4*w*d ~ w + d, \n  V = 1.3)\ndom <- domain(w = 0.5:1.5, d=0.5:1.5)\ncontour_plot(A(w, d) ~ w + d, \n             dom,\n             contours_at = NULL) |>\n  gf_refine(coord_fixed()) # then pipe to\n# gradient_plot( A(w, d) ~ w + d, dom)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"distance_in_water <- \n  makeFun( \n    __your_pythagorean_formula ~ x\n    )\ntime_to_ball <- makeFun(\n  x/400 + distance_in_water(x)/50 ~ x\n  )","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"total_time <- makeFun( your_formula ~ x)\nslice_plot(total_time(x) ~ x, domain(x=0:20))\n\n# Evaluate these at the argmin of total_time to answer questions 4 and 5. \ndx_time  <- D(total_time(x) ~ x)\ndxx_time <- D(total_time(x) ~ x & x)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"optim-pink-rcd","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"plot_lens <- function(x_in, x_out, top, bottom) {\n  Points <- tibble::tribble(\n    ~ x, ~ y, ~ label,\n    -20, -30, \"Source\",\n    x_in, bottom(x_in), \"P_in\",\n    x_out, top(x_out), \"P_out\",\n    -10, 50, \"Target\",\n  )\n  \n  lens_x <- seq(-40, 40, length = 100)\n  lens_y <- bottom(lens_x)\n  lens_y <- c(lens_y, top(rev(lens_x)))\n  lens_x <- c(lens_x, rev(lens_x))\n  Lens_shape <- tibble(lens_x, lens_y)\n  gf_text(y ~ x,  data=Points, label = ~label, \n          hjust=0, vjust=1, nudge_x = 3) |>\n    gf_point() |>\n    gf_path(color = \"orange3\") |>\n    gf_polygon(lens_y ~ lens_x, data = Lens_shape, fill=\"dodgerblue\", alpha = .2,\n               color = NA, inherit=FALSE) |>\n    gf_refine(coord_fixed())\n}","id":5,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Describe the shape of the lens\nLens_top <- makeFun(\n  -90 + sqrt(100^2 - x^2)  ~ x\n  )\nLens_bottom <- makeFun(\n  -Lens_top(x) ~ x\n  )\n# Not an optimal path\nplot_lens(10, 5, Lens_top, Lens_bottom)","id":6,"options":{"autorun":"true","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Define the objective function\ntransit_time <- makeFun(\n  1.03 * sqrt((x_in - -20)^2 + (Lens_bottom(x_in)- (-30))^2) +\n  1.80 * sqrt((x_out-x_in)^2 + (Lens_top(x_out) - Lens_bottom(x_in))^2) + \n  1.03 * sqrt((x_out - -10)^2 + (Lens_top(x_out)-50)^2) ~\n    x_in + x_out)\n# Graph the objective function\ncontour_plot(transit_time(x_in, x_out) ~ x_in + x_out, \n             domain(x_in = c(-40,40), x_out = c(-40,40)), npts=200)\n\n# Insert numerical argmin coordinates (x_min, x_max) \n# that you find from the contour plot\nplot_lens(_x_in_, x_out_, Lens_top, Lens_bottom)","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"lumber <- makeFun(ifelse(t<10, 0, 100*exp((t-25)/8)/(1 + exp((t-25)/8))) ~ t)\ndt_lumber <- D(lumber(t) ~ t)\nslice_plot(lumber(t) ~ t, domain(t = 0:100))\nslice_plot(dt_lumber(t) ~ t, domain(t = 0:100))","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ave_growth_rate <- \n  makeFun( \n    your_expression_here ~ t\n    )\ndt_ave_growth_rate <- \n  D(\n    ave_growth_rate(t) ~ t\n    )\nslice_plot(ave_growth_rate(t) ~ t, \n           domain(t = 0:100)\n           )\nslice_plot(dt_ave_growth_rate(t) ~ t, \n           domain(t = 0:100)\n           )","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"A <- makeFun(\n  2*(V - 4*pi*r^3/3)/r + 4*pi*r^2 ~ r, \n  V = 1000000\n  )\nslice_plot(\n  A(r) ~ r, \n  domain(r=55:70)\n  ) |>\n  gf_labs(y=\"Surface area of tank (square cm)\")","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1634,7 +1668,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1797,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1805,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1880,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1975,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2190,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2311,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2982,14 +2635,16 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-calf-bring-pants" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> &nbsp;</p>
 <ol type="1">
 <li>Consider the function <span class="math inline">\(f(x) \equiv x^3\)</span>. Confirm that the value of the derivative <span class="math inline">\(\partial_x f(x = 0)\)</span> and so <span class="math inline">\(x^\star = 0\)</span> is a critical point. Which sort of critical point is <span class="math inline">\(x^\star=0\)</span>? (Hint: Draw the graph of <span class="math inline">\(f(x)\)</span> near <span class="math inline">\(x=0\)</span> to see what’s going on.)</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="An argmax" id="calf-bring-pants-1-1" w="19" name="calf-bring-pants-1" hint="But $f(0) < f(x > 0)$, so $x^\star=0$ cannot be an argmax." show_hints="TRUE"> An argmax &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="An argmin" id="calf-bring-pants-1-2" w="19" name="calf-bring-pants-1" hint="But $f(x < 0) < f(0)$, so $x^\star=0$ cannot be an argmin." show_hints="TRUE"> An argmin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Neither" id="calf-bring-pants-1-3" w="29" name="calf-bring-pants-1" hint="Excellent!" show_hints="TRUE"> Neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="calf-bring-pants-1" id="calf-bring-pants-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="An argmax" id="calf-bring-pants-1-1" w="3" name="calf-bring-pants-1" hint="But $f(0) < f(x > 0)$, so $x^\star=0$ cannot be an argmax." show_hints="TRUE"> An argmax &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="An argmin" id="calf-bring-pants-1-2" w="7" name="calf-bring-pants-1" hint="But $f(x < 0) < f(0)$, so $x^\star=0$ cannot be an argmin." show_hints="TRUE"> An argmin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Neither" id="calf-bring-pants-1-3" w="8" name="calf-bring-pants-1" hint="Yes!" show_hints="TRUE"> Neither &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="calf-bring-pants-1" id="calf-bring-pants-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="calf-bring-pants-1-hintarea">question id: calf-bring-pants-1</small></p>
 </div>
 </div>
@@ -2997,14 +2652,14 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>Still working with the function <span class="math inline">\(f(x) \equiv x^3\)</span>, find the value of the second-derivative <span class="math inline">\(\partial_{xx} f(x^\star)\)</span> evaluated at the critical point <span class="math inline">\(x = x^\star = 0\)</span>. Which of these is <span class="math inline">\(\partial_{xx} f( x=0)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Negative" id="calf-bring-pants-2-1" w="7" name="calf-bring-pants-2" hint="But you established in the previous exercise that the critical point $x^\star=0$ is neither an argmin nor wan argmax." show_hints="TRUE"> Negative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Positive" id="calf-bring-pants-2-2" w="3" name="calf-bring-pants-2" hint="But you established in the previous exercise that the critical point $x^\star=0$ is neither an argmin nor wan argmax." show_hints="TRUE"> Positive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Zero" id="calf-bring-pants-2-3" w="14" name="calf-bring-pants-2" hint="Right" show_hints="TRUE"> Zero &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="calf-bring-pants-2" id="calf-bring-pants-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Negative" id="calf-bring-pants-2-1" w="19" name="calf-bring-pants-2" hint="But you established in the previous exercise that the critical point $x^\star=0$ is neither an argmin nor wan argmax." show_hints="TRUE"> Negative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Positive" id="calf-bring-pants-2-2" w="3" name="calf-bring-pants-2" hint="But you established in the previous exercise that the critical point $x^\star=0$ is neither an argmin nor wan argmax." show_hints="TRUE"> Positive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Zero" id="calf-bring-pants-2-3" w="18" name="calf-bring-pants-2" hint="Right." show_hints="TRUE"> Zero &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="calf-bring-pants-2" id="calf-bring-pants-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="calf-bring-pants-2-hintarea">question id: calf-bring-pants-2</small></p>
 </div>
 </div>
 </div>
 <div id="exr-duck-tell-laundry" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10</strong></span> We’d like to make a folded cardboard box in the most efficient way possible. As you know, cardboard boxes have four sides as well as eight flaps, four for the top and four for the bottom. The flaps are arranged to provide <em>double coverage</em>; you fold the flaps from one direction and then fold over them the flaps from the other direction.</p>
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> We’d like to make a folded cardboard box in the most efficient way possible. As you know, cardboard boxes have four sides as well as eight flaps, four for the top and four for the bottom. The flaps are arranged to provide <em>double coverage</em>; you fold the flaps from one direction and then fold over them the flaps from the other direction.</p>
 <div class="{fig-folding-box}">
 <p><img src="www/folding-box.png" class="img-fluid"> The diagram depicts the box sides and flaps laid out on a flat piece of cardboard. The flaps are shaded with diagonal lines. The formulas give the areas of various rectangles on the sheet.</p>
 </div>
@@ -3015,19 +2670,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$2 h(w + d ... ) + 4 w d$" id="duck-tell-laundry-1-1" w="18" name="duck-tell-laundry-1" hint="Right" show_hints="TRUE"> <span class="math inline">\(2 h(w + d) + 4 w d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$2 h(w + d ... ) + 4 w d$" id="duck-tell-laundry-1-1" w="8" name="duck-tell-laundry-1" hint="Score!" show_hints="TRUE"> <span class="math inline">\(2 h(w + d) + 4 w d\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$4 h(w + d ...  + 2 w d$ " id="duck-tell-laundry-1-2" w="19" name="duck-tell-laundry-1" hint="wrong" show_hints="TRUE"> <span class="math inline">\(4 h(w + d) + 2 w d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$4 h(w + d ...  + 2 w d$ " id="duck-tell-laundry-1-2" w="23" name="duck-tell-laundry-1" hint="Incorrect choice." show_hints="TRUE"> <span class="math inline">\(4 h(w + d) + 2 w d\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$2 h(w + d ...  + 8 w d$ " id="duck-tell-laundry-1-3" w="87" name="duck-tell-laundry-1" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(2 h(w + d) + 8 w d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$2 h(w + d ...  + 8 w d$ " id="duck-tell-laundry-1-3" w="7" name="duck-tell-laundry-1" hint="Boo!" show_hints="TRUE"> <span class="math inline">\(2 h(w + d) + 8 w d\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$4 h(w + d ...  + 4 w d$ " id="duck-tell-laundry-1-4" w="23" name="duck-tell-laundry-1" hint="wrong" show_hints="TRUE"> <span class="math inline">\(4 h(w + d) + 4 w d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$4 h(w + d ...  + 4 w d$ " id="duck-tell-laundry-1-4" w="87" name="duck-tell-laundry-1" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(4 h(w + d) + 4 w d\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-1" id="duck-tell-laundry-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-1-hintarea">question id: duck-tell-laundry-1</small></p>
 </div>
 </div>
@@ -3037,19 +2692,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h(w + d)/ ...  w d^2/h$ " id="duck-tell-laundry-2-1" w="3" name="duck-tell-laundry-2" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(h(w + d)/d + w d^2/h\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h(w + d)/ ...  w d^2/h$ " id="duck-tell-laundry-2-1" w="32" name="duck-tell-laundry-2" hint="Incorrect." show_hints="TRUE"> <span class="math inline">\(h(w + d)/d + w d^2/h\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h(w + d) + w h d$" id="duck-tell-laundry-2-2" w="35" name="duck-tell-laundry-2" hint="Yes This formula is not dimensionally consistent" show_hints="TRUE"> <span class="math inline">\(h(w + d) + w h d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h(w + d) + w h d$" id="duck-tell-laundry-2-2" w="18" name="duck-tell-laundry-2" hint="Yes This formula is not dimensionally consistent" show_hints="TRUE"> <span class="math inline">\(h(w + d) + w h d\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h(w + d)  ...  w^2 h/d$ " id="duck-tell-laundry-2-3" w="3" name="duck-tell-laundry-2" hint="incorrect choice" show_hints="TRUE"> <span class="math inline">\(h(w + d) + w^2 h/d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h(w + d)  ...  w^2 h/d$ " id="duck-tell-laundry-2-3" w="87" name="duck-tell-laundry-2" hint="Not on target." show_hints="TRUE"> <span class="math inline">\(h(w + d) + w^2 h/d\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h(w^2/d + ... d) + d^2$ " id="duck-tell-laundry-2-4" w="7" name="duck-tell-laundry-2" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(h(w^2/d + d) + d^2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h(w^2/d + ... d) + d^2$ " id="duck-tell-laundry-2-4" w="23" name="duck-tell-laundry-2" hint="Untrue!" show_hints="TRUE"> <span class="math inline">\(h(w^2/d + d) + d^2\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-2" id="duck-tell-laundry-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-2-hintarea">question id: duck-tell-laundry-2</small></p>
 </div>
 </div>
@@ -3061,19 +2716,19 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$2 V(w + d ... d + 4 w d$" id="duck-tell-laundry-3-1" w="5" name="duck-tell-laundry-3" hint="Yes" show_hints="TRUE"> <span class="math inline">\(2 V(w + d)/wd + 4 w d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$2 V(w + d ... d + 4 w d$" id="duck-tell-laundry-3-1" w="29" name="duck-tell-laundry-3" hint="Right on the nose!" show_hints="TRUE"> <span class="math inline">\(2 V(w + d)/wd + 4 w d\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$V(w + d)/ ...  + 4 w d$ " id="duck-tell-laundry-3-2" w="7" name="duck-tell-laundry-3" hint="no" show_hints="TRUE"> <span class="math inline">\(V(w + d)/w + V(w+d)/d  + 4 w d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$V(w + d)/ ...  + 4 w d$ " id="duck-tell-laundry-3-2" w="32" name="duck-tell-laundry-3" hint="No." show_hints="TRUE"> <span class="math inline">\(V(w + d)/w + V(w+d)/d  + 4 w d\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$2 w d (w  ...  + 4 w d$ " id="duck-tell-laundry-3-3" w="23" name="duck-tell-laundry-3" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(2 w d (w + d)/V + 4 w d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$2 w d (w  ...  + 4 w d$ " id="duck-tell-laundry-3-3" w="19" name="duck-tell-laundry-3" hint="Not quite right." show_hints="TRUE"> <span class="math inline">\(2 w d (w + d)/V + 4 w d\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$2 (w + d) ...  4 V w d$ " id="duck-tell-laundry-3-4" w="19" name="duck-tell-laundry-3" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(2 (w + d)/wd + 4 V w d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$2 (w + d) ...  4 V w d$ " id="duck-tell-laundry-3-4" w="32" name="duck-tell-laundry-3" hint="Not on target." show_hints="TRUE"> <span class="math inline">\(2 (w + d)/wd + 4 V w d\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-3" id="duck-tell-laundry-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-3-hintarea">question id: duck-tell-laundry-3</small></p>
 </div>
 </div>
@@ -3084,53 +2739,42 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-fc2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<pre><code>:::
-
-When you draw the contour plot, you will see a broad area near the center inside the contour at area = 9.5. Towards the upper-right and lower-left corners of the plot frame are contours at higher levels of area.
-
-4. The spacing between the contours in the corners is tight, but there is no similarly spaced contour inside the region delimited by the contour at area=9.5. Why not?
-
-::: {.cell show_hints='true'}
-&lt;p&gt;
-  &lt;input type="radio" class="devoirs-mcq" value="We didn&amp;#39;t  ... nside 9.5." id="duck-tell-laundry-4-1" w="7" name="duck-tell-laundry-4" hint="We didn&amp;#39;t ask, indeed. And we didn&amp;#39;t ask for any of the other contours specifically, yet they appear in the graph." show_hints="TRUE"/&gt;
-  We didn't ask for contours inside 9.5.
-  
-&lt;/p&gt;
-&lt;p&gt;
-  &lt;input type="radio" class="devoirs-mcq" value="The functi ... etty flat." id="duck-tell-laundry-4-2" w="19" name="duck-tell-laundry-4" hint="Almost right!" show_hints="TRUE"/&gt;
-  The function shape inside the 9.5 contour is the top of a bowl, so it is pretty flat.
-  
-&lt;/p&gt;
-&lt;p&gt;
-  &lt;input type="radio" class="devoirs-mcq" value="The functi ... etty flat." id="duck-tell-laundry-4-3" w="14" name="duck-tell-laundry-4" hint="Correct" show_hints="TRUE"/&gt;
-  The function shape inside the 9.5 contour is the bottom of a bowl, so it is pretty flat.
-  
-&lt;/p&gt;
-&lt;p&gt;
-  &lt;input type="radio" class="devoirs-mcq" value="All the po ... me height." id="duck-tell-laundry-4-4" w="23" name="duck-tell-laundry-4" hint="The function $C(w,d)$ is infinitely differentiable so it is not possible to make a sudden shift from a sloped form to one that is dead flat." show_hints="TRUE"/&gt;
-  All the points inside the 9.5 contour are at the same height.
-  
-&lt;/p&gt;
-&lt;input type="radio" class="devoirs-mcq" name="duck-tell-laundry-4" id="duck-tell-laundry-4.null" style="display: none;" w="skipped" checked=""/&gt;
-&lt;div&gt;
-  &lt;small style="color: grey;" id="duck-tell-laundry-4-hintarea"&gt;question id: duck-tell-laundry-4&lt;/small&gt;
-&lt;/div&gt;
-:::
-
-
-Use @lst-fc2-1 to place contours at 10, 9.5, 9.4. You can do this by replacing the argument `contours_at = NULL` with this:
-
-```r
-contours_at = c(10, 9.5, 9.4))</code></pre>
+</div>
+</figure>
+</div>
+<p>When you draw the contour plot, you will see a broad area near the center inside the contour at area = 9.5. Towards the upper-right and lower-left corners of the plot frame are contours at higher levels of area.</p>
+<ol start="4" type="1">
+<li>The spacing between the contours in the corners is tight, but there is no similarly spaced contour inside the region delimited by the contour at area=9.5. Why not?</li>
+</ol>
+<div class="cell" data-show_hints="true">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="We didn't  ... nside 9.5." id="duck-tell-laundry-4-1" w="7" name="duck-tell-laundry-4" hint="We didn't ask, indeed. And we didn't ask for any of the other contours specifically, yet they appear in the graph." show_hints="TRUE"> We didn’t ask for contours inside 9.5.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The functi ... etty flat." id="duck-tell-laundry-4-2" w="3" name="duck-tell-laundry-4" hint="Almost right!" show_hints="TRUE"> The function shape inside the 9.5 contour is the top of a bowl, so it is pretty flat.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="The functi ... etty flat." id="duck-tell-laundry-4-3" w="20" name="duck-tell-laundry-4" hint="Score!" show_hints="TRUE"> The function shape inside the 9.5 contour is the bottom of a bowl, so it is pretty flat.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="All the po ... me height." id="duck-tell-laundry-4-4" w="23" name="duck-tell-laundry-4" hint="The function $C(w,d)$ is infinitely differentiable so it is not possible to make a sudden shift from a sloped form to one that is dead flat." show_hints="TRUE"> All the points inside the 9.5 contour are at the same height.</p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="duck-tell-laundry-4" id="duck-tell-laundry-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="duck-tell-laundry-4-hintarea">question id: duck-tell-laundry-4</small></p>
+</div>
+</div>
+<p>Use <a href="#lst-fc2-1" class="quarto-xref">Active R chunk&nbsp;<span>1</span></a> to place contours at 10, 9.5, 9.4. You can do this by replacing the argument <code>contours_at = NULL</code> with this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>contours_at <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="fl">9.5</span>, <span class="fl">9.4</span>)<span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Add more contours to build a fence tighter and tighter around the argmin. When the fenced region is tiny, you can read off the min from the contour label. (Remember, the “argmin” is the value of the inputs <span class="math inline">\(w\)</span> and <span class="math inline">\(d\)</span> at which the function is minimized. The “min” is the value of the function at the argmin.) But watch out as you do this. If you ask for a contour at a level that is lower than the min, it will simply not be drawn. Or, more precisely, there are no inputs that produce an output that is lower than the min. So you may have to change the interval between levels (e.g.&nbsp;10, 9.5, 9.4, …) to home in on the argmin.</p>
 <ol start="5" type="1">
 <li>The following are values for the output of the function where you might be able to draw a contour. Which one of the values is the smallest for which a contour appears?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="9.1 " id="duck-tell-laundry-5-1" w="23" name="duck-tell-laundry-5" hint="Better luck next time." show_hints="FALSE"> 9.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9.05 " id="duck-tell-laundry-5-2" w="87" name="duck-tell-laundry-5" hint="Sorry!" show_hints="FALSE"> 9.05 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9.01 " id="duck-tell-laundry-5-3" w="3" name="duck-tell-laundry-5" hint="no" show_hints="FALSE"> 9.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9.005" id="duck-tell-laundry-5-4" w="20" name="duck-tell-laundry-5" hint="Nice." show_hints="FALSE"> 9.005 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9.0005 " id="duck-tell-laundry-5-5" w="7" name="duck-tell-laundry-5" hint="wide of the mark" show_hints="FALSE"> 9.0005 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="duck-tell-laundry-5-6" w="23" name="duck-tell-laundry-5" hint="Sorry!" show_hints="FALSE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-5" id="duck-tell-laundry-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="9.1 " id="duck-tell-laundry-5-1" w="32" name="duck-tell-laundry-5" hint="Incorrect choice." show_hints="FALSE"> 9.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9.05 " id="duck-tell-laundry-5-2" w="87" name="duck-tell-laundry-5" hint="Sorry!" show_hints="FALSE"> 9.05 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9.01 " id="duck-tell-laundry-5-3" w="7" name="duck-tell-laundry-5" hint="Incorrect." show_hints="FALSE"> 9.01 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9.005" id="duck-tell-laundry-5-4" w="14" name="duck-tell-laundry-5" hint="A hit!" show_hints="FALSE"> 9.005 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9.0005 " id="duck-tell-laundry-5-5" w="23" name="duck-tell-laundry-5" hint="Wrong." show_hints="FALSE"> 9.0005 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="duck-tell-laundry-5-6" w="7" name="duck-tell-laundry-5" hint="Better luck next time." show_hints="FALSE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-5" id="duck-tell-laundry-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-5-hintarea">question id: duck-tell-laundry-5</small></p>
 </div>
 </div>
@@ -3138,8 +2782,8 @@ contours_at = c(10, 9.5, 9.4))</code></pre>
 <li>From your contour plot, read off the values of <span class="math inline">\(w\)</span> and <span class="math inline">\(d\)</span> that produce the minimum surface area for a 1.3 cubic-foot box. What are they? (Hint: You may need to zoom in on the domain to get the precision needed to answer the question.)</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$w \approx ... pprox 0.9$" id="duck-tell-laundry-6-1" w="41" name="duck-tell-laundry-6" hint="Good job!" show_hints="FALSE"> <span class="math inline">\(w \approx 0.9; d\approx 0.9\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$w \approx ... prox 0.6$ " id="duck-tell-laundry-6-2" w="7" name="duck-tell-laundry-6" hint="wide of the mark" show_hints="FALSE"> <span class="math inline">\(w \approx 0.9; d\approx 0.6\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$w \approx ... prox 0.9$ " id="duck-tell-laundry-6-3" w="87" name="duck-tell-laundry-6" hint="wrong" show_hints="FALSE"> <span class="math inline">\(w \approx 0.5; d\approx 0.9\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$w \approx ... prox 0.9$ " id="duck-tell-laundry-6-4" w="32" name="duck-tell-laundry-6" hint="wrong" show_hints="FALSE"> <span class="math inline">\(w \approx 1.9; d\approx 0.9\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-6" id="duck-tell-laundry-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$w \approx ... pprox 0.9$" id="duck-tell-laundry-6-1" w="35" name="duck-tell-laundry-6" hint="A win!" show_hints="FALSE"> <span class="math inline">\(w \approx 0.9; d\approx 0.9\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$w \approx ... prox 0.6$ " id="duck-tell-laundry-6-2" w="32" name="duck-tell-laundry-6" hint="Try again!" show_hints="FALSE"> <span class="math inline">\(w \approx 0.9; d\approx 0.6\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$w \approx ... prox 0.9$ " id="duck-tell-laundry-6-3" w="7" name="duck-tell-laundry-6" hint="Untrue!" show_hints="FALSE"> <span class="math inline">\(w \approx 0.5; d\approx 0.9\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$w \approx ... prox 0.9$ " id="duck-tell-laundry-6-4" w="32" name="duck-tell-laundry-6" hint="You're mistaken" show_hints="FALSE"> <span class="math inline">\(w \approx 1.9; d\approx 0.9\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-6" id="duck-tell-laundry-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-6-hintarea">question id: duck-tell-laundry-6</small></p>
 </div>
 </div>
@@ -3150,19 +2794,19 @@ contours_at = c(10, 9.5, 9.4))</code></pre>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="On a conto ... e contour." id="duck-tell-laundry-7-1" w="5" name="duck-tell-laundry-7" hint="right-o" show_hints="TRUE"> On a contour the gradient vector is perpendicular (“orthogonal”) to the contour.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="On a conto ... e contour." id="duck-tell-laundry-7-1" w="20" name="duck-tell-laundry-7" hint="Right!" show_hints="TRUE"> On a contour the gradient vector is perpendicular (“orthogonal”) to the contour.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="On a conto ... o length. " id="duck-tell-laundry-7-2" w="87" name="duck-tell-laundry-7" hint="Better luck next time." show_hints="TRUE"> On a contour, the gradient vector has zero length.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="On a conto ... o length. " id="duck-tell-laundry-7-2" w="32" name="duck-tell-laundry-7" hint="No." show_hints="TRUE"> On a contour, the gradient vector has zero length.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="There is n ... n itself. " id="duck-tell-laundry-7-3" w="87" name="duck-tell-laundry-7" hint="wrong" show_hints="TRUE"> There is no definite relationship; it depends on the function itself.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="There is n ... n itself. " id="duck-tell-laundry-7-3" w="7" name="duck-tell-laundry-7" hint="Not quite." show_hints="TRUE"> There is no definite relationship; it depends on the function itself.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="On a conto ... ur level. " id="duck-tell-laundry-7-4" w="7" name="duck-tell-laundry-7" hint="wrong" show_hints="TRUE"> On a contour, the gradient vector has a length proportional to the contour level.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="On a conto ... ur level. " id="duck-tell-laundry-7-4" w="32" name="duck-tell-laundry-7" hint="Try again!" show_hints="TRUE"> On a contour, the gradient vector has a length proportional to the contour level.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-7" id="duck-tell-laundry-7.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-7-hintarea">question id: duck-tell-laundry-7</small></p>
 </div>
 </div>
@@ -3171,19 +2815,19 @@ contours_at = c(10, 9.5, 9.4))</code></pre>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The gradie ... ue North. " id="duck-tell-laundry-8-1" w="3" name="duck-tell-laundry-8" hint="Not quite right" show_hints="TRUE"> The gradient points due North.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The gradie ... ue North. " id="duck-tell-laundry-8-1" w="23" name="duck-tell-laundry-8" hint="Boo!" show_hints="TRUE"> The gradient points due North.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The length ...  maximal. " id="duck-tell-laundry-8-2" w="3" name="duck-tell-laundry-8" hint="Not quite right" show_hints="TRUE"> The length of the gradient vector is maximal.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The length ...  maximal. " id="duck-tell-laundry-8-2" w="87" name="duck-tell-laundry-8" hint="Not so!" show_hints="TRUE"> The length of the gradient vector is maximal.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The length ... s minimal." id="duck-tell-laundry-8-3" w="32" name="duck-tell-laundry-8" hint="You can give a better description than this." show_hints="TRUE"> The length of the gradient vector is minimal.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The length ... s minimal." id="duck-tell-laundry-8-3" w="23" name="duck-tell-laundry-8" hint="You can give a better description than this." show_hints="TRUE"> The length of the gradient vector is minimal.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The length ... r is zero." id="duck-tell-laundry-8-4" w="20" name="duck-tell-laundry-8" hint="right-o" show_hints="TRUE"> The length of the gradient vector is zero.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The length ... r is zero." id="duck-tell-laundry-8-4" w="20" name="duck-tell-laundry-8" hint="You've got it!" show_hints="TRUE"> The length of the gradient vector is zero.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-8" id="duck-tell-laundry-8.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-8-hintarea">question id: duck-tell-laundry-8</small></p>
 </div>
 </div>
@@ -3194,19 +2838,19 @@ contours_at = c(10, 9.5, 9.4))</code></pre>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... ^2} - 4 w$" id="duck-tell-laundry-9-1" w="8" name="duck-tell-laundry-9" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(\partial_w A = -2 \frac{V}{w^2}+ 4 d, \ \ \partial_d A = -2 \frac{V}{d^2} - 4 w\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... ^2} - 4 w$" id="duck-tell-laundry-9-1" w="29" name="duck-tell-laundry-9" hint="Bullseye!" show_hints="TRUE"> <span class="math inline">\(\partial_w A = -2 \frac{V}{w^2}+ 4 d, \ \ \partial_d A = -2 \frac{V}{d^2} - 4 w\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... 2} - 4 w$ " id="duck-tell-laundry-9-2" w="3" name="duck-tell-laundry-9" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(\partial_w A = -2 \frac{V}{d^2}+ 4 d, \ \ \partial_d A = -2 \frac{V}{w^2} - 4 w\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... 2} - 4 w$ " id="duck-tell-laundry-9-2" w="32" name="duck-tell-laundry-9" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(\partial_w A = -2 \frac{V}{d^2}+ 4 d, \ \ \partial_d A = -2 \frac{V}{w^2} - 4 w\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... 2} - 4 d$ " id="duck-tell-laundry-9-3" w="19" name="duck-tell-laundry-9" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(\partial_w A = -2 \frac{V}{w^2}+ 4 w, \ \ \partial_d A = -2 \frac{V}{d^2} - 4 d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... 2} - 4 d$ " id="duck-tell-laundry-9-3" w="19" name="duck-tell-laundry-9" hint="You might think so, but ..." show_hints="TRUE"> <span class="math inline">\(\partial_w A = -2 \frac{V}{w^2}+ 4 w, \ \ \partial_d A = -2 \frac{V}{d^2} - 4 d\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... w} - 4 d$ " id="duck-tell-laundry-9-4" w="87" name="duck-tell-laundry-9" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(\partial_w A = -2 \frac{V}{d w}+ 4 w, \ \ \partial_d A = -2 \frac{V}{d w} - 4 d\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\partial_ ... w} - 4 d$ " id="duck-tell-laundry-9-4" w="3" name="duck-tell-laundry-9" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(\partial_w A = -2 \frac{V}{d w}+ 4 w, \ \ \partial_d A = -2 \frac{V}{d w} - 4 d\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-9" id="duck-tell-laundry-9.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-9-hintarea">question id: duck-tell-laundry-9</small></p>
 </div>
 </div>
@@ -3214,8 +2858,8 @@ contours_at = c(10, 9.5, 9.4))</code></pre>
 <li>If the lengths <span class="math inline">\(w\)</span>, <span class="math inline">\(d\)</span>, <span class="math inline">\(h\)</span> are measured in <em>feet</em>, what unit will <span class="math inline">\(\partial_w A\)</span> be in?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="feet" id="duck-tell-laundry-10-1" w="29" name="duck-tell-laundry-10" hint="Right. The area will be in square feet so the derivative of area with respect to $w$ will be in square feet per foot, that is, feet." show_hints="TRUE"> feet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="square feet " id="duck-tell-laundry-10-2" w="32" name="duck-tell-laundry-10" hint="Better luck next time." show_hints="TRUE"> square feet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="cubic feet " id="duck-tell-laundry-10-3" w="19" name="duck-tell-laundry-10" hint="wrong" show_hints="TRUE"> cubic feet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/feet " id="duck-tell-laundry-10-4" w="19" name="duck-tell-laundry-10" hint="Not quite right" show_hints="TRUE"> 1/feet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="dimensionless " id="duck-tell-laundry-10-5" w="23" name="duck-tell-laundry-10" hint="wrong" show_hints="TRUE"> dimensionless &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-10" id="duck-tell-laundry-10.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="feet" id="duck-tell-laundry-10-1" w="20" name="duck-tell-laundry-10" hint="The area will be in square feet so the derivative of area with respect to $w$ will be in square feet per foot, that is, feet." show_hints="TRUE"> feet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="square feet " id="duck-tell-laundry-10-2" w="87" name="duck-tell-laundry-10" hint="Wrong." show_hints="TRUE"> square feet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="cubic feet " id="duck-tell-laundry-10-3" w="3" name="duck-tell-laundry-10" hint="Untrue!" show_hints="TRUE"> cubic feet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1/feet " id="duck-tell-laundry-10-4" w="3" name="duck-tell-laundry-10" hint="Not quite." show_hints="TRUE"> 1/feet &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="dimensionless " id="duck-tell-laundry-10-5" w="3" name="duck-tell-laundry-10" hint="No." show_hints="TRUE"> dimensionless &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-10" id="duck-tell-laundry-10.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-10-hintarea">question id: duck-tell-laundry-10</small></p>
 </div>
 </div>
@@ -3226,16 +2870,16 @@ contours_at = c(10, 9.5, 9.4))</code></pre>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$w^\star = ... rt[3]{2}}$" id="duck-tell-laundry-11-1" w="16" name="duck-tell-laundry-11" hint="You're right" show_hints="TRUE"> <span class="math inline">\(w^\star = \frac{\sqrt[3]{V}}{\sqrt[3]{2}}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$w^\star = ... rt[3]{2}}$" id="duck-tell-laundry-11-1" w="41" name="duck-tell-laundry-11" hint="Yes!" show_hints="TRUE"> <span class="math inline">\(w^\star = \frac{\sqrt[3]{V}}{\sqrt[3]{2}}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$w^\star = ... t[3]{3}}$ " id="duck-tell-laundry-11-2" w="32" name="duck-tell-laundry-11" hint="You're right" show_hints="TRUE"> <span class="math inline">\(w^\star = \frac{\sqrt[3]{V}}{\sqrt[3]{3}}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$w^\star = ... t[3]{3}}$ " id="duck-tell-laundry-11-2" w="32" name="duck-tell-laundry-11" hint="Spot on!" show_hints="TRUE"> <span class="math inline">\(w^\star = \frac{\sqrt[3]{V}}{\sqrt[3]{3}}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$w^\star = ... t[2]{3}}$ " id="duck-tell-laundry-11-3" w="3" name="duck-tell-laundry-11" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(w^\star = \frac{\sqrt[2]{V}}{\sqrt[2]{3}}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$w^\star = ... t[2]{3}}$ " id="duck-tell-laundry-11-3" w="23" name="duck-tell-laundry-11" hint="A hit!" show_hints="TRUE"> <span class="math inline">\(w^\star = \frac{\sqrt[2]{V}}{\sqrt[2]{3}}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-11" id="duck-tell-laundry-11.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-11-hintarea">question id: duck-tell-laundry-11</small></p>
 </div>
 </div>
@@ -3246,19 +2890,19 @@ contours_at = c(10, 9.5, 9.4))</code></pre>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h^\star = ... qrt[3]{V}$" id="duck-tell-laundry-12-1" w="14" name="duck-tell-laundry-12" hint="Nice." show_hints="TRUE"> <span class="math inline">\(h^\star = 2^{2/3} \sqrt[3]{V}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h^\star = ... qrt[3]{V}$" id="duck-tell-laundry-12-1" w="16" name="duck-tell-laundry-12" hint="Right!" show_hints="TRUE"> <span class="math inline">\(h^\star = 2^{2/3} \sqrt[3]{V}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h^\star = ... rt[3]{V}$ " id="duck-tell-laundry-12-2" w="19" name="duck-tell-laundry-12" hint="Correct" show_hints="TRUE"> <span class="math inline">\(h^\star =  2^{1/3} \sqrt[3]{V}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h^\star = ... rt[3]{V}$ " id="duck-tell-laundry-12-2" w="32" name="duck-tell-laundry-12" hint="Right-O!" show_hints="TRUE"> <span class="math inline">\(h^\star =  2^{1/3} \sqrt[3]{V}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h^\star = ... rt[3]{V}$ " id="duck-tell-laundry-12-3" w="19" name="duck-tell-laundry-12" hint="Correct" show_hints="TRUE"> <span class="math inline">\(h^\star =  3^{2/3} \sqrt[3]{V}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h^\star = ... rt[3]{V}$ " id="duck-tell-laundry-12-3" w="23" name="duck-tell-laundry-12" hint="Spot on!" show_hints="TRUE"> <span class="math inline">\(h^\star =  3^{2/3} \sqrt[3]{V}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h^\star = ... rt[3]{V}$ " id="duck-tell-laundry-12-4" w="23" name="duck-tell-laundry-12" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(h^\star =  3^{1/3} \sqrt[3]{V}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h^\star = ... rt[3]{V}$ " id="duck-tell-laundry-12-4" w="7" name="duck-tell-laundry-12" hint="Score!" show_hints="TRUE"> <span class="math inline">\(h^\star =  3^{1/3} \sqrt[3]{V}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-12" id="duck-tell-laundry-12.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-12-hintarea">question id: duck-tell-laundry-12</small></p>
 </div>
 </div>
@@ -3268,115 +2912,20 @@ contours_at = c(10, 9.5, 9.4))</code></pre>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="People don ... ect cubes." id="duck-tell-laundry-13-1" w="32" name="duck-tell-laundry-13" hint="Nice joke! But let's get real now. The objective was to minimize the amount of cardboard, not to make people happy." show_hints="TRUE"> People don’t like using boxes that are perfect cubes.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="People don ... ect cubes." id="duck-tell-laundry-13-1" w="23" name="duck-tell-laundry-13" hint="Nice joke! But let's get real now. The objective was to minimize the amount of cardboard, not to make people happy." show_hints="TRUE"> People don’t like using boxes that are perfect cubes.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h$ multip ... face area." id="duck-tell-laundry-13-2" w="3" name="duck-tell-laundry-13" hint="Not true. There are terms $h w$ and $h d$ in the area formula." show_hints="TRUE"> <span class="math inline">\(h\)</span> multiplies both <span class="math inline">\(w\)</span> and <span class="math inline">\(d\)</span>, but not <em>vice versa</em>, in the formula for surface area.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h$ multip ... face area." id="duck-tell-laundry-13-2" w="7" name="duck-tell-laundry-13" hint="Not true. There are terms $h w$ and $h d$ in the area formula." show_hints="TRUE"> <span class="math inline">\(h\)</span> multiplies both <span class="math inline">\(w\)</span> and <span class="math inline">\(d\)</span>, but not <em>vice versa</em>, in the formula for surface area.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The flaps  ... ardboard. " id="duck-tell-laundry-13-3" w="32" name="duck-tell-laundry-13" hint="Not quite right" show_hints="TRUE"> The flaps need to get longer as <span class="math inline">\(h\)</span> gets longer, so smaller <span class="math inline">\(h\)</span> helps to minimize the amount of cardboard.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The flaps  ... ardboard. " id="duck-tell-laundry-13-3" w="3" name="duck-tell-laundry-13" hint="Sorry!" show_hints="TRUE"> The flaps need to get longer as <span class="math inline">\(h\)</span> gets longer, so smaller <span class="math inline">\(h\)</span> helps to minimize the amount of cardboard.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The flap-l ... preferred." id="duck-tell-laundry-13-4" w="14" name="duck-tell-laundry-13" hint="Good job!" show_hints="TRUE"> The flap-length does not depend on <span class="math inline">\(h\)</span>, only on <span class="math inline">\(w d\)</span>. So we can make <span class="math inline">\(h\)</span> larger without contributing to the “wasted” area of the doubling over of flaps. The flaps get smaller as <span class="math inline">\(wd\)</span> gets smaller, so larger <span class="math inline">\(h\)</span> is preferred.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The flap-l ... preferred." id="duck-tell-laundry-13-4" w="16" name="duck-tell-laundry-13" hint="Good job!" show_hints="TRUE"> The flap-length does not depend on <span class="math inline">\(h\)</span>, only on <span class="math inline">\(w d\)</span>. So we can make <span class="math inline">\(h\)</span> larger without contributing to the “wasted” area of the doubling over of flaps. The flaps get smaller as <span class="math inline">\(wd\)</span> gets smaller, so larger <span class="math inline">\(h\)</span> is preferred.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="duck-tell-laundry-13" id="duck-tell-laundry-13.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="duck-tell-laundry-13-hintarea">question id: duck-tell-laundry-13</small></p>
-</div>
-</div>
-</div>
-</figure>
-</div>
-<div id="exr-optim-pink" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> If you’re skeptical that a dog might do a calculus problem (as in <a href="#exr-optim-violet" class="quarto-xref">Exercise&nbsp;<span>3</span></a>) before running to fetch a ball, consider the path taken by a photon. “Fermat’s Principle” is that light takes the path of least time. To illustrate, consider the problem of a photon traveling from a point A to a point B, as in the diagram. The shortest path between the two points is a straight line. Along this straight-line path, the time taken by the photon will be the distance divided by the speed of light.</p>
-<p>The diagram shows another path consisting of two segments, one of length <span class="math inline">\(l_1\)</span> and the other <span class="math inline">\(l_2\)</span>. Obviously, the two-segment path is longer than the straight-line path. But according to Fermat’s principle, light “prefers” the longer path if the time taken to traverse it is shorter. This phenomenon is called <strong><em>refraction</em></strong>.</p>
-<div id="fig-optim-pink-refraction" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-optim-pink-refraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="www/1200px-Fermat_Snellius_svg.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-optim-pink-refraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Refraction of light on the path from A to B through a change in medium.
-</figcaption>
-</figure>
-</div>
-<p>The reason the indirect path might be shorter is that the speed of light differs in different physical media. Light traveling in a vacuum famously has a speed of about 300,000 km per second. In air, the speed is smaller by a factor of 1/1.003. In water, the speed is smaller still: the factor is 1/1.3.</p>
-<p>Imagine that the blue zone of the diagram is water and the clear zone air. The time for the photon to travel from point A to B is proportional to <span class="math inline">\(1.003\ l_1 + 1.3\ l_2\)</span>.</p>
-<div id="fig-refraction-optim-pink" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-refraction-optim-pink-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="www/refraction.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-refraction-optim-pink-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2
-</figcaption>
-</figure>
-</div>
-<p>To see the path taken by light, let’s imagine that point A is <span class="math inline">\((x=0, y=10)\)</span> and point B is <span class="math inline">\((x=20, y=-10)\)</span>, and that the boundary between water and air is at <span class="math inline">\(y=0\)</span>. We will place the point P at <span class="math inline">\((x, 0)\)</span>. The total time taken for light to traverse this path is 1.003 dist(A to P) + 1.3 dist(P to B).</p>
-<ol type="1">
-<li>Which of these formulas gives the total time it takes for light to traverse the path from A to P at relative speed 1/1.003 and then the path from P to B at relative speed 1/1.3? A is located at <span class="math inline">\((0, 10)\)</span>, B is located at <span class="math inline">\((20,-10)\)</span>, and P is located at <span class="math inline">\((x, 0)\)</span></li>
-</ol>
-<div class="cell" data-show_hints="true">
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1.003 \sq ... 0 - 0)^2}$" id="optim-pink-1-1" w="14" name="optim-pink-1" hint="Nice." show_hints="TRUE"> <span class="math inline">\(1.003 \sqrt{(x-0)^2 +(0-10)^2}+ 1.3\sqrt{(20-x)^2 + (-10 - 0)^2}\)</span></p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="$\sqrt{(x- ... 0)^2}/1.3$" id="optim-pink-1-2" w="3" name="optim-pink-1" hint="It is true that you divide distance by speed to get time, but here the relative speeds are $1/1.003$ and $1/1.3$." show_hints="TRUE"> <span class="math inline">\(\sqrt{(x-0)^2 +(0-10)^2}/1.003+ \sqrt{(20-x)^2 + (-10 - 0)^2}/1.3\)</span></p>
-<p></p>
-<p>
-</p><p><input type="radio" class="devoirs-mcq" value="$1.003 \sq ... 0 - 0)^2}$" id="optim-pink-1-3" w="87" name="optim-pink-1" hint="This mixes up the x and y coordinates. The distance from A to P is $\sqrt{(x_P - x_A)^2 + (y_P - y_A)^2}$. In this problem, point P is at $(50-x, 0)$." show_hints="TRUE"> <span class="math inline">\(1.003 \sqrt{(x-10)^2 +(0-0)^2}+ 1.3\sqrt{(-10 -x)^2 + (50 - 0)^2}\)</span></p>
-<p></p>
-<input type="radio" class="devoirs-mcq" name="optim-pink-1" id="optim-pink-1.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="optim-pink-1-hintarea">question id: optim-pink-1</small></p>
-</div>
-</div>
-<p>Implement the calculation of <code>total_time()</code> in <a href="#lst-optim-pink" class="quarto-xref">Active R chunk&nbsp;<span>2</span></a>, then use a graph to find the argmin.</p>
-<div id="lst-optim-pink" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-optim-pink-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;2
-</figcaption>
-<div aria-describedby="lst-optim-pink-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</figure>
-</div>
-<ol start="2" type="1">
-<li>What value of <span class="math inline">\(x\)</span> (that is, the argmin) minimizes the travel time of light between points A and B? (Choose the best answer from the slice plot you made in <a href="#lst-optim-pink" class="quarto-xref">Active R chunk&nbsp;<span>2</span></a>)</li>
-</ol>
-<div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="10.52 " id="optim-pink-2-1" w="23" name="optim-pink-2" hint="You're mistaken" show_hints="TRUE"> 10.52 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="11.02 " id="optim-pink-2-2" w="87" name="optim-pink-2" hint="Sorry!" show_hints="TRUE"> 11.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="12.22 " id="optim-pink-2-3" w="19" name="optim-pink-2" hint="incorrect choice" show_hints="TRUE"> 12.22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="12.50" id="optim-pink-2-4" w="8" name="optim-pink-2" hint="Correct" show_hints="TRUE"> 12.50 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="13.21 " id="optim-pink-2-5" w="3" name="optim-pink-2" hint="wrong" show_hints="TRUE"> 13.21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="14.94 " id="optim-pink-2-6" w="87" name="optim-pink-2" hint="Not quite right" show_hints="TRUE"> 14.94 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-pink-2" id="optim-pink-2.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="optim-pink-2-hintarea">question id: optim-pink-2</small></p>
-</div>
-</div>
-<ol start="3" type="1">
-<li>Suppose that instead of being water, the blue area was glass. The speed of light in glass is roughly 1/1.5 times as big as in vacuum. What value of <span class="math inline">\(x\)</span> minimizes the travel time of light between points A and B? (Choose the best answer)</li>
-</ol>
-<div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="13.60" id="optim-pink-3-1" w="29" name="optim-pink-3" hint="Nice." show_hints="TRUE"> 13.60 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="14.58 " id="optim-pink-3-2" w="23" name="optim-pink-3" hint="incorrect choice" show_hints="TRUE"> 14.58 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="14.85 " id="optim-pink-3-3" w="3" name="optim-pink-3" hint="wide of the mark" show_hints="TRUE"> 14.85 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="15.54 " id="optim-pink-3-4" w="32" name="optim-pink-3" hint="Try again!" show_hints="TRUE"> 15.54 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-pink-3" id="optim-pink-3.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="optim-pink-3-hintarea">question id: optim-pink-3</small></p>
-</div>
-</div>
-<ol start="4" type="1">
-<li>At the argmin for <span class="math inline">\(x\)</span> in the travel time, what will be the derivative of travel time with respect to <span class="math inline">\(x\)</span>?</li>
-</ol>
-<div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Positive " id="optim-pink-4-1" w="32" name="optim-pink-4" hint="incorrect choice" show_hints="false"> Positive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Zero" id="optim-pink-4-2" w="29" name="optim-pink-4" hint="Correct" show_hints="false"> Zero &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Negative" id="optim-pink-4-3" w="3" name="optim-pink-4" hint="incorrect choice" show_hints="false"> Negative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-pink-4" id="optim-pink-4.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="optim-pink-4-hintarea">question id: optim-pink-4</small></p>
-</div>
-</div>
-<ol start="5" type="1">
-<li>At the argmin for <span class="math inline">\(x\)</span> in the travel time, what will be the <strong>second derivative</strong> of travel time with respect to <span class="math inline">\(x\)</span>?</li>
-</ol>
-<div class="cell" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Positive " id="optim-pink-5-1" w="14" name="optim-pink-5" hint="Good job!" show_hints="false"> Positive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Zero " id="optim-pink-5-2" w="32" name="optim-pink-5" hint="Sorry!" show_hints="false"> Zero &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Negative" id="optim-pink-5-3" w="32" name="optim-pink-5" hint="incorrect choice" show_hints="false"> Negative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-pink-5" id="optim-pink-5.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="optim-pink-5-hintarea">question id: optim-pink-5</small></p>
 </div>
 </div>
 </div>
@@ -3389,7 +2938,7 @@ Active R chunk&nbsp;2
 <img src="www/swimmers-run.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-calculus-dog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Swimmer’s optimal path to the ball consists of running <span class="math inline">\(x\)</span> meters along the shore, then swimming diagonally to the ball.
+Figure&nbsp;1: Swimmer’s optimal path to the ball consists of running <span class="math inline">\(x\)</span> meters along the shore, then swimming diagonally to the ball.
 </figcaption>
 </figure>
 </div>
@@ -3397,7 +2946,7 @@ Figure&nbsp;3: Swimmer’s optimal path to the ball consists of running <span cl
 <div id="lst-optim-violet" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-optim-violet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;3
+Active R chunk&nbsp;2
 </figcaption>
 <div aria-describedby="lst-optim-violet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div id="qwebr-insertion-location-3"></div>
@@ -3405,58 +2954,162 @@ Active R chunk&nbsp;3
 </div>
 </figure>
 </div>
-<p><code>Time_to_ball()</code> takes one argument, the distance <span class="math inline">\(x\)</span> Swimmer runs down the beach before turning into the water. Complete and use <a href="#lst-optim-violet" class="quarto-xref">Active R chunk&nbsp;<span>3</span></a> to find the distance that calculus-savvy Swimmer runs down the beach before turning into the water, if Swimmer’s goal is to get to the ball as fast as possible.</p>
+<p><code>Time_to_ball()</code> takes one argument, the distance <span class="math inline">\(x\)</span> Swimmer runs down the beach before turning into the water. Complete and use <a href="#lst-optim-violet" class="quarto-xref">Active R chunk&nbsp;<span>2</span></a> to find the distance that calculus-savvy Swimmer runs down the beach before turning into the water, if Swimmer’s goal is to get to the ball as fast as possible.</p>
 <p>What’s the optimal running distance for Swimmer?</p>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="46.75 " id="optim-violet-1-1" w="32" name="optim-violet-1" hint="no" show_hints="TRUE"> 46.75 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="47.5 " id="optim-violet-1-2" w="87" name="optim-violet-1" hint="Not quite right" show_hints="TRUE"> 47.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="48.75" id="optim-violet-1-3" w="41" name="optim-violet-1" hint="Excellent!" show_hints="TRUE"> 48.75 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="49.75 " id="optim-violet-1-4" w="3" name="optim-violet-1" hint="wide of the mark" show_hints="TRUE"> 49.75 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-violet-1" id="optim-violet-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="46.75 " id="optim-violet-1-1" w="3" name="optim-violet-1" hint="Try again!" show_hints="TRUE"> 46.75 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="47.5 " id="optim-violet-1-2" w="19" name="optim-violet-1" hint="Think again." show_hints="TRUE"> 47.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="48.75" id="optim-violet-1-3" w="16" name="optim-violet-1" hint="Right on the nose!" show_hints="TRUE"> 48.75 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="49.75 " id="optim-violet-1-4" w="7" name="optim-violet-1" hint="Better luck next time." show_hints="TRUE"> 49.75 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-violet-1" id="optim-violet-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="optim-violet-1-hintarea">question id: optim-violet-1</small></p>
 </div>
 </div>
 <p><a href="https://abcnews.go.com/Technology/story?id=97628&amp;page=1">Here’s a news story</a> about a mathematician’s dog on the shore of Lake Michigan. It is not plausible that Swimmer has been trained in calculus. Perhaps the way Swimmer solves the running distance problem is simply to graph <code>time_to_ball(x) ~ x</code> over a suitable domain and find the argmax by eye!</p>
 </div>
-<div id="exr-optim-purple" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4</strong></span> &nbsp;</p>
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Figure 1 shows a lens together with a source and target point. Light passing through the lens is refracted. The path followed by the light will be the one with the shortest time of transit from source to target.</p>
-<p>The light enters the lens at some point <span class="math inline">\(P_{in} = (x_{in}\ , \ -\text{Lens}(x_{in}))\)</span> and leaves at <span class="math inline">\(P_{out} = (x_{out}\ ,\  \text{Lens}(x_{out}))\)</span>. We don’t know either <span class="math inline">\(x_{in}\)</span> or <span class="math inline">\(x_{out}\)</span>. but we can find them by optimization.</p>
-<p>To do this, we find the distance from the source to <span class="math inline">\(P_{in}\)</span>, and from <span class="math inline">\(P_{out}\)</span> to the target. These two legs of the route are through air, so the time of transit on each leg is proportional to the refractive index 1.03 times the distance.</p>
-<p>Of course, light also has to travel through the lens. We will make the lens out of glass with a high refractive index, so the transit time will be the distance from <span class="math inline">\(P_{in}\)</span> to <span class="math inline">\(P_{out}\)</span> multiplied by the lens’s refractive index of 1.8.</p>
-<p>The objective function will be the sum of the three legs’ transit times. It is already programmed for you in the sandbox. So is the command to make a contour plot of the output of the objective function over a domain of <span class="math inline">\(x_{in}\)</span> and <span class="math inline">\(x_{out}\)</span>. Finally, the last line in <span class="quarto-unresolved-ref">?lst-optim-purpose</span> draws a picture of the lens and the light path, but you will have to insert the argmins <span class="math inline">\(x_{in}\)</span> and <span class="math inline">\(x_{out}\)</span> that you pick from the contour plot of the objective function. (The <span class="math inline">\(x_{in}\)</span> and <span class="math inline">\(x_{out}\)</span> shown in the initial code of <a href="#lst-optim-purple" class="quarto-xref">Active R chunk&nbsp;<span>4</span></a> are not right!)</p>
-<div id="lst-optim-purple" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-optim-purple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;4
+<div id="exr-optim-pink" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> If you’re skeptical that a dog might do a calculus problem (as in <a href="#exr-optim-violet" class="quarto-xref">Exercise&nbsp;<span>3</span></a>) before running to fetch a ball, consider the path taken by a photon. “Fermat’s Principle” is that light takes the path of least time. To illustrate, consider the problem of a photon traveling from a point A to a point B, as in the diagram. The shortest path between the two points is a straight line. Along this straight-line path, the time taken by the photon will be the distance divided by the speed of light.</p>
+<p>The diagram shows another path consisting of two segments, one of length <span class="math inline">\(l_1\)</span> and the other <span class="math inline">\(l_2\)</span>. Obviously, the two-segment path is longer than the straight-line path. But according to Fermat’s principle, light “prefers” the longer path if the time taken to traverse it is shorter. This phenomenon is called <strong><em>refraction</em></strong>.</p>
+<div id="fig-optim-pink-refraction" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-optim-pink-refraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="www/1200px-Fermat_Snellius_svg.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-optim-pink-refraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Refraction of light on the path from A to B through a change in medium.
 </figcaption>
-<div aria-describedby="lst-optim-purple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-5"></div>
+</figure>
+</div>
+<p>The reason the indirect path might be shorter is that the speed of light differs in different physical media. Light traveling in a vacuum famously has a speed of about 300,000 km per second. In air, the speed is smaller by a factor of 1/1.003. In water, the speed is smaller still: the factor is 1/1.3.</p>
+<p>Imagine that the blue zone of the diagram is water and the clear zone air. The time for the photon to travel from point A to B is proportional to <span class="math inline">\(1.003\ l_1 + 1.3\ l_2\)</span>.</p>
+<div id="fig-refraction-optim-pink" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-refraction-optim-pink-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="www/refraction.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-refraction-optim-pink-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3
+</figcaption>
+</figure>
+</div>
+<p>To see the path taken by light, let’s imagine that point A is <span class="math inline">\((x=0, y=10)\)</span> and point B is <span class="math inline">\((x=20, y=-10)\)</span>, and that the boundary between water and air is at <span class="math inline">\(y=0\)</span>. We will place the point P at <span class="math inline">\((x, 0)\)</span>. The total time taken for light to traverse this path is 1.003 dist(A to P) + 1.3 dist(P to B).</p>
+<ol type="1">
+<li>Which of these formulas gives the total time it takes for light to traverse the path from A to P at relative speed 1/1.003 and then the path from P to B at relative speed 1/1.3? A is located at <span class="math inline">\((0, 10)\)</span>, B is located at <span class="math inline">\((20,-10)\)</span>, and P is located at <span class="math inline">\((x, 0)\)</span></li>
+</ol>
+<div class="cell" data-show_hints="true">
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1.003 \sq ... 0 - 0)^2}$" id="optim-pink-1-1" w="41" name="optim-pink-1" hint="Exactly." show_hints="TRUE"> <span class="math inline">\(1.003 \sqrt{(x-0)^2 +(0-10)^2}+ 1.3\sqrt{(20-x)^2 + (-10 - 0)^2}\)</span></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="$\sqrt{(x- ... 0)^2}/1.3$" id="optim-pink-1-2" w="32" name="optim-pink-1" hint="It is true that you divide distance by speed to get time, but here the relative speeds are $1/1.003$ and $1/1.3$." show_hints="TRUE"> <span class="math inline">\(\sqrt{(x-0)^2 +(0-10)^2}/1.003+ \sqrt{(20-x)^2 + (-10 - 0)^2}/1.3\)</span></p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="$1.003 \sq ... 0 - 0)^2}$" id="optim-pink-1-3" w="7" name="optim-pink-1" hint="This mixes up the x and y coordinates. The distance from A to P is $\sqrt{(x_P - x_A)^2 + (y_P - y_A)^2}$. In this problem, point P is at $(50-x, 0)$." show_hints="TRUE"> <span class="math inline">\(1.003 \sqrt{(x-10)^2 +(0-0)^2}+ 1.3\sqrt{(-10 -x)^2 + (50 - 0)^2}\)</span></p>
+<p></p>
+<input type="radio" class="devoirs-mcq" name="optim-pink-1" id="optim-pink-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="optim-pink-1-hintarea">question id: optim-pink-1</small></p>
+</div>
+</div>
+<p>Implement the calculation of <code>total_time()</code> in <a href="#lst-optim-pink" class="quarto-xref">Active R chunk&nbsp;<span>3</span></a>, then use a graph to find the argmin.</p>
+<div id="lst-optim-pink" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-optim-pink-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Active R chunk&nbsp;3
+</figcaption>
+<div aria-describedby="lst-optim-pink-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
-<p>Note: The <code>plot_lens()</code> function is provided for you, but it’s too computer-ese to bother you with how it’s defined.</p>
+<ol start="2" type="1">
+<li>What value of <span class="math inline">\(x\)</span> (that is, the argmin) minimizes the travel time of light between points A and B? (Choose the best answer from the slice plot you made in <a href="#lst-optim-pink" class="quarto-xref">Active R chunk&nbsp;<span>3</span></a>)</li>
+</ol>
+<div class="cell" data-show_hints="true" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="10.52 " id="optim-pink-2-1" w="32" name="optim-pink-2" hint="Not quite." show_hints="TRUE"> 10.52 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="11.02 " id="optim-pink-2-2" w="19" name="optim-pink-2" hint="You're wrong here." show_hints="TRUE"> 11.02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="12.22 " id="optim-pink-2-3" w="23" name="optim-pink-2" hint="No." show_hints="TRUE"> 12.22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="12.50" id="optim-pink-2-4" w="18" name="optim-pink-2" hint="Yup!" show_hints="TRUE"> 12.50 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="13.21 " id="optim-pink-2-5" w="19" name="optim-pink-2" hint="Not so!" show_hints="TRUE"> 13.21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="14.94 " id="optim-pink-2-6" w="7" name="optim-pink-2" hint="Not quite." show_hints="TRUE"> 14.94 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-pink-2" id="optim-pink-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="optim-pink-2-hintarea">question id: optim-pink-2</small></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Suppose that instead of being water, the blue area was glass. The speed of light in glass is roughly 1/1.5 times as big as in vacuum. What value of <span class="math inline">\(x\)</span> minimizes the travel time of light between points A and B? (Choose the best answer)</li>
+</ol>
+<div class="cell" data-show_hints="true" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="13.60" id="optim-pink-3-1" w="29" name="optim-pink-3" hint="A win!" show_hints="TRUE"> 13.60 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="14.58 " id="optim-pink-3-2" w="32" name="optim-pink-3" hint="Not so!" show_hints="TRUE"> 14.58 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="14.85 " id="optim-pink-3-3" w="87" name="optim-pink-3" hint="Boo!" show_hints="TRUE"> 14.85 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="15.54 " id="optim-pink-3-4" w="7" name="optim-pink-3" hint="Incorrect choice." show_hints="TRUE"> 15.54 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-pink-3" id="optim-pink-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="optim-pink-3-hintarea">question id: optim-pink-3</small></p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>At the argmin for <span class="math inline">\(x\)</span> in the travel time, what will be the derivative of travel time with respect to <span class="math inline">\(x\)</span>?</li>
+</ol>
+<div class="cell" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="Positive " id="optim-pink-4-1" w="23" name="optim-pink-4" hint="You're mistaken" show_hints="false"> Positive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Zero" id="optim-pink-4-2" w="14" name="optim-pink-4" hint="Yeah!" show_hints="false"> Zero &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Negative" id="optim-pink-4-3" w="3" name="optim-pink-4" hint="Not quite right." show_hints="false"> Negative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-pink-4" id="optim-pink-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="optim-pink-4-hintarea">question id: optim-pink-4</small></p>
+</div>
+</div>
+<ol start="5" type="1">
+<li>At the argmin for <span class="math inline">\(x\)</span> in the travel time, what will be the <strong>second derivative</strong> of travel time with respect to <span class="math inline">\(x\)</span>?</li>
+</ol>
+<div class="cell" data-inline="true">
+<input type="radio" class="devoirs-mcq" value="Positive " id="optim-pink-5-1" w="16" name="optim-pink-5" hint="A win!" show_hints="false"> Positive &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Zero " id="optim-pink-5-2" w="23" name="optim-pink-5" hint="Wrong." show_hints="false"> Zero &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Negative" id="optim-pink-5-3" w="7" name="optim-pink-5" hint="Not quite." show_hints="false"> Negative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-pink-5" id="optim-pink-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="optim-pink-5-hintarea">question id: optim-pink-5</small></p>
+</div>
+</div>
+</div>
+<div id="exr-optim-purple" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> &nbsp;</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The graphic drawn by <a href="#lst-optim-purple-lens" class="quarto-xref">Active R chunk&nbsp;<span>4</span></a> shows a lens together with a source and target point. Functions are used to define the top and bottom surface of the lens. Light passing through the lens is refracted. The path followed by the light will be the one with the shortest time of transit from source to target. But <a href="#lst-optim-purple-lens" class="quarto-xref">Active R chunk&nbsp;<span>4</span></a> initially is set up to trace a non-optimal, out-of-the-way path running through <span class="math inline">\(x_{in}=10\)</span> on the bottom to <span class="math inline">\(x_{out}=5\)</span> on the top.</p>
+<div id="lst-optim-purple-lens" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-optim-purple-lens-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Active R chunk&nbsp;4
+</figcaption>
+<div aria-describedby="lst-optim-purple-lens-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</figure>
+</div>
+<p>Note: <em>The <code>plot_lens()</code> function has been provided for you, but it’s too computer-ese to bother showing you with how it’s defined.</em></p>
+<p>The light enters the lens at some point <span class="math inline">\(P_{in} = (x_{in}\ , \ -\text{Lens}(x_{in}))\)</span> and leaves at <span class="math inline">\(P_{out} = (x_{out}\ ,\  \text{Lens}(x_{out}))\)</span>. We don’t know either <span class="math inline">\(x_{in}\)</span> or <span class="math inline">\(x_{out}\)</span>. but we can find them by optimization.</p>
+<p>To do this, we find the distance from the source to <span class="math inline">\(P_{in}\)</span>, and from <span class="math inline">\(P_{out}\)</span> to the target. These two legs of the route are through air, so the time of transit on each leg is proportional to the refractive index 1.03 times the distance.</p>
+<p>Of course, light also has to travel through the lens. We will make the lens out of glass with a high refractive index, so the transit time will be the distance from <span class="math inline">\(P_{in}\)</span> to <span class="math inline">\(P_{out}\)</span> multiplied by the lens’s refractive index, which we’ll set to be 1.8.</p>
+<p>The objective function will be the sum of the three legs’ transit times. It is already programmed for you in the sandbox. So is the command to make a contour plot of the output of the objective function over a domain of <span class="math inline">\(x_{in}\)</span> and <span class="math inline">\(x_{out}\)</span>. Finally, the last line in <span class="quarto-unresolved-ref">?lst-optim-purpose</span> draws a picture of the lens and the light path, but you will have to insert the argmins <span class="math inline">\(x_{in}\)</span> and <span class="math inline">\(x_{out}\)</span> that you pick from the contour plot of the objective function. (The <span class="math inline">\(x_{in}\)</span> and <span class="math inline">\(x_{out}\)</span> shown in the initial code of <a href="#lst-optim-purple" class="quarto-xref">Active R chunk&nbsp;<span>5</span></a> are not right!)</p>
+<div id="lst-optim-purple" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-optim-purple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Active R chunk&nbsp;5
+</figcaption>
+<div aria-describedby="lst-optim-purple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</figure>
+</div>
 <ol type="1">
-<li>When the index of refraction of the lens is 1.80, what are the optimal values for <span class="math inline">\(x_{in}\)</span> and <span class="math inline">\(x_{out}\)</span>? (Choose the best answer.)</li>
+<li>When the index of refraction of the lens is 1.80, what are the optimal values for <span class="math inline">\(x_{in}\)</span> and <span class="math inline">\(x_{out}\)</span>? (Choose the closest answer.)</li>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... ut} = -21$" id="optim-purple-1-1" w="18" name="optim-purple-1" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(x_{in} = -22, \ x_{out} = -21\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... ut} = -21$" id="optim-purple-1-1" w="14" name="optim-purple-1" hint="You're right." show_hints="TRUE"> <span class="math inline">\(x_{in} = -22, \ x_{out} = -21\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -20$ " id="optim-purple-1-2" w="7" name="optim-purple-1" hint="incorrect choice" show_hints="TRUE"> <span class="math inline">\(x_{in} = -26, \ x_{out} = -20\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -20$ " id="optim-purple-1-2" w="23" name="optim-purple-1" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(x_{in} = -26, \ x_{out} = -20\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -21$ " id="optim-purple-1-3" w="3" name="optim-purple-1" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(x_{in} = -24, \ x_{out} = -21\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -21$ " id="optim-purple-1-3" w="23" name="optim-purple-1" hint="No." show_hints="TRUE"> <span class="math inline">\(x_{in} = -24, \ x_{out} = -21\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -17$ " id="optim-purple-1-4" w="19" name="optim-purple-1" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(x_{in} = -18, \ x_{out} = -17\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -17$ " id="optim-purple-1-4" w="19" name="optim-purple-1" hint="This is wide of the mark." show_hints="TRUE"> <span class="math inline">\(x_{in} = -18, \ x_{out} = -17\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -20$ " id="optim-purple-1-5" w="19" name="optim-purple-1" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(x_{in} = -25, \ x_{out} = -20\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -20$ " id="optim-purple-1-5" w="19" name="optim-purple-1" hint="Oops!" show_hints="TRUE"> <span class="math inline">\(x_{in} = -25, \ x_{out} = -20\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="optim-purple-1" id="optim-purple-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="optim-purple-1-hintarea">question id: optim-purple-1</small></p>
 </div>
 </div>
@@ -3466,38 +3119,38 @@ Active R chunk&nbsp;4
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... ut} = -15$" id="optim-purple-2-1" w="8" name="optim-purple-2" hint="right-o" show_hints="TRUE"> <span class="math inline">\(x_{in} = -17, \ x_{out} = -15\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... ut} = -15$" id="optim-purple-2-1" w="41" name="optim-purple-2" hint="Yup!" show_hints="TRUE"> <span class="math inline">\(x_{in} = -17, \ x_{out} = -15\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -14$ " id="optim-purple-2-2" w="7" name="optim-purple-2" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(x_{in} = -18, \ x_{out} = -14\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -14$ " id="optim-purple-2-2" w="87" name="optim-purple-2" hint="Nope." show_hints="TRUE"> <span class="math inline">\(x_{in} = -18, \ x_{out} = -14\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -16$ " id="optim-purple-2-3" w="3" name="optim-purple-2" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(x_{in} = -16, \ x_{out} = -16\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -16$ " id="optim-purple-2-3" w="32" name="optim-purple-2" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(x_{in} = -16, \ x_{out} = -16\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -18$ " id="optim-purple-2-4" w="23" name="optim-purple-2" hint="no" show_hints="TRUE"> <span class="math inline">\(x_{in} = -18, \ x_{out} = -18\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -18$ " id="optim-purple-2-4" w="87" name="optim-purple-2" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(x_{in} = -18, \ x_{out} = -18\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -18$ " id="optim-purple-2-5" w="7" name="optim-purple-2" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(x_{in} = -17, \ x_{out} = -18\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$x_{in} =  ... t} = -18$ " id="optim-purple-2-5" w="87" name="optim-purple-2" hint="Nope." show_hints="TRUE"> <span class="math inline">\(x_{in} = -17, \ x_{out} = -18\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="optim-purple-2" id="optim-purple-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="optim-purple-2-hintarea">question id: optim-purple-2</small></p>
 </div>
 </div>
 <p>Let’s explore an extreme situation. Diamond is the transparent material that has the highest index of refraction, 2.417. Imagine a material with an index of refraction of 10. This means that light will travel very slowly within the lens.</p>
 <p>When you examine the contour plot of <code>transit_time()</code> for this high index of refraction, there will be two, widely separated local minima. Explain briefly which part of the lens these two minima correspond to. Hint: High index means slow speed of light. Sometimes it is worthwhile to go out of your way to avoid slowdowns.</p>
-<p><textarea id="optim-purple-3" name="optim-purple-3" class="devoirs-text" rows="4" cols="50" placeholder="Type here for question ID optim-purple-3"></textarea> </p><div style="color: grey;"> <small>question id: optim-purple-3</small> </div><p></p>
+<p><textarea id="optim-purple-3" name="optim-purple-3" class="devoirs-text" rows="4" cols="50" placeholder="Type here. (ID optim-purple-3)"></textarea></p>
 </div>
 <div id="exr-optim-green" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> Your uncle Bob is writing a business plan for a tree farm for lumber. Having heard that you are taking Math 141Z, he emails you giving some information asking for some numbers. In particular, Bob sends you a report saying that, for the species of tree he plans to plant, the amount of usable lumber is a function of growth time <span class="math inline">\(t\)</span> looking like the function <code>lumber()</code>:</p>
+<p><span class="theorem-title"><strong>Exercise 6</strong></span> Your uncle Bob is writing a business plan for a tree farm for lumber. Having heard that you are taking Math 141Z, he emails you giving some information asking for some numbers. In particular, Bob sends you a report saying that, for the species of tree he plans to plant, the amount of usable lumber is a function of growth time <span class="math inline">\(t\)</span> looking like the function <code>lumber()</code>:</p>
 <div id="lst-optim-green-1" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-optim-green-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;5
+Active R chunk&nbsp;6
 </figcaption>
 <div aria-describedby="lst-optim-green-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-6"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3507,8 +3160,8 @@ Active R chunk&nbsp;5
 <li>What is the value of <code>t</code> (in years) at which <span class="math inline">\(\partial_t\)</span> <code>lumber(t)</code> is largest?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="15 " id="optim-green-A-1" w="7" name="optim-green-A" hint="Sorry!" show_hints="TRUE"> 15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="16 " id="optim-green-A-2" w="32" name="optim-green-A" hint="Try again!" show_hints="TRUE"> 16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="17 " id="optim-green-A-3" w="7" name="optim-green-A" hint="Try again!" show_hints="TRUE"> 17 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="18 " id="optim-green-A-4" w="23" name="optim-green-A" hint="wrong" show_hints="TRUE"> 18 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="19 " id="optim-green-A-5" w="32" name="optim-green-A" hint="Sorry!" show_hints="TRUE"> 19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="20 " id="optim-green-A-6" w="7" name="optim-green-A" hint="wrong" show_hints="TRUE"> 20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="21 " id="optim-green-A-7" w="32" name="optim-green-A" hint="no" show_hints="TRUE"> 21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="22 " id="optim-green-A-8" w="7" name="optim-green-A" hint="no" show_hints="TRUE"> 22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="23 " id="optim-green-A-9" w="3" name="optim-green-A" hint="wrong" show_hints="TRUE"> 23 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="24 " id="optim-green-A-10" w="32" name="optim-green-A" hint="no" show_hints="TRUE"> 24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25" id="optim-green-A-11" w="16" name="optim-green-A" hint="Nice." show_hints="TRUE"> 25 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="26 " id="optim-green-A-12" w="7" name="optim-green-A" hint="Better luck next time." show_hints="TRUE"> 26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="27 " id="optim-green-A-13" w="19" name="optim-green-A" hint="Try again!" show_hints="TRUE"> 27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="28 " id="optim-green-A-14" w="7" name="optim-green-A" hint="You're mistaken" show_hints="TRUE"> 28 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="29 " id="optim-green-A-15" w="3" name="optim-green-A" hint="Better luck next time." show_hints="TRUE"> 29 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="30 " id="optim-green-A-16" w="19" name="optim-green-A" hint="Sorry!" show_hints="TRUE"> 30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-green-A" id="optim-green-A.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="15 " id="optim-green-A-1" w="23" name="optim-green-A" hint="This is wide of the mark." show_hints="TRUE"> 15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="16 " id="optim-green-A-2" w="19" name="optim-green-A" hint="Better luck next time." show_hints="TRUE"> 16 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="17 " id="optim-green-A-3" w="32" name="optim-green-A" hint="Not quite right." show_hints="TRUE"> 17 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="18 " id="optim-green-A-4" w="19" name="optim-green-A" hint="Oops!" show_hints="TRUE"> 18 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="19 " id="optim-green-A-5" w="23" name="optim-green-A" hint="Incorrect." show_hints="TRUE"> 19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="20 " id="optim-green-A-6" w="19" name="optim-green-A" hint="This is wide of the mark." show_hints="TRUE"> 20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="21 " id="optim-green-A-7" w="32" name="optim-green-A" hint="Not quite right." show_hints="TRUE"> 21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="22 " id="optim-green-A-8" w="32" name="optim-green-A" hint="Untrue!" show_hints="TRUE"> 22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="23 " id="optim-green-A-9" w="19" name="optim-green-A" hint="Not on target." show_hints="TRUE"> 23 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="24 " id="optim-green-A-10" w="32" name="optim-green-A" hint="Think again." show_hints="TRUE"> 24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25" id="optim-green-A-11" w="29" name="optim-green-A" hint="Right!" show_hints="TRUE"> 25 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="26 " id="optim-green-A-12" w="3" name="optim-green-A" hint="Nope." show_hints="TRUE"> 26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="27 " id="optim-green-A-13" w="87" name="optim-green-A" hint="Nope." show_hints="TRUE"> 27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="28 " id="optim-green-A-14" w="3" name="optim-green-A" hint="Think again." show_hints="TRUE"> 28 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="29 " id="optim-green-A-15" w="87" name="optim-green-A" hint="Try again!" show_hints="TRUE"> 29 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="30 " id="optim-green-A-16" w="23" name="optim-green-A" hint="Boo!" show_hints="TRUE"> 30 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-green-A" id="optim-green-A.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="optim-green-A-hintarea">question id: optim-green-A</small></p>
 </div>
 </div>
@@ -3516,27 +3169,27 @@ Active R chunk&nbsp;5
 <div id="lst-optim-green-2" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-optim-green-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;6
+Active R chunk&nbsp;7
 </figcaption>
 <div aria-describedby="lst-optim-green-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
-<p>In <a href="#lst-optim-green-2" class="quarto-xref">Active R chunk&nbsp;<span>6</span></a>, give the expression for the average growth rate function in terms of <code>lumber()</code> and <code>t</code>. Keep in mind the starting point is 0 lumber at time 0.</p>
+<p>In <a href="#lst-optim-green-2" class="quarto-xref">Active R chunk&nbsp;<span>7</span></a>, give the expression for the average growth rate function in terms of <code>lumber()</code> and <code>t</code>. Keep in mind the starting point is 0 lumber at time 0.</p>
 <ol start="2" type="A">
 <li>What is the value of t (in years) for which the average growth rate, up to that time, is fastest.</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="15 " id="optim-green-B-1" w="87" name="optim-green-B" hint="Not quite right" show_hints="TRUE"> 15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="17 " id="optim-green-B-2" w="32" name="optim-green-B" hint="no" show_hints="TRUE"> 17 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="19 " id="optim-green-B-3" w="87" name="optim-green-B" hint="wrong" show_hints="TRUE"> 19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="21 " id="optim-green-B-4" w="32" name="optim-green-B" hint="You're mistaken" show_hints="TRUE"> 21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="23 " id="optim-green-B-5" w="3" name="optim-green-B" hint="Sorry!" show_hints="TRUE"> 23 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25 " id="optim-green-B-6" w="32" name="optim-green-B" hint="Not quite right" show_hints="TRUE"> 25 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="27 " id="optim-green-B-7" w="32" name="optim-green-B" hint="Better luck next time." show_hints="TRUE"> 27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="29 " id="optim-green-B-8" w="7" name="optim-green-B" hint="You're mistaken" show_hints="TRUE"> 29 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="31 " id="optim-green-B-9" w="19" name="optim-green-B" hint="Try again!" show_hints="TRUE"> 31 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="33 " id="optim-green-B-10" w="23" name="optim-green-B" hint="Not quite right" show_hints="TRUE"> 33 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="35" id="optim-green-B-11" w="41" name="optim-green-B" hint="right-o" show_hints="TRUE"> 35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="37 " id="optim-green-B-12" w="32" name="optim-green-B" hint="wide of the mark" show_hints="TRUE"> 37 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="39 " id="optim-green-B-13" w="3" name="optim-green-B" hint="Sorry!" show_hints="TRUE"> 39 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="41 " id="optim-green-B-14" w="87" name="optim-green-B" hint="incorrect choice" show_hints="TRUE"> 41 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-green-B" id="optim-green-B.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="15 " id="optim-green-B-1" w="23" name="optim-green-B" hint="You might think so, but ..." show_hints="TRUE"> 15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="17 " id="optim-green-B-2" w="19" name="optim-green-B" hint="Better luck next time." show_hints="TRUE"> 17 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="19 " id="optim-green-B-3" w="87" name="optim-green-B" hint="Not quite." show_hints="TRUE"> 19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="21 " id="optim-green-B-4" w="19" name="optim-green-B" hint="Nope." show_hints="TRUE"> 21 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="23 " id="optim-green-B-5" w="3" name="optim-green-B" hint="No." show_hints="TRUE"> 23 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="25 " id="optim-green-B-6" w="7" name="optim-green-B" hint="Think again." show_hints="TRUE"> 25 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="27 " id="optim-green-B-7" w="19" name="optim-green-B" hint="Not quite." show_hints="TRUE"> 27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="29 " id="optim-green-B-8" w="19" name="optim-green-B" hint="Try again!" show_hints="TRUE"> 29 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="31 " id="optim-green-B-9" w="23" name="optim-green-B" hint="Oops!" show_hints="TRUE"> 31 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="33 " id="optim-green-B-10" w="19" name="optim-green-B" hint="Incorrect choice." show_hints="TRUE"> 33 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="35" id="optim-green-B-11" w="20" name="optim-green-B" hint="You've got it!" show_hints="TRUE"> 35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="37 " id="optim-green-B-12" w="87" name="optim-green-B" hint="You might think so, but ..." show_hints="TRUE"> 37 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="39 " id="optim-green-B-13" w="32" name="optim-green-B" hint="Wrong." show_hints="TRUE"> 39 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="41 " id="optim-green-B-14" w="32" name="optim-green-B" hint="This is wide of the mark." show_hints="TRUE"> 41 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="optim-green-B" id="optim-green-B.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="optim-green-B-hintarea">question id: optim-green-B</small></p>
 </div>
 </div>
 </div>
 <div id="exr-rooster-red" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6</strong></span> It often happens in decision making that there are multiple criteria. For instance, in selecting cadets for pilot training, two obvious criteria are the cadet’s demonstrated flying aptitude and the leadership potential of the cadet. Let’s assume that the merit <span class="math inline">\(M\)</span> of a candidate is a function of flying aptitude <span class="math inline">\(F\)</span> and leadership potential <span class="math inline">\(L\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 7</strong></span> It often happens in decision making that there are multiple criteria. For instance, in selecting cadets for pilot training, two obvious criteria are the cadet’s demonstrated flying aptitude and the leadership potential of the cadet. Let’s assume that the merit <span class="math inline">\(M\)</span> of a candidate is a function of flying aptitude <span class="math inline">\(F\)</span> and leadership potential <span class="math inline">\(L\)</span>.</p>
 <p>Currently, the merit score is a simple function of the <span class="math inline">\(F\)</span> and <span class="math inline">\(L\)</span> scores: <span class="math display">\[M_{current}(F, L) \equiv F + L\]</span></p>
 <p>The general in charge of the training program is not satisfied with the current merit function. “I’m getting too many cadets who are great leaders but poor pilots, and too many pilot hot-shots who are poor leaders. I would rather have an good pilot who is a good leader than have a great pilot who is a poor leader or a poor pilot who is a great leader.” (You might reasonably agree or disagree with this point of view, but the general is in charge.)</p>
 <p>You’ve been tasked to develop an improved formula for the merit score <span class="math inline">\(M_{improved}(F, L)\)</span>.</p>
@@ -3552,8 +3205,8 @@ Active R chunk&nbsp;6
 <li>Which of these possibilities is true about <span class="math inline">\(\partial_F M\)</span> as a function of <span class="math inline">\(F\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Increases with F " id="rooster-red-1-1" w="7" name="rooster-red-1" hint="Not quite right" show_hints="FALSE"> Increases with F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Decreases with F " id="rooster-red-1-2" w="23" name="rooster-red-1" hint="Not quite right" show_hints="FALSE"> Decreases with F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Is not a f ... tion of F." id="rooster-red-1-3" w="29" name="rooster-red-1" hint="Right" show_hints="FALSE"> Is not a function of F. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="rooster-red-1" id="rooster-red-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Increases with F " id="rooster-red-1-1" w="7" name="rooster-red-1" hint="Incorrect." show_hints="FALSE"> Increases with F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Decreases with F " id="rooster-red-1-2" w="19" name="rooster-red-1" hint="Hmmm ..." show_hints="FALSE"> Decreases with F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Is not a f ... tion of F." id="rooster-red-1-3" w="20" name="rooster-red-1" hint="You're right." show_hints="FALSE"> Is not a function of F. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="rooster-red-1" id="rooster-red-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="rooster-red-1-hintarea">question id: rooster-red-1</small></p>
 </div>
 </div>
@@ -3561,8 +3214,8 @@ Active R chunk&nbsp;6
 <li>Which of these possibilities is true about <span class="math inline">\(\partial_L M\)</span> as a function of <span class="math inline">\(L\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Increasing " id="rooster-red-2-1" w="87" name="rooster-red-2" hint="Better luck next time." show_hints="FALSE"> Increasing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Decreasing " id="rooster-red-2-2" w="3" name="rooster-red-2" hint="Sorry!" show_hints="FALSE"> Decreasing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Is not a f ... tion of L." id="rooster-red-2-3" w="29" name="rooster-red-2" hint="You're right" show_hints="FALSE"> Is not a function of L. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="rooster-red-2" id="rooster-red-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Increasing " id="rooster-red-2-1" w="7" name="rooster-red-2" hint="Not quite." show_hints="FALSE"> Increasing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Decreasing " id="rooster-red-2-2" w="23" name="rooster-red-2" hint="Better luck next time." show_hints="FALSE"> Decreasing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Is not a f ... tion of L." id="rooster-red-2-3" w="35" name="rooster-red-2" hint="Yup!" show_hints="FALSE"> Is not a function of L. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="rooster-red-2" id="rooster-red-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="rooster-red-2-hintarea">question id: rooster-red-2</small></p>
 </div>
 </div>
@@ -3571,16 +3224,16 @@ Active R chunk&nbsp;6
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="If $\parti ... on of $F$." id="rooster-red-3-1" w="32" name="rooster-red-3" hint="Notice that both partials involve the same $d_{12}$ coefficient." show_hints="FALSE"> If <span class="math inline">\(\partial_F M()\)</span> is an increasing function of <span class="math inline">\(L\)</span>, then <span class="math inline">\(\partial_L M()\)</span> must be a decreasing function of <span class="math inline">\(F\)</span>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="If $\parti ... on of $F$." id="rooster-red-3-1" w="3" name="rooster-red-3" hint="Notice that both partials involve the same $d_{12}$ coefficient." show_hints="FALSE"> If <span class="math inline">\(\partial_F M()\)</span> is an increasing function of <span class="math inline">\(L\)</span>, then <span class="math inline">\(\partial_L M()\)</span> must be a decreasing function of <span class="math inline">\(F\)</span>.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="If $\parti ... on of $F$." id="rooster-red-3-2" w="35" name="rooster-red-3" hint="Correct" show_hints="FALSE"> If <span class="math inline">\(\partial_F M()\)</span> is an increasing function of <span class="math inline">\(L\)</span>, then <span class="math inline">\(\partial_L M()\)</span> must be an increasing function of <span class="math inline">\(F\)</span>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="If $\parti ... on of $F$." id="rooster-red-3-2" w="29" name="rooster-red-3" hint="Yeah!" show_hints="FALSE"> If <span class="math inline">\(\partial_F M()\)</span> is an increasing function of <span class="math inline">\(L\)</span>, then <span class="math inline">\(\partial_L M()\)</span> must be an increasing function of <span class="math inline">\(F\)</span>.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Neither of ... o be true." id="rooster-red-3-3" w="87" name="rooster-red-3" hint="Notice that both partials involve the same $d_{12}$ coefficient." show_hints="FALSE"> Neither of the above needs to be true.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Neither of ... o be true." id="rooster-red-3-3" w="19" name="rooster-red-3" hint="Notice that both partials involve the same $d_{12}$ coefficient." show_hints="FALSE"> Neither of the above needs to be true.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="rooster-red-3" id="rooster-red-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="rooster-red-3-hintarea">question id: rooster-red-3</small></p>
 </div>
 </div>
@@ -3590,25 +3243,25 @@ Active R chunk&nbsp;6
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Positive" id="rooster-red-4-1" w="20" name="rooster-red-4" hint="Right" show_hints="TRUE"> Positive</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Positive" id="rooster-red-4-1" w="35" name="rooster-red-4" hint="You're right." show_hints="TRUE"> Positive</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Zero " id="rooster-red-4-2" w="19" name="rooster-red-4" hint="wrong" show_hints="TRUE"> Zero</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Zero " id="rooster-red-4-2" w="3" name="rooster-red-4" hint="Sorry!" show_hints="TRUE"> Zero</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Negative " id="rooster-red-4-3" w="7" name="rooster-red-4" hint="Not quite right" show_hints="TRUE"> Negative</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Negative " id="rooster-red-4-3" w="3" name="rooster-red-4" hint="Think again." show_hints="TRUE"> Negative</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It has not ... tatement. " id="rooster-red-4-4" w="87" name="rooster-red-4" hint="wrong" show_hints="TRUE"> It has nothing to do with the general’s statement.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It has not ... tatement. " id="rooster-red-4-4" w="19" name="rooster-red-4" hint="Better luck next time." show_hints="TRUE"> It has nothing to do with the general’s statement.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="rooster-red-4" id="rooster-red-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="rooster-red-4-hintarea">question id: rooster-red-4</small></p>
 </div>
 </div>
 </div>
 <div id="exr-snake-walk-knife" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7</strong></span> Based on an extensive but fictive observation of activity and grades of college students, the model shown in <a href="#fig-snake-walk-knife-1" class="quarto-xref">Figure&nbsp;<span>4</span></a> was constructed to give GPA as a function of the number of hours each weekday (Monday-Friday) spent studying and spent in social activity and play. (Activity during the weekend was not monitored.)</p>
+<p><span class="theorem-title"><strong>Exercise 8</strong></span> Based on an extensive but fictive observation of activity and grades of college students, the model shown in <a href="#fig-snake-walk-knife-1" class="quarto-xref">Figure&nbsp;<span>4</span></a> was constructed to give GPA as a function of the number of hours each weekday (Monday-Friday) spent studying and spent in social activity and play. (Activity during the weekend was not monitored.)</p>
 <div id="fig-snake-walk-knife-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-snake-walk-knife-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3632,8 +3285,8 @@ Figure&nbsp;4
 <li>According to the model, what’s the optimal combination of Study and Play to achieve a high GPA?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="F " id="sh1-1-1" w="32" name="sh1-1" hint="Try again!" show_hints="TRUE"> F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="G" id="sh1-1-2" w="41" name="sh1-1" hint="Nice." show_hints="TRUE"> G &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="H " id="sh1-1-3" w="7" name="sh1-1" hint="no" show_hints="TRUE"> H &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="I " id="sh1-1-4" w="19" name="sh1-1" hint="Not quite right" show_hints="TRUE"> I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-1" id="sh1-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="F " id="sh1-1-1" w="32" name="sh1-1" hint="Oops!" show_hints="TRUE"> F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="G" id="sh1-1-2" w="41" name="sh1-1" hint="You've got it!" show_hints="TRUE"> G &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="H " id="sh1-1-3" w="7" name="sh1-1" hint="No." show_hints="TRUE"> H &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="I " id="sh1-1-4" w="19" name="sh1-1" hint="Not quite right." show_hints="TRUE"> I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-1" id="sh1-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="sh1-1-hintarea">question id: sh1-1</small></p>
 </div>
 </div>
@@ -3641,8 +3294,8 @@ Figure&nbsp;4
 <li>Which of these letters marks a place on the graph where the partial derivative of GPA with respect to Play is positive?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="B " id="sh1-2-1" w="32" name="sh1-2" hint="Better luck next time." show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C " id="sh1-2-2" w="32" name="sh1-2" hint="Better luck next time." show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="K " id="sh1-2-3" w="32" name="sh1-2" hint="Better luck next time." show_hints="TRUE"> K &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="L" id="sh1-2-4" w="18" name="sh1-2" hint="Good job!" show_hints="TRUE"> L &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-2" id="sh1-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="B " id="sh1-2-1" w="32" name="sh1-2" hint="Not on target." show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C " id="sh1-2-2" w="19" name="sh1-2" hint="You're wrong here." show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="K " id="sh1-2-3" w="32" name="sh1-2" hint="Boo!" show_hints="TRUE"> K &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="L" id="sh1-2-4" w="8" name="sh1-2" hint="Right on the nose!" show_hints="TRUE"> L &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-2" id="sh1-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="sh1-2-hintarea">question id: sh1-2</small></p>
 </div>
 </div>
@@ -3650,8 +3303,8 @@ Figure&nbsp;4
 <li>Which if these ketters marks a place on the graph where the partial derivative of GPA with respect to Play is negative.</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="A" id="sh1-3-1" w="16" name="sh1-3" hint="Correct" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="J " id="sh1-3-2" w="32" name="sh1-3" hint="wide of the mark" show_hints="TRUE"> J &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="L " id="sh1-3-3" w="32" name="sh1-3" hint="wide of the mark" show_hints="TRUE"> L &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="K " id="sh1-3-4" w="19" name="sh1-3" hint="no" show_hints="TRUE"> K &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-3" id="sh1-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="A" id="sh1-3-1" w="18" name="sh1-3" hint="Right on the nose!" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="J " id="sh1-3-2" w="3" name="sh1-3" hint="Incorrect choice." show_hints="TRUE"> J &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="L " id="sh1-3-3" w="32" name="sh1-3" hint="You're wrong here." show_hints="TRUE"> L &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="K " id="sh1-3-4" w="87" name="sh1-3" hint="This is wide of the mark." show_hints="TRUE"> K &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-3" id="sh1-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="sh1-3-hintarea">question id: sh1-3</small></p>
 </div>
 </div>
@@ -3659,8 +3312,8 @@ Figure&nbsp;4
 <li>Where is the partial derivative with respect to Study is negative?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Nowhere. $ ... r grades. " id="sh1-4-1" w="7" name="sh1-4" hint="wrong" show_hints="TRUE"> Nowhere. <span class="math inline">\(\partial_{study} GPA()\)</span> is always positive. More study = better grades. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="K" id="sh1-4-2" w="29" name="sh1-4" hint="Correct" show_hints="TRUE"> K &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="A " id="sh1-4-3" w="7" name="sh1-4" hint="Sorry!" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="D " id="sh1-4-4" w="87" name="sh1-4" hint="Not quite right" show_hints="TRUE"> D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-4" id="sh1-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Nowhere. $ ... r grades. " id="sh1-4-1" w="19" name="sh1-4" hint="Nope." show_hints="TRUE"> Nowhere. <span class="math inline">\(\partial_{study} GPA()\)</span> is always positive. More study = better grades. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="K" id="sh1-4-2" w="20" name="sh1-4" hint="Yes." show_hints="TRUE"> K &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="A " id="sh1-4-3" w="32" name="sh1-4" hint="Oops!" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="D " id="sh1-4-4" w="32" name="sh1-4" hint="No." show_hints="TRUE"> D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-4" id="sh1-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="sh1-4-hintarea">question id: sh1-4</small></p>
 </div>
 </div>
@@ -3681,8 +3334,8 @@ Figure&nbsp;5: Budget constraints (dark green) are the negatively sloping straig
 <li>Suppose you decide to budget 12 hours each weekday day in activities other than Study and Play. Which letter labels the constrained optimal mix (argmax) of Study and Play.</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="I " id="sh1-5-1" w="19" name="sh1-5" hint="wide of the mark" show_hints="FALSE"> I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="J " id="sh1-5-2" w="7" name="sh1-5" hint="Sorry!" show_hints="FALSE"> J &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="F" id="sh1-5-3" w="5" name="sh1-5" hint="Nice." show_hints="FALSE"> F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="L " id="sh1-5-4" w="32" name="sh1-5" hint="wide of the mark" show_hints="FALSE"> L &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-5" id="sh1-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="I " id="sh1-5-1" w="19" name="sh1-5" hint="Not on target." show_hints="FALSE"> I &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="J " id="sh1-5-2" w="19" name="sh1-5" hint="Think again." show_hints="FALSE"> J &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="F" id="sh1-5-3" w="35" name="sh1-5" hint="That's right." show_hints="FALSE"> F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="L " id="sh1-5-4" w="32" name="sh1-5" hint="Nope." show_hints="FALSE"> L &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-5" id="sh1-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="sh1-5-hintarea">question id: sh1-5</small></p>
 </div>
 </div>
@@ -3691,19 +3344,19 @@ Figure&nbsp;5: Budget constraints (dark green) are the negatively sloping straig
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="-0.8 hour/ ... adepoints " id="sh1-6-1" w="32" name="sh1-6" hint="Better luck next time." show_hints="FALSE"> -0.8 hour/gradepoints</p>
+</p><p><input type="radio" class="devoirs-mcq" value="-0.8 hour/ ... adepoints " id="sh1-6-1" w="7" name="sh1-6" hint="Sorry!" show_hints="FALSE"> -0.8 hour/gradepoints</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0.3 gradep ... oints/hour" id="sh1-6-2" w="20" name="sh1-6" hint="Correct" show_hints="FALSE"> 0.3 gradepoints/hour</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.3 gradep ... oints/hour" id="sh1-6-2" w="8" name="sh1-6" hint="You've got it!" show_hints="FALSE"> 0.3 gradepoints/hour</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0.9 gradep ... ints/hour " id="sh1-6-3" w="19" name="sh1-6" hint="wrong" show_hints="FALSE"> 0.9 gradepoints/hour</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.9 gradep ... ints/hour " id="sh1-6-3" w="32" name="sh1-6" hint="Incorrect." show_hints="FALSE"> 0.9 gradepoints/hour</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1.3 hour/g ... adepoints " id="sh1-6-4" w="23" name="sh1-6" hint="wide of the mark" show_hints="FALSE"> 1.3 hour/gradepoints</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1.3 hour/g ... adepoints " id="sh1-6-4" w="19" name="sh1-6" hint="Wrong." show_hints="FALSE"> 1.3 hour/gradepoints</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="sh1-6" id="sh1-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="sh1-6-hintarea">question id: sh1-6</small></p>
 </div>
 </div>
@@ -3711,8 +3364,8 @@ Figure&nbsp;5: Budget constraints (dark green) are the negatively sloping straig
 <li>Consider a student who budgets 22 hours per day for Study and Play. Which letter is closest to the constrained argmax with a 22-hour constraint?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="A " id="sh1-7-1" w="32" name="sh1-7" hint="incorrect choice" show_hints="FALSE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B" id="sh1-7-2" w="18" name="sh1-7" hint="Good job!" show_hints="FALSE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C " id="sh1-7-3" w="32" name="sh1-7" hint="Try again!" show_hints="FALSE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="D " id="sh1-7-4" w="7" name="sh1-7" hint="wrong" show_hints="FALSE"> D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-7" id="sh1-7.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="A " id="sh1-7-1" w="23" name="sh1-7" hint="This is wide of the mark." show_hints="FALSE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B" id="sh1-7-2" w="14" name="sh1-7" hint="Score!" show_hints="FALSE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C " id="sh1-7-3" w="23" name="sh1-7" hint="You're mistaken" show_hints="FALSE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="D " id="sh1-7-4" w="7" name="sh1-7" hint="You're wrong here." show_hints="FALSE"> D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="sh1-7" id="sh1-7.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="sh1-7-hintarea">question id: sh1-7</small></p>
 </div>
 </div>
@@ -3721,19 +3374,19 @@ Figure&nbsp;5: Budget constraints (dark green) are the negatively sloping straig
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="-0.4 grade ... ints/hour " id="sh1-8-1" w="7" name="sh1-8" hint="incorrect choice" show_hints="FALSE"> -0.4 gradepoints/hour</p>
+</p><p><input type="radio" class="devoirs-mcq" value="-0.4 grade ... ints/hour " id="sh1-8-1" w="32" name="sh1-8" hint="Try again!" show_hints="FALSE"> -0.4 gradepoints/hour</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0 gradepoints/hour " id="sh1-8-2" w="87" name="sh1-8" hint="wide of the mark" show_hints="FALSE"> 0 gradepoints/hour</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0 gradepoints/hour " id="sh1-8-2" w="7" name="sh1-8" hint="Not so!" show_hints="FALSE"> 0 gradepoints/hour</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0.4 gradep ... oints/hour" id="sh1-8-3" w="35" name="sh1-8" hint="right-o" show_hints="FALSE"> 0.4 gradepoints/hour</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.4 gradep ... oints/hour" id="sh1-8-3" w="20" name="sh1-8" hint="Spot on!" show_hints="FALSE"> 0.4 gradepoints/hour</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="1.0 gradep ... ints/hour " id="sh1-8-4" w="87" name="sh1-8" hint="Better luck next time." show_hints="FALSE"> 1.0 gradepoints/hour</p>
+</p><p><input type="radio" class="devoirs-mcq" value="1.0 gradep ... ints/hour " id="sh1-8-4" w="19" name="sh1-8" hint="You might think so, but ..." show_hints="FALSE"> 1.0 gradepoints/hour</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="sh1-8" id="sh1-8.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="sh1-8-hintarea">question id: sh1-8</small></p>
 </div>
 </div>
@@ -3742,47 +3395,47 @@ Figure&nbsp;5: Budget constraints (dark green) are the negatively sloping straig
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="You're hop ... good GPA. " id="sh1-9-1" w="19" name="sh1-9" hint="Not quite right" show_hints="TRUE"> You’re hopeless. There aren’t enough hours in the day for you to get a good GPA.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="You're hop ... good GPA. " id="sh1-9-1" w="32" name="sh1-9" hint="Incorrect choice." show_hints="TRUE"> You’re hopeless. There aren’t enough hours in the day for you to get a good GPA.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="You've got ... your all! " id="sh1-9-2" w="87" name="sh1-9" hint="Not quite right" show_hints="TRUE"> You’ve got to squeeze out more effort studying. Give it your all!</p>
+</p><p><input type="radio" class="devoirs-mcq" value="You've got ... your all! " id="sh1-9-2" w="87" name="sh1-9" hint="Better luck next time." show_hints="TRUE"> You’ve got to squeeze out more effort studying. Give it your all!</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Play more, ... udy less! " id="sh1-9-3" w="87" name="sh1-9" hint="wrong" show_hints="TRUE"> Play more, study less!</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Play more, ... udy less! " id="sh1-9-3" w="19" name="sh1-9" hint="Not quite right." show_hints="TRUE"> Play more, study less!</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Study less " id="sh1-9-4" w="32" name="sh1-9" hint="incorrect choice" show_hints="TRUE"> Study less</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Study less " id="sh1-9-4" w="87" name="sh1-9" hint="Not so!" show_hints="TRUE"> Study less</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Study less ... ss. Sleep!" id="sh1-9-5" w="5" name="sh1-9" hint="Yes" show_hints="TRUE"> Study less, play less. Sleep!</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Study less ... ss. Sleep!" id="sh1-9-5" w="14" name="sh1-9" hint="Spot on!" show_hints="TRUE"> Study less, play less. Sleep!</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="sh1-9" id="sh1-9.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="sh1-9-hintarea">question id: sh1-9</small></p>
 </div>
 </div>
 </div>
 <div id="exr-walnut-write-futon" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8</strong></span> Consider the problem faced by a propane distribution company manager: find the optimal radius of a cylindrical tank with spherical ends. The point is to choose the sphere radius <span class="math inline">\(r\)</span> and the cylinder length <span class="math inline">\(h\)</span> that minimize the surface area of the tank while enclosing a specified volume. In terms of <span class="math inline">\(h\)</span> and <span class="math inline">\(r\)</span>, the volume and surface area are:</p>
+<p><span class="theorem-title"><strong>Exercise 9</strong></span> Consider the problem faced by a propane distribution company manager: find the optimal radius of a cylindrical tank with spherical ends. The point is to choose the sphere radius <span class="math inline">\(r\)</span> and the cylinder length <span class="math inline">\(h\)</span> that minimize the surface area of the tank while enclosing a specified volume. In terms of <span class="math inline">\(h\)</span> and <span class="math inline">\(r\)</span>, the volume and surface area are:</p>
 <p><span class="math display">\[V(r, h) = \pi r^2 h + \frac{4}{3} \pi r^3 \ \ \ \text{and}\ \ \ A(r,h) = 2 \pi r h + 4 \pi r^2\]</span></p>
 <ol type="1">
 <li>Which of these is correct? (Hint: Only one of the answers is dimensionally consistent.)</li>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h(r, V) = ... / \pi r^2$" id="tb1-1-1" w="16" name="tb1-1" hint="Correct" show_hints="TRUE"> <span class="math inline">\(h(r, V) = (V-4\pi r^3/3)/ \pi r^2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h(r, V) = ... / \pi r^2$" id="tb1-1-1" w="8" name="tb1-1" hint="Right!" show_hints="TRUE"> <span class="math inline">\(h(r, V) = (V-4\pi r^3/3)/ \pi r^2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h(r, V) = ...  \pi r^2$ " id="tb1-1-2" w="7" name="tb1-1" hint="Try again!" show_hints="TRUE"> <span class="math inline">\(h(r, V) = (V-4\pi r^2/2)/ \pi r^2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h(r, V) = ...  \pi r^2$ " id="tb1-1-2" w="32" name="tb1-1" hint="Oops!" show_hints="TRUE"> <span class="math inline">\(h(r, V) = (V-4\pi r^2/2)/ \pi r^2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h(r, V) = ...  \pi r^3$ " id="tb1-1-3" w="23" name="tb1-1" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(h(r, V) = (V-4\pi r^3/3)/ \pi r^3\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h(r, V) = ...  \pi r^3$ " id="tb1-1-3" w="7" name="tb1-1" hint="This is wide of the mark." show_hints="TRUE"> <span class="math inline">\(h(r, V) = (V-4\pi r^3/3)/ \pi r^3\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$h(r, V) = ... \pi r^3}$ " id="tb1-1-4" w="7" name="tb1-1" hint="wide of the mark" show_hints="TRUE"> <span class="math inline">\(h(r, V) = \sqrt{(V-4\pi r^3/2)/\pi r^3}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$h(r, V) = ... \pi r^3}$ " id="tb1-1-4" w="19" name="tb1-1" hint="Boo!" show_hints="TRUE"> <span class="math inline">\(h(r, V) = \sqrt{(V-4\pi r^3/2)/\pi r^3}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="tb1-1" id="tb1-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="tb1-1-hintarea">question id: tb1-1</small></p>
 </div>
 </div>
@@ -3791,19 +3444,19 @@ Figure&nbsp;5: Budget constraints (dark green) are the negatively sloping straig
 </ol>
 <div class="cell" data-show_hints="falsee">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$A(r, V) = ... }{3} r^2$ " id="tb1-2-1" w="19" name="tb1-2" hint="wrong" show_hints="falsee"> <span class="math inline">\(A(r, V) = 2 V/r + \frac{8 \pi}{3} r^2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$A(r, V) = ... }{3} r^2$ " id="tb1-2-1" w="23" name="tb1-2" hint="Incorrect choice." show_hints="falsee"> <span class="math inline">\(A(r, V) = 2 V/r + \frac{8 \pi}{3} r^2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$A(r, V) = ... i}{3} r^2$" id="tb1-2-2" w="5" name="tb1-2" hint="Right" show_hints="falsee"> <span class="math inline">\(A(r, V) = 2 V/r + \frac{4 \pi}{3} r^2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$A(r, V) = ... i}{3} r^2$" id="tb1-2-2" w="35" name="tb1-2" hint="Excellent!" show_hints="falsee"> <span class="math inline">\(A(r, V) = 2 V/r + \frac{4 \pi}{3} r^2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$A(r, V) = ... }{3} r^2$ " id="tb1-2-3" w="3" name="tb1-2" hint="Try again!" show_hints="falsee"> <span class="math inline">\(A(r, V) = V/r + \frac{20 \pi}{3} r^2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$A(r, V) = ... }{3} r^2$ " id="tb1-2-3" w="87" name="tb1-2" hint="Think again." show_hints="falsee"> <span class="math inline">\(A(r, V) = V/r + \frac{20 \pi}{3} r^2\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$A(r, V) = ... 3 \pi r^2$" id="tb1-2-4" w="23" name="tb1-2" hint="You're mistaken" show_hints="falsee"> <span class="math inline">\(A(r, V) = V/r + 3 \pi r^2\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$A(r, V) = ... 3 \pi r^2$" id="tb1-2-4" w="23" name="tb1-2" hint="Oops!" show_hints="falsee"> <span class="math inline">\(A(r, V) = V/r + 3 \pi r^2\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="tb1-2" id="tb1-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="tb1-2-hintarea">question id: tb1-2</small></p>
 </div>
 </div>
@@ -3812,19 +3465,19 @@ Figure&nbsp;5: Budget constraints (dark green) are the negatively sloping straig
 </ol>
 <div class="cell" data-show_hints="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$r^\star = ... {4\pi} V}$" id="tb1-3-1" w="8" name="tb1-3" hint="Excellent!" show_hints="FALSE"> <span class="math inline">\(r^\star = \sqrt[3]{\frac{3}{4\pi} V}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$r^\star = ... {4\pi} V}$" id="tb1-3-1" w="18" name="tb1-3" hint="Score!" show_hints="FALSE"> <span class="math inline">\(r^\star = \sqrt[3]{\frac{3}{4\pi} V}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$r^\star = ... 3\pi} V}$ " id="tb1-3-2" w="19" name="tb1-3" hint="right-o" show_hints="FALSE"> <span class="math inline">\(r^\star = \sqrt[3]{\frac{4}{3\pi} V}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$r^\star = ... 3\pi} V}$ " id="tb1-3-2" w="19" name="tb1-3" hint="Right on the nose!" show_hints="FALSE"> <span class="math inline">\(r^\star = \sqrt[3]{\frac{4}{3\pi} V}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$r^\star = ... i}{4} V}$ " id="tb1-3-3" w="87" name="tb1-3" hint="Excellent!" show_hints="FALSE"> <span class="math inline">\(r^\star = \sqrt[3]{\frac{3\pi}{4} V}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$r^\star = ... i}{4} V}$ " id="tb1-3-3" w="19" name="tb1-3" hint="Nice." show_hints="FALSE"> <span class="math inline">\(r^\star = \sqrt[3]{\frac{3\pi}{4} V}\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$r^\star = ... {2\pi} V}$" id="tb1-3-4" w="7" name="tb1-3" hint="Good job!" show_hints="FALSE"> <span class="math inline">\(r^\star = \sqrt[3]{\frac{3}{2\pi} V}\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$r^\star = ... {2\pi} V}$" id="tb1-3-4" w="87" name="tb1-3" hint="Good job!" show_hints="FALSE"> <span class="math inline">\(r^\star = \sqrt[3]{\frac{3}{2\pi} V}\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="tb1-3" id="tb1-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="tb1-3-hintarea">question id: tb1-3</small></p>
 </div>
 </div>
@@ -3832,8 +3485,8 @@ Figure&nbsp;5: Budget constraints (dark green) are the negatively sloping straig
 <li>What is the optimal value of <span class="math inline">\(r\)</span> in cm to a precision of one micron?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="6.2035" id="tb1-4-1" w="23" name="tb1-4" hint="Check that you were using the right units for $V$." show_hints="TRUE"> 6.2035 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="46.0351 " id="tb1-4-2" w="87" name="tb1-4" hint="Not quite right" show_hints="TRUE"> 46.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="52.0351 " id="tb1-4-3" w="87" name="tb1-4" hint="Better luck next time." show_hints="TRUE"> 52.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="62.0351" id="tb1-4-4" w="20" name="tb1-4" hint="Excellent!" show_hints="TRUE"> 62.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tb1-4" id="tb1-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="6.2035" id="tb1-4-1" w="23" name="tb1-4" hint="Check that you were using the right units for $V$." show_hints="TRUE"> 6.2035 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="46.0351 " id="tb1-4-2" w="23" name="tb1-4" hint="Better luck next time." show_hints="TRUE"> 46.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="52.0351 " id="tb1-4-3" w="7" name="tb1-4" hint="Not quite." show_hints="TRUE"> 52.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="62.0351" id="tb1-4-4" w="41" name="tb1-4" hint="Exactly." show_hints="TRUE"> 62.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tb1-4" id="tb1-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="tb1-4-hintarea">question id: tb1-4</small></p>
 </div>
 </div>
@@ -3841,19 +3494,19 @@ Figure&nbsp;5: Budget constraints (dark green) are the negatively sloping straig
 <li>Find the optimum value of <span class="math inline">\(r\)</span> to minimize <span class="math inline">\(A(r,V)\)</span> when <span class="math inline">\(V = 1000\)</span> liters.</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="false">
-<input type="radio" class="devoirs-mcq" value="6.2035" id="tb1-5-1" w="23" name="tb1-5" hint="Check that you were using the right units for $V$." show_hints="FALSE"> 6.2035 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="46.0351 " id="tb1-5-2" w="87" name="tb1-5" hint="wrong" show_hints="FALSE"> 46.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="52.0351 " id="tb1-5-3" w="87" name="tb1-5" hint="Not quite right" show_hints="FALSE"> 52.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="62.0351" id="tb1-5-4" w="8" name="tb1-5" hint="Nice." show_hints="FALSE"> 62.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tb1-5" id="tb1-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="6.2035" id="tb1-5-1" w="87" name="tb1-5" hint="Check that you were using the right units for $V$." show_hints="FALSE"> 6.2035 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="46.0351 " id="tb1-5-2" w="3" name="tb1-5" hint="Better luck next time." show_hints="FALSE"> 46.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="52.0351 " id="tb1-5-3" w="23" name="tb1-5" hint="Hmmm ..." show_hints="FALSE"> 52.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="62.0351" id="tb1-5-4" w="20" name="tb1-5" hint="Exactly." show_hints="FALSE"> 62.0351 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tb1-5" id="tb1-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="tb1-5-hintarea">question id: tb1-5</small></p>
 </div>
 </div>
-<p>Use <a href="#lst-walnut-write-futon-A" class="quarto-xref">Active R chunk&nbsp;<span>7</span></a> to plot a graph of <span class="math inline">\(A(r, V)\)</span> versus r, setting <span class="math inline">\(V = 1000\)</span> liters.</p>
+<p>Use <a href="#lst-walnut-write-futon-A" class="quarto-xref">Active R chunk&nbsp;<span>8</span></a> to plot a graph of <span class="math inline">\(A(r, V)\)</span> versus r, setting <span class="math inline">\(V = 1000\)</span> liters.</p>
 <div id="lst-walnut-write-futon-A" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-walnut-write-futon-A-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;7
+Active R chunk&nbsp;8
 </figcaption>
 <div aria-describedby="lst-walnut-write-futon-A-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-8"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3862,8 +3515,8 @@ Active R chunk&nbsp;7
 <li>From the graph of <span class="math inline">\(A(r, V)\)</span> versus <span class="math inline">\(r\)</span> at <span class="math inline">\(V=1000\)</span> liters, read off a range of <span class="math inline">\(r\)</span> that produces <span class="math inline">\(A\)</span> no worse than 1% greater than the minimum. How wide is that range, approximately?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="false">
-<input type="radio" class="devoirs-mcq" value="$\pm 0.1$cm " id="tb1-6-1" w="87" name="tb1-6" hint="Try again!" show_hints="FALSE"> <span class="math inline">\(\pm 0.1\)</span>cm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pm 1$cm " id="tb1-6-2" w="3" name="tb1-6" hint="Try again!" show_hints="FALSE"> <span class="math inline">\(\pm 1\)</span>cm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pm 5$cm" id="tb1-6-3" w="35" name="tb1-6" hint="Excellent!" show_hints="FALSE"> <span class="math inline">\(\pm 5\)</span>cm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pm 10$cm " id="tb1-6-4" w="19" name="tb1-6" hint="wrong" show_hints="FALSE"> <span class="math inline">\(\pm 10\)</span>cm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tb1-6" id="tb1-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$\pm 0.1$cm " id="tb1-6-1" w="32" name="tb1-6" hint="Not quite." show_hints="FALSE"> <span class="math inline">\(\pm 0.1\)</span>cm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pm 1$cm " id="tb1-6-2" w="3" name="tb1-6" hint="Better luck next time." show_hints="FALSE"> <span class="math inline">\(\pm 1\)</span>cm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pm 5$cm" id="tb1-6-3" w="14" name="tb1-6" hint="You've got it!" show_hints="FALSE"> <span class="math inline">\(\pm 5\)</span>cm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pm 10$cm " id="tb1-6-4" w="19" name="tb1-6" hint="Not so!" show_hints="FALSE"> <span class="math inline">\(\pm 10\)</span>cm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tb1-6" id="tb1-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="tb1-6-hintarea">question id: tb1-6</small></p>
 </div>
 </div>
@@ -3871,7 +3524,7 @@ Active R chunk&nbsp;7
 <section id="activities" class="level3">
 <h3 class="anchored" data-anchor-id="activities">Activities</h3>
 <div id="exr-pony-run-bed" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 9</strong></span> The key steps in optimization are setting up the objective function(s) and setting constraints as needed to represent the problem at hand. There are many ways to perform the work to extract the argmax once the objective function and constraints are set.</p>
+<p><span class="theorem-title"><strong>Exercise 10</strong></span> The key steps in optimization are setting up the objective function(s) and setting constraints as needed to represent the problem at hand. There are many ways to perform the work to extract the argmax once the objective function and constraints are set.</p>
 <p>Understandably, calculus textbooks tend to emphasize techniques based on finding an input where the derivative of the objective function is zero. For problems involving multiple inputs, the task is to find an input where the <strong>gradient</strong> vector is zero.</p>
 <p>Contemporary work often involves problems with tens, hundreds, thousands, or even millions of inputs. Even in such large problems, the mechanics of finding the corresponding gradient vector are straightforward. Searching through a high-dimensional space, however, is not generally a task that can be accomplished using calculus tools. Instead, starting in the 1940s, great creativity has been applied to develop algorithms with names like <strong>linear programming</strong>, <strong>quadratic programming</strong>, <strong>dynamic programming</strong>, etc. many of which are based on ideas from linear algebra such as the <code>qr.solve()</code> algorithm for solving the target problem, or ideas from statistics and statistical physics that incorporate randomness as an essential component. An entire field, <strong>operations research</strong>, focuses on setting up and solving such problems. Building appropriate algorithms requires deep understanding of several areas of mathematics. But using the methods is mainly a matter of knowing how to set up the problem and communicate the objective function, constraints, etc. to a computer.</p>
 <p>Purely as an example, let’s examine the operation of an early algorithmic optimization method: <a href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a>, dating from the mid-1960s. (There are better, faster methods now, but they are harder to understand.)</p>
@@ -3880,6 +3533,10 @@ Active R chunk&nbsp;7
 <p>Evaluate the objective function at the vertices of the simplex. One of the vertices will have the lowest score for the output of the objective. From that vertex, project a line through the midpoint of the fence segment defined by the other <span class="math inline">\(n\)</span> vertices. In the video, this is drawn using dashes. Then try a handful of points along that line, indicated by the colored dots in the video. One of these will have a higher score for the objective function than the vertex used to define the line. Replace that vertex with the new, higher-scoring point. Now you have another simplex and can repeat the process. The actual algorithm has additional rules to handle special cases, but the gist of the algorithm is simple.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/j2gcuRVbwR0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
+</div>
+<div id="exr-argmax-precision" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 11</strong></span> When we locate an argmax, it’s helpful to have some guidance about how much precision make practical sense. We can figure this out using the second derivative of the function at the argmax.</p>
+<p>Consider a function f(x) and its curvature at an argmax. The curvature is the reciprocal of the radius of a circle tangent to the function. That circle approximates the function itself. At an argmax, the highest point in the circle will be right on the function. But a few degrees to either side of the highest point will be very close to the highest point. How wide will the chord of the circle be that connects the points 5 degrees to either side of the highest point? Your answer will involve sin() but also the curvature of the function.</p>
 </div>
 <span id="devoirs-docID" style="display: none;">24-exercises.rmarkdown</span> <button onclick="devoirsSubmit()">Collect your answers</button>
 <div id="devoirs_summary">
@@ -3939,15 +3596,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3967,7 +3631,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3980,7 +3647,6 @@ console.log("Added hint summary.")
 
 
 </section>
-</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -4065,8 +3731,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -4177,7 +3841,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

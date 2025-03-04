@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -71,10 +37,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -371,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -393,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"editor-word-wrap":"true","results":"markup","read-only":"false","editor-font-scale":"1","editor-max-height":"","context":"interactive","warning":"true","comment":"","dpi":72,"classes":"","fig-width":7,"editor-quick-suggestions":"false","autorun":"false","output":"true","fig-cap":"","message":"true","out-width":"700px","label":"chicken-chew-screen","fig-height":5,"out-height":""},"code":"","id":1},{"options":{"editor-word-wrap":"true","results":"markup","read-only":"false","editor-font-scale":"1","editor-max-height":"","context":"interactive","warning":"true","comment":"","dpi":72,"classes":"","fig-width":7,"editor-quick-suggestions":"false","autorun":"false","output":"true","fig-cap":"","message":"true","out-width":"700px","label":"dolphin-toss-candy","fig-height":5,"out-height":""},"code":"","id":2},{"options":{"editor-word-wrap":"true","results":"markup","read-only":"false","editor-font-scale":"1","editor-max-height":"","context":"interactive","warning":"true","comment":"","dpi":72,"classes":"","fig-width":7,"editor-quick-suggestions":"false","autorun":"false","output":"true","fig-cap":"","message":"true","out-width":"700px","label":"unnamed-chunk-3","fig-height":5,"out-height":""},"code":"x <- 2\nsin(x) * sqrt(x)","id":3},{"options":{"editor-word-wrap":"true","results":"markup","read-only":"false","editor-font-scale":"1","editor-max-height":"","context":"interactive","warning":"true","comment":"","dpi":72,"classes":"","fig-width":7,"editor-quick-suggestions":"false","autorun":"false","output":"true","fig-cap":"","message":"true","out-width":"700px","label":"goat-look-boat","fig-height":5,"out-height":""},"code":"","id":4}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# NOTE: Write the five R commands \n# each in its own line in this\n# interactive R chunk. When you run \n# the chunk, you will see all \n# five answers (or any error\n# messages produced). \n# Edit the individual lines until\n# you have things working.","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"chicken-chew-screen","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"dolphin-toss-candy","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"x <- 2\nsin(x) * sqrt(x)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Remember to put all five expressions, \n# one to a line, to be run \n# all at once. This let the grader\n# see them all.\n# You MUST run the final version of your lines\n# to include them in the submitted answers.","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"goat-look-boat","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1647,7 +1613,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Block I Preliminaries</a></li><li class="breadcrumb-item"><a href="./03-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 3 Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Preliminaries</a></li><li class="breadcrumb-item"><a href="./03-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 3 Exercises</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1668,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1797,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1805,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1880,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1975,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2190,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2311,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2991,7 +2576,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Block I Preliminaries</a></li><li class="breadcrumb-item"><a href="./03-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 3 Exercises</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Preliminaries</a></li><li class="breadcrumb-item"><a href="./03-exercises.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 3 Exercises</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 3 Exercises</h1>
 </div>
@@ -3016,14 +2601,16 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-cow-likes-chair" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> &nbsp;</p>
 <ol type="1">
 <li>Input name in <span class="math inline">\(g(t) \equiv 2 t^2 + 8\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="t" id="clc2-1-1" w="18" name="clc2-1" hint="Excellent!" show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u " id="clc2-1-2" w="32" name="clc2-1" hint="Not quite right" show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-1-3" w="87" name="clc2-1" hint="Try again!" show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w " id="clc2-1-4" w="3" name="clc2-1" hint="Sorry!" show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x " id="clc2-1-5" w="19" name="clc2-1" hint="You're mistaken" show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-1-6" w="87" name="clc2-1" hint="wide of the mark" show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z " id="clc2-1-7" w="7" name="clc2-1" hint="Try again!" show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-1" id="clc2-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="t" id="clc2-1-1" w="5" name="clc2-1" hint="You're right." show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u " id="clc2-1-2" w="19" name="clc2-1" hint="Not quite right." show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-1-3" w="19" name="clc2-1" hint="Incorrect choice." show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w " id="clc2-1-4" w="32" name="clc2-1" hint="Think again." show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x " id="clc2-1-5" w="7" name="clc2-1" hint="Nope." show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-1-6" w="87" name="clc2-1" hint="Oops!" show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z " id="clc2-1-7" w="7" name="clc2-1" hint="Untrue!" show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-1" id="clc2-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="clc2-1-hintarea">question id: clc2-1</small></p>
 </div>
 </div>
@@ -3031,8 +2618,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>Input name in <span class="math inline">\(\text{straight\_line}(z) \equiv a z + b\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="t " id="clc2-2-1" w="3" name="clc2-2" hint="incorrect choice" show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u " id="clc2-2-2" w="32" name="clc2-2" hint="no" show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-2-3" w="23" name="clc2-2" hint="Better luck next time." show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w " id="clc2-2-4" w="3" name="clc2-2" hint="wrong" show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x " id="clc2-2-5" w="23" name="clc2-2" hint="incorrect choice" show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-2-6" w="87" name="clc2-2" hint="Try again!" show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z" id="clc2-2-7" w="29" name="clc2-2" hint="Yes" show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-2" id="clc2-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="t " id="clc2-2-1" w="19" name="clc2-2" hint="Not quite right." show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u " id="clc2-2-2" w="32" name="clc2-2" hint="You might think so, but ..." show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-2-3" w="3" name="clc2-2" hint="You might think so, but ..." show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w " id="clc2-2-4" w="32" name="clc2-2" hint="Incorrect choice." show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x " id="clc2-2-5" w="23" name="clc2-2" hint="Boo!" show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-2-6" w="19" name="clc2-2" hint="You're wrong here." show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z" id="clc2-2-7" w="41" name="clc2-2" hint="Bingo!" show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-2" id="clc2-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="clc2-2-hintarea">question id: clc2-2</small></p>
 </div>
 </div>
@@ -3040,8 +2627,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>Input name in <span class="math inline">\(h(t) \equiv 2 t^2 + 8 w\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="t" id="clc2-3-1" w="29" name="clc2-3" hint="Yes" show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u " id="clc2-3-2" w="23" name="clc2-3" hint="Try again!" show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-3-3" w="32" name="clc2-3" hint="wide of the mark" show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w " id="clc2-3-4" w="3" name="clc2-3" hint="Try again!" show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x " id="clc2-3-5" w="32" name="clc2-3" hint="Not quite right" show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-3-6" w="7" name="clc2-3" hint="Better luck next time." show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z " id="clc2-3-7" w="19" name="clc2-3" hint="no" show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-3" id="clc2-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="t" id="clc2-3-1" w="14" name="clc2-3" hint="A hit!" show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u " id="clc2-3-2" w="23" name="clc2-3" hint="Not quite right." show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-3-3" w="23" name="clc2-3" hint="Wrong." show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w " id="clc2-3-4" w="32" name="clc2-3" hint="Incorrect choice." show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x " id="clc2-3-5" w="3" name="clc2-3" hint="Wrong." show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-3-6" w="23" name="clc2-3" hint="Untrue!" show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z " id="clc2-3-7" w="32" name="clc2-3" hint="Sorry!" show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-3" id="clc2-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="clc2-3-hintarea">question id: clc2-3</small></p>
 </div>
 </div>
@@ -3049,15 +2636,17 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>Input name in <span class="math inline">\(f(u) \equiv a u + b + u^2\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="t " id="clc2-4-1" w="32" name="clc2-4" hint="no" show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u" id="clc2-4-2" w="29" name="clc2-4" hint="Correct" show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-4-3" w="7" name="clc2-4" hint="wrong" show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w " id="clc2-4-4" w="23" name="clc2-4" hint="incorrect choice" show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x " id="clc2-4-5" w="7" name="clc2-4" hint="Try again!" show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-4-6" w="87" name="clc2-4" hint="no" show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z " id="clc2-4-7" w="32" name="clc2-4" hint="You're mistaken" show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-4" id="clc2-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="t " id="clc2-4-1" w="87" name="clc2-4" hint="Untrue!" show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u" id="clc2-4-2" w="35" name="clc2-4" hint="Right on the nose!" show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-4-3" w="87" name="clc2-4" hint="Untrue!" show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w " id="clc2-4-4" w="87" name="clc2-4" hint="You're wrong here." show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x " id="clc2-4-5" w="23" name="clc2-4" hint="Nope." show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-4-6" w="7" name="clc2-4" hint="Nope." show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z " id="clc2-4-7" w="7" name="clc2-4" hint="Better luck next time." show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-4" id="clc2-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="clc2-4-hintarea">question id: clc2-4</small></p>
 </div>
 </div>
-<p>5Input name in <span class="math inline">\(g(w) \equiv x + 4\)</span>?</p>
+<ol start="5" type="1">
+<li>Input name in <span class="math inline">\(g(w) \equiv x + 4\)</span>?</li>
+</ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="t " id="clc2-5-1" w="23" name="clc2-5" hint="Not quite right" show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u " id="clc2-5-2" w="32" name="clc2-5" hint="incorrect choice" show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-5-3" w="19" name="clc2-5" hint="incorrect choice" show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w" id="clc2-5-4" w="14" name="clc2-5" hint="Right" show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x" id="clc2-5-5" w="19" name="clc2-5" hint="Tricked you! it is the name in the parentheses on the left side of $\equiv$ that matters. Evidently, the output of $g(w)$ does not depend on $w$. That is not much of a relationship, but it is a common one." show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-5-6" w="19" name="clc2-5" hint="incorrect choice" show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z" id="clc2-5-7" w="3" name="clc2-5" hint="Sorry!" show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-5" id="clc2-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="t " id="clc2-5-1" w="7" name="clc2-5" hint="Better luck next time." show_hints="TRUE"> t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="u " id="clc2-5-2" w="19" name="clc2-5" hint="You're mistaken" show_hints="TRUE"> u &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="clc2-5-3" w="7" name="clc2-5" hint="Think again." show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="w" id="clc2-5-4" w="35" name="clc2-5" hint="Bingo!" show_hints="TRUE"> w &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="x" id="clc2-5-5" w="23" name="clc2-5" hint="Tricked you! it is the name in the parentheses on the left side of $\equiv$ that matters. Evidently, the output of $g(w)$ does not depend on $w$. That is not much of a relationship, but it is a common one." show_hints="TRUE"> x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="y " id="clc2-5-6" w="19" name="clc2-5" hint="Sorry!" show_hints="TRUE"> y &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="z" id="clc2-5-7" w="3" name="clc2-5" hint="Wrong." show_hints="TRUE"> z &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="clc2-5" id="clc2-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="clc2-5-hintarea">question id: clc2-5</small></p>
 </div>
 </div>
@@ -3123,7 +2712,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </table>
 <p>Each of these examples has been written using numbers as inputs to the mathematical operations. The syntax will be the same when using an input name such as <code>x</code> or <code>y</code> or <code>altitude</code>, for instance <code>(x - y) / 2</code>. In order for that command using <code>x</code> and <code>y</code> to work, some meaning must have been previously attached to the symbols. We will come back to this important topic on another day.</p>
 <p>Read through the above table of examples several times. Note down any that you find at all confusing. Then cover up the right side of the table and write down the R expression for each item on the left side. Similarly, cover up the left side of the table and translate the R expression into traditional notation.</p>
-<p>Use <a href="#lst-chicken-chew-screen-1" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-chicken-chew-screen-1</span></a> to write and run the R expression for each of these traditional-notation expressions. We give the numerical result for each of the traditional expressions to let you confirm that your R version is correct.</p>
+<p>Use <a href="#lst-chicken-chew-screen-1" class="quarto-xref">Active R chunk&nbsp;<span>1</span></a> to write and run the R expression for each of these traditional-notation expressions. We give the numerical result for each of the traditional expressions to let you confirm that your R version is correct.</p>
 <ol type="i">
 <li><span class="math inline">\((16 - 3)/2\)</span> gives result 6.5</li>
 <li><span class="math inline">\(\sqrt{\frac{19}{3}}\)</span> gives 2.5166115</li>
@@ -3131,14 +2720,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li><span class="math inline">\(\pi^3 + 2\)</span> gives 33.0062767</li>
 <li><span class="math inline">\(\pi^{3+2}\)</span> gives 306.0196848</li>
 </ol>
-</div>
 <div id="lst-chicken-chew-screen-1" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-chicken-chew-screen-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-chicken-chew-screen-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3154,7 +2742,7 @@ Active R chunk&nbsp;1
 <li>Multiplication and exponentiation are often written traditionally in terms of the relative position of quantities. So <span class="math inline">\((3 + 2)\pi\)</span> means to multiply 5 times <span class="math inline">\(\pi\)</span>, even though there is no multiplication sign being written. Similar, <span class="math inline">\(\pi^{3 + 2}\)</span> means to raise <span class="math inline">\(\pi\)</span> to the fifth power. There is no “exponentiation sign” used, just the positioning of <span class="math inline">\(3+2\)</span> as a superscript: <span class="math inline">\(^{3+2}\)</span>. In R (and almost every computer language) multiplication and exponentiation <strong>must be written explicitly</strong>. The quantities <span class="math inline">\((3 + 2)\pi\)</span> and <span class="math inline">\(\pi^{3 + 2}\)</span> would be translated as <code>(3 + 2) * pi</code> and <code>pi^(3+2)</code>.</li>
 </ol>
 <p>One additional note: All these examples can be written with a single line of code, as is true for many short formulas. Later on, we will encounter longer formulas that <em>could</em> be written on a single line but are more readable when spread over two or more consecutive lines.</p>
-<p>:::</p>
+</div>
 <div id="exr-chicken-chew-screen" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 3</strong></span> Use the <em>MOSAIC Calculus</em> naming conventions to answer these questions.</p>
 <ol type="1">
@@ -3162,17 +2750,17 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The name o ... a function" id="cdrill-1-1" w="35" name="cdrill-1" hint="Yes Right. Typically we use $f()$, $g()$, $h()$ or something similarly generic to stand for a function that we will be working with for a little while. Think of these as pronouns. Just as we can say, meaningfully, &quot;She gave it to him,&quot; we can say $h(x) \equiv f(x) + g(2*x)$" show_hints="TRUE"> The name of a function</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The name o ... a function" id="convention-drill-1-1" w="8" name="convention-drill-1" hint="Yes Right. Typically we use $f()$, $g()$, $h()$ or something similarly generic to stand for a function that we will be working with for a little while. Think of these as pronouns. Just as we can say, meaningfully, &quot;She gave it to him,&quot; we can say $h(x) \equiv f(x) + g(2*x)$" show_hints="TRUE"> The name of a function</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The name o ...  an input." id="cdrill-1-2" w="87" name="cdrill-1" hint="Sorry, these will usually be letters like $x$, $y$, $t$." show_hints="TRUE"> The name of an input.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The name o ...  an input." id="convention-drill-1-2" w="3" name="convention-drill-1" hint="Sorry, these will usually be letters like $x$, $y$, $t$." show_hints="TRUE"> The name of an input.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A specific ... ical value" id="cdrill-1-3" w="32" name="cdrill-1" hint="Sorry, but we will use constructions with a subscript like $x_0$ or $y_\star$ and the like for these." show_hints="TRUE"> A specific numerical value</p>
+</p><p><input type="radio" class="devoirs-mcq" value="A specific ... ical value" id="convention-drill-1-3" w="7" name="convention-drill-1" hint="Sorry, but we will use constructions with a subscript like $x_0$ or $y_\star$ and the like for these." show_hints="TRUE"> A specific numerical value</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="cdrill-1" id="cdrill-1.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="cdrill-1-hintarea">question id: cdrill-1</small></p>
+<input type="radio" class="devoirs-mcq" name="convention-drill-1" id="convention-drill-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="convention-drill-1-hintarea">question id: convention-drill-1</small></p>
 </div>
 </div>
 <ol start="2" type="1">
@@ -3180,17 +2768,17 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="No good reason" id="cdrill-2-1" w="32" name="cdrill-2" hint="We certainly intend with the empty parentheses to remind the reader that a name refers to a function. If you spot a place where we violate this intention, point it out to us." show_hints="TRUE"> No good reason</p>
+</p><p><input type="radio" class="devoirs-mcq" value="No good reason" id="convention-drill-2-1" w="32" name="convention-drill-2" hint="We certainly intend with the empty parentheses to remind the reader that a name refers to a function. If you spot a place where we violate this intention, point it out to us." show_hints="TRUE"> No good reason</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It is a re ... ame &quot;$f$&quot;." id="cdrill-2-2" w="8" name="cdrill-2" hint="Yes" show_hints="TRUE"> It is a reminder that we are talking about a function with the name “<span class="math inline">\(f\)</span>”.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It is a re ... ame &quot;$f$&quot;." id="convention-drill-2-2" w="18" name="convention-drill-2" hint="Score!" show_hints="TRUE"> It is a reminder that we are talking about a function with the name “<span class="math inline">\(f\)</span>”.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The parent ...  the name." id="cdrill-2-3" w="32" name="cdrill-2" hint="Not at all. Names in R never contain parentheses. So `f`, `fbar`, `fred` are all valid names in an R command, but `f()` is not. We use the parentheses when writing to a human audience as a reminder that the name is referring to a function. The computer does not need any such reminders" show_hints="TRUE"> The parentheses are part of the name.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The parent ...  the name." id="convention-drill-2-3" w="87" name="convention-drill-2" hint="Not at all. Names in R never contain parentheses. So `f`, `fbar`, `fred` are all valid names in an R command, but `f()` is not. We use the parentheses when writing to a human audience as a reminder that the name is referring to a function. The computer does not need any such reminders" show_hints="TRUE"> The parentheses are part of the name.</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="cdrill-2" id="cdrill-2.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="cdrill-2-hintarea">question id: cdrill-2</small></p>
+<input type="radio" class="devoirs-mcq" name="convention-drill-2" id="convention-drill-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="convention-drill-2-hintarea">question id: convention-drill-2</small></p>
 </div>
 </div>
 <ol start="3" type="1">
@@ -3198,14 +2786,14 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A particul ... ical value" id="cdrill-3-1" w="35" name="cdrill-3" hint="Excellent! Right. For instance, it might be the particular value for the input to a function which produces an output of zero. Or it might be a particular location in the domain of a function." show_hints="TRUE"> A particular numerical value</p>
+</p><p><input type="radio" class="devoirs-mcq" value="A particul ... ical value" id="convention-drill-3-1" w="8" name="convention-drill-3" hint="Excellent! Right. For instance, it might be the particular value for the input to a function which produces an output of zero. Or it might be a particular location in the domain of a function." show_hints="TRUE"> A particular numerical value</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The name o ... f an input" id="cdrill-3-2" w="7" name="cdrill-3" hint="Sorry. We won't typically use subscripts when referring to an input name." show_hints="TRUE"> The name of an input</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The name o ... f an input" id="convention-drill-3-2" w="32" name="convention-drill-3" hint="Sorry. We won't typically use subscripts when referring to an input name." show_hints="TRUE"> The name of an input</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="cdrill-3" id="cdrill-3.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="cdrill-3-hintarea">question id: cdrill-3</small></p>
+<input type="radio" class="devoirs-mcq" name="convention-drill-3" id="convention-drill-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="convention-drill-3-hintarea">question id: convention-drill-3</small></p>
 </div>
 </div>
 <ol start="4" type="1">
@@ -3213,17 +2801,17 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$y$" id="cdrill-4-1" w="16" name="cdrill-4" hint="You're right Right. Another term to use for a symbol standing for a domain is &quot;name of an input&quot;." show_hints="TRUE"> <span class="math inline">\(y\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$y$" id="convention-drill-4-1" w="5" name="convention-drill-4" hint="Another term to use for a symbol standing for a domain is &quot;name of an input&quot;." show_hints="TRUE"> <span class="math inline">\(y\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$f()$" id="cdrill-4-2" w="32" name="cdrill-4" hint="No, this is how we write the name of the function called &quot;$f$&quot;" show_hints="TRUE"> <span class="math inline">\(f()\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$f()$" id="convention-drill-4-2" w="32" name="convention-drill-4" hint="No, this is how we write the name of the function called &quot;$f$&quot;" show_hints="TRUE"> <span class="math inline">\(f()\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$y_0$" id="cdrill-4-3" w="7" name="cdrill-4" hint="No. $y_0$ might be used to stand for a single point in the domain." show_hints="TRUE"> <span class="math inline">\(y_0\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$y_0$" id="convention-drill-4-3" w="7" name="convention-drill-4" hint="No. $y_0$ might be used to stand for a single point in the domain." show_hints="TRUE"> <span class="math inline">\(y_0\)</span></p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="cdrill-4" id="cdrill-4.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="cdrill-4-hintarea">question id: cdrill-4</small></p>
+<input type="radio" class="devoirs-mcq" name="convention-drill-4" id="convention-drill-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="convention-drill-4-hintarea">question id: convention-drill-4</small></p>
 </div>
 </div>
 <ol start="5" type="1">
@@ -3231,17 +2819,17 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$v()$ is t ...  function." id="cdrill-5-1" w="14" name="cdrill-5" hint="right-o Right. Whenever we write something like &quot;name(another_name) $\equiv$&quot;, we are saying **explicitly** that &quot;name&quot; refers to a function and &quot;another_name&quot; refers to an input." show_hints="TRUE"> <span class="math inline">\(v()\)</span> is the name of a function and <span class="math inline">\(w\)</span> is the name of the input to that function.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="$v()$ is t ...  function." id="convention-drill-5-1" w="18" name="convention-drill-5" hint="right-o Right. Whenever we write something like &quot;name(another_name) $\equiv$&quot;, we are saying **explicitly** that &quot;name&quot; refers to a function and &quot;another_name&quot; refers to an input." show_hints="TRUE"> <span class="math inline">\(v()\)</span> is the name of a function and <span class="math inline">\(w\)</span> is the name of the input to that function.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It is meaningless." id="cdrill-5-2" w="7" name="cdrill-5" hint="we will try not to write meaningless mathematical expressions. If we do by mistake, let us know." show_hints="TRUE"> It is meaningless.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It is meaningless." id="convention-drill-5-2" w="7" name="convention-drill-5" hint="we will try not to write meaningless mathematical expressions. If we do by mistake, let us know." show_hints="TRUE"> It is meaningless.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="It is the  ...  = w + 3$." id="cdrill-5-3" w="3" name="cdrill-5" hint="$v = w+3$ is an **equation**. But $v(w) \equiv w+3$ is the format for **defining a function** named $v()$." show_hints="TRUE"> It is the same thing as <span class="math inline">\(v = w + 3\)</span>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="It is the  ...  = w + 3$." id="convention-drill-5-3" w="32" name="convention-drill-5" hint="$v = w+3$ is an **equation**. But $v(w) \equiv w+3$ is the format for **defining a function** named $v()$." show_hints="TRUE"> It is the same thing as <span class="math inline">\(v = w + 3\)</span>.</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="cdrill-5" id="cdrill-5.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="cdrill-5-hintarea">question id: cdrill-5</small></p>
+<input type="radio" class="devoirs-mcq" name="convention-drill-5" id="convention-drill-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="convention-drill-5-hintarea">question id: convention-drill-5</small></p>
 </div>
 </div>
 <ol start="6" type="1">
@@ -3249,14 +2837,14 @@ Active R chunk&nbsp;1
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Yes, altho ... ent names." id="cdrill-6-1" w="14" name="cdrill-6" hint="Correct The only thing that is  significant about the name of an input is that it be used consistently in the function algorithm." show_hints="TRUE"> Yes, although that function is being given two different names.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Yes, altho ... ent names." id="convention-drill-6-1" w="20" name="convention-drill-6" hint="Correct The only thing that is  significant about the name of an input is that it be used consistently in the function algorithm." show_hints="TRUE"> Yes, although that function is being given two different names.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Of course not!" id="cdrill-6-2" w="7" name="cdrill-6" hint="Sorry. I suppose you might ask, &quot;What do you mean by the **same** function?&quot; Remember that a function is a relationship between inputs and the output. $g(x) \equiv x^2$ and $h(w) \equiv w^2$ describe the same relationship---the output will be the square of the input." show_hints="TRUE"> Of course not!</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Of course not!" id="convention-drill-6-2" w="7" name="convention-drill-6" hint="Sorry. I suppose you might ask, &quot;What do you mean by the **same** function?&quot; Remember that a function is a relationship between inputs and the output. $g(x) \equiv x^2$ and $h(w) \equiv w^2$ describe the same relationship---the output will be the square of the input." show_hints="TRUE"> Of course not!</p>
 <p></p>
-<input type="radio" class="devoirs-mcq" name="cdrill-6" id="cdrill-6.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="cdrill-6-hintarea">question id: cdrill-6</small></p>
+<input type="radio" class="devoirs-mcq" name="convention-drill-6" id="convention-drill-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="convention-drill-6-hintarea">question id: convention-drill-6</small></p>
 </div>
 </div>
 </div>
@@ -3267,67 +2855,64 @@ Active R chunk&nbsp;1
 <p>Each of the following R expressions is incomplete. Your job, which you should do in one line after another in <span class="citation" data-cites="dolphin-toss-candy">@dolphin-toss-candy</span>, is to turn each into a complete expression that produces a numerical result. Sometimes you will have to be creative, since when a sentence is incomplete you, like the computer, don’t really know what it means to say! But each of these erroneous expressions can be fixed by <strong>adding</strong> or <strong>changing</strong> text. Note: In the end, your R chunk will have seven commands, each on its own line.</p>
 <ol type="i">
 <li><code>sin 3</code></li>
-<li><code>((16 - 4) + (14 + 2) / sqrt(7)</code></li>
+<li><code>((16 - 4) + (14 + 2) / sqrt(7)</code> where it is intended that the division be applied to the entire preceeding statement.</li>
 <li><code>pnorm(3; mean=2, sd=4)</code></li>
 <li><code>log[7]</code></li>
 <li><code>14(3 + 7)</code></li>
 <li><code>e^2</code></li>
 <li><code>3 + 4 x + 2 x^2</code></li>
 </ol>
+<p>The last command will generate an error, because no value was assigned to <code>x</code> before asking R to compute with it. You can ignore that last error.</p>
 <div id="lst-dolphin-toss-candy" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-dolphin-toss-candy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;2
 </figcaption>
 <div aria-describedby="lst-dolphin-toss-candy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
 </div>
 <div id="exr-fish-sees-tree" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> &nbsp;</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devoirs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Here is an R chunk that evaluates a function at an input <span class="math inline">\(x\)</span>:</p>
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> Here is an R chunk that evaluates a function at an input <span class="math inline">\(x\)</span>:</p>
 <div id="lst-fish-sees-tree" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-fish-sees-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;3
 </figcaption>
 <div aria-describedby="lst-fish-sees-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
 <p>In the following questions, numbers have been rounded to two or three significant digits. Select the answer closest to the computer output.</p>
 <ol type="1">
-<li>Change <span class="math inline">\(x\)</span> to 1 in <a href="#lst-fish-sees-tree" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-fish-sees-tree</span></a>. What’s the output of <span class="math inline">\(\sin(x) \ \sqrt{\strut x }\)</span></li>
+<li>Change <span class="math inline">\(x\)</span> to 1 in <a href="#lst-fish-sees-tree" class="quarto-xref">Active R chunk&nbsp;<span>3</span></a>. What’s the output of <span class="math inline">\(\sin(x) \ \sqrt{\strut x }\)</span></li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="false">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="-1.51 " id="fst9-1-1" w="23" name="fst9-1" hint="no" show_hints="TRUE"> -1.51</p>
+</p><p><input type="radio" class="devoirs-mcq" value="-1.51 " id="fst9-1-1" w="7" name="fst9-1" hint="Hmmm ..." show_hints="TRUE"> -1.51</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0.244 " id="fst9-1-2" w="7" name="fst9-1" hint="Not quite right" show_hints="TRUE"> 0.244</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.244 " id="fst9-1-2" w="3" name="fst9-1" hint="Better luck next time." show_hints="TRUE"> 0.244</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0.84" id="fst9-1-3" w="41" name="fst9-1" hint="Nice." show_hints="TRUE"> 0.84</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.84" id="fst9-1-3" w="14" name="fst9-1" hint="Nice." show_hints="TRUE"> 0.84</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="0.99 " id="fst9-1-4" w="7" name="fst9-1" hint="Not quite right" show_hints="TRUE"> 0.99</p>
+</p><p><input type="radio" class="devoirs-mcq" value="0.99 " id="fst9-1-4" w="32" name="fst9-1" hint="You're wrong here." show_hints="TRUE"> 0.99</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="2.14 " id="fst9-1-5" w="23" name="fst9-1" hint="wide of the mark" show_hints="TRUE"> 2.14</p>
+</p><p><input type="radio" class="devoirs-mcq" value="2.14 " id="fst9-1-5" w="32" name="fst9-1" hint="Incorrect." show_hints="TRUE"> 2.14</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`NaN` " id="fst9-1-6" w="7" name="fst9-1" hint="wide of the mark" show_hints="TRUE"> <code>NaN</code> </p>
+</p><p><input type="radio" class="devoirs-mcq" value="`NaN` " id="fst9-1-6" w="19" name="fst9-1" hint="Not quite." show_hints="TRUE"> <code>NaN</code> </p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="fst9-1" id="fst9-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="fst9-1-hintarea">question id: fst9-1</small></p>
 </div>
 </div>
@@ -3335,8 +2920,8 @@ Active R chunk&nbsp;3
 <li>Change <span class="math inline">\(x\)</span> to 3. What’s the output of <span class="math inline">\(\sin(x) \  \sqrt{\strut x }\)</span></li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-1.51 " id="fst9-2-1" w="32" name="fst9-2" hint="wrong" show_hints="FALSE"> -1.51 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.244" id="fst9-2-2" w="14" name="fst9-2" hint="Yes" show_hints="FALSE"> 0.244 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.84 " id="fst9-2-3" w="23" name="fst9-2" hint="no" show_hints="FALSE"> 0.84 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.99 " id="fst9-2-4" w="19" name="fst9-2" hint="Not quite right" show_hints="FALSE"> 0.99 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2.14 " id="fst9-2-5" w="3" name="fst9-2" hint="Better luck next time." show_hints="FALSE"> 2.14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`NaN` " id="fst9-2-6" w="7" name="fst9-2" hint="Sorry!" show_hints="FALSE"> <code>NaN</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fst9-2" id="fst9-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-1.51 " id="fst9-2-1" w="87" name="fst9-2" hint="Sorry!" show_hints="FALSE"> -1.51 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.244" id="fst9-2-2" w="35" name="fst9-2" hint="Correct." show_hints="FALSE"> 0.244 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.84 " id="fst9-2-3" w="23" name="fst9-2" hint="You're mistaken" show_hints="FALSE"> 0.84 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.99 " id="fst9-2-4" w="19" name="fst9-2" hint="Oops!" show_hints="FALSE"> 0.99 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2.14 " id="fst9-2-5" w="87" name="fst9-2" hint="Wrong." show_hints="FALSE"> 2.14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`NaN` " id="fst9-2-6" w="32" name="fst9-2" hint="Oops!" show_hints="FALSE"> <code>NaN</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fst9-2" id="fst9-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fst9-2-hintarea">question id: fst9-2</small></p>
 </div>
 </div>
@@ -3344,8 +2929,8 @@ Active R chunk&nbsp;3
 <li>Change <span class="math inline">\(x\)</span> to <span class="math inline">\(-5\)</span>. What’s the output of <span class="math inline">\(\sin(x) \  \sqrt{\strut x }\)</span></li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-1.51 " id="fst9-3-1" w="32" name="fst9-3" hint="Better luck next time." show_hints="TRUE"> -1.51 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.244 " id="fst9-3-2" w="7" name="fst9-3" hint="no" show_hints="TRUE"> 0.244 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.84 " id="fst9-3-3" w="19" name="fst9-3" hint="Not quite right" show_hints="TRUE"> 0.84 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.99 " id="fst9-3-4" w="23" name="fst9-3" hint="Sorry!" show_hints="TRUE"> 0.99 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2.14 " id="fst9-3-5" w="32" name="fst9-3" hint="Better luck next time." show_hints="TRUE"> 2.14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`NaN`" id="fst9-3-6" w="35" name="fst9-3" hint="You're right This stands for Not-a-Number, which is what you get when you calculate the square root of a negative input." show_hints="TRUE"> <code>NaN</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fst9-3" id="fst9-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-1.51 " id="fst9-3-1" w="7" name="fst9-3" hint="Oops!" show_hints="TRUE"> -1.51 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.244 " id="fst9-3-2" w="23" name="fst9-3" hint="No." show_hints="TRUE"> 0.244 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.84 " id="fst9-3-3" w="32" name="fst9-3" hint="This is wide of the mark." show_hints="TRUE"> 0.84 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.99 " id="fst9-3-4" w="7" name="fst9-3" hint="Incorrect choice." show_hints="TRUE"> 0.99 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2.14 " id="fst9-3-5" w="3" name="fst9-3" hint="Not on target." show_hints="TRUE"> 2.14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`NaN`" id="fst9-3-6" w="41" name="fst9-3" hint="This stands for Not-a-Number, which is what you get when you calculate the square root of a negative input." show_hints="TRUE"> <code>NaN</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fst9-3" id="fst9-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fst9-3-hintarea">question id: fst9-3</small></p>
 </div>
 </div>
@@ -3353,14 +2938,14 @@ Active R chunk&nbsp;3
 <li>Change the function formula from <span class="math inline">\(\sin(x) \sqrt{x}\)</span> to be <span class="math inline">\(\sqrt{\strut\pnorm(x) }\)</span>. For <span class="math inline">\(x=2\)</span>, what’s the output of from the new formula?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-1.51 " id="fst9-4-1" w="23" name="fst9-4" hint="wide of the mark" show_hints="FALSE"> -1.51 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.244 " id="fst9-4-2" w="7" name="fst9-4" hint="You're mistaken" show_hints="FALSE"> 0.244 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.84 " id="fst9-4-3" w="32" name="fst9-4" hint="You're mistaken" show_hints="FALSE"> 0.84 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.99" id="fst9-4-4" w="18" name="fst9-4" hint="Nice." show_hints="FALSE"> 0.99 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2.14 " id="fst9-4-5" w="3" name="fst9-4" hint="Sorry!" show_hints="FALSE"> 2.14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`NaN` " id="fst9-4-6" w="7" name="fst9-4" hint="Not quite right" show_hints="FALSE"> <code>NaN</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fst9-4" id="fst9-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-1.51 " id="fst9-4-1" w="87" name="fst9-4" hint="Untrue!" show_hints="FALSE"> -1.51 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.244 " id="fst9-4-2" w="87" name="fst9-4" hint="You're mistaken" show_hints="FALSE"> 0.244 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.84 " id="fst9-4-3" w="19" name="fst9-4" hint="Think again." show_hints="FALSE"> 0.84 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.99" id="fst9-4-4" w="20" name="fst9-4" hint="Exactly." show_hints="FALSE"> 0.99 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2.14 " id="fst9-4-5" w="19" name="fst9-4" hint="Not so!" show_hints="FALSE"> 2.14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="`NaN` " id="fst9-4-6" w="7" name="fst9-4" hint="Incorrect." show_hints="FALSE"> <code>NaN</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="fst9-4" id="fst9-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="fst9-4-hintarea">question id: fst9-4</small></p>
 </div>
 </div>
 </div>
 <div id="exr-goat-look-boat" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6</strong></span> Using the interactive R chunk, translate all of the following mathematical expressions into R to calculate the <strong>numerical value</strong> of the expression.</p>
+<p><span class="theorem-title"><strong>Exercise 6</strong></span> Using <a href="#lst-goat-look-boat" class="quarto-xref">Active R chunk&nbsp;<span>4</span></a>, translate all of the following mathematical expressions into R to calculate the <strong>numerical value</strong> of the expression.</p>
 <ol type="i">
 <li><span class="math inline">\((16 - 3)/2\)</span> <!-- translate to (16-3)/2        --></li>
 <li><span class="math inline">\(\sqrt{\frac{19}{3}}\)</span> <!-- translate to sqrt(19/3)      --></li>
@@ -3374,7 +2959,7 @@ Active R chunk&nbsp;3
 Active R chunk&nbsp;4
 </figcaption>
 <div aria-describedby="lst-goat-look-boat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3386,22 +2971,22 @@ Active R chunk&nbsp;4
 <p>Which of the following R expressions implements the math-notation expression?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`k exp(kt)`" id="horse-sing-drawer-01-1" w="19" name="horse-sing-drawer-01" hint="You must always express multiplication explicitly, using `*` between the quantities to be multiplied." show_hints="TRUE"> <code>k exp(kt)</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="`k exp(kt)`" id="horse-sing-drawer-01-1" w="32" name="horse-sing-drawer-01" hint="You must always express multiplication explicitly, using `*` between the quantities to be multiplied." show_hints="TRUE"> <code>k exp(kt)</code></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`e^k*t / k`" id="horse-sing-drawer-01-2" w="23" name="horse-sing-drawer-01" hint="Use `exp(x)` for $e^x$." show_hints="TRUE"> <code>e^k*t / k</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="`e^k*t / k`" id="horse-sing-drawer-01-2" w="3" name="horse-sing-drawer-01" hint="Use `exp(x)` for $e^x$." show_hints="TRUE"> <code>e^k*t / k</code></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`exp(k t) / k`" id="horse-sing-drawer-01-3" w="23" name="horse-sing-drawer-01" hint="`k t` should be written `k*t`" show_hints="TRUE"> <code>exp(k t) / k</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="`exp(k t) / k`" id="horse-sing-drawer-01-3" w="7" name="horse-sing-drawer-01" hint="`k t` should be written `k*t`" show_hints="TRUE"> <code>exp(k t) / k</code></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`exp(k*t) / k` " id="horse-sing-drawer-01-4" w="23" name="horse-sing-drawer-01" hint="Sorry!" show_hints="TRUE"> <code>exp(k*t) / k</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="`exp(k*t) / k`" id="horse-sing-drawer-01-4" w="5" name="horse-sing-drawer-01" hint="A hit!" show_hints="TRUE"> <code>exp(k*t) / k</code></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`1/k e^kt`" id="horse-sing-drawer-01-5" w="23" name="horse-sing-drawer-01" hint="1) Use `*` for multiplication. 2) Use `exp(x)` for $e^x$." show_hints="TRUE"> <code>1/k e^kt</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="`1/k e^kt`" id="horse-sing-drawer-01-5" w="19" name="horse-sing-drawer-01" hint="1) Use `*` for multiplication. 2) Use `exp(x)` for $e^x$." show_hints="TRUE"> <code>1/k e^kt</code></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="horse-sing-drawer-01" id="horse-sing-drawer-01.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="horse-sing-drawer-01-hintarea">question id: horse-sing-drawer-01</small></p>
 </div>
 </div>
@@ -3413,19 +2998,19 @@ Active R chunk&nbsp;4
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Need to us ...  function." id="plmy7-1-1" w="35" name="plmy7-1" hint="Correct" show_hints="TRUE"> Need to use <code>makeFun()</code> to define a function.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Need to us ...  function." id="plmy7-1-1" w="14" name="plmy7-1" hint="Score!" show_hints="TRUE"> Need to use <code>makeFun()</code> to define a function.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-1-2" w="19" name="plmy7-1" hint="incorrect choice" show_hints="TRUE"> <code>m</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-1-2" w="19" name="plmy7-1" hint="Not quite right." show_hints="TRUE"> <code>m</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-1-3" w="32" name="plmy7-1" hint="Sorry!" show_hints="TRUE"> <code>b</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-1-3" w="23" name="plmy7-1" hint="Incorrect choice." show_hints="TRUE"> <code>b</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Should be  ... m*x + b`. " id="plmy7-1-4" w="23" name="plmy7-1" hint="You're mistaken" show_hints="TRUE"> Should be <code>y &lt;- m*x + b</code>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Should be  ... m*x + b`. " id="plmy7-1-4" w="23" name="plmy7-1" hint="Wrong." show_hints="TRUE"> Should be <code>y &lt;- m*x + b</code>.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="plmy7-1" id="plmy7-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="plmy7-1-hintarea">question id: plmy7-1</small></p>
 </div>
 </div>
@@ -3434,19 +3019,19 @@ Active R chunk&nbsp;4
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The first  ... pression*." id="plmy7-2-1" w="41" name="plmy7-2" hint="Good job!" show_hints="TRUE"> The first argument to <code>makeFun()</code> should be a <em>tilde expression</em>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The first  ... pression*." id="plmy7-2-1" w="16" name="plmy7-2" hint="Exactly." show_hints="TRUE"> The first argument to <code>makeFun()</code> should be a <em>tilde expression</em>.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-2-2" w="19" name="plmy7-2" hint="Not quite right" show_hints="TRUE"> <code>m</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-2-2" w="23" name="plmy7-2" hint="You're mistaken" show_hints="TRUE"> <code>m</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-2-3" w="3" name="plmy7-2" hint="no" show_hints="TRUE"> <code>b</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-2-3" w="3" name="plmy7-2" hint="You're wrong here." show_hints="TRUE"> <code>b</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`makeFun() ... ** inputs." id="plmy7-2-4" w="87" name="plmy7-2" hint="No, but it does require a tilde expression input." show_hints="TRUE"> <code>makeFun()</code> requires <strong>two</strong> inputs.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`makeFun() ... ** inputs." id="plmy7-2-4" w="19" name="plmy7-2" hint="No, but it does require a tilde expression input." show_hints="TRUE"> <code>makeFun()</code> requires <strong>two</strong> inputs.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="plmy7-2" id="plmy7-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="plmy7-2-hintarea">question id: plmy7-2</small></p>
 </div>
 </div>
@@ -3455,19 +3040,19 @@ Active R chunk&nbsp;4
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The tilde  ... f the `~`." id="plmy7-3-1" w="41" name="plmy7-3" hint="Correct" show_hints="TRUE"> The tilde expression should have the input name on the right-hand side of the <code>~</code>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-3-1" w="3" name="plmy7-3" hint="Not so!" show_hints="TRUE"> <code>m</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-3-2" w="7" name="plmy7-3" hint="Not quite right" show_hints="TRUE"> <code>m</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-3-2" w="32" name="plmy7-3" hint="Untrue!" show_hints="TRUE"> <code>b</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-3-3" w="23" name="plmy7-3" hint="incorrect choice" show_hints="TRUE"> <code>b</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The tilde  ... for right." id="plmy7-3-3" w="16" name="plmy7-3" hint="A hit!" show_hints="TRUE"> The tilde expression is flipped left for right.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The first  ... xpression." id="plmy7-3-4" w="3" name="plmy7-3" hint="Actually, it is a tilde expression, just not the right sort of tilde expression." show_hints="TRUE"> The first argument is not a tilde expression.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The first  ... xpression." id="plmy7-3-4" w="23" name="plmy7-3" hint="Actually, it is a tilde expression, just not the right sort of tilde expression." show_hints="TRUE"> The first argument is not a tilde expression.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="plmy7-3" id="plmy7-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="plmy7-3-hintarea">question id: plmy7-3</small></p>
 </div>
 </div>
@@ -3476,40 +3061,43 @@ Active R chunk&nbsp;4
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The tilde  ... m` and `x`" id="plmy7-4-1" w="29" name="plmy7-4" hint="Nice." show_hints="TRUE"> The tilde expression is missing the multiplication operator <code>*</code> between <code>m</code> and <code>x</code></p>
+</p><p><input type="radio" class="devoirs-mcq" value="The tilde  ... m` and `x`" id="plmy7-4-1" w="18" name="plmy7-4" hint="Spot on!" show_hints="TRUE"> The tilde expression is missing the multiplication operator <code>*</code> between <code>m</code> and <code>x</code></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-4-2" w="19" name="plmy7-4" hint="incorrect choice" show_hints="TRUE"> <code>m</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-4-2" w="87" name="plmy7-4" hint="Boo!" show_hints="TRUE"> <code>m</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-4-3" w="23" name="plmy7-4" hint="You're mistaken" show_hints="TRUE"> <code>b</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-4-3" w="19" name="plmy7-4" hint="Wrong." show_hints="TRUE"> <code>b</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The name ` ... -spelled. " id="plmy7-4-4" w="23" name="plmy7-4" hint="incorrect choice" show_hints="TRUE"> The name <code>f</code> is mis-spelled.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The name ` ... -spelled. " id="plmy7-4-4" w="32" name="plmy7-4" hint="You're wrong here." show_hints="TRUE"> The name <code>f</code> is mis-spelled.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="plmy7-4" id="plmy7-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="plmy7-4-hintarea">question id: plmy7-4</small></p>
 </div>
 </div>
 <ol start="5" type="1">
-<li>What’s wrong with <code>f &lt;- makeFun(b*x + m ~ x)</code></li>
+<li>What’s wrong with <code>f &lt;- makeFun(b*x + m ~ x)</code> as a fix to the intention in (4).</li>
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="The roles  ...  reversed." id="plmy7-5-1" w="18" name="plmy7-5" hint="Right" show_hints="TRUE"> The roles of <code>m</code> and <code>b</code> have been reversed.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="The roles  ...  reversed." id="plmy7-5-1" w="35" name="plmy7-5" hint="Bingo!" show_hints="TRUE"> The roles of <code>m</code> and <code>b</code> have been reversed.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-5-2" w="3" name="plmy7-5" hint="incorrect choice" show_hints="TRUE"> <code>m</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`m` is not ...  defined. " id="plmy7-5-2" w="32" name="plmy7-5" hint="Incorrect." show_hints="TRUE"> <code>m</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-5-3" w="87" name="plmy7-5" hint="wrong" show_hints="TRUE"> <code>b</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`b` is not ...  defined. " id="plmy7-5-3" w="32" name="plmy7-5" hint="Not on target." show_hints="TRUE"> <code>b</code> is not defined.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="`x` is not ...  defined. " id="plmy7-5-4" w="19" name="plmy7-5" hint="Not quite right" show_hints="TRUE"> <code>x</code> is not defined.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="`x` is not ...  defined. " id="plmy7-5-4" w="87" name="plmy7-5" hint="Boo!" show_hints="TRUE"> <code>x</code> is not defined.</p>
+<p></p>
+<p>
+</p><p><input type="radio" class="devoirs-mcq" value="Nothing is wrong." id="plmy7-5-5" w="87" name="plmy7-5" hint="Almost, but not quite. It's better in that the right-hand side of tilde lists `x` as the input, but there is another change from (4) as well." show_hints="TRUE"> Nothing is wrong.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="plmy7-5" id="plmy7-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="plmy7-5-hintarea">question id: plmy7-5</small></p>
 </div>
 </div>
@@ -3521,43 +3109,43 @@ Active R chunk&nbsp;4
 </blockquote>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="You cannot ... `dorothy`." id="dorothy-kansas-1" w="87" name="dorothy-kansas" hint="Don't be a stick in the mud. Of course you can. Choose function names that are a good description of what the function does." show_hints="TRUE"> You cannot name a function <code>dorothy</code>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="You cannot ... `dorothy`." id="dorothy-kansas-1" w="23" name="dorothy-kansas" hint="Don't be a stick in the mud. Of course you can. Choose function names that are a good description of what the function does." show_hints="TRUE"> You cannot name a function <code>dorothy</code>.</p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="&quot;kansas&quot; i ...  argument." id="dorothy-kansas-2" w="32" name="dorothy-kansas" hint="By social convention we think of the US State when we see the name, but any name can be used for an input. Choose input names that are descriptive." show_hints="TRUE"> “kansas” is a US State, not the name of an argument.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="&quot;dorothy&quot;  ... pitalized." id="dorothy-kansas-3" w="87" name="dorothy-kansas" hint="Admittedly, in ordinary English usage, they would be capitalized. But the notation of function definition does not need to comply with English grammar." show_hints="TRUE"> “dorothy” and “kansas” should be capitalized.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="&quot;dorothy&quot;  ... pitalized." id="dorothy-kansas-3" w="7" name="dorothy-kansas" hint="Admittedly, in ordinary English usage, they would be capitalized. But the notation of function definition does not need to comply with English grammar." show_hints="TRUE"> “dorothy” and “kansas” should be capitalized.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Auntie Em  ...  a number." id="dorothy-kansas-4" w="23" name="dorothy-kansas" hint="Yes, but ... it's a name, so we can use it to name whatever we want. In this case, it's the name of a parameter." show_hints="TRUE"> Auntie Em is a movie character, not a number.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Auntie Em  ...  a number." id="dorothy-kansas-4" w="3" name="dorothy-kansas" hint="Yes, but ... it's a name, so we can use it to name whatever we want. In this case, it's the name of a parameter." show_hints="TRUE"> Auntie Em is a movie character, not a number.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Nothing." id="dorothy-kansas-5" w="41" name="dorothy-kansas" hint="Nice." show_hints="TRUE"> Nothing.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Nothing." id="dorothy-kansas-5" w="41" name="dorothy-kansas" hint="You're right!" show_hints="TRUE"> Nothing.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="dorothy-kansas" id="dorothy-kansas.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="dorothy-kansas-hintarea">question id: dorothy-kansas</small></p>
 </div>
 </div>
 </div>
 <div id="exr-bad-fun-def" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10</strong></span> Something is wrong with this function definition. What is it?</p>
+<p><span class="theorem-title"><strong>Exercise 10</strong></span> Something is wrong with this function definition in mathematics notation. What is it?</p>
 <blockquote class="blockquote">
 <p>electric(z) <span class="math inline">\(\equiv\)</span> ln()</p>
 </blockquote>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="No input h ... to `ln()`." id="bad-fun-def-1" w="19" name="bad-fun-def" hint="This is indeed a problem. ln() appears in the function formula, which tells us how to calculate the output from the input. But ln() is a function name, not a function being applied to an input." show_hints="TRUE"> No input has been given to <code>ln()</code>.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="No input h ... to `ln()`." id="bad-fun-def-1" w="87" name="bad-fun-def" hint="This is indeed a problem. ln() appears in the function formula, which tells us how to calculate the output from the input. But ln() is a function name, not a function being applied to an input." show_hints="TRUE"> No input has been given to <code>ln()</code>.</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="electric() ... en as E()." id="bad-fun-def-2" w="3" name="bad-fun-def" hint="Who says? The name you give a function is a matter of choice. Sometimes it's better to have a multi-character function name." show_hints="TRUE"> electric() should have been written as E().</p>
+</p><p><input type="radio" class="devoirs-mcq" value="electric() ... en as E()." id="bad-fun-def-2" w="32" name="bad-fun-def" hint="Who says? The name you give a function is a matter of choice. Sometimes it's better to have a multi-character function name." show_hints="TRUE"> electric() should have been written as E().</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Nothing" id="bad-fun-def-3" w="19" name="bad-fun-def" hint="Nope. There is a notation misconception in the function's formula." show_hints="TRUE"> Nothing</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Nothing" id="bad-fun-def-3" w="3" name="bad-fun-def" hint="Nope. There is a notation misconception in the function's formula." show_hints="TRUE"> Nothing</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="bad-fun-def" id="bad-fun-def.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="bad-fun-def-hintarea">question id: bad-fun-def</small></p>
 </div>
 </div>
@@ -3620,15 +3208,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3648,7 +3243,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3744,8 +3342,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3856,7 +3452,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

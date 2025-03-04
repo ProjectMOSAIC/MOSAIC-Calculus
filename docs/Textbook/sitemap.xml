@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dtkaplan.github.io/MC2/index.html</loc>
-    <lastmod>2025-02-12T13:36:33.965Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dtkaplan.github.io/MC2/preliminaries-part.html</loc>
-    <lastmod>2024-10-02T21:32:53.701Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dtkaplan.github.io/MC2/Preliminaries/01-quant-fun-space.html</loc>
-    <lastmod>2025-02-11T16:36:53.106Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dtkaplan.github.io/MC2/Preliminaries/02-notation.html</loc>
-    <lastmod>2024-10-15T14:51:26.519Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dtkaplan.github.io/MC2/Preliminaries/03-computing.html</loc>
-    <lastmod>2025-02-11T16:36:52.242Z</lastmod>
+    <loc>https://dtkaplan.github.io/MC2/Differentiation/21-concavity.html</loc>
+    <lastmod>2025-02-27T20:57:03.144Z</lastmod>
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/Preliminaries/04-graphs-and-graphics.html</loc>
@@ -82,23 +66,19 @@
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/Differentiation/17-continuous-change.html</loc>
-    <lastmod>2024-10-11T21:11:53.217Z</lastmod>
+    <lastmod>2025-02-27T01:07:24.657Z</lastmod>
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/Differentiation/18-rate-of-change.html</loc>
-    <lastmod>2025-02-09T14:51:42.692Z</lastmod>
+    <lastmod>2025-02-27T01:07:09.013Z</lastmod>
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/Differentiation/19-evanescent-h.html</loc>
-    <lastmod>2025-02-11T15:37:44.412Z</lastmod>
+    <lastmod>2025-03-04T00:01:15.306Z</lastmod>
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/Differentiation/20-computing.html</loc>
-    <lastmod>2025-02-11T15:38:21.040Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dtkaplan.github.io/MC2/Differentiation/21-concavity.html</loc>
-    <lastmod>2025-02-13T19:05:44.962Z</lastmod>
+    <lastmod>2025-03-03T22:50:00.639Z</lastmod>
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/Differentiation/22-cont-and-smooth.html</loc>
@@ -106,7 +86,7 @@
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/Differentiation/23-rules.html</loc>
-    <lastmod>2025-02-11T23:18:25.928Z</lastmod>
+    <lastmod>2025-03-04T00:04:20.003Z</lastmod>
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/Differentiation/24-optim.html</loc>
@@ -126,7 +106,7 @@
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/Differentiation/Differentiation-projects.html</loc>
-    <lastmod>2025-02-12T23:54:23.609Z</lastmod>
+    <lastmod>2025-02-19T21:42:29.510Z</lastmod>
   </url>
   <url>
     <loc>https://dtkaplan.github.io/MC2/linear-combinations-part.html</loc>
@@ -251,5 +231,9 @@
   <url>
     <loc>https://dtkaplan.github.io/MC2/Glossary.html</loc>
     <lastmod>2025-02-12T00:16:44.769Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dtkaplan.github.io/MC2/index.html</loc>
+    <lastmod>2025-02-27T01:07:21.155Z</lastmod>
   </url>
 </urlset>

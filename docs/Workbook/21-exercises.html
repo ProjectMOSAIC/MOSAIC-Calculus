@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -371,10 +371,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -393,7 +393,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"classes":"","fig-width":7,"read-only":"false","message":"true","editor-quick-suggestions":"false","fig-height":5,"editor-font-scale":"1","output":"true","out-width":"700px","editor-word-wrap":"true","context":"interactive","fig-cap":"","warning":"true","dpi":72,"comment":"","autorun":"false","label":"crow-write-chair","out-height":"","results":"markup","editor-max-height":""},"code":"f <- doodle_fun( ~ z, seed = 8427)\nslice_plot(f(x) ~ x, domain(x=c(-5,5)))","id":1},{"options":{"classes":"","fig-width":7,"read-only":"false","message":"true","editor-quick-suggestions":"false","fig-height":5,"editor-font-scale":"1","output":"true","out-width":"700px","editor-word-wrap":"true","context":"interactive","fig-cap":"","warning":"true","dpi":72,"comment":"","autorun":"false","label":"crow-write-chair2","out-height":"","results":"markup","editor-max-height":""},"code":"dxx_f <- D(f(x) ~ x & x)\ndxx_f(-1)\ndxx_f(2.5)","id":2},{"options":{"classes":"","fig-width":7,"read-only":"false","message":"true","editor-quick-suggestions":"false","fig-height":5,"editor-font-scale":"1","output":"true","out-width":"700px","editor-word-wrap":"true","context":"interactive","fig-cap":"A function $R()$","warning":"true","dpi":72,"comment":"","autorun":"false","label":"tiger-blow-futon-rcd","out-height":"","results":"markup","editor-max-height":""},"code":"R <- makeFun(3 - x/2 ~ x)\nroad <- makeFun(sqrt(R(x)^2 - x^2) ~ x)\nslice_plot(road(x) ~ x, domain(x=c(-2, 2)), npts=500)","id":3},{"options":{"classes":"","fig-width":7,"read-only":"false","message":"true","editor-quick-suggestions":"false","fig-height":5,"editor-font-scale":"1","output":"true","out-width":"700px","editor-word-wrap":"true","context":"interactive","fig-cap":"","warning":"true","dpi":72,"comment":"","autorun":"false","label":"descent-path","out-height":"","results":"markup","editor-max-height":""},"code":"alt <- makeFun(20000 * pnorm(30000 - v * t, 30000/2, 30000/6) ~ t, v = 293.3)\nslice_plot(alt(t) ~ t, domain(t=0:110))","id":4},{"options":{"classes":"","fig-width":7,"read-only":"false","message":"true","editor-quick-suggestions":"false","fig-height":5,"editor-font-scale":"1","output":"true","out-width":"700px","editor-word-wrap":"true","context":"interactive","fig-cap":"","warning":"true","dpi":72,"comment":"","autorun":"false","label":"unnamed-chunk-5","out-height":"","results":"markup","editor-max-height":""},"code":"dd_alt <- numD(alt(t) ~ t + t)\nslice_plot(dd_alt(t) ~ t, domain(t=0:110))","id":5},{"options":{"classes":"","fig-width":7,"read-only":"false","message":"true","editor-quick-suggestions":"false","fig-height":5,"editor-font-scale":"1","output":"true","out-width":"700px","editor-word-wrap":"true","context":"interactive","fig-cap":"","warning":"true","dpi":72,"comment":"","autorun":"false","label":"unnamed-chunk-6","out-height":"","results":"markup","editor-max-height":""},"code":"g <- makeFun(sqrt(R^2 - x^2) ~ x, R = 2) # define g()\ndg  <- D(g(x) ~ x)         # first derivative of g()\nddg <- D(g(x) ~ x & x)     # second derivative of g()\ncurvature <- makeFun(abs(ddg(x)) / abs(__fill_in_the_formula__)^(3/2) ~ x)\nslice_plot(curvature(x) ~ x, domain(x=-2:2))","id":6}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"f <- doodle_fun( ~ z, seed = 8427)\nslice_plot(f(x) ~ x, domain(x=c(-5,5)))","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"crow-write-chair","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"dxx_f <- D(f(x) ~ x & x)\ndxx_f(-1)\ndxx_f(2.5)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"crow-write-chair2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"R <- makeFun(3 - x/2 ~ x)\nroad <- makeFun(sqrt(R(x)^2 - x^2) ~ x)\nslice_plot(\n  road(x) ~ x, domain(x=c(-2, 2)), \n  npts=500\n  ) |>  # set aspect ratio for display\n  gf_refine(coord_fixed())","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"A function $R()$","fig-height":5,"fig-width":7,"label":"tiger-blow-futon-rcd","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# define g()\ng <- makeFun(sqrt(R^2 - x^2) ~ x, R = 2) \n# first derivative of g()\ndg  <- D(g(x) ~ x)\n   # second derivative of g()\nddg <- D(g(x) ~ x & x)  \ncurvature <- makeFun(\n  abs(ddg(x)) / \n    abs(__fill_in_the_formula__)^(3/2) ~ x\n  )\nslice_plot(curvature(x) ~ x, domain(x=-2:2))","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"alt <- makeFun(\n  20000 * pnorm(30000 - v * t, 30000/2, 30000/6) ~ t, \n  v = 293.3\n  )\nslice_plot(alt(t) ~ t, domain(t=0:110))","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"descent-path","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"dd_alt <- numD(alt(t) ~ t + t)\nslice_plot(dd_alt(t) ~ t, domain(t=0:110))","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1668,7 +1668,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1797,7 +1797,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1805,7 +1805,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1880,7 +1880,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1975,8 +1975,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2190,8 +2190,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2311,387 +2311,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -3016,6 +2635,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-seahorse-speak-saucer" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> &nbsp;</p>
 <div class="cell">
@@ -3030,16 +2651,16 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>In which of the boxes is the function concave up?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A and E" id="seahorse-speak-saucer-1-1" w="16" name="seahorse-speak-saucer-1" hint="Right" show_hints="TRUE"> A and E</p>
+</p><p><input type="radio" class="devoirs-mcq" value="A and E" id="seahorse-speak-saucer-1-1" w="16" name="seahorse-speak-saucer-1" hint="Yes." show_hints="TRUE"> A and E</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="B and D " id="seahorse-speak-saucer-1-2" w="23" name="seahorse-speak-saucer-1" hint="wide of the mark" show_hints="TRUE"> B and D</p>
+</p><p><input type="radio" class="devoirs-mcq" value="B and D " id="seahorse-speak-saucer-1-2" w="87" name="seahorse-speak-saucer-1" hint="Wrong." show_hints="TRUE"> B and D</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="C and D " id="seahorse-speak-saucer-1-3" w="23" name="seahorse-speak-saucer-1" hint="wrong" show_hints="TRUE"> C and D</p>
+</p><p><input type="radio" class="devoirs-mcq" value="C and D " id="seahorse-speak-saucer-1-3" w="23" name="seahorse-speak-saucer-1" hint="You're wrong here." show_hints="TRUE"> C and D</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="seahorse-speak-saucer-1" id="seahorse-speak-saucer-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="seahorse-speak-saucer-1-hintarea">question id: seahorse-speak-saucer-1</small></p>
 </div>
 </div>
@@ -3133,8 +2754,8 @@ Table&nbsp;1: Possibilities to choose from in answering the questions.
 <li>Which row from the table best matches the function at point A?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="i " id="daily-digital-26-QA5-1" w="19" name="daily-digital-26-QA5" hint="You're mistaken" show_hints="TRUE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii " id="daily-digital-26-QA5-2" w="3" name="daily-digital-26-QA5" hint="wrong" show_hints="TRUE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA5-3" w="23" name="daily-digital-26-QA5" hint="Sorry!" show_hints="TRUE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv " id="daily-digital-26-QA5-4" w="32" name="daily-digital-26-QA5" hint="Better luck next time." show_hints="TRUE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA5-5" w="19" name="daily-digital-26-QA5" hint="Not quite right" show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi " id="daily-digital-26-QA5-6" w="7" name="daily-digital-26-QA5" hint="Sorry!" show_hints="TRUE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii" id="daily-digital-26-QA5-7" w="5" name="daily-digital-26-QA5" hint="Nice." show_hints="TRUE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA5" id="daily-digital-26-QA5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="i " id="daily-digital-26-QA5-1" w="19" name="daily-digital-26-QA5" hint="Not quite right." show_hints="TRUE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii " id="daily-digital-26-QA5-2" w="23" name="daily-digital-26-QA5" hint="You're mistaken" show_hints="TRUE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA5-3" w="23" name="daily-digital-26-QA5" hint="Think again." show_hints="TRUE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv " id="daily-digital-26-QA5-4" w="32" name="daily-digital-26-QA5" hint="Incorrect." show_hints="TRUE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA5-5" w="19" name="daily-digital-26-QA5" hint="Better luck next time." show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi " id="daily-digital-26-QA5-6" w="7" name="daily-digital-26-QA5" hint="Not quite right." show_hints="TRUE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii" id="daily-digital-26-QA5-7" w="18" name="daily-digital-26-QA5" hint="Score!" show_hints="TRUE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA5" id="daily-digital-26-QA5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="daily-digital-26-QA5-hintarea">question id: daily-digital-26-QA5</small></p>
 </div>
 </div>
@@ -3142,8 +2763,8 @@ Table&nbsp;1: Possibilities to choose from in answering the questions.
 <li>Which row from the table best matches the function at point B?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="i " id="daily-digital-26-QA6-1" w="3" name="daily-digital-26-QA6" hint="incorrect choice" show_hints="TRUE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii" id="daily-digital-26-QA6-2" w="18" name="daily-digital-26-QA6" hint="You're right" show_hints="TRUE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA6-3" w="19" name="daily-digital-26-QA6" hint="wrong" show_hints="TRUE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv " id="daily-digital-26-QA6-4" w="19" name="daily-digital-26-QA6" hint="Sorry!" show_hints="TRUE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA6-5" w="23" name="daily-digital-26-QA6" hint="Not quite right" show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi " id="daily-digital-26-QA6-6" w="87" name="daily-digital-26-QA6" hint="wrong" show_hints="TRUE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii " id="daily-digital-26-QA6-7" w="19" name="daily-digital-26-QA6" hint="You're mistaken" show_hints="TRUE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA6" id="daily-digital-26-QA6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="i " id="daily-digital-26-QA6-1" w="3" name="daily-digital-26-QA6" hint="Think again." show_hints="TRUE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii" id="daily-digital-26-QA6-2" w="18" name="daily-digital-26-QA6" hint="Right-O!" show_hints="TRUE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA6-3" w="19" name="daily-digital-26-QA6" hint="Boo!" show_hints="TRUE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv " id="daily-digital-26-QA6-4" w="23" name="daily-digital-26-QA6" hint="Better luck next time." show_hints="TRUE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA6-5" w="7" name="daily-digital-26-QA6" hint="Incorrect." show_hints="TRUE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi " id="daily-digital-26-QA6-6" w="23" name="daily-digital-26-QA6" hint="Boo!" show_hints="TRUE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii " id="daily-digital-26-QA6-7" w="3" name="daily-digital-26-QA6" hint="Nope." show_hints="TRUE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA6" id="daily-digital-26-QA6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="daily-digital-26-QA6-hintarea">question id: daily-digital-26-QA6</small></p>
 </div>
 </div>
@@ -3151,8 +2772,8 @@ Table&nbsp;1: Possibilities to choose from in answering the questions.
 <li>Which row from the table best matches the function at point C?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="i " id="daily-digital-26-QA7-1" w="32" name="daily-digital-26-QA7" hint="wide of the mark" show_hints="FALSE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii " id="daily-digital-26-QA7-2" w="3" name="daily-digital-26-QA7" hint="Not quite right" show_hints="FALSE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA7-3" w="19" name="daily-digital-26-QA7" hint="no" show_hints="FALSE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv" id="daily-digital-26-QA7-4" w="35" name="daily-digital-26-QA7" hint="right-o" show_hints="FALSE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA7-5" w="23" name="daily-digital-26-QA7" hint="You're mistaken" show_hints="FALSE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi " id="daily-digital-26-QA7-6" w="3" name="daily-digital-26-QA7" hint="Sorry!" show_hints="FALSE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii " id="daily-digital-26-QA7-7" w="32" name="daily-digital-26-QA7" hint="Better luck next time." show_hints="FALSE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA7" id="daily-digital-26-QA7.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="i " id="daily-digital-26-QA7-1" w="23" name="daily-digital-26-QA7" hint="Hmmm ..." show_hints="FALSE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii " id="daily-digital-26-QA7-2" w="32" name="daily-digital-26-QA7" hint="This is wide of the mark." show_hints="FALSE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA7-3" w="3" name="daily-digital-26-QA7" hint="Not quite right." show_hints="FALSE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv" id="daily-digital-26-QA7-4" w="5" name="daily-digital-26-QA7" hint="Right-O!" show_hints="FALSE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA7-5" w="32" name="daily-digital-26-QA7" hint="Incorrect choice." show_hints="FALSE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi " id="daily-digital-26-QA7-6" w="23" name="daily-digital-26-QA7" hint="Incorrect." show_hints="FALSE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii " id="daily-digital-26-QA7-7" w="32" name="daily-digital-26-QA7" hint="Hmmm ..." show_hints="FALSE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA7" id="daily-digital-26-QA7.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="daily-digital-26-QA7-hintarea">question id: daily-digital-26-QA7</small></p>
 </div>
 </div>
@@ -3160,8 +2781,8 @@ Table&nbsp;1: Possibilities to choose from in answering the questions.
 <li>Which row from the table best matches the function at point D?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="i" id="daily-digital-26-QA8-1" w="5" name="daily-digital-26-QA8" hint="You're right" show_hints="FALSE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii " id="daily-digital-26-QA8-2" w="19" name="daily-digital-26-QA8" hint="You're mistaken" show_hints="FALSE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA8-3" w="3" name="daily-digital-26-QA8" hint="Try again!" show_hints="FALSE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv " id="daily-digital-26-QA8-4" w="23" name="daily-digital-26-QA8" hint="Not quite right" show_hints="FALSE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA8-5" w="3" name="daily-digital-26-QA8" hint="no" show_hints="FALSE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi " id="daily-digital-26-QA8-6" w="7" name="daily-digital-26-QA8" hint="incorrect choice" show_hints="FALSE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii " id="daily-digital-26-QA8-7" w="32" name="daily-digital-26-QA8" hint="Better luck next time." show_hints="FALSE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA8" id="daily-digital-26-QA8.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="i" id="daily-digital-26-QA8-1" w="5" name="daily-digital-26-QA8" hint="Good job!" show_hints="FALSE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii " id="daily-digital-26-QA8-2" w="3" name="daily-digital-26-QA8" hint="Oops!" show_hints="FALSE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA8-3" w="23" name="daily-digital-26-QA8" hint="Not quite." show_hints="FALSE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv " id="daily-digital-26-QA8-4" w="3" name="daily-digital-26-QA8" hint="Think again." show_hints="FALSE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA8-5" w="87" name="daily-digital-26-QA8" hint="Incorrect choice." show_hints="FALSE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi " id="daily-digital-26-QA8-6" w="32" name="daily-digital-26-QA8" hint="Better luck next time." show_hints="FALSE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii " id="daily-digital-26-QA8-7" w="32" name="daily-digital-26-QA8" hint="You're mistaken" show_hints="FALSE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA8" id="daily-digital-26-QA8.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="daily-digital-26-QA8-hintarea">question id: daily-digital-26-QA8</small></p>
 </div>
 </div>
@@ -3169,8 +2790,8 @@ Table&nbsp;1: Possibilities to choose from in answering the questions.
 <li>Which row from the table best matches the function at point E?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="i " id="daily-digital-26-QA9-1" w="32" name="daily-digital-26-QA9" hint="You're mistaken" show_hints="FALSE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii " id="daily-digital-26-QA9-2" w="7" name="daily-digital-26-QA9" hint="wrong" show_hints="FALSE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA9-3" w="19" name="daily-digital-26-QA9" hint="wide of the mark" show_hints="FALSE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv " id="daily-digital-26-QA9-4" w="3" name="daily-digital-26-QA9" hint="Sorry!" show_hints="FALSE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA9-5" w="7" name="daily-digital-26-QA9" hint="You're mistaken" show_hints="FALSE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi" id="daily-digital-26-QA9-6" w="41" name="daily-digital-26-QA9" hint="You're right" show_hints="FALSE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii " id="daily-digital-26-QA9-7" w="87" name="daily-digital-26-QA9" hint="Better luck next time." show_hints="FALSE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA9" id="daily-digital-26-QA9.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="i " id="daily-digital-26-QA9-1" w="7" name="daily-digital-26-QA9" hint="Wrong." show_hints="FALSE"> i &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="ii " id="daily-digital-26-QA9-2" w="19" name="daily-digital-26-QA9" hint="This is wide of the mark." show_hints="FALSE"> ii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iii " id="daily-digital-26-QA9-3" w="3" name="daily-digital-26-QA9" hint="Sorry!" show_hints="FALSE"> iii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="iv " id="daily-digital-26-QA9-4" w="7" name="daily-digital-26-QA9" hint="No." show_hints="FALSE"> iv &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="v " id="daily-digital-26-QA9-5" w="3" name="daily-digital-26-QA9" hint="No." show_hints="FALSE"> v &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vi" id="daily-digital-26-QA9-6" w="8" name="daily-digital-26-QA9" hint="You're right!" show_hints="FALSE"> vi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="vii " id="daily-digital-26-QA9-7" w="19" name="daily-digital-26-QA9" hint="Hmmm ..." show_hints="FALSE"> vii &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="daily-digital-26-QA9" id="daily-digital-26-QA9.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="daily-digital-26-QA9-hintarea">question id: daily-digital-26-QA9</small></p>
 </div>
 </div>
@@ -3195,13 +2816,13 @@ Figure&nbsp;2: Graph of <span class="math inline">\(\sin(x)\)</span> with points
 </figcaption>
 </figure>
 </div>
-<p>Calculate the curvature <span class="math inline">\(\cal K\)</span> at each of the three input values marked in <a href="#fig-chicken-sleep-knife" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-chicken-sleep-knife</span></a>. Do this by calculating the first and second derivatives of the sine function, evaluating those derivatives at the input values, and plugging them in to the formula in <strong>XREF not implemented yet</strong>.</p>
+<p>Calculate the curvature <span class="math inline">\(\cal K\)</span> at each of the three input values marked in <a href="#fig-chicken-sleep-knife" class="quarto-xref">Figure&nbsp;<span>2</span></a>. Do this by calculating the first and second derivatives of the sine function, evaluating those derivatives at the input values, and plugging them in to the formula in <a href="file:///Users/kaplan/MC2/docs/Differentiation/21-concavity.html#sec-curvature-definition" target="_blank"><em>MOSAIC Calculus</em> Sec 21.3</a>.</p>
 <ol type="1">
 <li>What is the curvature <span class="math inline">\(\cal K\)</span> of <span class="math inline">\(\sin(x=-\pi/2)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-1" id="chicken-sleep-knife-1-1" w="32" name="chicken-sleep-knife-1" hint="$\cal K$ can be negative!" show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="chicken-sleep-knife-1-2" w="19" name="chicken-sleep-knife-1" hint="Better luck next time." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5 " id="chicken-sleep-knife-1-3" w="19" name="chicken-sleep-knife-1" hint="Not quite right" show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="chicken-sleep-knife-1-4" w="14" name="chicken-sleep-knife-1" hint="Nice." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="chicken-sleep-knife-1-5" w="7" name="chicken-sleep-knife-1" hint="You're mistaken" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="chicken-sleep-knife-1" id="chicken-sleep-knife-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-1" id="chicken-sleep-knife-1-1" w="19" name="chicken-sleep-knife-1" hint="$\cal K$ can be negative!" show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="chicken-sleep-knife-1-2" w="7" name="chicken-sleep-knife-1" hint="Incorrect." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5 " id="chicken-sleep-knife-1-3" w="7" name="chicken-sleep-knife-1" hint="Not on target." show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="chicken-sleep-knife-1-4" w="8" name="chicken-sleep-knife-1" hint="You're right!" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="chicken-sleep-knife-1-5" w="32" name="chicken-sleep-knife-1" hint="Untrue!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="chicken-sleep-knife-1" id="chicken-sleep-knife-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="chicken-sleep-knife-1-hintarea">question id: chicken-sleep-knife-1</small></p>
 </div>
 </div>
@@ -3209,8 +2830,8 @@ Figure&nbsp;2: Graph of <span class="math inline">\(\sin(x)\)</span> with points
 <li>What is the curvature <span class="math inline">\(\cal K\)</span> of <span class="math inline">\(\sin(x=-0.923)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-1" id="chicken-sleep-knife-2-1" w="19" name="chicken-sleep-knife-2" hint="$\cal K$ can be negative!" show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="chicken-sleep-knife-2-2" w="19" name="chicken-sleep-knife-2" hint="Sorry!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5" id="chicken-sleep-knife-2-3" w="14" name="chicken-sleep-knife-2" hint="Excellent!" show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="chicken-sleep-knife-2-4" w="19" name="chicken-sleep-knife-2" hint="Try again!" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="chicken-sleep-knife-2-5" w="3" name="chicken-sleep-knife-2" hint="Better luck next time." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="chicken-sleep-knife-2" id="chicken-sleep-knife-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-1" id="chicken-sleep-knife-2-1" w="32" name="chicken-sleep-knife-2" hint="$\cal K$ can be negative!" show_hints="TRUE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="chicken-sleep-knife-2-2" w="7" name="chicken-sleep-knife-2" hint="Oops!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5" id="chicken-sleep-knife-2-3" w="5" name="chicken-sleep-knife-2" hint="Good job!" show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="chicken-sleep-knife-2-4" w="23" name="chicken-sleep-knife-2" hint="Not quite." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="chicken-sleep-knife-2-5" w="32" name="chicken-sleep-knife-2" hint="Try again!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="chicken-sleep-knife-2" id="chicken-sleep-knife-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="chicken-sleep-knife-2-hintarea">question id: chicken-sleep-knife-2</small></p>
 </div>
 </div>
@@ -3218,8 +2839,8 @@ Figure&nbsp;2: Graph of <span class="math inline">\(\sin(x)\)</span> with points
 <li>What is the curvature <span class="math inline">\(\cal K\)</span> of <span class="math inline">\(\sin(x=\pi/2)\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-1" id="chicken-sleep-knife-3-1" w="3" name="chicken-sleep-knife-3" hint="$\cal K$ can be negative!" show_hints="FALSE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="chicken-sleep-knife-3-2" w="23" name="chicken-sleep-knife-3" hint="Sorry!" show_hints="FALSE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5 " id="chicken-sleep-knife-3-3" w="3" name="chicken-sleep-knife-3" hint="Try again!" show_hints="FALSE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="chicken-sleep-knife-3-4" w="18" name="chicken-sleep-knife-3" hint="Good job!" show_hints="FALSE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="chicken-sleep-knife-3-5" w="19" name="chicken-sleep-knife-3" hint="Try again!" show_hints="FALSE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="chicken-sleep-knife-3" id="chicken-sleep-knife-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-1" id="chicken-sleep-knife-3-1" w="23" name="chicken-sleep-knife-3" hint="$\cal K$ can be negative!" show_hints="FALSE"> -1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0 " id="chicken-sleep-knife-3-2" w="7" name="chicken-sleep-knife-3" hint="You might think so, but ..." show_hints="FALSE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5 " id="chicken-sleep-knife-3-3" w="7" name="chicken-sleep-knife-3" hint="Not on target." show_hints="FALSE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1" id="chicken-sleep-knife-3-4" w="5" name="chicken-sleep-knife-3" hint="Certainly." show_hints="FALSE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="chicken-sleep-knife-3-5" w="19" name="chicken-sleep-knife-3" hint="You might think so, but ..." show_hints="FALSE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="chicken-sleep-knife-3" id="chicken-sleep-knife-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="chicken-sleep-knife-3-hintarea">question id: chicken-sleep-knife-3</small></p>
 </div>
 </div>
@@ -3227,8 +2848,8 @@ Figure&nbsp;2: Graph of <span class="math inline">\(\sin(x)\)</span> with points
 <li>What is the curvature <span class="math inline">\(\cal K\)</span> of <span class="math inline">\(\sin(x=0)\)</span>? (Hint: You can tell straight from the graph, even though no enscribed circle has been drawn.</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0" id="chicken-sleep-knife-4-1" w="16" name="chicken-sleep-knife-4" hint="Yes The graph is straight at $x=0$, so no curvature" show_hints="FALSE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5 " id="chicken-sleep-knife-4-2" w="19" name="chicken-sleep-knife-4" hint="You're mistaken" show_hints="FALSE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="chicken-sleep-knife-4-3" w="7" name="chicken-sleep-knife-4" hint="wide of the mark" show_hints="FALSE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="chicken-sleep-knife-4-4" w="19" name="chicken-sleep-knife-4" hint="no" show_hints="FALSE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="chicken-sleep-knife-4" id="chicken-sleep-knife-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0" id="chicken-sleep-knife-4-1" w="20" name="chicken-sleep-knife-4" hint="Yes The graph is straight at $x=0$, so no curvature" show_hints="FALSE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5 " id="chicken-sleep-knife-4-2" w="19" name="chicken-sleep-knife-4" hint="Nope." show_hints="FALSE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="chicken-sleep-knife-4-3" w="19" name="chicken-sleep-knife-4" hint="Hmmm ..." show_hints="FALSE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="chicken-sleep-knife-4-4" w="87" name="chicken-sleep-knife-4" hint="Hmmm ..." show_hints="FALSE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="chicken-sleep-knife-4" id="chicken-sleep-knife-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="chicken-sleep-knife-4-hintarea">question id: chicken-sleep-knife-4</small></p>
 </div>
 </div>
@@ -3264,8 +2885,8 @@ Figure&nbsp;3: Three different functions labeled (A), (B), and (C).
 <li>Function (A) is</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="false">
-<input type="radio" class="devoirs-mcq" value="concave down" id="concavity-1-1" w="41" name="concavity-1" hint="Excellent!" show_hints="FALSE"> concave down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="non-concave " id="concavity-1-2" w="23" name="concavity-1" hint="Not quite right" show_hints="FALSE"> non-concave &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="concave up " id="concavity-1-3" w="87" name="concavity-1" hint="no" show_hints="FALSE"> concave up &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-1" id="concavity-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="concave down" id="concavity-1-1" w="41" name="concavity-1" hint="Right." show_hints="FALSE"> concave down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="non-concave " id="concavity-1-2" w="7" name="concavity-1" hint="Not on target." show_hints="FALSE"> non-concave &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="concave up " id="concavity-1-3" w="87" name="concavity-1" hint="Incorrect choice." show_hints="FALSE"> concave up &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-1" id="concavity-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="concavity-1-hintarea">question id: concavity-1</small></p>
 </div>
 </div>
@@ -3273,8 +2894,8 @@ Figure&nbsp;3: Three different functions labeled (A), (B), and (C).
 <li>Function (B) is</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="false">
-<input type="radio" class="devoirs-mcq" value="concave down " id="concavity-2-1" w="7" name="concavity-2" hint="wide of the mark" show_hints="FALSE"> concave down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="non-concave " id="concavity-2-2" w="3" name="concavity-2" hint="incorrect choice" show_hints="FALSE"> non-concave &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="concave up" id="concavity-2-3" w="18" name="concavity-2" hint="right-o" show_hints="FALSE"> concave up &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-2" id="concavity-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="concave down " id="concavity-2-1" w="3" name="concavity-2" hint="Hmmm ..." show_hints="FALSE"> concave down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="non-concave " id="concavity-2-2" w="7" name="concavity-2" hint="Incorrect." show_hints="FALSE"> non-concave &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="concave up" id="concavity-2-3" w="8" name="concavity-2" hint="Right!" show_hints="FALSE"> concave up &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-2" id="concavity-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="concavity-2-hintarea">question id: concavity-2</small></p>
 </div>
 </div>
@@ -3282,8 +2903,8 @@ Figure&nbsp;3: Three different functions labeled (A), (B), and (C).
 <li>Function (C) is</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="false">
-<input type="radio" class="devoirs-mcq" value="concave down " id="concavity-3-1" w="19" name="concavity-3" hint="Better luck next time." show_hints="FALSE"> concave down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="non-concave" id="concavity-3-2" w="41" name="concavity-3" hint="Good job!" show_hints="FALSE"> non-concave &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="concave up " id="concavity-3-3" w="23" name="concavity-3" hint="wide of the mark" show_hints="FALSE"> concave up &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-3" id="concavity-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="concave down " id="concavity-3-1" w="3" name="concavity-3" hint="Nope." show_hints="FALSE"> concave down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="non-concave" id="concavity-3-2" w="29" name="concavity-3" hint="You're right." show_hints="FALSE"> non-concave &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="concave up " id="concavity-3-3" w="3" name="concavity-3" hint="Incorrect choice." show_hints="FALSE"> concave up &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-3" id="concavity-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="concavity-3-hintarea">question id: concavity-3</small></p>
 </div>
 </div>
@@ -3291,8 +2912,8 @@ Figure&nbsp;3: Three different functions labeled (A), (B), and (C).
 <li>The <strong>negative</strong> of function (A) is</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="false">
-<input type="radio" class="devoirs-mcq" value="concave down " id="concavity-4-1" w="3" name="concavity-4" hint="incorrect choice" show_hints="FALSE"> concave down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="non-concave " id="concavity-4-2" w="7" name="concavity-4" hint="wrong" show_hints="FALSE"> non-concave &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="concave up" id="concavity-4-3" w="29" name="concavity-4" hint="You're right" show_hints="FALSE"> concave up &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-4" id="concavity-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="concave down " id="concavity-4-1" w="7" name="concavity-4" hint="Not so!" show_hints="FALSE"> concave down &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="non-concave " id="concavity-4-2" w="3" name="concavity-4" hint="Wrong." show_hints="FALSE"> non-concave &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="concave up" id="concavity-4-3" w="18" name="concavity-4" hint="You're right." show_hints="FALSE"> concave up &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-4" id="concavity-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="concavity-4-hintarea">question id: concavity-4</small></p>
 </div>
 </div>
@@ -3318,56 +2939,56 @@ Figure&nbsp;4: Graph of the function <span class="math inline">\(\text{wave}(t) 
 </figure>
 </div>
 <ol type="1">
-<li>For what values of the input <span class="math inline">\(t\)</span> is the function in <a href="#fig-concavity-plot-2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-concavity-plot-2</span></a> concave up?</li>
+<li>For what values of the input <span class="math inline">\(t\)</span> is the function in <a href="#fig-concavity-plot-2" class="quarto-xref">Figure&nbsp;<span>4</span></a> concave up?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="false">
-<input type="radio" class="devoirs-mcq" value="A &amp; B" id="concavity-6-1" w="23" name="concavity-6" hint="You're mistaken" show_hints="FALSE"> A &amp; B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B &amp; C" id="concavity-6-2" w="32" name="concavity-6" hint="You're mistaken" show_hints="FALSE"> B &amp; C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C &amp; D" id="concavity-6-3" w="8" name="concavity-6" hint="Excellent!" show_hints="FALSE"> C &amp; D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="A &amp; C" id="concavity-6-4" w="23" name="concavity-6" hint="incorrect choice" show_hints="FALSE"> A &amp; C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="A &amp; D" id="concavity-6-5" w="87" name="concavity-6" hint="wide of the mark" show_hints="FALSE"> A &amp; D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B &amp; D" id="concavity-6-6" w="87" name="concavity-6" hint="You're mistaken" show_hints="FALSE"> B &amp; D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-6" id="concavity-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="A &amp; B" id="concavity-6-1" w="23" name="concavity-6" hint="This is wide of the mark." show_hints="FALSE"> A &amp; B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B &amp; C" id="concavity-6-2" w="19" name="concavity-6" hint="Hmmm ..." show_hints="FALSE"> B &amp; C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C &amp; D" id="concavity-6-3" w="41" name="concavity-6" hint="You're right." show_hints="FALSE"> C &amp; D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="A &amp; C" id="concavity-6-4" w="87" name="concavity-6" hint="You're mistaken" show_hints="FALSE"> A &amp; C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="A &amp; D" id="concavity-6-5" w="23" name="concavity-6" hint="Try again!" show_hints="FALSE"> A &amp; D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B &amp; D" id="concavity-6-6" w="19" name="concavity-6" hint="Not quite right." show_hints="FALSE"> B &amp; D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-6" id="concavity-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="concavity-6-hintarea">question id: concavity-6</small></p>
 </div>
 </div>
 <ol start="2" type="1">
-<li>For what values of the input <span class="math inline">\(t\)</span> is the function in <a href="#fig-concavity-plot-2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-concavity-plot-2</span></a> non-concave?</li>
+<li>For what values of the input <span class="math inline">\(t\)</span> is the function in <a href="#fig-concavity-plot-2" class="quarto-xref">Figure&nbsp;<span>4</span></a> non-concave?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="false">
-<input type="radio" class="devoirs-mcq" value="$t = A$" id="concavity-8-1" w="8" name="concavity-8" hint="Correct" show_hints="FALSE"> <span class="math inline">\(t = A\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=B$" id="concavity-8-2" w="7" name="concavity-8" hint="Not quite right" show_hints="FALSE"> <span class="math inline">\(t=B\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=C$" id="concavity-8-3" w="87" name="concavity-8" hint="Better luck next time." show_hints="FALSE"> <span class="math inline">\(t=C\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="none of the above" id="concavity-8-4" w="23" name="concavity-8" hint="Sorry!" show_hints="FALSE"> none of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-8" id="concavity-8.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$t = A$" id="concavity-8-1" w="8" name="concavity-8" hint="Yes." show_hints="FALSE"> <span class="math inline">\(t = A\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=B$" id="concavity-8-2" w="32" name="concavity-8" hint="Untrue!" show_hints="FALSE"> <span class="math inline">\(t=B\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=C$" id="concavity-8-3" w="3" name="concavity-8" hint="You might think so, but ..." show_hints="FALSE"> <span class="math inline">\(t=C\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="none of the above" id="concavity-8-4" w="32" name="concavity-8" hint="Not on target." show_hints="FALSE"> none of the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-8" id="concavity-8.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="concavity-8-hintarea">question id: concavity-8</small></p>
 </div>
 </div>
 <ol start="3" type="1">
-<li>Where is the function in <a href="#fig-concavity-plot-2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-concavity-plot-2</span></a> steepest?</li>
+<li>Where is the function in <a href="#fig-concavity-plot-2" class="quarto-xref">Figure&nbsp;<span>4</span></a> steepest?</li>
 </ol>
 <div class="cell" data-inline="true" data-show_hints="false">
-<input type="radio" class="devoirs-mcq" value="$t = A$" id="concavity-9-1" w="5" name="concavity-9" hint="right-o" show_hints="FALSE"> <span class="math inline">\(t = A\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=B$" id="concavity-9-2" w="7" name="concavity-9" hint="Not quite right" show_hints="FALSE"> <span class="math inline">\(t=B\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=C$" id="concavity-9-3" w="87" name="concavity-9" hint="wide of the mark" show_hints="FALSE"> <span class="math inline">\(t=C\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=D$" id="concavity-9-4" w="7" name="concavity-9" hint="You're mistaken" show_hints="FALSE"> <span class="math inline">\(t=D\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-9" id="concavity-9.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$t = A$" id="concavity-9-1" w="5" name="concavity-9" hint="Excellent!" show_hints="FALSE"> <span class="math inline">\(t = A\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=B$" id="concavity-9-2" w="87" name="concavity-9" hint="You're wrong here." show_hints="FALSE"> <span class="math inline">\(t=B\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=C$" id="concavity-9-3" w="87" name="concavity-9" hint="Not quite." show_hints="FALSE"> <span class="math inline">\(t=C\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t=D$" id="concavity-9-4" w="32" name="concavity-9" hint="You're mistaken" show_hints="FALSE"> <span class="math inline">\(t=D\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="concavity-9" id="concavity-9.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="concavity-9-hintarea">question id: concavity-9</small></p>
 </div>
 </div>
 </div>
 <div id="exr-crow-write-chair" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6</strong></span> We introduced concavity graphically and used the terms “concave up” and “concave down.” Now we can compute the concavity quantitatively using the second derivative.</p>
-<p><a href="#lst-crow-write-chair" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-crow-write-chair</span></a> creates a random function <code>f()</code> and plot its. (Note: <code>doodle_fun()</code> generates random functions in the same way you might by moving a pencil smoothly on a piece of paper. The <code>seed = 8427</code> effectively chooses which one of infinitely many functions is being generated. Different seeds give different functions. )</p>
+<p><a href="#lst-crow-write-chair" class="quarto-xref">Active R chunk&nbsp;<span>1</span></a> creates a random function <code>f()</code> and plot its. (Note: <code>doodle_fun()</code> generates random functions in the same way you might by moving a pencil smoothly on a piece of paper. The <code>seed = 8427</code> effectively chooses which one of infinitely many functions is being generated. Different seeds give different functions. )</p>
 <div id="lst-crow-write-chair" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-crow-write-chair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;1
 </figcaption>
 <div aria-describedby="lst-crow-write-chair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
 <p>You can see that in the region near <span class="math inline">\(x = -1\)</span> the function is concave down. While near <span class="math inline">\(x=2.5\)</span> the function is concave up.</p>
-<p><a href="#lst-crow-write-chair2" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-crow-write-chair2</span></a> computes the <strong><em>second derivative</em></strong> of <span class="math inline">\(f(x)\)</span> and evaluate sit at <span class="math inline">\(x=-1\)</span> and <span class="math inline">\(x=2.5\)</span>.</p>
+<p><a href="#lst-crow-write-chair2" class="quarto-xref">Active R chunk&nbsp;<span>2</span></a> computes the <strong><em>second derivative</em></strong> of <span class="math inline">\(f(x)\)</span> and evaluate sit at <span class="math inline">\(x=-1\)</span> and <span class="math inline">\(x=2.5\)</span>.</p>
 <div id="lst-crow-write-chair2" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-crow-write-chair2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Active R chunk&nbsp;2
 </figcaption>
 <div aria-describedby="lst-crow-write-chair2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3376,34 +2997,34 @@ Active R chunk&nbsp;2
 <p>A. Which of these is a correct statement of “concave up” in terms of the value of <span class="math inline">\(\partial_{xx} f(x)\)</span>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A function ... (x_0) > 0$" id="crow-write-chair-A-1" w="20" name="crow-write-chair-A" hint="right-o" show_hints="TRUE"> A function is concave-up at input <span class="math inline">\(x_0\)</span> when <span class="math inline">\(\partial_{xx} f(x_0) &gt; 0\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="A function ... (x_0) > 0$" id="crow-write-chair-A-1" w="8" name="crow-write-chair-A" hint="That's right." show_hints="TRUE"> A function is concave-up at input <span class="math inline">\(x_0\)</span> when <span class="math inline">\(\partial_{xx} f(x_0) &gt; 0\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A function ... x_0) < 0$ " id="crow-write-chair-A-2" w="32" name="crow-write-chair-A" hint="wide of the mark" show_hints="TRUE"> A function is concave-up at input <span class="math inline">\(x_0\)</span> when <span class="math inline">\(\partial_{xx} f(x_0) &lt; 0\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="A function ... x_0) < 0$ " id="crow-write-chair-A-2" w="32" name="crow-write-chair-A" hint="Try again!" show_hints="TRUE"> A function is concave-up at input <span class="math inline">\(x_0\)</span> when <span class="math inline">\(\partial_{xx} f(x_0) &lt; 0\)</span></p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="A function ... (x_0) < 0$" id="crow-write-chair-A-3" w="7" name="crow-write-chair-A" hint="The first derivative has nothing to do with it." show_hints="TRUE"> A function is concave-up at input <span class="math inline">\(x_0\)</span> when <span class="math inline">\(\partial_{xx} f(x_0) &lt; 0\)</span> <strong>and</strong> <span class="math inline">\(\partial_x f(x_0) &lt; 0\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="A function ... (x_0) > 0$" id="crow-write-chair-A-4" w="7" name="crow-write-chair-A" hint="The first derivative has nothing to do with it." show_hints="TRUE"> A function is concave-up at input <span class="math inline">\(x_0\)</span> when <span class="math inline">\(\partial_{xx} f(x_0) &gt; 0\)</span> <strong>and</strong> <span class="math inline">\(\partial_x f(x_0) &gt; 0\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="A function ... (x_0) > 0$" id="crow-write-chair-A-4" w="32" name="crow-write-chair-A" hint="The first derivative has nothing to do with it." show_hints="TRUE"> A function is concave-up at input <span class="math inline">\(x_0\)</span> when <span class="math inline">\(\partial_{xx} f(x_0) &gt; 0\)</span> <strong>and</strong> <span class="math inline">\(\partial_x f(x_0) &gt; 0\)</span></p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="crow-write-chair-A" id="crow-write-chair-A.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="crow-write-chair-A-hintarea">question id: crow-write-chair-A</small></p>
 </div>
 </div>
-<p>Recall that an <strong><em>inflection point</em></strong> is a value for the input <span class="math inline">\(x\)</span> at which <span class="math inline">\(f(x)\)</span> changes from concave up to concave down, or <em>vice versa</em>. Add a statement to <a href="#lst-crow-write-chair2" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-crow-write-chair2</span></a> to graph <span class="math inline">\(\partial_{xx} f(x)\)</span>.</p>
+<p>Recall that an <strong><em>inflection point</em></strong> is a value for the input <span class="math inline">\(x\)</span> at which <span class="math inline">\(f(x)\)</span> changes from concave up to concave down, or <em>vice versa</em>. Add a statement to <a href="#lst-crow-write-chair2" class="quarto-xref">Active R chunk&nbsp;<span>2</span></a> to graph <span class="math inline">\(\partial_{xx} f(x)\)</span>.</p>
 <p>B. From reading the graph of <span class="math inline">\(\partial_{xx} f(x)\)</span>, say which of these is nearest to an inflection point for <span class="math inline">\(f(x)\)</span>.</p>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="$x = 0.0$ " id="crow-write-chair-B-1" w="32" name="crow-write-chair-B" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(x = 0.0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x = -4.0$" id="crow-write-chair-B-2" w="29" name="crow-write-chair-B" hint="You're right The inflection point nearest $x=-4$ occurs at $x = -4.156$." show_hints="TRUE"> <span class="math inline">\(x = -4.0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x = 2.5$ " id="crow-write-chair-B-3" w="87" name="crow-write-chair-B" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(x = 2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x = -3$ " id="crow-write-chair-B-4" w="23" name="crow-write-chair-B" hint="Not quite right" show_hints="TRUE"> <span class="math inline">\(x = -3\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="crow-write-chair-B" id="crow-write-chair-B.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$x = 0.0$ " id="crow-write-chair-B-1" w="19" name="crow-write-chair-B" hint="Oops!" show_hints="TRUE"> <span class="math inline">\(x = 0.0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x = -4.0$" id="crow-write-chair-B-2" w="29" name="crow-write-chair-B" hint="The inflection point nearest $x=-4$ occurs at $x = -4.156$." show_hints="TRUE"> <span class="math inline">\(x = -4.0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x = 2.5$ " id="crow-write-chair-B-3" w="87" name="crow-write-chair-B" hint="Think again." show_hints="TRUE"> <span class="math inline">\(x = 2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$x = -3$ " id="crow-write-chair-B-4" w="3" name="crow-write-chair-B" hint="Wrong." show_hints="TRUE"> <span class="math inline">\(x = -3\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="crow-write-chair-B" id="crow-write-chair-B.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="crow-write-chair-B-hintarea">question id: crow-write-chair-B</small></p>
 </div>
 </div>
 <p>C. How many inflection points are there for <span class="math inline">\(f(x)\)</span> in the domain <span class="math inline">\(-5 \leq x \leq 5\)</span>?</p>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="1 " id="crow-write-chair-C-1" w="7" name="crow-write-chair-C" hint="Better luck next time." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="crow-write-chair-C-2" w="87" name="crow-write-chair-C" hint="wrong" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="crow-write-chair-C-3" w="14" name="crow-write-chair-C" hint="Excellent! You can see this by graphing $\partial_{xx} f(x)$ and counting the zero crossings." show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4 " id="crow-write-chair-C-4" w="32" name="crow-write-chair-C" hint="Try again!" show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5 " id="crow-write-chair-C-5" w="32" name="crow-write-chair-C" hint="Try again!" show_hints="TRUE"> 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="crow-write-chair-C" id="crow-write-chair-C.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="1 " id="crow-write-chair-C-1" w="3" name="crow-write-chair-C" hint="Not quite." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="crow-write-chair-C-2" w="19" name="crow-write-chair-C" hint="Not on target." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="crow-write-chair-C-3" w="20" name="crow-write-chair-C" hint="Excellent! You can see this by graphing $\partial_{xx} f(x)$ and counting the zero crossings." show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4 " id="crow-write-chair-C-4" w="3" name="crow-write-chair-C" hint="Not on target." show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5 " id="crow-write-chair-C-5" w="19" name="crow-write-chair-C" hint="Oops!" show_hints="TRUE"> 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="crow-write-chair-C" id="crow-write-chair-C.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="crow-write-chair-C-hintarea">question id: crow-write-chair-C</small></p>
 </div>
 </div>
@@ -3416,18 +3037,18 @@ Active R chunk&nbsp;2
 Active R chunk&nbsp;3
 </figcaption>
 <div aria-describedby="lst-tiger-blow-futon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
-<p>Using <a href="#lst-tiger-blow-futon" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-tiger-blow-futon</span></a>, calculate the curvature of this road for each value of <span class="math inline">\(x\)</span>.</p>
+<p>Using <a href="#lst-tiger-blow-futon" class="quarto-xref">Active R chunk&nbsp;<span>3</span></a>, calculate the curvature of this road for each value of <span class="math inline">\(x\)</span>.</p>
 <ol type="1">
 <li>What is the curvature of the road at <span class="math inline">\(x=-1\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0.22" id="tiger-blow-futon-1-1" w="35" name="tiger-blow-futon-1" hint="Nice." show_hints="FALSE"> 0.22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.24 " id="tiger-blow-futon-1-2" w="7" name="tiger-blow-futon-1" hint="incorrect choice" show_hints="FALSE"> 0.24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.27 " id="tiger-blow-futon-1-3" w="23" name="tiger-blow-futon-1" hint="Sorry!" show_hints="FALSE"> 0.27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.31 " id="tiger-blow-futon-1-4" w="19" name="tiger-blow-futon-1" hint="no" show_hints="FALSE"> 0.31 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.35 " id="tiger-blow-futon-1-5" w="19" name="tiger-blow-futon-1" hint="Sorry!" show_hints="FALSE"> 0.35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tiger-blow-futon-1" id="tiger-blow-futon-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0.22" id="tiger-blow-futon-1-1" w="14" name="tiger-blow-futon-1" hint="Right-O!" show_hints="FALSE"> 0.22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.24 " id="tiger-blow-futon-1-2" w="32" name="tiger-blow-futon-1" hint="Try again!" show_hints="FALSE"> 0.24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.27 " id="tiger-blow-futon-1-3" w="19" name="tiger-blow-futon-1" hint="No." show_hints="FALSE"> 0.27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.31 " id="tiger-blow-futon-1-4" w="32" name="tiger-blow-futon-1" hint="Not quite." show_hints="FALSE"> 0.31 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.35 " id="tiger-blow-futon-1-5" w="23" name="tiger-blow-futon-1" hint="Wrong." show_hints="FALSE"> 0.35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tiger-blow-futon-1" id="tiger-blow-futon-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="tiger-blow-futon-1-hintarea">question id: tiger-blow-futon-1</small></p>
 </div>
 </div>
@@ -3435,8 +3056,8 @@ Active R chunk&nbsp;3
 <li>What is the curvature of the road at <span class="math inline">\(x=1\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0.22 " id="tiger-blow-futon-2-1" w="23" name="tiger-blow-futon-2" hint="wide of the mark" show_hints="FALSE"> 0.22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.24 " id="tiger-blow-futon-2-2" w="19" name="tiger-blow-futon-2" hint="Sorry!" show_hints="FALSE"> 0.24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.27" id="tiger-blow-futon-2-3" w="14" name="tiger-blow-futon-2" hint="Good job!" show_hints="FALSE"> 0.27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.31 " id="tiger-blow-futon-2-4" w="3" name="tiger-blow-futon-2" hint="wide of the mark" show_hints="FALSE"> 0.31 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.35 " id="tiger-blow-futon-2-5" w="23" name="tiger-blow-futon-2" hint="no" show_hints="FALSE"> 0.35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tiger-blow-futon-2" id="tiger-blow-futon-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0.22 " id="tiger-blow-futon-2-1" w="23" name="tiger-blow-futon-2" hint="Boo!" show_hints="FALSE"> 0.22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.24 " id="tiger-blow-futon-2-2" w="19" name="tiger-blow-futon-2" hint="Sorry!" show_hints="FALSE"> 0.24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.27" id="tiger-blow-futon-2-3" w="35" name="tiger-blow-futon-2" hint="Bullseye!" show_hints="FALSE"> 0.27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.31 " id="tiger-blow-futon-2-4" w="7" name="tiger-blow-futon-2" hint="Untrue!" show_hints="FALSE"> 0.31 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.35 " id="tiger-blow-futon-2-5" w="3" name="tiger-blow-futon-2" hint="Sorry!" show_hints="FALSE"> 0.35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tiger-blow-futon-2" id="tiger-blow-futon-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="tiger-blow-futon-2-hintarea">question id: tiger-blow-futon-2</small></p>
 </div>
 </div>
@@ -3444,16 +3065,53 @@ Active R chunk&nbsp;3
 <li>What is the curvature of the road at <span class="math inline">\(x=0\)</span>?</li>
 </ol>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0.22 " id="tiger-blow-futon-3-1" w="23" name="tiger-blow-futon-3" hint="no" show_hints="FALSE"> 0.22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.24" id="tiger-blow-futon-3-2" w="35" name="tiger-blow-futon-3" hint="Yes" show_hints="FALSE"> 0.24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.27 " id="tiger-blow-futon-3-3" w="32" name="tiger-blow-futon-3" hint="wrong" show_hints="FALSE"> 0.27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.31 " id="tiger-blow-futon-3-4" w="32" name="tiger-blow-futon-3" hint="no" show_hints="FALSE"> 0.31 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.35 " id="tiger-blow-futon-3-5" w="23" name="tiger-blow-futon-3" hint="Better luck next time." show_hints="FALSE"> 0.35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tiger-blow-futon-3" id="tiger-blow-futon-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0.22 " id="tiger-blow-futon-3-1" w="19" name="tiger-blow-futon-3" hint="Think again." show_hints="FALSE"> 0.22 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.24" id="tiger-blow-futon-3-2" w="14" name="tiger-blow-futon-3" hint="Bullseye!" show_hints="FALSE"> 0.24 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.27 " id="tiger-blow-futon-3-3" w="87" name="tiger-blow-futon-3" hint="Not so!" show_hints="FALSE"> 0.27 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.31 " id="tiger-blow-futon-3-4" w="7" name="tiger-blow-futon-3" hint="Think again." show_hints="FALSE"> 0.31 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.35 " id="tiger-blow-futon-3-5" w="7" name="tiger-blow-futon-3" hint="No." show_hints="FALSE"> 0.35 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="tiger-blow-futon-3" id="tiger-blow-futon-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="tiger-blow-futon-3-hintarea">question id: tiger-blow-futon-3</small></p>
+</div>
+</div>
+</div>
+<div id="exr-goat-come-bed" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 8</strong></span> The graph of the function <span class="math inline">\(g(x) \equiv \sqrt{\strut R^2 - x^2}\)</span> has the shape of a semi-circle of radius <span class="math inline">\(R\)</span>, e.g.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">makeFun</span>(<span class="fu">sqrt</span>(R<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">~</span> x, <span class="at">R =</span> <span class="dv">2</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_plot</span>(<span class="fu">g</span>(x) <span class="sc">~</span> x, <span class="fu">domain</span>(<span class="at">x =</span> <span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>), <span class="at">npts=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="21-exercises_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Intuition suggests that the radius of an enscribed circle for <span class="math inline">\(g()\)</span> should match the radius of the graph of the function.</p>
+<p>Using <a href="#lst-goat-come-bed" class="quarto-xref">Active R chunk&nbsp;<span>4</span></a>, create a function to calculate the curvature of <span class="math inline">\(g()\)</span> at any input <span class="math inline">\(x\)</span>. Then plot that curvature function over the domain <span class="math inline">\(-2 &lt; x &lt; 2\)</span>. Is the curvature of <span class="math inline">\(g()\)</span> indeed constant? To help you get started, here is some R/mosaic code with a fill-in-the-blank for the formula.</p>
+<div id="lst-goat-come-bed" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-goat-come-bed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Active R chunk&nbsp;4
+</figcaption>
+<div aria-describedby="lst-goat-come-bed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</figure>
+</div>
+<p>For instance, let’s set the default value of the parameter <span class="math inline">\(R\)</span> to be 2.</p>
+<p>What is the curvature of <span class="math inline">\(g(x)\)</span>?</p>
+<div class="cell" data-inline="true" data-show_hints="true">
+<input type="radio" class="devoirs-mcq" value="0 " id="goat-come-bed-1-1" w="32" name="goat-come-bed-1" hint="Oops!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5" id="goat-come-bed-1-2" w="29" name="goat-come-bed-1" hint="A hit!" show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="goat-come-bed-1-3" w="87" name="goat-come-bed-1" hint="You're mistaken" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1.5 " id="goat-come-bed-1-4" w="23" name="goat-come-bed-1" hint="Hmmm ..." show_hints="TRUE"> 1.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="goat-come-bed-1-5" w="3" name="goat-come-bed-1" hint="Sorry!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="goat-come-bed-1" id="goat-come-bed-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
+<p><small style="color: grey;" id="goat-come-bed-1-hintarea">question id: goat-come-bed-1</small></p>
 </div>
 </div>
 </div>
 <section id="activities" class="level3">
 <h3 class="anchored" data-anchor-id="activities">Activities</h3>
 <div id="exr-descent-path" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 10</strong></span> Pilots of commercial passenger aircraft consider the comfort of their passengers into account when flying. In transitioning from level flight onto the descent path for landing, for example, pilots take care that the vertical component of acceleration isn’t so great that passengers feel the plane “falling out from under them.”</p>
+<p><span class="theorem-title"><strong>Exercise 9</strong></span> Pilots of commercial passenger aircraft consider the comfort of their passengers into account when flying. In transitioning from level flight onto the descent path for landing, for example, pilots take care that the vertical component of acceleration isn’t so great that passengers feel the plane “falling out from under them.”</p>
 <p>A simple model of the descent path is a sigmoid function. Suppose that the descent starts from an altitude of <span class="math inline">\(A = 20,000\)</span> feet at a distance of 30,000 feet from the end of the runway. A reasonable model for the vertical component of the flight path is <span class="math display">\[\text{altitude}(x) \equiv A\,\pnorm(x,\ \  mn=30000/2,\ \  sd=30000/6)\]</span> Notice that the parameter “mean” is set to be half the distance to the runway, and the parameter “sd” is set to be a third of that. This ensures that the start and end of the descent will involve flight that is close to level.</p>
 <div id="fig-descent-path" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -3462,7 +3120,7 @@ Active R chunk&nbsp;3
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="21-exercises_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="21-exercises_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3476,14 +3134,14 @@ Figure&nbsp;5: A simple model of a the altitude of a airplane as it descends for
 <p>The vertical acceleration is the second derivative of altitude() with respect to time: <span class="math inline">\(\partial_{tt} \text{altitude}(t)\)</span>. But notice that altitude() is a function of distance from the runway, not time.</p>
 <p>To treat altitude() as a function of time, we need to write “distance from the runway” as a function of time. Let’s set <span class="math inline">\(t=0\)</span> to be the time when the plane begins its descent, when it is 30,000 feet from the end of the runway. Distance from the runway will be <span class="math display">\[x(t) = 30000 - v\, t\]</span> where <span class="math inline">\(v\)</span> is the plane’s velocity. Composing altitude() onto <span class="math inline">\(x(t)\)</span> gives a new function <span class="math display">\[\text{alt}(t) \equiv \text{altitude}(x(t)) = \text{altitude}(30000-v\, t)\]</span></p>
 <p>Suppose that the aircraft is flying at <span class="math inline">\(v = 200\)</span> miles-per-hour, which is <span class="math display">\[200  \frac{\bcancel{\text{miles}}}{\cancel{\text{hour}}} \frac{\cancel{1\, \text{hour}}}{3600\, \text{s}} \frac{5280 \text{ft}}{\bcancel{1\, \text{mile}}} = 293.3 \frac{\text{ft}}{\text{s}}\]</span>. At that speed, it will take a little more than 100 seconds for the aircraft to reach the runway.</p>
-<p>In <a href="#lst-descent-path" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-descent-path</span></a> plot out the function alt(<span class="math inline">\(t\)</span>) function, choosing a domain for <span class="math inline">\(t\)</span> that lets you see the whole descent path.</p>
+<p>In <a href="#lst-descent-path" class="quarto-xref">Active R chunk&nbsp;<span>5</span></a> plot out the function alt(<span class="math inline">\(t\)</span>) function, choosing a domain for <span class="math inline">\(t\)</span> that lets you see the whole descent path.</p>
 <div id="lst-descent-path" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-descent-path-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;4
+Active R chunk&nbsp;5
 </figcaption>
 <div aria-describedby="lst-descent-path-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
@@ -3491,7 +3149,7 @@ Active R chunk&nbsp;4
 <p>Compute the second derivative <span class="math inline">\(\partial_{tt} \text{alt}(t)\)</span> to find the vertical component of acceleration of the aircraft. (Important note: Due to a bug in R/mosaic, use <code>numD()</code> rather than <code>D()</code> to compute the second derivative.)</p>
 <p>Graph the second derivative over the appropriate domain and look for the most extreme values of acceleration.</p>
 <div id="descent-path2">
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 <ol type="1">
@@ -3499,8 +3157,8 @@ Active R chunk&nbsp;4
 </ol>
 <p>What are the <strong>units</strong> of vertical acceleration shown in the graph?</p>
 <div class="cell" data-show_hints="false" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="feet-per-second" id="descent-path-1-1" w="3" name="descent-path-1" hint="That's  a unit of velocity, not acceleration." show_hints="FALSE"> feet-per-second &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="feet-per-s ... nd-squared" id="descent-path-1-2" w="5" name="descent-path-1" hint="Correct" show_hints="FALSE"> feet-per-second-squared &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="miles-per- ... ur-squared" id="descent-path-1-3" w="23" name="descent-path-1" hint="This is a unit of acceleration, but since we used feet and seconds in defining the alt() function, the second derivative will also be in feet and seconds." show_hints="FALSE"> miles-per-hour-squared &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="descent-path-1" id="descent-path-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="feet-per-second" id="descent-path-1-1" w="7" name="descent-path-1" hint="That's  a unit of velocity, not acceleration." show_hints="FALSE"> feet-per-second &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="feet-per-s ... nd-squared" id="descent-path-1-2" w="16" name="descent-path-1" hint="Score!" show_hints="FALSE"> feet-per-second-squared &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="miles-per- ... ur-squared" id="descent-path-1-3" w="7" name="descent-path-1" hint="This is a unit of acceleration, but since we used feet and seconds in defining the alt() function, the second derivative will also be in feet and seconds." show_hints="FALSE"> miles-per-hour-squared &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="descent-path-1" id="descent-path-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="descent-path-1-hintarea">question id: descent-path-1</small></p>
 </div>
 </div>
@@ -3510,59 +3168,23 @@ Active R chunk&nbsp;4
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="feet-per-second" id="descent-path-2-1" w="87" name="descent-path-2" hint="That's  a unit of velocity, not acceleration." show_hints="TRUE"> feet-per-second</p>
+</p><p><input type="radio" class="devoirs-mcq" value="feet-per-second" id="descent-path-2-1" w="3" name="descent-path-2" hint="That's  a unit of velocity, not acceleration." show_hints="TRUE"> feet-per-second</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="feet-per-s ... nd-squared" id="descent-path-2-2" w="5" name="descent-path-2" hint="Excellent!" show_hints="TRUE"> feet-per-second-squared</p>
+</p><p><input type="radio" class="devoirs-mcq" value="feet-per-s ... nd-squared" id="descent-path-2-2" w="18" name="descent-path-2" hint="Score!" show_hints="TRUE"> feet-per-second-squared</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="miles-per- ... ur-squared" id="descent-path-2-3" w="87" name="descent-path-2" hint="This is a unit of acceleration, but since we used feet and seconds in defining the alt() function, the second derivative will also be in feet and seconds." show_hints="TRUE"> miles-per-hour-squared</p>
+</p><p><input type="radio" class="devoirs-mcq" value="miles-per- ... ur-squared" id="descent-path-2-3" w="3" name="descent-path-2" hint="This is a unit of acceleration, but since we used feet and seconds in defining the alt() function, the second derivative will also be in feet and seconds." show_hints="TRUE"> miles-per-hour-squared</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="descent-path-2" id="descent-path-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="descent-path-2-hintarea">question id: descent-path-2</small></p>
 </div>
 </div>
 <p><strong>For reflection</strong>: A new hire at the airline’s operations center proposes to model the descent as a straight-line function rather than a sigmoid. He points out that the second derivative of a straight-line function is always 0, so the passengers would feel no acceleration at all! Explain to this newbie what’s wrong with his idea.</p>
-<div id="exr-goat-come-bed" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 8</strong></span> The graph of the function <span class="math inline">\(g(x) \equiv \sqrt{\strut R^2 - x^2}\)</span> has the shape of a semi-circle of radius <span class="math inline">\(R\)</span>, e.g.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">makeFun</span>(<span class="fu">sqrt</span>(R<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">~</span> x, <span class="at">R =</span> <span class="dv">2</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_plot</span>(<span class="fu">g</span>(x) <span class="sc">~</span> x, <span class="fu">domain</span>(<span class="at">x =</span> <span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>), <span class="at">npts=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="21-exercises_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Intuition suggests that the radius of an enscribed circle for <span class="math inline">\(g()\)</span> should match the radius of the graph of the function.</p>
-<p>Using <a href="#lst-goat-come-bed" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-goat-come-bed</span></a>, create a function to calculate the curvature of <span class="math inline">\(g()\)</span> at any input <span class="math inline">\(x\)</span>. Then plot that curvature function over the domain <span class="math inline">\(-2 &lt; x &lt; 2\)</span>. Is the curvature of <span class="math inline">\(g()\)</span> indeed constant? To help you get started, here is some R/mosaic code with a fill-in-the-blank for the formula.</p>
-<div id="lst-goat-come-bed" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-goat-come-bed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;5
-</figcaption>
-<div aria-describedby="lst-goat-come-bed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</figure>
-</div>
-<p>For instance, let’s set the default value of the parameter <span class="math inline">\(R\)</span> to be 2.</p>
-<p>What is the curvature of <span class="math inline">\(g(x)\)</span>?</p>
-<div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="0 " id="goat-come-bed-1-1" w="19" name="goat-come-bed-1" hint="Sorry!" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.5" id="goat-come-bed-1-2" w="35" name="goat-come-bed-1" hint="Excellent!" show_hints="TRUE"> 0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="goat-come-bed-1-3" w="7" name="goat-come-bed-1" hint="wrong" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1.5 " id="goat-come-bed-1-4" w="87" name="goat-come-bed-1" hint="Better luck next time." show_hints="TRUE"> 1.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="goat-come-bed-1-5" w="87" name="goat-come-bed-1" hint="Sorry!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="goat-come-bed-1" id="goat-come-bed-1.null" style="display: none;" w="skipped" checked="">
-<div>
-<p><small style="color: grey;" id="goat-come-bed-1-hintarea">question id: goat-come-bed-1</small></p>
-</div>
-</div>
 </div>
 <div id="exr-lamb-forgive-vase" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 9</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Exercise 10</strong></span> &nbsp;</p>
 <div id="fig-basketball-shot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-basketball-shot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -3573,7 +3195,7 @@ Figure&nbsp;6: A drawing from a children’s song book, <em>I’m still here in 
 </figcaption>
 </figure>
 </div>
-<p>The picture in <a href="#fig-basketball-shot" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-basketball-shot</span></a> shows an instantaneous position of the ball. However, such a snapshot does not show the instantaneous <em>velocity</em> of the ball. If you had a few frames of a movie, your intuition would tell you if the ball is likely to go through the hoop. From a movie, you could even calculate a good finite-difference approximation to the instantaneous velocity of the ball. (In Block VI, you’ll see how to use the instantaneous position and velocity to trace out the trajectory of the ball up to the moment it comes into contact with the basket, hoop, or backboard.)</p>
+<p>The picture in <a href="#fig-basketball-shot" class="quarto-xref">Figure&nbsp;<span>6</span></a> shows an instantaneous position of the ball. However, such a snapshot does not show the instantaneous <em>velocity</em> of the ball. If you had a few frames of a movie, your intuition would tell you if the ball is likely to go through the hoop. From a movie, you could even calculate a good finite-difference approximation to the instantaneous velocity of the ball. (In Block VI, you’ll see how to use the instantaneous position and velocity to trace out the trajectory of the ball up to the moment it comes into contact with the basket, hoop, or backboard.)</p>
 <p>Assume for the purposes of the following question that the boy, the center of the ball, and the center of the hoop are all in the same plane, as required for a swish shot. Assume as well that when the ball left the boy’s hands it was in the position now occupied by the boy’s head and that there was no spin on the ball. Now the question:</p>
 <blockquote class="blockquote">
 <p>Will the ball swish through the basket?</p>
@@ -3643,15 +3265,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3671,7 +3300,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3683,7 +3315,6 @@ console.log("Added hint summary.")
 </div>
 
 
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -3769,8 +3400,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3881,7 +3510,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

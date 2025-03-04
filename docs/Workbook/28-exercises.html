@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"context":"interactive","classes":"","warning":"true","editor-font-scale":"1","fig-width":7,"fig-height":5,"out-width":"700px","message":"true","dpi":72,"editor-max-height":"","output":"true","editor-quick-suggestions":"false","label":"owl-become-fork-1","results":"markup","comment":"","autorun":"false","read-only":"false","fig-cap":"","editor-word-wrap":"true","out-height":""},"code":""},{"id":2,"options":{"context":"interactive","classes":"","warning":"true","editor-font-scale":"1","fig-width":7,"fig-height":5,"out-width":"700px","message":"true","dpi":72,"editor-max-height":"","output":"true","editor-quick-suggestions":"false","label":"owl-become-fork-2","results":"markup","comment":"","autorun":"false","read-only":"false","fig-cap":"","editor-word-wrap":"true","out-height":""},"code":""},{"id":3,"options":{"context":"interactive","classes":"","warning":"true","editor-font-scale":"1","fig-width":7,"fig-height":5,"out-width":"700px","message":"true","dpi":72,"editor-max-height":"","output":"true","editor-quick-suggestions":"false","label":"owl-become-fork-3","results":"markup","comment":"","autorun":"false","read-only":"false","fig-cap":"","editor-word-wrap":"true","out-height":""},"code":""},{"id":4,"options":{"context":"interactive","classes":"","warning":"true","editor-font-scale":"1","fig-width":7,"fig-height":5,"out-width":"700px","message":"true","dpi":72,"editor-max-height":"","output":"true","editor-quick-suggestions":"false","label":"owl-become-fork-4","results":"markup","comment":"","autorun":"false","read-only":"false","fig-cap":"","editor-word-wrap":"true","out-height":""},"code":""},{"id":5,"options":{"context":"interactive","classes":"","warning":"true","editor-font-scale":"1","fig-width":7,"fig-height":5,"out-width":"700px","message":"true","dpi":72,"editor-max-height":"","output":"true","editor-quick-suggestions":"false","label":"owl-become-fork-5","results":"markup","comment":"","autorun":"false","read-only":"false","fig-cap":"","editor-word-wrap":"true","out-height":""},"code":""},{"id":6,"options":{"context":"interactive","classes":"","warning":"true","editor-font-scale":"1","fig-width":7,"fig-height":5,"out-width":"700px","message":"true","dpi":72,"editor-max-height":"","output":"true","editor-quick-suggestions":"false","label":"cat-eat-mattress-1","results":"markup","comment":"","autorun":"false","read-only":"false","fig-cap":"","editor-word-wrap":"true","out-height":""},"code":""},{"id":7,"options":{"context":"interactive","classes":"","warning":"true","editor-font-scale":"1","fig-width":7,"fig-height":5,"out-width":"700px","message":"true","dpi":72,"editor-max-height":"","output":"true","editor-quick-suggestions":"false","label":"cat-eat-mattress-2","results":"markup","comment":"","autorun":"false","read-only":"false","fig-cap":"","editor-word-wrap":"true","out-height":""},"code":""},{"id":8,"options":{"context":"interactive","classes":"","warning":"true","editor-font-scale":"1","fig-width":7,"fig-height":5,"out-width":"700px","message":"true","dpi":72,"editor-max-height":"","output":"true","editor-quick-suggestions":"false","label":"cat-eat-mattress-3","results":"markup","comment":"","autorun":"false","read-only":"false","fig-cap":"","editor-word-wrap":"true","out-height":""},"code":""},{"id":9,"options":{"context":"interactive","classes":"","warning":"true","editor-font-scale":"1","fig-width":7,"fig-height":5,"out-width":"700px","message":"true","dpi":72,"editor-max-height":"","output":"true","editor-quick-suggestions":"false","label":"cat-eat-mattress-4","results":"markup","comment":"","autorun":"false","read-only":"false","fig-cap":"","editor-word-wrap":"true","out-height":""},"code":""}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"owl-become-fork-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"owl-become-fork-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"owl-become-fork-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"owl-become-fork-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"owl-become-fork-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"cat-eat-mattress-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"cat-eat-mattress-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"cat-eat-mattress-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"cat-eat-mattress-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1634,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2982,6 +2601,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-beach-iron-clock" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> <em>Note: The radio-button multiple choice questions don’t allow us to display a column vector as such. Instead, we use the notation involving a superscript T. For instance, <span class="math inline">\((2, -3)^T\)</span> is a column vector which we would ordinarily write <span class="math inline">\(\left(\begin{array}{c}2\\-3\end{array}\right)\)</span> A vector written like <span class="math inline">\((2, -3)\)</span>, without the <span class="math inline">\(^T\)</span>, is a row vector.</em></p>
 <p>Suppose <span class="math display">\[\vec{\mathbf{u}}  \equiv \left(\begin{array}{c}2\\-3\end{array}\right) \ \ \hbox{and}\  \ \vec{\mathbf{v}}  \equiv \left(\begin{array}{c}4\\1\end{array}\right)\]</span> Compute the following linear combinations (arithmetically) …</p>
@@ -2990,22 +2611,22 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-34, -5)^T$" id="beech-iron-clock-1-1" w="14" name="beech-iron-clock-1" hint="Right" show_hints="TRUE"> <span class="math inline">\((-34, -5)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-34, -5)^T$" id="beech-iron-clock-1-1" w="35" name="beech-iron-clock-1" hint="Yes!" show_hints="TRUE"> <span class="math inline">\((-34, -5)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-34, -5)$" id="beech-iron-clock-1-2" w="7" name="beech-iron-clock-1" hint="The linear combination of two column vectors will be a column  vector." show_hints="TRUE"> <span class="math inline">\((-34, -5)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-34, -5)$" id="beech-iron-clock-1-2" w="3" name="beech-iron-clock-1" hint="The linear combination of two column vectors will be a column  vector." show_hints="TRUE"> <span class="math inline">\((-34, -5)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-34, 15)$" id="beech-iron-clock-1-3" w="7" name="beech-iron-clock-1" hint="This is a row vector,  not a column vector." show_hints="TRUE"> <span class="math inline">\((-34, 15)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-34, 15)$" id="beech-iron-clock-1-3" w="3" name="beech-iron-clock-1" hint="This is a row vector,  not a column vector." show_hints="TRUE"> <span class="math inline">\((-34, 15)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(34, 15)^T$" id="beech-iron-clock-1-4" w="87" name="beech-iron-clock-1" hint="Watch your arithmetic." show_hints="TRUE"> <span class="math inline">\((34, 15)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(34, 15)^T$" id="beech-iron-clock-1-4" w="7" name="beech-iron-clock-1" hint="Watch your arithmetic." show_hints="TRUE"> <span class="math inline">\((34, 15)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Invalid co ... mbination " id="beech-iron-clock-1-5" w="19" name="beech-iron-clock-1" hint="wrong" show_hints="TRUE"> Invalid combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Invalid co ... mbination " id="beech-iron-clock-1-5" w="7" name="beech-iron-clock-1" hint="Wrong." show_hints="TRUE"> Invalid combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="beech-iron-clock-1" id="beech-iron-clock-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-iron-clock-1-hintarea">question id: beech-iron-clock-1</small></p>
 </div>
 </div>
@@ -3014,22 +2635,22 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-1,  -7.6)^T$" id="beech-iron-clock-2-1" w="8" name="beech-iron-clock-2" hint="Right" show_hints="TRUE"> <span class="math inline">\((-1,  -7.6)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-1,  -7.6)^T$" id="beech-iron-clock-2-1" w="5" name="beech-iron-clock-2" hint="You're right." show_hints="TRUE"> <span class="math inline">\((-1,  -7.6)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(0.8)$" id="beech-iron-clock-2-2" w="3" name="beech-iron-clock-2" hint="The linear combination of two column vectors will be a column  vector." show_hints="TRUE"> <span class="math inline">\((0.8)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(0.8)$" id="beech-iron-clock-2-2" w="19" name="beech-iron-clock-2" hint="The linear combination of two column vectors will be a column  vector." show_hints="TRUE"> <span class="math inline">\((0.8)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(-1,  -7.6)$" id="beech-iron-clock-2-3" w="87" name="beech-iron-clock-2" hint="This is a row vector,  not  a column vector." show_hints="TRUE"> <span class="math inline">\((-1,  -7.6)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(-1,  -7.6)$" id="beech-iron-clock-2-3" w="23" name="beech-iron-clock-2" hint="This is a row vector,  not  a column vector." show_hints="TRUE"> <span class="math inline">\((-1,  -7.6)\)</span></p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="$(2.1, -1.3)^T$" id="beech-iron-clock-2-4" w="19" name="beech-iron-clock-2" hint="These are the scalar multipliers in the linear  combination, not  the value of the linear combination." show_hints="TRUE"> <span class="math inline">\((2.1, -1.3)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Invalid co ... mbination " id="beech-iron-clock-2-5" w="32" name="beech-iron-clock-2" hint="no" show_hints="TRUE"> Invalid combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Invalid co ... mbination " id="beech-iron-clock-2-5" w="32" name="beech-iron-clock-2" hint="Better luck next time." show_hints="TRUE"> Invalid combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="beech-iron-clock-2" id="beech-iron-clock-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-iron-clock-2-hintarea">question id: beech-iron-clock-2</small></p>
 </div>
 </div>
@@ -3038,22 +2659,22 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(11.8, 4.7)^T$" id="beech-iron-clock-3-1" w="35" name="beech-iron-clock-3" hint="Yes" show_hints="TRUE"> <span class="math inline">\((11.8, 4.7)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(11.8, 4.7)^T$" id="beech-iron-clock-3-1" w="14" name="beech-iron-clock-3" hint="You're right." show_hints="TRUE"> <span class="math inline">\((11.8, 4.7)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(2.7)$" id="beech-iron-clock-3-2" w="87" name="beech-iron-clock-3" hint="The linear combination of two column vectors will be a column  vector." show_hints="TRUE"> <span class="math inline">\((2.7)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(2.7)$" id="beech-iron-clock-3-2" w="3" name="beech-iron-clock-3" hint="The linear combination of two column vectors will be a column  vector." show_hints="TRUE"> <span class="math inline">\((2.7)\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(13.8,  1.7)$" id="beech-iron-clock-3-3" w="32" name="beech-iron-clock-3" hint="This is a row vector" show_hints="TRUE"> <span class="math inline">\((13.8,  1.7)\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(13.8,  1.7)$" id="beech-iron-clock-3-3" w="23" name="beech-iron-clock-3" hint="This is a row vector" show_hints="TRUE"> <span class="math inline">\((13.8,  1.7)\)</span></p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="$(34, 16)^T$" id="beech-iron-clock-3-4" w="23" name="beech-iron-clock-3" hint="Watch your arithmetic." show_hints="TRUE"> <span class="math inline">\((34, 16)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Invalid co ... mbination " id="beech-iron-clock-3-5" w="23" name="beech-iron-clock-3" hint="wide of the mark" show_hints="TRUE"> Invalid combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Invalid co ... mbination " id="beech-iron-clock-3-5" w="19" name="beech-iron-clock-3" hint="Nope." show_hints="TRUE"> Invalid combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="beech-iron-clock-3" id="beech-iron-clock-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-iron-clock-3-hintarea">question id: beech-iron-clock-3</small></p>
 </div>
 </div>
@@ -3062,22 +2683,22 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ol>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(34, -16)^T$" id="beech-iron-clock-4-1" w="20" name="beech-iron-clock-4" hint="Yes" show_hints="TRUE"> <span class="math inline">\((34, -16)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(34, -16)^T$" id="beech-iron-clock-4-1" w="41" name="beech-iron-clock-4" hint="You're right." show_hints="TRUE"> <span class="math inline">\((34, -16)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(32, -14)^T$" id="beech-iron-clock-4-2" w="32" name="beech-iron-clock-4" hint="Check  your  arithmetic!" show_hints="TRUE"> <span class="math inline">\((32, -14)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(32, -14)^T$" id="beech-iron-clock-4-2" w="3" name="beech-iron-clock-4" hint="Check  your  arithmetic!" show_hints="TRUE"> <span class="math inline">\((32, -14)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="$(34, -14)^T$" id="beech-iron-clock-4-3" w="87" name="beech-iron-clock-4" hint="Check  your  arithmetic!" show_hints="TRUE"> <span class="math inline">\((34, -14)^T\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="$(34, -14)^T$" id="beech-iron-clock-4-3" w="23" name="beech-iron-clock-4" hint="Check  your  arithmetic!" show_hints="TRUE"> <span class="math inline">\((34, -14)^T\)</span></p>
 <p></p>
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="$(32, -16)^T$" id="beech-iron-clock-4-4" w="87" name="beech-iron-clock-4" hint="Check  your  arithmetic!" show_hints="TRUE"> <span class="math inline">\((32, -16)^T\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="Invalid co ... mbination " id="beech-iron-clock-4-5" w="3" name="beech-iron-clock-4" hint="Not quite right" show_hints="TRUE"> Invalid combination</p>
+</p><p><input type="radio" class="devoirs-mcq" value="Invalid co ... mbination " id="beech-iron-clock-4-5" w="3" name="beech-iron-clock-4" hint="Think again." show_hints="TRUE"> Invalid combination</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="beech-iron-clock-4" id="beech-iron-clock-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="beech-iron-clock-4-hintarea">question id: beech-iron-clock-4</small></p>
 </div>
 </div>
@@ -3091,27 +2712,27 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <ol type="1">
 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="math inline">\(2 \vec{u}\)</span></li>
 </ol>
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ol start="2" type="1">
 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="math inline">\(- 2 \vec{u}\)</span></li>
 </ol>
-<div id="qwebr-insertion-location-2"></div>
+<div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ol start="3" type="1">
 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="math inline">\(4 \vec{u}\)</span></li>
 </ol>
-<div id="qwebr-insertion-location-3"></div>
+<div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ol start="4" type="1">
 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="math inline">\(17 \vec{v}\)</span></li>
 </ol>
-<div id="qwebr-insertion-location-4"></div>
+<div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ol start="5" type="1">
 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="math inline">\(- 1.5 \vec{w}\)</span></li>
 </ol>
-<div id="qwebr-insertion-location-5"></div>
+<div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 <div id="exr-cat-eat-mattress" class="theorem exercise">
@@ -3119,61 +2740,61 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <ol type="1">
 <li><span class="math inline">\(\vec{u} \equiv \left[\begin{array}{r}\  35\\ -93\\ -99\end{array}\right]\)</span></li>
 </ol>
-<div id="qwebr-insertion-location-6"></div>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ol start="2" type="1">
 <li><span class="math inline">\(\vec{v} \equiv \left[\begin{array}{r} -59\\\  41\\ -41\end{array}\right]\)</span></li>
 </ol>
-<div id="qwebr-insertion-location-7"></div>
+<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ol start="3" type="1">
 <li><span class="math inline">\(\vec{w} \equiv \left[\begin{array}{r} -76\\ -71\\ -48\end{array}\right]\)</span></li>
 </ol>
-<div id="qwebr-insertion-location-8"></div>
+<div id="qwebr-insertion-location-9"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <ol start="4" type="1">
 <li><span class="math inline">\(\vec{x} \equiv \left[\begin{array}{r} -96\\\  83\\\  35\end{array}\right]\)</span></li>
 </ol>
-<div id="qwebr-insertion-location-9"></div>
+<div id="qwebr-insertion-location-10"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 <div id="exr-girl-send-scarf" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> &nbsp;</p>
-{{&lt; include ./Block_3/girl-send-scarf.qmd &gt;}}
+{{&lt; include ./Block_3/girl-send-scarf.qmd&gt;}}
 </div>
 <div id="exr-tiger-run-futon" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 5</strong></span> &nbsp;</p>
-{{&lt; include ./Block_3/tiger-run-futon.qmd &gt;}}
+{{&lt; include ./Block_3/tiger-run-futon.qmd&gt;}}
 </div>
 <div id="exr-kangaroo-have-closet" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6</strong></span> &nbsp;</p>
-{{&lt; include ./Block_3/kangaroo-have-closet.qmd &gt;}}
+{{&lt; include ./Block_3/kangaroo-have-closet.qmd&gt;}}
 </div>
 <div id="exr-lamb-throw-candy" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7</strong></span> &nbsp;</p>
-{{&lt; include ./Block_3/lamb-throw-candy.qmd &gt;}}
+{{&lt; include ./Block_3/lamb-throw-candy.qmd&gt;}}
 </div>
 <div id="exr-panda-think-plate" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 8</strong></span> &nbsp;</p>
-{{&lt; include ./Block_3/panda-think-plate.qmd &gt;}}
+{{&lt; include ./Block_3/panda-think-plate.qmd&gt;}}
 </div>
 <div id="exr-duck-do-pantry" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 9</strong></span> &nbsp;</p>
-{{&lt; include ./Block_3/duck-do-pantry.qmd &gt;}}
+{{&lt; include ./Block_3/duck-do-pantry.qmd&gt;}}
 </div>
 <div id="exr-crocodile-talk-mattress" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 10</strong></span> &nbsp;</p>
-{{&lt; include ./Block_3/crocodile-talk-mattress.qmd &gt;}}
+{{&lt; include ./Block_3/crocodile-talk-mattress.qmd&gt;}}
 </div>
 <section id="activities" class="level3">
 <h3 class="anchored" data-anchor-id="activities">Activities</h3>
 <div id="exr-duck-do-pantry" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 11</strong></span> &nbsp;</p>
-{{&lt; include ./Block_3/duck-do-pantry.qmd &gt;}}
+{{&lt; include ./Block_3/duck-do-pantry.qmd&gt;}}
 </div>
 <div id="exr-snake-choose-ring" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 12</strong></span> &nbsp;</p>
-{{&lt; include ./Block_3/snake-choose-ring.qmd &gt;}}
+{{&lt; include ./Block_3/snake-choose-ring.qmd&gt;}}
 </div>
 <span id="devoirs-docID" style="display: none;">28-exercises.rmarkdown</span> <button onclick="devoirsSubmit()">Collect your answers</button>
 <div id="devoirs_summary">
@@ -3233,15 +2854,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3261,7 +2889,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3358,8 +2989,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3470,7 +3099,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

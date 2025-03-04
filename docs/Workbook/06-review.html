@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,10 +337,10 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc'];
+globalThis.qwebrInstallRPackagesList = ['ggplot2', 'mosaicCalc', 'MMAC'];
 
 // Specify possible locations to search for the repository
-globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+globalThis.qwebrPackageRepoURLS = ['https://dtkaplan.r-universe.dev', 'https://repo.r-wasm.org/'];
 
 // Check to see if we have an empty array, if we do set to skip the installation.
 globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"out-height":"","out-width":"700px","editor-max-height":"","warning":"true","fig-height":5,"classes":"","message":"true","fig-width":7,"read-only":"false","results":"markup","label":"unnamed-chunk-1","editor-quick-suggestions":"false","dpi":72,"output":"true","context":"interactive","editor-font-scale":"1","fig-cap":"","autorun":"false","comment":"","editor-word-wrap":"true"},"id":1,"code":""}];
+globalThis.qwebrCellDetails = [{"code":"doodle_fun <- mosaic::rfun","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1613,7 +1613,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Block I Preliminaries</a></li><li class="breadcrumb-item"><a href="./06-review.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 6 Review</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Preliminaries</a></li><li class="breadcrumb-item"><a href="./06-review.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 6 Review</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1634,7 +1634,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Block I Preliminaries</span></a>
+ <span class="menu-text">Preliminaries</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1763,7 +1763,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 7 Exercises</span></a>
   </div>
 </li>
       </ul>
@@ -1771,7 +1771,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Block II Modeling</span></a>
+ <span class="menu-text">Block I Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -1846,7 +1846,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises DRAFT</span></a>
+ <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 11 Exercises</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1941,8 +1941,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Differentiation projects</span></a>
+  <a href="./Block-1-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Block I Modeling projects</span></a>
   </div>
 </li>
       </ul>
@@ -2156,8 +2156,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 3 Models</span></a>
+  <a href="./Block-2-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
       </ul>
@@ -2277,387 +2277,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./Block-3-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Block 3 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Block IV Accumulation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./33-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 33 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./34-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 34 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./35-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 35 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./36-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 36 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals, step-by-step</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./37-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 37 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./38-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 38 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-4-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 4 Models</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Block V Dynamics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 39 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./39-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">In draft</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./40-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 40 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./41-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 41 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./42-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 42 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./43-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 43 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./44-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 44 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./45-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 45 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./46-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 46 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-5-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">142Z Project 2: Dynamics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Block VI Manifestations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./47-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 47 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./48-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 48 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./49-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 49 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./50-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 50 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Review</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./51-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 51 Exercises</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Block-6-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Block 6 Models</span></a>
   </div>
 </li>
       </ul>
@@ -2957,7 +2576,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Block I Preliminaries</a></li><li class="breadcrumb-item"><a href="./06-review.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 6 Review</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-reading.html">Preliminaries</a></li><li class="breadcrumb-item"><a href="./06-review.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 6 Review</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chap 6 Review</h1>
 </div>
@@ -2982,11 +2601,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 \newcommand{\pnorm}{\text{pnorm}}
 \newcommand{\recip}{\text{recip}}
 \]</span></p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-drill-M01-4" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 1</strong></span> What is the <strong>value</strong> of <span class="math inline">\(f(4)\)</span> when <span class="math inline">\(f(x) \equiv 2 x + 1\ ?\)</span></p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-4-1" w="32" name="drill-M01-4" hint="incorrect choice" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-4 " id="drill-M01-4-2" w="3" name="drill-M01-4" hint="Better luck next time." show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-4-3" w="7" name="drill-M01-4" hint="wide of the mark" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4 " id="drill-M01-4-4" w="23" name="drill-M01-4" hint="Try again!" show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9" id="drill-M01-4-5" w="5" name="drill-M01-4" hint="Correct" show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-4" id="drill-M01-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-4-1" w="32" name="drill-M01-4" hint="Incorrect choice." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-4 " id="drill-M01-4-2" w="7" name="drill-M01-4" hint="Not quite right." show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-4-3" w="23" name="drill-M01-4" hint="Incorrect." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4 " id="drill-M01-4-4" w="32" name="drill-M01-4" hint="Think again." show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9" id="drill-M01-4-5" w="14" name="drill-M01-4" hint="A win!" show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-4" id="drill-M01-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M01-4-hintarea">question id: drill-M01-4</small></p>
 </div>
 </div>
@@ -2995,8 +2616,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p><span class="theorem-title"><strong>Exercise 2</strong></span> What is the <strong>change</strong> in the value of <span class="math inline">\(f()\)</span> when the input goes from 2 to 4?<br>
 Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-4 " id="drill-M01-5-1" w="3" name="drill-M01-5" hint="Not quite right" show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-5-2" w="3" name="drill-M01-5" hint="no" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-5-3" w="3" name="drill-M01-5" hint="Better luck next time." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4" id="drill-M01-5-4" w="35" name="drill-M01-5" hint="Good job!" show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="drill-M01-5-5" w="7" name="drill-M01-5" hint="You're mistaken" show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-5" id="drill-M01-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-4 " id="drill-M01-5-1" w="19" name="drill-M01-5" hint="This is wide of the mark." show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-5-2" w="7" name="drill-M01-5" hint="Think again." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-5-3" w="32" name="drill-M01-5" hint="Not on target." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4" id="drill-M01-5-4" w="29" name="drill-M01-5" hint="Spot on!" show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="drill-M01-5-5" w="19" name="drill-M01-5" hint="No." show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-5" id="drill-M01-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M01-5-hintarea">question id: drill-M01-5</small></p>
 </div>
 </div>
@@ -3005,8 +2626,8 @@ Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <p><span class="theorem-title"><strong>Exercise 3</strong></span> What is the <strong>rate of change</strong> in the value of <span class="math inline">\(f()\)</span> when the input goes from 2 to 4?<br>
 Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-6-1" w="23" name="drill-M01-6" hint="Try again!" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-4 " id="drill-M01-6-2" w="32" name="drill-M01-6" hint="incorrect choice" show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="drill-M01-6-3" w="29" name="drill-M01-6" hint="You're right" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4" id="drill-M01-6-4" w="87" name="drill-M01-6" hint="You've calculated the net change, not the rate of change." show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="drill-M01-6-5" w="23" name="drill-M01-6" hint="incorrect choice" show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-6" id="drill-M01-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-6-1" w="87" name="drill-M01-6" hint="Oops!" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-4 " id="drill-M01-6-2" w="3" name="drill-M01-6" hint="Wrong." show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="drill-M01-6-3" w="16" name="drill-M01-6" hint="Excellent!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4" id="drill-M01-6-4" w="19" name="drill-M01-6" hint="You've calculated the net change, not the rate of change." show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="drill-M01-6-5" w="19" name="drill-M01-6" hint="Oops!" show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-6" id="drill-M01-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M01-6-hintarea">question id: drill-M01-6</small></p>
 </div>
 </div>
@@ -3015,8 +2636,8 @@ Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> What is the <strong>change</strong> in the value of <span class="math inline">\(f()\)</span> when the input goes from 4 to 2?<br>
 Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-7-1" w="7" name="drill-M01-7" hint="Sorry!" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-4" id="drill-M01-7-2" w="41" name="drill-M01-7" hint="Correct" show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-7-3" w="7" name="drill-M01-7" hint="wide of the mark" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4" id="drill-M01-7-4" w="7" name="drill-M01-7" hint="The change in the value of $f()$ when the input goes from $a$ to $b$ is $f(b) - f(a)$" show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="drill-M01-7-5" w="7" name="drill-M01-7" hint="wrong" show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-7" id="drill-M01-7.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-7-1" w="32" name="drill-M01-7" hint="Think again." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-4" id="drill-M01-7-2" w="29" name="drill-M01-7" hint="You're right!" show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-7-3" w="7" name="drill-M01-7" hint="Better luck next time." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4" id="drill-M01-7-4" w="23" name="drill-M01-7" hint="The change in the value of $f()$ when the input goes from $a$ to $b$ is $f(b) - f(a)$" show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="drill-M01-7-5" w="19" name="drill-M01-7" hint="You're mistaken" show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-7" id="drill-M01-7.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M01-7-hintarea">question id: drill-M01-7</small></p>
 </div>
 </div>
@@ -3025,8 +2646,8 @@ Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <p><span class="theorem-title"><strong>Exercise 5</strong></span> What is the <strong>rate of change</strong> in the value of <span class="math inline">\(f()\)</span> when the input goes from 4 to 2?<br>
 Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-8-1" w="3" name="drill-M01-8" hint="You're mistaken" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-4 " id="drill-M01-8-2" w="87" name="drill-M01-8" hint="You're mistaken" show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="drill-M01-8-3" w="29" name="drill-M01-8" hint="Good job! The rate of change in the value of $f()$ when the input goes from $a$ to $b$ is $$\frac{f(b) - f(a)}{b-a}$$ This does not depend on the order of $a$ and $b$, so the rate of change is the same when the input goes from $a$ to $b$ as when it goes from $b$ to $a.$" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4 " id="drill-M01-8-4" w="7" name="drill-M01-8" hint="Try again!" show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="drill-M01-8-5" w="7" name="drill-M01-8" hint="no" show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-8" id="drill-M01-8.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-8-1" w="3" name="drill-M01-8" hint="You're wrong here." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="-4 " id="drill-M01-8-2" w="3" name="drill-M01-8" hint="Think again." show_hints="TRUE"> -4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="drill-M01-8-3" w="14" name="drill-M01-8" hint="Good job! The rate of change in the value of $f()$ when the input goes from $a$ to $b$ is $$\frac{f(b) - f(a)}{b-a}$$ This does not depend on the order of $a$ and $b$, so the rate of change is the same when the input goes from $a$ to $b$ as when it goes from $b$ to $a.$" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4 " id="drill-M01-8-4" w="7" name="drill-M01-8" hint="Oops!" show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="9 " id="drill-M01-8-5" w="32" name="drill-M01-8" hint="Think again." show_hints="TRUE"> 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-8" id="drill-M01-8.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M01-8-hintarea">question id: drill-M01-8</small></p>
 </div>
 </div>
@@ -3034,8 +2655,8 @@ Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <div id="exr-drill-M01-9" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6</strong></span> What is the <strong>rate of change</strong> of the function <span class="math inline">\(f(x) \equiv 3 x - 2\)</span> when the input is 4?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-9-1" w="23" name="drill-M01-9" hint="You're mistaken" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="drill-M01-9-2" w="7" name="drill-M01-9" hint="You're mistaken" show_hints="TRUE"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-9-3" w="3" name="drill-M01-9" hint="wrong" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="drill-M01-9-4" w="41" name="drill-M01-9" hint="You're right" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10" id="drill-M01-9-5" w="32" name="drill-M01-9" hint="This is the **value** of $f(4)$, not the rate of change at $x=4$." show_hints="TRUE"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-9" id="drill-M01-9.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-9-1" w="23" name="drill-M01-9" hint="This is wide of the mark." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="drill-M01-9-2" w="32" name="drill-M01-9" hint="Nope." show_hints="TRUE"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-9-3" w="7" name="drill-M01-9" hint="Not quite." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="drill-M01-9-4" w="8" name="drill-M01-9" hint="Spot on!" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10" id="drill-M01-9-5" w="7" name="drill-M01-9" hint="This is the **value** of $f(4)$, not the rate of change at $x=4$." show_hints="TRUE"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-9" id="drill-M01-9.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M01-9-hintarea">question id: drill-M01-9</small></p>
 </div>
 </div>
@@ -3043,8 +2664,8 @@ Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <div id="exr-drill-M01-10" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 7</strong></span> What is the <strong>change</strong> in value of the function <span class="math inline">\(f(x) \equiv 3 x - 2\)</span> as the input goes from 3 to 3.1?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-10-1" w="23" name="drill-M01-10" hint="You're mistaken" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3" id="drill-M01-10-2" w="18" name="drill-M01-10" hint="right-o $f(3.1) = 7.3$ and $f(3) = 7$, so $f(3.1) - f(3) = 0.3$." show_hints="TRUE"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-10-3" w="3" name="drill-M01-10" hint="Not quite right" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3 " id="drill-M01-10-4" w="23" name="drill-M01-10" hint="wide of the mark" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10 " id="drill-M01-10-5" w="19" name="drill-M01-10" hint="incorrect choice" show_hints="TRUE"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-10" id="drill-M01-10.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-10-1" w="3" name="drill-M01-10" hint="Not quite." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3" id="drill-M01-10-2" w="35" name="drill-M01-10" hint="right-o $f(3.1) = 7.3$ and $f(3) = 7$, so $f(3.1) - f(3) = 0.3$." show_hints="TRUE"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-10-3" w="7" name="drill-M01-10" hint="No." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3 " id="drill-M01-10-4" w="87" name="drill-M01-10" hint="Nope." show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10 " id="drill-M01-10-5" w="87" name="drill-M01-10" hint="Incorrect." show_hints="TRUE"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-10" id="drill-M01-10.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M01-10-hintarea">question id: drill-M01-10</small></p>
 </div>
 </div>
@@ -3052,8 +2673,8 @@ Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <div id="exr-drill-M01-11" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 8</strong></span> What is the <strong>rate of change</strong> in value of the function <span class="math display">\[f(x) \equiv 3 x - 2\]</span> as the input goes from 3 to 3.1?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-11-1" w="3" name="drill-M01-11" hint="Sorry!" show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="drill-M01-11-2" w="19" name="drill-M01-11" hint="Not quite right" show_hints="TRUE"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-11-3" w="3" name="drill-M01-11" hint="Sorry!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="drill-M01-11-4" w="41" name="drill-M01-11" hint="You're right The rate of change is $$\frac{f(3.1) - f(3)}{3.1 - 3}$$" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10 " id="drill-M01-11-5" w="3" name="drill-M01-11" hint="incorrect choice" show_hints="TRUE"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-11" id="drill-M01-11.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="-2 " id="drill-M01-11-1" w="87" name="drill-M01-11" hint="Better luck next time." show_hints="TRUE"> -2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="0.3 " id="drill-M01-11-2" w="23" name="drill-M01-11" hint="Boo!" show_hints="TRUE"> 0.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-M01-11-3" w="23" name="drill-M01-11" hint="Incorrect choice." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="drill-M01-11-4" w="29" name="drill-M01-11" hint="The rate of change is $$\frac{f(3.1) - f(3)}{3.1 - 3}$$" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="10 " id="drill-M01-11-5" w="87" name="drill-M01-11" hint="Sorry!" show_hints="TRUE"> 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M01-11" id="drill-M01-11.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M01-11-hintarea">question id: drill-M01-11</small></p>
 </div>
 </div>
@@ -3061,8 +2682,8 @@ Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <div id="exr-drill-M03-2" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 9</strong></span> What is the period of the <span class="math inline">\(\sin()\)</span> function?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="1 " id="drill-M03-2-1" w="23" name="drill-M03-2" hint="wide of the mark" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2/\pi$ " id="drill-M03-2-2" w="3" name="drill-M03-2" hint="incorrect choice" show_hints="TRUE"> <span class="math inline">\(2/\pi\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi/2$ " id="drill-M03-2-3" w="19" name="drill-M03-2" hint="no" show_hints="TRUE"> <span class="math inline">\(\pi/2\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi$ " id="drill-M03-2-4" w="7" name="drill-M03-2" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\pi\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2 \pi$" id="drill-M03-2-5" w="8" name="drill-M03-2" hint="Correct" show_hints="TRUE"> <span class="math inline">\(2 \pi\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-2" id="drill-M03-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="1 " id="drill-M03-2-1" w="3" name="drill-M03-2" hint="This is wide of the mark." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2/\pi$ " id="drill-M03-2-2" w="32" name="drill-M03-2" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(2/\pi\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi/2$ " id="drill-M03-2-3" w="19" name="drill-M03-2" hint="Hmmm ..." show_hints="TRUE"> <span class="math inline">\(\pi/2\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\pi$ " id="drill-M03-2-4" w="19" name="drill-M03-2" hint="Not on target." show_hints="TRUE"> <span class="math inline">\(\pi\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$2 \pi$" id="drill-M03-2-5" w="8" name="drill-M03-2" hint="Correct." show_hints="TRUE"> <span class="math inline">\(2 \pi\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-2" id="drill-M03-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-2-hintarea">question id: drill-M03-2</small></p>
 </div>
 </div>
@@ -3070,8 +2691,8 @@ Assume <span class="math inline">\(f(x) \equiv 2 x + 1\)</span></p>
 <div id="exr-drill-M03-6" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 10</strong></span> Which of these words is most appropriate to describe the function <span class="math inline">\(g(x) \equiv 2 - 3 x + 4x^3 ?\)</span></p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="Polynomial" id="drill-M03-6-1" w="35" name="drill-M03-6" hint="right-o" show_hints="TRUE"> Polynomial &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Discontinuous " id="drill-M03-6-2" w="7" name="drill-M03-6" hint="You're mistaken" show_hints="TRUE"> Discontinuous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Periodic " id="drill-M03-6-3" w="23" name="drill-M03-6" hint="no" show_hints="TRUE"> Periodic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Power-law" id="drill-M03-6-4" w="32" name="drill-M03-6" hint="Each of the functions in the sum is a power-law, but added together they are no longer a power-law function." show_hints="TRUE"> Power-law &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-6" id="drill-M03-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="Polynomial" id="drill-M03-6-1" w="18" name="drill-M03-6" hint="Right on the nose!" show_hints="TRUE"> Polynomial &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Discontinuous " id="drill-M03-6-2" w="3" name="drill-M03-6" hint="Hmmm ..." show_hints="TRUE"> Discontinuous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Periodic " id="drill-M03-6-3" w="32" name="drill-M03-6" hint="Better luck next time." show_hints="TRUE"> Periodic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="Power-law" id="drill-M03-6-4" w="3" name="drill-M03-6" hint="Each of the functions in the sum is a power-law, but added together they are no longer a power-law function." show_hints="TRUE"> Power-law &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-6" id="drill-M03-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-6-hintarea">question id: drill-M03-6</small></p>
 </div>
 </div>
@@ -3091,10 +2712,10 @@ Figure&nbsp;1: .
 </div>
 </div>
 <div id="exr-drill-M03-12" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 11</strong></span> Which of the functions in <a href="#fig-m3-twelve" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-m3-twelve</span></a> is <strong>concave up</strong> over the domain shown in <a href="#fig-m3-twelve" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-m3-twelve</span></a>?</p>
+<p><span class="theorem-title"><strong>Exercise 11</strong></span> Which of the functions in <a href="#fig-m3-twelve" class="quarto-xref">Figure&nbsp;<span>1</span></a> is <strong>concave up</strong> over the domain shown in <a href="#fig-m3-twelve" class="quarto-xref">Figure&nbsp;<span>1</span></a>?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="A" id="drill-M03-12-1" w="29" name="drill-M03-12" hint="Good job!" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B" id="drill-M03-12-2" w="19" name="drill-M03-12" hint="This is concave down toward the left and concave up toward the right." show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C" id="drill-M03-12-3" w="23" name="drill-M03-12" hint="This is concave down." show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-12" id="drill-M03-12.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="A" id="drill-M03-12-1" w="16" name="drill-M03-12" hint="Excellent!" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B" id="drill-M03-12-2" w="3" name="drill-M03-12" hint="This is concave down toward the left and concave up toward the right." show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C" id="drill-M03-12-3" w="87" name="drill-M03-12" hint="This is concave down." show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-12" id="drill-M03-12.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-12-hintarea">question id: drill-M03-12</small></p>
 </div>
 </div>
@@ -3114,10 +2735,10 @@ Figure&nbsp;2: .
 </div>
 </div>
 <div id="exr-drill-M03-13" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 12</strong></span> Which of these functions in <a href="#fig-m3-fourteen" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-m3-fourteen</span></a> has a <strong>vertical</strong> asymptote?</p>
+<p><span class="theorem-title"><strong>Exercise 12</strong></span> Which of these functions in <a href="#fig-m3-fourteen" class="quarto-xref">Figure&nbsp;<span>2</span></a> has a <strong>vertical</strong> asymptote?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="A" id="drill-M03-13-1" w="35" name="drill-M03-13" hint="Correct" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B" id="drill-M03-13-2" w="3" name="drill-M03-13" hint="The $\sin()$ function does not have a vertical or horizontal asymptote." show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C" id="drill-M03-13-3" w="23" name="drill-M03-13" hint="This exponential function has a **horizontal** asymptote as $x \rightarrow -\infty$" show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-13" id="drill-M03-13.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="A" id="drill-M03-13-1" w="35" name="drill-M03-13" hint="That's right." show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B" id="drill-M03-13-2" w="23" name="drill-M03-13" hint="The $\sin()$ function does not have a vertical or horizontal asymptote." show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C" id="drill-M03-13-3" w="19" name="drill-M03-13" hint="This exponential function has a **horizontal** asymptote as $x \rightarrow -\infty$" show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-13" id="drill-M03-13.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-13-hintarea">question id: drill-M03-13</small></p>
 </div>
 </div>
@@ -3137,10 +2758,10 @@ Figure&nbsp;3: .
 </div>
 </div>
 <div id="exr-drill-M03-14" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 13</strong></span> Which of the functions in <a href="#fig-m3-fourteen-b" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-m3-fourteen-b</span></a> has a <strong>vertical</strong> asymptote?</p>
+<p><span class="theorem-title"><strong>Exercise 13</strong></span> Which of the functions in <a href="#fig-m3-fourteen-b" class="quarto-xref">Figure&nbsp;<span>3</span></a> has a <strong>vertical</strong> asymptote?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="A" id="drill-M03-14-1" w="41" name="drill-M03-14" hint="Correct" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B" id="drill-M03-14-2" w="19" name="drill-M03-14" hint="This sigmoid function does not have a vertical asymptote, although it does have horizontal asymptotes." show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C" id="drill-M03-14-3" w="7" name="drill-M03-14" hint="This exponential function has a **horizontal** asymptote as $x \rightarrow -\infty$, but not a vertical asymptote." show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-14" id="drill-M03-14.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="A" id="drill-M03-14-1" w="29" name="drill-M03-14" hint="Yeah!" show_hints="TRUE"> A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="B" id="drill-M03-14-2" w="19" name="drill-M03-14" hint="This sigmoid function does not have a vertical asymptote, although it does have horizontal asymptotes." show_hints="TRUE"> B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="C" id="drill-M03-14-3" w="7" name="drill-M03-14" hint="This exponential function has a **horizontal** asymptote as $x \rightarrow -\infty$, but not a vertical asymptote." show_hints="TRUE"> C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-14" id="drill-M03-14.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-14-hintarea">question id: drill-M03-14</small></p>
 </div>
 </div>
@@ -3160,10 +2781,10 @@ Figure&nbsp;4: .
 </div>
 </div>
 <div id="exr-drill-M03-18" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 14</strong></span> For the function in <a href="#fig-m3-fourteen-c" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-m3-fourteen-c</span></a>, where is the <strong>horizontal</strong> asymptote located?</p>
+<p><span class="theorem-title"><strong>Exercise 14</strong></span> For the function in <a href="#fig-m3-fourteen-c" class="quarto-xref">Figure&nbsp;<span>4</span></a>, where is the <strong>horizontal</strong> asymptote located?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="At $x=0$" id="drill-M03-18-1" w="32" name="drill-M03-18" hint="We are looking for a **horizontal** asymptote. This is a description of a **vertical** asymptote." show_hints="TRUE"> At <span class="math inline">\(x=0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="At $x=1$" id="drill-M03-18-2" w="19" name="drill-M03-18" hint="We are looking for a **horizontal** asymptote. This is a description of a **vertical** asymptote." show_hints="TRUE"> At <span class="math inline">\(x=1\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="At 20 as $ ... \pm\infty$" id="drill-M03-18-3" w="29" name="drill-M03-18" hint="Excellent!" show_hints="TRUE"> At 20 as <span class="math inline">\(x \rightarrow \pm\infty\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-18" id="drill-M03-18.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="At $x=0$" id="drill-M03-18-1" w="87" name="drill-M03-18" hint="We are looking for a **horizontal** asymptote. This is a description of a **vertical** asymptote." show_hints="TRUE"> At <span class="math inline">\(x=0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="At $x=1$" id="drill-M03-18-2" w="87" name="drill-M03-18" hint="We are looking for a **horizontal** asymptote. This is a description of a **vertical** asymptote." show_hints="TRUE"> At <span class="math inline">\(x=1\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="At 20 as $ ... \pm\infty$" id="drill-M03-18-3" w="5" name="drill-M03-18" hint="You've got it!" show_hints="TRUE"> At 20 as <span class="math inline">\(x \rightarrow \pm\infty\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-18" id="drill-M03-18.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-18-hintarea">question id: drill-M03-18</small></p>
 </div>
 </div>
@@ -3183,10 +2804,10 @@ Figure&nbsp;5: .
 </div>
 </div>
 <div id="exr-drill-M03-16" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 15</strong></span> Does the function in <a href="#fig-m3-twelve-b" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-m3-twelve-b</span></a> have an <strong>inflection point</strong>?</p>
+<p><span class="theorem-title"><strong>Exercise 15</strong></span> Does the function in <a href="#fig-m3-twelve-b" class="quarto-xref">Figure&nbsp;<span>5</span></a> have an <strong>inflection point</strong>?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="yes" id="drill-M03-16-1" w="87" name="drill-M03-16" hint="But there is no spot where the function switches from concave up to concave down." show_hints="TRUE"> yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="no" id="drill-M03-16-2" w="5" name="drill-M03-16" hint="You're right The function is concave down and never switches to concave up." show_hints="TRUE"> no &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="cannot tell" id="drill-M03-16-3" w="23" name="drill-M03-16" hint="Yes you can. You can see the curvature pretty easily on the graph." show_hints="TRUE"> cannot tell &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-16" id="drill-M03-16.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="yes" id="drill-M03-16-1" w="3" name="drill-M03-16" hint="But there is no spot where the function switches from concave up to concave down." show_hints="TRUE"> yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="no" id="drill-M03-16-2" w="5" name="drill-M03-16" hint="The function is concave down and never switches to concave up." show_hints="TRUE"> no &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="cannot tell" id="drill-M03-16-3" w="3" name="drill-M03-16" hint="Yes you can. You can see the curvature pretty easily on the graph." show_hints="TRUE"> cannot tell &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-16" id="drill-M03-16.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-16-hintarea">question id: drill-M03-16</small></p>
 </div>
 </div>
@@ -3206,10 +2827,10 @@ Figure&nbsp;6: .
 </div>
 </div>
 <div id="exr-drill-M03-17" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 16</strong></span> Does the function in <a href="#fig-m3-fourteen-d" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-m3-fourteen-d</span></a> have an <strong>inflection point</strong>?</p>
+<p><span class="theorem-title"><strong>Exercise 16</strong></span> Does the function in <a href="#fig-m3-fourteen-d" class="quarto-xref">Figure&nbsp;<span>6</span></a> have an <strong>inflection point</strong>?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="yes" id="drill-M03-17-1" w="20" name="drill-M03-17" hint="Right The function is concave up to the left of $x=0$, and concave down to the right. The concavity c70hanges at $x=0$ (although the exact point is hard to make out in the graph). A point where the concavity changes is an inflection point." show_hints="TRUE"> yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="no" id="drill-M03-17-2" w="23" name="drill-M03-17" hint="The concavity changes from positive on the left of the graph to negative on the right. So there must be an inflection point in between." show_hints="TRUE"> no &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="cannot tell" id="drill-M03-17-3" w="32" name="drill-M03-17" hint="Yes you can. You can see the curvature pretty easily on the graph." show_hints="TRUE"> cannot tell &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-17" id="drill-M03-17.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="yes" id="drill-M03-17-1" w="8" name="drill-M03-17" hint="The function is concave up to the left of $x=0$, and concave down to the right. The concavity c70hanges at $x=0$ (although the exact point is hard to make out in the graph). A point where the concavity changes is an inflection point." show_hints="TRUE"> yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="no" id="drill-M03-17-2" w="3" name="drill-M03-17" hint="The concavity changes from positive on the left of the graph to negative on the right. So there must be an inflection point in between." show_hints="TRUE"> no &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="cannot tell" id="drill-M03-17-3" w="23" name="drill-M03-17" hint="Yes you can. You can see the curvature pretty easily on the graph." show_hints="TRUE"> cannot tell &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-17" id="drill-M03-17.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-17-hintarea">question id: drill-M03-17</small></p>
 </div>
 </div>
@@ -3229,43 +2850,43 @@ Figure&nbsp;7: .
 </div>
 </div>
 <div id="exr-drill-M03-19" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 17</strong></span> Which of these is a correct description of a horizontal asymptote in the function in <a href="#fig-m3-fourteen-e" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-m3-fourteen-e</span></a>?</p>
+<p><span class="theorem-title"><strong>Exercise 17</strong></span> Which of these is a correct description of a horizontal asymptote in the function in <a href="#fig-m3-fourteen-e" class="quarto-xref">Figure&nbsp;<span>7</span></a>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="At 2 as $x ... \pm\infty$" id="drill-M03-19-1" w="7" name="drill-M03-19" hint="There are different horizontal asymptotes for $x \rightarrow \infty$ and for $x \rightarrow -\infty$" show_hints="TRUE"> At 2 as <span class="math inline">\(x \rightarrow \pm\infty\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="At 2 as $x ... \pm\infty$" id="drill-M03-19-1" w="32" name="drill-M03-19" hint="There are different horizontal asymptotes for $x \rightarrow \infty$ and for $x \rightarrow -\infty$" show_hints="TRUE"> At 2 as <span class="math inline">\(x \rightarrow \pm\infty\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="At 2 as $x ... w -\infty$" id="drill-M03-19-2" w="18" name="drill-M03-19" hint="You're right" show_hints="TRUE"> At 2 as <span class="math inline">\(x \rightarrow -\infty\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="At 2 as $x ... w -\infty$" id="drill-M03-19-2" w="18" name="drill-M03-19" hint="Score!" show_hints="TRUE"> At 2 as <span class="math inline">\(x \rightarrow -\infty\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="At 6 as $x ...  -\infty$ " id="drill-M03-19-3" w="19" name="drill-M03-19" hint="Not quite right" show_hints="TRUE"> At 6 as <span class="math inline">\(x \rightarrow -\infty\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="At 6 as $x ...  -\infty$ " id="drill-M03-19-3" w="3" name="drill-M03-19" hint="Not so!" show_hints="TRUE"> At 6 as <span class="math inline">\(x \rightarrow -\infty\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="There is n ... symptote. " id="drill-M03-19-4" w="19" name="drill-M03-19" hint="Better luck next time." show_hints="TRUE"> There is no horizontal asymptote.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="There is n ... symptote. " id="drill-M03-19-4" w="7" name="drill-M03-19" hint="No." show_hints="TRUE"> There is no horizontal asymptote.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="drill-M03-19" id="drill-M03-19.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-19-hintarea">question id: drill-M03-19</small></p>
 </div>
 </div>
 </div>
 <div id="exr-drill-M03-20" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 18</strong></span> Which of these is a correct description of a horizontal asymptote in the function in <a href="#fig-m3-fourteen-e" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-m3-fourteen-e</span></a>?</p>
+<p><span class="theorem-title"><strong>Exercise 18</strong></span> Which of these is a correct description of a horizontal asymptote in the function in <a href="#fig-m3-fourteen-e" class="quarto-xref">Figure&nbsp;<span>7</span></a>?</p>
 <div class="cell" data-show_hints="true">
 <p>
 </p><p><input type="radio" class="devoirs-mcq" value="At 2 as $x ... \pm\infty$" id="drill-M03-20-1" w="23" name="drill-M03-20" hint="There are different horizontal asymptotes for $x \rightarrow \infty$ and for $x \rightarrow -\infty$" show_hints="TRUE"> At 2 as <span class="math inline">\(x \rightarrow \pm\infty\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="At 2 as $x ... w \infty$ " id="drill-M03-20-2" w="23" name="drill-M03-20" hint="no" show_hints="TRUE"> At 2 as <span class="math inline">\(x \rightarrow \infty\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="At 2 as $x ... w \infty$ " id="drill-M03-20-2" w="32" name="drill-M03-20" hint="Oops!" show_hints="TRUE"> At 2 as <span class="math inline">\(x \rightarrow \infty\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="At 6 as $x ... ow \infty$" id="drill-M03-20-3" w="20" name="drill-M03-20" hint="Yes" show_hints="TRUE"> At 6 as <span class="math inline">\(x \rightarrow \infty\)</span></p>
+</p><p><input type="radio" class="devoirs-mcq" value="At 6 as $x ... ow \infty$" id="drill-M03-20-3" w="16" name="drill-M03-20" hint="Good job!" show_hints="TRUE"> At 6 as <span class="math inline">\(x \rightarrow \infty\)</span></p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="There is n ... symptote. " id="drill-M03-20-4" w="32" name="drill-M03-20" hint="Sorry!" show_hints="TRUE"> There is no horizontal asymptote.</p>
+</p><p><input type="radio" class="devoirs-mcq" value="There is n ... symptote. " id="drill-M03-20-4" w="3" name="drill-M03-20" hint="No." show_hints="TRUE"> There is no horizontal asymptote.</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="drill-M03-20" id="drill-M03-20.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-20-hintarea">question id: drill-M03-20</small></p>
 </div>
 </div>
@@ -3285,10 +2906,10 @@ Figure&nbsp;8: .
 </div>
 </div>
 <div id="exr-drill-Quiz-2-7" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 19</strong></span> Which of these is the max of the function in <a href="#fig-rev2-03" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-rev2-03</span></a>?</p>
+<p><span class="theorem-title"><strong>Exercise 19</strong></span> Which of these is the max of the function in <a href="11-review.html#fig-rev2-03" class="quarto-xref">Figure&nbsp;<span>1</span></a>?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0 " id="drill-Quiz-2-7-1" w="87" name="drill-Quiz-2-7" hint="no" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="drill-Quiz-2-7-2" w="32" name="drill-Quiz-2-7" hint="wide of the mark" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-Quiz-2-7-3" w="23" name="drill-Quiz-2-7" hint="Better luck next time." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="drill-Quiz-2-7-4" w="14" name="drill-Quiz-2-7" hint="Right" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4" id="drill-Quiz-2-7-5" w="19" name="drill-Quiz-2-7" hint="4 is close to the argmax, but we are asking about the max." show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-2-7" id="drill-Quiz-2-7.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0 " id="drill-Quiz-2-7-1" w="87" name="drill-Quiz-2-7" hint="You're wrong here." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="drill-Quiz-2-7-2" w="23" name="drill-Quiz-2-7" hint="Not quite." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-Quiz-2-7-3" w="87" name="drill-Quiz-2-7" hint="Incorrect." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="drill-Quiz-2-7-4" w="41" name="drill-Quiz-2-7" hint="You're right!" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4" id="drill-Quiz-2-7-5" w="19" name="drill-Quiz-2-7" hint="4 is close to the argmax, but we are asking about the max." show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-2-7" id="drill-Quiz-2-7.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-Quiz-2-7-hintarea">question id: drill-Quiz-2-7</small></p>
 </div>
 </div>
@@ -3308,19 +2929,19 @@ Figure&nbsp;9: .
 </div>
 </div>
 <div id="exr-drill-Quiz-2-4" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 20</strong></span> Which of these is an argmin of the function in <a href="#fig-rev2-02b" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-rev2-02b</span></a>?</p>
+<p><span class="theorem-title"><strong>Exercise 20</strong></span> Which of these is an argmin of the function in <a href="#fig-rev2-02b" class="quarto-xref">Figure&nbsp;<span>9</span></a>?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value=" $t = -2.5$ " id="drill-Quiz-2-4-1" w="87" name="drill-Quiz-2-4" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(t = -2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = -1.25$" id="drill-Quiz-2-4-2" w="19" name="drill-Quiz-2-4" hint="that is  an argmax!" show_hints="TRUE"> <span class="math inline">\(t = -1.25\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t = 0$ " id="drill-Quiz-2-4-3" w="32" name="drill-Quiz-2-4" hint="no" show_hints="TRUE"> <span class="math inline">\(t = 0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = 1.25$" id="drill-Quiz-2-4-4" w="29" name="drill-Quiz-2-4" hint="Yes" show_hints="TRUE"> <span class="math inline">\(t = 1.25\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = 2.5$ " id="drill-Quiz-2-4-5" w="19" name="drill-Quiz-2-4" hint="no" show_hints="TRUE"> <span class="math inline">\(t = 2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-2-4" id="drill-Quiz-2-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value=" $t = -2.5$ " id="drill-Quiz-2-4-1" w="7" name="drill-Quiz-2-4" hint="Incorrect choice." show_hints="TRUE"> <span class="math inline">\(t = -2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = -1.25$" id="drill-Quiz-2-4-2" w="87" name="drill-Quiz-2-4" hint="that is  an argmax!" show_hints="TRUE"> <span class="math inline">\(t = -1.25\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t = 0$ " id="drill-Quiz-2-4-3" w="32" name="drill-Quiz-2-4" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(t = 0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = 1.25$" id="drill-Quiz-2-4-4" w="14" name="drill-Quiz-2-4" hint="You're right!" show_hints="TRUE"> <span class="math inline">\(t = 1.25\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = 2.5$ " id="drill-Quiz-2-4-5" w="7" name="drill-Quiz-2-4" hint="Untrue!" show_hints="TRUE"> <span class="math inline">\(t = 2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-2-4" id="drill-Quiz-2-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-Quiz-2-4-hintarea">question id: drill-Quiz-2-4</small></p>
 </div>
 </div>
 </div>
 <div id="exr-drill-Quiz-2-3" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 21</strong></span> Which of these is an argmax of the function in <a href="#fig-rev2-02b" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-rev2-02b</span></a>?</p>
+<p><span class="theorem-title"><strong>Exercise 21</strong></span> Which of these is an argmax of the function in <a href="#fig-rev2-02b" class="quarto-xref">Figure&nbsp;<span>9</span></a>?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value=" $t = -2.5$ " id="drill-Quiz-2-3-1" w="32" name="drill-Quiz-2-3" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(t = -2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = -1.25$" id="drill-Quiz-2-3-2" w="41" name="drill-Quiz-2-3" hint="Excellent!" show_hints="TRUE"> <span class="math inline">\(t = -1.25\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t = 0$ " id="drill-Quiz-2-3-3" w="32" name="drill-Quiz-2-3" hint="You're mistaken" show_hints="TRUE"> <span class="math inline">\(t = 0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = 1.25$" id="drill-Quiz-2-3-4" w="87" name="drill-Quiz-2-3" hint="that is  an argmin, not an argmax!" show_hints="TRUE"> <span class="math inline">\(t = 1.25\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = 2.5$ " id="drill-Quiz-2-3-5" w="32" name="drill-Quiz-2-3" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(t = 2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-2-3" id="drill-Quiz-2-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value=" $t = -2.5$ " id="drill-Quiz-2-3-1" w="32" name="drill-Quiz-2-3" hint="Untrue!" show_hints="TRUE"> <span class="math inline">\(t = -2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = -1.25$" id="drill-Quiz-2-3-2" w="5" name="drill-Quiz-2-3" hint="You're right." show_hints="TRUE"> <span class="math inline">\(t = -1.25\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$t = 0$ " id="drill-Quiz-2-3-3" w="87" name="drill-Quiz-2-3" hint="Nope." show_hints="TRUE"> <span class="math inline">\(t = 0\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = 1.25$" id="drill-Quiz-2-3-4" w="19" name="drill-Quiz-2-3" hint="that is  an argmin, not an argmax!" show_hints="TRUE"> <span class="math inline">\(t = 1.25\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value=" $t = 2.5$ " id="drill-Quiz-2-3-5" w="19" name="drill-Quiz-2-3" hint="Not quite right." show_hints="TRUE"> <span class="math inline">\(t = 2.5\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-2-3" id="drill-Quiz-2-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-Quiz-2-3-hintarea">question id: drill-Quiz-2-3</small></p>
 </div>
 </div>
@@ -3340,40 +2961,40 @@ Figure&nbsp;10: .
 </div>
 </div>
 <div id="exr-drill-Quiz-1-14" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 22</strong></span> According to <a href="#fig-quiz-1-argmax" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-quiz-1-argmax</span></a>, which of these values is the argmax of the function?</p>
+<p><span class="theorem-title"><strong>Exercise 22</strong></span> According to <a href="#fig-quiz-1-argmax" class="quarto-xref">Figure&nbsp;<span>10</span></a>, which of these values is the argmax of the function?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0 " id="drill-Quiz-1-14-1" w="7" name="drill-Quiz-1-14" hint="You're mistaken" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="drill-Quiz-1-14-2" w="3" name="drill-Quiz-1-14" hint="wide of the mark" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="drill-Quiz-1-14-3" w="16" name="drill-Quiz-1-14" hint="Nice." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3 " id="drill-Quiz-1-14-4" w="87" name="drill-Quiz-1-14" hint="wrong" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-1-14" id="drill-Quiz-1-14.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0 " id="drill-Quiz-1-14-1" w="23" name="drill-Quiz-1-14" hint="Nope." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="drill-Quiz-1-14-2" w="87" name="drill-Quiz-1-14" hint="Better luck next time." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2" id="drill-Quiz-1-14-3" w="41" name="drill-Quiz-1-14" hint="A hit!" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3 " id="drill-Quiz-1-14-4" w="87" name="drill-Quiz-1-14" hint="You might think so, but ..." show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-1-14" id="drill-Quiz-1-14.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-Quiz-1-14-hintarea">question id: drill-Quiz-1-14</small></p>
 </div>
 </div>
 </div>
 <div id="exr-drill-Quiz-1-15" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 23</strong></span> According to <a href="#fig-quiz-1-argmax" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-quiz-1-argmax</span></a>, which of these values is the maximum of the function?</p>
+<p><span class="theorem-title"><strong>Exercise 23</strong></span> According to <a href="#fig-quiz-1-argmax" class="quarto-xref">Figure&nbsp;<span>10</span></a>, which of these values is the maximum of the function?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="0 " id="drill-Quiz-1-15-1" w="32" name="drill-Quiz-1-15" hint="wrong" show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="drill-Quiz-1-15-2" w="87" name="drill-Quiz-1-15" hint="wrong" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-Quiz-1-15-3" w="3" name="drill-Quiz-1-15" hint="wrong" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="drill-Quiz-1-15-4" w="41" name="drill-Quiz-1-15" hint="right-o" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-1-15" id="drill-Quiz-1-15.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="0 " id="drill-Quiz-1-15-1" w="87" name="drill-Quiz-1-15" hint="Not quite right." show_hints="TRUE"> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="1 " id="drill-Quiz-1-15-2" w="7" name="drill-Quiz-1-15" hint="You're wrong here." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-Quiz-1-15-3" w="3" name="drill-Quiz-1-15" hint="Think again." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3" id="drill-Quiz-1-15-4" w="18" name="drill-Quiz-1-15" hint="Yeah!" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-1-15" id="drill-Quiz-1-15.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-Quiz-1-15-hintarea">question id: drill-Quiz-1-15</small></p>
 </div>
 </div>
 </div>
 <div id="exr-drill-Quiz-1-16" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 24</strong></span> For the function in <a href="#fig-quiz-1-argmax" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-quiz-1-argmax</span></a>, which of these properties <strong>does not apply</strong>?</p>
+<p><span class="theorem-title"><strong>Exercise 24</strong></span> For the function in <a href="#fig-quiz-1-argmax" class="quarto-xref">Figure&nbsp;<span>10</span></a>, which of these properties <strong>does not apply</strong>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="continuous " id="drill-Quiz-1-16-1" w="23" name="drill-Quiz-1-16" hint="incorrect choice" show_hints="TRUE"> continuous</p>
+</p><p><input type="radio" class="devoirs-mcq" value="continuous " id="drill-Quiz-1-16-1" w="32" name="drill-Quiz-1-16" hint="No." show_hints="TRUE"> continuous</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonic" id="drill-Quiz-1-16-2" w="41" name="drill-Quiz-1-16" hint="Right" show_hints="TRUE"> monotonic</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonic" id="drill-Quiz-1-16-2" w="8" name="drill-Quiz-1-16" hint="Yes." show_hints="TRUE"> monotonic</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="concave-down" id="drill-Quiz-1-16-3" w="7" name="drill-Quiz-1-16" hint="The function is concave down." show_hints="TRUE"> concave-down</p>
+</p><p><input type="radio" class="devoirs-mcq" value="concave-down" id="drill-Quiz-1-16-3" w="23" name="drill-Quiz-1-16" hint="The function is concave down." show_hints="TRUE"> concave-down</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="no inflection point" id="drill-Quiz-1-16-4" w="3" name="drill-Quiz-1-16" hint="The concavity of the function does not change from up to down, so there is no inflection point." show_hints="TRUE"> no inflection point</p>
+</p><p><input type="radio" class="devoirs-mcq" value="no inflection point" id="drill-Quiz-1-16-4" w="32" name="drill-Quiz-1-16" hint="The concavity of the function does not change from up to down, so there is no inflection point." show_hints="TRUE"> no inflection point</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="drill-Quiz-1-16" id="drill-Quiz-1-16.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-Quiz-1-16-hintarea">question id: drill-Quiz-1-16</small></p>
 </div>
 </div>
@@ -3393,22 +3014,22 @@ Figure&nbsp;11: .
 </div>
 </div>
 <div id="exr-drill-Quiz-1-17" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 25</strong></span> For the function in <a href="#fig-properties-1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-properties-1</span></a>, which of these properties <strong>does not apply</strong>?</p>
+<p><span class="theorem-title"><strong>Exercise 25</strong></span> For the function in <a href="#fig-properties-1" class="quarto-xref">Figure&nbsp;<span>11</span></a>, which of these properties <strong>does not apply</strong>?</p>
 <div class="cell" data-show_hints="true">
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="discontinuous" id="drill-Quiz-1-17-1" w="8" name="drill-Quiz-1-17" hint="Good job!" show_hints="TRUE"> discontinuous</p>
+</p><p><input type="radio" class="devoirs-mcq" value="discontinuous" id="drill-Quiz-1-17-1" w="8" name="drill-Quiz-1-17" hint="Score!" show_hints="TRUE"> discontinuous</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="monotonic " id="drill-Quiz-1-17-2" w="87" name="drill-Quiz-1-17" hint="wide of the mark" show_hints="TRUE"> monotonic</p>
+</p><p><input type="radio" class="devoirs-mcq" value="monotonic " id="drill-Quiz-1-17-2" w="23" name="drill-Quiz-1-17" hint="Untrue!" show_hints="TRUE"> monotonic</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="concave-down " id="drill-Quiz-1-17-3" w="23" name="drill-Quiz-1-17" hint="Sorry!" show_hints="TRUE"> concave-down</p>
+</p><p><input type="radio" class="devoirs-mcq" value="concave-down " id="drill-Quiz-1-17-3" w="23" name="drill-Quiz-1-17" hint="Incorrect." show_hints="TRUE"> concave-down</p>
 <p></p>
 <p>
-</p><p><input type="radio" class="devoirs-mcq" value="no inflection point" id="drill-Quiz-1-17-4" w="19" name="drill-Quiz-1-17" hint="The concavity of the function does not change from up to down, so there is no inflection point." show_hints="TRUE"> no inflection point</p>
+</p><p><input type="radio" class="devoirs-mcq" value="no inflection point" id="drill-Quiz-1-17-4" w="3" name="drill-Quiz-1-17" hint="The concavity of the function does not change from up to down, so there is no inflection point." show_hints="TRUE"> no inflection point</p>
 <p></p>
 <input type="radio" class="devoirs-mcq" name="drill-Quiz-1-17" id="drill-Quiz-1-17.null" style="display: none;" w="skipped" checked="">
-<div>
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-Quiz-1-17-hintarea">question id: drill-Quiz-1-17</small></p>
 </div>
 </div>
@@ -3428,10 +3049,10 @@ Figure&nbsp;12: .
 </div>
 </div>
 <div id="exr-drill-Quiz-2-22" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 26</strong></span> What’s the period of the sinusoid in <a href="#fig-rev2-03b" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-rev2-03b</span></a>?</p>
+<p><span class="theorem-title"><strong>Exercise 26</strong></span> What’s the period of the sinusoid in <a href="#fig-rev2-03b" class="quarto-xref">Figure&nbsp;<span>12</span></a>?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="1 " id="drill-Quiz-2-22-1" w="3" name="drill-Quiz-2-22" hint="wide of the mark" show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-Quiz-2-22-2" w="87" name="drill-Quiz-2-22" hint="Not quite right" show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3 " id="drill-Quiz-2-22-3" w="87" name="drill-Quiz-2-22" hint="incorrect choice" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4 " id="drill-Quiz-2-22-4" w="23" name="drill-Quiz-2-22" hint="Better luck next time." show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5" id="drill-Quiz-2-22-5" w="35" name="drill-Quiz-2-22" hint="Correct" show_hints="TRUE"> 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-2-22" id="drill-Quiz-2-22.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="1 " id="drill-Quiz-2-22-1" w="23" name="drill-Quiz-2-22" hint="Not quite." show_hints="TRUE"> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="2 " id="drill-Quiz-2-22-2" w="19" name="drill-Quiz-2-22" hint="Not on target." show_hints="TRUE"> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="3 " id="drill-Quiz-2-22-3" w="7" name="drill-Quiz-2-22" hint="Oops!" show_hints="TRUE"> 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="4 " id="drill-Quiz-2-22-4" w="87" name="drill-Quiz-2-22" hint="This is wide of the mark." show_hints="TRUE"> 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="5" id="drill-Quiz-2-22-5" w="8" name="drill-Quiz-2-22" hint="A hit!" show_hints="TRUE"> 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-Quiz-2-22" id="drill-Quiz-2-22.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-Quiz-2-22-hintarea">question id: drill-Quiz-2-22</small></p>
 </div>
 </div>
@@ -3439,21 +3060,21 @@ Figure&nbsp;12: .
 <div id="exr-drill-M03-1" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 27</strong></span> Which of these pattern-book functions has a discontinuity?</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="$g(x) \equ ... iv x^{-1}$" id="drill-M03-1-1" w="35" name="drill-M03-1" hint="Good job!" show_hints="TRUE"> <span class="math inline">\(g(x) \equiv x^{-1}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$g(x) \equ ... iv - x^1$ " id="drill-M03-1-2" w="7" name="drill-M03-1" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(g(x) \equiv - x^1\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\text{dnorm}(x)$ " id="drill-M03-1-3" w="3" name="drill-M03-1" hint="no" show_hints="TRUE"> <span class="math inline">\(\text{dnorm}(x)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin(x)$ " id="drill-M03-1-4" w="23" name="drill-M03-1" hint="Better luck next time." show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-1" id="drill-M03-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="$g(x) \equ ... iv x^{-1}$" id="drill-M03-1-1" w="41" name="drill-M03-1" hint="You've got it!" show_hints="TRUE"> <span class="math inline">\(g(x) \equiv x^{-1}\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$g(x) \equ ... iv - x^1$ " id="drill-M03-1-2" w="19" name="drill-M03-1" hint="Not quite." show_hints="TRUE"> <span class="math inline">\(g(x) \equiv - x^1\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\text{dnorm}(x)$ " id="drill-M03-1-3" w="3" name="drill-M03-1" hint="Wrong." show_hints="TRUE"> <span class="math inline">\(\text{dnorm}(x)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="$\sin(x)$ " id="drill-M03-1-4" w="32" name="drill-M03-1" hint="Sorry!" show_hints="TRUE"> <span class="math inline">\(\sin(x)\)</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-M03-1" id="drill-M03-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-M03-1-hintarea">question id: drill-M03-1</small></p>
 </div>
 </div>
 </div>
 <div id="exr-horse-lend-bottle" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 38</strong></span> For each of the following, plot out the function over an appropriate graphics domain to determine whether the statement is true or false.</p>
-<div id="qwebr-insertion-location-1"></div>
+<div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div id="exr-drill-hlbv-1" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 28</strong></span> The function <span class="math display">\[f(t)\equiv \sin(t)\]</span> has a <strong>local max</strong> of <span class="math display">\[1\]</span> somewhere on the domain <span class="math display">\[-\infty &lt; t &lt; \infty\]</span>.</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-1-1" w="41" name="drill-hlbv-1" hint="Right" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-1-2" w="19" name="drill-hlbv-1" hint="You're mistaken" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-1" id="drill-hlbv-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-1-1" w="18" name="drill-hlbv-1" hint="Right!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-1-2" w="32" name="drill-hlbv-1" hint="You might think so, but ..." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-1" id="drill-hlbv-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-1-hintarea">question id: drill-hlbv-1</small></p>
 </div>
 </div>
@@ -3461,8 +3082,8 @@ Figure&nbsp;12: .
 <div id="exr-drill-hlbv-2" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 29</strong></span> The function <span class="math display">\[g(x)\equiv e^x\]</span> has an <strong>inflection point</strong> on the domain <span class="math display">\[-\infty &lt; x &lt; \infty\]</span>.</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True " id="drill-hlbv-2-1" w="19" name="drill-hlbv-2" hint="no" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="drill-hlbv-2-2" w="16" name="drill-hlbv-2" hint="right-o" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-2" id="drill-hlbv-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True " id="drill-hlbv-2-1" w="23" name="drill-hlbv-2" hint="Untrue!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="drill-hlbv-2-2" w="35" name="drill-hlbv-2" hint="You've got it!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-2" id="drill-hlbv-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-2-hintarea">question id: drill-hlbv-2</small></p>
 </div>
 </div>
@@ -3470,8 +3091,8 @@ Figure&nbsp;12: .
 <div id="exr-drill-hlbv-3" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 30</strong></span> The function <span class="math display">\[g(x)\equiv e^x\]</span> is <strong>monotonic</strong> on the domain <span class="math display">\[-\infty &lt; x &lt; \infty\]</span>.</p>
 <div class="cell" data-inline="true" data-show_hints="true">
-<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-3-1" w="5" name="drill-hlbv-3" hint="Correct" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-3-2" w="3" name="drill-hlbv-3" hint="incorrect choice" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-3" id="drill-hlbv-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-3-1" w="18" name="drill-hlbv-3" hint="You've got it!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-3-2" w="7" name="drill-hlbv-3" hint="You might think so, but ..." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-3" id="drill-hlbv-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-3-hintarea">question id: drill-hlbv-3</small></p>
 </div>
 </div>
@@ -3479,8 +3100,8 @@ Figure&nbsp;12: .
 <div id="exr-drill-hlbv-4" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 31</strong></span> The function <span class="math display">\[g(x)\equiv e^x\]</span> has a <strong>vertical asymptote</strong>.</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True " id="drill-hlbv-4-1" w="19" name="drill-hlbv-4" hint="wide of the mark" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="drill-hlbv-4-2" w="14" name="drill-hlbv-4" hint="right-o" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-4" id="drill-hlbv-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True " id="drill-hlbv-4-1" w="7" name="drill-hlbv-4" hint="This is wide of the mark." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="drill-hlbv-4-2" w="29" name="drill-hlbv-4" hint="Correct." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-4" id="drill-hlbv-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-4-hintarea">question id: drill-hlbv-4</small></p>
 </div>
 </div>
@@ -3488,8 +3109,8 @@ Figure&nbsp;12: .
 <div id="exr-drill-hlbv-5" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 32</strong></span> The function <span class="math display">\[h(x)\equiv \ln(x)\]</span> has a <strong>vertical asymptote</strong>.</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-5-1" w="14" name="drill-hlbv-5" hint="Nice." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-5-2" w="19" name="drill-hlbv-5" hint="wrong" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-5" id="drill-hlbv-5.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-5-1" w="35" name="drill-hlbv-5" hint="Nice." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-5-2" w="3" name="drill-hlbv-5" hint="Untrue!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-5" id="drill-hlbv-5.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-5-hintarea">question id: drill-hlbv-5</small></p>
 </div>
 </div>
@@ -3497,8 +3118,8 @@ Figure&nbsp;12: .
 <div id="exr-drill-hlbv-6" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 33</strong></span> The function <span class="math display">\[h(x)\equiv \ln(x)\]</span> has a <strong>horizontal asymptote</strong>.</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True " id="drill-hlbv-6-1" w="32" name="drill-hlbv-6" hint="wide of the mark" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="drill-hlbv-6-2" w="5" name="drill-hlbv-6" hint="Right" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-6" id="drill-hlbv-6.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True " id="drill-hlbv-6-1" w="32" name="drill-hlbv-6" hint="Incorrect choice." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="drill-hlbv-6-2" w="14" name="drill-hlbv-6" hint="Spot on!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-6" id="drill-hlbv-6.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-6-hintarea">question id: drill-hlbv-6</small></p>
 </div>
 </div>
@@ -3506,8 +3127,8 @@ Figure&nbsp;12: .
 <div id="exr-drill-hlbv-7" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 34</strong></span> The function <span class="math display">\[\text{inv}(val)\equiv 1/val\]</span> has a <strong>vertical asymptote</strong>.</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-7-1" w="29" name="drill-hlbv-7" hint="right-o" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-7-2" w="7" name="drill-hlbv-7" hint="You're mistaken" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-7" id="drill-hlbv-7.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-7-1" w="5" name="drill-hlbv-7" hint="Certainly." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-7-2" w="19" name="drill-hlbv-7" hint="Think again." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-7" id="drill-hlbv-7.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-7-hintarea">question id: drill-hlbv-7</small></p>
 </div>
 </div>
@@ -3515,8 +3136,8 @@ Figure&nbsp;12: .
 <div id="exr-drill-hlbv-8" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 35</strong></span> The function <span class="math display">\[\text{inv}(val)\equiv 1/val\]</span> has a <strong>horizontal asymptote</strong>.</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-8-1" w="20" name="drill-hlbv-8" hint="Good job!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-8-2" w="87" name="drill-hlbv-8" hint="wide of the mark" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-8" id="drill-hlbv-8.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-8-1" w="16" name="drill-hlbv-8" hint="A hit!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-8-2" w="87" name="drill-hlbv-8" hint="Boo!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-8" id="drill-hlbv-8.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-8-hintarea">question id: drill-hlbv-8</small></p>
 </div>
 </div>
@@ -3524,8 +3145,8 @@ Figure&nbsp;12: .
 <div id="exr-drill-hlbv-9" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 36</strong></span> The function <span class="math display">\[f(x)\equiv 1/x\]</span> is <strong>monotonically decreasing</strong> (i.e., monotonic AND decreasing) on the domain <span class="math display">\[0&lt;x&lt;\infty\]</span>. (You need only check in the interval <span class="math inline">\(0&lt;x\leq 100.\)</span>)</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-9-1" w="35" name="drill-hlbv-9" hint="Yes" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-9-2" w="23" name="drill-hlbv-9" hint="You're mistaken" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-9" id="drill-hlbv-9.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="drill-hlbv-9-1" w="8" name="drill-hlbv-9" hint="A win!" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False " id="drill-hlbv-9-2" w="3" name="drill-hlbv-9" hint="You're wrong here." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-9" id="drill-hlbv-9.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-9-hintarea">question id: drill-hlbv-9</small></p>
 </div>
 </div>
@@ -3533,8 +3154,8 @@ Figure&nbsp;12: .
 <div id="exr-drill-hlbv-10" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 37</strong></span> The function <span class="math display">\[\text{inv}(val)\equiv 1/val\]</span> is <strong>continuous</strong>.</p>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True " id="drill-hlbv-10-1" w="32" name="drill-hlbv-10" hint="wrong" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="drill-hlbv-10-2" w="5" name="drill-hlbv-10" hint="Good job!" show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-10" id="drill-hlbv-10.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True " id="drill-hlbv-10-1" w="3" name="drill-hlbv-10" hint="Nope." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="drill-hlbv-10-2" w="20" name="drill-hlbv-10" hint="That's right." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="drill-hlbv-10" id="drill-hlbv-10.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="drill-hlbv-10-hintarea">question id: drill-hlbv-10</small></p>
 </div>
 </div>
@@ -3546,8 +3167,8 @@ Figure&nbsp;12: .
 <li>What is the maximum number of <strong>horizontal</strong> asymptotes that a function can have?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="one " id="seal-wake-bed-1-1" w="23" name="seal-wake-bed-1" hint="Sorry!" show_hints="TRUE"> one &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="two" id="seal-wake-bed-1-2" w="41" name="seal-wake-bed-1" hint="You're right Asymptotes are defined as the input goes to $\infty$ and to $-\infty$. Functions always have a unique output for any input, so the output can approach a value in only one way." show_hints="TRUE"> two &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="three " id="seal-wake-bed-1-3" w="3" name="seal-wake-bed-1" hint="wide of the mark" show_hints="TRUE"> three &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="as many as ...  you like " id="seal-wake-bed-1-4" w="32" name="seal-wake-bed-1" hint="wrong" show_hints="TRUE"> as many as you like &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="seal-wake-bed-1" id="seal-wake-bed-1.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="one " id="seal-wake-bed-1-1" w="19" name="seal-wake-bed-1" hint="Wrong." show_hints="TRUE"> one &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="two" id="seal-wake-bed-1-2" w="20" name="seal-wake-bed-1" hint="Asymptotes are defined as the input goes to $\infty$ and to $-\infty$. Functions always have a unique output for any input, so the output can approach a value in only one way." show_hints="TRUE"> two &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="three " id="seal-wake-bed-1-3" w="32" name="seal-wake-bed-1" hint="Incorrect choice." show_hints="TRUE"> three &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="as many as ...  you like " id="seal-wake-bed-1-4" w="7" name="seal-wake-bed-1" hint="Incorrect choice." show_hints="TRUE"> as many as you like &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="seal-wake-bed-1" id="seal-wake-bed-1.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="seal-wake-bed-1-hintarea">question id: seal-wake-bed-1</small></p>
 </div>
 </div>
@@ -3555,8 +3176,8 @@ Figure&nbsp;12: .
 <li>True or false. A function can cross its <strong>horizontal</strong> asymptote.</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True" id="seal-wake-bed-2-1" w="5" name="seal-wake-bed-2" hint="You're right" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="seal-wake-bed-2-2" w="87" name="seal-wake-bed-2" hint="Consider the constant function $g(x) = c$. The horizontal asymptote is $c$ in both directions. Now add a wave packet $f(x)$ to for $g(x) + f(x)$. This will cross $c$ several times, but the wave packet goes to zero as $x \rightarrow \pm \infty$." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="seal-wake-bed-2" id="seal-wake-bed-2.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True" id="seal-wake-bed-2-1" w="8" name="seal-wake-bed-2" hint="Yes." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="seal-wake-bed-2-2" w="23" name="seal-wake-bed-2" hint="Consider the constant function $g(x) = c$. The horizontal asymptote is $c$ in both directions. Now add a wave packet $f(x)$ to for $g(x) + f(x)$. This will cross $c$ several times, but the wave packet goes to zero as $x \rightarrow \pm \infty$." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="seal-wake-bed-2" id="seal-wake-bed-2.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="seal-wake-bed-2-hintarea">question id: seal-wake-bed-2</small></p>
 </div>
 </div>
@@ -3564,8 +3185,8 @@ Figure&nbsp;12: .
 <li>What is the maximum number of <strong>vertical</strong> asymptotes that a function can have?</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="one " id="seal-wake-bed-3-1" w="32" name="seal-wake-bed-3" hint="no" show_hints="TRUE"> one &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="two " id="seal-wake-bed-3-2" w="7" name="seal-wake-bed-3" hint="incorrect choice" show_hints="TRUE"> two &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="three " id="seal-wake-bed-3-3" w="23" name="seal-wake-bed-3" hint="no" show_hints="TRUE"> three &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="as many as you like" id="seal-wake-bed-3-4" w="7" name="seal-wake-bed-3" hint="You're right" show_hints="TRUE"> as many as you like &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="seal-wake-bed-3" id="seal-wake-bed-3.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="one " id="seal-wake-bed-3-1" w="87" name="seal-wake-bed-3" hint="Nope." show_hints="TRUE"> one &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="two " id="seal-wake-bed-3-2" w="19" name="seal-wake-bed-3" hint="Not so!" show_hints="TRUE"> two &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="three " id="seal-wake-bed-3-3" w="3" name="seal-wake-bed-3" hint="Not on target." show_hints="TRUE"> three &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="as many as you like" id="seal-wake-bed-3-4" w="7" name="seal-wake-bed-3" hint="You're right!" show_hints="TRUE"> as many as you like &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="seal-wake-bed-3" id="seal-wake-bed-3.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="seal-wake-bed-3-hintarea">question id: seal-wake-bed-3</small></p>
 </div>
 </div>
@@ -3573,8 +3194,8 @@ Figure&nbsp;12: .
 <li>True or false: A function can cross its <strong>vertical</strong> asymptote.</li>
 </ol>
 <div class="cell" data-show_hints="true" data-inline="true">
-<input type="radio" class="devoirs-mcq" value="True " id="seal-wake-bed-4-1" w="32" name="seal-wake-bed-4" hint="Better luck next time." show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="seal-wake-bed-4-2" w="5" name="seal-wake-bed-4" hint="You're right Think of the vertical asymptote as a vertical line. We know the function graph becomes tangent to this line as it reaches to $\pm \infty$. If the function had also crossed the line somewhere, the function would fail the vertical-line test; there would be input values near the line where the so-called &quot;function&quot; would take on two different values. Mathematical functions must always have a single output for any given input." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="seal-wake-bed-4" id="seal-wake-bed-4.null" style="display: none;" w="skipped" checked="">
-<div>
+<input type="radio" class="devoirs-mcq" value="True " id="seal-wake-bed-4-1" w="19" name="seal-wake-bed-4" hint="You're mistaken" show_hints="TRUE"> True &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" value="False" id="seal-wake-bed-4-2" w="8" name="seal-wake-bed-4" hint="Think of the vertical asymptote as a vertical line. We know the function graph becomes tangent to this line as it reaches to $\pm \infty$. If the function had also crossed the line somewhere, the function would fail the vertical-line test; there would be input values near the line where the so-called &quot;function&quot; would take on two different values. Mathematical functions must always have a single output for any given input." show_hints="TRUE"> False &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" class="devoirs-mcq" name="seal-wake-bed-4" id="seal-wake-bed-4.null" style="display: none;" w="skipped" checked="">
+<div class="hintarea">
 <p><small style="color: grey;" id="seal-wake-bed-4-hintarea">question id: seal-wake-bed-4</small></p>
 </div>
 </div>
@@ -3637,15 +3258,22 @@ console.log("About to define devoirsSubmit")
 
 function devoirsSubmit() {
   console.log("About to collect history")
-  var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
-  items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  // check if there is any sign of a webr entry
+  // If not, don't try to collect webr entries
+  if (typeof qwebrRCommandHistory === 'undefined') {
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: {}, R: {}}
+  } else {
+    console.log("Getting R commands.")
+    var Rhistory = qwebrRCommandHistory.map((x) => x.replace(/Ran code in (.*) at (.*[AP]M).{5}(.*)/, "[chunk: $1, time: $2, code: $3]"))
 
+    items = {docid: devoirsGetDocID(), MC: devoirsCollectMC(), Essays: devoirsCollectEssays(), WebR: devoirsCollectWebR(), R: Rhistory}
+  }
 
   navigator.clipboard.writeText(JSON.stringify(items));
 
   // summarize what's being collected
-  var my_summary = "Answers copied to clipboard. Summary counts: Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
+  var my_summary = "Answers copied to clipboard. Fixed choice: " + items.MC.length + " Essays: " + items.Essays.length + " WebR chunks: " + items.WebR.length
 
   document.getElementById("devoirs_summary").innerHTML = my_summary;
 }
@@ -3665,7 +3293,10 @@ function devoirs_setup_hintarea() {
   answers = document.getElementsByClassName("devoirs-mcq")
   for (i=0; i<answers.length; i++) {
     if (answers[i].getAttribute("show_hints") == "TRUE") {
-      answers[i].addEventListener('click', function(e){document.getElementById(e.target.name + "-hintarea").innerHTML = e.target.getAttribute("hint")})
+        answers[i].addEventListener('click', function(e){
+        document.getElementById(e.target.name + "-hintarea").innerText = e.target.getAttribute("hint")
+      })
+
     }
   }
 })
@@ -3761,8 +3392,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3873,7 +3502,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
