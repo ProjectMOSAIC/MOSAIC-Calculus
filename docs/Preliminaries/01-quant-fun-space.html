@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Quantity, function, space – MOSAIC Calculus</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Preliminaries/02-notation.html" rel="next">
+<link href="../preliminaries-part.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+</head><body class="nav-sidebar floating nav-fixed"><span class="math inline" style="display: none;">
+\(\newcommand{\line}{\text{line}}
+\newcommand{\hump}{\text{hump}}
+\newcommand{\sigmoid}{\text{sigmoid}}
+\newcommand{\recip}{\text{recip}}
+\newcommand{\diff}[1]{{\cal D}_#1}
+\newcommand{\pnorm}{\text{pnorm}}
+\newcommand{\dnorm}{\text{dnorm}}
+\let\origvec\vec
+\let\origmathit\mathit
+\let\orighat\hat
+\let\origbar\bar
+\newcommand{\vec}[1]{\overset{{\rule[-1pt]{0mm}{1mm}}\rightharpoonup}{\mathbf{#1}}}
+\newcommand{\bar}[1]{\overset{{\rule[-1pt]{12pt}{.5mm}}}{\mathbf{#1}}}
+\newcommand{\mathit}[1]{\underset{\leftharpoondown}{\overset{{\rightharpoonup}}{\large\mathbf #1}}}
+\newcommand{\hat}[1]{\widehat{\ \mathbf#1\ }}
+\newcommand{\len}[1]{{\|{\mathbf #1}\|}}
+\newcommand{\tvec}[1]{\overset{\uparrow}{\mathbf #1}}
+\newcommand{\tmat}[1]{\overset{\leftrightarrows}{\mathbf #1}}
+\newcommand{\perpendicularto}[2]{#1\!\perp\!#2}
+\newcommand{\modeledby}[2]{#1\!\sim\!#2}
+\newcommand{\CC}[1]{\color{#648fff}{#1}}
+\newcommand{\CE}[1]{\color{#785ef0}{#1}}
+\newcommand{\CA}[1]{\color{#dc267f}{#1}}
+\newcommand{\CB}[1]{\color{#fe6100}{#1}}
+\newcommand{\CD}[1]{\color{#ffb000}{#1}}\)
+</span>
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../mosaic-calc-style.css">
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../www/Cover-1.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MOSAIC Calculus</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+    <a href="https://github.com/dtkaplan/MC2/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../preliminaries-part.html">PRELIMINARIES</a></li><li class="breadcrumb-item"><a href="../Preliminaries/01-quant-fun-space.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quantity, function, space</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../preliminaries-part.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PRELIMINARIES</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Preliminaries/01-quant-fun-space.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quantity, function, space</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Preliminaries/02-notation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Notation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Preliminaries/03-computing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computing with R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Preliminaries/04-graphs-and-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualizing functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Preliminaries/05-pattern-book-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pattern-book functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Preliminaries/06-describing-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Describing functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Preliminaries/07-data-functions-graphics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data, functions, graphics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../modeling-part.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BLOCK I. Modeling</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Modeling/08-parameters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parameters</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Modeling/09-assembling-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Assembling functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Modeling/10-functions-with-multiple-inputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Functions with multiple inputs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Modeling/11-fitting-features.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Fitting features</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Modeling/12-low-order-polynomials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Low-order polynomials</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Modeling/13-operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Modeling/14-magnitudes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Magnitude</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Modeling/15-dimensions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Dimensions and units</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Modeling/16-modeling-scientific-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Modeling and the scientific method</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../differentiation-part.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BLOCK II. Differentiation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/17-continuous-change.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Continuous change</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/18-rate-of-change.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Rate of change</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/19-evanescent-h.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Evanescent h</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/20-computing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Constructing derivatives</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/21-concavity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Concavity and curvature</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/22-cont-and-smooth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Continuity and smoothness</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/23-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Derivatives of assembled functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/24-optim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Optimization</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/25-partial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Partial change and the gradient vector</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/26-approximation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Local approximations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/27-taylor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Polynomials for approximating functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Differentiation/Differentiation-projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation projects</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../linear-combinations-part.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BLOCK III. Vectors and linear combinations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Linear-combinations/28-Vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Linear-combinations/29-linear-combinations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Linear combinations of vectors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Linear-combinations/30-projection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Projection &amp; residual</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Linear-combinations/31-target-problem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">The target problem</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Linear-combinations/32-stat-modeling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Statistical modeling and R<sup>2</sup></span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../accumulation-part.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BLOCK IV. Accumulation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Accumulation/33-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Change &amp; accumulation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Accumulation/34-visualizing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Accumulation/35-integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Accumulation/36-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Accumulation/37-euler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals step-by-step</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Accumulation/38-symbolic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../dynamics-part.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BLOCK V. Dynamics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Dynamics/39-diff-eq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Dynamics/40-solution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Dynamics/41-flow-on-line.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Dynamics/42-flow-on-plane.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Dynamics/43-modeling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Dynamics/44-equilibria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Dynamics/45-eigen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Dynamics/46-second-order.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../manifestations-part.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BLOCK VI. Manifestations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Manifestations/47-operations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Manifestations/48-splines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Manifestations/49-optimization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Manifestations/50-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Manifestations/51-future-value.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Manifestations/52-mechanics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Mechanics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Manifestations/53-diffusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Diffusion</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-quant-vs-number" id="toc-sec-quant-vs-number" class="nav-link active" data-scroll-target="#sec-quant-vs-number"><span class="header-section-number">1.1</span> Quantity vs number</a></li>
+  <li><a href="#sec-functions" id="toc-sec-functions" class="nav-link" data-scroll-target="#sec-functions"><span class="header-section-number">1.2</span> Functions</a></li>
+  <li><a href="#sec-space-intro" id="toc-sec-space-intro" class="nav-link" data-scroll-target="#sec-space-intro"><span class="header-section-number">1.3</span> Spaces</a></li>
+  <li><a href="#all-together-now" id="toc-all-together-now" class="nav-link" data-scroll-target="#all-together-now"><span class="header-section-number">1.4</span> All together now</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/Preliminaries/01-quant-fun-space.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../preliminaries-part.html">PRELIMINARIES</a></li><li class="breadcrumb-item"><a href="../Preliminaries/01-quant-fun-space.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quantity, function, space</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-quantity-function-space" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quantity, function, space</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>One good definition<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of “mathematics” is “the abstract science of number, quantity, and space.” The chapter title, however, doesn’t include the word “number.” Why not? The answer lies in another word in the definition: “abstract.”</p>
+<p>“Abstract” means “based on general ideas and not on any particular person, thing, or situation.” Numbers are abstract; they can be used to represent all sorts of things, sheep, blood pressure, age, and so on without end. The mechanics of working with numbers is the same regardless of the kind of thing involved. In other words, abstract.</p>
+<p>This book is about <em>applied mathematics</em>: the topics and methods of mathematics that are particularly useful in representing—that is, “<em>modeling</em>”—particular objects or situations. The topics and methods of applied mathematics are abstract in the sense that they can be usefully applied to a huge range of situations. For this book, we have carefully selected topics that are particulary useful in modeling situations and drawing conclusions from those models.</p>
+<p>As mentioned previously, a “<strong>model</strong>” is a representation of an object or situation for a given purpose. A blueprint is a model of a building. A doll is a model of a person. We construct models because they are easier to manipulate than the real object being represented. Want to take down a wall between rooms? To do this in the blueprint model doesn’t require sweat or a sledgehammer; just erase the lines corresponding to the wall. Time to play? Just take the doll out of the toy chest and you’re ready to go.</p>
+<p>We will focus on <strong>mathematical models</strong>, the kind of model made out of mathematical concepts and constructs. Three of these are listed in the chapter title, but there are others we will encounter later. Mathematical models make it particularly easy to perform manipulations such as asking and answering “what if” questions, predicting outcomes, and creating effective designs of objects and mechanisms. A good example is the use of spreadsheet software to figure out a budget.</p>
+<p>As you know, a spreadsheet is a device for calculating with numbers. The word “calculate” comes from the Latin “calculus” which originally meant “stone” or “pebble.” Thousands of years before spreadsheets were invented, people were using tables with divots holding pebbles. Moving the pebbles around was the mechanism for calculation. An “abacus” is a particularly clever re-arrangement that replaces the pebbles with beads on a stick. For the last 250 years, however, “Calculus” has come to refer to a set of mathematical concepts and techniques that emerged as part of the Enlightenment and proved spectacularly useful for creating and manipulating mathematical models in physics, chemistry, engineering, and a host of other fields such as economics.</p>
+<section id="sec-quant-vs-number" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-quant-vs-number"><span class="header-section-number">1.1</span> Quantity vs number</h2>
+<p>A mathematical <strong><em>quantity</em></strong> is an amount. How we measure amounts depends on the kind of stuff we are measuring. The real-world stuff might be time, speed, force, price inflation, physiological and ecological systems … anything to which arithmetic can be applied!</p>
+<p>Everyone learns that arithmetic provides a set of patterns and rules for manipulating numbers. A number is a special, abstract kind of quantity. Among people who work with applied mathematics, experience has shown that numbers lack something that is important in many modeling situations: units. To fill the gap, we use “quantity” to indicate a structure with two parts: (1) a number and (2) the units of measurement. From this perspective, a number is merely a quantity that has no units.</p>
+<p>We learn about units in elementary school, where we study the kinds of units appropriate for measuring tangible stuff. For example, the capacity of a water bottle might be presented in liters, cups, fluid ounces, gallons, bushels, and so on. The area of a field or apartment can be measured in square-meters, hectares, square-feet, square yards, acres, and so on. One of the things school-children learn about units is to identify what <em>kind of stuff</em> is measured by any given unit. For example, a gallon and a cup measure the same kind of stuff: volume. A meter and an inch measure the same kind of stuff: length. Some students also learn how to <strong>convert</strong> between units. For example, a meter is about 40 inches, a gallon is exactly 16 cups and a cup is exactly 48 teaspoons. But there is no way to convert, say, an inch into a cup. These lessons on units are useful in everyday life, even if most adults have only a limited recollection of them.</p>
+<p>Moving beyond stuff like length, area, volume, and time can be difficult. You probably recognize kilometers-per-hour (or miles-per-hour) as a unit of velocity, but many student struggle when they first encounter something like meters-per-second-per-second, which is a unit for acceleration.</p>
+<p>One of the great uses of Calculus is to convert between different kinds of stuff. A simple, everyday example is relevant to transportation. You can convert from speed (say, miles-per-hour) to distance travelled. The conversion is accomplished by multiplying speed by the duration of movement. Or, for some purposes, you might need to convert into speed two different measurements: distance travelled and time taken. In later chapters, we will encounter many situations where such conversions between types of stuff is important.</p>
+<p>Keeping track of the type of stuff is an important habit when using Calculus for such conversions. In other words, you need to keep track of the units of each kind of stuff.</p>
+<p>When talking about the methods of Calculus, however, there is a shorthand that enables you to see what kind of conversion is being done. This shorthand can help you select the appropriate arithmetical or Calculus method for whatever model manipulation you need to do, and it is especially helpful for spotting and correcting errors. The shorthand involves explicitly noting the “<strong>dimension</strong>” of the quantity.</p>
+<p>Units and dimensions are closely related. Knowing the units, you can readily figure out the dimension. But knowing the dimension makes it easier to design and check your calculations. <a href="#sec-dimensions-and-units" class="quarto-xref"><span class="quarto-unresolved-ref">sec-dimensions-and-units</span></a> will describe units and dimension more thoroughly. For now, however, we will give just a hint, enough to understand why knowing and understanding dimensions will help tremendously in your calculation.</p>
+<p>In particular, we want to emphasize the reason to think about using <em>quantities</em> rather than mere numbers. Whenever you see a quantity, you should expect to see units or their shorthand, dimension.</p>
+<p>Although there are hundreds of different kinds of units, we will need only four basic dimensions for most of the applications presented in this book. These are:</p>
+<ul>
+<li>time, denoted T</li>
+<li>length, denoted L</li>
+<li>mass, denoted M</li>
+<li>money, denoted V (for “value”)</li>
+</ul>
+<p>Consider the familiar rules of arithmetic. The basic actions—addition, subtraction, multiplication, division—apply to any two numbers (although division by zero is not allowed). So 17 + 1.3 is 18.3, whatever those numbers are meant to represent. But the two quantities 17 inches and 1.3 seconds (L and T, respectively) cannot be meaningfully added. To apply addition and subtraction, the two quantities must be in the same unit, hence the same dimension. If you encounter someone adding quantities with different dimensions, you know you have spotted an error.</p>
+<p>On the other hand, division and multiplication can work with any two quantities, regardless of their respective dimensions. In fact, division and multiplication are the basic arithmetic that enables us to construct new kinds of stuff from old kinds of stuff. For insight into the use of the word “dimension,” consider that a length times a length (L <span class="math inline">\(\times\)</span> L) gives an area (L<sup>2</sup>) and an area times a length (L<sup>2</sup> <span class="math inline">\(\times\)</span> L) gives a volume (L^3). These correspond to one-, two- and three-dimensional objects respectively.</p>
+<p>The mathematics of units and dimension are to the technical world what common sense is in our everyday world. For instance (and this may not make sense at this point), if people tell me they are taking the square root of 10 liters, I know immediately that either they are just mistaken or that they haven’t told me essential elements of the situation. It is just as if someone said, “I swam across the tennis court.” You know that person either used the wrong verb—walk or run would work—or that it wasn’t a tennis court, or that something important was unstated, perhaps, “During the flood, I swam across the tennis court.”</p>
+</section>
+<section id="sec-functions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-functions"><span class="header-section-number">1.2</span> Functions</h2>
+<p><strong><em>Functions</em></strong>, in their mathematical and computing sense, are central to calculus. The introduction to this Preliminaries Block states, “Calculus is about change, and change is about relationships.” The idea of a mathematical function gives a definite perspective on this. The relationship represented by a function is between the function’s input and the function’s output. The input might be day-of-year<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and the output cumulative rainfall up to that day. Every day it rains, the cumulative rainfall increases.</p>
+<div id="thm-two-relationships" class="theorem" style="display: none;">
+<p><span class="theorem-title"><strong>Application area 1.1</strong></span> —Temperature as a function of height, brightness as a function of time past noon.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="#thm-two-relationships" class="quarto-xref">Application area&nbsp;<span class="quarto-unresolved-ref">thm-two-relationships</span></a> Two examples of input/output relationships
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>The input is the altitude on your hike up <a href="https://en.wikipedia.org/wiki/Pikes_Peak">Pikes Peak</a> to its peak elevation of 14,115 feet; the output is the air temperature. Typically, as you gain altitude the temperature goes down.</p></li>
+<li><p>The input is the number of hours past noon; the output is the brightness of sunlight. As the afternoon progresses, the light grows dimmer, but only to a point.</p></li>
+</ol>
+</div>
+</div>
+<p>A function is a mathematical concept for taking one or more <strong><em>inputs</em></strong> and returning an <strong><em>output</em></strong>. In calculus, we will deal mainly with functions that take one or more <em>quantities</em> as inputs and return another <em>quantity</em> as output.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<del>variable</del>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be aware of our use of “input” and “output” in place of the vague, but commonly used, “variable.” Try to put the word “variable” out of mind for the present, until we get to discussing the nature of data.</p>
+</div>
+</div>
+<p>But sometimes we will work with functions that take functions as input and return a quantity as output. And, perhaps surprisingly, there will be functions that take a <em>function as an input</em> and return a <em>function as output</em>.</p>
+<p>In a definition like <span class="math inline">\(f(x) \equiv \sqrt{\strut x}\)</span>, think of <span class="math inline">\(x\)</span> as the <strong><em>name of an input</em></strong>. So far as the definition is concerned, <span class="math inline">\(x\)</span> is just a name. We could have used any other name; it is only convention that leads us to choose <span class="math inline">\(x\)</span>. The definition could equally well have been <span class="math inline">\(f(y) \equiv \sqrt{\strut y}\)</span> or <span class="math inline">\(f(\text{zebra}) \equiv \sqrt{\strut\text{zebra}}\)</span>.</p>
+<p>Notation like <span class="math inline">\(f(x)\)</span> is also used for something completely different from a definition. In particular, <span class="math inline">\(f(x)\)</span> can mean <strong><em>apply the function</em></strong> <span class="math inline">\(f()\)</span> to a quantity named <span class="math inline">\(x\)</span>. You can always tell which is intended—function definition or applying a function—by whether the <span class="math inline">\(\equiv\)</span> sign is involved in the expression.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Coming attraction … the pattern-book functions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Later in this Preliminaries Block, we will introduce the “pattern-book functions.” These always take a pure number as input and return a pure number as output. In the Modeling Block, we will turn to functions that take quantities—which generally have units—as input and return another quantity as output. The output quantity also generally has units.</p>
+</div>
+</div>
+<p>One familiar sign of applying a function is when the contents of the parentheses are <strong>not a symbolic name</strong> but a numeral. For example, when we write <span class="math inline">\(\sin(7.3)\)</span> we give the numerical value <span class="math inline">\(7.3\)</span> to the sine function. The sine function then does its calculation and returns the value 0.8504366. In other words, <span class="math inline">\(\sin(7.3)\)</span> is utterly equivalent to 0.8504366.</p>
+<p>In contrast, using a name on it is own inside the parentheses indicates that the specific value for the input is being determined elsewhere. For example, when defining a function we often will be <em>combining</em> two or more functions, like this: <span class="math display">\[g(x) \equiv \exp(x) \sin(x)\]</span> or <span class="math display">\[h(y,z) \equiv \ln(z) \left(\strut\sin(z) - \cos(y)\right)\ .\]</span> The <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span> on the left side of the definition are the names of the inputs to <span class="math inline">\(h()\)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The right side describes how to construct the output, which is being done by <strong>applying</strong> <span class="math inline">\(\ln()\)</span>, <span class="math inline">\(\sin()\)</span> and <span class="math inline">\(\cos()\)</span> to the inputs. Using the names on the right side tells us which function is being applied to which input. We won’t know what the specific values those inputs will have until the function <span class="math inline">\(h()\)</span> is being applied to inputs, as with <span class="math display">\[h(y=1.7, z=3.2)\ .\]</span></p>
+<p>Once we have specific inputs, we (or the computer) can plug them into the right side of the definition to determine the function output: <span class="math display">\[\ln(3.2)\left(\sin(3.2) - \strut \cos(1.7)\right) = 1.163(-0.0584 + 0.1288) =-0.2178\ .\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#sec-space-intro" class="quarto-xref"><span class="quarto-unresolved-ref">sec-space-intro</span></a> introduces the idea of “spaces.” A function <strong><em>maps</em></strong> each point in the function’s input space into a single point in the function’s output space. The input and output spaces are also known respectively as the “domain” and “range” of the function.</p>
+</div>
+</div>
+<div id="thm-functional-gunnery" class="theorem" style="display: none;">
+<p><span class="theorem-title"><strong>Application area 1.2</strong></span> —An early application of computing</p>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" data-latex="">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="#thm-functional-gunnery" class="quarto-xref">Application area&nbsp;<span class="quarto-unresolved-ref">thm-functional-gunnery</span></a> Functional gunnery
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The various mathematical functions that we will be studying in this book are in the service of practical problems. But there are so many such problems, often involving specialized knowledge of a domain or science, engineering, economics, and so on, that an abstract mathematical presentation can seem detached from reality.</p>
+<p><a href="#vid-how-to-shoot" class="quarto-xref">Video&nbsp;<span class="quarto-unresolved-ref">vid-how-to-shoot</span></a> is a training cartoon from 1945 for gunners in B-29 bombers. The gunner tries to position the gun (the function output) so that a shell and the plane will intersect. There are many inputs to the function, which has been implemented by electronics. The function itself is literally a black box. The inputs are provided by a human gunner training a telescope on a target and setting control dials. The ultimate output is the deflection of the guns in a remote turret. The main function is composed of several others, such as a function that outputs target range given the target size based on knowledge of the size of the target and how large it appears in the telescopic sight.</p>
+<div id="vid-how-to-shoot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-vid figure">
+<div aria-describedby="vid-how-to-shoot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/mJExsIp4yO8?start=30" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<!-- www/how-to-shoot.png -->
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-vid" id="vid-how-to-shoot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Video&nbsp;1.1: A training video from World War II: <em>Gunnery in the B-29: How to Shoot</em>.
+</figcaption>
+</figure>
+</div>
+<p>Dividing the gunnery task into a set of inputs and a computed output allows for a division of labor. The gunner can provide the skills properly trained humans are good at, such as tracking a target visually. The computer provides the capabilities—mathematical calculation—to which electronics are well suited. Combining the inputs with the calculation provides an effective solution to a practical problem.</p>
+</div>
+</div>
+</section>
+<section id="sec-space-intro" class="level2 page-columns page-full" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-space-intro"><span class="header-section-number">1.3</span> Spaces</h2>
+<p>Calculus is largely about <em>change</em>, and change involves movement. To move, as you know, means to change location. But we often use location as a metaphor for other things. Consider, for example, the everyday expression, “The temperature is getting higher.” This is not pointing to a thermometer rising up in the air, but to a quantity as it changes.</p>
+<p>To represent a quantity as it changes we need to provide scope for movement. One way to do this is familiar from schooling: the <strong>number line</strong>. Each location on the number line corresponds to a possible value for a quantity. The particular value of that quantity at a specific moment in time is represented as a tiny bead on that line. The line as a whole encompasses many other locations. The changing quantity is the movement of the bead.</p>
+<p><a href="#fig-number-line-1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-number-line-1</span></a> shows a number line as conventionally drawn. I have placed two different colored dots on the line to correspond to two different quantities: <span class="math inline">\(\color{blue}{6.3^\circ\ \text{C}}\)</span> and <span class="math inline">\(\color{magenta}{-4.5^\circ \text{C}}\)</span>. (You only know that the line is about temperature because I told you.)</p>
+<div id="fig-number-line-1" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-number-line-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="www/number-line3.png" class="img-fluid figure-img column-page-right">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-number-line-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: A number line drawn in the conventional style suitable for representing temperatures near freezing.
+</figcaption>
+</figure>
+</div>
+<p>The graphical element representing the set of possibilities is the horizontal line segment. The tick marks and labels are added to enable you to translate any given location into the corresponding quantity. In mathematics texts, it’s common to put arrowheads at the ends of the line segment, perhaps to remind you that a line is infinite in length. But in other disciplines, no infinity or arrowheads are needed: the picture is just a <strong>scale</strong> to help people translate location into quantity.</p>
+<p>I could have placed many dots on the line to represent many different particular quantitities. Of course, all the dots would be representing temperatures in <span class="math inline">\(^\circ\text{C}\)</span> since that is the sort of quantity that the number line in <a href="#fig-number-line-1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-number-line-1</span></a> represents.</p>
+<p>A more general way for representing pairs of quantities is the <strong>coordinate plane</strong>, which <a href="#fig-coordinate-plane" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-coordinate-plane</span></a> shows in the mathematics-text style. (<a href="#sec-graphs-and-graphics" class="quarto-xref"><span class="quarto-unresolved-ref">sec-graphs-and-graphics</span></a> switches to another style more commonly used across disciplines.)</p>
+<div id="fig-coordinate-plane" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coordinate-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="www/coordinate-plane.png" class="img-fluid figure-img" style="width:6cm">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coordinate-plane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: The coordinate plane drawn in the style common to mathematics texts. <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">Source: Wikipedia</a>
+</figcaption>
+</figure>
+</div>
+<p>Every location in the coordinate plane is a <em>possibility</em>. A specific pair of quantities is displayed by placing a dot. <a href="#fig-coordinate-plane" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-coordinate-plane</span></a> has four such dots, corresponding to four distinct <em>pairs</em> of quantities.</p>
+<p>The <em>space</em> annoted by the coordinate axes and grid is two-dimensional, analogous to a table-top or a piece of paper or a computer display’s surface. Two-dimensional space accommodates change in each of the two quantities.</p>
+<p>Everyday life acquaints us well with <em>three-dimensional</em> spaces, where each location corresponds to a possible value for each of three quantities. Displaying a three-dimensional space is difficult to do well because conventional displays show only two dimensions. <a href="#fig-three-coordinates" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-three-coordinates</span></a> shows one style that uses perspective and shading to create the impression of a 3-D scene.</p>
+<div id="fig-three-coordinates" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-three-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="www/three-coordinates.png" class="img-fluid figure-img" style="width:6cm">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three-coordinates-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: One of many styles for displaying a three-dimensional space. <a href="https://images.app.goo.gl/tZysJeX1JL5A5UAt9">Source</a>
+</figcaption>
+</figure>
+</div>
+<p>Drawings of one-dimensional space (<a href="#fig-number-line-1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-number-line-1</span></a>) or two-dimensional space (<a href="#fig-coordinate-plane" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-coordinate-plane</span></a>) make it straightforward to read off the quantitative value corresponding to any location. Already in 3-dimensional space, reading quantitative coordinates is difficult and requires conscious mental effort. We will make only limited use of 3-D displays.</p>
+<p>Consider now what the different dimensional spaces permit in terms of <em>movement</em>, that is, how quantities can change. The number line permits one kind of movement, left-right in <a href="#fig-number-line-1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-number-line-1</span></a>. Even though we use two words to name the kind of movement—“left” and “right”—we still consider movement in either opposing direction as one kind of movement. Left is the opposite of right. The coordinate plane permits two kinds of movement: left-right and up-down. A three-dimensional space permits three kinds of movement: left-right, up-down, nearer-farther. We often say that each type of movement is along an <strong>axis</strong>. as is conventional for one- and two-dimensional spaces. The number line has one axis, the coordinate plane has two axes, and three-dimensional space has three.</p>
+<p>Figures <a href="#fig-number-line-1" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">fig-number-line-1</span></a>, <a href="#fig-coordinate-plane" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">fig-coordinate-plane</span></a>, and <a href="#fig-three-coordinates" class="quarto-xref"><span class="quarto-unresolved-ref ref-noprefix">fig-three-coordinates</span></a> are conventional drawings of one-, two-, and three-dimensional spaces respectively. What about four- or higher-dimensional spaces? Many people put their foot down here and refuse to accept such a thing. Some others will point to the Theory of Relativity where an essential concept is “space-time,” a four-dimensional space sometimes denoted as <span class="math inline">\((x, y, z, t)\)</span>. True though this be, it does not much appeal to intuition and for a good reason. We are free to move objects in their x-, y-, and z-coordinates, but we have no control over time.</p>
+<p>Engineers, statisticians, physicists, and others often use the phrase “<strong>degree of freedom</strong>” to refer to a type of movement. In English, we have many phrases for different types of movement: in-and-out, back-and-forth, clockwise-and-counter-clockwise, nearer-and-farther, up-and-down, left-and-right, north-and-south, east-and-west, and so on. When imagining time machines, or showing photos from our recent trip, we speak of <em>going forward</em> in time or <em>going back</em> in time: forward-and-back. (Note the word “going,” which emphasizes the idea of <em>movement</em> rather than position.)</p>
+<p>Health professions learn additional names for kinds of movement: adduction-abduction, flexion-extension, internal-vs-external rotation.</p>
+<p>A depiction of even four-, five-, and higher-dimensional space can be expressed as possibilities for movement. <a href="#vid-robot-youtube" class="quarto-xref">Video&nbsp;<span class="quarto-unresolved-ref">vid-robot-youtube</span></a> shows the movement of a robotic hand with six degrees of freedom. Each of these is a different kind of movement.</p>
+<div id="tbl-six-degrees" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-six-degrees-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.1: Six degrees of freedom for the robot hand.
+</figcaption>
+<div aria-describedby="tbl-six-degrees-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="line-block">&nbsp;&nbsp;1. swiveling of the base<br>
+2-4. rotation around each of the three knuckles<br>
+&nbsp;&nbsp;5. swiveling at the wrist<br>
+&nbsp;&nbsp;6. fingers moving closer together or farther apart</div>
+</div>
+</figure>
+</div>
+<div id="vid-robot-youtube" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-vid figure">
+<div aria-describedby="vid-robot-youtube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-video"><iframe data-external="1" src="https://www.youtube.com/embed/2qSAbK5X3a4?si=94ClmnoG0ULlxN6a" width="400" height="300" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-vid" id="vid-robot-youtube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Video&nbsp;1.2: A robot hand with six degrees of freedom. <a href="https://youtu.be/2qSAbK5X3a4?si=94ClmnoG0ULlxN6a">Source</a>
+</figcaption>
+</figure>
+</div>
+<p>There can be multiple ways of forming coordinates for the same space. The configuration of the mechanism for the robotic hand can be specified by the six degrees of freedom enumerated in <a href="#tbl-six-degrees" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-six-degrees</span></a>. But from the point of view of a person training the robot, it might be more convenient to think about the configuration in terms of the six quantities given in <a href="#tbl-six-degrees-2" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-six-degrees-2</span></a>.</p>
+<div id="tbl-six-degrees-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-six-degrees-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.2: A different way of describing the configuration of the robot hand that is better suited for a user training the robot in some action.
+</figcaption>
+<div aria-describedby="tbl-six-degrees-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="line-block">1-3. The location of the wrist in everyday three-dimensional space. (x,y,z)<br>
+4-5. The direction that the fingers point in. (Two angles often called “azimuth” and “elevation.”)<br>
+&nbsp;&nbsp;6. The distance between the fingers (d).</div>
+</div>
+</figure>
+</div>
+<p>To train the robot to perform a specific movement, the engineer specifies a sequence of configurations. Each of the configurations corresponds to a dot in the six-dimensional space. An important Calculus method, introduced in <a href="#sec-splines" class="quarto-xref"><span class="quarto-unresolved-ref">sec-splines</span></a>, is to create a smooth, continuous path connecting the dots called a <strong>trajectory</strong> which, in this case, depicts movement through six-dimensional space.</p>
+</section>
+<section id="all-together-now" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="all-together-now"><span class="header-section-number">1.4</span> All together now</h2>
+<p>The three mathematical concepts we’ve been discussing—quantities, functions, spaces—are used together.</p>
+<p>A quantity can be a specific value, like 42.681<span class="math inline">\(^\circ\)</span>F. But you can also think of a quantity more broadly, for instance, “temperature.” Naturally, there are many possible values for temperature. The set of all possible values is a space. And, using the metaphor of space, the specific value 42.681<span class="math inline">\(^\circ\)</span>F is a single point in that space.</p>
+<p>Functions relate input quantities to a corresponding output quantity. A way to think of this—which will be important in <a href="#sec-graphs-and-graphics" class="quarto-xref"><span class="quarto-unresolved-ref">sec-graphs-and-graphics</span></a> —is that a function is a correspondence between each point in the input space and a corresponding point in the output space. By mathematical convention, the output space in Calculus is always one-dimensional.</p>
+<p>Every function has a set of legitimate potential inputs, a <em>region</em> in the input space. This input-space region is called the <strong>domain</strong> of the function. For some functions, the possible output values occupy the whole of the one-dimensional output space. Other functions use only regions of the one-dimensional output space. The set of possible outputs is called the <strong>range</strong> of the function.</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Source: Oxford Languages<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>“Day-of-year” is a quantity with units “days.” It starts at 0 on midnight of New Year’s Eve and ends at 365 at the end of day on Dec.&nbsp;31.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Sometimes, we will use <em>both</em> a name and a specific value, for instance <span class="math inline">\(\sin(x=7.3)\)</span> or <span class="math inline">\(\left.\sin(x)\Large\strut\right|_{x=7.3}\)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/dtkaplan\.github\.io\/MC2\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../preliminaries-part.html" class="pagination-link" aria-label="PRELIMINARIES">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">PRELIMINARIES</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../Preliminaries/02-notation.html" class="pagination-link" aria-label="Notation">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Notation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/Preliminaries/01-quant-fun-space.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

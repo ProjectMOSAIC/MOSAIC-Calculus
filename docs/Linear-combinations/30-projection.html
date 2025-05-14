@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Daniel Kaplan, webr version 05/14/2025">
 
-<title>MOSAIC Calculus</title>
+<title>30&nbsp; Projection &amp; residual – MOSAIC Calculus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,60 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./preliminaries-part.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Linear-combinations/31-target-problem.html" rel="next">
+<link href="../Linear-combinations/29-linear-combinations.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -426,7 +392,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"date()","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"b <- rbind(-1, 2)\na <- rbind(-2.5, -0.8)\ns <- b %onto% a\ns","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"r <- b - s\nr","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"r %dot% a","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"(r+s) - b","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"b  <- rbind( 1,  1,  1, 1)\nv1 <- rbind( 1,  2,  0, 0)\nv2 <- rbind(-2,  1,  3, 1)\nv3 <- rbind( 0,  0, -1, 3)\nA <- cbind(v1, v2, v3)\nA","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"p1 <- b %onto% v1\np2 <- b %onto% v2\np3 <- b %onto% v3","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"b_on_A <- p1 + p2 + p3","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"resid <- b - b_on_A\nresid","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"resid %dot% v1\nresid %dot% v2\nresid %dot% v3","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"b <- rbind(1,1,1,1)\nv1 <- rbind(2,3,4,5)\nv2 <- rbind(-4,2,4,1)\nA <- cbind(v1, v2)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"q1 <- v1","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"q2 <- v2 %perp% v1","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"bhat <- (b %onto% q1) + (b %onto% q2)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"r <- b - bhat\nr %dot% v1\nr %dot% v2","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"b <- rbind(3,2,7,3,-6,4,1,-1, 8, 2) # or any set of 10 numbers\nv1 <- rbind(4, 7, 1, 0, 3, 0, 6, 1, 1, 2)\nv2 <- rbind(8, 8, 4, -3, 3, -2, -4, 9, 6, 0)\nv3 <- rbind(12, 0, 4, -2, -6, -4, -1, 4, 6, -7)\nv4 <- rbind(0, 3, 9, 6, -4, -5, 4, 0, 5, -4)\nv5 <- rbind(-2, 5, -4, 8, -9, 3, -5, 0, 11, -4)\nA  <- cbind(v1, v2, v3, v4, v5)","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"q1 <- v1\nq2 <- v2 %perp% q1\nq3 <- v3 %perp% cbind(q1, q2)\nq4 <- v4 %perp% cbind(q1, q2, q3)\nq5 <- v5 %perp% cbind(q1, q2, q3, q4)\nQ <- cbind(q1, q2, q3, q4, q5)","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"p1 <- b %onto% q1\np2 <- b %onto% q2\np3 <- b %onto% q3\np4 <- b %onto% q4\np5 <- b %onto% q5\n# put together the components\nb_on_A <- p1 + p2 + p3 + p4 + p5\n# check the answer: resid should be perpendicular to A\nresid <- b - b_on_A\nresid %dot% v1\nresid %dot% v2\nresid %dot% v3\nresid %dot% v4\nresid %dot% v5","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1654,7 +1620,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="mosaic-calc-style.css">
+<link rel="stylesheet" href="../mosaic-calc-style.css">
 
 
 
@@ -1664,10 +1630,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./www/Cover-1.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../www/Cover-1.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MOSAIC Calculus</span>
     </a>
   </div>
@@ -1682,7 +1648,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../linear-combinations-part.html">BLOCK III. Vectors and linear combinations</a></li><li class="breadcrumb-item"><a href="../Linear-combinations/30-projection.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Projection &amp; residual</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1696,13 +1662,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./preliminaries-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../preliminaries-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PRELIMINARIES</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1711,43 +1677,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/01-quant-fun-space.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/01-quant-fun-space.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quantity, function, space</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/02-notation.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/02-notation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/03-computing.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/03-computing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computing with R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/04-graphs-and-graphics.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/04-graphs-and-graphics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualizing functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/05-pattern-book-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/05-pattern-book-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pattern-book functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/06-describing-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/06-describing-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Describing functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/07-data-functions-graphics.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/07-data-functions-graphics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data, functions, graphics</span></span></a>
   </div>
 </li>
@@ -1755,7 +1721,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./modeling-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../modeling-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK I. Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1764,55 +1730,55 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/08-parameters.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/08-parameters.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parameters</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/09-assembling-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/09-assembling-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Assembling functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/10-functions-with-multiple-inputs.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/10-functions-with-multiple-inputs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Functions with multiple inputs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/11-fitting-features.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/11-fitting-features.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Fitting features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/12-low-order-polynomials.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/12-low-order-polynomials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Low-order polynomials</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/13-operations.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/13-operations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/14-magnitudes.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/14-magnitudes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Magnitude</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/15-dimensions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/15-dimensions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Dimensions and units</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/16-modeling-scientific-method.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/16-modeling-scientific-method.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Modeling and the scientific method</span></span></a>
   </div>
 </li>
@@ -1820,7 +1786,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./differentiation-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../differentiation-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK II. Differentiation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1829,73 +1795,73 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/17-continuous-change.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/17-continuous-change.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Continuous change</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/18-rate-of-change.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/18-rate-of-change.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Rate of change</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/19-evanescent-h.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/19-evanescent-h.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Evanescent h</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/20-computing.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/20-computing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Constructing derivatives</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/21-concavity.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/21-concavity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Concavity and curvature</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/22-cont-and-smooth.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/22-cont-and-smooth.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Continuity and smoothness</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/23-rules.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/23-rules.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Derivatives of assembled functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/24-optim.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/24-optim.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Optimization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/25-partial.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/25-partial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Partial change and the gradient vector</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/26-approximation.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/26-approximation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Local approximations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/27-taylor.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/27-taylor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Polynomials for approximating functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/Differentiation-projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/Differentiation-projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
@@ -1903,7 +1869,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./linear-combinations-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../linear-combinations-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK III. Vectors and linear combinations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1912,31 +1878,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/28-Vectors.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/28-Vectors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/29-linear-combinations.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/29-linear-combinations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Linear combinations of vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/30-projection.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/30-projection.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Projection &amp; residual</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/31-target-problem.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/31-target-problem.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">The target problem</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/32-stat-modeling.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/32-stat-modeling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Statistical modeling and R<sup>2</sup></span></span></a>
   </div>
 </li>
@@ -1944,7 +1910,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./accumulation-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../accumulation-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK IV. Accumulation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1953,37 +1919,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/33-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/33-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Change &amp; accumulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/34-visualizing.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/34-visualizing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/35-integration.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/35-integration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/36-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/36-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/37-euler.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/37-euler.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals step-by-step</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/38-symbolic.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/38-symbolic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
   </div>
 </li>
@@ -1991,7 +1957,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./dynamics-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../dynamics-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK V. Dynamics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -2000,49 +1966,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/39-diff-eq.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/39-diff-eq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/40-solution.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/40-solution.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/41-flow-on-line.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/41-flow-on-line.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/42-flow-on-plane.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/42-flow-on-plane.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/43-modeling.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/43-modeling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/44-equilibria.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/44-equilibria.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/45-eigen.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/45-eigen.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/46-second-order.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/46-second-order.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
   </div>
 </li>
@@ -2050,7 +2016,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./manifestations-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../manifestations-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK VI. Manifestations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -2059,43 +2025,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/47-operations.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/47-operations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/48-splines.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/48-splines.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/49-optimization.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/49-optimization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/50-probability.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/50-probability.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/51-future-value.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/51-future-value.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/52-mechanics.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/52-mechanics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Mechanics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/53-diffusion.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/53-diffusion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Diffusion</span></span></a>
   </div>
 </li>
@@ -2112,7 +2078,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
+  <a href="../Glossary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
@@ -2128,14 +2094,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#welcome-to-calculus" id="toc-welcome-to-calculus" class="nav-link" data-scroll-target="#welcome-to-calculus">Welcome to calculus</a></li>
-  <li><a href="#instructors-preface" id="toc-instructors-preface" class="nav-link" data-scroll-target="#instructors-preface">Instructor’s preface</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  </ul></li>
+  <li><a href="#projection-terminology" id="toc-projection-terminology" class="nav-link active" data-scroll-target="#projection-terminology"><span class="header-section-number">30.1</span> Projection terminology</a></li>
+  <li><a href="#sec-proj-single-vector" id="toc-sec-proj-single-vector" class="nav-link" data-scroll-target="#sec-proj-single-vector"><span class="header-section-number">30.2</span> Projection onto a single vector</a></li>
+  <li><a href="#projection-onto-a-set-of-vectors" id="toc-projection-onto-a-set-of-vectors" class="nav-link" data-scroll-target="#projection-onto-a-set-of-vectors"><span class="header-section-number">30.3</span> Projection onto a set of vectors</a></li>
+  <li><a href="#a-becomes-q" id="toc-a-becomes-q" class="nav-link" data-scroll-target="#a-becomes-q"><span class="header-section-number">30.4</span> A becomes Q</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/Linear-combinations/30-projection.Rmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -2424,21 +2388,15 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../linear-combinations-part.html">BLOCK III. Vectors and linear combinations</a></li><li class="breadcrumb-item"><a href="../Linear-combinations/30-projection.html"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Projection &amp; residual</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">MOSAIC Calculus</h1>
+<h1 class="title"><span id="sec-projection-residual" class="quarto-section-identifier"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Projection &amp; residual</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Daniel Kaplan, webr version 05/14/2025 </p>
-          </div>
-  </div>
     
   
     
@@ -2449,108 +2407,288 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<section id="welcome-to-calculus" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="welcome-to-calculus">Welcome to calculus</h2>
-<p>Calculus is the set of concepts and techniques that form the mathematical basis for dealing with motion, growth, decay, and oscillation. The phenomena can be as simple as a ball arcing ballistically through the air or as complex as turbulent airflow over a wing generating lift. Calculus is used in biology and business, chemistry, physics and engineering. It is the foundation for weather prediction and understanding climate change. It is the basis for the algorithms for heart rate and blood oxygen measurement by wristwatches. It is a key part of the language of science. The electron orbitals of chemistry, the stresses of bones and beams, and the business cycle of recession and rebound are all understood primarily through calculus.</p>
-<p>Calculus has been central to science from the very beginnings. It is no coincidence that the scientific method was introduced and the language of calculus was invented by the same small group of people during the historical period known as the <a href="https://en.wikipedia.org/wiki/Age_of_Enlightenment"><em>Enlightenment</em></a> in the late 17th century. Learning calculus has always been a badge of honor and an entry ticket to professions. Millions of students’ career ambitions have been enhanced by passing a calculus course or thwarted by lack of access to one.</p>
-<p>In the 1880s, a hit musical featured “the very model of a modern major general.” One of his claims for modernity: “I’m very good at integral and differential calculus.”</p>
-<div id="vid-major-general" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-vid figure">
-<div aria-describedby="vid-major-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Rs3dPaz9nAo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-vid" id="vid-major-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Video&nbsp;1: A Gilbert and Sullivan opera pays homage to Calculus.
-</figcaption>
-</figure>
-</div>
-<p>What was modern in 1880 is not modern anymore. Yet, amazingly, calculus today is every bit as central to science and technology as ever. Indeed, calculus remains central to fields that were not even imagined in 1880: AI, logistics, economics, and data science, among others. One reason is that science, engineering, and society have now fully adopted the computer for almost all aspects of work, study, and life. The collection and use of data is growing dramatically. Machine learning has become the way human decision makers interact with such data.</p>
-<p>Think about what it means to become “computerized.” To take an everyday example, consider video. Over the span of a human life, we moved from a system which involved people going to theaters to watch the shadows recorded on cellulose film to the distribution over the airwaves by low-resolution television, to the introduction of high-def broadcast video, to on demand streaming from huge libraries of movies. Just about anyone can record, edit, and distribute their own video. The range of topics (including calculus) on which you can access a video tutorial or demonstration is incredibly vast. All of this recent progress is owed to computers.</p>
-<p>The “stuff” on which computers operate, transform, and transmit is always mathematical representations stored as bits. The creation of mathematical representations of objects and events in the real world is essential to every task of any sort that any computer performs. Calculus is a key component of inventing and using such representations.</p>
-<p>You may be scratching your head. If calculus is so important, why is it that many of your friends who took calculus came away wondering what it is for? What’s so important about “slopes” and “areas” and how come your high-school teacher might have had trouble telling you what calculus is for?</p>
-<p>The disconnect between the enthusiasm expressed in the preceding paragraphs and the lived experience of students is very real. There are two major reasons for that disconnect, both of which we tackle head-on in this book.</p>
-<p>First, teachers of mathematics have a deep respect for tradition. Such respect has its merits, but the result is that almost all calculus is taught using methods that were appropriate for the era of paper and pencil—not for the computer era. As you will see, in this book we express the concepts of calculus in a way that carries directly over to the uses of calculus on computers and in working out answers to real-world problems.</p>
-<p>Second, the uses of calculus are enabled not by the topics of Calc I and Calc II alone, but the courses for which Calc I/II are preliminary: linear algebra and dynamics. Only a small fraction of students who start in Calc I ever reach the parts of calculus that are the most useful. Fortunately, there is a large amount of bloat and rote in the standard textbook topics of Calc I/II. This can be removed to make room for the more important topics.</p>
-<p>The computer language used in this book is R. This is a mainstream language in high demand by employers in many fields. The small amount of R that you need to learn for this book will open doors to much greater possibilities. We have augmented R with functions designed to simplify access to calculus-related computations. These functions are provided by the <code>{mosaicCalc}</code> R package and build on other widely used, open-source software for R. We will often refer to the software as a whole as “R/mosaic.”</p>
-<p>For convenience, we place “Active R Chunks” within the text. Often, as in <a href="#lst-in-preface" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-in-preface</span></a>, these will be presented with working R/mosaic commands already included. Just press “Run Code” to have the commands evaluated.</p>
-<div id="lst-in-preface" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-in-preface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;1
-</figcaption>
-<div aria-describedby="lst-in-preface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</figure>
-</div>
-<p>Sometimes, you will be asked to make modifications to the commands in a chunk so that you can see for yourself how the output changes.</p>
+<p>Many problems in physics and engineering involve the task of <strong><em>decomposing</em></strong> a vector <span class="math inline">\(\vec{b}\)</span> into two perpendicular component vectors <span class="math inline">\(\hat{b}\)</span> and <span class="math inline">\(\vec{r}\)</span>, such that <span class="math inline">\(\hat{b} + \vec{r} = \vec{b}\)</span> and <span class="math inline">\(\hat{b} \cdot \vec{r} = 0\)</span>. There are infinite ways to accomplish such a decomposition, one for each way or orienting <span class="math inline">\(\hat{b}\)</span> relative to <span class="math inline">\(\vec{b}\)</span>. <a href="#fig-decompose-1" class="quarto-xref">Figure&nbsp;<span>30.1</span></a> shows a few examples.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Accessing software
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This book, as well as the exercises in the MOSAIC Calculus <a href="https://dtkaplan.github.io/MC-Workbook/"><em>Workbook</em></a>, provide immediate access to R/mosaic software via interactive elements such as <a href="#lst-in-preface" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-in-preface</span></a> that run in your browser.</p>
-<p>There are also versions of R that are provided as stand-alone applications or web services. The most popular of these, <em>RStudio</em>, includes rich facilities for managing large projects and constructing complex documents. (This book is written using <em>RStudio</em> and the <em>quarto</em> document system.)</p>
-<p>For most students learning Calculus with <em>MOSAIC Calculus</em>, the run-in-your-browser version of R will be sufficient. (The same applies to statistics students working with <a href="https://dtkaplan.github.io/Lessons-in-statistical-thinking/"><em>Lessons in Statistical Thinking</em></a>.) Instructors may prefer to work within the RStudio document system. Some instructors even introduce all their students to RStudio for writing reports, etc. Wherever you run the software—in-the-browser or using RStudio—it’s all the same language and works the same way.</p>
+<p>The hat-shaped crown in <span class="math inline">\(\hat{b}\)</span>, pronounced “b-hat,” often appears in statistics and machine learning. The hat indicates that the quantity is an <em>estimate</em> made from data.</p>
+</div>
+</div>
+<div id="fig-decompose-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-decompose-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="www/decompose-1.png" class="img-fluid figure-img" style="width:60.0%" data-align="center">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-decompose-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;30.1: A few ways of decomposing <span class="math inline">\(\\vec{b}\)</span> into perpendicular components <span class="math inline">\(\\hat{b}\)</span> and <span class="math inline">\(\\vec{r}\)</span>
+</figcaption>
+</figure>
+</div>
+<div id="thm-decompose-gravity" class="theorem" style="display: none;">
+<p><span class="theorem-title"><strong>Application area 30.1</strong></span> &nbsp;</p>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="#thm-decompose-gravity" class="quarto-xref">Application area&nbsp;<span>30.1</span></a> Decomposing gravity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The gravitational force on an object always points downward toward the center of the Earth. For an isolated object—often the word “mass” is used instead of “object”—acceleration is in the same downward direction. However, often the mass is just one component in a mechanically interconnected system, such as the three systems shown in <a href="#fig-gravity-settings" class="quarto-xref">Figure&nbsp;<span>30.2</span></a>: a ramp, a pendulum, and an inclined plane. The other components of the system counteract, to some extent, the gravitational force on the mass. The net force on the mass—taking into account gravity and the forces imposed by the other elements of the system—is in a direction <span class="math inline">\(\vec{s}\)</span> determined by the system, respectively pointing down the ramp or perpendicular to the pendulum strut or aligned with the gradient vector of the inclined plane.</p>
+<div id="fig-gravity-settings" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gravity-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="www/gravity-settings.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gravity-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;30.2: Three different mechanical systems consisting of a mass (in black) constrained in its movement by the other components of a system: left: a mass on a ramp; center: a mass as part of a pendulum; right: a round mass constrained to roll on a planar surface.
+</figcaption>
+</figure>
+</div>
+<p>The <span class="math inline">\(\vec{r}\)</span> in each diagram gives the component of gravitational force that the structure counteracts: the pull down into the ramp, the pull along the pendulum strut, or the pull into the inclined plane. Finding <span class="math inline">\(\vec{s}\)</span> and <span class="math inline">\(\vec{r}\)</span> is a matter of <em>decomposing</em> the gravitational force into two components: one whose direction is set by the structure and another component perpendicular to that one.</p>
+</div>
+</div>
+<p>The above example shows just one way the task of vector <strong><em>decomposition</em></strong> arises. Our particular interest in this part of the book is in a more general task: finding how to take a linear combination of the columns of a matrix <span class="math inline">\(\mathit{A}\)</span> to make the best approximation to a given vector <span class="math inline">\(\vec{b}\)</span>. This abstract problem is pertinent to many real-world tasks: finding a linear combination of functions to match a relationship laid out in data, constructing statistical models such as those found in machine learning, and effortlessly solving sets of simultaneous linear equations with any number of equations, and any number of unknowns.</p>
+<section id="projection-terminology" class="level2" data-number="30.1">
+<h2 data-number="30.1" class="anchored" data-anchor-id="projection-terminology"><span class="header-section-number">30.1</span> Projection terminology</h2>
+<p>In a typical vector decomposition task, the setting determines the relevant direction or subspace. The decomposition is accomplished by <strong><em>projecting</em></strong> the vector onto that direction or subspace. The word “projection” may bring to mind the casting of shadows on a screen in the same manner as an old-fashioned slide projector or movie projector. The light source and focusing lens generate parallel rays that arrive perpendicular to the screen. A movie screen is two-dimensional, a subspace defined by two vectors. Imagining those two vectors to be collected into matrix <span class="math inline">\(\mathit{A}\)</span>, the idea is to decompose <span class="math inline">\(\vec{b}\)</span> into a component that lies in the subspace defined by <span class="math inline">\(\mathit{A}\)</span> and another component that is perpendicular to the screen. That perpendicular component is what we have been calling <span class="math inline">\(\vec{r}\)</span> while the vector <span class="math inline">\(\hat{b}\)</span> is the projection of <span class="math inline">\(\vec{b}\)</span> onto the screen. To make it easier to keep track of the various roles played by <span class="math inline">\(\vec{b}\)</span>, <span class="math inline">\(\hat{b}\)</span>, <span class="math inline">\(\vec{r}\)</span>, and <span class="math inline">\(\mathit{A}\)</span>, we will give these vectors English-language names. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<ul>
+<li><span class="math inline">\(\vec{b}\)</span> the <strong><em>target vector</em></strong></li>
+<li><span class="math inline">\(\hat{b}\)</span> the <strong><em>model vector</em></strong></li>
+<li><span class="math inline">\(\vec{r}\)</span> the <strong><em>residual vector</em></strong></li>
+<li><span class="math inline">\(\mathit{A}\)</span> the <strong><em>model space</em></strong> (or “model subspace”)</li>
+</ul>
+<p><strong><em>Projection</em></strong> is the process of finding, from all the vectors in the model subspace, the particular vector <span class="math inline">\(\hat{b}\)</span> that is as close as possible to the target vector <span class="math inline">\(\vec{b}\)</span>. To state things another way: projection is the process of finding the model vector that makes the residual vector as short as possible.</p>
+<div id="try-projection-spin" class="quarto-float quarto-figure quarto-figure-center anchored" style="display: none;">
+<figure class="quarto-float quarto-float-try figure">
+<div aria-describedby="try-projection-spin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-try quarto-uncaptioned" id="try-projection-spin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Try it!&nbsp;30.1
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="#try-projection-spin" class="quarto-xref">Try it!&nbsp;<span>30.1</span></a> Projecting in 3 dimensions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The interactive graphic shows a solved projection problem in 3-dimensional space. The figure can be rotated or set spinning, which makes it much easier to interpret the diagram as a three-dimensional object.</p>
+<div id="fig-b-onto-u-v2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-b-onto-u-v2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p style="text-align:center">
+<iframe frameborder="0" height="480px" src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigure/index.html?type=jaxlabel;position=middle;math=.;textonly=false&amp;type=vector;vector=%3C2,1,0%3E;visible=true;color=rgb(17,109,192);size=2;initialpt=(0,0,0)&amp;type=vector;vector=%3C-1,1,0%3E;visible=true;color=rgb(208,20,240);size=2;initialpt=(0,0,0)&amp;type=vector;vector=%3C1/2,2,2.5%3E;visible=true;color=rgb(106,168,79);size=2;initialpt=(0,0,0)&amp;type=z;z=0;visible=true;umin=-3;umax=3;vmin=-3;vmax=3;grid=30;format=normal;alpha=40;hidemyedges=true;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=true;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=true;showconstraint=false&amp;type=vector;vector=%3C.5,2,0%3E;visible=true;color=rgb(173,255,0);size=2;initialpt=(0,0,0)&amp;type=vector;vector=%3C0,0,2.5%3E;visible=true;color=rgb(255,0,0);size=2;initialpt=(.5,2,0)&amp;type=text;text=Target%3A%20b;visible=true;point=(1/2,1,1.4);color=rgb(106,168,79);font=Arial;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=text;text=Residual;visible=true;point=(.5,2,1);color=rgb(255,0,0);font=Arial;fontsize=11pt;bold=false;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=u;visible=true;point=(1,.6,0);color=rgb(17,109,192);font=Arial;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=v;visible=true;point=(-.6,.4,.1);color=rgb(208,20,240);font=Arial;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=window;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.22100580440146,3.2942359740980485,4.64360559381492,1;focus=0,0,0,1;up=0.5692808110442982,-0.48760415187116424,-0.6619377230939093,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=false;showticks=true;perspective=false;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=true;gridcolor=rgb(128,128,128);xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.67" width="90%">
+</iframe>
+</p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-b-onto-u-v2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;30.3
+</figcaption>
+</figure>
+</div>
+<p>In addition to the target vector <span class="math inline">\(\vec{b}\)</span> and the vectors <span class="math inline">\(\vec{u}\)</span> and <span class="math inline">\(\vec{b}\)</span> that constitute the matrix <span class="math inline">\(\mathit{A}\)</span>, the diagram includes a translucent plane marking <span class="math inline">\(span(\mathit{A})\)</span>. The goal of projection is, given <span class="math inline">\(\vec{b}\)</span> and <span class="math inline">\(\mathit{A}\)</span>, to find the model vector (shown in light green). Once the model vector <span class="math inline">\(\vec{x}\)</span> is known, the residual vector is easy to calculate <span class="math display">\[\vec{r} \equiv \vec{b} - \hat{b}\ .\]</span> Another approach to the problem is to find the residual vector <span class="math inline">\(r\)</span> first, then use that to find the model vector as <span class="math display">\[\hat{b} \equiv \vec{b} - \vec{r}\ .\]</span></p>
+<p>Interpreting such three-dimensional diagrams on a static printed page can be difficult. Being able to interact with the diagrams helps a lot. For instance, to see that the translucent plane in <a href="#fig-b-onto-u-v2" class="quarto-xref">Figure&nbsp;<span>30.3</span></a> contains <span class="math inline">\(\vec{u}\)</span> and <span class="math inline">\(\vec{v}\)</span>, rotate the diagram to look edge-on at the plane so that the plane appears as a line on the screen. At such times, vectors <span class="math inline">\(\vec{u}\)</span> and <span class="math inline">\(\vec{v}\)</span> disappear. There is no component to <span class="math inline">\(\vec{u}\)</span> and <span class="math inline">\(\vec{v}\)</span> that sticks out from the plane; they are entirely embedded in the plane.</p>
 </div>
 </div>
 </section>
-<section id="instructors-preface" class="level2">
-<h2 class="anchored" data-anchor-id="instructors-preface">Instructor’s preface</h2>
-<p>The “MOSAIC” in the book’s title refers to a movement in undergraduate mathematics to integrate <strong>M</strong>odeling, <strong>S</strong>tatistics and data science, <strong>C</strong>omputing, and <strong>C</strong>alculus. Skill in all these areas is needed for successful work in the technical and scientific world. Traditionally, teaching does not honor the strong links among these areas and ignores the advantages of teaching them in a unified way. Indeed, modeling, though often mentioned in calculus textbook blurbs, is hardly taught at all. Introductory statistics courses, even those with a formal pre-requisite of calculus, do not draw on calculus concepts beyond the mention of “area under a curve.” Few and far between are introductory computing courses that reinforce calculus and statistics topics, or calculus courses that develop and build on computing and data skills.</p>
-<p>The isolation of mathematical calculus from disciplines that ought to be considered allies leads to a devastating gap in the education of students. The half-life of a student in a calculus sequence is, roughly speaking, one course. (The decay in participation starts in algebra and trigonometry.) The result is that only a small fraction of students see relevant mathematics of multiple variables and hardly any encounter the powerful concepts of spaces, vectors, and matrix factorizations traditionally reserved for a junior-year linear algebra course. Contemporary statistical modeling techniques, including machine learning, draw heavily on a small core of linear-algebra topics.</p>
-<p>The design of the mosaic serves the goal of providing for all students access to a broad, directly useful education in the mathematical sciences. One component of access is keeping the program small enough to fit in with a plausible student schedule. Our working definition of “small enough” is one-quarter of the first two years of university. Fitting within this envelope, students ought to achieve basic competence in computing, statistics, and calculus.</p>
-<p>Calculus provides opportunities to prepare students well for both modern statistics and computing. The most direct ties to statistics are modeling, functions of multiple variables, and concepts of linear spaces. The relevant links of calculus to computing are extensive and go both ways. To give but one example: It’s impractical for students to construct contour plots without a computer. With a computer at hand, students can learn about mathematical ideas such as gradients and iterative optimization. For instance, constrained optimization is hardly a topic of standard introductory calculus and Lagrange multipliers are mysterious even to many professors. The essential concepts become much clearer when they can be presented using graphical tools of contours and gradient fields.</p>
-<p>A book that attempts to build on the connections among historically distinct disciplines must also resolve inconsistencies in nomenclature and notation. We draw the instructor’s attention to some of these and the policies adopted in the book:</p>
-<ul>
-<li><p><strong>Variable</strong>. In mathematics “variable” is used generically, sometimes meaning “unknown” and other times referring to a known quantity. In computing “variable” is used colloquially to mean “the name of an object,” and in statistics a “variable” refers to data: a column of a data frame or, more generally, a specific attribute of the units of observation that form the rows of the data frame. (See <a href="#sec-data-frames" class="quarto-xref"><span class="quarto-unresolved-ref">sec-data-frames</span></a> for definitions of “data frame” and “unit of observation.”) We reserve “variable” to be used in the statistical sense. Consequently, a “function of several variables” becomes a “function with several inputs.”</p></li>
-<li><p><strong>Output</strong>. Evaluating a function, either a mathematically or on a computer, produces an output. Functions take inputs and produce outputs. Typical names for inputs are, following tradition, the last few letters of the alphabet: <span class="math inline">\(t, u, v, w, x, y, z\)</span>.</p></li>
-<li><p><strong>Function names</strong>. Functions always have a name. <span class="math inline">\(f()\)</span>, <span class="math inline">\(g()\)</span>, <span class="math inline">\(h()\)</span> are the pronouns for discussing functions in general, but in specific applications functions often have more descriptive names, e.g.&nbsp;population() or elev() or risk(). The empty parentheses are a reminder that the thing being named is a function and not an input or parameter. Since <span class="math inline">\(y\)</span> is used as an input name, we never use it for the name of a function or to identify the output of a function. So, <span class="math inline">\(y=mx+b\)</span> is not an esteemed phrase in this book. Instead, when we want to define a straight-line function we write <span class="math inline">\(g(x) \equiv a x + b\)</span> or some other parameterization, for instance <span class="math inline">\(g(x) \equiv a (x - x_0)\)</span>.</p></li>
-<li><p><strong>Special inputs</strong>. Often, a problem or application context requires the identification of some special values for inputs to a function, for instance, argmaxes or zero crossings or starting time. These are often constructed by using an output name (often <span class="math inline">\(t\)</span> through <span class="math inline">\(z\)</span>) with a subscript or a non-numerical superscript as in <span class="math inline">\(y^\star\)</span>.</p></li>
-<li><p><strong>Output</strong> (part 2). When we mean something like “the output of the function <span class="math inline">\(f()\)</span> at its argmax,” we write <span class="math inline">\(f(x_\star)\)</span>, or something similar. When we mean, “the output of function <span class="math inline">\(f()\)</span> at some as yet unspecified input named <span class="math inline">\(x\)</span>,” we write <span class="math inline">\(f(x)\)</span>.</p></li>
-<li><p><strong>Formulas</strong>. An expression like <span class="math inline">\(ax + b\)</span> is a formula. One of the most common ways to define a function is by using a formula. But creating a function from a formula requires some special syntax, as demonstrated earlier with <span class="math inline">\(g(x) \equiv a x + b\)</span>. The names used within the parentheses on the left side of <span class="math inline">\(\equiv\)</span> are the input names. Other symbols in the formula are called <strong>parameters</strong>.</p></li>
-<li><p><strong>Tilde expression</strong>. We use the R language in this book. Those familiar with R know that there is a special kind of expression called a “formula,” for instance <code>a*x + b ~ x</code>. One of the main uses for R formulas is to represent a mathematical formula when creating a function. “Formulas representing formulas” can lead to confusion. We address this by violating the technical vocabulary of R and calling an expression like <code>a*x + b ~ x</code> a “tilde expression.” This name properly draws attention to the <strong>~</strong> (“tilde”) character that is an essential component of R-language “formulas.” A typical use for a tilde expression is to create a computer version of a function. The computer version of <span class="math inline">\(g(x) \equiv a x + b\)</span> is <code>g &lt;- makeFun(a*x + b ~ x)</code>. In this use, the <code>~ x</code> part of the tilde expression identifies the input name, just as does the <span class="math inline">\(x\)</span> in <span class="math inline">\(g(x) \equiv ...\)</span>. You’ll also use tilde expressions for graphics and operations such as differentiation and anti-differentiation.</p></li>
-</ul>
-<p>Those familiar with R may be tempted to use the native function-building syntax, which looks like</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x, a, b) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">*</span>x <span class="sc">+</span> b</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="sec-proj-single-vector" class="level2" data-number="30.2">
+<h2 data-number="30.2" class="anchored" data-anchor-id="sec-proj-single-vector"><span class="header-section-number">30.2</span> Projection onto a single vector</h2>
+<p>As we said, projection involves a vector <span class="math inline">\(\vec{b}\)</span> and a matrix <span class="math inline">\(\mathit{A}\)</span> that defines the model space. We will start with the simplest case, where <span class="math inline">\(\mathit{A}\)</span> has only one column. That column is, of course, a vector. We will call that vector <span class="math inline">\(\vec{a}\)</span>, so the projection problem is to project <span class="math inline">\(\vec{b}\)</span> onto the subspace spanned by <span class="math inline">\(\vec{a}\)</span>.</p>
+<p><a href="#fig-b-onto-a" class="quarto-xref">Figure&nbsp;<span>30.4</span></a> diagrams the situation of projecting the target vector <span class="math inline">\(\vec{b}\)</span> onto the model space <span class="math inline">\(\vec{a}\)</span>.</p>
+<div id="fig-b-onto-a" class="quarto-float quarto-figure quarto-figure-center anchored" data-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-b-onto-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="www/project-b-onto-a.png" class="img-fluid figure-img" data-align="center">
 </div>
-<p>We strongly encourage you to use <code>makeFun()</code> instead. One reason is to reinforce the use of tilde expressions which are needed to identify the “with-respect-to” input in differentiation and anti-differentiation, as well as the frame of a graph. Another reason has to do with rules of scoping in computer languages, which have no obvious analog in mathematical notation. We prefer to leave scoping to a computer science class, rather than making it a pre-requisite for calculus. <code>makeFun()</code> sidesteps the scoping difficulties.</p>
-<ul>
-<li><strong>Differential notation</strong>. Historically, Leibniz’s lovely ratio notation, for instance, <span class="math display">\[\frac{dy}{dx}\ ,\]</span> helped generations of students learn differential calculus and see the connections to integral calculus. It is, however, wordy, which is why other notations—<span class="math inline">\(f'\)</span> or <span class="math inline">\(\dot{x}\)</span> or <span class="math inline">\(f^{(1)}\)</span> so often appear. But Leibniz could hardly have anticipated a future in which writing is done mainly with keyboards and linear sequences of characters. There is no mainstream computer language in which <code>df/dx</code> or <code>f'</code> or <code>\dot{x}</code> or <code>f^{(1)}</code> are valid names. To simplify the use of the computer, we use <span class="math inline">\(\partial_x y\)</span> notation for differentiation. This can be easily morphed into a legal computer name: <code>dx_y</code>. We use <span class="math inline">\(\partial\)</span> instead of the Latin <span class="math inline">\(d\)</span>, partly to mark differentiation as something special and partly because we will use notation like <span class="math inline">\(\partial_{xt} g\)</span> when dealing with functions of multiple variables, or <span class="math inline">\(\partial_{xx} f\)</span> for second derivatives.</li>
-</ul>
-<p>The book is designed to support six to ten credit hours of calculus study. The algebra pre-requisites are kept to a minimum. Trigonometric identities are never used. In the starting “Preliminaries” part of the book nine “pattern-book” algebraic functions are introduced that form the basis for modeling work. “Preliminaries” also introduces computing notation, particularly that used for graphing functions.</p>
-<p>“Modeling,” Block I, introduces non-calculus topics that are essential to the rest of the book. It is worth spending considerable class time on Block I, regardless of the previous experience of students. Block II, “Differentiation,” is self-explanatory to a calculus instructor. Absence of extensive drill on symbolic differentiation of obscure functions or the use of Taylor polynomials or l’Hopital’s rule to provide even more drill is entirely intentional. Our goal in <em>MOSAIC Calculus</em> is to ensure that students understand what a derivative is and—importantly—what it is for. Symbolic differentiation is limited to the “pattern-book” functions and other functions constructed as compositions, products, and linear combinations of the pattern-book function.</p>
-<p>Block III, “Vectors and linear combinations,” does not depend on previously covering differentiation. The sequence Preliminaries-Modeling-Vectors could make a suitable 3- or 4-credit course for students entering data science. Block III might have been reasonably titled “Linear algebra.” But the universal emphasis on determinants and inverses of square matrices in a conventional linear algebra course is not a suitable introduction for working with data, and we did not want to suggest that all the conventional topics of linear algebra are included.</p>
-<p>Block IV, “Accumulation,” builds on Block II, where differentiation is treated less as an algebraic process than as a relationship between functions. Our focus is on occasions when anti-differentiation is a useful modeling tool for extracting certain forms of information from a function. Instructors are advised to minimize or wholly avoid the area-under-a-curve metaphor. Like cigarettes, that metaphor is addictive and creates dis-ease with the more important roles for accumulation in contexts like dynamics. The final chapter of Block IV is about symbolic integration of functions constructed from from the pattern-book functions. Including it is a concession to administrative practices at universities where topics like “integration by parts” are included in hard-to-change course-catalog copy. Those techniques are not used elsewhere in the book.</p>
-<p>Block V, “Dynamics,” introduces <em>systems</em>, that is, wholes made of multiple connected parts. Although the context used is differential equations, techniques for finding solutions are not central. More important are the phenomena (e.g.&nbsp;oscillation), the opportunities for modeling and showing how simple mathematical models can provide insight to otherwise seemingly complex natural and social systems, extension of the linear-algebra material from Block III to eigenvalues and eigenvectors, and a glimpse at the surprisingly close connection between exponentials and sinusoids.</p>
-<p>The last block, “Manifestations,” is arranged along different lines than the previous chapters. The point is to show how calculus operations show themselves in a wide variety of contexts. We are not making up opportunities for more drill in symbolic differentiation and anti-differentiation. In the “Probability” chapter, to give an example, what’s central is the relationships between functions. One of these relationships is standard in calculus books, that between what’s called the CDF and the PDF. Less basic and not at all standard, the relationship between prior, likelihood, and posterior functions. It is not required to cover all the chapters in “Manifestations.” They do not much depend one on the other. Choose the ones that are best suited to the directions in which your students are heading. And the topics need not be delayed to the end of the course. For instance, the constrained optimization topic in “Optimization” can be handled with the material up to Block IV.</p>
-<p>Many highly expert calculus instructors have taught with these materials. Some of their experiences may be relevant to instructors who haven’t yet used <em>MOSAIC Calculus</em>. First, the experts are surprised by how many esteemed, traditional calculus topics are given short shrift or even omitted altogether, and even more surprised that their exclusion does not diminish the course. Second, many experts find that the calculus in this book is not calculus as they have been trained to think about it, but that nonetheless “it works.” Third, instructors who try to avoid spending class time on the computational elements of the book find that their students echo the avoidance. As these instructors go through their first year, they discover that there are only a handful of computational patterns (e.g.&nbsp;tilde expressions, domains) and that students would have avoided many headaches by facing them head-on from the start of the course. Some advice: Don’t think that you have to learn R before you can master using R to teach this book. The mosaic software that powers this book is a better place to start than with the many more general introductions and tutorials on R computing available in printed and video form.</p>
-<p>Most universally, even the expert instructors find they are unfamiliar with much of the material. Leading examples are dimensions of measurement, splines, mechanics (e.g.&nbsp;torque), the uses of orthogonalization, and, broadly, dynamics. Teaching unfamiliar material is admittedly stressful, but highly beneficial to yourself and your students. Dimensions and units, in particular, are a great guide to thinking; take every opportunity to ask your class what are the dimensions of the inputs to and outputs from a function and whether an operation makes sense in terms of dimensions. Consistently, even tradition-minded experts find that thinking about physical dimension gives them unexpected insight into the tasks and methods of calculus.</p>
-<ul>
-<li>Daniel Kaplan, Saint Paul, Minnesota, October 2024</li>
-</ul>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-b-onto-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;30.4: The geometry of projecting <span class="math inline">\(\vec{b}\)</span> onto <span class="math inline">\(\vec{a}\)</span> to produce the model vector <span class="math inline">\(\hat{b}\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>The angle between <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> is labelled <span class="math inline">\(\theta\)</span>. <a href="28-Vectors.html#sec-angles-dot-product" class="quarto-xref"><span>Section 28.5</span></a> shows how to calculate an angle such as <span class="math inline">\(\theta\)</span> from <span class="math inline">\(\vec{b}\)</span> and <span class="math inline">\(\vec{a}\)</span> with a dot product:</p>
+<p><span class="math display">\[\cos(\theta) = \frac{\vec{b} \bullet \vec{a}}{\len{b}\, \len{a}}\ .\]</span> Knowing <span class="math inline">\(\theta\)</span> and <span class="math inline">\(\len{b}\)</span>, you can calculate the length of the model vector <span class="math inline">\(\hat{b}\)</span>: <span class="math display">\[\len{s} = \len{b} \cos(\theta) = \vec{b} \bullet \vec{a} / \len{a}\ .\]</span></p>
+<p>Scaling <span class="math inline">\(\vec{a}\)</span> by <span class="math inline">\(\len{a}\)</span> would produce a vector oriented in the model subspace, but it would have the wrong length: length <span class="math inline">\(\len{a} \len{s}\)</span>. So we need to divide <span class="math inline">\(\vec{a}\)</span> by <span class="math inline">\(\len{a}\)</span> to get a <strong><em>unit length vector</em></strong> oriented along <span class="math inline">\(\vec{a}\)</span>:</p>
+<p><span class="math display">\[\text{model vector:}\ \ \hat{b} = \left[\vec{b} \bullet \vec{a}\right] \,\vec{a} / {\len{a}^2} = \frac{\vec{b} \bullet \vec{a}}{\vec{a} \bullet \vec{a}}\  \vec{a}.\]</span> . <!-- must have some text before a <div> --></p>
+<div id="try-project-onto" class="quarto-float quarto-figure quarto-figure-center anchored" style="display: none;">
+<figure class="quarto-float quarto-float-try figure">
+<div aria-describedby="try-project-onto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-try quarto-uncaptioned" id="try-project-onto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Try it!&nbsp;30.2
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="#try-project-onto" class="quarto-xref">Try it!&nbsp;<span>30.2</span></a> Projecting one vector onto another
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In R/mosaic, calculate the projection of <span class="math inline">\(\vec{b}\)</span> onto <span class="math inline">\(\vec{a}\)</span> using <code>%onto%</code>. For instance</p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Having found <span class="math inline">\(\hat{b}\)</span>, the residual vector <span class="math inline">\(\vec{r}\)</span> can be calculated as <span class="math inline">\(\vec{b}- \hat{b}\)</span>.</p>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The two properties that a projection satisfies are:</p>
+<ol type="1">
+<li>The residual vector is perpendicular to each and every vector in <span class="math inline">\(\mathit{A}\)</span>. Since in this example, <span class="math inline">\(\mathit{A}\)</span> contains only the one vector <span class="math inline">\(\vec{a}\)</span>, we need only look at <span class="math inline">\(\vec{r} \cdot \vec{a}\)</span> and confirm that it is zero.</li>
+</ol>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ol start="2" type="1">
+<li>The residual vector plus the model vector exactly equals the target vector. Since we computed <code>r &lt;- b - s</code>, we know this must be true, but still …</li>
+</ol>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>If the difference between two vectors is zero for every coordinate, the two vectors must be identical.</p>
+</div>
+</div>
 </section>
-<section id="acknowledgements" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>This project was initiated by the Mathematical Sciences department at the US Air Force Academy. They recognized that a traditional calculus introduction is ill-suited to the needs of STEM in the 21st century.</p>
-<p>Critical support was given by the <a href="http://ardifoundation.org">ARDI Foundation</a> which awarded the <a href="http://www.ardifoundation.org/coors-chair/">Holland H. Coors Chair in Education Technology</a> to one of the project members, Daniel Kaplan. This made possible a year-long residency at USAFA during which time he was able to work unhindered on this project.</p>
-<p>Macalester College, where Kaplan is DeWitt Wallace Professor of Mathematics, Statistics, and Computer science, was the site where the overall framework and many of the materials for a STEM-oriented calculus were developed. Particularly important in the germination were David Bressoud and Jan Serie, respectively chairs of the Macalester math and biology departments, as well as Prof.&nbsp;Thomas Halverson and Prof.&nbsp;Karen Saxe, who volunteered to team teach with Kaplan the first prototype course. Early grant support from the Howard Hughes Medical Foundation and the Keck Foundation provided the resources to carry the prototype course to a point of development where it became the entryway to calculus for Macalester students.</p>
-<p>Profs. Randall Pruim (Calvin University) and Nicholas Horton (Amherst College) were essential collaborators in developing software to support calculus in R. They and Kaplan formed the core team of Project MOSAIC, which was supported by the US National Science Foundation (NSF DUE-0920350).</p>
-<p>Joel Kilty and Alex McAllister at Centre College admired the Macalester course and devoted much work and ingenuity to write a textbook, <em>Mathematical Modeling and Applied Calculus</em> (Oxford Univ. Press), implementing their own version. Their textbook enabled us to reduce the use of sketchy notes in the first offering of this course at USAFA.</p>
+<section id="projection-onto-a-set-of-vectors" class="level2" data-number="30.3">
+<h2 data-number="30.3" class="anchored" data-anchor-id="projection-onto-a-set-of-vectors"><span class="header-section-number">30.3</span> Projection onto a set of vectors</h2>
+<p>As we have just seen, projecting a target <span class="math inline">\(\vec{b}\)</span> onto a single vector is a matter of arithmetic. Now we will expand the technique to project the target vector <span class="math inline">\(\vec{b}\)</span> onto multiple vectors collected into a matrix <span class="math inline">\(\mathit{A}\)</span>. Whereas <a href="#sec-proj-single-vector" class="quarto-xref"><span>Section 30.2</span></a> used trigonometry to find the component of <span class="math inline">\(\vec{b}\)</span> aligned with the single vector <span class="math inline">\(\vec{a}\)</span>, now we have to deal with multiple vectors <strong>at the same time</strong>. The result will be the component of <span class="math inline">\(\vec{b}\)</span> aligned with the <strong>subspace</strong> sponsored by <span class="math inline">\(\mathit{A}\)</span>.</p>
+<p>In one situation, projection is easy: when the vectors in <span class="math inline">\(\mathit{A}\)</span> are <strong>mutually orthogonal</strong>. In this situation, carry out several one-vector-at-a-time projections: <span class="math display">\[
+\vec{p_1} \equiv \modeledby{\vec{b}}{\vec{v_1}}\ \ \ \ \
+\vec{p_2} \equiv \modeledby{\vec{b}}{\vec{v_2}}\ \ \ \ \
+\vec{p_3} \equiv \modeledby{\vec{b}}{\vec{v_3}}\ \ \ \ \
+\text{and so on}\]</span> The projection of <span class="math inline">\(\vec{b}\)</span> onto <span class="math inline">\(\mathit{A}\)</span> will be the sum <span class="math inline">\(\vec{p_1} + \vec{p2} + \vec{p3}\)</span>.</p>
+<div id="try-projecting-set" class="quarto-float quarto-figure quarto-figure-center anchored" style="display: none;">
+<figure class="quarto-float quarto-float-try figure">
+<div aria-describedby="try-projecting-set-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-try quarto-uncaptioned" id="try-projecting-set-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Try it!&nbsp;30.3
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="#try-projecting-set" class="quarto-xref">Try it!&nbsp;<span>30.3</span></a> Projecting a vector onto a subspace
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the following matrix <span class="math inline">\(\mathit{A}\)</span> made up of mutually orthogonal vectors:</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>To confirm that <code>v1</code>, <code>v2</code>, and <code>v3</code> are mutually orthogonal, calculate the dot product between any two of them and observe that, in each case, the result is zero.</p>
+<p>Now construct the one-at-a-time projections:</p>
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>To find the projection of <span class="math inline">\(\vec{b}\)</span> onto the subspace spanned by <span class="math inline">\(\mathit{A}\)</span>, add up the one-at-a-time projections:</p>
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Now we will confirm that <code>b_on_A</code> is the projection of <code>b</code> onto <code>A</code>. The strategy is to construct the residual from the projection.</p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>All that is needed is to confirm that the residual is perpendicular to each and every vector in <code>A</code>:</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+</section>
+<section id="a-becomes-q" class="level2" data-number="30.4">
+<h2 data-number="30.4" class="anchored" data-anchor-id="a-becomes-q"><span class="header-section-number">30.4</span> A becomes Q</h2>
+<p>Now that we have a satisfactory method for projecting <span class="math inline">\(\vec{b}\)</span> onto a matrix <span class="math inline">\(\mathit{A}\)</span> consisting of mutually orthogonal vectors, we need to develop a method for the projection when the vectors in <span class="math inline">\(\mathit{A}\)</span> are <strong><em>not mutually orthogonal</em></strong>. The big picture here is that we will construct a new matrix <span class="math inline">\(\mathit{Q}\)</span> that spans the same space as <span class="math inline">\(\mathit{A}\)</span> but whose vectors are mutually orthogonal. We will construct <span class="math inline">\(\mathit{Q}\)</span> out of linear combinations of the vectors in <span class="math inline">\(\mathit{A}\)</span>, so we can be sure that <span class="math inline">\(span(\mathit{Q}) = span(\mathit{A})\)</span>.</p>
+<p>We introduce the process with an example involving vectors in a 4-dimensional space. <span class="math inline">\(\mathit{A}\)</span> will be a matrix with two columns, <span class="math inline">\(\vec{v_1}\)</span> and <span class="math inline">\(\vec{v_2}\)</span>. Here is the setup for the example vectors and model matrix:</p>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>We start the construction of the <span class="math inline">\(\mathit{Q}\)</span> matrix by pulling in the first vector in <span class="math inline">\(\mathit{A}\)</span>. We will call that vector <span class="math inline">\(\vec{q_1}\)</span></p>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The next <span class="math inline">\(\mathit{Q}\)</span> vector will be constructed to be perpendicular to <span class="math inline">\(\vec{q_1}\)</span> but still in the subspace spanned by <span class="math inline">\(\left[{\Large\strut}\vec{v_1}\ \ \vec{v_2}\right]\)</span>. We can guarantee this will be the case by making the <span class="math inline">\(\mathit{Q}\)</span> vector entirely as a linear combination of <span class="math inline">\(\vec{v_1}\)</span> and <span class="math inline">\(\vec{v_2}\)</span>.</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Since <span class="math inline">\(\vec{q_1}\)</span> and <span class="math inline">\(\vec{q_2}\)</span> are orthogonal and define the same subspace as <span class="math inline">\(\mathit{A}\)</span>, we can construct the projection of <span class="math inline">\(\vec{b}\)</span> onto <span class="math inline">\(\vec{A}\)</span> by adding up the projections of <span class="math inline">\(\vec{b}\)</span> onto the individual vectors in <span class="math inline">\(\mathit{Q}\)</span>, like this:</p>
+<div id="qwebr-insertion-location-13"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>To confirm that this calculation of <span class="math inline">\(\widehat{\strut b}\)</span> is correct, construct the residual vector and show that it is perpendicular to every vector in <span class="math inline">\(\mathit{Q}\)</span> (and therefore in <span class="math inline">\(\mathit{A}\)</span>, which spans the same space).</p>
+<div id="qwebr-insertion-location-14"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Note that we defined <span class="math inline">\(\vec{r} = \vec{b} - \widehat{\strut b}\)</span>, so it is guaranteed that <span class="math inline">\(\vec{r} + \widehat{\strut b}\)</span> will equal <span class="math inline">\(\vec{b}\)</span>.</p>
+<p>This process can be extended to any number of vectors in <span class="math inline">\(\mathit{A}\)</span>. Here is the algorithm for constructing <span class="math inline">\(\mathit{Q}\)</span>:</p>
+<ol type="i">
+<li>Take the first vector from <span class="math inline">\(\mathit{A}\)</span> and call it <span class="math inline">\(\vec{q_1}\)</span>.</li>
+<li>Take the second vector from <span class="math inline">\(\mathit{A}\)</span> and find the residual from projecting it onto <span class="math inline">\(\vec{q_1}\)</span>. This residual will be <span class="math inline">\(\vec{q_2}\)</span>. At this point, the matrix <span class="math inline">\(\left[\strut \vec{q_1}, \ \ \vec{q_2}\right]\)</span> consists of mutually orthogonal vectors.</li>
+<li>Take the third vector from <span class="math inline">\(\mathit{A}\)</span> and project it onto <span class="math inline">\(\left[\strut \vec{q_1}, \ \ \vec{q_2}\right]\)</span>. We can do this because we already have an algorithm for projecting a vector onto a matrix with mutually orthogonal columns. Call the residual from this projection <span class="math inline">\(\mathit{q_3}\)</span>. It will be orthogonal to the vectors in <span class="math inline">\(\left[\strut \vec{q_1}, \ \ \vec{q_2}\right]\)</span>, so all three of the q vectors we’ve created are mutually orthogonal.</li>
+<li>Continue onward, taking the next vector in <span class="math inline">\(\mathit{A}\)</span>, projecting it onto the q-vectors already assembled, and finding the residual from that projection.</li>
+<li>Repeat step (iv) until all the vectors in <span class="math inline">\(\mathit{A}\)</span> have been handled.</li>
+</ol>
+<div id="try-project-in-10" class="quarto-float quarto-figure quarto-figure-center anchored" style="display: none;">
+<figure class="quarto-float quarto-float-try figure">
+<div aria-describedby="try-project-in-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-try quarto-uncaptioned" id="try-project-in-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Try it!&nbsp;30.4
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="#try-project-in-10" class="quarto-xref">Try it!&nbsp;<span>30.4</span></a> Projecting in 10-dimensional space
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Project a <span class="math inline">\(\vec{b}\)</span> that lives in 10-dimensional space onto the subspace sponsored by five vectors that are not mutually orthogonal:</p>
+<div id="qwebr-insertion-location-15"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Confirm using dot products that the <code>v</code>-vectors are <strong>not</strong> mutually orthogonal.</p>
+<p>Now to construct the vectors in <span class="math inline">\(\mathit{Q}\)</span>.</p>
+<div id="qwebr-insertion-location-16"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Since <code>Q</code> consists of mutually orthogonal vectors, the projection of <code>b</code> onto <code>Q</code> can be made one vector at a time.</p>
+<div id="qwebr-insertion-location-17"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
 
 
 </section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>The motivation for these names will become apparent in later chapters.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -2973,15 +3111,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../Linear-combinations/29-linear-combinations.html" class="pagination-link" aria-label="Linear combinations of vectors">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Linear combinations of vectors</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./preliminaries-part.html" class="pagination-link" aria-label="PRELIMINARIES">
-        <span class="nav-page-text">PRELIMINARIES</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Linear-combinations/31-target-problem.html" class="pagination-link" aria-label="The target problem">
+        <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">The target problem</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script type="module">
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/Linear-combinations/30-projection.Rmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script type="module">
 // Handle cell initialization initialization
 qwebrCellDetails.map(
   (entry) => {

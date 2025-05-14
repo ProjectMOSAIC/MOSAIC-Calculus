@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Daniel Kaplan, webr version 05/14/2025">
 
-<title>MOSAIC Calculus</title>
+<title>25&nbsp; Partial change and the gradient vector – MOSAIC Calculus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,60 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./preliminaries-part.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Differentiation/26-approximation.html" rel="next">
+<link href="../Differentiation/24-optim.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -426,7 +392,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"date()","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"plane <- makeFun(a + b*x + c*y ~ x + y, \n                 a = 1, b = -2.5, c = 1.6)\n\ncontour_plot(plane(x, y) ~ x + y, \n             domain(x=-2:2, y=-2:2)) |>\n  gradient_plot(plane(x, y) ~ x + y, domain(x=-1:1, y=-1:1), \n                npts=3, color=\"orange3\", alpha=1) |>\n  gf_refine(coord_fixed()) # make it look square","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1654,7 +1620,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="mosaic-calc-style.css">
+<link rel="stylesheet" href="../mosaic-calc-style.css">
 
 
 
@@ -1664,10 +1630,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./www/Cover-1.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../www/Cover-1.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MOSAIC Calculus</span>
     </a>
   </div>
@@ -1682,7 +1648,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../differentiation-part.html">BLOCK II. Differentiation</a></li><li class="breadcrumb-item"><a href="../Differentiation/25-partial.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Partial change and the gradient vector</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1696,13 +1662,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./preliminaries-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../preliminaries-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PRELIMINARIES</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1711,43 +1677,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/01-quant-fun-space.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/01-quant-fun-space.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quantity, function, space</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/02-notation.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/02-notation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/03-computing.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/03-computing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computing with R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/04-graphs-and-graphics.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/04-graphs-and-graphics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualizing functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/05-pattern-book-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/05-pattern-book-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pattern-book functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/06-describing-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/06-describing-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Describing functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/07-data-functions-graphics.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/07-data-functions-graphics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data, functions, graphics</span></span></a>
   </div>
 </li>
@@ -1755,7 +1721,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./modeling-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../modeling-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK I. Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1764,55 +1730,55 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/08-parameters.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/08-parameters.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parameters</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/09-assembling-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/09-assembling-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Assembling functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/10-functions-with-multiple-inputs.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/10-functions-with-multiple-inputs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Functions with multiple inputs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/11-fitting-features.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/11-fitting-features.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Fitting features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/12-low-order-polynomials.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/12-low-order-polynomials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Low-order polynomials</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/13-operations.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/13-operations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/14-magnitudes.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/14-magnitudes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Magnitude</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/15-dimensions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/15-dimensions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Dimensions and units</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/16-modeling-scientific-method.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/16-modeling-scientific-method.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Modeling and the scientific method</span></span></a>
   </div>
 </li>
@@ -1820,7 +1786,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./differentiation-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../differentiation-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK II. Differentiation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1829,73 +1795,73 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/17-continuous-change.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/17-continuous-change.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Continuous change</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/18-rate-of-change.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/18-rate-of-change.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Rate of change</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/19-evanescent-h.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/19-evanescent-h.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Evanescent h</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/20-computing.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/20-computing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Constructing derivatives</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/21-concavity.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/21-concavity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Concavity and curvature</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/22-cont-and-smooth.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/22-cont-and-smooth.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Continuity and smoothness</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/23-rules.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/23-rules.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Derivatives of assembled functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/24-optim.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/24-optim.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Optimization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/25-partial.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/25-partial.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Partial change and the gradient vector</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/26-approximation.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/26-approximation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Local approximations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/27-taylor.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/27-taylor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Polynomials for approximating functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/Differentiation-projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/Differentiation-projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
@@ -1903,7 +1869,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./linear-combinations-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../linear-combinations-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK III. Vectors and linear combinations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1912,31 +1878,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/28-Vectors.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/28-Vectors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/29-linear-combinations.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/29-linear-combinations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Linear combinations of vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/30-projection.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/30-projection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Projection &amp; residual</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/31-target-problem.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/31-target-problem.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">The target problem</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/32-stat-modeling.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/32-stat-modeling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Statistical modeling and R<sup>2</sup></span></span></a>
   </div>
 </li>
@@ -1944,7 +1910,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./accumulation-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../accumulation-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK IV. Accumulation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1953,37 +1919,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/33-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/33-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Change &amp; accumulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/34-visualizing.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/34-visualizing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/35-integration.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/35-integration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/36-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/36-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/37-euler.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/37-euler.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals step-by-step</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/38-symbolic.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/38-symbolic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
   </div>
 </li>
@@ -1991,7 +1957,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./dynamics-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../dynamics-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK V. Dynamics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -2000,49 +1966,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/39-diff-eq.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/39-diff-eq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/40-solution.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/40-solution.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/41-flow-on-line.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/41-flow-on-line.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/42-flow-on-plane.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/42-flow-on-plane.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/43-modeling.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/43-modeling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/44-equilibria.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/44-equilibria.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/45-eigen.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/45-eigen.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/46-second-order.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/46-second-order.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
   </div>
 </li>
@@ -2050,7 +2016,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./manifestations-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../manifestations-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK VI. Manifestations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -2059,43 +2025,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/47-operations.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/47-operations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/48-splines.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/48-splines.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/49-optimization.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/49-optimization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/50-probability.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/50-probability.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/51-future-value.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/51-future-value.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/52-mechanics.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/52-mechanics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Mechanics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/53-diffusion.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/53-diffusion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Diffusion</span></span></a>
   </div>
 </li>
@@ -2112,7 +2078,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
+  <a href="../Glossary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
@@ -2128,17 +2094,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#welcome-to-calculus" id="toc-welcome-to-calculus" class="nav-link" data-scroll-target="#welcome-to-calculus">Welcome to calculus</a></li>
-  <li><a href="#instructors-preface" id="toc-instructors-preface" class="nav-link" data-scroll-target="#instructors-preface">Instructor’s preface</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  </ul></li>
+  <li><a href="#calculus-on-two-inputs" id="toc-calculus-on-two-inputs" class="nav-link active" data-scroll-target="#calculus-on-two-inputs"><span class="header-section-number">25.1</span> Calculus on two inputs</a></li>
+  <li><a href="#all-other-things-being-equal" id="toc-all-other-things-being-equal" class="nav-link" data-scroll-target="#all-other-things-being-equal"><span class="header-section-number">25.2</span> All other things being equal</a></li>
+  <li><a href="#sec-gradient-vector" id="toc-sec-gradient-vector" class="nav-link" data-scroll-target="#sec-gradient-vector"><span class="header-section-number">25.3</span> Gradient vector</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/Differentiation/25-partial.Rmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/loader.js"></script>
 <script type="module" id="qwebr-monaco-editor-init">
 
@@ -2424,21 +2387,15 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../differentiation-part.html">BLOCK II. Differentiation</a></li><li class="breadcrumb-item"><a href="../Differentiation/25-partial.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Partial change and the gradient vector</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">MOSAIC Calculus</h1>
+<h1 class="title"><span id="sec-partial-change" class="quarto-section-identifier"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Partial change and the gradient vector</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Daniel Kaplan, webr version 05/14/2025 </p>
-          </div>
-  </div>
     
   
     
@@ -2449,108 +2406,327 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<section id="welcome-to-calculus" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="welcome-to-calculus">Welcome to calculus</h2>
-<p>Calculus is the set of concepts and techniques that form the mathematical basis for dealing with motion, growth, decay, and oscillation. The phenomena can be as simple as a ball arcing ballistically through the air or as complex as turbulent airflow over a wing generating lift. Calculus is used in biology and business, chemistry, physics and engineering. It is the foundation for weather prediction and understanding climate change. It is the basis for the algorithms for heart rate and blood oxygen measurement by wristwatches. It is a key part of the language of science. The electron orbitals of chemistry, the stresses of bones and beams, and the business cycle of recession and rebound are all understood primarily through calculus.</p>
-<p>Calculus has been central to science from the very beginnings. It is no coincidence that the scientific method was introduced and the language of calculus was invented by the same small group of people during the historical period known as the <a href="https://en.wikipedia.org/wiki/Age_of_Enlightenment"><em>Enlightenment</em></a> in the late 17th century. Learning calculus has always been a badge of honor and an entry ticket to professions. Millions of students’ career ambitions have been enhanced by passing a calculus course or thwarted by lack of access to one.</p>
-<p>In the 1880s, a hit musical featured “the very model of a modern major general.” One of his claims for modernity: “I’m very good at integral and differential calculus.”</p>
-<div id="vid-major-general" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-vid figure">
-<div aria-describedby="vid-major-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Rs3dPaz9nAo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>For a function with one input, the derivative function (with respect to that input) outputs a single quantity at each input value. We have often drawn the quantity as a sloping line. This is easy to do on the two-dimensional surface of paper or a screen.</p>
+<p>It would be silly to restrict our models to using functions of a single variable just so that we can show them on paper or a screen. For functions with multiple inputs, the output of the derivative function will not be a single quantity, but a <em>set of quantities</em>, one for each input. The derivative of a function of multiple inputs <em>with respect to only one of those inputs</em> is called a <strong>partial derivative</strong>. “Partial” is a reasonable word here, because each partial derivative gives only part of the information about the overall derivative with respect to <em>all of the inputs</em>. The set of all the partial derivatives, called the <strong>gradient</strong>, is a way of representing the “slope” of a function of multiple inputs.</p>
+<section id="calculus-on-two-inputs" class="level2 page-columns page-full" data-number="25.1">
+<h2 data-number="25.1" class="anchored" data-anchor-id="calculus-on-two-inputs"><span class="header-section-number">25.1</span> Calculus on two inputs</h2>
+<p>Although we use contour plots for good practical reasons, the <strong><em>graph</em></strong> of a function <span class="math inline">\(g(x,y)\)</span> with two inputs is a surface, as depicted in <a href="../Preliminaries/04-graphs-and-graphics.html#fig-first-surface" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>. The derivative of <span class="math inline">\(g(x,y)\)</span> should encode the information needed to approximate the surface at any input <span class="math inline">\((x,y)\)</span>. In particular, we want the derivative of <span class="math inline">\(g(x,y)\)</span> to tell us the orientation of the <strong><em>tangent plane</em></strong> to the surface.</p>
+<p>A tangent plane is infinite in extent. Let’s use the word <strong><em>facet</em></strong> to refer to a little patch of the tangent plane centered at the point of contact. Each facet is flat. (it is part of a plane!) <a href="#fig-melon-facets" class="quarto-xref">Figure&nbsp;<span>25.1</span></a> shows some facets tangent to a familiar curved surface. No two of the facets are oriented the same way.</p>
+<div id="fig-melon-facets" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-melon-facets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="www/tangent-planes-on-melon.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-vid" id="vid-major-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Video&nbsp;1: A Gilbert and Sullivan opera pays homage to Calculus.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-melon-facets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;25.1: A melon as a model of a curved surface such as the graph of a function of two inputs. Each tangent facet has its own orientation. (Disregard the slight curvature of the small pieces of paper. Summer humidity has interfered with my attempt to model a flat facet with a piece of Post-It paper!
 </figcaption>
 </figure>
 </div>
-<p>What was modern in 1880 is not modern anymore. Yet, amazingly, calculus today is every bit as central to science and technology as ever. Indeed, calculus remains central to fields that were not even imagined in 1880: AI, logistics, economics, and data science, among others. One reason is that science, engineering, and society have now fully adopted the computer for almost all aspects of work, study, and life. The collection and use of data is growing dramatically. Machine learning has become the way human decision makers interact with such data.</p>
-<p>Think about what it means to become “computerized.” To take an everyday example, consider video. Over the span of a human life, we moved from a system which involved people going to theaters to watch the shadows recorded on cellulose film to the distribution over the airwaves by low-resolution television, to the introduction of high-def broadcast video, to on demand streaming from huge libraries of movies. Just about anyone can record, edit, and distribute their own video. The range of topics (including calculus) on which you can access a video tutorial or demonstration is incredibly vast. All of this recent progress is owed to computers.</p>
-<p>The “stuff” on which computers operate, transform, and transmit is always mathematical representations stored as bits. The creation of mathematical representations of objects and events in the real world is essential to every task of any sort that any computer performs. Calculus is a key component of inventing and using such representations.</p>
-<p>You may be scratching your head. If calculus is so important, why is it that many of your friends who took calculus came away wondering what it is for? What’s so important about “slopes” and “areas” and how come your high-school teacher might have had trouble telling you what calculus is for?</p>
-<p>The disconnect between the enthusiasm expressed in the preceding paragraphs and the lived experience of students is very real. There are two major reasons for that disconnect, both of which we tackle head-on in this book.</p>
-<p>First, teachers of mathematics have a deep respect for tradition. Such respect has its merits, but the result is that almost all calculus is taught using methods that were appropriate for the era of paper and pencil—not for the computer era. As you will see, in this book we express the concepts of calculus in a way that carries directly over to the uses of calculus on computers and in working out answers to real-world problems.</p>
-<p>Second, the uses of calculus are enabled not by the topics of Calc I and Calc II alone, but the courses for which Calc I/II are preliminary: linear algebra and dynamics. Only a small fraction of students who start in Calc I ever reach the parts of calculus that are the most useful. Fortunately, there is a large amount of bloat and rote in the standard textbook topics of Calc I/II. This can be removed to make room for the more important topics.</p>
-<p>The computer language used in this book is R. This is a mainstream language in high demand by employers in many fields. The small amount of R that you need to learn for this book will open doors to much greater possibilities. We have augmented R with functions designed to simplify access to calculus-related computations. These functions are provided by the <code>{mosaicCalc}</code> R package and build on other widely used, open-source software for R. We will often refer to the software as a whole as “R/mosaic.”</p>
-<p>For convenience, we place “Active R Chunks” within the text. Often, as in <a href="#lst-in-preface" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-in-preface</span></a>, these will be presented with working R/mosaic commands already included. Just press “Run Code” to have the commands evaluated.</p>
-<div id="lst-in-preface" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-in-preface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;1
+<p>Better than a picture of a summer melon, pick up a hardcover book and place it on a curved surface such as a basketball. The book cover is a flat surface: a facet. The orientation of the cover will match the orientation of the surface at the point of tangency. Change the orientation of the cover and you will find that the point of tangency will change correspondingly.</p>
+<p>If melons and basketballs are not your style, you can play the same game on an interactive graph of a function with two inputs. The snapshot below is a link to an applet that shows the graph of a function as a <strong>blue</strong> surface. You can specify a point on the surface by setting the value of the (x, y) input using the sliders. Display the tangent plane (which will be <strong>green</strong>) at that point by check-marking the “Tangent plane” input. (Acknowledgments to Alfredo Sánchez Alberca who wrote the applet using the GeoGebra math visualization system.)</p>
+<div id="fig-tangent-app" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tangent-app-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p><a href="https://www.geogebra.org/m/wTh7KKd3"><img src="www/geogebra-tangent-app.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tangent-app-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;25.2: An interactive app for visualizing tangent planes. To open, go to <a href="https://www.geogebra.org/m/wTh7KKd3" class="uri">https://www.geogebra.org/m/wTh7KKd3</a>.or simply click on the image. You will want to mark the tangent-plane checkbox in the app to show the green tangent plane.
 </figcaption>
-<div aria-describedby="lst-in-preface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figure>
+</div>
+<p>For the purposes of computation by eye, a contour graph of a surface can be easier to deal with. <a href="#fig-whole-plot" class="quarto-xref">Figure&nbsp;<span>25.3</span></a> shows the contour graph of a smoothly varying function. Three points have been labeled A, B, and C.</p>
+<div id="fig-whole-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-whole-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="25-partial_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-whole-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;25.3: A contour plot of a function of 2 inputs with 3 specific inputs marked A, B, and C.
+</figcaption>
+</figure>
+</div>
+<p>Zooming in on each of the marked points presents a simpler picture for each of them, although one that is different for each point. Each zoomed-in plot contains almost parallel, almost evenly spaced contours. If the surface had been exactly planar over the entire zoomed-in domain, the contours would be <em>exactly</em> parallel and exactly evenly spaced. We can approach such exact parallelness by zooming in more closely around the labeled point.</p>
+<div id="fig-zoomed-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-zoomed-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Near point A</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Near point B</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Near point C</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="25-partial_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Actual function</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="25-partial_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Linear approximation</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="25-partial_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Actual function</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="25-partial_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Linear approximation</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="25-partial_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Actual function</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="25-partial_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Linear approximation</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-zoomed-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;25.4: Zooming in on the neighborhoods of points A, B, and C in <a href="#fig-whole-plot" class="quarto-xref">Figure&nbsp;<span>25.3</span></a> shows a simple, almost planar, local landscape. The tangent plane for each point is the linear approximation. The <span style="color: brown;">brown arrows</span> are <em>gradient vectors</em>, which will be introduced in <a href="#sec-gradient-vector" class="quarto-xref"><span>Section 25.3</span></a>.
+</figcaption>
+</figure>
+</div>
+<p>Just as the function <span class="math inline">\(\line(x) \equiv a x + b\)</span> describes a straight line, the function <span class="math inline">\(\text{plane}(x, y) \equiv a + b x + c y\)</span> describes a plane whose orientation is specified by the value of the parameters <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span>. (Parameter <span class="math inline">\(a\)</span> is about the vertical location of the plane, not its orientation.)</p>
+<p>The linear approximation shown in each panel of <a href="#fig-zoomed-plot" class="quarto-xref">Figure&nbsp;<span>25.4</span></a> has the same orientation as the actual function; the contours face in the same way.</p>
+<p>Remember that the point of constructing such facets is to generalize the idea of a derivative from a function of one input <span class="math inline">\(f(x)\)</span> to functions of two or more inputs such as <span class="math inline">\(g(x,y)\)</span>. Just as the derivative <span class="math inline">\(\partial_x f(x_0)\)</span> reflects the <strong><em>slope</em></strong> of the <em>line</em> tangent to the graph of <span class="math inline">\(f(x)\)</span> at <span class="math inline">\(x=x_0\)</span>, our plan for the “derivative” of <span class="math inline">\(g(x_0,y_0)\)</span> is to represent the <strong><em>orientation</em></strong> of the facet tangent to the graph of <span class="math inline">\(g(x,y)\)</span> at <span class="math inline">\((x=x_0, y=y_0)\)</span>. The question for us now is what information is needed to specify an orientation.</p>
+<p>One clue comes from the formula for a function whose graph is a plane oriented in a particular direction:</p>
+<p><span class="math display">\[\text{plane}(x,y) \equiv a + b x + cy\]</span></p>
+<div id="try-plane-orientation" class="quarto-float quarto-figure quarto-figure-center anchored" style="display: none;">
+<figure class="quarto-float quarto-float-try figure">
+<div aria-describedby="try-plane-orientation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-try quarto-uncaptioned" id="try-plane-orientation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Try it!&nbsp;25.1
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled page-columns page-full">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="#try-plane-orientation" class="quarto-xref">Try it!&nbsp;<span>25.1</span></a> R/mosaic: Orientation of a plane
+</div>
+</div>
+<div class="callout-body-container callout-body page-columns page-full">
+<p>To explore the roles of the parameters <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> in setting the orientation of the plane, use <a href="#lst-plane-orientation" class="quarto-xref">Active R chunk&nbsp;<span>25.1</span></a>. The R/mosaic code defines <code>plane()</code>, a function of two inputs whose surface graph is a planar facet. Then this facet is graphed as a contour plot. Change the numerical values of <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> and observe how the orientation of the planar surface changes in the graphs.</p>
+<div id="lst-plane-orientation" class="column-page-right listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-plane-orientation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Active R chunk&nbsp;25.1
+</figcaption>
+<div aria-describedby="lst-plane-orientation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </figure>
 </div>
-<p>Sometimes, you will be asked to make modifications to the commands in a chunk so that you can see for yourself how the output changes.</p>
+<p>By varying <span class="math inline">\(a\)</span> while holding <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> constant, you can that the value of <span class="math inline">\(a\)</span> is irrelevant to the orientation of the plane, just as the intercept of a straight-line graph is irrelevant to the slope of that line. <a href="#sec-gradient-vector" class="quarto-xref"><span>Section 25.3</span></a> introduces the <em>gradient vector</em>. As a preview of things to come, we’ve drawn the gradient vector at each of nine positions as <span style="color: brown;">brown arrows</span>.</p>
+</div>
+</div>
+<div id="try-move-book" class="quarto-float quarto-figure quarto-figure-center anchored" style="display: none;">
+<figure class="quarto-float quarto-float-try figure">
+<div aria-describedby="try-move-book-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-try quarto-uncaptioned" id="try-move-book-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Try it!&nbsp;25.2
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="#try-move-book" class="quarto-xref">Try it!&nbsp;<span>25.2</span></a> Plane orientation, analog version
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An instructive experience is to pick up a rigid, flat object, for instance a smartphone or hardcover book. Hold the object level with pinched fingers at the mid-point of each of the short ends, as shown in <a href="#fig-hold-book" class="quarto-xref">Figure&nbsp;<span>25.5</span></a> (left).</p>
+<div id="fig-hold-book" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hold-book-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="www/level-book.png" class="img-fluid figure-img"></p>
+<figcaption>(a) A level surface</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="www/rotated-book.png" class="img-fluid figure-img"></p>
+<figcaption>(b) Rotated along the axis running top to bottom</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="www/tipped-book.png" class="img-fluid figure-img"></p>
+<figcaption>(c) Rotated along the axis running left to right</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hold-book-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;25.5: Two orientations for tipping a planar facet (the black pad). A dog (the paw) is supervising the activity.
+</figcaption>
+</figure>
+</div>
+<p>You can tip the object in one direction by raising or lowering one hand. (panel b) You can tip the object in the other coordinate (panel c) by rotating your thumb and forefinger while keeping hand level constant. By combining these two motions, you can orient the surface of the object in a wide range of directions.</p>
+<p>Pilots or sailors know that the orientation of an object—a plane or a boat—is described by three parameter: pitch, roll, and yaw. What’s different for a planar facet? It has no front or back end, unlike a plane or boat, so yaw doesn’t apply. Only pitch and roll are needed to describe the orientation of the facet.</p>
+</div>
+</div>
+<p>The point here is to show that two numbers are sufficient to dictate the orientation of a plane. Referring to <a href="#fig-hold-book" class="quarto-xref">Figure&nbsp;<span>25.5</span></a> these are 1) the amount that one hand is raised relative to the other and 2) the angle of rotation around the hand-to-hand axis.</p>
+<p>Similarly, in the formula for a plane, the orientation is set by two numbers, <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> in <span class="math inline">\(\text{plane}(x, y) \equiv a + b x + c y\)</span>.</p>
+<p>How do we find the right <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> for the tangent facet to a function <span class="math inline">\(g(x,y)\)</span> at a specific input <span class="math inline">\((x_0, y_0)\)</span>? Taking slices of <span class="math inline">\(g(x,y)\)</span> provides the answer. In particular, these two slices: <span class="math display">\[\text{slice}_1(x) \equiv g(x, y_0) = a + b\, x + c\, y_0 \\ \text{slice}_2(y) \equiv g(x_0, y) = a + b x_0 + c\, y\]</span></p>
+<p>Look carefully at the formulas for the slices. In <span class="math inline">\(\text{slice}_1(x)\)</span>, the value of <span class="math inline">\(y\)</span> is being held constant at <span class="math inline">\(y=y_0\)</span>. Similarly, in <span class="math inline">\(\text{slice}_2(y)\)</span> the value of <span class="math inline">\(x\)</span> is held constant at <span class="math inline">\(x=x_0\)</span>.</p>
+<p>The parameters <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> can be read out from the derivatives of the respective slices: <span class="math inline">\(b\)</span> is equal to the derivative of the slice<span class="math inline">\(_1\)</span> function with respect to <span class="math inline">\(x\)</span> evaluated at <span class="math inline">\(x=x_0\)</span>, while <span class="math inline">\(c\)</span> is the derivative of the slice<span class="math inline">\(_2\)</span> function with respect to <span class="math inline">\(y\)</span> evaluated at <span class="math inline">\(y=y_0\)</span>. Or, in the more compact mathematical notation:</p>
+<p><span class="math display">\[b = \partial_x \text{slice}_1(x)\left.\strut\right|_{x=x_0} \ \ \text{and}\ \ c=\partial_y \text{slice}_2(y)\left.\strut\right|_{y=y_0}\]</span> These derivatives of slice functions are called <strong><em>partial derivatives</em></strong>. The word “partial” refers to examining just one input at a time. In the above formulas, the <span class="math inline">\({\large |}_{x=x_0}\)</span> means to evaluate the derivative at <span class="math inline">\(x=x_0\)</span> and <span class="math inline">\({\large |}_{y=y_0}\)</span> means something similar.</p>
+<p>You need not create the slices explicitly to calculate the partial derivatives. Simply differentiate <span class="math inline">\(g(x, y)\)</span> with respect to <span class="math inline">\(x\)</span> to get parameter <span class="math inline">\(b\)</span> and differentiate <span class="math inline">\(g(x, y)\)</span> with respect to <span class="math inline">\(y\)</span> to get parameter <span class="math inline">\(c\)</span>. To demonstrate, we will make use of the <strong><em>sum</em></strong> rule: <span class="math display">\[\partial_x g(x, y) = \underbrace{\partial_x a}_{=0} + \underbrace{\partial_x b x}_{=b} + \underbrace{\partial_x cy}_{=0} = b\]</span> Similarly, <span class="math display">\[\partial_y g(x, y) = \underbrace{\partial_y a}_{=0} + \underbrace{\partial_y b x}_{=0} + \underbrace{\partial_y cy}_{=c} = c\]</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Accessing software
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This book, as well as the exercises in the MOSAIC Calculus <a href="https://dtkaplan.github.io/MC-Workbook/"><em>Workbook</em></a>, provide immediate access to R/mosaic software via interactive elements such as <a href="#lst-in-preface" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-in-preface</span></a> that run in your browser.</p>
-<p>There are also versions of R that are provided as stand-alone applications or web services. The most popular of these, <em>RStudio</em>, includes rich facilities for managing large projects and constructing complex documents. (This book is written using <em>RStudio</em> and the <em>quarto</em> document system.)</p>
-<p>For most students learning Calculus with <em>MOSAIC Calculus</em>, the run-in-your-browser version of R will be sufficient. (The same applies to statistics students working with <a href="https://dtkaplan.github.io/Lessons-in-statistical-thinking/"><em>Lessons in Statistical Thinking</em></a>.) Instructors may prefer to work within the RStudio document system. Some instructors even introduce all their students to RStudio for writing reports, etc. Wherever you run the software—in-the-browser or using RStudio—it’s all the same language and works the same way.</p>
+<p>Get in the habit of noticing the subscript on the differentiation symbol <span class="math inline">\(\partial\)</span>. When taking, for instance, <span class="math inline">\(\partial_y f(x,y,z, \ldots)\)</span>, all inputs other than <span class="math inline">\(y\)</span> are to be <strong><em>held constant</em></strong>. Some examples:</p>
+<p><span class="math display">\[\partial_y 3 x^2 = 0\ \ \text{but}\ \ \
+\partial_x 3 x^2 = 6x\\
+\ \\
+\partial_y 2 x^2 y = 2x^2\ \ \text{but}\ \ \
+\partial_x 2 x^2 y = 4 x y
+\]</span></p>
 </div>
 </div>
 </section>
-<section id="instructors-preface" class="level2">
-<h2 class="anchored" data-anchor-id="instructors-preface">Instructor’s preface</h2>
-<p>The “MOSAIC” in the book’s title refers to a movement in undergraduate mathematics to integrate <strong>M</strong>odeling, <strong>S</strong>tatistics and data science, <strong>C</strong>omputing, and <strong>C</strong>alculus. Skill in all these areas is needed for successful work in the technical and scientific world. Traditionally, teaching does not honor the strong links among these areas and ignores the advantages of teaching them in a unified way. Indeed, modeling, though often mentioned in calculus textbook blurbs, is hardly taught at all. Introductory statistics courses, even those with a formal pre-requisite of calculus, do not draw on calculus concepts beyond the mention of “area under a curve.” Few and far between are introductory computing courses that reinforce calculus and statistics topics, or calculus courses that develop and build on computing and data skills.</p>
-<p>The isolation of mathematical calculus from disciplines that ought to be considered allies leads to a devastating gap in the education of students. The half-life of a student in a calculus sequence is, roughly speaking, one course. (The decay in participation starts in algebra and trigonometry.) The result is that only a small fraction of students see relevant mathematics of multiple variables and hardly any encounter the powerful concepts of spaces, vectors, and matrix factorizations traditionally reserved for a junior-year linear algebra course. Contemporary statistical modeling techniques, including machine learning, draw heavily on a small core of linear-algebra topics.</p>
-<p>The design of the mosaic serves the goal of providing for all students access to a broad, directly useful education in the mathematical sciences. One component of access is keeping the program small enough to fit in with a plausible student schedule. Our working definition of “small enough” is one-quarter of the first two years of university. Fitting within this envelope, students ought to achieve basic competence in computing, statistics, and calculus.</p>
-<p>Calculus provides opportunities to prepare students well for both modern statistics and computing. The most direct ties to statistics are modeling, functions of multiple variables, and concepts of linear spaces. The relevant links of calculus to computing are extensive and go both ways. To give but one example: It’s impractical for students to construct contour plots without a computer. With a computer at hand, students can learn about mathematical ideas such as gradients and iterative optimization. For instance, constrained optimization is hardly a topic of standard introductory calculus and Lagrange multipliers are mysterious even to many professors. The essential concepts become much clearer when they can be presented using graphical tools of contours and gradient fields.</p>
-<p>A book that attempts to build on the connections among historically distinct disciplines must also resolve inconsistencies in nomenclature and notation. We draw the instructor’s attention to some of these and the policies adopted in the book:</p>
-<ul>
-<li><p><strong>Variable</strong>. In mathematics “variable” is used generically, sometimes meaning “unknown” and other times referring to a known quantity. In computing “variable” is used colloquially to mean “the name of an object,” and in statistics a “variable” refers to data: a column of a data frame or, more generally, a specific attribute of the units of observation that form the rows of the data frame. (See <a href="#sec-data-frames" class="quarto-xref"><span class="quarto-unresolved-ref">sec-data-frames</span></a> for definitions of “data frame” and “unit of observation.”) We reserve “variable” to be used in the statistical sense. Consequently, a “function of several variables” becomes a “function with several inputs.”</p></li>
-<li><p><strong>Output</strong>. Evaluating a function, either a mathematically or on a computer, produces an output. Functions take inputs and produce outputs. Typical names for inputs are, following tradition, the last few letters of the alphabet: <span class="math inline">\(t, u, v, w, x, y, z\)</span>.</p></li>
-<li><p><strong>Function names</strong>. Functions always have a name. <span class="math inline">\(f()\)</span>, <span class="math inline">\(g()\)</span>, <span class="math inline">\(h()\)</span> are the pronouns for discussing functions in general, but in specific applications functions often have more descriptive names, e.g.&nbsp;population() or elev() or risk(). The empty parentheses are a reminder that the thing being named is a function and not an input or parameter. Since <span class="math inline">\(y\)</span> is used as an input name, we never use it for the name of a function or to identify the output of a function. So, <span class="math inline">\(y=mx+b\)</span> is not an esteemed phrase in this book. Instead, when we want to define a straight-line function we write <span class="math inline">\(g(x) \equiv a x + b\)</span> or some other parameterization, for instance <span class="math inline">\(g(x) \equiv a (x - x_0)\)</span>.</p></li>
-<li><p><strong>Special inputs</strong>. Often, a problem or application context requires the identification of some special values for inputs to a function, for instance, argmaxes or zero crossings or starting time. These are often constructed by using an output name (often <span class="math inline">\(t\)</span> through <span class="math inline">\(z\)</span>) with a subscript or a non-numerical superscript as in <span class="math inline">\(y^\star\)</span>.</p></li>
-<li><p><strong>Output</strong> (part 2). When we mean something like “the output of the function <span class="math inline">\(f()\)</span> at its argmax,” we write <span class="math inline">\(f(x_\star)\)</span>, or something similar. When we mean, “the output of function <span class="math inline">\(f()\)</span> at some as yet unspecified input named <span class="math inline">\(x\)</span>,” we write <span class="math inline">\(f(x)\)</span>.</p></li>
-<li><p><strong>Formulas</strong>. An expression like <span class="math inline">\(ax + b\)</span> is a formula. One of the most common ways to define a function is by using a formula. But creating a function from a formula requires some special syntax, as demonstrated earlier with <span class="math inline">\(g(x) \equiv a x + b\)</span>. The names used within the parentheses on the left side of <span class="math inline">\(\equiv\)</span> are the input names. Other symbols in the formula are called <strong>parameters</strong>.</p></li>
-<li><p><strong>Tilde expression</strong>. We use the R language in this book. Those familiar with R know that there is a special kind of expression called a “formula,” for instance <code>a*x + b ~ x</code>. One of the main uses for R formulas is to represent a mathematical formula when creating a function. “Formulas representing formulas” can lead to confusion. We address this by violating the technical vocabulary of R and calling an expression like <code>a*x + b ~ x</code> a “tilde expression.” This name properly draws attention to the <strong>~</strong> (“tilde”) character that is an essential component of R-language “formulas.” A typical use for a tilde expression is to create a computer version of a function. The computer version of <span class="math inline">\(g(x) \equiv a x + b\)</span> is <code>g &lt;- makeFun(a*x + b ~ x)</code>. In this use, the <code>~ x</code> part of the tilde expression identifies the input name, just as does the <span class="math inline">\(x\)</span> in <span class="math inline">\(g(x) \equiv ...\)</span>. You’ll also use tilde expressions for graphics and operations such as differentiation and anti-differentiation.</p></li>
-</ul>
-<p>Those familiar with R may be tempted to use the native function-building syntax, which looks like</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x, a, b) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">*</span>x <span class="sc">+</span> b</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We strongly encourage you to use <code>makeFun()</code> instead. One reason is to reinforce the use of tilde expressions which are needed to identify the “with-respect-to” input in differentiation and anti-differentiation, as well as the frame of a graph. Another reason has to do with rules of scoping in computer languages, which have no obvious analog in mathematical notation. We prefer to leave scoping to a computer science class, rather than making it a pre-requisite for calculus. <code>makeFun()</code> sidesteps the scoping difficulties.</p>
-<ul>
-<li><strong>Differential notation</strong>. Historically, Leibniz’s lovely ratio notation, for instance, <span class="math display">\[\frac{dy}{dx}\ ,\]</span> helped generations of students learn differential calculus and see the connections to integral calculus. It is, however, wordy, which is why other notations—<span class="math inline">\(f'\)</span> or <span class="math inline">\(\dot{x}\)</span> or <span class="math inline">\(f^{(1)}\)</span> so often appear. But Leibniz could hardly have anticipated a future in which writing is done mainly with keyboards and linear sequences of characters. There is no mainstream computer language in which <code>df/dx</code> or <code>f'</code> or <code>\dot{x}</code> or <code>f^{(1)}</code> are valid names. To simplify the use of the computer, we use <span class="math inline">\(\partial_x y\)</span> notation for differentiation. This can be easily morphed into a legal computer name: <code>dx_y</code>. We use <span class="math inline">\(\partial\)</span> instead of the Latin <span class="math inline">\(d\)</span>, partly to mark differentiation as something special and partly because we will use notation like <span class="math inline">\(\partial_{xt} g\)</span> when dealing with functions of multiple variables, or <span class="math inline">\(\partial_{xx} f\)</span> for second derivatives.</li>
-</ul>
-<p>The book is designed to support six to ten credit hours of calculus study. The algebra pre-requisites are kept to a minimum. Trigonometric identities are never used. In the starting “Preliminaries” part of the book nine “pattern-book” algebraic functions are introduced that form the basis for modeling work. “Preliminaries” also introduces computing notation, particularly that used for graphing functions.</p>
-<p>“Modeling,” Block I, introduces non-calculus topics that are essential to the rest of the book. It is worth spending considerable class time on Block I, regardless of the previous experience of students. Block II, “Differentiation,” is self-explanatory to a calculus instructor. Absence of extensive drill on symbolic differentiation of obscure functions or the use of Taylor polynomials or l’Hopital’s rule to provide even more drill is entirely intentional. Our goal in <em>MOSAIC Calculus</em> is to ensure that students understand what a derivative is and—importantly—what it is for. Symbolic differentiation is limited to the “pattern-book” functions and other functions constructed as compositions, products, and linear combinations of the pattern-book function.</p>
-<p>Block III, “Vectors and linear combinations,” does not depend on previously covering differentiation. The sequence Preliminaries-Modeling-Vectors could make a suitable 3- or 4-credit course for students entering data science. Block III might have been reasonably titled “Linear algebra.” But the universal emphasis on determinants and inverses of square matrices in a conventional linear algebra course is not a suitable introduction for working with data, and we did not want to suggest that all the conventional topics of linear algebra are included.</p>
-<p>Block IV, “Accumulation,” builds on Block II, where differentiation is treated less as an algebraic process than as a relationship between functions. Our focus is on occasions when anti-differentiation is a useful modeling tool for extracting certain forms of information from a function. Instructors are advised to minimize or wholly avoid the area-under-a-curve metaphor. Like cigarettes, that metaphor is addictive and creates dis-ease with the more important roles for accumulation in contexts like dynamics. The final chapter of Block IV is about symbolic integration of functions constructed from from the pattern-book functions. Including it is a concession to administrative practices at universities where topics like “integration by parts” are included in hard-to-change course-catalog copy. Those techniques are not used elsewhere in the book.</p>
-<p>Block V, “Dynamics,” introduces <em>systems</em>, that is, wholes made of multiple connected parts. Although the context used is differential equations, techniques for finding solutions are not central. More important are the phenomena (e.g.&nbsp;oscillation), the opportunities for modeling and showing how simple mathematical models can provide insight to otherwise seemingly complex natural and social systems, extension of the linear-algebra material from Block III to eigenvalues and eigenvectors, and a glimpse at the surprisingly close connection between exponentials and sinusoids.</p>
-<p>The last block, “Manifestations,” is arranged along different lines than the previous chapters. The point is to show how calculus operations show themselves in a wide variety of contexts. We are not making up opportunities for more drill in symbolic differentiation and anti-differentiation. In the “Probability” chapter, to give an example, what’s central is the relationships between functions. One of these relationships is standard in calculus books, that between what’s called the CDF and the PDF. Less basic and not at all standard, the relationship between prior, likelihood, and posterior functions. It is not required to cover all the chapters in “Manifestations.” They do not much depend one on the other. Choose the ones that are best suited to the directions in which your students are heading. And the topics need not be delayed to the end of the course. For instance, the constrained optimization topic in “Optimization” can be handled with the material up to Block IV.</p>
-<p>Many highly expert calculus instructors have taught with these materials. Some of their experiences may be relevant to instructors who haven’t yet used <em>MOSAIC Calculus</em>. First, the experts are surprised by how many esteemed, traditional calculus topics are given short shrift or even omitted altogether, and even more surprised that their exclusion does not diminish the course. Second, many experts find that the calculus in this book is not calculus as they have been trained to think about it, but that nonetheless “it works.” Third, instructors who try to avoid spending class time on the computational elements of the book find that their students echo the avoidance. As these instructors go through their first year, they discover that there are only a handful of computational patterns (e.g.&nbsp;tilde expressions, domains) and that students would have avoided many headaches by facing them head-on from the start of the course. Some advice: Don’t think that you have to learn R before you can master using R to teach this book. The mosaic software that powers this book is a better place to start than with the many more general introductions and tutorials on R computing available in printed and video form.</p>
-<p>Most universally, even the expert instructors find they are unfamiliar with much of the material. Leading examples are dimensions of measurement, splines, mechanics (e.g.&nbsp;torque), the uses of orthogonalization, and, broadly, dynamics. Teaching unfamiliar material is admittedly stressful, but highly beneficial to yourself and your students. Dimensions and units, in particular, are a great guide to thinking; take every opportunity to ask your class what are the dimensions of the inputs to and outputs from a function and whether an operation makes sense in terms of dimensions. Consistently, even tradition-minded experts find that thinking about physical dimension gives them unexpected insight into the tasks and methods of calculus.</p>
-<ul>
-<li>Daniel Kaplan, Saint Paul, Minnesota, October 2024</li>
-</ul>
+<section id="all-other-things-being-equal" class="level2" data-number="25.2">
+<h2 data-number="25.2" class="anchored" data-anchor-id="all-other-things-being-equal"><span class="header-section-number">25.2</span> All other things being equal</h2>
+<p>Recall that the derivative of a function with one input, say, <span class="math inline">\(\partial_x f(x)\)</span> tells you, at each possible value of the input <span class="math inline">\(x\)</span>, how much the output will change proportional to a small change in the value of the input.</p>
+<p>Now that we are in the domain of multiple inputs, writing <span class="math inline">\(h\)</span> to stand for “a small change” is not entirely adequate. Instead, we will write <span class="math inline">\(dx\)</span> for a small change in the <span class="math inline">\(x\)</span> input and <span class="math inline">\(dy\)</span> for a small change in the <span class="math inline">\(y\)</span> input.</p>
+<p>With this notation, we write the first-order polynomial approximation to a function of a single input <span class="math inline">\(x\)</span> as <span class="math display">\[f(x+dx) = f(x) + \partial_x f(x) \times dx\]</span> Applying this notation to functions of two inputs, we have: <span class="math display">\[g(x + {\color{magenta}{dx}}, y) = g(x,y) + {\color{magenta}{\partial_x}} g(x,y) \times {\color{magenta}{dx}}\]</span> and <span class="math display">\[g(x, y+{\color{brown}{dy}}) = g(x,y) + {\color{brown}{\partial_y}} g(x,y) \times {\color{brown}{dy}}\]</span></p>
+<p>Each of these statements is about <em>changing one input</em> while <em>holding the other input(s) constant</em>. Or, as the more familiar expression goes, “The effect of changing one input <strong>all other things being equal</strong> or <strong>all other things held constant</strong>. (The Latin phrase for this is <em>ceteris paribus</em>, often used in economics.)</p>
+<p>Everything we’ve said about differentiation rules applies not just to functions of one input, <span class="math inline">\(f(x)\)</span>, but to functions with two or more inputs, <span class="math inline">\(g(x,y)\)</span>, <span class="math inline">\(h(x,y,z)\)</span> and so on.</p>
 </section>
-<section id="acknowledgements" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>This project was initiated by the Mathematical Sciences department at the US Air Force Academy. They recognized that a traditional calculus introduction is ill-suited to the needs of STEM in the 21st century.</p>
-<p>Critical support was given by the <a href="http://ardifoundation.org">ARDI Foundation</a> which awarded the <a href="http://www.ardifoundation.org/coors-chair/">Holland H. Coors Chair in Education Technology</a> to one of the project members, Daniel Kaplan. This made possible a year-long residency at USAFA during which time he was able to work unhindered on this project.</p>
-<p>Macalester College, where Kaplan is DeWitt Wallace Professor of Mathematics, Statistics, and Computer science, was the site where the overall framework and many of the materials for a STEM-oriented calculus were developed. Particularly important in the germination were David Bressoud and Jan Serie, respectively chairs of the Macalester math and biology departments, as well as Prof.&nbsp;Thomas Halverson and Prof.&nbsp;Karen Saxe, who volunteered to team teach with Kaplan the first prototype course. Early grant support from the Howard Hughes Medical Foundation and the Keck Foundation provided the resources to carry the prototype course to a point of development where it became the entryway to calculus for Macalester students.</p>
-<p>Profs. Randall Pruim (Calvin University) and Nicholas Horton (Amherst College) were essential collaborators in developing software to support calculus in R. They and Kaplan formed the core team of Project MOSAIC, which was supported by the US National Science Foundation (NSF DUE-0920350).</p>
-<p>Joel Kilty and Alex McAllister at Centre College admired the Macalester course and devoted much work and ingenuity to write a textbook, <em>Mathematical Modeling and Applied Calculus</em> (Oxford Univ. Press), implementing their own version. Their textbook enabled us to reduce the use of sketchy notes in the first offering of this course at USAFA.</p>
+<section id="sec-gradient-vector" class="level2" data-number="25.3">
+<h2 data-number="25.3" class="anchored" data-anchor-id="sec-gradient-vector"><span class="header-section-number">25.3</span> Gradient vector</h2>
+<p>For functions of two inputs, there are two partial derivatives. For functions of three inputs, there are three partial derivatives. We can, of course, collect the partial derivatives into Cartesian coordinate form. This collection is called the <strong><em>gradient vector</em></strong>.</p>
+<p>Just as our notation for differences (<span class="math inline">\(\cal D\)</span>) and derivatives (<span class="math inline">\(\partial\)</span>) involves unusual typography on the letter “D,” the notation for the gradient involves such unusual typography although this time on <span class="math inline">\(\Delta\)</span>, the Greek version of “D.” For the gradient symbol, turn <span class="math inline">\(\Delta\)</span> on its head: <span class="math inline">\(\nabla\)</span>. That is, <span class="math display">\[\nabla g(x,y) \equiv \left(\stackrel\strut\strut\partial_x g(x,y), \ \ \partial_y g(x,y)\right)\]</span></p>
+<p>Note that <span class="math inline">\(\nabla g(x,y)\)</span> is a function of both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, so in general the gradient vector differs from place to place in the function’s domain.</p>
+<p>The graphics convention for drawing a gradient vector for a particular input, that is, <span class="math inline">\(\nabla g(x_0, y_0)\)</span>, puts an arrow with its root at <span class="math inline">\((x_0, y_0)\)</span>, pointing in direction <span class="math inline">\(\nabla g(x_0, y_0)\)</span>, as in <a href="#fig-one-grad-arrow" class="quarto-xref">Figure&nbsp;<span>25.6</span></a>.</p>
+<div id="fig-one-grad-arrow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-one-grad-arrow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="25-partial_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-one-grad-arrow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;25.6: The gradient vector <span class="math inline">\(\nabla g(x=1,y=2)\)</span>. The vector points in the steepest uphill direction. Consequently, it is perpendicular to the contour passing through its root.
+</figcaption>
+</figure>
+</div>
+<p>A <strong><em>gradient field</em></strong> (see <a href="#fig-gradient-field-A" class="quarto-xref">Figure&nbsp;<span>25.7</span></a>) is the value of the gradient vector at each point in the function’s domain. Graphically, to prevent over-crowding, the vectors are drawn at discrete points. The lengths of the drawn vectors are set proportional to the numerical length of <span class="math inline">\(\nabla g(x, y)\)</span>, so a short vector means the surface is relatively level, a long vector means the surface is relatively steep.</p>
+<div id="fig-gradient-field-A" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gradient-field-A-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="25-partial_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gradient-field-A-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;25.7: A plot of the gradient field <span class="math inline">\(\nabla g(x,y)\)</span>.
+</figcaption>
+</figure>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -2973,15 +3149,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../Differentiation/24-optim.html" class="pagination-link" aria-label="Optimization">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Optimization</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./preliminaries-part.html" class="pagination-link" aria-label="PRELIMINARIES">
-        <span class="nav-page-text">PRELIMINARIES</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Differentiation/26-approximation.html" class="pagination-link" aria-label="Local approximations">
+        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Local approximations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script type="module">
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/Differentiation/25-partial.Rmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script type="module">
 // Handle cell initialization initialization
 qwebrCellDetails.map(
   (entry) => {

@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Daniel Kaplan, webr version 05/14/2025">
 
-<title>MOSAIC Calculus</title>
+<title>40&nbsp; Finding a “solution” – MOSAIC Calculus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,23 +57,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./preliminaries-part.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Dynamics/41-flow-on-line.html" rel="next">
+<link href="../Dynamics/39-diff-eq.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -426,7 +426,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"date()","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"next_step <- function(t, x, dt=0.1) {\n  t <- t + dt\n  x <- x + x*(1-x)*dt\n  \n  c(t=t, x=x) # return value\n}","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"Soln <- Iterate(next_step, x0=c(t=0, x=0.2), n=100,\n                fargs=list(dt=0.1))\nrbind(\n  head(Soln),\n  tail(Soln)\n)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gf_line(x ~ t, data=Soln)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"Soln2 <- integrateODE(dx ~ x*(1-x), x = 0.2,\n                      bounds(t=0:10), dt=0.01)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"slice_plot(Soln2$x(t) ~ t, bounds(t=0:10))","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"traj_plot(x(t) ~ t, Soln2, bounds(t=0:10))","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"Eco_soln <- integrateODE(\n  dr ~ 0.66*r - 1.33*r*f, \n  df ~     -f +      r*f,\n  r = 2, f = 0.5, #initial conditions\n  bounds(t=0:5), dt=0.1)","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"traj_plot(r(t) ~ t, Eco_soln, bounds(t=0:5)) |>\n  gf_labs(title=\"Rabbits\")\n\ntraj_plot(f(t) ~ t, Eco_soln, bounds(t=0:5)) |>\n  gf_labs(title=\"Foxes\")","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"traj_plot(f(t) ~ r(t), Eco_soln, nt=10)","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1654,7 +1654,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="mosaic-calc-style.css">
+<link rel="stylesheet" href="../mosaic-calc-style.css">
 
 
 
@@ -1664,10 +1664,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./www/Cover-1.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../www/Cover-1.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">MOSAIC Calculus</span>
     </a>
   </div>
@@ -1682,7 +1682,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../dynamics-part.html">BLOCK V. Dynamics</a></li><li class="breadcrumb-item"><a href="../Dynamics/40-solution.html"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1696,13 +1696,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./preliminaries-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../preliminaries-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PRELIMINARIES</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1711,43 +1711,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/01-quant-fun-space.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/01-quant-fun-space.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Quantity, function, space</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/02-notation.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/02-notation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Notation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/03-computing.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/03-computing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computing with R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/04-graphs-and-graphics.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/04-graphs-and-graphics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Visualizing functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/05-pattern-book-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/05-pattern-book-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Pattern-book functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/06-describing-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/06-describing-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Describing functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Preliminaries/07-data-functions-graphics.html" class="sidebar-item-text sidebar-link">
+  <a href="../Preliminaries/07-data-functions-graphics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data, functions, graphics</span></span></a>
   </div>
 </li>
@@ -1755,7 +1755,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./modeling-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../modeling-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK I. Modeling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1764,55 +1764,55 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/08-parameters.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/08-parameters.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parameters</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/09-assembling-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/09-assembling-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Assembling functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/10-functions-with-multiple-inputs.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/10-functions-with-multiple-inputs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Functions with multiple inputs</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/11-fitting-features.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/11-fitting-features.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Fitting features</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/12-low-order-polynomials.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/12-low-order-polynomials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Low-order polynomials</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/13-operations.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/13-operations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/14-magnitudes.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/14-magnitudes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Magnitude</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/15-dimensions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/15-dimensions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Dimensions and units</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modeling/16-modeling-scientific-method.html" class="sidebar-item-text sidebar-link">
+  <a href="../Modeling/16-modeling-scientific-method.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Modeling and the scientific method</span></span></a>
   </div>
 </li>
@@ -1820,7 +1820,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./differentiation-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../differentiation-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK II. Differentiation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1829,73 +1829,73 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/17-continuous-change.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/17-continuous-change.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Continuous change</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/18-rate-of-change.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/18-rate-of-change.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Rate of change</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/19-evanescent-h.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/19-evanescent-h.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Evanescent h</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/20-computing.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/20-computing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Constructing derivatives</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/21-concavity.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/21-concavity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Concavity and curvature</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/22-cont-and-smooth.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/22-cont-and-smooth.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Continuity and smoothness</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/23-rules.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/23-rules.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Derivatives of assembled functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/24-optim.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/24-optim.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Optimization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/25-partial.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/25-partial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Partial change and the gradient vector</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/26-approximation.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/26-approximation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Local approximations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/27-taylor.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/27-taylor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Polynomials for approximating functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Differentiation/Differentiation-projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../Differentiation/Differentiation-projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Differentiation projects</span></a>
   </div>
 </li>
@@ -1903,7 +1903,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./linear-combinations-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../linear-combinations-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK III. Vectors and linear combinations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1912,31 +1912,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/28-Vectors.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/28-Vectors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/29-linear-combinations.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/29-linear-combinations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Linear combinations of vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/30-projection.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/30-projection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Projection &amp; residual</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/31-target-problem.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/31-target-problem.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">The target problem</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Linear-combinations/32-stat-modeling.html" class="sidebar-item-text sidebar-link">
+  <a href="../Linear-combinations/32-stat-modeling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Statistical modeling and R<sup>2</sup></span></span></a>
   </div>
 </li>
@@ -1944,7 +1944,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./accumulation-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../accumulation-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK IV. Accumulation</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -1953,37 +1953,37 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/33-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/33-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Change &amp; accumulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/34-visualizing.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/34-visualizing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Totaling the little bits</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/35-integration.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/35-integration.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/36-functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/36-functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Functions as vectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/37-euler.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/37-euler.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Integrals step-by-step</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Accumulation/38-symbolic.html" class="sidebar-item-text sidebar-link">
+  <a href="../Accumulation/38-symbolic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Symbolic anti-differentiation</span></span></a>
   </div>
 </li>
@@ -1991,7 +1991,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./dynamics-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../dynamics-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK V. Dynamics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -2000,49 +2000,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/39-diff-eq.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/39-diff-eq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/40-solution.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/40-solution.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/41-flow-on-line.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/41-flow-on-line.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Flows on the line</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/42-flow-on-plane.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/42-flow-on-plane.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Flows on the plane</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/43-modeling.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/43-modeling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Modeling dynamics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/44-equilibria.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/44-equilibria.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Equilibrium and transient</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/45-eigen.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/45-eigen.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Eigenvalues, eigenvectors</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Dynamics/46-second-order.html" class="sidebar-item-text sidebar-link">
+  <a href="../Dynamics/46-second-order.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Force-balance equations</span></span></a>
   </div>
 </li>
@@ -2050,7 +2050,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./manifestations-part.html" class="sidebar-item-text sidebar-link">
+            <a href="../manifestations-part.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BLOCK VI. Manifestations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -2059,43 +2059,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/47-operations.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/47-operations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Operations on functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/48-splines.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/48-splines.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Data-driven functions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/49-optimization.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/49-optimization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Optimization and constraint</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/50-probability.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/50-probability.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Probability and evidence</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/51-future-value.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/51-future-value.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Present and future value</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/52-mechanics.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/52-mechanics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Mechanics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Manifestations/53-diffusion.html" class="sidebar-item-text sidebar-link">
+  <a href="../Manifestations/53-diffusion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Diffusion</span></span></a>
   </div>
 </li>
@@ -2112,7 +2112,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Glossary.html" class="sidebar-item-text sidebar-link">
+  <a href="../Glossary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
   </div>
 </li>
@@ -2128,14 +2128,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#welcome-to-calculus" id="toc-welcome-to-calculus" class="nav-link" data-scroll-target="#welcome-to-calculus">Welcome to calculus</a></li>
-  <li><a href="#instructors-preface" id="toc-instructors-preface" class="nav-link" data-scroll-target="#instructors-preface">Instructor’s preface</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  </ul></li>
+  <li><a href="#the-flow-field" id="toc-the-flow-field" class="nav-link active" data-scroll-target="#the-flow-field"><span class="header-section-number">40.1</span> The flow field</a></li>
+  <li><a href="#euler-method" id="toc-euler-method" class="nav-link" data-scroll-target="#euler-method"><span class="header-section-number">40.2</span> Euler method</a></li>
+  <li><a href="#sec-symbolic-solutions-ODE" id="toc-sec-symbolic-solutions-ODE" class="nav-link" data-scroll-target="#sec-symbolic-solutions-ODE"><span class="header-section-number">40.3</span> Symbolic solutions</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/Dynamics/40-solution.Rmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -2424,21 +2421,15 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../dynamics-part.html">BLOCK V. Dynamics</a></li><li class="breadcrumb-item"><a href="../Dynamics/40-solution.html"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">MOSAIC Calculus</h1>
+<h1 class="title"><span id="sec-solve-DE" class="quarto-section-identifier"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Finding a “solution”</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Daniel Kaplan, webr version 05/14/2025 </p>
-          </div>
-  </div>
     
   
     
@@ -2449,108 +2440,352 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<section id="welcome-to-calculus" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="welcome-to-calculus">Welcome to calculus</h2>
-<p>Calculus is the set of concepts and techniques that form the mathematical basis for dealing with motion, growth, decay, and oscillation. The phenomena can be as simple as a ball arcing ballistically through the air or as complex as turbulent airflow over a wing generating lift. Calculus is used in biology and business, chemistry, physics and engineering. It is the foundation for weather prediction and understanding climate change. It is the basis for the algorithms for heart rate and blood oxygen measurement by wristwatches. It is a key part of the language of science. The electron orbitals of chemistry, the stresses of bones and beams, and the business cycle of recession and rebound are all understood primarily through calculus.</p>
-<p>Calculus has been central to science from the very beginnings. It is no coincidence that the scientific method was introduced and the language of calculus was invented by the same small group of people during the historical period known as the <a href="https://en.wikipedia.org/wiki/Age_of_Enlightenment"><em>Enlightenment</em></a> in the late 17th century. Learning calculus has always been a badge of honor and an entry ticket to professions. Millions of students’ career ambitions have been enhanced by passing a calculus course or thwarted by lack of access to one.</p>
-<p>In the 1880s, a hit musical featured “the very model of a modern major general.” One of his claims for modernity: “I’m very good at integral and differential calculus.”</p>
-<div id="vid-major-general" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-vid figure">
-<div aria-describedby="vid-major-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Rs3dPaz9nAo" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-vid" id="vid-major-general-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Video&nbsp;1: A Gilbert and Sullivan opera pays homage to Calculus.
-</figcaption>
-</figure>
-</div>
-<p>What was modern in 1880 is not modern anymore. Yet, amazingly, calculus today is every bit as central to science and technology as ever. Indeed, calculus remains central to fields that were not even imagined in 1880: AI, logistics, economics, and data science, among others. One reason is that science, engineering, and society have now fully adopted the computer for almost all aspects of work, study, and life. The collection and use of data is growing dramatically. Machine learning has become the way human decision makers interact with such data.</p>
-<p>Think about what it means to become “computerized.” To take an everyday example, consider video. Over the span of a human life, we moved from a system which involved people going to theaters to watch the shadows recorded on cellulose film to the distribution over the airwaves by low-resolution television, to the introduction of high-def broadcast video, to on demand streaming from huge libraries of movies. Just about anyone can record, edit, and distribute their own video. The range of topics (including calculus) on which you can access a video tutorial or demonstration is incredibly vast. All of this recent progress is owed to computers.</p>
-<p>The “stuff” on which computers operate, transform, and transmit is always mathematical representations stored as bits. The creation of mathematical representations of objects and events in the real world is essential to every task of any sort that any computer performs. Calculus is a key component of inventing and using such representations.</p>
-<p>You may be scratching your head. If calculus is so important, why is it that many of your friends who took calculus came away wondering what it is for? What’s so important about “slopes” and “areas” and how come your high-school teacher might have had trouble telling you what calculus is for?</p>
-<p>The disconnect between the enthusiasm expressed in the preceding paragraphs and the lived experience of students is very real. There are two major reasons for that disconnect, both of which we tackle head-on in this book.</p>
-<p>First, teachers of mathematics have a deep respect for tradition. Such respect has its merits, but the result is that almost all calculus is taught using methods that were appropriate for the era of paper and pencil—not for the computer era. As you will see, in this book we express the concepts of calculus in a way that carries directly over to the uses of calculus on computers and in working out answers to real-world problems.</p>
-<p>Second, the uses of calculus are enabled not by the topics of Calc I and Calc II alone, but the courses for which Calc I/II are preliminary: linear algebra and dynamics. Only a small fraction of students who start in Calc I ever reach the parts of calculus that are the most useful. Fortunately, there is a large amount of bloat and rote in the standard textbook topics of Calc I/II. This can be removed to make room for the more important topics.</p>
-<p>The computer language used in this book is R. This is a mainstream language in high demand by employers in many fields. The small amount of R that you need to learn for this book will open doors to much greater possibilities. We have augmented R with functions designed to simplify access to calculus-related computations. These functions are provided by the <code>{mosaicCalc}</code> R package and build on other widely used, open-source software for R. We will often refer to the software as a whole as “R/mosaic.”</p>
-<p>For convenience, we place “Active R Chunks” within the text. Often, as in <a href="#lst-in-preface" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-in-preface</span></a>, these will be presented with working R/mosaic commands already included. Just press “Run Code” to have the commands evaluated.</p>
-<div id="lst-in-preface" class="listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-in-preface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Active R chunk&nbsp;1
-</figcaption>
-<div aria-describedby="lst-in-preface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="qwebr-insertion-location-1"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</figure>
-</div>
-<p>Sometimes, you will be asked to make modifications to the commands in a chunk so that you can see for yourself how the output changes.</p>
+<p>As you saw in the previous chapter, each differential equation in a dynamical system relates the derivative of a function to the function itself. For instance, in <span class="math display">\[\partial_t x = x\,(1-x)\]</span> left-hand side of the equation involves the function <span class="math inline">\(x(t)\)</span>. The equation dictates that whatever <span class="math inline">\(x(t)\)</span> might be, it has to be such that <span class="math inline">\(\partial_t x(t)\)</span> is exactly equal to the function <span class="math inline">\(x(t)\,\left(\strut 1- x(t)\right)\)</span> <em>Solving</em> a differential equation is the phrase used for finding such self-consistent functions. This chapter is about techniques for finding solutions.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Accessing software
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This book, as well as the exercises in the MOSAIC Calculus <a href="https://dtkaplan.github.io/MC-Workbook/"><em>Workbook</em></a>, provide immediate access to R/mosaic software via interactive elements such as <a href="#lst-in-preface" class="quarto-xref">Active R chunk&nbsp;<span class="quarto-unresolved-ref">lst-in-preface</span></a> that run in your browser.</p>
-<p>There are also versions of R that are provided as stand-alone applications or web services. The most popular of these, <em>RStudio</em>, includes rich facilities for managing large projects and constructing complex documents. (This book is written using <em>RStudio</em> and the <em>quarto</em> document system.)</p>
-<p>For most students learning Calculus with <em>MOSAIC Calculus</em>, the run-in-your-browser version of R will be sufficient. (The same applies to statistics students working with <a href="https://dtkaplan.github.io/Lessons-in-statistical-thinking/"><em>Lessons in Statistical Thinking</em></a>.) Instructors may prefer to work within the RStudio document system. Some instructors even introduce all their students to RStudio for writing reports, etc. Wherever you run the software—in-the-browser or using RStudio—it’s all the same language and works the same way.</p>
+<p>In high-school mathematics, many algebraic problems were of the form, “Solve for <span class="math inline">\(x\)</span>.” In such problems, the answer you got was all you were looking for: the complete answer to the problem.</p>
+<p>Having been exposed to this style in high school, you may have come to think of “finding a solution” as the only task to perform in working on a problem.</p>
+<p>In working with dynamical systems, “finding a solution” is one of the several tasks, among others, that you might need to perform to serve the purpose of your modeling effort. But not every modeling purpose requires “finding a solution,” that is, finding the function <span class="math inline">\(x(t)\)</span>. For instance, the goal of working with a dynamical system is often to sort out other properties of the system, such as the existence, location, and stability of fixed points. (we will introduce fixed points in <a href="41-flow-on-line.html" class="quarto-xref"><span>Chapter 41</span></a>.)</p>
+</div>
+</div>
+<p>Given what you learned in studying Block 3 of this book, you likely will be tempted to approach the task of “finding a solution” by applying symbolic anti-differentiation techniques to the problem. After all, each differential equation in a dynamical system involves a function <span class="math inline">\(\partial_t x(t)\)</span>. To find <span class="math inline">\(x(t)\)</span> from <span class="math inline">\(\partial_t x(t)\)</span> seems like a matter of applying the “fundamental theorem of calculus,” namely<br>
+<span class="math display">\[\int \partial_t x(t) dt = x(t)\ .\]</span> Following this logic, we would translate the equation to <span class="math display">\[x(t) = \int x(t)\, (1-x(t))dt\  .\]</span> But the problems in Block 3 were all of the form <span class="math inline">\(\frac{d\color{magenta}{x}}{d\color{blue}{t}} = g(\color{blue}{t})\)</span>, whereas the problems we work with in this Block are generally of the entirely different form <span class="math inline">\(\frac{d\color{magenta}{x}}{d\color{blue}{t}} = g(\color{magenta}{x})\)</span>. Thus, we will usually need special techniques suited to the format of dynamical systems.</p>
+<p>Admittedly, in mathematics it is common to refer to <strong><em>integrating</em></strong> a differential equation, but this should be broadly understood as <strong><em>accumulating</em></strong> the increments <span class="math inline">\(\partial_t x(t)\)</span> starting at some initial condition <span class="math inline">\(x(t_0)\)</span>, even if that accumulation is not carried out by symbolic anti-differentiation.</p>
+<p>In this chapter we will introduce three different techniques to accumulating a solution to a differential equation or a pair of such equations. First, we will look again at the <strong><em>graphical method</em></strong> of “following the flow” in a plot of the flow field. This technique is mainly of use for developing intuition about the dynamics.</p>
+<p>Second, we will develop a simple Euler method for accumulating a solution. Third, we will explore how to take a guess about the solution and, when the guess is good enough, refine that into an actual solution. This is called the <strong><em>method of ansätze</em></strong>.</p>
+<p>Third, and briefly, we will look at some of the situations where symbolic anti-differentiation can be used. This includes a very brief introduction to <strong><em>substitution methods</em></strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A differential equation like <span class="math display">\[\partial_t x(t) = x(t)\,(1-x(t))\]</span> is very busy typographically. One reason is the repeated <span class="math inline">\((t)\)</span> which play no role other than to state explicitly that <span class="math inline">\(x\)</span> is a function of <span class="math inline">\(t\)</span>. A convenient shorthand simply replaces <span class="math inline">\(x(t)\)</span> to make the “is a function of <span class="math inline">\(t\)</span>” <em>implicit</em>. The shorthand form of the equation appears as <span class="math display">\[\partial_t x = x (1-x)\ .\]</span> it is the reader’s responsibility, knowing that she is working with a differential equation, to remember that <span class="math inline">\(x\)</span> is a function of <span class="math inline">\(t\)</span>.</p>
+<p>In many texts and research papers, differential equations are written using Leibniz’s notation, like this: <span class="math display">\[\frac{dx}{dt} = x (1-x)\ .\]</span> This is exactly equivalent to our notation <span class="math inline">\(\partial_t x\)</span>.</p>
+<p>An even more concise notation, originated by Isaac Newton, is to replace the <span class="math inline">\(\partial_t\)</span> with a simple dot over the function being differentiated as in <span class="math inline">\(\Large\dot{x}\)</span>. With this notation the equation looks like <span class="math display">\[\dot{x} = x (1-x)\ ,\]</span> about as simple as it gets.</p>
+<p>This dot notation is even more expressive when working with second-order differential equations involving second derivative. In the dot notation, <span class="math inline">\(\partial_{tt} x\)</span> is written <span class="math inline">\(\ddot{x}\)</span>. Dot notation is also in wide use. Again, it is exactly equivalent to our <span class="math inline">\(\partial_t x\)</span>.</p>
+</div>
+</div>
+<section id="the-flow-field" class="level2" data-number="40.1">
+<h2 data-number="40.1" class="anchored" data-anchor-id="the-flow-field"><span class="header-section-number">40.1</span> The flow field</h2>
+<p>With a pair of differential equations, as with the pendulum or the rabbit-fox model, each equation gives one component of the change in state. To draw the flow at single point in state space, evaluate the dynamical functions at that point. Each dynamical function contributes, as its output, one of the components of the <strong><em>state velocity</em></strong> vector. If the parameters in the model have been assigned numerical values, the result of evaluating the right-hand sides will be two numbers.</p>
+<p>A case in point is the rabbit-fox system. The axes in the rabbit-fox state space are denominated in units of <em>rabbit density</em> <span class="math inline">\(r\)</span> and <em>fox density</em> <span class="math inline">\(f\)</span>. The differential equations are <span class="math display">\[\begin{eqnarray}
+\partial_t r &amp; = &amp; 0.66 r - 1.33 r f\\
+\partial_t f &amp; = &amp; -f + rf\\
+\end{eqnarray}\]</span></p>
+<p>To to find the state velocity at, say, <span class="math inline">\(r=2, f=1/4\)</span>, plug those values into the right-hand side:</p>
+<p><span class="math inline">\(\partial_t r  = 1.33 - 0.66   = 0.66\ \ \ \)</span>rabbit density per month</p>
+<p><span class="math inline">\(\partial_t f  = -0.25 + 0.5 = 0.25\ \ \ \)</span>fox density per month.</p>
+<p>Once you know the numerical vector value of the state velocity, you need to convert it to a form suitable for plotting in the state space. The conversion is needed because the state space is denominated in <em>rabbit density</em> and <em>fox density</em>, not in <em>rabbit density per month</em> or <em>fox density per month</em>. The conversion is accomplished by multiplying the state velocity vector by a small <span class="math inline">\(dt\)</span>, say, 0.1 months.</p>
+<p>The conversion produces a vector whose components are denominated in the same way as the state space and thus can be plotted meaningfully in the state space.</p>
+<p>To illustrate, let’s draw a flow vector for the state space coordinate <span class="math inline">\((r=2, f = 1/4)\)</span>. Above, we already calculated the components of the state velocity vector;Given the value <span class="math inline">\(\partial_t f = 0.25\)</span> and <span class="math inline">\(\partial_t f = 0.66\)</span>. For the sake of illustration, we will set <span class="math inline">\(dt = 0.1\)</span> month. Consequently, the vector to be plotted will be <span class="math inline">\((0.25, 0.66) dt = (0.025, 0.066)\)</span>$ with units of rabbit density and fox density respectively. the right. This flow arrow is drawn in <a href="#fig-rf-flow-arrow" class="quarto-xref">Figure&nbsp;<span>40.1</span></a>.</p>
+<div id="fig-rf-flow-arrow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rf-flow-arrow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="40-solution_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rf-flow-arrow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;40.1: The flow arrow for the state value <span class="math inline">\((r=2, f=1/4)\)</span> using <span class="math inline">\(dt=0.1\)</span> month.
+</figcaption>
+</figure>
+</div>
+<p>To draw the entire flow field, repeat this process at many other points in the state space as in <a href="#fig-rf-flow-field" class="quarto-xref">Figure&nbsp;<span>40.2</span></a>.</p>
+<div id="fig-rf-flow-field" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rf-flow-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="40-solution_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>The flow field depicted by drawing the state velocity vector (multiplied by <span class="math inline">\(dt = 0.1\)</span> to turn it into a length) for many points in the state space.</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="40-solution_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption>Instead of plotting the state velocity vector, small snippets of trajectories of duration 0.1 are shown.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rf-flow-field-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;40.2: The flow in the rabbit-fox system shown in two ways.
+</figcaption>
+</figure>
+</div>
+<p>Some people prefer a visualization of short segments of actual trajectories, as in the right panel in <a href="#fig-rf-flow-field" class="quarto-xref">Figure&nbsp;<span>40.2</span></a>, rather than the state velocity vector. This is a matter of personal preference.</p>
+<p>With the flow field depicted in sufficient detail, you can now trace out trajectory.</p>
+<p>To trace out a trajectory, select a initial condition for the system. Then follow the flow, taking only a small step in state space. The next step should be in the direction of the flow arrow at the end of the previous step.</p>
+<p>The trajectory you draw will be only a sketch, but it can be effective for developing intuition. <a href="#fig-calcplot3d1" class="quarto-xref">Figure&nbsp;<span>40.3</span></a> shows a semi-automated version of the go-with-the-flow method. The computer has been used to draw the arrows. When you click in the plot, the computer also undertakes calculation of the trajectory.</p>
+<div id="fig-calcplot3d1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-calcplot3d1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p style="text-align:center">
+<iframe frameborder="0" height="480px" src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigure/index.html?type=vectorfield;vectorfield=vf;m=0.66(x+1)-1.33(x+1)(y+.5);n=(x+1)(y+.5)-(y+.5);p=0;visible=true;view=undefined;scale=4;nx=9;ny=9;nz=1;mode=0;twod=true;constcol=true;color=rgb(0,0,255);norm=false;desystem=true&amp;type=slider;slider=t;value=0;steps=100;pmin=0;pmax=0.1;repeat=true;bounce=false;waittime=1;careful=false;noanimate=false;name=-1&amp;type=window;hsrmode=3;nomidpts=true;anaglyph=-1;center=0,0,10,1;focus=0,0,0,1;up=0,2,0,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;xaxislabel=R;yaxislabel=F;zaxislabel=z;edgeson=false;faceson=true;showbox=true;showaxes=false;showticks=true;perspective=false;centerxpercent=0.32425144159290803;centerypercent=0.47897178357443876;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);xmin=-0.9;xmax=2;ymin=-0.5;ymax=1;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;tracepoint=5.627,-1.622,0,1;keep2d=true;zoom=1.4" width="90%">
+</iframe>
+</p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-calcplot3d1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;40.3: The flow field for the rabbit/fox dynamics. Click at an initial state to generate the trajectory from that state. You may need to pinch in or out to see the flow arrows clearly.
+</figcaption>
+</figure>
+</div>
+<p>Regrettably, from such a sketch of the trajectory, you cannot easily construct <span class="math inline">\(r(t)\)</span> and <span class="math inline">\(f(t)\)</span> for time-series plots. Also, you don’t get a sense of how slow or fast the flow is going. Click at different initial conditions in the flow and you will see different trajectories, each of which is a closed loop, the sort of cycles seen in the dice-free Chutes and Ladders game. But the shape of the trajectory does not tell you whether it takes a long time or a short time to complete a loop.</p>
+<p>The next section will show you how the computer constructed the trajectory and how we can get information on the speed of the flow.</p>
+</section>
+<section id="euler-method" class="level2" data-number="40.2">
+<h2 data-number="40.2" class="anchored" data-anchor-id="euler-method"><span class="header-section-number">40.2</span> Euler method</h2>
+<p>Recall from Block 2 the <strong><em>limit definition of the derivative</em></strong>: <span class="math display">\[\partial_t x(t) = \lim_{dt \rightarrow 0} \frac{x(t + dt) - x(t)}{dt}\ .\]</span> we will use this definition to develop a very general way to solve differential equations: the <strong><em>Euler method</em></strong>.</p>
+<p>The differential equations specify the values of <span class="math inline">\(\partial_t x(t)\)</span> as the dynamical function. In Block 2, we paid attention to whether the limit exists. But here, we know it must because the dynamical functions themselves don’t involve limits. In working with the differential equation it suffices to pick some small, finite <span class="math inline">\(dt\)</span>. How small? Pick <span class="math inline">\(dt\)</span> to be small enough that the result wouldn’t change in any substantial way if we used an even smaller time increment, say <span class="math inline">\(dt/10\)</span>.</p>
+<p>Our starting point for solving each differential equation is to re-write it as a finite difference. To illustrate, we will solve the equation <span class="math inline">\(\partial_t x = x (1 - x)\)</span>, which is often called the <strong><em>logistic equation</em></strong>.</p>
+<p>Applying the finite difference definition, we get <span class="math display">\[\underbrace{\frac{f(t + dt)- f(t)}{dt}}_{\text{finite-difference approx.}} = \underbrace{x (1-x)}_{\text{dynamical function}}\ .\]</span> Multiplying both sides of the above by <span class="math inline">\(dt\)</span> and re-arranging terms produces <span class="math display">\[\underbrace{f(t + dt)}_{\text{future state}} = \underbrace{f(t)}_{\text{current state}} +\ \ \  \underbrace{x (1-x) dt}_{\text{step}}\]</span> We call this last equation the <strong><em>Euler formula</em></strong>.</p>
+<p>To use this, we start at the initial condition, say <span class="math inline">\(x(t=0) = 0.2\)</span>. This initial condition gives us the first row of a tabular representation of the function <span class="math inline">\(x(t)\)</span>: <a href="#tbl-euler-1-row" class="quarto-xref">Table&nbsp;<span>40.1</span></a>.</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div id="tbl-euler-1-row" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-euler-1-row-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;40.1: Initial state
+</figcaption>
+<div aria-describedby="tbl-euler-1-row-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>time</th>
+<th>state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:30%;">
+<div id="tbl-euler-2-row" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-euler-2-row-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;40.2: The next time step.
+</figcaption>
+<div aria-describedby="tbl-euler-2-row-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">time</th>
+<th style="text-align: left;">state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"><span class="math inline">\(0.2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;"><span class="math inline">\(0.2 + \color{brown}{0.016} = \color{blue}{0.216}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:30%;">
+<div id="tbl-euler-3-row" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-euler-3-row-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;40.3: Still another time step
+</figcaption>
+<div aria-describedby="tbl-euler-3-row-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">time</th>
+<th style="text-align: left;">state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0.0</td>
+<td style="text-align: left;"><span class="math inline">\(0.2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0.1</td>
+<td style="text-align: left;"><span class="math inline">\(0.2 + \color{brown}{0.016} = \color{blue}{0.216}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0.2</td>
+<td style="text-align: left;"><span class="math inline">\(\color{blue}{0.216} + \color{magenta}{0.0169} = 0.2329\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+<p>Next, pick a value for <span class="math inline">\(dt\)</span> that we will use for all the following steps, each of which will add a new row to the table. For the example, we will set <span class="math inline">\(dt = 0.1\)</span>. When we have constructed the whole table we can go back and check whether that was small enough.</p>
+<p>To fill in the next row, as in <a href="#tbl-euler-2-row" class="quarto-xref">Table&nbsp;<span>40.2</span></a>, we apply the Euler formula. Sine <span class="math inline">\(dt = 0.1\)</span>, the next time step will be <span class="math inline">\(0.1\)</span>. Plug in the current state—which is 0.2 right now—to calculate the future state. The step will be <span class="math inline">\(0.2 (1-0.2)\, dt = \color{brown}{0.016}\)</span>. Add this step to the current state to get the future state.</p>
+<p>The next step is shown in <a href="#tbl-euler-3-row" class="quarto-xref">Table&nbsp;<span>40.3</span></a> and will bring us to time <span class="math inline">\(0.2\)</span>. Use the Euler formula, pluggin in the value of the present state, <span class="math inline">\(\color{blue}{0.216}\)</span>, to find the step. Here that will be <span class="math inline">\(0.216 (1-0.216)\, dt = \color{magenta}{0.0169.}\)</span>.</p>
+<p>Add as many rows to the table as you like; the process will be the same for each step, the new row being calculated from the values in the previous row.</p>
+<p>Recognize that this is an iterative process.</p>
+<div id="tip-iterate-only" style="display: none;">
+
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Euler iteration
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As is so often the case, it is wise to think about carrying fundamental tasks as they can be accomplished by calculus operations—evaluate, differentiate, anti-differentiate, solve, find argmax, iterate. The obvious choice for integrating differential equations is “anti-differentiate,” but as described previously, the techniques we covered in Block 3 are not sufficient for the task. Instead, we use iteration to solve differential equations.</p>
+<p>This example uses the software you have already seen, <code>Iterate()</code>, to carry out the task. In practice, however, you will use a special form of <code>Iterate()</code> called <code>integrateODE()</code> that makes use of interpolation techniques to give a more precise answer.</p>
+<p>To implement the iteration to solve <span class="math inline">\(\partial_t x = x (1-x)\)</span>, we need to create a function that takes the current state as input and produces the next state as output. Our one-step function can be this:</p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Notice that we wrote <code>next_step()</code> with an input slot for <span class="math inline">\(dt\)</span>. This will not be part of the state being iterated, just a parameter that allows us easily to explore different values for <span class="math inline">\(dt\)</span>.</p>
+<p>Use <code>Iterate()</code> to carry out the iteration of <code>next_step()</code>. Note that we use the <code>fargs</code> argument to <code>Iterate()</code> to pass our selected value for <code>dt</code> to the function <code>next_step()</code>. We will run the iteration for 100 steps. With <span class="math inline">\(dt=0.1\)</span>, those 100 steps will 10 units of time.</p>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Or, in graphical form ….</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</div>
+</div>
+<div id="try-iterate" class="quarto-float quarto-figure quarto-figure-center anchored" style="display: none;">
+<figure class="quarto-float quarto-float-try figure">
+<div aria-describedby="try-iterate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-try quarto-uncaptioned" id="try-iterate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Try it!&nbsp;40.1
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<a href="../Manifestations/47-operations.html#try-iterate" class="quarto-xref">Try it!&nbsp;<span>47.4</span></a> Iterate vs integrateODE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The previous example used <code>Iterate()</code> to solve a differential equation. The output of the iteration was a data frame containing values for the solution at discrete times: 0, 0.1, 0.2, and so on. A data table is a perfectly good way to represent a function, but it is handier to have a function in a form that operations like <code>slice_plot()</code> and <code>D()</code> can be applied to. Another way to look at things is that, mathematically, the solution to a differential equation should be a <strong><em>continuous-time function</em></strong>. Fortunately, we have at hand the <strong><em>interpolation</em></strong> techniques covered in <a href="../Manifestations/48-splines.html" class="quarto-xref"><span>Chapter 48</span></a> to carry out the construction of a continuous-time function from a tabular representation. The R/mosaic function <code>integrateODE()</code> connects together the iteration and interpolation to provide a solution that is in the form of continuous-time function(s).</p>
+<p>Use the R/mosaic function <code>integrateODE()</code> to solve differential equations numerically. It is a specialized function that handles sets of <strong><em>first-order differential equations</em></strong>, but any high-order differential equation can be separated into a set of first-order equations.</p>
+<p>To illustrate, this command will solve the differential equation <span class="math inline">\(\partial_t x = x (1-x)\)</span> that we took on in the previous example with <code>Iterate()</code>.</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The first argument is a tilde expression, but in a form that is different from from that used in functions such as <code>D()</code> or <code>contour_plot()</code>, etc. To the left of the tilde is a single name composed of the state variable—<code>x</code> here—prefixed by a <code>d</code>. The <code>d</code> is just a reminder that we are describing not <code>x</code> itself, but <span class="math inline">\(\partial_t\ \mathtt{x}\)</span>. On the right of the tilde is the function from the differential equation, in this case, <span class="math inline">\(x(1-x)\)</span>.</p>
+<p>The next argument is the initial condition. We are starting the integration at <span class="math inline">\(x=0.2\)</span>. The <code>bounds()</code> sets the time interval for the integration and <code>dt</code> sets the time step..</p>
+<p>The output of <code>integrateODE()</code> is an R structure of a type called a “list” that is new to us. The list contains the function(s) created by <code>integrateODE()</code> which you refer to by name (<code>x</code>) using a special form of R punctuation <code>$</code> suited to lists.. In other words, <code>Soln2$x</code> will be a function, which you can plot like any other function, for instance:</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>This use of the R symbol <code>$</code> is new to us. We won’t emphasize it here. Instead, we’ll use the <code>traj_plot()</code> graphics function (introduced in <a href="../Manifestations/48-splines.html" class="quarto-xref"><span>Chapter 48</span></a>) which already knows how to access the functions created by <code>integrateODE()</code>.</p>
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>An important feature of <code>integrateODE()</code> is its ability to handle <em>sets</em> of first-order differential equations. For instance, the rabbit/fox system <span class="math display">\[\partial_t r = 0.66\, r - 1.33\, r f\\
+\partial_t f = -f + rf\]</span> will be integrated by this command:</p>
+<div id="qwebr-insertion-location-7"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>You can plot the time series using <code>slice_plot()</code></p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>To plot the trajectory, simply change the tilde expression used in <code>traj_plot()</code>. which creates a time series plot, <code>traj_plot()</code> shows the trajectory.</p>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
 </section>
-<section id="instructors-preface" class="level2">
-<h2 class="anchored" data-anchor-id="instructors-preface">Instructor’s preface</h2>
-<p>The “MOSAIC” in the book’s title refers to a movement in undergraduate mathematics to integrate <strong>M</strong>odeling, <strong>S</strong>tatistics and data science, <strong>C</strong>omputing, and <strong>C</strong>alculus. Skill in all these areas is needed for successful work in the technical and scientific world. Traditionally, teaching does not honor the strong links among these areas and ignores the advantages of teaching them in a unified way. Indeed, modeling, though often mentioned in calculus textbook blurbs, is hardly taught at all. Introductory statistics courses, even those with a formal pre-requisite of calculus, do not draw on calculus concepts beyond the mention of “area under a curve.” Few and far between are introductory computing courses that reinforce calculus and statistics topics, or calculus courses that develop and build on computing and data skills.</p>
-<p>The isolation of mathematical calculus from disciplines that ought to be considered allies leads to a devastating gap in the education of students. The half-life of a student in a calculus sequence is, roughly speaking, one course. (The decay in participation starts in algebra and trigonometry.) The result is that only a small fraction of students see relevant mathematics of multiple variables and hardly any encounter the powerful concepts of spaces, vectors, and matrix factorizations traditionally reserved for a junior-year linear algebra course. Contemporary statistical modeling techniques, including machine learning, draw heavily on a small core of linear-algebra topics.</p>
-<p>The design of the mosaic serves the goal of providing for all students access to a broad, directly useful education in the mathematical sciences. One component of access is keeping the program small enough to fit in with a plausible student schedule. Our working definition of “small enough” is one-quarter of the first two years of university. Fitting within this envelope, students ought to achieve basic competence in computing, statistics, and calculus.</p>
-<p>Calculus provides opportunities to prepare students well for both modern statistics and computing. The most direct ties to statistics are modeling, functions of multiple variables, and concepts of linear spaces. The relevant links of calculus to computing are extensive and go both ways. To give but one example: It’s impractical for students to construct contour plots without a computer. With a computer at hand, students can learn about mathematical ideas such as gradients and iterative optimization. For instance, constrained optimization is hardly a topic of standard introductory calculus and Lagrange multipliers are mysterious even to many professors. The essential concepts become much clearer when they can be presented using graphical tools of contours and gradient fields.</p>
-<p>A book that attempts to build on the connections among historically distinct disciplines must also resolve inconsistencies in nomenclature and notation. We draw the instructor’s attention to some of these and the policies adopted in the book:</p>
-<ul>
-<li><p><strong>Variable</strong>. In mathematics “variable” is used generically, sometimes meaning “unknown” and other times referring to a known quantity. In computing “variable” is used colloquially to mean “the name of an object,” and in statistics a “variable” refers to data: a column of a data frame or, more generally, a specific attribute of the units of observation that form the rows of the data frame. (See <a href="#sec-data-frames" class="quarto-xref"><span class="quarto-unresolved-ref">sec-data-frames</span></a> for definitions of “data frame” and “unit of observation.”) We reserve “variable” to be used in the statistical sense. Consequently, a “function of several variables” becomes a “function with several inputs.”</p></li>
-<li><p><strong>Output</strong>. Evaluating a function, either a mathematically or on a computer, produces an output. Functions take inputs and produce outputs. Typical names for inputs are, following tradition, the last few letters of the alphabet: <span class="math inline">\(t, u, v, w, x, y, z\)</span>.</p></li>
-<li><p><strong>Function names</strong>. Functions always have a name. <span class="math inline">\(f()\)</span>, <span class="math inline">\(g()\)</span>, <span class="math inline">\(h()\)</span> are the pronouns for discussing functions in general, but in specific applications functions often have more descriptive names, e.g.&nbsp;population() or elev() or risk(). The empty parentheses are a reminder that the thing being named is a function and not an input or parameter. Since <span class="math inline">\(y\)</span> is used as an input name, we never use it for the name of a function or to identify the output of a function. So, <span class="math inline">\(y=mx+b\)</span> is not an esteemed phrase in this book. Instead, when we want to define a straight-line function we write <span class="math inline">\(g(x) \equiv a x + b\)</span> or some other parameterization, for instance <span class="math inline">\(g(x) \equiv a (x - x_0)\)</span>.</p></li>
-<li><p><strong>Special inputs</strong>. Often, a problem or application context requires the identification of some special values for inputs to a function, for instance, argmaxes or zero crossings or starting time. These are often constructed by using an output name (often <span class="math inline">\(t\)</span> through <span class="math inline">\(z\)</span>) with a subscript or a non-numerical superscript as in <span class="math inline">\(y^\star\)</span>.</p></li>
-<li><p><strong>Output</strong> (part 2). When we mean something like “the output of the function <span class="math inline">\(f()\)</span> at its argmax,” we write <span class="math inline">\(f(x_\star)\)</span>, or something similar. When we mean, “the output of function <span class="math inline">\(f()\)</span> at some as yet unspecified input named <span class="math inline">\(x\)</span>,” we write <span class="math inline">\(f(x)\)</span>.</p></li>
-<li><p><strong>Formulas</strong>. An expression like <span class="math inline">\(ax + b\)</span> is a formula. One of the most common ways to define a function is by using a formula. But creating a function from a formula requires some special syntax, as demonstrated earlier with <span class="math inline">\(g(x) \equiv a x + b\)</span>. The names used within the parentheses on the left side of <span class="math inline">\(\equiv\)</span> are the input names. Other symbols in the formula are called <strong>parameters</strong>.</p></li>
-<li><p><strong>Tilde expression</strong>. We use the R language in this book. Those familiar with R know that there is a special kind of expression called a “formula,” for instance <code>a*x + b ~ x</code>. One of the main uses for R formulas is to represent a mathematical formula when creating a function. “Formulas representing formulas” can lead to confusion. We address this by violating the technical vocabulary of R and calling an expression like <code>a*x + b ~ x</code> a “tilde expression.” This name properly draws attention to the <strong>~</strong> (“tilde”) character that is an essential component of R-language “formulas.” A typical use for a tilde expression is to create a computer version of a function. The computer version of <span class="math inline">\(g(x) \equiv a x + b\)</span> is <code>g &lt;- makeFun(a*x + b ~ x)</code>. In this use, the <code>~ x</code> part of the tilde expression identifies the input name, just as does the <span class="math inline">\(x\)</span> in <span class="math inline">\(g(x) \equiv ...\)</span>. You’ll also use tilde expressions for graphics and operations such as differentiation and anti-differentiation.</p></li>
-</ul>
-<p>Those familiar with R may be tempted to use the native function-building syntax, which looks like</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x, a, b) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  a<span class="sc">*</span>x <span class="sc">+</span> b</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="sec-symbolic-solutions-ODE" class="level2" data-number="40.3">
+<h2 data-number="40.3" class="anchored" data-anchor-id="sec-symbolic-solutions-ODE"><span class="header-section-number">40.3</span> Symbolic solutions</h2>
+<p>Occasionally it is possible to integrate a differential equation using symbolic techniques. This is particularly true for differential equations that are linear. The example we will handle here is the first-order linear differential equation <span class="math display">\[\partial_t x = a\, x\ .\]</span> An advantage of symbolic solutions is that parameters can be handled symbolically.</p>
+<p>A method we will use repeatedly in this block is called the “method of ansätze.” An <strong><em>ansatz</em></strong> (singular of the German “ansätze”) is, in this context, a guess for the solution. Since differential equations have been a central part of science for more than 200 years, you can imagine that a large library of equations and their solutions has been assembled. For the equations that are most frequently used and that can be solved symbolically, the solutions are already known. Thus, the “guess” for the solution can be a very well informed guess.</p>
+<p>Let’s see how this works for <span class="math inline">\(\partial_t x = a\, x\)</span>. From experience, the ansatz will be an exponential function of time, which we can write <span class="math inline">\(x(t) \equiv A e^{\omega t}\)</span>. We don’t yet know what is the value of <span class="math inline">\(\omega\)</span> or <span class="math inline">\(A\)</span>, so we plug the ansatz into both the left and right sides of the differential equation to work it out.</p>
+<p>Plugging in the ansatz, translates the differential equation to a new form: <span class="math display">\[\underbrace{A \omega e^{\omega t}}_{\partial_t x(t)}\  =\  \underbrace{a A e^{\omega t}}_{a x(t)}\ .\]</span> Cancelling out the terms that appear on both sides of the equation gives <span class="math display">\[\omega = a\ \ \ \text{which implies}\ \ \ x(t) = A e^{a t}\ .\]</span> The ansatz substitution didn’t give any result at all for <span class="math inline">\(A\)</span>. That is to say, unlike <span class="math inline">\(\omega\)</span>, the <span class="math inline">\(A\)</span> is not determined by the differential equation itself. This means that <span class="math inline">\(A\)</span> must be related to the <strong><em>initial condition</em></strong>. Setting <span class="math inline">\(t=0\)</span> gives <span class="math inline">\(x(0) = A\)</span>, so in this simple differential equation, <span class="math inline">\(A\)</span> is the initial condition.</p>
+<p>A slightly more complex differential equation is <span class="math display">\[\partial_t x = a\, (x - b)\ .\]</span> This also has an exponential solution. It is easiest to see this by defining a new variable <span class="math inline">\(y \equiv x - b\)</span>. By the rules of differentiation, <span class="math inline">\(\partial_t y = \partial_t x\)</span>, so the differential equation can be re-written in the form <span class="math inline">\(\partial_t y = a y\)</span>. We already know the solution to this is <span class="math inline">\(y(t) = y_0 e^{a t}\)</span>. Translating by to <span class="math inline">\(x\)</span> we get <span class="math display">\[x(t) - b = (x_0 -b) e^{at}\ \ \ \implies x(t) = (x_0 -b)\,e^{at} + b)\ .\]</span></p>
+<p>For nonlinear dynamical function, there is no perfectly general way to find symbolic solutions. But for some dynamical functions, it can be done. we will demonstrate by integrating <span class="math inline">\(\partial_t x = x (1-x)\)</span>. The method is made more plausible by using the Leibnizian notation for derivatives, with which the differential equation has this form: <span class="math display">\[\frac{dx}{dt} = x(1-x)\ .\]</span> The Leibnizian notation can be interpreted as the ratio of two differentials: <span class="math inline">\(dx\)</span> and <span class="math inline">\(dt\)</span> in this case.</p>
+<p>The idea of separating the differential equation is to algebraically move all the <span class="math inline">\(x\)</span> terms to the left side of the equation and all the <span class="math inline">\(t\)</span> terms to the right and then to integrate each side of the equation. <span class="math display">\[dx = x(1-x) dt \ \ \ \implies \ \ \ \frac{1}{x(x-1)}dx = dt\ \ \ \implies\ \ \ \int\frac{1}{x(x-1)}dx = \int dt .\]</span></p>
+<p>The integral on the right side, <span class="math inline">\(\int dt\)</span>, should be easily recognizable, giving <span class="math inline">\(\int dt = t + F\)</span>, where <span class="math inline">\(F\)</span> is the “constant of integration.”</p>
+<p>The integral on the left side may not be as familiar, but the person solving this problem for the second time will remember that <span class="math display">\[\frac{1}{x(1-x)} = \frac{1}{x} + \frac{1}{1-x}\]</span> as you can confirm by putting the right side over a common denominator. Each of <span class="math inline">\(1/x\)</span> and <span class="math inline">\(1/(1-x)\)</span> have integrals that are logs: <span class="math inline">\(\int dx/x = \ln(x) + D\)</span> and <span class="math inline">\(\int dx/(1-x) = - \ln(1-x) + E\)</span>. Putting the equation back together again, produces <span class="math display">\[\ln(x) + D - \ln(1-x) + E = t + F\ .\]</span> At this point, move all the constants of integration over to the right side and consolate them into a single constant of integration <span class="math inline">\(C\)</span>. At the same time, collect together the two logarithmic terms, giving: <span class="math display">\[\ln\left(\frac{x}{1-x}\right) = t + C\ .\]</span> Exponentiate both sides to get: <span class="math display">\[\frac{x}{1-x} = \underbrace{e^C}_{A} e^t\  .\]</span> Since <span class="math inline">\(e^C\)</span> is just a constant, we will write it more simply as <span class="math inline">\(A\)</span>.</p>
+<p>Now we have <span class="math display">\[x = Ae^t - x A e^t \ \ \implies\ \ \ x (1 + Ae^t) = Ae^t\]</span> which gives our solution <span class="math display">\[x = \frac{Ae^t}{1 + Ae^t}\ .\]</span> To find the initial condition symbolically, plug in <span class="math inline">\(t=0\)</span>, giving <span class="math inline">\(x_0 = A/(1+A)\)</span> or, equivalently <span class="math inline">\(A = x_0/(1-x_0)\)</span>. Our previous examples used <span class="math inline">\(x_0 = 0.2\)</span>, for which <span class="math inline">\(A = 0.2/0.8 = 0.25\)</span>. Graphing this solution gives us the familiar sigmoid:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Symb_soln <span class="ot">=</span> <span class="fu">makeFun</span>(A<span class="sc">*</span><span class="fu">exp</span>(t)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> A<span class="sc">*</span><span class="fu">exp</span>(t)) <span class="sc">~</span> t)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_plot</span>(<span class="fu">Symb_soln</span>(t, <span class="at">A=</span><span class="fl">0.2</span>) <span class="sc">~</span> t, <span class="fu">bounds</span>(<span class="at">t=</span><span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="40-solution_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
 </div>
-<p>We strongly encourage you to use <code>makeFun()</code> instead. One reason is to reinforce the use of tilde expressions which are needed to identify the “with-respect-to” input in differentiation and anti-differentiation, as well as the frame of a graph. Another reason has to do with rules of scoping in computer languages, which have no obvious analog in mathematical notation. We prefer to leave scoping to a computer science class, rather than making it a pre-requisite for calculus. <code>makeFun()</code> sidesteps the scoping difficulties.</p>
-<ul>
-<li><strong>Differential notation</strong>. Historically, Leibniz’s lovely ratio notation, for instance, <span class="math display">\[\frac{dy}{dx}\ ,\]</span> helped generations of students learn differential calculus and see the connections to integral calculus. It is, however, wordy, which is why other notations—<span class="math inline">\(f'\)</span> or <span class="math inline">\(\dot{x}\)</span> or <span class="math inline">\(f^{(1)}\)</span> so often appear. But Leibniz could hardly have anticipated a future in which writing is done mainly with keyboards and linear sequences of characters. There is no mainstream computer language in which <code>df/dx</code> or <code>f'</code> or <code>\dot{x}</code> or <code>f^{(1)}</code> are valid names. To simplify the use of the computer, we use <span class="math inline">\(\partial_x y\)</span> notation for differentiation. This can be easily morphed into a legal computer name: <code>dx_y</code>. We use <span class="math inline">\(\partial\)</span> instead of the Latin <span class="math inline">\(d\)</span>, partly to mark differentiation as something special and partly because we will use notation like <span class="math inline">\(\partial_{xt} g\)</span> when dealing with functions of multiple variables, or <span class="math inline">\(\partial_{xx} f\)</span> for second derivatives.</li>
-</ul>
-<p>The book is designed to support six to ten credit hours of calculus study. The algebra pre-requisites are kept to a minimum. Trigonometric identities are never used. In the starting “Preliminaries” part of the book nine “pattern-book” algebraic functions are introduced that form the basis for modeling work. “Preliminaries” also introduces computing notation, particularly that used for graphing functions.</p>
-<p>“Modeling,” Block I, introduces non-calculus topics that are essential to the rest of the book. It is worth spending considerable class time on Block I, regardless of the previous experience of students. Block II, “Differentiation,” is self-explanatory to a calculus instructor. Absence of extensive drill on symbolic differentiation of obscure functions or the use of Taylor polynomials or l’Hopital’s rule to provide even more drill is entirely intentional. Our goal in <em>MOSAIC Calculus</em> is to ensure that students understand what a derivative is and—importantly—what it is for. Symbolic differentiation is limited to the “pattern-book” functions and other functions constructed as compositions, products, and linear combinations of the pattern-book function.</p>
-<p>Block III, “Vectors and linear combinations,” does not depend on previously covering differentiation. The sequence Preliminaries-Modeling-Vectors could make a suitable 3- or 4-credit course for students entering data science. Block III might have been reasonably titled “Linear algebra.” But the universal emphasis on determinants and inverses of square matrices in a conventional linear algebra course is not a suitable introduction for working with data, and we did not want to suggest that all the conventional topics of linear algebra are included.</p>
-<p>Block IV, “Accumulation,” builds on Block II, where differentiation is treated less as an algebraic process than as a relationship between functions. Our focus is on occasions when anti-differentiation is a useful modeling tool for extracting certain forms of information from a function. Instructors are advised to minimize or wholly avoid the area-under-a-curve metaphor. Like cigarettes, that metaphor is addictive and creates dis-ease with the more important roles for accumulation in contexts like dynamics. The final chapter of Block IV is about symbolic integration of functions constructed from from the pattern-book functions. Including it is a concession to administrative practices at universities where topics like “integration by parts” are included in hard-to-change course-catalog copy. Those techniques are not used elsewhere in the book.</p>
-<p>Block V, “Dynamics,” introduces <em>systems</em>, that is, wholes made of multiple connected parts. Although the context used is differential equations, techniques for finding solutions are not central. More important are the phenomena (e.g.&nbsp;oscillation), the opportunities for modeling and showing how simple mathematical models can provide insight to otherwise seemingly complex natural and social systems, extension of the linear-algebra material from Block III to eigenvalues and eigenvectors, and a glimpse at the surprisingly close connection between exponentials and sinusoids.</p>
-<p>The last block, “Manifestations,” is arranged along different lines than the previous chapters. The point is to show how calculus operations show themselves in a wide variety of contexts. We are not making up opportunities for more drill in symbolic differentiation and anti-differentiation. In the “Probability” chapter, to give an example, what’s central is the relationships between functions. One of these relationships is standard in calculus books, that between what’s called the CDF and the PDF. Less basic and not at all standard, the relationship between prior, likelihood, and posterior functions. It is not required to cover all the chapters in “Manifestations.” They do not much depend one on the other. Choose the ones that are best suited to the directions in which your students are heading. And the topics need not be delayed to the end of the course. For instance, the constrained optimization topic in “Optimization” can be handled with the material up to Block IV.</p>
-<p>Many highly expert calculus instructors have taught with these materials. Some of their experiences may be relevant to instructors who haven’t yet used <em>MOSAIC Calculus</em>. First, the experts are surprised by how many esteemed, traditional calculus topics are given short shrift or even omitted altogether, and even more surprised that their exclusion does not diminish the course. Second, many experts find that the calculus in this book is not calculus as they have been trained to think about it, but that nonetheless “it works.” Third, instructors who try to avoid spending class time on the computational elements of the book find that their students echo the avoidance. As these instructors go through their first year, they discover that there are only a handful of computational patterns (e.g.&nbsp;tilde expressions, domains) and that students would have avoided many headaches by facing them head-on from the start of the course. Some advice: Don’t think that you have to learn R before you can master using R to teach this book. The mosaic software that powers this book is a better place to start than with the many more general introductions and tutorials on R computing available in printed and video form.</p>
-<p>Most universally, even the expert instructors find they are unfamiliar with much of the material. Leading examples are dimensions of measurement, splines, mechanics (e.g.&nbsp;torque), the uses of orthogonalization, and, broadly, dynamics. Teaching unfamiliar material is admittedly stressful, but highly beneficial to yourself and your students. Dimensions and units, in particular, are a great guide to thinking; take every opportunity to ask your class what are the dimensions of the inputs to and outputs from a function and whether an operation makes sense in terms of dimensions. Consistently, even tradition-minded experts find that thinking about physical dimension gives them unexpected insight into the tasks and methods of calculus.</p>
-<ul>
-<li>Daniel Kaplan, Saint Paul, Minnesota, October 2024</li>
-</ul>
-</section>
-<section id="acknowledgements" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>This project was initiated by the Mathematical Sciences department at the US Air Force Academy. They recognized that a traditional calculus introduction is ill-suited to the needs of STEM in the 21st century.</p>
-<p>Critical support was given by the <a href="http://ardifoundation.org">ARDI Foundation</a> which awarded the <a href="http://www.ardifoundation.org/coors-chair/">Holland H. Coors Chair in Education Technology</a> to one of the project members, Daniel Kaplan. This made possible a year-long residency at USAFA during which time he was able to work unhindered on this project.</p>
-<p>Macalester College, where Kaplan is DeWitt Wallace Professor of Mathematics, Statistics, and Computer science, was the site where the overall framework and many of the materials for a STEM-oriented calculus were developed. Particularly important in the germination were David Bressoud and Jan Serie, respectively chairs of the Macalester math and biology departments, as well as Prof.&nbsp;Thomas Halverson and Prof.&nbsp;Karen Saxe, who volunteered to team teach with Kaplan the first prototype course. Early grant support from the Howard Hughes Medical Foundation and the Keck Foundation provided the resources to carry the prototype course to a point of development where it became the entryway to calculus for Macalester students.</p>
-<p>Profs. Randall Pruim (Calvin University) and Nicholas Horton (Amherst College) were essential collaborators in developing software to support calculus in R. They and Kaplan formed the core team of Project MOSAIC, which was supported by the US National Science Foundation (NSF DUE-0920350).</p>
-<p>Joel Kilty and Alex McAllister at Centre College admired the Macalester course and devoted much work and ingenuity to write a textbook, <em>Mathematical Modeling and Applied Calculus</em> (Oxford Univ. Press), implementing their own version. Their textbook enabled us to reduce the use of sketchy notes in the first offering of this course at USAFA.</p>
+</div>
+</div>
+<p>Not all differential equations can be separated in this way, and even for those that can, the integrals may not be tractable. So this route to a solution is not a general-purpose one, unlike the Euler method. Still, the Euler method gives only an approximate solution, so with Euler we need to take care that the approximation is close enough for the purpose at hand. In this case, we have both an Euler solution (with <span class="math inline">\(dt=0.1\)</span>) and a symbolic solution. <a href="#fig-diff-Euler-separation" class="quarto-xref">Figure&nbsp;<span>40.4</span></a> shows the <em>difference</em> between the two solutions, which ideally should be zero. To show more of the time domain of the solution, we will reset the initial condition to <span class="math inline">\(x_0 = 0.01\)</span>. This corresponds to <span class="math inline">\(A = 1/99\)</span>.</p>
+<div id="fig-diff-Euler-separation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-diff-Euler-separation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="40-solution_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diff-Euler-separation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;40.4: The difference between the Euler and the symbolic solution to <span class="math inline">\(\partial_t x = x (1-x)\)</span> as a fraction of the symbolic solution. At the worst, the Euler solution is off by 1.5 parts in one-million.
+</figcaption>
+</figure>
+</div>
+<!--
+- O-TEOG4: Recognize a first-order differential equation.
+- U-EJM13: Given a set of state variables, write down the framework for a system of first-order differential equations.
+- V-4KF8Q: Understand that there can be (infinitely) many **solutions** to a differential equation. 
+- K-LH9CX: Each solution has its individual **initial condition**.
+- N-SUJO3: Given dynamical functions, use the computer to sketch the flow field.
+- U-5PMG7: Given dynamical functions, find a trajectory numerically and plot it.
+- N-9IU5J: Plot out the individual time series from a numerically computed trajectory.
+-->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -2973,15 +3208,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../Dynamics/39-diff-eq.html" class="pagination-link" aria-label="Differential equations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Differential equations</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./preliminaries-part.html" class="pagination-link" aria-label="PRELIMINARIES">
-        <span class="nav-page-text">PRELIMINARIES</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../Dynamics/41-flow-on-line.html" class="pagination-link" aria-label="Flows on the line">
+        <span class="nav-page-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Flows on the line</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script type="module">
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dtkaplan/MC2/edit/main/Dynamics/40-solution.Rmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script type="module">
 // Handle cell initialization initialization
 qwebrCellDetails.map(
   (entry) => {
